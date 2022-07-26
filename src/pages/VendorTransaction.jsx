@@ -18,7 +18,7 @@ const VendorTransaction = () => {
   };
 
   const listItemsClassName =
-    "font-semibold cursor-pointer transition-all duration-200 delay-150 hover:mb-[translate-y-1] text-colorPrimary mr-[75px] 2xl:mr-[100px]";
+    "font-semibold cursor-pointer r transition-all duration-200 delay-150 hover:mb-[translate-y-1] text-colorPrimary mr-[75px] 2xl:mr-[100px]";
 
   return (
     <Layout>
