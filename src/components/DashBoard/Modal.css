@@ -1,0 +1,23 @@
+.help {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 800;
+	font-size: 21px;
+	line-height: 38px;
+	display: flex;
+	align-items: flex-end;
+
+	color: #262466;
+}
+.started{
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 800;
+font-size: 23px;
+line-height: 38px;
+display: flex;
+align-items: flex-end;
+
+color: #262466;
+}
