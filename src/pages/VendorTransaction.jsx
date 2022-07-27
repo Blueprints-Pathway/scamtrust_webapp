@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "../components/Layout/Layout";
 
 import AwaitingApproval from "../assets/images/svg/awaiting-approval.svg";
@@ -8,6 +8,7 @@ import Ongoing from "../assets/images/svg/on-going.svg";
 import CancelledTab from "../assets/images/svg/cancelled-tab.svg";
 import CompletedTab from "../assets/images/svg/completed-tab.svg";
 import TransactionType from "../components/TransactionType/TransactionType";
+import { fetchTransactions } from "../services/transactions";
 
 const VendorTransaction = () => {
   const [activeTab, setActiveTab] = useState("All Transactions");
@@ -17,8 +18,14 @@ const VendorTransaction = () => {
     setActiveTab(transactionTabName);
   };
 
+  useEffect(() => {
+    // Fetch Transaction
+    (async () => console.log(await fetchTransactions()))()
+  }, [])
+
+
   const listItemsClassName =
-    "font-semibold cursor-pointer r transition-all duration-200 delay-150 hover:mb-[translate-y-1] text-colorPrimary mr-[75px] 2xl:mr-[100px]";
+    "font-semibold cursor-pointer transition-all duration-200 delay-150 hover:mb-[translate-y-1] text-colorPrimary mr-[75px] 2xl:mr-[100px]";
 
   return (
     <Layout>
@@ -30,10 +37,9 @@ const VendorTransaction = () => {
           {transactionTypes.map((transactionType) => (
             <li
               onClick={() => transactionTabChangeHandler(transactionType.name)}
-              className={`${listItemsClassName} ${
-                activeTab === transactionType.name &&
+              className={`${listItemsClassName} ${activeTab === transactionType.name &&
                 "border-b-colorSecondary  border-b-2"
-              }`}
+                }`}
               key={transactionType.name}
             >
               <a className="flex items-">

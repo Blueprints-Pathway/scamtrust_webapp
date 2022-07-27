@@ -22,6 +22,7 @@ import SecurityQuestion from "./components/signup/SecurityQuestion";
 import Activate from "./components/signup/Activate";
 import SideBar from "./components/SideBar/SideBar";
 import SettingsVendor from "./components/SettingsVendor/SettingsVendor";
+import VendorTransaction from "./pages/VendorTransaction";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
       <Route path="/wallet" element={<Wallet />} />
       <Route path="/Customerwallet" element={<CustomerWallet />} />
       <Route path="/" element={<Signup />} />
+      <Route path="/vendor-transaction" element={<VendorTransaction />} />
       <Route path="/bvn" element={<BVN />} />
       <Route path="/setPassword" element={<SetPassword />} />
       <Route path="/transaction" element={<Transaction />} />
