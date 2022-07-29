@@ -171,7 +171,7 @@ function UserDetails({ level, setLevel, formikProps }) {
 											onBlur={formikProps.handleBlur}
 											onChange={formikProps.handleChange}
 											value={formikProps.values.type}
-											className="inputBox p-4"
+											className="inputBox "
 											name="business_type"
 										>
 											<option>Select Business Type</option>
