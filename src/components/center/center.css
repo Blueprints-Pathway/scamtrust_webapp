@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
+.Center{
+    position: absolute;
+width: 68vw;
+height: 20vh;
+left: 25vw;
+top: 15vh;
+
+background: linear-gradient(92.05deg, #0D3E8F -1.37%, #1A1E51 101.15%);
+border-radius: 25px 25px 0px 0px;
+}
+.CenterTop{
+    position: absolute;
+    width: 8vw;
+    right: 3vw;
+    top: -0.7vh;
+    /* background: url(shielgg.png); */
+    mix-blend-mode: soft-light;
+    opacity: 0.2;
+}
+.CenterBottom{
+    position: absolute;
+    width: 68vw;
+    min-height: 60vh;
+    left: 25vw;
+    top: 35vh;
+display: flex;
+background: #FFFFFF;
+border-radius: 0px 0px 25px 25px;
+}
+.CenterImg1{
+    position: absolute;
+    width: 8rem;
+    height: 8rem;
+    left: 1vw;
+    top: -7vh;
+    border-radius: 50%;
+    background: #FFFFFF;
+}
+.CenterImg2{
+    position: absolute;
+    width: 7rem;
+    height: 7rem;
+    left: 0.6vw;
+    top: 1vh;
+    border-radius: 50%;
+    background: #EAEAEA;
+}
+.CenterImg{
+    position: absolute;
+    width: 5.5rem;
+    height: 5.5rem;
+    left: 0.7vw;
+    top: 1.4vh;
+    border-radius: 40%;
+    background: #085a00;
+}
+.CenterImage{
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    left: 0.9vw;
+    top: 1.6vh;
+    border-radius: 40%;
+}
+.vendorName{
+    position: absolute;
+    left: 9vw;
+    top: 1.6vh;
+font-family: 'Karla';
+font-style: normal;
+font-weight: 700;
+font-size: 12px;
+line-height: 20px;
+/* or 190% */
+
+
+color: #707070;
+}
+@media screen and (max-width: 960px) {
+    .Center{
+        position: absolute;
+    width: 75.5vw;
+    height: 20vh;
+    left: 15vw;
+    top: 15vh;
+    
+    background: linear-gradient(92.05deg, #0D3E8F -1.37%, #1A1E51 101.15%);
+    border-radius: 25px 25px 0px 0px;
+    }
+    .CenterTop{
+        width: 10vw;
+        right: 3vw;
+        top: 1vh;
+    }
+    .CenterBottom{
+        position: absolute;
+        width: 75.5vw;
+        min-height: 60vh;
+        left: 15vw;
+        top: 35vh;
+    
+    background: #FFFFFF;
+    border-radius: 0px 0px 25px 25px;
+    }
+    .CenterImage{
+        position: absolute;
+        width: 4rem;
+        height: 4rem;
+        left: 0.9vw;
+        top: 1.6vh;
+        border-radius: 40%;
+    }    
+    .vendorName{
+        left: 15vw;
+    }
+    .vendorAction{
+        left: 15vw;
+        font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+    }
+    @media screen and (max-width: 720px) {
+        .CenterTop{
+            width: 17vw;
+            right: 3vw;
+            top: 1vh;
+        }
+        .CenterImg1{
+            left: 3vw;
+        }
+        .CenterImg2{
+            left: 1.5vw;
+        }
+        .CenterImg{
+            left: 2vw;
+        }
+        .CenterImage{
+            left: 2vw;
+            top: 1.5vh;
+        }
+        .vendorName{
+            left: 15vw;
+        }
+    }
+    
+}
