@@ -13,16 +13,13 @@ import { fetchTransactions } from "../services/transactions";
 const VendorTransaction = () => {
   const [activeTab, setActiveTab] = useState("All Transactions");
 
-  // @TODO write unit test for this function
   const transactionTabChangeHandler = (transactionTabName) => {
     setActiveTab(transactionTabName);
   };
 
   useEffect(() => {
-    // Fetch Transaction
-    (async () => console.log(await fetchTransactions()))()
-  }, [])
-
+    (async () => console.log(await fetchTransactions()))();
+  }, []);
 
   const listItemsClassName =
     "font-semibold cursor-pointer transition-all duration-200 delay-150 hover:mb-[translate-y-1] text-colorPrimary mr-[75px] 2xl:mr-[100px]";
@@ -37,9 +34,10 @@ const VendorTransaction = () => {
           {transactionTypes.map((transactionType) => (
             <li
               onClick={() => transactionTabChangeHandler(transactionType.name)}
-              className={`${listItemsClassName} ${activeTab === transactionType.name &&
+              className={`${listItemsClassName} ${
+                activeTab === transactionType.name &&
                 "border-b-colorSecondary  border-b-2"
-                }`}
+              }`}
               key={transactionType.name}
             >
               <a className="flex items-">
