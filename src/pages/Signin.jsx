@@ -109,7 +109,10 @@ const Signin = () => {
 					<div className="mt-[10px] text-center text-sm 2xl:text-xl text-[#8E8E8E]">
 						Don&apos;t have an account?{" "}
 						<Link to="/signup" className="text-colorPrimary font-medium">
-							Create
+							Create as Customer
+						</Link>{" "}<hr/>
+						<Link to="/vendorsignup" className="text-colorPrimary font-medium">
+							Create as Vendor
 						</Link>{" "}
 					</div>
 				</form>

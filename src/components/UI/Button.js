@@ -1,10 +1,10 @@
-import Forward from "../../assets/images/forward.svg";
+import Forward from "../../assets/images/svg/forward.svg";
 
 const Button = (props) => {
   const { children, disabled, forwardIcon, bgColor } = props;
 
   return (
-    <button
+    <Button
       disabled={disabled}
       className={`disabled:bg-[#D5D8DA] justify-center flex items-center px-[10px] w-full rounded-[5px] ${
         bgColor ? `${bgColor}` : "bg-colorPrimary"
@@ -16,7 +16,7 @@ const Button = (props) => {
           <img src={Forward} alt="forward" className="ml-2" />
         </span>
       )}
-    </button>
+    </Button>
   );
 };
 

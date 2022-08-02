@@ -35,10 +35,10 @@ const VendorTransactionDetails = () => {
         <TransactionDetails />
 
         <div className="flex relative items-end justify-center mb-[46px]">
-          <div className="absolute left-[22%] lg:left-[25%] 2xl:left-[35%]">
+          <div className="absolute left-[22%] lg:left-[40%] 2xl:left-[35%]">
             <p className="text-[#706E6E] font-semibold flex">Secured by</p>
           </div>
-          <div className="h-[31px] w-[75px] absolute left-[80%] -translate-x-[80%] lg:left-[60%] lg:-translate-x-[60%] bottom-[20px]">
+          <div className="h-[31px] w-[75px] absolute left-[80%] -translate-x-[80%] lg:left-[52%] lg:-translate-x-[60%] bottom-[20px]">
             <Logo logosm={true} />
           </div>
         </div>

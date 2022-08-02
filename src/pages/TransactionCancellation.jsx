@@ -1,5 +1,5 @@
 import Layout from "../components/Layout/Layout";
-import BackArrow from "../assets/images/back-arrow.svg";
+import BackArrow from "../assets/images/svg/back-arrow.svg";
 
 const TransactionCancellation = () => {
   return (

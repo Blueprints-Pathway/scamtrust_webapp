@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "../components/Layout/Layout";
 
-import MoreDots from "../assets/images/more-dots.svg";
-import AwaitingApproval from "../assets/images/awaiting-approval.svg";
-import Completed from "../assets/images/completed.svg";
-import Cancelled from "../assets/images/cancelled.svg";
-import Ongoing from "../assets/images/on-going.svg";
-import CancelledTab from "../assets/images/cancelled-tab.svg";
-import CompletedTab from "../assets/images/completed-tab.svg";
+import AwaitingApproval from "../assets/images/svg/awaiting-approval.svg";
+import Completed from "../assets/images/svg/completed.svg";
+import Cancelled from "../assets/images/svg/cancelled.svg";
+import Ongoing from "../assets/images/svg/on-going.svg";
+import CancelledTab from "../assets/images/svg/cancelled-tab.svg";
+import CompletedTab from "../assets/images/svg/completed-tab.svg";
+import TransactionType from "../components/TransactionType/TransactionType";
+import { fetchTransactions } from "../services/transactions";
 
 const VendorTransaction = () => {
   const [activeTab, setActiveTab] = useState("All Transactions");
@@ -17,8 +18,14 @@ const VendorTransaction = () => {
     setActiveTab(transactionTabName);
   };
 
+  useEffect(() => {
+    // Fetch Transaction
+    (async () => console.log(await fetchTransactions()))()
+  }, [])
+
+
   const listItemsClassName =
-    "font-semibold cursor-pointer hover:scale-105 transition-all duration-200 delay-150 hover:mb-[translate-y-1] text-colorPrimary mr-[75px] 2xl:mr-[100px]";
+    "font-semibold cursor-pointer transition-all duration-200 delay-150 hover:mb-[translate-y-1] text-colorPrimary mr-[75px] 2xl:mr-[100px]";
 
   return (
     <Layout>
@@ -30,10 +37,9 @@ const VendorTransaction = () => {
           {transactionTypes.map((transactionType) => (
             <li
               onClick={() => transactionTabChangeHandler(transactionType.name)}
-              className={`${listItemsClassName} ${
-                activeTab === transactionType.name &&
+              className={`${listItemsClassName} ${activeTab === transactionType.name &&
                 "border-b-colorSecondary  border-b-2"
-              }`}
+                }`}
               key={transactionType.name}
             >
               <a className="flex items-">
@@ -49,63 +55,18 @@ const VendorTransaction = () => {
             </li>
           ))}
         </ul>
-        <ul className="mb-[84.75px] 2xl:mb-[113px]">
-          {transactions.map((transaction) => {
-            const {
-              amount,
-              buyer,
-              date,
-              icon,
-              id,
-              transactionItem,
-              transactionStatus,
-            } = transaction;
-            const transactionStatusBgColor =
-              transactionStatus === "Awaiting approval"
-                ? "bg-[#2321644A]"
-                : transactionStatus === "Completed"
-                ? "bg-[#89D39D61]"
-                : transactionStatus === "Cancelled"
-                ? "bg-[#FF989E78]"
-                : transactionStatus === "On-going" && "bg-[#FEF28B66]";
-            return (
-              <li
-                key={id}
-                className="w-[927.75px] cursor-pointer hover:shadow-md transition-all duration-500 delay-150 2xl:w-[1237px] mb-5 flex justify-between items-center border border-[#D9D8D8] rounded-[15px] px-[6px] 2xl:px-[10px] py-3 2xl:py-4"
-              >
-                <div className="flex items-center w-[250px] 2xl:w-[300px]">
-                  <div
-                    className={`w-[37px] grid place-content-center ${transactionStatusBgColor} mr-[6px] h-[37px] overflow-hidden object-cover rounded-[5px]`}
-                  >
-                    <img
-                      src={icon}
-                      alt={transactionStatus}
-                      className="w-[19px] h-[19px]"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <p className="font-medium">{transactionItem}</p>
-                    <span className="font-bold text-xs">
-                      {transactionStatus}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="font-medium text-colorPrimary">{buyer}</div>
-
-                <div className="font-medium text-colorPrimary">{amount}</div>
-
-                <div className="font-medium text-colorPrimary">{date}</div>
-
-                <img
-                  src={MoreDots}
-                  alt="More info"
-                  className="cursor-pointer"
-                />
-              </li>
-            );
-          })}
-        </ul>
+        {/* TRANSACTION TYPE */}
+        {activeTab === "All Transactions" ? (
+          <TransactionType transactions={transactions} />
+        ) : activeTab === "Out-going" ? (
+          <TransactionType transactions={transactions} />
+        ) : activeTab === "Completed" ? (
+          <TransactionType transactions={transactions} />
+        ) : (
+          activeTab === "Cancelled" && (
+            <TransactionType transactions={transactions} />
+          )
+        )}
         pagination
       </div>
     </Layout>

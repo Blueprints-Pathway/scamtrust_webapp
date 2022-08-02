@@ -9,8 +9,7 @@ import shield from "../../images/shield.svg";
 import log from "../../images/log.svg";
 import support from "../../images/support.svg";
 import "./sidebar.css";
-import {  FaTimes } from "react-icons/fa";
-
+import { FaTimes } from "react-icons/fa";
 
 function SideNav({ close, menuActive }) {
 	const navigate = useNavigate();
@@ -19,9 +18,17 @@ function SideNav({ close, menuActive }) {
 	// 	}
 	return (
 		<aside class="" aria-label="Sidebar ">
-			<div className={`w-64 lg:inline-flex overflow-y-auto py-4 px-3 bg-gray-50 rounded flex flex-col  sideNav ${menuActive ? "active" : ""}`}>
+			<div
+				className={`w-64 lg:inline-flex overflow-y-auto py-4 px-3 bg-gray-50 rounded flex flex-col  sideNav ${
+					menuActive ? "active" : ""
+				}`}
+			>
 				<div className="lg:hidden">
-					<FaTimes onClick={close} style={{ color: "#fff" }} className="float-right" />
+					<FaTimes
+						onClick={close}
+						style={{ color: "#fff" }}
+						className="float-right"
+					/>
 				</div>
 				<div className="justify-center py-4 inline-flex">
 					<img className="item-center" src={logo} />
@@ -44,9 +51,12 @@ function SideNav({ close, menuActive }) {
 								class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
 							>
 								<img src={transfer} />
-								<span class="flex-1 ml-3 sidebtn whitespace-nowrap">
+								<Link
+									to="/transaction"
+									class="flex-1 ml-3 sidebtn whitespace-nowrap"
+								>
 									TRANSACTIONS
-								</span>
+								</Link>
 							</a>
 						</li>
 						<li>
@@ -55,43 +65,49 @@ function SideNav({ close, menuActive }) {
 								class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
 							>
 								<img src={wallet} />
-								<span class="flex-1 ml-3 whitespace-nowrap sidebtn">
+								<Link
+									to="/wallet"
+									class="flex-1 ml-3 whitespace-nowrap sidebtn"
+								>
 									WALLET
-								</span>
+								</Link>
 							</Link>
 						</li>
 						<li>
-							<a
+							<span
 								href="#"
 								class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
 							>
 								<img src={settings} />
-								<span class="flex-1 ml-3 whitespace-nowrap sidebtn">
+								<Link
+									to="/settingsVendor"
+									class="flex-1 ml-3 whitespace-nowrap sidebtn"
+								>
 									SETTINGS
-								</span>
-							</a>
+								</Link>
+							</span>
 						</li>
 					</ul>
 					<div>
 						<ul class="pb-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
 							<li>
-								<a
-									href="#"
+								<Link
+									to="#"
 									class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
 								>
 									<img src={support} />
 									<span class="ml-4">Support</span>
-								</a>
+								</Link>
 							</li>
 
 							<li>
-								<a
-									href="#"
+								<Link
+									to="/signin"
 									class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
 								>
 									<img src={log} />
 									<span class="ml-3">Log Out</span>
-								</a>
+								</Link>
 							</li>
 						</ul>
 						<div>

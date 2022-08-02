@@ -4,11 +4,11 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 function WalletNav({ open, menuActive }) {
 	return (
-		<div className="lg:container shadow-md sticky top-0 mx-auto">
+		<div className="lg:container-fluid shadow-md  md:container-fluid sticky top-0 ">
 			<div>
-				<nav className="flex mb-4  rounded">
+				<nav className=" flex mb-4  rounded">
 					<div
-						className="lg:container grow-1 flex flex-row justify-between items-center mx-auto walletnav"
+						className="lg:container-fluid grow-1 flex flex-row justify-between items-center walletnav"
 						style={{
 							backgroundColor: "white",
 							width: "100%",

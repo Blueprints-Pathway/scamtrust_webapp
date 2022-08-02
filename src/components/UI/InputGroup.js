@@ -1,5 +1,5 @@
-import MoreInfo from "../../assets/images/more-info.svg";
-import Eye from "../../assets/images/eye.svg";
+import MoreInfo from "../../assets/images/svg/more-info.svg";
+import Eye from "../../assets/images/svg/eye.svg";
 
 const InputGroup = (props) => {
   const { label, type, rcComponent, infoText, moreInfo, placeHolder,va } = props;

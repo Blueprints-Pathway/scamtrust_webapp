@@ -24,35 +24,40 @@ import SideBar from "./components/SideBar/SideBar";
 // import Dashboard from "./components/dashboard/Dashboard";
 // import DashBoard from './components/dashboard/Dashboard';
 import SettingsVendor from "./components/SettingsVendor/SettingsVendor";
-import VendorDashboard from "./components/dashboard/VendorDashboard";
+import VendorDashboard from "./components/dashboard/CustomerDashboard";
 import VendorSignup from "./pages/VendorSignup";
 import Signin from "./pages/Signin";
+import DashboardCustomer from "./components/dashboard/DashBoard";
+import DashBoard from "./components/dashboard/DashBoard";
+import Register from "./pages/Register";
+
 function App() {
 	return (
 		<Routes>
+			<Route path="/vendordashboard" element={<DashBoard />} />
+			<Route path="/modal" element={<DashboardModal />} />
 			<Route path="/dashboard" element={<VendorDashboard />} />
-			{/* <Route path="/customersignup" element={<CustomerSignup />} /> */}
-			<Route path="/customersignup" element={<Signup/>}/>
+			<Route path="/customersignup" element={<Signup />} />
 			<Route path="/email" element={<PasswordEmail />} />
 			<Route path="/token" element={<Email />} />
 			<Route path="/confirmPassword" element={<Confirm />} />
 			<Route path="/phoneNumber" element={<PasswordPhoneNumber />} />
 			<Route path="/tokenPhone" element={<TokenPhone />} />
 			<Route path="/sucess" element={<Sucess />} />
-			<Route path="/" element={<DashboardModal />} />
+			
 			<Route path="/wallet" element={<Wallet />} />
 			<Route path="/Customerwallet" element={<CustomerWallet />} />
-			<Route path="/vendorsignup" element={<VendorSignup />} />
+			<Route path="/vendorsignup" element={<Register />} />
 			<Route path="/signup" element={<Signup />} />
 			<Route path="/bvn" element={<BVN />} />
-			<Route path="/signin" element={<Signin/>}/>
+			<Route path="/signin" element={<Signin />} />
 			<Route path="/setPassword" element={<SetPassword />} />
 			<Route path="/transaction" element={<Transaction />} />
 			<Route path="/activate" element={<Activate />} />
 			<Route path="/securityquestion" element={<SecurityQuestion />} />
 
 			<Route path="/sideBar" element={<SideBar />} />
-			{/* <Route path="/dashBoard" element={<DashBoard />} /> */}
+
 			<Route path="/settingsVendor" element={<SettingsVendor />} />
 		</Routes>
 	);

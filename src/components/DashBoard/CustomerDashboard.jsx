@@ -25,7 +25,7 @@ function VendorDashboard() {
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 						<div className="p-5 ">
 							<div className="grid grid-cols-1 gap-10">
-								<div className=" border">
+								<div className=" p-5 rounded-lg bg-white border">
 									<div className="mb-2">
 										<h6
 											style={{
@@ -40,7 +40,7 @@ function VendorDashboard() {
 									<hr
 										className="border-1"
 										style={{
-											borderColor: "#86D19B",
+											border: "solid #86D19B",
 										}}
 									/>
 
@@ -118,7 +118,7 @@ function VendorDashboard() {
 									<hr
 										className="border-1"
 										style={{
-											borderColor: "#86D19B",
+											border: "solid #86D19B",
 										}}
 									/>
 									<div className="my-3">
