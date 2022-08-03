@@ -5,7 +5,7 @@ const ProductItemDetails = (props) => {
   return (
     <div className="flex justify-between mb-5 2xl:mb-[40px]">
       <h6 className="text-[#242323] font-medium 2xl:text-xl">{headingDesc}</h6>
-      <p className="text-[#7D8287] 2xl:text-xl text-right w-[337px]">
+      <p className="text-[#7D8287] font-secondary font-light 2xl:text-xl text-right w-[337px]">
         {productItem}
       </p>
     </div>
@@ -13,19 +13,19 @@ const ProductItemDetails = (props) => {
 };
 
 const ActionButton = (props) => {
-  const { bgClassName, textColor } = props;
+  const { bgClassName, textColor, children } = props;
   return (
     <button
-      className={`py-5 px-[123px] ${textColor} ${bgClassName} hover:shadow-md hover:-translate-y-1 rounded-[5px] text-lg`}
+      className={`py-5 px-[123px] ${textColor} ${bgClassName} transition-all duration-150 hover:shadow-md hover:-translate-y-1 rounded-[5px] text-lg`}
     >
-      Decline
+      {children}
     </button>
   );
 };
 
 const TransactionDetails = () => {
   return (
-    <div className="mb-[131.25px] 2xl:mb-[175px]">
+    <div className="mb-[131.25px] 2xl:mb-[175px] font-secondary">
       <form className="mt-4 2xl:mt-5 shadow-md rounded-[20px] overflow-hidden">
         <h4 className="text-[#333333] bg-[#EAEAEA] h-[75px] flex items-center pl-[35px] 2xl:pl-[50px] 2xl:h-[100px] font-bold 2xl:text-xl">
           Transaction details
@@ -49,8 +49,10 @@ const TransactionDetails = () => {
         </div>
       </form>
       <div className="flex justify-around mt-[75px] 2xl:mt-[100px]">
-        <ActionButton bgClassName="bg-[#EDEDED]" />
-        <ActionButton bgClassName="bg-colorSecondary" textColor="text-white" />
+        <ActionButton bgClassName="bg-[#EDEDED]">Decline</ActionButton>
+        <ActionButton bgClassName="bg-colorSecondary" textColor="text-white">
+          Accept
+        </ActionButton>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Box from "@mui/material/Box";
 import { createTheme } from "@mui/material";
+import ReactStars from "react-rating-stars-component";
 
 import Layout from "../components/Layout/Layout";
 import BackArrow from "../assets/images/svg/back-arrow.svg";
@@ -11,7 +12,22 @@ import TransactionDetails from "../components/TransactionDetails/TransactionDeta
 import Logo from "../components/branding/Logo/Logo";
 import { fetchTransaction } from "../services/transactions";
 
-const VendorTransactionDetails = () => {
+const ProductItemDetails = (props) => {
+  const { headingDesc, count } = props;
+  return (
+    <div className="flex justify-between mb-5 2xl:mb-[40px]">
+      <h6 className="text-[#242323] font-medium 2xl:text-xl">{headingDesc}</h6>
+      <ReactStars
+        count={5}
+        onChange={() => null}
+        size={15}
+        activeColor="#FFAA00"
+      />
+    </div>
+  );
+};
+
+const VendorTransactionCompleted = () => {
   const theme = createTheme({
     components: {
       // Name of the component
@@ -57,7 +73,7 @@ const VendorTransactionDetails = () => {
 
           <div>
             <h4 className="font-bold text-[#1B1B1B] 2xl:text-xl">
-              Status: <span className="text-[#7D8287]">Awaiting Approval</span>
+              Status: <span className="text-[#7D8287]">Completed</span>
             </h4>
             <span className="2xl:text-xl text-[#1B1B1B]">Today, 8:48 AM</span>
           </div>
@@ -74,7 +90,21 @@ const VendorTransactionDetails = () => {
           </Box>
         </div>
 
-        <TransactionDetails />
+        <div className="mb-[131.25px] 2xl:mb-[175px] font-secondary">
+          <form className="mt-4 2xl:mt-5 shadow-md rounded-[20px] overflow-hidden">
+            <h4 className="text-[#333333] bg-[#EAEAEA] h-[75px] flex items-center pl-[35px] 2xl:pl-[50px] 2xl:h-[100px] font-bold 2xl:text-xl">
+              Ratings
+            </h4>
+
+            <div className="2xl:px-[100px] px-[75px] 2xl:py-10 py-[30px]">
+              <ProductItemDetails headingDesc="Delivery" count="2" />
+              <ProductItemDetails headingDesc="Price" count="5" />
+              <ProductItemDetails headingDesc="Quantity" count="2" />
+              <ProductItemDetails headingDesc="Service" count="4" />
+              <ProductItemDetails headingDesc="Quality" count="2.2" />
+            </div>
+          </form>
+        </div>
 
         <div className="flex relative items-end justify-center mb-[46px]">
           <div className="absolute left-[22%] lg:left-[40%] 2xl:left-[35%]">
@@ -89,4 +119,4 @@ const VendorTransactionDetails = () => {
   );
 };
 
-export default VendorTransactionDetails;
+export default VendorTransactionCompleted;

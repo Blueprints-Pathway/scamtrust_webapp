@@ -1,11 +1,9 @@
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.App {
-  text-align: center;
+body {
+  background-color: #e2e5ea;
 }
 
 .App-logo {

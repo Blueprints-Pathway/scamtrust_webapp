@@ -46,7 +46,7 @@ const TransactionType = (props) => {
 
             <div className="font-medium text-colorPrimary">{buyer}</div>
 
-            <div className="font-medium text-colorPrimary">{amount}</div>
+            <div className="font-medium text-colorPrimary">₦ {amount}</div>
 
             <div className="font-medium text-colorPrimary">{date}</div>
 
