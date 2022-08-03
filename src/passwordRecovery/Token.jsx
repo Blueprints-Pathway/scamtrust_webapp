@@ -15,7 +15,7 @@ const Token = ({ length, label, loading, onComplete }) => {
     if (slot !== length - 1) {
       inputs.current[slot + 1].focus();
     }
-    if (newCode.every(num => num !== "")) {
+    if (newCode.every((num) => num !== "")) {
       onComplete(newCode.join(""));
     }
   };
@@ -28,10 +28,8 @@ const Token = ({ length, label, loading, onComplete }) => {
       inputs.current[slot - 1].focus();
     }
   };
-
   return (
     <div className="code-input grid  p-3  container-fluid">
-
       <div className="code-inputs mt-5">
         {code.map((num, idx) => {
           return (
@@ -43,9 +41,9 @@ const Token = ({ length, label, loading, onComplete }) => {
               value={num}
               autoFocus={!code[0].length && idx === 0}
               readOnly={loading}
-              onChange={e => processInput(e, idx)}
-              onKeyUp={e => onKeyUp(e, idx)}
-              ref={ref => inputs.current.push(ref)}
+              onChange={(e) => processInput(e, idx)}
+              onKeyUp={(e) => onKeyUp(e, idx)}
+              ref={(ref) => inputs.current.push(ref)}
             />
           );
         })}

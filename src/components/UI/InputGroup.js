@@ -2,7 +2,8 @@ import MoreInfo from "../../assets/images/svg/more-info.svg";
 import Eye from "../../assets/images/svg/eye.svg";
 
 const InputGroup = (props) => {
-  const { label, type, rcComponent, infoText, moreInfo, placeHolder,va } = props;
+  const { label, type, rcComponent, infoText, moreInfo, placeHolder, va } =
+    props;
 
   return (
     <div className="flex flex-col">
@@ -21,7 +22,6 @@ const InputGroup = (props) => {
       <div className="relative">
         <input
           type={type}
-       
           id={label}
           placeholder={placeHolder && placeHolder}
           className={`border-[0.5px] w-full ${

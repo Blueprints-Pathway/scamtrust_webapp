@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600&family=Lato:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
 
 @tailwind base;
@@ -20,12 +19,10 @@ a {
 * {
   box-sizing: border-box;
 }
-=======
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100&family=Red+Hat+Display:wght@500;700;900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100&family=Red+Hat+Display:wght@500;700;900&display=swap");
 
 *,
 *::before,
@@ -37,14 +34,13 @@ a {
   text-decoration: none;
   list-style: none;
   border: none;
-  font-family: 'Montserrat', sans-serif;
-  
+  font-family: "Montserrat", sans-serif;
 }
 
 :root {
-  --dark-color:17%;
-  --light-color:95%;
-  --white-color:100%;
+  --dark-color: 17%;
+  --light-color: 95%;
+  --white-color: 100%;
   --primary-color-hue: 252;
   --color-white: hsl(252, 30%, var(--white-color));
   --color-light: hsl(252, 30%, var(--light-color));
@@ -55,78 +51,62 @@ a {
   --color-danger: hsl(0, 95%, 65%);
   --color-dark: hsl(252, 30%, var(--dark-color));
   --color-black: hsl(252, 30%, 10%);
-  --afterC: '0';
+  --afterC: "0";
 }
 
 html {
   font-size: 80%;
   height: 100%;
-  scrollbar-color: #A6A6A6 #3AB75D;
+  scrollbar-color: #a6a6a6 #3ab75d;
   scrollbar-width: 2px;
-  
 }
 
 body {
-  background: #E2E5EA;
- /*  background-color: var(--color-light); */
-  overflow-x: hidden;   
+  background: #e2e5ea;
+  /*  background-color: var(--color-light); */
+  overflow-x: hidden;
   color: var(--color-dark);
   margin: auto;
 
   padding-left: 0px;
   padding-right: 0px;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
-  
 }
-
-
-
 
 .container {
   width: 70%;
   margin: auto;
-
 }
 
 .row {
-
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-
 }
 
 .row.center {
   justify-content: center;
 }
 
-
-
-
 /* footer start*/
-
-
-
 
 /* footer ends */
 
 /* main starts */
-main{
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+main {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 /* main ends */
-
->>>>>>> dae3af2a4199dc08cf82951a49c6f9e59b087961
