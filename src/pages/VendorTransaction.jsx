@@ -18,7 +18,13 @@ const VendorTransaction = () => {
   };
 
   useEffect(() => {
-    (async () => console.log(await fetchTransactions()))();
+    (async () => {
+      try {
+        console.log(await fetchTransactions());
+      } catch (error) {
+        console.log(error);
+      }
+    })();
   }, []);
 
   const listItemsClassName =

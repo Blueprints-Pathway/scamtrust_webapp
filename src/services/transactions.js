@@ -3,11 +3,11 @@ import { scamtrustApi } from "../constants/apis";
 const ApiEndPoint = `${scamtrustApi}/transaction`;
 
 const TOKEN =
-  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vc2NhbXRydXN0Lmhlcm9rdWFwcC5jb20vYXBpL3YxL2F1dGgvbG9naW4iLCJpYXQiOjE2NTkzMTEyMDMsImV4cCI6MTY1OTMxNDgwMywibmJmIjoxNjU5MzExMjAzLCJqdGkiOiJMQ3RaVHc4ekpaanFud2FLIiwic3ViIjoiMTQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.m-6OXvmPkuWEGtb9yalS9QopNlEtfhYTfSD9aQu5HD4";
+  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vc2NhbXRydXN0Lmhlcm9rdWFwcC5jb20vYXBpL3YxL2F1dGgvbG9naW4iLCJpYXQiOjE2NTkzNTI0MjQsImV4cCI6MTY1OTM1NjAyNCwibmJmIjoxNjU5MzUyNDI0LCJqdGkiOiI0SjlPdXVqR2N5ZHhGeGFxIiwic3ViIjoiMTQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.3WNC14ycHfLRVcn_gfDOJWaQL8-QapXlXKyscf6UISo";
 
 const apiConfig = (method) => {
   const config = {
-    method: method,
+    method,
     headers: {
       "Content-Type": "application/json",
       AUTHORIZATION: `Bearer ${TOKEN}`,

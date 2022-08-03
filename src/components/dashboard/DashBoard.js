@@ -1,5 +1,6 @@
 import React, { Component, useState, useEffect } from 'react'
-import './DashBoard.css'
+// import './DashBoard.css'
+import "./Dashboard.css"
 import { sideBarItems } from '../SideBar/sideBarItems'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight, faSearch, faThumbTack, faBook, faShareNodes, faEye, faWallet } from "@fortawesome/free-solid-svg-icons";
