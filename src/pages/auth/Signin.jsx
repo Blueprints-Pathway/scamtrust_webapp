@@ -1,7 +1,7 @@
-import Logo from "../components/branding/Logo/Logo";
-import CustomerTestimony from "../components/CustomerTestimony/CustomerTestimony";
-import Button from "../components/UI/Button";
-import InputGroup from "../components/UI/InputGroup";
+import Logo from "../../components/branding/Logo/Logo";
+import CustomerTestimony from "../../components/CustomerTestimony/CustomerTestimony";
+import Button from "../../components/UI/Button";
+import InputGroup from "../../components/UI/InputGroup";
 
 const Signin = () => {
   return (
