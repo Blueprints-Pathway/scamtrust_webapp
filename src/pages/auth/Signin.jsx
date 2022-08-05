@@ -6,6 +6,7 @@ import Logo from "../../components/branding/Logo/Logo";
 import CustomerTestimony from "../../components/CustomerTestimony/CustomerTestimony";
 import Eye from "../../assets/images/svg/eye.svg";
 import { login, reset } from "../../features/auth/authSlice";
+import { fetchUser } from "../../services/auth";
 
 const Signin = () => {
   const [password, setPassword] = useState();
@@ -37,8 +38,12 @@ const Signin = () => {
       // SHOW ERROR FROM MESSAGE
     }
     if (isSuccess || user) {
-      // Navigate to dashboard
-      navigate("/dashboard")
+      // (async () => await fetchUser())();
+      if (user.data.usertype === "VENDOR") {
+        navigate("/customer-dashboard");
+      } else if (user.data.usertype === "VENDOR") {
+        navigate("/vendor-dashboard");
+      }
     }
     dispatch(reset());
   }, [user, isError, isSuccess, message, navigate, dispatch]);
