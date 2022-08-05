@@ -1,9 +1,11 @@
 import BellNotification from "../../assets/images/svg/bell-notification.svg";
 
-const Header = () => {
+const Header = (props) => {
+  const { heading } = props;
+
   return (
     <div className="w-full h-full shadow-md px-[52px] flex justify-between items-center">
-      <h3 className="font-semibold text-3xl text-colorPrimary">Transaction</h3>
+      <h3 className="font-semibold text-3xl text-colorPrimary">{heading}</h3>
 
       <div className="flex items-center">
         <img
