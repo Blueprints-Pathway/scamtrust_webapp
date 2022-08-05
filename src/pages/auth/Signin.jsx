@@ -1,9 +1,48 @@
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+
 import Logo from "../../components/branding/Logo/Logo";
 import CustomerTestimony from "../../components/CustomerTestimony/CustomerTestimony";
-import Button from "../../components/UI/Button";
-import InputGroup from "../../components/UI/InputGroup";
+import Eye from "../../assets/images/svg/eye.svg";
+import { login, reset } from "../../features/auth/authSlice";
 
 const Signin = () => {
+  const [password, setPassword] = useState();
+  const [email, setEmail] = useState();
+  const [passwordVisibility, setPasswordVisibility] = useState(false);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const { isLoading, isError, user, message, isSuccess } = useSelector(
+    (state) => state.auth
+  );
+
+  const togglePasswordVisibility = () => {
+    setPasswordVisibility((prevState) => !prevState);
+  };
+
+  const loginHandler = (e) => {
+    e.preventDefault();
+    const payload = {
+      email,
+      password,
+    };
+    dispatch(login(payload));
+  };
+
+  useEffect(() => {
+    if (isError) {
+      // SHOW ERROR FROM MESSAGE
+    }
+    if (isSuccess || user) {
+      // Navigate to dashboard
+      navigate("/dashboard")
+    }
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, navigate, dispatch]);
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 w-full relative min-h-screen">
       <div className="relative lg:block hidden bg-[#F9F9F9] px-[63px] 2xl:px-[89px] py-[36px] 2xl:py-[51px]">
@@ -20,10 +59,40 @@ const Signin = () => {
           </h3>
 
           <div className="mb-[30px]">
-            <InputGroup placeHolder="Email Address" type="email" />
+            <div className="relative">
+              <label className="text-[13px] 2xl:text-lg text-colorTertiary mb-[10px] 2xl:mb-[15px]">
+                Email
+              </label>
+              <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                placeholder={"email"}
+                className={`border-[0.5px] w-full ${"h-[35px]"} border-[#D5D8DA] h-[30px] 2xl:h-[40px] rounded-[5px] focus:outline-none px-[15px] 2xl:text-lg py-2 placeholder:2xl:text-xl text-[13px] placeholder:text-[13px] placeholder:text-[#8E8E8E] placeholder:font-medium`}
+              />
+            </div>
           </div>
           <div className="mb-[30px]">
-            <InputGroup placeHolder="Password" type="password" />
+            <div className="relative">
+              <label className="text-[13px] 2xl:text-lg text-colorTertiary mb-[10px] 2xl:mb-[15px]">
+                Password
+              </label>
+              <input
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                id="myInput"
+                type={passwordVisibility ? "password" : "text"}
+                placeholder={"password"}
+                className={`border-[0.5px] w-full ${"h-[35px]"} border-[#D5D8DA] h-[30px] 2xl:h-[40px] rounded-[5px] focus:outline-none px-[15px] 2xl:text-lg py-2 placeholder:2xl:text-xl text-[13px] placeholder:text-[13px] placeholder:text-[#8E8E8E] placeholder:font-medium`}
+              />
+              <span className="show" onClick={togglePasswordVisibility}>
+                <img
+                  src={Eye}
+                  alt="view"
+                  className="absolute right-[17px] cursor-pointer top-1/2 -translate-y-2/2"
+                />
+              </span>
+            </div>
           </div>
 
           <div className="flex justify-between font-normal text-sm 2xl:text-xl text-[#8E8E8E] mb-[75px] 2xl:mb-[100px]">
@@ -34,13 +103,19 @@ const Signin = () => {
             <a className="">Forgot Password? </a>
           </div>
 
-          <Button>Continue</Button>
+          <button
+            onClick={loginHandler}
+            className={`disabled:bg-[#D5D8DA] justify-center flex items-center px-[10px] w-full rounded-[5px] ${"bg-colorPrimary"} py-2 text-white text-[13px] 2xl:text-lg`}
+            type="submit"
+          >
+            {isLoading ? "Loading..." : "Continue"}
+          </button>
 
           <div className="mt-[10px] text-center text-sm 2xl:text-xl text-[#8E8E8E]">
             Don&apos;t have an account?{" "}
-            <a href="#" className="text-colorPrimary font-medium">
+            <Link to="/signup" className="text-colorPrimary font-medium">
               Create
-            </a>{" "}
+            </Link>{" "}
           </div>
         </form>
       </div>
