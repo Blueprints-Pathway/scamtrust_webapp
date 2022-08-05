@@ -30,7 +30,9 @@ const Signin = () => {
 			dispatch(signinAsync(payload));
 			setLoading(false);
 			console.log("hello");
-		} catch (error) {}
+		} catch (error) {
+			alert("hello")
+		}
 	};
 	useEffect(() => {
 		if (logAuth.isAuth) {

@@ -26,10 +26,15 @@ export const signinAsync = createAsyncThunk(
 			const request = await axios.post(API_URL, payload, config);
 			const response = request.data;
 			console.log(token, "payload");
-			console.log(request);
+			console.log(request, "hello");
 			return response;
 		} catch (error) {
-			console.log(error.response);
+			swal({
+				title: "InValid Email!",
+				text: error.response.data.message,
+				icon: "error",
+			});
+			
 		}
 	}
 );
@@ -155,7 +160,6 @@ export const authSlice = createSlice({
 			state.loading = true;
 		},
 		[registerAsync.fulfilled]: (state, action) => {
-			
 			localStorage.setItem("token", action.payload.access_token);
 			state.token = action.payload.access_token;
 			state.isAuth = true;
