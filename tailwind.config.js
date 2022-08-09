@@ -6,8 +6,8 @@ module.exports = {
       //   sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       // },
       fontFamily: {
-        primary: ["Lato", "sans-serif"],
-        secondary: ["Poppins", "sans-serif"],
+        secondary: ["Lato", "sans-serif"],
+        primary: ["Poppins", "sans-serif"],
         // DMSans: ["DM Sans", "sans-serif"],
       },
       colors: {

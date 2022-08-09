@@ -26,7 +26,7 @@ const InputGroup = (props) => {
           placeholder={placeHolder && placeHolder}
           className={`border-[0.5px] w-full ${
             rcComponent && "h-[35px]"
-          } border-[#D5D8DA] h-[30px] 2xl:h-[40px] rounded-[5px] focus:outline-none px-[15px] 2xl:text-lg py-2 placeholder:2xl:text-xl text-[13px] placeholder:text-[13px] placeholder:text-[#8E8E8E] placeholder:font-medium`}
+          } border-[#D5D8DA] h-[30px] 2xl:h-[40px] rounded-[5px] focus:outline-none px-[15px] 2xl:text-lg py-2 placeholder:2xl:text-xl text-[13px] placeholder:text-[12px] placeholder:text-[#8E8E8E]`}
         />
         {type === "password" && (
           <img

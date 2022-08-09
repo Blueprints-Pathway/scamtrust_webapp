@@ -1,7 +1,10 @@
 import { Routes, Route } from "react-router-dom";
+import "react-datepicker/dist/react-datepicker.css";
 
 import Signin from "./pages/auth/Signin";
 import CustomerDashboard from "./pages/dashboard/CustomerDashboard";
+import CustomerSignup from "./pages/auth/CustomerSignup";
+import SetPassword from "./pages/auth/SetPassword";
 
 // import PasswordEmail from "./passwordRecovery/PasswordEmail";
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -14,8 +17,7 @@ import CustomerDashboard from "./pages/dashboard/CustomerDashboard";
 // import DashboardModal from "./components/DashBoard/DashboardModal";
 // import Wallet from "./components/wallet/wallet";
 // import CustomerWallet from "./components/wallet/CustomerWallet";
-// import Signup from "./pages/Signup";
-// import CustomerSignup from "./pages/customer/CustomerSignup";
+// import SetPassword from "./pages/SetPin";
 // import CustomerTransaction from "./pages/VendorTransaction";
 // import VendorTransactionCancellation from "./pages/VendorTransactionCancellation";
 // import CustomerSignup from "./pages/signup/Signup";
@@ -34,10 +36,10 @@ function App() {
     <Routes>
       <Route path="/" element={<Signin />} />
       <Route path="/customer-dashboard" element={<CustomerDashboard />} />
-
-      {/* <Route path="/signup/customer" element={<CustomerSignup />} /> */}
-      {/*<Route path="/signup" element={<Signup />} />
-      <Route path="/customersignup" element={<CustomerSignup />} />
+      <Route path="/signup/vendor" element={<CustomerSignup />} />
+      <Route path="/signup/set-password" element={<SetPassword />} />
+      {/* <Route path="/signup" element={<SetPassword />} /> */}
+      {/*<Route path="/customersignup" element={<CustomerSignup />} />
       <Route path="/email" element={<PasswordEmail />} />
       <Route path="/token" element={<Email />} />
       <Route path="/confirmPassword" element={<Confirm />} />

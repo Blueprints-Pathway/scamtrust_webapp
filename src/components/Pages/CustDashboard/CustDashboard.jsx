@@ -2,7 +2,13 @@ import Logo from "../../branding/Logo/Logo";
 // import Nav from "../nav/Nav";
 import "./CustDashboard.css";
 
-const CustomerDashboard = () => {
+const CustomerDashboard = (props) => {
+  const { setShowInitiateTransaction } = props;
+
+  const onCreateTransactionClicked = () => {
+    setShowInitiateTransaction(prevState => !prevState)
+  };
+
   return (
     <div>
       {" "}
@@ -269,6 +275,7 @@ const CustomerDashboard = () => {
                           style={{
                             backgroundColor: "#3AB75D",
                           }}
+                          onClick={onCreateTransactionClicked}
                         >
                           Create Transaction{" "}
                           <i
