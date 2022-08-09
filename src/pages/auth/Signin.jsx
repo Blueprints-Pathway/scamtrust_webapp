@@ -9,8 +9,8 @@ import { login, reset } from "../../features/auth/authSlice";
 import { fetchUser } from "../../services/auth";
 
 const Signin = () => {
-  const [password, setPassword] = useState();
-  const [email, setEmail] = useState();
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
   const [passwordVisibility, setPasswordVisibility] = useState(false);
 
   const dispatch = useDispatch();
@@ -118,6 +118,7 @@ const Signin = () => {
           </div>
 
           <button
+            disabled={!password.length || !email.length}
             className={`disabled:bg-[#D5D8DA] justify-center flex items-center px-[10px] w-full rounded-[5px] ${"bg-colorPrimary"} py-2 text-white text-[13px] 2xl:text-lg`}
             type="submit"
           >
