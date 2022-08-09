@@ -20,12 +20,15 @@ export const login = createAsyncThunk(
     try {
       return await authService.login(loginData);
     } catch (error) {
-      const message =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
+      const message = error.response.data.message
+        ? error.response.data.message[
+            Object.keys(error.response.data.message)[0]
+          ][0]
+        : (error.response &&
+            error.response.data &&
+            error.response.data.message) ||
+          error.message ||
+          error.toString();
       return thunkApi.rejectWithValue(message);
     }
   }

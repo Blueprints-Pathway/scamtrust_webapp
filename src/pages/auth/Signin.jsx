@@ -44,8 +44,8 @@ const Signin = () => {
       } else if (user.data.usertype === "VENDOR") {
         navigate("/vendor-dashboard");
       }
+      dispatch(reset());
     }
-    dispatch(reset());
   }, [user, isError, isSuccess, message, navigate, dispatch]);
 
   return (
@@ -58,10 +58,19 @@ const Signin = () => {
         <div className="block lg:hidden px-[63px] 2xl:px-[89px] py-[36px] 2xl:py-[51px]">
           <Logo />
         </div>
-        <form className="px-[20px] lg:px-[63px] 2xl:px-[89px] absolute mt-10 lg:mt-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] lg:w-[420px] 2xl:w-[560px]">
-          <h3 className="text-colorPrimary mb-[30px] font-extrabold text-2xl">
-            Welcome Back
-          </h3>
+        <form
+          onSubmit={loginHandler}
+          className="px-[20px] lg:px-[63px] 2xl:px-[89px] absolute mt-10 lg:mt-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] lg:w-[420px] 2xl:w-[560px]"
+        >
+          {isError ? (
+            <div className="bg-[#FF0000] text-center text-white rounded-md py-3 mb-[30px] text-sm">
+              {message}
+            </div>
+          ) : (
+            <h3 className="text-colorPrimary mb-[30px] font-extrabold text-2xl">
+              Welcome Back
+            </h3>
+          )}
 
           <div className="mb-[30px]">
             <div className="relative">
@@ -109,7 +118,6 @@ const Signin = () => {
           </div>
 
           <button
-            onClick={loginHandler}
             className={`disabled:bg-[#D5D8DA] justify-center flex items-center px-[10px] w-full rounded-[5px] ${"bg-colorPrimary"} py-2 text-white text-[13px] 2xl:text-lg`}
             type="submit"
           >
