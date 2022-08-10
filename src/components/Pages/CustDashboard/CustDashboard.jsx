@@ -86,7 +86,6 @@ const CustomerDashboard = (props) => {
                 type="text"
                 value={TRANSACTION_FEE === 0 ? "" : TRANSACTION_FEE}
                 disabled
-                placeholder="Enter amount"
                 className="w-[144px] ml-4 inline-block text-[10px] h-7 2xl:h-[34px] items-center disabled:bg-[#E6E7E8] border focus:outline-none border-[#E6E7E8] placeholder:text-[8px] 2xl:placeholder:text-xs pl-6 rounded-md"
               />
             </div>
@@ -98,7 +97,6 @@ const CustomerDashboard = (props) => {
                 type="text"
                 disabled
                 value={TOTAL_AMOUNT === 0 ? "" : TOTAL_AMOUNT}
-                placeholder="Enter amount"
                 className="w-[144px] ml-4 inline-block text-[10px] h-7 2xl:h-[34px] items-center disabled:bg-[#E6E7E8] border focus:outline-none border-[#E6E7E8] placeholder:text-[8px] 2xl:placeholder:text-xs pl-6 rounded-md"
               />
             </div>
