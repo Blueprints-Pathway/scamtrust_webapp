@@ -30,14 +30,14 @@ const Layout = (props) => {
 
   return (
     <>
-      <nav className={`${animation}${headerClassName}`}>
+      <nav className={`${animation}${headerClassName} fixed`}>
         <Header heading={heading} />
       </nav>
       <aside className={`${animation} ${asideClassName}`}>
         <Sidenav />
       </aside>
 
-      <main className={`${mainClassName}${animation}`}>{children}</main>
+      <main className={`${mainClassName}${animation} mt-[120px]`}>{children}</main>
     </>
   );
 };
