@@ -21,14 +21,16 @@ const Header = (props) => {
     <div
       className={`${headerItemClassName} flex justify-between items-center w-full h-full shadow-md`}
     >
-      <h3 className="font-semibold text-3xl text-colorPrimary">{heading}</h3>
+      <h3 className="font-medium lg:font-semibold text-xl lg:text-3xl text-colorPrimary">
+        {heading}
+      </h3>
       <div className="flex items-center">
         <img
           src={BellNotification}
           alt="notification"
-          className="w-[22px] h-[24px] mr-[56px]"
+          className="w-[22px] h-[24px] mr-2 lg:mr-[56px]"
         />
-        <span className="w-[46px] font-bold text-[21px] text-white h-[46px] bg-[#E36969] grid place-content-center overflow-hidden rounded-full">
+        <span className="lg:w-[46px] w-[30px] h-[30px] lg:h-[46px] font-bold text-base lg:text-[21px] text-white bg-[#E36969] grid place-content-center overflow-hidden rounded-full">
           CO
         </span>
       </div>
