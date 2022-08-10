@@ -1,12 +1,27 @@
+import { useMediaQuery } from "react-responsive";
+
 import BellNotification from "../../assets/images/svg/bell-notification.svg";
 
 const Header = (props) => {
   const { heading } = props;
 
-  return (
-    <div className="w-full h-full shadow-md px-[52px] flex justify-between items-center">
-      <h3 className="font-semibold text-3xl text-colorPrimary">{heading}</h3>
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1224px)",
+  });
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
+  const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
 
+  const headerItemClassName = isTabletOrMobile
+    ? "pl-[75px] pr-[25px]"
+    : "px-[52px] ";
+
+  return (
+    <div
+      className={`${headerItemClassName} flex justify-between items-center w-full h-full shadow-md`}
+    >
+      <h3 className="font-semibold text-3xl text-colorPrimary">{heading}</h3>
       <div className="flex items-center">
         <img
           src={BellNotification}
