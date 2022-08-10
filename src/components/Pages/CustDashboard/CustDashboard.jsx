@@ -3,6 +3,7 @@ import { useState } from "react";
 import Info from "../../../assets/images/svg/info.svg";
 import Chat from "../../../assets/images/svg/chat.svg";
 import SecuredBy from "../../../assets/images/svg/secured-by.svg";
+import Add from "../../../assets/images/svg/add.svg";
 
 const CustomerDashboard = (props) => {
   const { setShowInitiateTransaction } = props;
@@ -17,8 +18,8 @@ const CustomerDashboard = (props) => {
   const TOTAL_AMOUNT = +TRANSACTION_FEE + +transactionAmount;
 
   return (
-    <div className="flex justify-between">
-      <div className="min-w-[320px] 2xl:w-[685px]">
+    <div className="flex gap-7 justify-between">
+      <div className="min-w-[320px] w-[70%] 2xl:w-[685px]">
         <div className="w-full bg-[#FFFEFE] rounded-[24px] px-[37px] py-[29px] mb-[13px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
           <p className="font-semibold text-lg 2xl:text-2xl text-colorPrimary">
             Chukwudi Osinachi
@@ -102,7 +103,7 @@ const CustomerDashboard = (props) => {
             </div>
           </div>
         </div>
-        <div className="flex justify-around flex-wrap text-colorPrimary">
+        <div className="flex justify-around text-colorPrimary">
           <div className="min-w-[200px] hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mr-5">
             <div className="bg-[#ff9300] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
               <img
@@ -128,14 +129,29 @@ const CustomerDashboard = (props) => {
         </div>
 
         <div className="grid place-content-center mt-[100px]">
-          <img
-            src={SecuredBy}
-            alt="secured by scam trust"
-          />
+          <img src={SecuredBy} alt="secured by scam trust" />
         </div>
       </div>
 
-      <div className="bg-green-600">TRANSACTION SECTION</div>
+      <div className="w-full overflow-y-scroll py-8 px-12">
+        <div className="w-full mb-3 font-medium 2xl:font-bold text-base 2xl:text-lg text-colorPrimary flex justify-between pb-5 border-b border-b-[#CFD8DC]">
+          <p>All</p>
+          <p>Outgoing</p>
+          <p>Cancelled </p>
+          <p>Completed</p>
+        </div>
+
+        <div className="flex justify-between">
+          <div />
+          <button
+            onClick={onCreateTransactionClicked}
+            className="bg-colorGreen flex text-white items-center rounded-md px-2 py-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-700"
+          >
+            <span>Create transaction</span>
+            <img src={Add} alt="add" className="mb-[-6px]" />
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

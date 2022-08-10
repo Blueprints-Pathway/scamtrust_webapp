@@ -14,6 +14,7 @@ const Backdrop = (props) => {
         showTransactionPreview ||
         showTransactionSuccess
       }
+      style={{ zIndex: 40 }}
     >
       {children}
     </BackdropMUI>
