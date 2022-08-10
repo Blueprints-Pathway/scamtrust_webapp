@@ -32,23 +32,36 @@ const CustomerDashboard = () => {
   }, []);
   return (
     <Layout heading="Dashboard">
-      <Backdrop showInitiateTransaction={showInitiateTransaction}>
-        <InitiateTransaction
-          setShowInitiateTransaction={setShowInitiateTransaction}
-          setShowTransactionPreview={setShowTransactionPreview}
-        />
-      </Backdrop>
-      <Backdrop showTransactionPreview={showTransactionPreview}>
-        <TransactionPreview
-          setShowTransactionPreview={setShowTransactionPreview}
-          setShowTransactionSuccess={setShowTransactionSuccess}
-        />
-      </Backdrop>
-      <Backdrop showTransactionSuccess={showTransactionSuccess}>
-        <InitiationSuccessful
-          setShowTransactionSuccess={setShowTransactionSuccess}
-        />
-      </Backdrop>
+      {showInitiateTransaction ? (
+        <Backdrop showInitiateTransaction={showInitiateTransaction}>
+          <InitiateTransaction
+            setShowInitiateTransaction={setShowInitiateTransaction}
+            setShowTransactionPreview={setShowTransactionPreview}
+          />
+        </Backdrop>
+      ) : (
+        <></>
+      )}
+
+      {showTransactionPreview ? (
+        <Backdrop showTransactionPreview={showTransactionPreview}>
+          <TransactionPreview
+            setShowTransactionPreview={setShowTransactionPreview}
+            setShowTransactionSuccess={setShowTransactionSuccess}
+          />
+        </Backdrop>
+      ) : (
+        <></>
+      )}
+      {showTransactionSuccess ? (
+        <Backdrop showTransactionSuccess={showTransactionSuccess}>
+          <InitiationSuccessful
+            setShowTransactionSuccess={setShowTransactionSuccess}
+          />
+        </Backdrop>
+      ) : (
+        <></>
+      )}
       <CustDashboard setShowInitiateTransaction={setShowInitiateTransaction} />
     </Layout>
   );
