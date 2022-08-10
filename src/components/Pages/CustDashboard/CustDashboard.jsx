@@ -1,994 +1,143 @@
-import Logo from "../../branding/Logo/Logo";
-// import Nav from "../nav/Nav";
-import "./CustDashboard.css";
+import { useState } from "react";
+
+import Info from "../../../assets/images/svg/info.svg";
+import Chat from "../../../assets/images/svg/chat.svg";
+import SecuredBy from "../../../assets/images/svg/secured-by.svg";
 
 const CustomerDashboard = (props) => {
   const { setShowInitiateTransaction } = props;
 
+  const [transactionAmount, setTransactionAmount] = useState("");
+
   const onCreateTransactionClicked = () => {
-    setShowInitiateTransaction(prevState => !prevState)
+    setShowInitiateTransaction((prevState) => !prevState);
   };
 
+  const TRANSACTION_FEE = transactionAmount * 0.02;
+  const TOTAL_AMOUNT = +TRANSACTION_FEE + +transactionAmount;
+
   return (
-    <div>
-      {" "}
-      <div className="container-fluid mx-auto ">
-        <div className="flex flex-row">
-          {/* <div className="inline-flex">
-        <SideNav />
-      </div> */}
-          <div className="grow">
-            {/* <Nav /> */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-5 ">
-                <div className="grid grid-cols-1 gap-10">
-                  <div className=" border">
-                    <div className="mb-2">
-                      <h6
-                        style={{
-                          backgroundColor: "white",
-                        }}
-                        className=""
-                      >
-                        Chukwudi Osinachi
-                      </h6>
-                      <h6>ID - 6057702</h6>
-                    </div>
-                    <hr
-                      className="border-1"
-                      style={{
-                        borderColor: "#86D19B",
-                      }}
-                    />
+    <div className="flex justify-between">
+      <div className="min-w-[320px] 2xl:w-[685px]">
+        <div className="w-full bg-[#FFFEFE] rounded-[24px] px-[37px] py-[29px] mb-[13px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
+          <p className="font-semibold text-lg 2xl:text-2xl text-colorPrimary">
+            Chukwudi Osinachi
+          </p>
+          <p className="font-semibold text-lg 2xl:text-2xl text-[#7D8287]">
+            ID - 6057702
+          </p>
 
-                    <div className="py-3 ">
-                      <div className="flex justify-end ">
-                        <span>
-                          <i
-                            className="far  fa-eye pointer-events-none    transform -translate-y-1/2 "
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            id="myInput"
-                          ></i>
-                        </span>
-                      </div>
-                      <div className="grid grid-cols-2">
-                        <div>
-                          <h6>Total Balance</h6>
-                          <h4 className="">N500,000.00</h4>
-                        </div>
-                        <div>
-                          <h6>Pending Balance</h6>
-                          <h4>N250,000.00</h4>
-                        </div>
-                      </div>
-                    </div>
+          <div className="border-b-2 mb-5 2xl:mb-[53px] border-b-colorGreen mt-[13px]" />
 
-                    <div className="py-3">
-                      <div className="grid grid-cols-2">
-                        <div>
-                          <button
-                            className="btn font-bold py-2 px-4 rounded"
-                            style={{
-                              background: "#E9303B",
-                              borderRadius: "8.10345px",
-                              fontFamily: "Poppins",
-                              fontStyle: "normal",
-                              fontWeight: "600",
-                              fontSize: "14px",
-                              lineHeight: "21px",
-                              display: "flex",
-                              alignItems: "center",
+          <div className="flex justify-between">
+            <div className="flex flex-col text-left">
+              <h4 className="text-[#7d8287] font-semibold text-sm 2xl:text-lg">
+                Total Balance
+              </h4>
+              <h2 className="text-colorPrimary font-bold text-lg 2xl:text-3xl">
+                N 500,000.00
+              </h2>
+            </div>
 
-                              color: " #FFFFFF",
-                            }}
-                          >
-                            WITHDRAW
-                          </button>
-                        </div>
-                        <div>
-                          <button
-                            className="btn text-white font-bold py-2 px-10 rounded hover:bg-blue-700"
-                            style={{
-                              backgroundColor: "#3AB75D",
-                              borderRadius: "6.12667px",
-                              fontFamily: "Poppins",
-                              fontStyle: "normal",
-                              fontWeight: "600",
-                              fontSize: "14px",
-                              lineHeight: "21px",
-                              display: "flex",
-                              alignItems: "center",
+            <div className="flex flex-col text-left">
+              <h4 className="text-[#7d8287] font-semibold text-sm 2xl:text-lg">
+                Pending Balance
+              </h4>
+              <h2 className="text-[#7d8287] font-bold text-lg 2xl:text-3xl">
+                N 250,000.00
+              </h2>
+            </div>
+          </div>
 
-                              color: "#FFFFFF",
-                            }}
-                          >
-                            FUND
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+          <div className="flex justify-between mt-[20px] 2xl:mt-[53px]">
+            <button className="bg-[#E9303B] w-[100px] hover:shadow-xl transition-all duration-300 2xl:w-[143px] text-center text-white py-[9px] rounded-lg">
+              WITHDRAW
+            </button>
+            <button className="bg-colorGreen w-[100px] hover:shadow-xl transition-all duration-300 2xl:w-[143px] text-center text-white py-[9px] rounded-lg">
+              FUND
+            </button>
+          </div>
+        </div>
 
-                  <div className="p-5 rounded-lg bg-white border">
-                    <h3 className="text-2xl my-2">Fee Calculator</h3>
-                    <hr
-                      className="border-1"
-                      style={{
-                        borderColor: "#86D19B",
-                      }}
-                    />
-                    <div className="my-3">
-                      <div className="flex justify-between mb-2">
-                        <p>Enter Transaction amount:</p>
-                        <input
-                          type="text"
-                          className="border"
-                          placeholder="Enter amount"
-                        />
-                      </div>
-                      <div className="flex justify-between mb-2">
-                        <p>Transaction fee:</p>
-                        <input
-                          type="text"
-                          className="border"
-                          placeholder="Enter amount"
-                        />
-                      </div>
-                      <div className="flex justify-between mb-2">
-                        <p>Total amount:</p>
-                        <input
-                          type="text"
-                          className="border"
-                          placeholder="Enter amount"
-                        />
-                      </div>
-                    </div>
-                  </div>
+        {/* FEE CALCULATOR */}
+        <div className="w-full bg-[#FFFEFE] rounded-[24px] px-[37px] py-[29px] mb-[13px]  hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
+          <p className="2xl:text-xl text-colorPrimary">Fee Calculator</p>
 
-                  <div className="grid grid-cols-2  ">
-                    <div
-                      className="p-5 m-5 h-44 rounded-lg border"
-                      style={{
-                        backgroundColor: "#FFEFD9",
-                        borderRadius: "24px",
-                      }}
-                    >
-                      <div>
-                        <span
-                          style={{
-                            backgroundColor: "#FFEFD9",
-                            fontFamily: "Poppins",
-                            fontStyle: "normal",
-                            fontWeight: "600",
-                            fontSize: "20px",
-                            lineHeight: "30px",
-                            display: "flex",
-                            alignItems: "flex-end",
-                            color: "#232164",
-                          }}
-                        >
-                          FAQs
-                        </span>
-                        <h2
-                          style={{
-                            backgroundColor: "#FFEFD9",
-                            fontFamily: "poppins",
-                            fontStyle: "normal",
-                            fontWeight: "200",
-                            fontSize: "12px",
-                            lineHeight: "26px",
-                            /* or 284% */
+          <div className="border-b-2 mb-5 2xl:mb-[53px] border-b-colorGreen mt-[13px]" />
 
-                            color: "#1B1B1B",
-                          }}
-                        >
-                          Find answers instantly
-                        </h2>
-                      </div>
-                    </div>
-
-                    <div
-                      className="p-5 m-5 rounded-lg h-44  border"
-                      style={{
-                        backgroundColor: " #E2D8F1",
-                        borderRadius: "24px",
-                      }}
-                    >
-                      <div>
-                        <span
-                          style={{
-                            backgroundColor: " #E2D8F1",
-                            fontFamily: "Poppins",
-                            fontStyle: "normal",
-                            fontWeight: "600",
-                            fontSize: "20px",
-                            lineHeight: "30px",
-                            display: "flex",
-                            alignItems: "flex-end",
-                            color: "#232164",
-                          }}
-                        >
-                          Chat
-                        </span>
-                        <h2
-                          style={{
-                            backgroundColor: " #E2D8F1",
-                            fontFamily: "poppins",
-                            fontStyle: "normal",
-                            fontWeight: "200",
-                            fontSize: "12px",
-                            lineHeight: "26px",
-                            /* or 284% */
-
-                            color: "#1B1B1B",
-                          }}
-                        >
-                          Start a conversation now
-                        </h2>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="mt-5 flex"
-                    style={{
-                      justifyContent: "center",
-                    }}
-                  >
-                    <h2>Secured by</h2>
-                    <div>
-                      <img
-                        alt="logo"
-                        style={{
-                          width: "50px",
-                          height: "20px",
-                          display: "inline",
-                        }}
-                        src={Logo}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-5">
-                {" "}
-                <div className="p-5 rounded-lg bg-white border">
-                  <div className="mb-2 flex justify-between">
-                    <span>All</span>
-                    <span>OutGoing</span>
-                    <span>Cancelled</span>
-                    <span>Completed</span>
-                  </div>
-                  <hr
-                    className="border-1"
-                    style={{
-                      borderColor: "#86D19B",
-                    }}
-                  />
-
-                  <div className="py-3 ">
-                    <div className="flex justify-end mb-4">
-                      <span>
-                        <button
-                          className=" hover:bg-blue-700 text-white font-bold py-1 px-4 rounded"
-                          style={{
-                            backgroundColor: "#3AB75D",
-                          }}
-                          onClick={onCreateTransactionClicked}
-                        >
-                          Create Transaction{" "}
-                          <i
-                            className="fas fa-plus  my-2 mx-1 p-0.5"
-                            style={{
-                              borderRadius: "50px",
-                              color: "black",
-                              background: "#FFFFFF",
-                              boxShadow:
-                                "3.03571px 3.03571px 6.07143px rgba(100, 96, 96, 0.25",
-                            }}
-                          ></i>
-                        </button>
-                      </span>
-                    </div>
-                    <div className=" flex justify-between grid-cols-4">
-                      <div>
-                        <span
-                          style={{
-                            color: "#A6A6A6",
-                          }}
-                        >
-                          Transactions
-                        </span>
-                        <div>
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                            className=""
-                          >
-                            Iphone 11 ....
-                          </h4>
-                          <small
-                            style={{
-                              fontFamily: "poppins",
-                              fontStyle: "normal",
-
-                              fontSize: "10px",
-                            }}
-                          >
-                            Awaiting approval
-                          </small>
-                        </div>
-                        <div>
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                            className=""
-                          >
-                            Iphone 11 ....
-                          </h4>
-                          <small
-                            style={{
-                              fontFamily: "poppins",
-                              fontStyle: "normal",
-
-                              fontSize: "10px",
-                            }}
-                          >
-                            Awaiting approval
-                          </small>
-                        </div>
-
-                        <div>
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                            className=""
-                          >
-                            Iphone 11 ....
-                          </h4>
-                          <small
-                            style={{
-                              fontFamily: "poppins",
-                              fontStyle: "normal",
-
-                              fontSize: "10px",
-                            }}
-                          >
-                            Awaiting approval
-                          </small>
-                        </div>
-
-                        <div>
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                            className=""
-                          >
-                            Iphone 11 ....
-                          </h4>
-                          <small
-                            style={{
-                              fontFamily: "poppins",
-                              fontStyle: "normal",
-
-                              fontSize: "10px",
-                            }}
-                          >
-                            Awaiting approval
-                          </small>
-                        </div>
-                        <div>
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                            className=""
-                          >
-                            Iphone 11 ....
-                          </h4>
-                          <small
-                            style={{
-                              fontFamily: "poppins",
-                              fontStyle: "normal",
-
-                              fontSize: "10px",
-                            }}
-                          >
-                            Awaiting approval
-                          </small>
-                        </div>
-                        <div>
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                            className=""
-                          >
-                            Iphone 11 ....
-                          </h4>
-                          <small
-                            style={{
-                              fontFamily: "poppins",
-                              fontStyle: "normal",
-
-                              fontSize: "10px",
-                            }}
-                          >
-                            Awaiting approval
-                          </small>
-                        </div>
-                        <div>
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                            className=""
-                          >
-                            Iphone 11 ....
-                          </h4>
-                          <small
-                            style={{
-                              fontFamily: "poppins",
-                              fontStyle: "normal",
-
-                              fontSize: "10px",
-                            }}
-                          >
-                            Awaiting approval
-                          </small>
-                        </div>
-                        <div>
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                            className=""
-                          >
-                            Iphone 11 ....
-                          </h4>
-                          <small
-                            style={{
-                              fontFamily: "poppins",
-                              fontStyle: "normal",
-
-                              fontSize: "10px",
-                            }}
-                          >
-                            Awaiting approval
-                          </small>
-                        </div>
-
-                        <div>
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                            className=""
-                          >
-                            Iphone 11 ....
-                          </h4>
-                          <small
-                            style={{
-                              fontFamily: "poppins",
-                              fontStyle: "normal",
-
-                              fontSize: "10px",
-                            }}
-                          >
-                            Awaiting approval
-                          </small>
-                        </div>
-                      </div>
-                      <div>
-                        <span
-                          style={{
-                            color: "#A6A6A6",
-                          }}
-                        >
-                          Vendor Name
-                        </span>
-                        <div>
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                          >
-                            Ridic Ventures
-                          </h4>
-                        </div>
-                        <div className="mt-8">
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                          >
-                            Ridic Ventures
-                          </h4>
-                        </div>
-
-                        <div className="mt-7">
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                          >
-                            Ridic Ventures
-                          </h4>
-                        </div>
-
-                        <div className="mt-8">
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                          >
-                            Ridic Ventures
-                          </h4>
-                        </div>
-                        <div className="mt-7">
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                          >
-                            Ridic Ventures
-                          </h4>
-                        </div>
-                        <div className="mt-7">
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                          >
-                            Ridic Ventures
-                          </h4>
-                        </div>
-                        <div className="mt-8">
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                          >
-                            Ridic Ventures
-                          </h4>
-                        </div>
-                        <div className="mt-8">
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                          >
-                            Ridic Ventures
-                          </h4>
-                        </div>
-                        <div className="mt-8">
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                          >
-                            Ridic Ventures
-                          </h4>
-                        </div>
-                      </div>
-
-                      <div>
-                        <span
-                          style={{
-                            color: "#A6A6A6",
-                          }}
-                        >
-                          Amount
-                        </span>
-                        <div>
-                          {" "}
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                            className=""
-                          >
-                            N500,000.00
-                          </h4>
-                        </div>
-                        <div className="mt-7">
-                          {" "}
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                            className=""
-                          >
-                            N500,000.00
-                          </h4>
-                        </div>
-                        <div className="mt-8">
-                          {" "}
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                            className=""
-                          >
-                            N500,000.00
-                          </h4>
-                        </div>
-                        <div className="mt-7">
-                          {" "}
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                            className=""
-                          >
-                            N500,000.00
-                          </h4>
-                        </div>
-
-                        <div className="mt-7">
-                          {" "}
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                            className=""
-                          >
-                            N500,000.00
-                          </h4>
-                        </div>
-                        <div className="mt-7">
-                          {" "}
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                            className=""
-                          >
-                            N500,000.00
-                          </h4>
-                        </div>
-                        <div className="mt-8">
-                          {" "}
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                            className=""
-                          >
-                            N500,000.00
-                          </h4>
-                        </div>
-                        <div className="mt-8">
-                          {" "}
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                            className=""
-                          >
-                            N500,000.00
-                          </h4>
-                        </div>
-                        <div className="mt-8">
-                          {" "}
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                            className=""
-                          >
-                            N500,000.00
-                          </h4>
-                        </div>
-                      </div>
-                      <div>
-                        <span
-                          style={{
-                            color: "#A6A6A6",
-                          }}
-                        >
-                          Date
-                        </span>
-                        <div>
-                          {" "}
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                          >
-                            25th May, 2022
-                          </h4>
-                        </div>
-                        <div className="mt-7">
-                          {" "}
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                          >
-                            25th May, 2022
-                          </h4>
-                        </div>
-                        <div className="mt-7">
-                          {" "}
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                          >
-                            25th May, 2022
-                          </h4>
-                        </div>
-                        <div className="mt-7">
-                          {" "}
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                          >
-                            25th May, 2022
-                          </h4>
-                        </div>
-                        <div className="mt-8">
-                          {" "}
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                          >
-                            25th May, 2022
-                          </h4>
-                        </div>
-                        <div className="mt-8">
-                          {" "}
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                          >
-                            25th May, 2022
-                          </h4>
-                        </div>
-                        <div className="mt-8">
-                          {" "}
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                          >
-                            25th May, 2022
-                          </h4>
-                        </div>
-
-                        <div className="mt-8">
-                          {" "}
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                          >
-                            25th May, 2022
-                          </h4>
-                        </div>
-                        <div className="mt-7">
-                          {" "}
-                          <h4
-                            style={{
-                              fontFamily: "Lato",
-                              fontStyle: "normal",
-                              fontWeight: "500",
-                              fontSize: "16px",
-                              lineHeight: "46px",
-                              color: "#232164",
-                            }}
-                          >
-                            25th May, 2022
-                          </h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* 
-                      <div className="py-3">
-                          <div className="grid grid-cols-2">
-                              <div>
-                                  <button className="btn font-bold py-2 px-4 rounded  bg-red-700 ">
-                                      WITHDRAW
-                                  </button>
-                              </div>
-                              <div>
-                                  <button className="btn bg-green-700 text-white font-bold py-2 px-4 rounded hover:bg-blue-700">
-                                      FUND
-                                  </button>
-                              </div>
-                          </div>
-                      </div> */}
-                </div>
-              </div>
+          <div className="">
+            <div className="flex justify-between items-center text-left mb-4 2xl:mb-5">
+              <h4 className="text-colorPrimary font-semibold text-sm 2xl:text-lg">
+                Enter Transaction amount:
+              </h4>
+              <input
+                type="text"
+                value={transactionAmount}
+                onChange={(e) => setTransactionAmount(e.target.value)}
+                placeholder="Enter amount"
+                className="w-[144px] ml-4 inline-block text-[10px] h-7 2xl:h-[34px] items-center border focus:outline-none border-[#E6E7E8] placeholder:text-[8px] 2xl:placeholder:text-xs pl-6 rounded-md"
+              />
+            </div>
+            <div className="flex justify-between items-center text-left mb-4 2xl:mb-5">
+              <h4 className="text-colorPrimary font-semibold text-sm 2xl:text-lg">
+                Transaction fee:
+              </h4>
+              <input
+                type="text"
+                value={TRANSACTION_FEE === 0 ? "" : TRANSACTION_FEE}
+                disabled
+                placeholder="Enter amount"
+                className="w-[144px] ml-4 inline-block text-[10px] h-7 2xl:h-[34px] items-center disabled:bg-[#E6E7E8] border focus:outline-none border-[#E6E7E8] placeholder:text-[8px] 2xl:placeholder:text-xs pl-6 rounded-md"
+              />
+            </div>
+            <div className="flex justify-between items-center text-left mb-4 2xl:mb-5">
+              <h4 className="text-colorPrimary font-semibold text-sm 2xl:text-lg">
+                Total amount:
+              </h4>
+              <input
+                type="text"
+                disabled
+                value={TOTAL_AMOUNT === 0 ? "" : TOTAL_AMOUNT}
+                placeholder="Enter amount"
+                className="w-[144px] ml-4 inline-block text-[10px] h-7 2xl:h-[34px] items-center disabled:bg-[#E6E7E8] border focus:outline-none border-[#E6E7E8] placeholder:text-[8px] 2xl:placeholder:text-xs pl-6 rounded-md"
+              />
             </div>
           </div>
         </div>
+        <div className="flex justify-around flex-wrap text-colorPrimary">
+          <div className="min-w-[200px] hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mr-5">
+            <div className="bg-[#ff9300] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
+              <img
+                className="w-[23px] h-[23px] object-contain"
+                src={Info}
+                alt="info"
+              />
+            </div>
+            <h6 className="font-semibold text-xl">FAQs</h6>
+            <p>Find answers instantly</p>
+          </div>
+          <div className="min-w-[200px] hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#E2D8F1] rounded-3xl">
+            <div className="bg-[#5F0AC3] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
+              <img
+                className="w-[23px] h-[23px] object-contain"
+                src={Chat}
+                alt="chat"
+              />
+            </div>
+            <h6 className="font-semibold text-xl">Chat</h6>
+            <p>Start a conversation now</p>
+          </div>
+        </div>
+
+        <div className="grid place-content-center mt-[100px]">
+          <img
+            src={SecuredBy}
+            alt="secured by scam trust"
+          />
+        </div>
       </div>
+
+      <div className="bg-green-600">TRANSACTION SECTION</div>
     </div>
   );
 };

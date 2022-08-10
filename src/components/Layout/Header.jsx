@@ -15,7 +15,7 @@ const Header = (props) => {
 
   const headerItemClassName = isTabletOrMobile
     ? "pl-[75px] pr-[25px]"
-    : "px-[52px] ";
+    : "px-[25px] ";
 
   return (
     <div

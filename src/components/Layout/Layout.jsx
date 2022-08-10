@@ -24,7 +24,7 @@ const Layout = (props) => {
 
   const mainClassName = isTabletOrMobile
     ? "ml-[50px] mt-[50px]"
-    : "ml-[212.25px] 2xl:ml-[283px] mt-[130px] 2xl:mt-[183px]";
+    : "ml-[212.25px] 2xl:ml-[283px] px-[25px] 2xl:mt-[183px]";
 
   const animation = "transition-all delay-100 duration-500";
 

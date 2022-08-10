@@ -15,6 +15,7 @@ module.exports = {
         colorPrimaryDark: "#252525",
         colorSecondary: "#3AB75D",
         colorTertiary: "#333333",
+        colorGreen: "#86D19B",
       },
     },
   },
