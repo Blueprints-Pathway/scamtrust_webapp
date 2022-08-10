@@ -1,12 +1,34 @@
+import { useForm } from "react-hook-form";
+
 import SecuredBy from "../../assets/images/svg/secured-by.svg";
+import { createTransaction } from "../../services/transactions";
 
 const TransactionPreview = (props) => {
   const { setShowTransactionPreview, setShowTransactionSuccess } = props;
 
-  const onConfirmClicked = () => {
-    setShowTransactionPreview(false);
-    setShowTransactionSuccess(true);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const onConfirmClicked = async (data) => {
+    const transactionData = JSON.parse(
+      localStorage.getItem("scam-trust-txnInitiation")
+    );
+    try {
+      await createTransaction(transactionData);
+      setShowTransactionPreview(false);
+      setShowTransactionSuccess(true);
+    } catch (error) {
+      console.log(error.message);
+    }
   };
+
+  const transactionDetails = JSON.parse(
+    localStorage.getItem("scam-trust-txnInitiation")
+  );
 
   return (
     <div className="absolute ml-[25px] w-[280px] bg-white rounded-[20px] top-1/2 left-1/2 lg:w-[900px] 2xl:w-[1097px] lg:p-8 p-4 2xl:p-16 -translate-x-1/2 -translate-y-1/2 z-30">
@@ -26,64 +48,78 @@ const TransactionPreview = (props) => {
         <div className="w-[250px] p-5 bg-[#F8F8FA] lg:w-[630px]">
           <div className="border-b mb-4 pb-4 flex justify-between border-b-[#02479D]">
             <p>Vendor ID</p>
-            <p className="text-[#7D8287]">ID-60572218</p>
+            <p className="text-[#7D8287]">{transactionDetails.vendor_id}</p>
           </div>
           <div className="border-b mb-4 pb-4 flex justify-between border-b-[#02479D]">
             <p>Product name</p>
-            <p className="text-[#7D8287]">Iphone 13</p>
+            <p className="text-[#7D8287]">{transactionDetails.product_name}</p>
           </div>
           <div className="border-b mb-4 pb-4 flex justify-between border-b-[#02479D]">
             <p>Product amount</p>
-            <p className="text-[#7D8287]">N30,000</p>
+            <p className="text-[#7D8287]">{transactionDetails.amount}</p>
           </div>
           <div className="border-b mb-4 pb-4 flex justify-between border-b-[#02479D]">
             <p>Phone number</p>
-            <p className="text-[#7D8287]">N30,000</p>
+            <p className="text-[#7D8287]">{transactionDetails.phone}</p>
           </div>
           <div className="border-b mb-4 pb-4 flex justify-between border-b-[#02479D]">
             <p>Transaction cost</p>
-            <p className="text-[#7D8287]">N300</p>
+            <p className="text-[#7D8287]">₦{300}</p>
           </div>
           <div className="border-b mb-4 pb-4 flex justify-between border-b-[#02479D]">
             <p> Due date</p>
-            <p className="text-[#7D8287]"> 25 - 5 - 2022</p>
+            <p className="text-[#7D8287]"> {transactionDetails.due_date}</p>
           </div>
           <div className="border-b mb-4 pb-4 flex justify-between border-b-[#02479D]">
             <p>Quantity</p>
-            <p className="text-[#7D8287]"> 2</p>
+            <p className="text-[#7D8287]">{transactionDetails.quantity}</p>
           </div>
           <div className="border-b mb-4 pb-4 flex flex-col justify-between border-b-[#02479D]">
             <p className="mb-2">Description</p>
-            <p className="text-[#7D8287]">
-              One pair of black female corporate heel shoes and one pair of
-              white unbranded sneakers
-            </p>
+            <p className="text-[#7D8287]">{transactionDetails.description}</p>
           </div>
           <div className="flex items-center justify-between">
             <p className="text-lg">Total</p>
             <div className="rounded-tl-2xl rounded-br-2xl bg-gradient-to-tr py-[15px] px-[30px] text-white inline-block from-colorPrimary to-[#0257C0B0]">
-              N30,300
+              ₦ {transactionDetails.amount}
             </div>
           </div>
         </div>
         <div className="flex flex-col justify-end w-[320px]">
           <div />
-          <div className="text-center p-5">
+          <form
+            onSubmit={handleSubmit((data) => {
+              onConfirmClicked(data);
+            })}
+            className="text-center p-5"
+          >
             <div>
-              <input type="checkbox" name="" id="" />
+              <input
+                type="checkbox"
+                name="terms_conditions"
+                {...register("tandc", {
+                  required:
+                    "To continue, you've to agree to terms and conditions",
+                })}
+              />
               <span className="text-[#7D8287] ml-[6px] font-light text-sm">
                 Terms & conditions{" "}
                 <span className="text-colorPrimary">Read here</span>
               </span>
             </div>
+            {errors.tandc && (
+              <span className="text-[8px] text-red-500 font-medium mt-2 italic">
+                {errors.tandc.message}
+              </span>
+            )}
             <button
-              onClick={onConfirmClicked}
+              type="submit"
               className="px-[31px] my-[27px] rounded-md py-[11px] text-colorPrimary bg-[#2321644F]"
             >
               Confirm
             </button>
             <img src={SecuredBy} alt="secured_by" className="w-[169] mx-auto" />
-          </div>
+          </form>
         </div>
       </div>
     </div>
