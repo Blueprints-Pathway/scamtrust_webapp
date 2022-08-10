@@ -18,7 +18,7 @@ const CustomerDashboard = (props) => {
   const TOTAL_AMOUNT = +TRANSACTION_FEE + +transactionAmount;
 
   return (
-    <div className="flex gap-7 justify-between">
+    <div className="flex flex-col md:flex-row gap-7 justify-between">
       <div className="min-w-[320px] w-[70%] 2xl:w-[685px]">
         <div className="w-full bg-[#FFFEFE] rounded-[24px] px-[37px] py-[29px] mb-[13px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
           <p className="font-semibold text-lg 2xl:text-2xl text-colorPrimary">

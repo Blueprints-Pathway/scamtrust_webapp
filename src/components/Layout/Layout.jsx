@@ -37,7 +37,7 @@ const Layout = (props) => {
         <Sidenav />
       </aside>
 
-      <main className={`${mainClassName}${animation} mt-[120px]`}>{children}</main>
+      <main className={`${mainClassName}${animation} px-[25px] mt-[120px]`}>{children}</main>
     </>
   );
 };
