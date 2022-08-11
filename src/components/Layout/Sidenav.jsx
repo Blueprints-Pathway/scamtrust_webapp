@@ -29,18 +29,25 @@ const Sidenav = (props) => {
 
   return (
     <ul className="mt-[58px] flex flex-col items-center w-full h-full text-[#F2F2F2]">
-      {!isTabletOrMobile ? (
-        <li className="">
-          <img src={Logo} alt="logo-white" />
-        </li>
+      {/* {!isTabletOrMobile ? ( */}
+      <li className="">
+        <img src={Logo} alt="logo-white" />
+      </li>
+      {/* ) : (
+        <></>
+      )} */}
+
+      {isTabletOrMobile ? (
+        <HiMenuAlt2
+          className="mt-2 w-[40px] h-[40px]"
+          onClick={() => setIsSidenavOpen((prevState) => !prevState)}
+        />
       ) : (
         <></>
       )}
 
-      <HiMenuAlt2 onClick={() => setIsSidenavOpen((prevState) => !prevState)} />
-
       <li className="mt-[100px] 2xl:mt-[200px]">
-        <ul className="flex flex-col">
+        <ul className="flex flex-col justify-center">
           {navItems.map((navItem) => (
             <li
               key={navItem.name}
@@ -49,20 +56,26 @@ const Sidenav = (props) => {
               <span className="mr-[7px]">
                 <img src={navItem.symbol} alt={navItem.name} />
               </span>
-              {isSidenavOpen ? navItem.name : <></>}
+              {!isTabletOrMobile ? (
+                navItem.name
+              ) : isSidenavOpen ? (
+                navItem.name
+              ) : (
+                <></>
+              )}
             </li>
           ))}
           <li className="uppercase mt-[70px] flex items-center">
             <span className="mr-[7px]">
               <img src={Support} alt={"support"} />
             </span>
-            {isSidenavOpen ? "SUPPORT" : <></>}
+            {!isTabletOrMobile ? "SUPPORT" : isSidenavOpen ? "SUPPORT" : <></>}
           </li>
           <li className="uppercase mt-[40px] flex items-center">
             <span className="mr-[7px]">
               <img src={Logout} alt={"logout"} />
             </span>
-            {isSidenavOpen ? "LOGOUT" : <></>}
+            {!isTabletOrMobile ? "LOGOUT" : isSidenavOpen ? "LOGOUT" : <></>}
           </li>
         </ul>
       </li>
