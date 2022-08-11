@@ -1,6 +1,7 @@
 import { useMediaQuery } from "react-responsive";
 
 import BellNotification from "../../assets/images/svg/bell-notification.svg";
+import Search from "../../assets/images/svg/search.svg";
 
 const Header = (props) => {
   const { heading } = props;
@@ -25,6 +26,18 @@ const Header = (props) => {
         {heading}
       </h3>
       <div className="flex items-center">
+        <div className="2xl:w-[541px] mr-2 lg:mr-[56px] relative lg:w-[400px] h-[47px] md:w-[300px] w-[50px]">
+          <input
+            type="text"
+            placeholder="Search vendor&apos;s name"
+            className="bg-[#C0C0C021] w-full h-full rounded-[50px] focus:outline-none pl-5 pr-5 md:pr-[60px]"
+          />
+          <img
+            src={Search}
+            alt="search_icon"
+            className="absolute h-[24px] right-[15px] -translate-x-0px] md:right-[20px] top-1/2 -translate-y-1/2"
+          />
+        </div>
         <img
           src={BellNotification}
           alt="notification"
