@@ -133,7 +133,7 @@ const CustomerDashboard = (props) => {
         </div>
       </div>
 
-      <div className="w-full h-[0%] overflow-y-scroll py-3 lg:py-8 px-4 lg:px-12 bg-white rounded-[24px]">
+      <div className="w-full h-[100%] overflow-y-scroll py-3 lg:py-8 px-4 lg:px-12 bg-white rounded-[24px]">
         <div className="w-full mb-3 font-medium 2xl:font-bold text-xs lg:text-base 2xl:text-lg text-colorPrimary flex justify-between border-b border-b-[#CFD8DC]">
           <p className="border-b-[3px] border-b-colorSecondary pb-5">All</p>
           <p>Outgoing</p>
