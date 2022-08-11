@@ -19,7 +19,7 @@ const CustomerDashboard = (props) => {
 
   return (
     <div className="flex flex-col md:flex-row gap-7 justify-between">
-      <div className="min-w-[280px] mx-auto w-[70%] 2xl:w-[685px]">
+      <div className="min-w-[260px] mx-auto w-[70%] 2xl:w-[685px]">
         <div className="w-full bg-[#FFFEFE] lg:rounded-[24px] rounded-lg lg:px-[37px] px-5 py-3 lg:py-[29px] mb-[13px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
           <p className="font-semibold text-lg 2xl:text-2xl text-colorPrimary">
             Chukwudi Osinachi
@@ -32,29 +32,29 @@ const CustomerDashboard = (props) => {
 
           <div className="flex justify-between">
             <div className="flex flex-col text-left">
-              <h4 className="text-[#7d8287] font-semibold text-sm 2xl:text-lg">
+              <h4 className="text-[#7d8287] font-normal 2xl:font-semibold text-sm 2xl:text-lg">
                 Total Balance
               </h4>
-              <h2 className="text-colorPrimary font-bold text-lg 2xl:text-3xl">
+              <h2 className="text-colorPrimary font-semibold text-sm 2xl:font-bold lg:text-lg 2xl:text-3xl">
                 N 500,000.00
               </h2>
             </div>
 
             <div className="flex flex-col text-left">
-              <h4 className="text-[#7d8287] font-semibold text-sm 2xl:text-lg">
+              <h4 className="text-[#7d8287] font-normal 2xl:font-semibold text-sm 2xl:text-lg">
                 Pending Balance
               </h4>
-              <h2 className="text-[#7d8287] font-bold text-lg 2xl:text-3xl">
+              <h2 className="text-[#7d8287] font-semibold text-sm 2xl:font-bold lg:text-lg 2xl:text-3xl">
                 N 250,000.00
               </h2>
             </div>
           </div>
 
           <div className="flex justify-between mt-[20px] 2xl:mt-[53px]">
-            <button className="bg-[#E9303B] w-[100px] hover:shadow-xl transition-all duration-300 2xl:w-[143px] text-center text-white py-[9px] rounded-lg">
+            <button className="bg-[#E9303B] text-xs lg:text-base w-[100px] hover:shadow-xl transition-all duration-300 2xl:w-[143px] text-center text-white py-[9px] rounded-lg">
               WITHDRAW
             </button>
-            <button className="bg-colorGreen w-[100px] hover:shadow-xl transition-all duration-300 2xl:w-[143px] text-center text-white py-[9px] rounded-lg">
+            <button className="bg-colorGreen text-xs lg:text-base w-[100px] hover:shadow-xl transition-all duration-300 2xl:w-[143px] text-center text-white py-[9px] rounded-lg">
               FUND
             </button>
           </div>
@@ -68,7 +68,7 @@ const CustomerDashboard = (props) => {
 
           <div className="">
             <div className="flex justify-between items-center text-left mb-4 2xl:mb-5">
-              <h4 className="text-colorPrimary font-semibold text-sm 2xl:text-lg">
+              <h4 className="text-colorPrimary font-medium lg:font-semibold text-xs lg:text-sm 2xl:text-lg">
                 Enter Transaction amount:
               </h4>
               <input
@@ -76,29 +76,29 @@ const CustomerDashboard = (props) => {
                 value={transactionAmount}
                 onChange={(e) => setTransactionAmount(e.target.value)}
                 placeholder="Enter amount"
-                className="w-[144px] ml-4 inline-block text-[10px] h-7 2xl:h-[34px] items-center border focus:outline-none border-[#E6E7E8] placeholder:text-[8px] 2xl:placeholder:text-xs pl-6 rounded-md"
+                className="w-[100px] lg:w-[144px] ml-4 inline-block text-[10px] h-7 2xl:h-[34px] items-center border focus:outline-none border-[#E6E7E8] placeholder:text-[8px] 2xl:placeholder:text-xs pl-6 rounded-md"
               />
             </div>
             <div className="flex justify-between items-center text-left mb-4 2xl:mb-5">
-              <h4 className="text-colorPrimary font-semibold text-sm 2xl:text-lg">
+              <h4 className="text-colorPrimary font-medium lg:font-semibold text-xs lg:text-sm 2xl:text-lg">
                 Transaction fee:
               </h4>
               <input
                 type="text"
                 value={TRANSACTION_FEE === 0 ? "" : TRANSACTION_FEE}
                 disabled
-                className="w-[144px] ml-4 inline-block text-[10px] h-7 2xl:h-[34px] items-center disabled:bg-[#E6E7E8] border focus:outline-none border-[#E6E7E8] placeholder:text-[8px] 2xl:placeholder:text-xs pl-6 rounded-md"
+                className="w-[100px] lg:w-[144px] ml-4 inline-block text-[10px] h-7 2xl:h-[34px] items-center disabled:bg-[#E6E7E8] border focus:outline-none border-[#E6E7E8] placeholder:text-[8px] 2xl:placeholder:text-xs pl-6 rounded-md"
               />
             </div>
             <div className="flex justify-between items-center text-left mb-4 2xl:mb-5">
-              <h4 className="text-colorPrimary font-semibold text-sm 2xl:text-lg">
+              <h4 className="text-colorPrimary font-medium lg:font-semibold text-xs lg:text-sm 2xl:text-lg">
                 Total amount:
               </h4>
               <input
                 type="text"
                 disabled
                 value={TOTAL_AMOUNT === 0 ? "" : TOTAL_AMOUNT}
-                className="w-[144px] ml-4 inline-block text-[10px] h-7 2xl:h-[34px] items-center disabled:bg-[#E6E7E8] border focus:outline-none border-[#E6E7E8] placeholder:text-[8px] 2xl:placeholder:text-xs pl-6 rounded-md"
+                className="w-[100px] lg:w-[144px] ml-4 inline-block text-[10px] h-7 2xl:h-[34px] items-center disabled:bg-[#E6E7E8] border focus:outline-none border-[#E6E7E8] placeholder:text-[8px] 2xl:placeholder:text-xs pl-6 rounded-md"
               />
             </div>
           </div>
@@ -145,7 +145,7 @@ const CustomerDashboard = (props) => {
           <div />
           <button
             onClick={onCreateTransactionClicked}
-            className="bg-colorGreen flex text-white items-center rounded-md px-2 py-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-700"
+            className="bg-colorGreen text-xs lg:text-base flex text-white items-center rounded-md px-2 py-2 lg:py-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-700"
           >
             <span>Create transaction</span>
             <img src={Add} alt="add" className="mb-[-6px]" />
