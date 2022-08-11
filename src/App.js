@@ -5,6 +5,7 @@ import Signin from "./pages/auth/Signin";
 import CustomerDashboard from "./pages/dashboard/CustomerDashboard";
 import CustomerSignup from "./pages/auth/CustomerSignup";
 import SetPassword from "./pages/auth/SetPassword";
+import VendorDetails from "./pages/vendor/VendorDetails";
 
 // import PasswordEmail from "./passwordRecovery/PasswordEmail";
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -38,6 +39,7 @@ function App() {
       <Route path="/customer-dashboard" element={<CustomerDashboard />} />
       <Route path="/signup/vendor" element={<CustomerSignup />} />
       <Route path="/signup/set-password" element={<SetPassword />} />
+      <Route path="/vendor/:slug" element={<VendorDetails />} />
       {/* <Route path="/signup" element={<SetPassword />} /> */}
       {/*<Route path="/customersignup" element={<CustomerSignup />} />
       <Route path="/email" element={<PasswordEmail />} />

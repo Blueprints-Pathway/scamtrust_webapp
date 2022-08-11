@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { HiMenuAlt2 } from "react-icons/hi";
 
@@ -27,10 +28,12 @@ const Sidenav = (props) => {
     { symbol: Setting, name: "Settings", link: "/settings" },
   ];
 
+  const navigate = useNavigate()
+
   return (
     <ul className="mt-[58px] flex flex-col items-center w-full h-full text-[#F2F2F2]">
       {/* {!isTabletOrMobile ? ( */}
-      <li className="">
+      <li className="cursor-pointer" onClick={() => navigate("/customer-dashboard")}>
         <img src={Logo} alt="logo-white" />
       </li>
       {/* ) : (

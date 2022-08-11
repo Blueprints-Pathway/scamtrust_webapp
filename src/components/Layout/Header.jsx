@@ -1,4 +1,5 @@
 import { useMediaQuery } from "react-responsive";
+import { useNavigate } from "react-router-dom";
 
 import BellNotification from "../../assets/images/svg/bell-notification.svg";
 import Search from "../../assets/images/svg/search.svg";
@@ -47,6 +48,8 @@ const Header = (props) => {
     ? "pl-[75px] pr-[25px]"
     : "px-[25px] ";
 
+  const navigate = useNavigate();
+
   return (
     <div
       className={`${headerItemClassName} flex justify-between items-center w-full h-full shadow-md`}
@@ -75,8 +78,11 @@ const Header = (props) => {
               {VENDORS.map((vendor, idx) => {
                 const { name, logo, id, score } = vendor;
                 return (
-                  <div className="flex justify-between">
-                    <div className="flex items-center hover:opacity-75 mb-3 cursor-pointer" key={idx}>
+                  <div className="flex px-3 justify-between" onClick={() => navigate("/vendor/ridic-ventures")}>
+                    <div
+                      className="flex items-center hover:opacity-75 mb-3 cursor-pointer"
+                      key={idx}
+                    >
                       <div className="w-[28px] mr-3 grid place-content-center h-[28px] bg-[#EFF3FF] overflow-hidden">
                         <img
                           src={logo}
