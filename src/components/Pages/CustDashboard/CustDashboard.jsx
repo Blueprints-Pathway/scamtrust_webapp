@@ -19,8 +19,8 @@ const CustomerDashboard = (props) => {
 
   return (
     <div className="flex flex-col md:flex-row gap-7 justify-between">
-      <div className="min-w-[320px] w-[70%] 2xl:w-[685px]">
-        <div className="w-full bg-[#FFFEFE] rounded-[24px] px-[37px] py-[29px] mb-[13px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
+      <div className="min-w-[280px] mx-auto w-[70%] 2xl:w-[685px]">
+        <div className="w-full bg-[#FFFEFE] lg:rounded-[24px] rounded-lg lg:px-[37px] px-5 py-3 lg:py-[29px] mb-[13px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
           <p className="font-semibold text-lg 2xl:text-2xl text-colorPrimary">
             Chukwudi Osinachi
           </p>
@@ -61,7 +61,7 @@ const CustomerDashboard = (props) => {
         </div>
 
         {/* FEE CALCULATOR */}
-        <div className="w-full bg-[#FFFEFE] rounded-[24px] px-[37px] py-[29px] mb-[13px]  hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
+        <div className="w-full bg-[#FFFEFE] lg:rounded-[24px] rounded-lg lg:px-[37px] px-5 py-3 lg:py-[29px] mb-[13px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
           <p className="2xl:text-xl text-colorPrimary">Fee Calculator</p>
 
           <div className="border-b-2 mb-5 2xl:mb-[53px] border-b-colorGreen mt-[13px]" />
@@ -103,8 +103,8 @@ const CustomerDashboard = (props) => {
             </div>
           </div>
         </div>
-        <div className="flex justify-around text-colorPrimary">
-          <div className="min-w-[200px] hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mr-5">
+        <div className="flex flex-col lg:flex-row justify-around text-colorPrimary">
+          <div className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5">
             <div className="bg-[#ff9300] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
               <img
                 className="w-[23px] h-[23px] object-contain"
@@ -115,7 +115,7 @@ const CustomerDashboard = (props) => {
             <h6 className="font-semibold text-xl">FAQs</h6>
             <p>Find answers instantly</p>
           </div>
-          <div className="min-w-[200px] hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#E2D8F1] rounded-3xl">
+          <div className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#E2D8F1] rounded-3xl">
             <div className="bg-[#5F0AC3] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
               <img
                 className="w-[23px] h-[23px] object-contain"
@@ -133,15 +133,15 @@ const CustomerDashboard = (props) => {
         </div>
       </div>
 
-      <div className="w-full overflow-y-scroll py-8 px-12">
-        <div className="w-full mb-3 font-medium 2xl:font-bold text-base 2xl:text-lg text-colorPrimary flex justify-between pb-5 border-b border-b-[#CFD8DC]">
-          <p>All</p>
+      <div className="w-full h-[0%] overflow-y-scroll py-3 lg:py-8 px-4 lg:px-12 bg-white rounded-[24px]">
+        <div className="w-full mb-3 font-medium 2xl:font-bold text-xs lg:text-base 2xl:text-lg text-colorPrimary flex justify-between border-b border-b-[#CFD8DC]">
+          <p className="border-b-[3px] border-b-colorSecondary pb-5">All</p>
           <p>Outgoing</p>
           <p>Cancelled </p>
           <p>Completed</p>
         </div>
 
-        <div className="flex justify-between">
+        <div className="flex justify-between mb-[10px]">
           <div />
           <button
             onClick={onCreateTransactionClicked}
@@ -151,9 +151,113 @@ const CustomerDashboard = (props) => {
             <img src={Add} alt="add" className="mb-[-6px]" />
           </button>
         </div>
+
+        <div class="overflow-x-auto relative">
+          <table class="w-full text-left">
+            <thead class="text-sm font-bold text-[#A6A6A6]">
+              <tr>
+                <th scope="col" class="py-3 px-6">
+                  Transactions
+                </th>
+                <th scope="col" class="py-3 px-6">
+                  Vendor name
+                </th>
+                <th scope="col" class="py-3 px-6">
+                  Amount
+                </th>
+                <th scope="col" class="py-3 px-6">
+                  Date
+                </th>
+              </tr>
+            </thead>
+            <tbody className="text-colorPrimary font-medium text-xs">
+              {TRANSACTIONS.map((transaction) => {
+                const { amount, date, status, vName } = transaction;
+                const bgColor =
+                  status === "Awaiting approval"
+                    ? "#eee"
+                    : status === "Completed"
+                    ? "#89D39D61"
+                    : status === "On-going"
+                    ? "#FEF28B66"
+                    : status === "Cancelled" && "#FF989E78";
+                return (
+                  <tr>
+                    <th
+                      scope="row"
+                      class="py-4 flex items-center px-6 font-medium whitespace-nowrap"
+                    >
+                      <div
+                        className={`w-[25px] h-[25px] bg-[${bgColor}] rounded-md mr-2`}
+                      ></div>
+                      <div className="flex flex-col">
+                        <p>Iphone 11...</p>
+                        <p>{status}</p>
+                      </div>
+                    </th>
+                    <td className="py-4 px-6">{vName}</td>
+                    <td className="py-4 px-6">₦ {amount}</td>
+                    <td className="py-4 px-6">{date}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
 };
+
+const TRANSACTIONS = [
+  {
+    status: "Awaiting approval",
+    vName: "Ridic Ventures",
+    amount: "250,000.00",
+    date: "25th May, 2022",
+  },
+  {
+    status: "Completed",
+    vName: "Ridic Ventures",
+    amount: "250,000.00",
+    date: "25th May, 2022",
+  },
+  {
+    status: "On-going",
+    vName: "Ridic Ventures",
+    amount: "250,000.00",
+    date: "25th May, 2022",
+  },
+  {
+    status: "Cancelled",
+    vName: "Ridic Ventures",
+    amount: "250,000.00",
+    date: "25th May, 2022",
+  },
+  {
+    status: "Awaiting approval",
+    vName: "Ridic Ventures",
+    amount: "250,000.00",
+    date: "25th May, 2022",
+  },
+  {
+    status: "Completed",
+    vName: "Ridic Ventures",
+    amount: "250,000.00",
+    date: "25th May, 2022",
+  },
+  {
+    status: "On-going",
+    vName: "Ridic Ventures",
+    amount: "250,000.00",
+    date: "25th May, 2022",
+  },
+  {
+    status: "Cancelled",
+    vName: "Ridic Ventures",
+    amount: "250,000.00",
+    date: "25th May, 2022",
+  },
+];
 
 export default CustomerDashboard;
