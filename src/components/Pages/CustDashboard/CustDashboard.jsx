@@ -128,7 +128,7 @@ const CustomerDashboard = (props) => {
           </div>
         </div>
 
-        <div className="grid place-content-center mt-[100px]">
+        <div className="grid hidden lg:block place-content-center mt-[100px]">
           <img src={SecuredBy} alt="secured by scam trust" />
         </div>
       </div>
@@ -204,6 +204,10 @@ const CustomerDashboard = (props) => {
             </tbody>
           </table>
         </div>
+      </div>
+
+      <div className="grid lg:hidden place-content-center my-[20px]">
+        <img src={SecuredBy} alt="secured by scam trust" />
       </div>
     </div>
   );
