@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 import Header from "./Header";
@@ -5,6 +6,7 @@ import Sidenav from "./Sidenav";
 
 const Layout = (props) => {
   const { children, heading } = props;
+  const [isSidenavOpen, setIsSidenavOpen] = useState(false);
 
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1224px)",
@@ -15,7 +17,7 @@ const Layout = (props) => {
   const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
 
   const asideClassName = isTabletOrMobile
-    ? "w-[50px] z-20 top-0 left-0 bg-colorPrimary fixed h-screen"
+    ? "z-20 top-0 left-0 bg-colorPrimary fixed h-screen"
     : "w-[212.25px] z-30 2xl:w-[283px] top-0 left-0 bg-colorPrimary fixed h-screen";
 
   const headerClassName = isTabletOrMobile
@@ -33,11 +35,19 @@ const Layout = (props) => {
       <nav className={`${animation}${headerClassName} fixed`}>
         <Header heading={heading} />
       </nav>
-      <aside className={`${animation} ${asideClassName}`}>
-        <Sidenav />
+      <aside
+        className={`${animation} ${asideClassName}`}
+        style={{ width: isSidenavOpen ? "200px" : "50px" }}
+      >
+        <Sidenav
+          isSidenavOpen={isSidenavOpen}
+          setIsSidenavOpen={setIsSidenavOpen}
+        />
       </aside>
 
-      <main className={`${mainClassName}${animation} px-[25px] mt-[120px]`}>{children}</main>
+      <main className={`${mainClassName}${animation} px-[25px] mt-[120px]`}>
+        {children}
+      </main>
     </>
   );
 };

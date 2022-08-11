@@ -1,4 +1,5 @@
 import { useMediaQuery } from "react-responsive";
+import { HiMenuAlt2 } from "react-icons/hi";
 
 import Logo from "../../assets/images/svg/logo-white.svg";
 import Dashboard from "../../assets/images/svg/dashboard.svg";
@@ -8,7 +9,9 @@ import Setting from "../../assets/images/svg/setting.svg";
 import Support from "../../assets/images/svg/support.svg";
 import Logout from "../../assets/images/svg/logout.svg";
 
-const Sidenav = () => {
+const Sidenav = (props) => {
+  const { setIsSidenavOpen, isSidenavOpen } = props;
+
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1224px)",
   });
@@ -34,6 +37,8 @@ const Sidenav = () => {
         <></>
       )}
 
+      <HiMenuAlt2 onClick={() => setIsSidenavOpen((prevState) => !prevState)} />
+
       <li className="mt-[100px] 2xl:mt-[200px]">
         <ul className="flex flex-col">
           {navItems.map((navItem) => (
@@ -44,20 +49,20 @@ const Sidenav = () => {
               <span className="mr-[7px]">
                 <img src={navItem.symbol} alt={navItem.name} />
               </span>
-              {!isTabletOrMobile ? navItem.name : <></>}
+              {isSidenavOpen ? navItem.name : <></>}
             </li>
           ))}
           <li className="uppercase mt-[70px] flex items-center">
             <span className="mr-[7px]">
               <img src={Support} alt={"support"} />
             </span>
-            {!isTabletOrMobile ? "SUPPORT" : <></>}
+            {isSidenavOpen ? "SUPPORT" : <></>}
           </li>
           <li className="uppercase mt-[40px] flex items-center">
             <span className="mr-[7px]">
               <img src={Logout} alt={"logout"} />
             </span>
-            {!isTabletOrMobile ? "LOGOUT" : <></>}
+            {isSidenavOpen ? "LOGOUT" : <></>}
           </li>
         </ul>
       </li>
