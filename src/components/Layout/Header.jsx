@@ -52,7 +52,7 @@ const Header = (props) => {
 
   return (
     <div
-      className={`${headerItemClassName} flex justify-between items-center w-full h-full shadow-md`}
+      className={`${headerItemClassName} flex justify-between items-center w-full h-full shadow-md z-50`}
     >
       <h3 className="font-medium lg:font-semibold text-xl lg:text-3xl text-colorPrimary">
         {heading}

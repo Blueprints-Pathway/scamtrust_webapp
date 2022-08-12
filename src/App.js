@@ -39,7 +39,7 @@ function App() {
       <Route path="/customer-dashboard" element={<CustomerDashboard />} />
       <Route path="/signup/vendor" element={<CustomerSignup />} />
       <Route path="/signup/set-password" element={<SetPassword />} />
-      <Route path="/vendor/:slug" element={<VendorDetails />} />
+      <Route path="/vendor" element={<VendorDetails />} />
       {/* <Route path="/signup" element={<SetPassword />} /> */}
       {/*<Route path="/customersignup" element={<CustomerSignup />} />
       <Route path="/email" element={<PasswordEmail />} />
