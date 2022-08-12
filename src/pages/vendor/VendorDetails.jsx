@@ -11,7 +11,9 @@ const VendorDetails = () => {
   return (
     <Layout>
       <div className="rounded-[25px] min-h-[60vh] overflow-hidden">
-        <div className="h-[120px] md:h-[220px] 2xl:h-[257px] relative bg-gradient-to-r to-colorPrimary from-[#0D3E8F]">
+        <div className="relative absolute z-0">
+
+        <div className="h-[120px] z-0 md:h-[220px] 2xl:h-[257px] bg-gradient-to-r to-colorPrimary from-[#0D3E8F]">
           <img
             src={Shield}
             alt="shield"
@@ -39,6 +41,7 @@ const VendorDetails = () => {
               </button>
             </div>
           </div>
+        </div>
         </div>
 
         <div className="pt-36 px-4 md:px-28 bg-white mb-9 pb-9 rounded-b-[25px]">
@@ -74,7 +77,7 @@ const VendorDetails = () => {
           </div>
 
           <div className="flex flex-col md:flex-row justify-between">
-            <div className="bg-[rgba(237,237,237,0.4)] py-4 px-11 mb-5 md:mb-0 md:w-[624px] rounded-2xl">
+            <div className="bg-[rgba(237,237,237,0.4)] py-4 px-2 md:px-11 mb-5 md:mb-0 md:w-[624px] rounded-2xl">
               {RATING.map((serv) => {
                 const { rating, service } = serv;
                 return (
