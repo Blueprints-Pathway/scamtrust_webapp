@@ -11,28 +11,28 @@ const VendorDetails = () => {
   return (
     <Layout>
       <div className="rounded-[25px] min-h-[60vh] overflow-hidden">
-        <div className="h-[257px] relative bg-gradient-to-r to-colorPrimary from-[#0D3E8F]">
+        <div className="h-[120px] md:h-[220px] 2xl:h-[257px] relative bg-gradient-to-r to-colorPrimary from-[#0D3E8F]">
           <img
             src={Shield}
             alt="shield"
-            className="absolute right-[10%] top-1/2 -translate-y-1/2"
+            className="absolute w-[100px] h-[120px] md:w-[190px] top-[60%] md:h-[250px] right-[10%] md:top-[60%] -translate-y-1/2"
           />
-          <div className="absolute flex items-center left-[60px] -bottom-[40%] w-full">
-            <div className="bg-white w-[139px] relative overflow-hidden rounded-full h-[139px] shadow-md p-1">
-              <div className="bg-[#D3530B] font-semibold text-[40px] grid place-content-center text-white absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-full w-[132px] h-[132px]">
+          <div className="absolute flex items-center left-[20px] justify-between md:left-[60px] -bottom-[40%] md:-bottom-[50%] 2xl:-bottom-[40%] w-full">
+            <div className="bg-white w-[50px] h-[50px] md:w-[139px] relative overflow-hidden rounded-full md:h-[139px] shadow-md p-1">
+              <div className="bg-[#D3530B] font-semibold w-[45px] h-[45px] text-xl md:text-[40px] grid place-content-center text-white absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-full md:w-[132px] md:h-[132px]">
                 RC
               </div>
             </div>
             <div className="flex w-[90%] justify-between">
               <div className="flex flex-col ml-4 ">
-                <h5 className="font-bold text-2xl text-[#707070]">
+                <h5 className="font-bold text-xs md:text-2xl text-[#707070]">
                   Ridic Ventures
                 </h5>
-                <p className="text-2xl">ID23232</p>
+                <p className="text-xs md:text-2xl">ID23232</p>
               </div>
               <button
                 // onClick={onCreateTransactionClicked}
-                className="bg-colorPrimary mr-36 mt-4 text-xs lg:text-base flex text-white items-center rounded-md px-2 py-2 lg:py-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-700"
+                className="bg-colorPrimary mr-7 md:mr-36 mt-4 text-xs lg:text-base flex text-white items-center rounded-md px-2 py-2 lg:py-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-700"
               >
                 <span>Create transaction</span>
                 <img src={Add} alt="add" className="mb-[-6px]" />
