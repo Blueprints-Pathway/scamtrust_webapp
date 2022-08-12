@@ -88,9 +88,9 @@ const VendorDetails = () => {
               {RATING.map((serv) => {
                 const { rating, service } = serv;
                 return (
-                  <div className="flex mb-5 justify-between pb-2 border-b-[#EFF3FF] border-b-[3px]">
+                  <div key={service} className="flex mb-5 justify-between pb-2 border-b-[#EFF3FF] border-b-[3px]">
                     <div>{service}</div>
-                    <div class="rating">
+                    <div className="rating">
                       <input
                         type="radio"
                         name="rating-2"
