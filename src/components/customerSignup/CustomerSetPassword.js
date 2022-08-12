@@ -149,7 +149,7 @@ function CustomerSetPassword() {
 
                         </form>
 
-                        {   ((submitted && !error.passwordCheck) && (submitted && !error.password)) ? ( <Link to='/CustomerTransaction'> <button className='password-button yes' type='submit' > Proceed to transaction pin </button></Link>) : (<button className='password-button yes' onClick={handleSubmit} > Proceed to transaction pin </button>) }
+                        {   ((submitted && !error.passwordCheck) && (submitted && !error.password)) ? ( <Link to='/CustomerTransaction'> <button className='password-button yes'> Proceed to transaction pin </button></Link>) : (<button className='password-button yes' onClick={handleSubmit} > Proceed to transaction pin </button>) }
 
                     </div>
                     <div className='field-bottom-password'> Secured by <img className='field-bottom-img' src={scamTrustLogo} alt="Scam Trust" /> </div>

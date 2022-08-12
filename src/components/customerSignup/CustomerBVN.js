@@ -85,7 +85,7 @@ function CustomerBVN() {
                    
                 </div>
                 <div className='cardContainer-bvn'>
-                    <div className='card'>
+                    <div className=''>
                         <div className='card-body'>
                             <h5 className='card-titleBVN'>Bank Details</h5>
 
@@ -94,9 +94,7 @@ function CustomerBVN() {
 
                             </div>
                             <div className="form bvn">
-                                {/*   <pre>{
-                            JSON.stringify(values, null, 2)
-                            }</pre> */}
+                            
                                 <form>
                                     <div className="input-field-bvn">
                                         <label className='form-text'>Full name</label>
@@ -112,34 +110,34 @@ function CustomerBVN() {
 
 
                                     </div>
-                                    {submitted && error.fullName && <div className='error shift'><FontAwesomeIcon className='exIconTrans' icon={faCircleExclamation} />{error.fullName}</div>}
+                                    {submitted && error.fullName && <div className='error shiftBvn'><FontAwesomeIcon className='exIconTrans' icon={faCircleExclamation} />{error.fullName}</div>}
 
 
 
-                                    <div className="input-field">
+                                    <div className="input-field-bvn">
                                         <label className='form-text'>Date of birth</label>
                                         <input onChange={handleChange} value={values.DOB} className="inputBoxBVN" name='DOB' placeholder="" type="date" autoComplete='off' />
 
                                     </div>
 
-                                    {submitted && error.DOB && <div className='error shift'><FontAwesomeIcon className='exIconTrans' icon={faCircleExclamation} />{error.DOB}</div>}
+                                    {submitted && error.DOB && <div className='error shiftBvn'><FontAwesomeIcon className='exIconTrans' icon={faCircleExclamation} />{error.DOB}</div>}
                                     
-                                    <div className="input-field">
+                                    <div className="input-field-bvn">
                                         <label className='form-text'>Phone number</label>
                                         <input onChange={handleChange} handleEmail value={values.loation} className="inputBoxBVN" name='phoneNumber' type="text" placeholder="" autoComplete='off' inputMode='numeric'
                                             maxLength="11" />
 
                                     </div>
 
-                                    {submitted && error.phoneNumber && <div className='error shift'><FontAwesomeIcon className='exIconTrans' icon={faCircleExclamation} />{error.phoneNumber}</div>}
+                                    {submitted && error.phoneNumber && <div className='error shiftBvn'><FontAwesomeIcon className='exIconTrans' icon={faCircleExclamation} />{error.phoneNumber}</div>}
 
-                                    <div className="input-field">
+                                    <div className="input-field-bvn">
                                         <label className='form-text'>Enter your Bank Verification Number</label>
                                         <input onChange={handleChange} value={values.BVN} className="inputBoxBVN" name='BVN' type="text" placeholder="" autoComplete='off' inputMode='numeric'
                                             maxLength="11" />
 
                                     </div>
-                                    {submitted && error.BVN && <div className='error shift'><FontAwesomeIcon className='exIconTrans' icon={faCircleExclamation} />{error.BVN}</div>}
+                                    {submitted && error.BVN && <div className='error shiftBvn'><FontAwesomeIcon className='exIconTrans' icon={faCircleExclamation} />{error.BVN}</div>}
 
 
                                   
@@ -148,7 +146,7 @@ function CustomerBVN() {
 
                                 </form>
                                 
-                                {   ((submitted && !error.phoneNumber) && (submitted && !error.DOB) && (submitted && !error.BVN) && (submitted && !error.fullName)) ? ( <Link to='/CustomerSetPassword'> <button className='bvn-button yes' type='submit' > Verify </button> </Link>) : (<button onClick={handleSubmit} className='bvn-button yes'> Verify </button>) }
+                                {   ((submitted && !error.phoneNumber) && (submitted && !error.DOB) && (submitted && !error.BVN) && (submitted && !error.fullName)) ? ( <Link to='/CustomerSetPassword'> <button className='bvn-button yes'> Verify </button> </Link>) : (<button onClick={handleSubmit} className='bvn-button yes'> Verify </button>) }
 
                                 <div className='field-bottom-bvn'> Secured by <img className='field-bottom-img' src={scamTrustLogo} alt="Scam Trust" />  <Link to='/CustomerSetPassword'><div className='skip-link'>
                                     Skip

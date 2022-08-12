@@ -236,7 +236,7 @@ function CustomerTransaction() {
 
                         </form>
 
-                        {   ((submitted && !error.pinCheckError2) && (submitted && !error.pinCheckError1)) ? ( <Link to='/CustomerSecurityQuestion'> <button className='Transaction-button yes' type='submit' > Set security question </button> </Link>) : (<button onClick={handleSubmit} className='Transaction-button yes'> Set security question </button>) }
+                        {   ((submitted && !error.pinCheckError2) && (submitted && !error.pinCheckError1)) ? ( <Link to='/CustomerSecurityQuestion'> <button className='Transaction-button yes'> Set security question </button> </Link>) : (<button onClick={handleSubmit} className='Transaction-button yes'> Set security question </button>) }
                     </div>
                     <div className='field-bottom-transaction'> Secured by <img className='field-bottom-img' src={scamTrustLogo} alt="Scam Trust" /> </div>
                 </div>

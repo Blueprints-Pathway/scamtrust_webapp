@@ -81,7 +81,7 @@ function CustomerActivate() {
                     <img className="Activate-view-left-bottom-img" src={Tick1} alt="Scam Trust" />
                     <div className='Activate-view-left-bottom-text'>Congrats! Your <bold className='green-text'>ScamTrust</bold> password & transaction pin have been created successfully 
                     </div>
-                    <Link to='/'> <button className='Activate-button yes' type='submit' > Check mail </button></Link>
+                    <Link to='/'> <button className='Activate-button yes'> Check mail </button></Link>
                     
                 </div>
             </div>

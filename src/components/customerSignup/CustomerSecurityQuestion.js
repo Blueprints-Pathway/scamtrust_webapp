@@ -112,7 +112,7 @@ function CustomerSecurityQuestion() {
 
                         </form>
 
-                        {   ((submitted && !error.SecurityQuestion) && (submitted && !error.SecurityAnswer)) ? ( <Link to='/CustomerActivate'> <button className='password-button move yesGreen' type='submit' > Continue </button></Link>) : (<button onClick={handleSubmit} className='password-button move noGreen'> Continue </button>) }
+                        {   ((submitted && !error.SecurityQuestion) && (submitted && !error.SecurityAnswer)) ? ( <Link to='/CustomerActivate'> <button className='password-button move yesGreen'> Continue </button></Link>) : (<button onClick={handleSubmit} className='password-button move noGreen'> Continue </button>) }
 
                     </div>
                     <div className='field-bottom-security'> Secured by <img className='field-bottom-img' src={scamTrustLogo} alt="Scam Trust" /> </div>

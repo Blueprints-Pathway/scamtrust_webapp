@@ -177,7 +177,7 @@ function CustomerSignupPage() {
                         {(!checked) ?
                                     (<button onClick={handleSubmit} className='signup-button no' disabled> Proceed to verify BVN </button>)
                                     : ((submit && !error.phoneNumber) && (submit && !error.email) && (submit && !error.userName) && (submit && !error.location))
-                                        ? (<Link to='/customerbvn'><button type='submit' className='signup-button yes'> Proceed to verify BVN </button></Link>) : ((submit && error.phoneNumber) && (submit && error.email) && (submit && error.userName) && (submit && error.location))
+                                        ? (<Link to='/customerbvn'><button className='signup-button yes'> Proceed to verify BVN </button></Link>) : ((submit && error.phoneNumber) && (submit && error.email) && (submit && error.userName) && (submit && error.location))
                                             ? (<button onClick={handleSubmit} className='signup-button yes'> Proceed to verify BVN </button>)
                                             : (<button onClick={handleSubmit} className='signup-button yes'> <div null> Proceed to verify BVN </div> </button>)}
                                             <FontAwesomeIcon className='arrowIconSignup' icon={faCaretRight} />
