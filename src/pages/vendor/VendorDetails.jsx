@@ -52,7 +52,7 @@ const VendorDetails = () => {
                   Email address
                 </span>
               </div>
-              <p className="text-[8px]">Ridic@gmail.com</p>
+              <p className="text-[8px] md:text-base">Ridic@gmail.com</p>
             </div>
             <div className="px-5 mb-9 flex justify-between items-center border-b-2 border-b-[#EAEAEA]">
               <div className="flex">
@@ -61,7 +61,7 @@ const VendorDetails = () => {
                   Phone number
                 </span>
               </div>
-              <p className="text-[8px]">08156711115</p>
+              <p className="text-[8px] md:text-base">08156711115</p>
             </div>
             <div className="px-5 mb-9 flex justify-between items-center border-b-2 border-b-[#EAEAEA]">
               <div className="flex">
@@ -70,7 +70,7 @@ const VendorDetails = () => {
                   Office address
                 </span>
               </div>
-              <p className="text-[8px]">Ikate, Lekki, Lagosm</p>
+              <p className="text-[8px] md:text-base">Ikate, Lekki, Lagosm</p>
             </div>
             <div className="px-5 mb-9 flex justify-between items-center border-b-2 border-b-[#EAEAEA]">
               <div className="flex">
@@ -79,7 +79,7 @@ const VendorDetails = () => {
                   RC Number
                 </span>
               </div>
-              <p className="text-xs">7654321</p>
+              <p className="text-xs md:text-base">7654321</p>
             </div>
           </div>
 
