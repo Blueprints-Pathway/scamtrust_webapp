@@ -69,7 +69,7 @@ const Header = (props) => {
             alt="search_icon"
             className="absolute h-[24px] right-[15px] -translate-x-0px] md:right-[20px] top-1/2 -translate-y-1/2"
           />
-          <div className="absolute py-3 px-7 left-1/2 z-30 -translate-x-1/2 w-[380px] max-h-[150px] overflow-y-scroll bg-white">
+          <div className="absolute hidden py-3 px-7 left-1/2 z-30 -translate-x-1/2 w-[380px] max-h-[150px] overflow-y-scroll bg-white">
             <div className="flex justify-between mb-4">
               <p className="font-semibold text-xs">Recent Search</p>
               <p className="text-xs">Competence Score</p>
