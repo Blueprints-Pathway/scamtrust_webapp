@@ -12,36 +12,35 @@ const VendorDetails = () => {
     <Layout>
       <div className="rounded-[25px] min-h-[60vh] overflow-hidden">
         <div className="relative absolute z-0">
-
-        <div className="h-[120px] z-0 md:h-[220px] 2xl:h-[257px] bg-gradient-to-r to-colorPrimary from-[#0D3E8F]">
-          <img
-            src={Shield}
-            alt="shield"
-            className="absolute w-[100px] h-[120px] md:w-[190px] top-[60%] md:h-[250px] right-[10%] md:top-[60%] -translate-y-1/2"
-          />
-          <div className="absolute flex items-center left-[20px] justify-between md:left-[60px] -bottom-[40%] md:-bottom-[50%] 2xl:-bottom-[40%] w-full">
-            <div className="bg-white w-[50px] h-[50px] md:w-[139px] relative overflow-hidden rounded-full md:h-[139px] shadow-md p-1">
-              <div className="bg-[#D3530B] font-semibold w-[45px] h-[45px] text-xl md:text-[40px] grid place-content-center text-white absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-full md:w-[132px] md:h-[132px]">
-                RC
+          <div className="h-[120px] z-0 md:h-[220px] 2xl:h-[257px] bg-gradient-to-r to-colorPrimary from-[#0D3E8F]">
+            <img
+              src={Shield}
+              alt="shield"
+              className="absolute w-[100px] h-[120px] md:w-[190px] top-[60%] md:h-[250px] right-[10%] md:top-[60%] -translate-y-1/2"
+            />
+            <div className="absolute flex items-center left-[20px] justify-between md:left-[60px] -bottom-[40%] md:-bottom-[50%] 2xl:-bottom-[40%] w-full">
+              <div className="bg-white w-[50px] h-[50px] md:w-[139px] relative overflow-hidden rounded-full md:h-[139px] shadow-md p-1">
+                <div className="bg-[#D3530B] font-semibold w-[45px] h-[45px] text-xl md:text-[40px] grid place-content-center text-white absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-full md:w-[132px] md:h-[132px]">
+                  RC
+                </div>
               </div>
-            </div>
-            <div className="flex w-[90%] justify-between">
-              <div className="flex flex-col ml-4 ">
-                <h5 className="font-bold text-xs md:text-2xl text-[#707070]">
-                  Ridic Ventures
-                </h5>
-                <p className="text-xs md:text-2xl">ID23232</p>
+              <div className="flex w-[90%] justify-between">
+                <div className="flex flex-col ml-4 ">
+                  <h5 className="font-bold text-xs md:text-2xl text-[#707070]">
+                    Ridic Ventures
+                  </h5>
+                  <p className="text-xs md:text-2xl">ID23232</p>
+                </div>
+                <button
+                  // onClick={onCreateTransactionClicked}
+                  className="bg-colorPrimary mr-7 md:mr-36 mt-4 text-xs lg:text-base flex text-white items-center rounded-md px-2 py-2 lg:py-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-700"
+                >
+                  <span>Create transaction</span>
+                  <img src={Add} alt="add" className="mb-[-6px]" />
+                </button>
               </div>
-              <button
-                // onClick={onCreateTransactionClicked}
-                className="bg-colorPrimary mr-7 md:mr-36 mt-4 text-xs lg:text-base flex text-white items-center rounded-md px-2 py-2 lg:py-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-700"
-              >
-                <span>Create transaction</span>
-                <img src={Add} alt="add" className="mb-[-6px]" />
-              </button>
             </div>
           </div>
-        </div>
         </div>
 
         <div className="pt-36 px-4 md:px-28 bg-white mb-9 pb-9 rounded-b-[25px]">
@@ -49,28 +48,36 @@ const VendorDetails = () => {
             <div className="px-5 mb-9 flex justify-between items-center border-b-2 border-b-[#EAEAEA]">
               <div className="flex">
                 <img src={Message} alt="message_icon" className="mr-6" />
-                <span className="font-medium text-[8px] md:text-2xl">Email address</span>
+                <span className="font-medium text-[8px] md:text-2xl">
+                  Email address
+                </span>
               </div>
               <p className="text-[8px]">Ridic@gmail.com</p>
             </div>
             <div className="px-5 mb-9 flex justify-between items-center border-b-2 border-b-[#EAEAEA]">
               <div className="flex">
                 <img src={Phone} alt="message_icon" className="mr-6" />
-                <span className="font-medium text-[8px] md:text-2xl">Phone number</span>
+                <span className="font-medium text-[8px] md:text-2xl">
+                  Phone number
+                </span>
               </div>
               <p className="text-[8px]">08156711115</p>
             </div>
             <div className="px-5 mb-9 flex justify-between items-center border-b-2 border-b-[#EAEAEA]">
               <div className="flex">
                 <img src={Location} alt="message_icon" className="mr-6" />
-                <span className="font-medium text-[8px] md:text-2xl">Office address</span>
+                <span className="font-medium text-[8px] md:text-2xl">
+                  Office address
+                </span>
               </div>
               <p className="text-[8px]">Ikate, Lekki, Lagosm</p>
             </div>
             <div className="px-5 mb-9 flex justify-between items-center border-b-2 border-b-[#EAEAEA]">
               <div className="flex">
                 <img src={Check} alt="message_icon" className="mr-6" />
-                <span className="font-medium text-[8px] md:text-2xl">RC Number</span>
+                <span className="font-medium text-[8px] md:text-2xl">
+                  RC Number
+                </span>
               </div>
               <p className="text-xs">7654321</p>
             </div>
@@ -83,7 +90,34 @@ const VendorDetails = () => {
                 return (
                   <div className="flex mb-5 justify-between pb-2 border-b-[#EFF3FF] border-b-[3px]">
                     <div>{service}</div>
-                    <div>Rating</div>
+                    <div class="rating">
+                      <input
+                        type="radio"
+                        name="rating-2"
+                        className="mask mask-star-2 bg-orange-400"
+                      />
+                      <input
+                        type="radio"
+                        name="rating-2"
+                        className="mask mask-star-2 bg-orange-400"
+                        checked
+                      />
+                      <input
+                        type="radio"
+                        name="rating-2"
+                        className="mask mask-star-2 bg-orange-400"
+                      />
+                      <input
+                        type="radio"
+                        name="rating-2"
+                        className="mask mask-star-2 bg-orange-400"
+                      />
+                      <input
+                        type="radio"
+                        name="rating-2"
+                        className="mask mask-star-2 bg-orange-400"
+                      />
+                    </div>
                   </div>
                 );
               })}
