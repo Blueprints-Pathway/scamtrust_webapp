@@ -41,35 +41,35 @@ const VendorDetails = () => {
           </div>
         </div>
 
-        <div className="pt-36 px-28 bg-white mb-9 pb-9 rounded-b-[25px]">
+        <div className="pt-36 px-4 md:px-28 bg-white mb-9 pb-9 rounded-b-[25px]">
           <div className="">
             <div className="px-5 mb-9 flex justify-between items-center border-b-2 border-b-[#EAEAEA]">
               <div className="flex">
                 <img src={Message} alt="message_icon" className="mr-6" />
-                <span className="font-medium text-2xl">Email address</span>
+                <span className="font-medium text-base md:text-2xl">Email address</span>
               </div>
-              <p>Ridic@gmail.com</p>
+              <p className="text-xs">Ridic@gmail.com</p>
             </div>
             <div className="px-5 mb-9 flex justify-between items-center border-b-2 border-b-[#EAEAEA]">
               <div className="flex">
                 <img src={Phone} alt="message_icon" className="mr-6" />
-                <span className="font-medium text-2xl">Phone number</span>
+                <span className="font-medium text-base md:text-2xl">Phone number</span>
               </div>
-              <p>08156711115</p>
+              <p className="text-xs">08156711115</p>
             </div>
             <div className="px-5 mb-9 flex justify-between items-center border-b-2 border-b-[#EAEAEA]">
               <div className="flex">
                 <img src={Location} alt="message_icon" className="mr-6" />
-                <span className="font-medium text-2xl">Office address</span>
+                <span className="font-medium text-base md:text-2xl">Office address</span>
               </div>
-              <p>Ikate, Lekki, Lagosm</p>
+              <p className="text-xs">Ikate, Lekki, Lagosm</p>
             </div>
             <div className="px-5 mb-9 flex justify-between items-center border-b-2 border-b-[#EAEAEA]">
               <div className="flex">
                 <img src={Check} alt="message_icon" className="mr-6" />
-                <span className="font-medium text-2xl">RC Number</span>
+                <span className="font-medium text-base md:text-2xl">RC Number</span>
               </div>
-              <p>7654321</p>
+              <p className="text-xs">7654321</p>
             </div>
           </div>
 
