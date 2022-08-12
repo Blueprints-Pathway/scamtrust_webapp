@@ -46,47 +46,47 @@ const VendorDetails = () => {
             <div className="px-5 mb-9 flex justify-between items-center border-b-2 border-b-[#EAEAEA]">
               <div className="flex">
                 <img src={Message} alt="message_icon" className="mr-6" />
-                <span className="font-medium text-base md:text-2xl">Email address</span>
+                <span className="font-medium text-[8px] md:text-2xl">Email address</span>
               </div>
-              <p className="text-xs">Ridic@gmail.com</p>
+              <p className="text-[8px]">Ridic@gmail.com</p>
             </div>
             <div className="px-5 mb-9 flex justify-between items-center border-b-2 border-b-[#EAEAEA]">
               <div className="flex">
                 <img src={Phone} alt="message_icon" className="mr-6" />
-                <span className="font-medium text-base md:text-2xl">Phone number</span>
+                <span className="font-medium text-[8px] md:text-2xl">Phone number</span>
               </div>
-              <p className="text-xs">08156711115</p>
+              <p className="text-[8px]">08156711115</p>
             </div>
             <div className="px-5 mb-9 flex justify-between items-center border-b-2 border-b-[#EAEAEA]">
               <div className="flex">
                 <img src={Location} alt="message_icon" className="mr-6" />
-                <span className="font-medium text-base md:text-2xl">Office address</span>
+                <span className="font-medium text-[8px] md:text-2xl">Office address</span>
               </div>
-              <p className="text-xs">Ikate, Lekki, Lagosm</p>
+              <p className="text-[8px]">Ikate, Lekki, Lagosm</p>
             </div>
             <div className="px-5 mb-9 flex justify-between items-center border-b-2 border-b-[#EAEAEA]">
               <div className="flex">
                 <img src={Check} alt="message_icon" className="mr-6" />
-                <span className="font-medium text-base md:text-2xl">RC Number</span>
+                <span className="font-medium text-[8px] md:text-2xl">RC Number</span>
               </div>
               <p className="text-xs">7654321</p>
             </div>
           </div>
 
-          <div className="flex justify-between">
-            <div className="bg-[rgba(237,237,237,0.4)] py-4 px-11 w-[624px] rounded-2xl">
+          <div className="flex flex-col md:flex-row justify-between">
+            <div className="bg-[rgba(237,237,237,0.4)] py-4 px-11 mb-5 md:mb-0 md:w-[624px] rounded-2xl">
               {RATING.map((serv) => {
                 const { rating, service } = serv;
                 return (
                   <div className="flex mb-5 justify-between pb-2 border-b-[#EFF3FF] border-b-[3px]">
                     <div>{service}</div>
-                    <div>RAting</div>
+                    <div>Rating</div>
                   </div>
                 );
               })}
             </div>
             <div>
-              <div className="bg-[#F8F8F8] w-[296px] rounded-2xl">
+              <div className="bg-[#F8F8F8] md:w-[296px] rounded-2xl">
                 <div className="flex items-center justify-between px-2 py-4">
                   <p className="font-medium">Competence Score</p>
                   <p className="bg-colorGreen text-white py-2 w-11 text-center rounded-lg">
@@ -100,7 +100,7 @@ const VendorDetails = () => {
                   </p>
                 </div>
               </div>
-              <div className="mt-3 p-6 flex items-center bg-[#E2D8F1] text-colorPrimary w-[296px] rounded-2xl">
+              <div className="mt-3 p-6 flex items-center bg-[#E2D8F1] text-colorPrimary md:w-[296px] rounded-2xl">
                 <div className="w-10 h-10 bg-colorPrimary grid place-content-center mr-3 rounded-full">
                   <img src={Chat} alt="report_vendor" />
                 </div>
