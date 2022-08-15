@@ -244,6 +244,7 @@ text-align: center;
 right: 6vw;
 top: 4vh;
 color: #232164;
+cursor: pointer;
 }
 .bellActive{
   width: 0.5rem;
@@ -255,6 +256,7 @@ color: #232164;
   right: 0;
   right: 6vw;
 top: 4vh;
+cursor: pointer;
 }
 .side-icon{
   position: absolute;

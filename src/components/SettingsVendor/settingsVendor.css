@@ -1,5 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Karla&family=Lato:wght@900&family=Montserrat:wght@600&family=Poppins:wght@400;600&display=swap'); */
+.side {
+    position: absolute;
+    width: 14vw;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(177.44deg, #0A439A 0%, #1A1E51 92.41%);
+    transition: 360ms;
+}
+.side.active{
+    width: 7.5vw;
+}
+.side-item{
+  display: flex;
+  gap: 1rem;
+}
+.inActive{
+  display: none;
+  transition: 360ms;
+}
+.side-linkX{
 
+  position: relative;
+width: 1rem;
+height: 1rem;
+left: 2vw;
+top: 22vh;
+margin-bottom: 2rem;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 10px;
+line-height: 10px;
+/* identical to box height */
+
+display: flex;
+align-items: flex-end;
+
+color: #F2F2F2;
+}
+.side-link{
+  transition: 360ms;
+  position: relative;
+width: 1rem;
+height: 1rem;
+left: 3vw;
+top: 22vh;
+margin-bottom: 2rem;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 15px;
+/* identical to box height */
+
+display: flex;
+align-items: flex-end;
+
+color: #F2F2F2;
+}
+
+.side-item2{
+  position: relative;
+  bottom: -12vh;
+  display: flex;
+  gap: 1rem;
+}
+
+.side-linkX2{
+
+  position: relative;
+width: 1rem;
+height: 1rem;
+left: 2vw;
+top: 33vh;
+margin-bottom: 1rem;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 10px;
+line-height: 10px;
+/* identical to box height */
+
+display: flex;
+align-items: flex-end;
+
+color: #F2F2F2;
+}
+.side-link2{
+  transition: 360ms;
+  position: relative;
+width: 1rem;
+height: 1rem;
+left: 3vw;
+top: 35vh;
+margin-bottom: 1rem;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 15px;
+/* identical to box height */
+
+display: flex;
+align-items: flex-end;
+
+color: #F2F2F2;
+}
+.side-bar-title{
+  /* Scam Trust */
+
+
+position: absolute;
+width: 5rem;
+height: 5rem;
+left: 5vh;
+top: 1rem;
+
+font-family: 'Michroma';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 20px;
+/* or 100% */
+
+
+color: #FFFFFF;
+}
+.side-bar-title.active{
+display: none;
+transition: 360ms;
+}
+
+.side-bar-logo{
+position: absolute;
+width: 14px;
+height: 16px;
+left: 8.35rem;
+top: 1.5rem;
+}
+.side-bar-logo.active{
+  position: absolute;
+  width: 27px;
+  height: 30px;
+  left: 2.5vw;
+  top: 1.8rem;
+  
+  transform: rotate(360deg);
+  transition: 500ms;
+}
+.side-bar-logo-bottom{
+position: absolute;
+bottom: 0;
+width: 60%;
+left: 15%;
+}
+.side-bar-top{
+  display: flex;
+}
+
+.toggle{
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  left: -1.8vw;
+  top: 4vh;
+  padding: 0.1rem;
+  background-color: #F2F2F2;
+  border: #1A1E51 solid 1px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+.header{
+    position: absolute;
+width: 86vw;
+height: 10vh;
+right: 0;
+top: 0px;
+transition: 360ms;
+background: #FFFFFF;
+
+}
+.header.active{
+  position: absolute;
+  width: 92.5vw;
+  height: 10vh;
+  top: 0px;
+  transition: 360ms;
+  background: #FFFFFF;
+  
+}
+.header-title{
+    position: absolute;
+font-weight: 600;
+font-size: 30px;
+width: 1rem;
+height: 1rem;
+left: 3vw;
+top: 4vh;
+margin-bottom: 3rem;
+font-family: 'Poppins';
+font-size: 20px;
+line-height: 10px;
+/* identical to box height */
+
+display: flex;
+align-items: flex-end;
+
+color: #232164;
+}
+.userAbbrevation{
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+right: 3vw;
+top: 3.5vh;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 10px;
+line-height: 10px;
+/* or 143% */
+
+background: #E36969;
+border-radius: 50%;
+
+color: #F2F2F2;
+padding-top: 5px;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+.bell{
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+right: 6vw;
+top: 4vh;
+color: #232164;
+}
+.bellActive{
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  position: absolute;
+  background: #3AB75D;
+  bottom: 0;
+  right: 0;
+  right: 6vw;
+top: 4vh;
+}
+.side-icon{
+  position: absolute;
+  left: 1vw;
+}
+.search-bar {
+  position: relative;
+  background: transparent;
+  width: 30vw;
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  color: var(--color-black);
+  background: rgba(192, 192, 192, 0.13);
+  padding: 10px;
+  border-radius: 15px;
+  top: 1rem;
+  left: 45vw;
+}
+
+.search-bar input[type="search"] {
+  position: relative;
+  background: transparent;
+  width: 25vw;
+}
+
+.search-bar input[type="search"]::placeholder {
+  color: var(--color-gray);
+}
+.search{
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  /* identical to box height */
+  right: 3vw;
+  cursor: pointer;
+}
 .Center{
     position: absolute;
 width: 68vw;
@@ -10,6 +301,9 @@ top: 15vh;
 background: linear-gradient(92.05deg, #0D3E8F -1.37%, #1A1E51 101.15%);
 border-radius: 25px 25px 0px 0px;
 }
+.Center.active{
+left: 22vw;
+}
 .CenterTop{
     position: absolute;
     width: 8vw;
@@ -19,10 +313,21 @@ border-radius: 25px 25px 0px 0px;
     mix-blend-mode: soft-light;
     opacity: 0.2;
 }
+.vendorNameSettings{
+  font-family: 'Karla';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+/* or 190% */
+position: relative;
+margin-left: 10rem;
+margin-top: 1rem;
+color: #707070;
+}
 .CenterBottom{
     position: absolute;
     width: 68vw;
-    min-height: 60vh;
+    min-height: 32rem;
     left: 25vw;
     top: 35vh;
 display: flex;
@@ -48,52 +353,1000 @@ border-radius: 0px 0px 25px 25px;
     background: #EAEAEA;
 }
 .CenterImg{
-    position: absolute;
-    width: 5.5rem;
-    height: 5.5rem;
-    left: 0.7vw;
-    top: 1.4vh;
-    border-radius: 40%;
-    background: #085a00;
+  position: absolute;
+  width: 5.5rem;
+  height: 5.5rem;
+  left: 0.7vw;
+  top: 1.4vh;
+  border-radius: 40%;
+  background: #085a00;
 }
-.CenterImage{
-    position: absolute;
-    width: 4rem;
-    height: 4rem;
-    left: 0.9vw;
-    top: 1.6vh;
-    border-radius: 40%;
+.CenterImage1{
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  right: -0.95rem;
+  top: 1rem;
+  border-radius: 40%;
+  background: #FFFFFF;
+  transform: translate(0%, 0%);
 }
-.vendorName{
-    position: relative;
-    left: 9rem;
-    top: 1vh;
-font-family: 'Karla';
+.category {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+
+.category h6 {
+  width: 100%;
+  text-align: left;
+  border-bottom: 1.5px solid #EAEAEA;
+  padding-bottom: 0.5rem;
+  font-size: 0.7rem;
+  font-family: 'Karla';
 font-style: normal;
 font-weight: 700;
 font-size: 12px;
-line-height: 20px;
 /* or 190% */
 
 
-color: #707070;
+color: #232164;
 }
+.category .active {
+  border-color: #86D19B;
+}
+.form-text-GeneralSettings{
+  width: 50vw;
+  height: 4.5rem;
+margin-top: -2.7rem;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+/* identical to box height */
+display: flex;
+align-items: flex-end;
+
+color: #232164;
+}
+
+.input-field-GeneralSettings{
+  margin-bottom: 1%;
+}
+.inputBox-GeneralSettings{
+width: 55vw;
+  height: 2.3rem;
+background-color: #FFFF;
+border: 0.5px solid #D5D8DA;
+border-radius: 5px;
+text-align: right;
+padding: 5px;
+}
+.GeneralSettings{
+  position: absolute;
+  /* identical to box height */
+  left: 6vw;
+  top: 3.5rem;
+  cursor: pointer;
+}
+
 .vendorAction{
-    position: relative;
-    right: -50vw;
-    top: 1.5vh;
+  position: absolute;
+  /* identical to box height */
+ right: 0vw;
+  top: -2.2rem;
+  cursor: pointer;
 }
+.edit1{
+  position: absolute;
+  right: -5vw;
+  top: 6rem;
+  cursor: pointer;
+}
+.edit2{
+  position: absolute;
+  right: -5vw;
+  top: 10.5rem;
+  cursor: pointer;
+}
+.edit3{
+  position: absolute;
+  right: -5vw;
+  top: 15rem;
+  cursor: pointer;
+}
+.edit4{
+  position: absolute;
+  right: -5vw;
+  top: 19.5rem;
+  cursor: pointer;
+}
+.edit5{
+  position: absolute;
+  right: -5vw;
+  top: 24.5rem;
+  cursor: pointer;
+}
+.EditDone-card{
+  position: absolute;
+width: 65vw;
+height: 40rem;
+left: 25vw;
+top: 8rem;
+
+background: #FFFFFF;
+border-radius: 20px;
+/* identical to box height */
+
+}
+.EditDone-message{
+  position: relative;
+    left: 5vw;
+    top: 3rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    /* identical to box height */
+}
+.EditDone-card-close{
+  position: relative;
+  left: 22vw;
+  top: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  cursor: pointer;
+}
+.EditDone-Line{
+  position: absolute;
+  width: 55vw;
+  height: 0.15rem;
+  left: 5vw;
+  top: 5.5rem;
+  background: #EAEAEA;
+}
+.EditDone-card-title{
+  position: absolute;
+  left: 10vw;
+  top: 15rem;
+  font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+/* or 133% */
+width: 45vw;
+text-align: center;
+line-height: 30px;
+color: #01316C;
+
+}
+.EditDone-card-title1{
+  position: relative;
+  left: -18.5vw;
+  top: 10rem;
+  font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+/* or 133% */
+width: 70vw;
+text-align: center;
+line-height: 30px;
+color: #01316C;
+}
+.EditDone-card-title2{
+  position: relative;
+  left:6vw;
+  top: 10rem;
+  font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+/* or 133% */
+width: 70vw;
+text-align: left;
+line-height: 30px;
+color: #01316C;
+}
+.Edit-button{
+  position: absolute;
+  bottom: 10rem;
+width: 11rem;
+height: 2.5rem;
+right:  25vw;
+color: #FFFFFF;
+background: #023B83;
+border-radius: 6.12667px;
+}
+.password-GeneralSettings{
+  width: 50vw;
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  /* or 284% */
+  
+  
+  color: #707070;
+}
+.password-Settings{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.password-text-hash{
+  position: absolute;
+  right:  30vw;
+}
+.pass-button{
+  position: absolute;
+  margin-top: -0.7rem;
+width: 11rem;
+height: 2.5rem;
+right:  10vw;
+color: #FFFFFF;
+background: #3AB75D;
+border-radius: 6.12667px;
+}
+.passShift{
+  position: absolute;
+  margin-left:  6vw;
+  top: 12.5rem;
+}
+.passShift3{
+  position: absolute;
+  margin-left:  6vw;
+  top: 19rem;
+}
+.passView{
+  position: absolute;
+  left:  53vw;
+  top: 16rem;
+}
+.DoneImg{
+  margin-top: 7rem;
+}
+.successEditSmall{
+  margin-top: 5rem;
+  font-size: 12px;
+}
+.EditPass{
+  position: relative;
+  left: 6vw;
+  top: 3.5rem;
+  color: #232164;
+}
+.inputBox-EditSettings2{
+  position: relative;
+  left: 6vw;
+  top: 3.5rem;
+  width: 50vw;
+  height: 2.3rem;
+background-color: #FFFF;
+border-bottom: 0.5px solid #D5D8DA;
+border-radius: 5px;
+text-align: left;
+padding: 5px;
+}
+.EditDone-OTP{
+  position: relative;
+  top: 4rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 90%;
+}
+.otpImg{
+  width: 20rem;
+  margin-top: 3rem;
+}
+.EditDone-OTPForm{
+  margin-right: 1vw;
+}
+.form-fieldPinEditOTP{
+  position: relative;
+  margin-left: 0vw;
+  top: 9rem;
+  font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+/* or 133% */
+width: 70vw;
+text-align: center;
+color: #01316C;
+}
+.input-fieldPinWrapEdit{
+  position: relative;
+  margin-left: 1vw;
+  top: 10rem;
+   width: 23rem;
+   display: flex;
+   margin-bottom: -1rem;
+   justify-content: space-between;
+   margin-bottom: 30%;
+}
+.editPin{
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  left: -1vw;
+  border: 0.5px solid #1C2E7A;
+  border-radius: 7px;
+display: flex;
+}
+.inputBox-EditSettings{
+  position: relative;
+  left: 6vw;
+  top: 10rem;
+  width: 50vw;
+  height: 2.3rem;
+background-color: #FFFF;
+border-bottom: 0.5px solid #D5D8DA;
+border-radius: 5px;
+text-align: left;
+padding: 5px;
+}
+.successEditLong-otp{
+  margin-top: 12rem;
+  display: flex;
+  gap: 0.5rem;
+}
+.editSettingOTP{
+  margin-top: 6rem;
+  margin-left: 1rem;
+}
+.otpMessage{
+  font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 10px;
+
+color: #A4A4A4;
+}
+.otpResend{
+  font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 11px;
+/* identical to box height */
+
+
+color: #1C2E7A;
+}
+.successEdit{
+  margin-top: 5rem;
+  font-size: 12px;
+}
+.num{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 11px;
+  /* identical to box height */
+  
+  
+  color: #1C2E7A;
+}
+.button-OTP{
+  top:  27rem;
+  margin-right:  -5vw;
+}
+.editSettingOTP{
+  position: absolute;
+  margin-right:  5vw;
+  top: 9rem;
+}
+.editSetting{
+  position: relative;
+  left:  8vw;
+  top: 10.5rem;
+}
+.editSetting2{
+  position: relative;
+  margin-left:  25vw;
+  top: 1rem;
+}
+.DoneImg{
+  margin-top: 8rem;
+}
+.account-card{
+  position: relative;
+  width: 85%;
+  height: 6rem;
+  left: 5vw;
+  top: 5rem;
+  margin-bottom:  2rem;
+  background: #F2F2F2;
+  border-radius: 10px;
+}
+.account-card-title{
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  left: 2rem;
+  top: 1.5rem;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 10px 10px 20px rgba(100, 96, 96, 0.25);
+  cursor: pointer;
+}
+.plus{
+  
+position: absolute;
+left: 0.9rem;
+top: 0.9rem;
+font-size: 16px;
+/* identical to box height */
+
+
+color: #232164;
+}
+.addAccount{
+  position: absolute;
+left: 6rem;
+top: 1.8rem;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 30px;
+/* identical to box height */
+
+
+color: #232164;
+}
+.editSetting2{
+  position: absolute;
+  top: 26rem;
+  left: 5vw;
+}
+.editSetting21{
+  position: absolute;
+  top: 26rem;
+  left: 28vw;
+}
+.form-text-addAccount{
+  position: absolute;
+  left: 17vw;
+  top: 8rem;
+  
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 6rem;
+  /* identical to box height */
+  
+  
+  color: #7D8287;
+}
+.form-text-addAccount2{
+  position: absolute;
+  left: 17vw;
+  top: 14rem;
+  
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 6rem;
+  /* identical to box height */
+  
+  
+  color: #7D8287;
+}
+.form-text-addAccount3{
+  position: absolute;
+  left: 17vw;
+  top: 19.5rem;
+  
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 6rem;
+  /* identical to box height */
+  
+  
+  color: #7D8287;
+}
+.bankImg{
+  position: absolute;
+  left: 19vw;
+  top: 12.2rem;
+  width: 1.5rem;
+}
+.bankNumImg{
+  position: absolute;
+  left: 19vw;
+  top: 18.7rem;
+  width: 1.5rem;
+}
+.inputBox-addAccount{
+  position: absolute;
+  width: 30rem;
+  height: 3rem;
+  left: 17vw; 
+  top: 11.5rem;
+  padding-left: 5rem;
+  background: rgba(201, 207, 214, 0.33);
+  opacity: 0.6;
+  border-radius: 10px;
+}
+.inputBox-addAccount2{
+  position: absolute;
+  width: 30rem;
+  height: 3rem;
+  left: 17vw; 
+  top: 17.5rem;
+  padding-left: 5rem;
+  background: rgba(201, 207, 214, 0.33);
+  opacity: 0.6;
+  border-radius: 10px;
+}
+.inputBox-addAccount3{
+  position: absolute;
+  width: 30rem;
+  height: 3rem;
+  left: 17vw; 
+  top: 23.3rem;
+  padding-left: 5rem;
+  background: rgba(201, 207, 214, 0.33);
+  opacity: 0.6;
+  border-radius: 10px;
+}
+.editSetting3{
+  position: absolute;
+  top: 14.7rem;
+  left: 19vw;
+}
+.editSetting31{
+  position: absolute;
+  top: 20.5rem;
+  left: 19vw;
+}
+.editSetting32{
+  position: absolute;
+  top: 26.5rem;
+  left: 19vw;
+}
+.account-card-add{
+  position: relative;
+  width: 85%;
+  height: 8rem;
+  left: 5vw;
+  top: 5rem;
+  margin-bottom:  2rem;
+  
+  background: #3AB75D;
+  border-radius: 20px; 
+}
+.account-card-add2{
+  position: relative;
+  width: 85%;
+  height: 8rem;
+  left: 5vw;
+  top: 5rem;
+  margin-bottom:  2rem;
+  
+  background: rgba(2, 76, 169, 0.68);
+  border-radius: 20px; 
+}
+.added-Account-title{
+  position: absolute;
+  left: 4vw;
+  top: 3.5rem;
+  
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  /* identical to box height */
+  
+  
+  color: #FFFFFF;
+}
+.added-Account-name{
+  position: absolute;
+  left: 4.2vw;
+  top: 5.5rem;
+  
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 21px;
+  /* identical to box height */
+  
+  
+  color: #FFFFFF;
+}
+.added-Account-number{
+  position: absolute;
+  right: 4vw;
+  top: 5.5rem;
+  
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 21px;
+  /* identical to box height */
+  
+  
+  color: #FFFFFF;
+  
+}
+.shielgImg{
+  position: absolute;
+  width: 5rem;
+  height: 6rem;
+  right: 0vw;
+  top: -5rem;
+  
+}
+.trash{
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  right: 5vw;
+  top: 6.5rem;
+  cursor: pointer;
+}
+.passAccount-button{
+  position: absolute;
+  bottom: 2.5rem;
+width: 7rem;
+height: 2.5rem;
+right:  5vw;
+color: #FFFFFF;
+background: #023B83;
+border-radius: 6.12667px;
+cursor: pointer;
+}
+.security-GeneralSettings{
+  width: 55vw;
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  /* or 284% */
+  
+  
+  color: #707070;
+}
+.security-text{
+  
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 2rem;
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: flex-end;
+  
+  color: #013C86;
+}
+.security-text-hash{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 30px;
+  /* identical to box height */
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-end;
+  
+  color: #A4A4A4;
+  
+}
+.security-text2{
+  font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 30px;
+
+color: #013C86;
+}
+.security-toggle{
+  position: relative;
+  height: 0.1rem;
+  right: 3vw;
+  top: -1rem;
+}
+.up{
+  margin-top: -1rem;
+}
+.security-Line{
+  position: relative;
+  width: 50vw;
+  height: 0.1rem;
+  left: 0vw;
+  top: -0.3rem;
+  border: 0.6px solid #C0C0C0;
+}
+@media screen and (max-width: 1200px) {
+  .EditDone-card-title1{
+    position: relative;
+    left: -18.5vw;
+  }
+  .editSetting2{
+    left: 3vw;
+  }
+  .form-text-addAccount{
+    left: 14vw; 
+  }
+  .form-text-addAccount2{
+    left: 14vw; 
+  }
+  .form-text-addAccount3{
+    left: 14vw; 
+  }
+  .bankImg{
+    left: 16vw;
+  }
+  .bankNumImg{
+    left: 16vw;
+  }
+  .inputBox-addAccount{
+    left: 14vw; 
+  }
+  .inputBox-addAccount2{
+    left: 14vw; 
+  }
+  .inputBox-addAccount3{
+    left: 14vw; 
+  }
+  .editSetting3{
+    left: 16vw;
+  }
+  .editSetting31{
+    left: 16vw;
+  }
+  .editSetting32{
+    left: 16vw;
+  }
+  }
+@media screen and (max-width: 960px) {
+  .header{
+    position: absolute;
+    width: 92.5vw;
+    height: 10vh;
+    right: 0;
+    top: 0px;
+    transition: 360ms;
+    background: #FFFFFF;
+  }
+  .side{
+    position: absolute;
+      width: 7.5vw;
+      height: 100vh;
+      min-height: 50rem;
+      left: 0px;
+      top: 0px;
+      background: linear-gradient(177.44deg, #0A439A 0%, #1A1E51 92.41%);
+      transition: 360ms;
+  }
+  .inActive{
+    display: none;
+    transition: 360ms;
+  }
+  .side-link{
+    transition: 360ms;
+    position: relative;
+  width: 1rem;
+  height: 1rem;
+  left: 2.5vw;
+  top: 22vh;
+  margin-bottom: 2rem;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 15px;
+  /* identical to box height */
+  
+  display: flex;
+  align-items: flex-end;
+  
+  color: #F2F2F2;
+  }
+  .side-link2{
+  left: 2.5vw;
+  top: 35vh;
+  margin-bottom: 1rem;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 15px;
+  /* identical to box height */
+  
+  display: flex;
+  align-items: flex-end;
+  
+  color: #F2F2F2;
+  }
+  .side-bar-title{
+    display: none;
+    transition: 360ms;
+    }
+    .side-bar-logo{
+      position: absolute;
+      width: 27px;
+      height: 30px;
+      left: -5rem;
+      top: 1.8rem;
+      transition: 360ms;  transform: rotate(360deg);
+      transition: 500ms;
+    }
+    .Active{
+      display: none
+    }
+
+     .header{
+    position: absolute;
+    width: 92.5vw;
+    height: 10vh;
+    right: 0;
+    top: 0px;
+    transition: 360ms;
+    background: #FFFFFF;
+  }
+  .side{
+    position: absolute;
+      width: 7.5vw;
+      height: 100vh;
+      left: 0px;
+      top: 0px;
+      background: linear-gradient(177.44deg, #0A439A 0%, #1A1E51 92.41%);
+      transition: 360ms;
+  }
+  .inActive{
+    display: none;
+    transition: 360ms;
+  }
+  .side-link{
+    transition: 360ms;
+    position: relative;
+  width: 1rem;
+  height: 1rem;
+  left: 2.5vw;
+  top: 22vh;
+  margin-bottom: 2rem;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 15px;
+  /* identical to box height */
+  
+  display: flex;
+  align-items: flex-end;
+  
+  color: #F2F2F2;
+  }
+  .side-link2{
+  left: 2.5vw;
+  top: 35vh;
+  margin-bottom: 1rem;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 15px;
+  /* identical to box height */
+  
+  display: flex;
+  align-items: flex-end;
+  
+  color: #F2F2F2;
+  }
+  .side-bar-title{
+    display: none;
+    transition: 360ms;
+    }
+    .side-bar-logo{
+      position: absolute;
+      width: 27px;
+      height: 30px;
+      left: 1.5rem;
+      top: 1.8rem;
+      transition: 360ms;
+    }
+    .Active{
+      display: none
+    }
+    .toggle{
+      display: none;
+    }
+    .password-text-hash{
+      right:  25vw;
+    }
+    .pass-button{
+    right:  0.5vw;
+    }
+   
+    .GeneralSettings{
+      position: absolute;
+      /* identical to box height */
+      left: 11vw;
+      top: 3.5rem;
+      cursor: pointer;
+    }
+    .Edit-button{
+      bottom: 8rem;
+      right:  22vw;
+    }
+    .editSetting2{
+      left: 1vw;
+    }
+ 
+
+.bankImg{
+  left: 14vw;
+}
+.bankNumImg{
+  left: 14vw;
+}
+.form-text-addAccount{
+  left: 12vw; 
+}
+.form-text-addAccount2{
+  left: 12vw; 
+}
+.form-text-addAccount3{
+  left: 12vw; 
+}
+.inputBox-addAccount{
+  left: 12vw; 
+  width: 25rem;
+}
+.inputBox-addAccount2{
+  left: 12vw; 
+  width: 25rem;
+}
+.inputBox-addAccount3{
+  left: 12vw; 
+  width: 25rem;
+}
+.editSetting3{
+  left: 14vw;
+}
+.editSetting31{
+  left: 14vw;
+}
+.editSetting32{
+  left: 14vw;
+}
+}
+
 @media screen and (max-width: 960px) {
     .Center{
         position: absolute;
     width: 75.5vw;
     height: 20vh;
-    left: 15vw;
+    left: 17vw;
     top: 15vh;
     
     background: linear-gradient(92.05deg, #0D3E8F -1.37%, #1A1E51 101.15%);
     border-radius: 25px 25px 0px 0px;
     }
+    
     .CenterTop{
         width: 10vw;
         right: 3vw;
@@ -102,13 +1355,13 @@ color: #707070;
     .CenterBottom{
         position: absolute;
         width: 75.5vw;
-        min-height: 60vh;
-        left: 15vw;
+        left: 17vw;
         top: 35vh;
     
     background: #FFFFFF;
     border-radius: 0px 0px 25px 25px;
     }
+   
     .CenterImage{
         position: absolute;
         width: 4rem;
@@ -117,16 +1370,194 @@ color: #707070;
         top: 1.6vh;
         border-radius: 40%;
     }    
+   
     .vendorName{
         left: 15vw;
     }
     .vendorAction{
-        left: 15vw;
-        font-family: 'Poppins';
-font-style: normal;
-font-weight: 500;
+        right: 2vw;
     }
+    .otpImg{
+      width: 15rem;
+      margin-top: 5rem;
+      margin-left: 2vw;
+    }
+    .EditDone-OTPForm{
+      margin-left: 4vw;
+    }
+    .form-fieldPinEditOTP{
+    font-size: 12px;
+    margin-left: 0vw;
+    
+    }
+    .input-fieldPinWrapEdit{
+      margin-left: 0vw;
+       width: 20rem;
+    }
+    .editSettingOTP{
+      top: 8.5rem;
+    }
+    .editSetting21{
+      left: 25vw;
+    }
+  }
+  @media screen and (max-width: 940px) {
+    .otpImg{
+      width: 15rem;
+      margin-top: 4rem;
+      margin-left: 2vw;
+    }
+    .EditDone-OTPForm{
+      margin-left: 5vw;
+      margin-top: 0rem;
+    }
+    .form-fieldPinEditOTP{
+    font-size: 11px;
+    margin-left: 1vw;
+    
+    }
+    .input-fieldPinWrapEdit{
+      margin-left: 2vw;
+       width: 20rem;
+    }
+    .editSettingOTP{
+      top: 8.5rem;
+    }
+}
+@media screen and (max-width: 920px) {
+  .otpImg{
+    width: 15rem;
+    margin-top: -1rem;
+    margin-left: 2vw;
+  }
+  .EditDone-OTPForm{
+    margin-left: 5vw;
+    margin-top: -9rem;
+  }
+  .form-fieldPinEditOTP{
+  font-size: 11px;
+  margin-left: 1vw;
+  
+  }
+  .input-fieldPinWrapEdit{
+    margin-left: 2vw;
+     width: 20rem;
+  }
+  .editSettingOTP{
+    top: 13.5rem;
+  }
+}
+@media screen and (max-width: 880px) {
+  .otpImg{
+    width: 15rem;
+    margin-top: -1rem;
+    margin-left: 2vw;
+  }
+  .EditDone-OTPForm{
+    margin-left: 5vw;
+    margin-top: -9rem;
+  }
+  .form-fieldPinEditOTP{
+  font-size: 11px;
+  margin-left: 1vw;
+  
+  }
+  .input-fieldPinWrapEdit{
+    margin-left: 2vw;
+     width: 20rem;
+  }
+  .editSettingOTP{
+    top: 13.5rem;
+  }
+}
+  @media screen and (max-width: 800px) {
+  .EditDone-OTPForm{
+    min-width: 20rem;
+    width: 30vw;
+    
+  }
+  .otpImg{
+    margin-top: -1.5rem;
+  }
+  .input-fieldPinEditOTP{
+    position: relative;
+    margin-left: 0vw;
+    top: -9rem;
+  }
+ 
+  .editSettingOTP{
+    margin-top: 5.5rem;
+    margin-left: 1rem;
+  }
+  
+  .editSettingOTP{
+    position: absolute;
+    margin-right:  7vw;
+    top: 19rem;
+  }
+  
+  .successEditLong-otp{
+    margin-top: -3rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .button-OTP{
+    top:  29rem;
+    margin-left:  27vw;
+  }
+    .otpImg{
+      width: 15rem;
+      margin-top: 5rem;
+      margin-left: 2vw;
+    }
+    .EditDone-OTPForm{
+      margin-left: 4vw;
+    }
+    .form-fieldPinEditOTP{
+    font-size: 12px;
+    margin-left: 0vw;
+    
+    }
+    .input-fieldPinWrapEdit{
+      margin-left: 0vw;
+       width: 20rem;
+    }
+    .editSettingOTP{
+      top: 8.5rem;
+    }
+    .otpImg{
+      width: 15rem;
+      margin-top: -1rem;
+      margin-left: 2vw;
+    }
+    .EditDone-OTPForm{
+      margin-left: 5vw;
+      margin-top: 1rem;
+    }
+    .form-fieldPinEditOTP{
+    font-size: 11px;
+    margin-left: 1vw;
+    
+    }
+    .input-fieldPinWrapEdit{
+      margin-left: 2vw;
+       width: 20rem;
+    }
+    .editSettingOTP{
+      top: 15rem;
+    }
+}
+
     @media screen and (max-width: 720px) {
+      .side-bar-logo.active{
+        left: 1vw;
+      }
+      .side-bar-logo{
+        left: 1vw;
+      }
+      .side-item2{
+        bottom: -20vh;
+      }
         .CenterTop{
             width: 17vw;
             right: 3vw;
@@ -148,6 +1579,295 @@ font-weight: 500;
         .vendorName{
             left: 15vw;
         }
+       
+        .password-GeneralSettings{
+          font-size: 11px;
+          width: 60vw;
+        }
+        .password-text-hash{
+          right:  28vw;
+        }
+        .pass-button{
+        right:  0.5vw;
+        width: 9rem;
+      height: 2rem;
+        }
+        .category h6 {
+        font-size: 10px;
+        }
+        .GeneralSettings{
+          width: 60vw;
+        }
+        .security-GeneralSettings{
+          width: 60vw;
+        }
+        .security-Line{
+          position: relative;
+          width: 60vw;
+          height: 0.1rem;
+          left: 0vw;
+          top: -0.3rem;
+        }
+        .security-text{
+      
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          margin-top: 2rem;
+          margin-bottom: 0.2rem;
+          display: flex;
+          align-items: flex-end;
+          
+          color: #013C86;
+        }
+        .security-text-hash{
+          font-size: 10px;
+          line-height: 20px;
+        }
+        .security-text2{
+        font-size: 10px;
+        line-height: 20px;
+        }
+        .security-Line{
+          width: 60vw;
+          left: -1vw;
+        }
+        .security-toggle{
+          position: relative;
+          height: 0.1rem;
+          right: 3vw;
+          top: 0rem;
+        }
+        
+        .EditDone-card-title{
+          top: 12rem;
+        }
+        .edit1{
+          right: -2vw;
+        }
+        .edit2{
+          right: -2vw;
+        }
+        .edit3{
+          right: -2vw;
+        }
+        .edit4{
+          right: -2vw;
+        }
+        .edit5{
+          right: -2vw;
+        }
+        .editSetting2{
+          position: relative;
+          margin-left:  12vw;
+          top: 1rem;
+        }
+        .otpImg{
+          width: 15rem;
+          margin-top: -1rem;
+          margin-left: 2vw;
+        }
+        .EditDone-OTPForm{
+          margin-left: 5vw;
+          margin-top: 1rem;
+        }
+        .form-fieldPinEditOTP{
+        font-size: 11px;
+        margin-left: 1vw;
+        
+        }
+        .input-fieldPinWrapEdit{
+          margin-left: 2vw;
+           width: 20rem;
+        }
+        .editSettingOTP{
+          top: 15rem;
+        }
+        .editSetting2{
+          left: 12vw;
+          top: 6rem;
+        }
+        .form-text-addAccount{
+          /* left: 11vw; */
+        }
+        .bankImg{
+          left: 12vw;
+        }
+        .bankNumImg{
+          left: 12vw;
+        }
+        .inputBox-addAccount{
+          left: 10vw; 
+          width: 22rem;
+        }
+        .inputBox-addAccount2{
+          left: 10vw; 
+          width: 22rem;
+        }
+        .inputBox-addAccount3{
+          left: 10vw; 
+          width: 22rem;
+        }
+        .editSetting3{
+          left: 12vw;
+        }
+        .editSetting2{
+          top: 8rem;
+        }
+        .passShift{
+          position: absolute;
+          margin-left:  6vw;
+          top: 12.5rem;
+        }
+        .passShift3{
+          position: absolute;
+          margin-left:  6vw;
+          top: 19rem;
+        }
+        .passView{
+          position: absolute;
+          left:  52vw;
+          top: 15.5rem;
+        }
     }
     
+@media screen and (max-width: 680px) {
+  .vendorNameSettings{
+    font-size: 10px;
+}
+.EditDone-card-title{
+  top: 12rem;
+  font-size: 11px;
+}
+.Edit-button{
+right:  19vw;
+}
+.EditDone-card-title2{
+font-size: 12px;
+}
+.otpImg{
+  width: 15rem;
+  margin-top: -1rem;
+  margin-left: 2vw;
+}
+.EditDone-OTPForm{
+  margin-left: 5vw;
+  margin-top: 1rem;
+}
+.form-fieldPinEditOTP{
+font-size: 11px;
+margin-left: 1vw;
+
+}
+.input-fieldPinWrapEdit{
+  margin-left: 2vw;
+   width: 20rem;
+}
+.editSettingOTP{
+  top: 15rem;
+}
+.form-text-addAccount{
+ /*  left: 10vw; */
+}
+.bankImg{
+  left: 11vw;
+}
+.bankNumImg{
+  left: 11vw;
+}
+.inputBox-addAccount{
+  left: 9vw; 
+  width: 22rem;
+}
+.inputBox-addAccount2{
+  left: 9vw; 
+  width: 22rem;
+}
+.inputBox-addAccount3{
+  left: 9vw; 
+  width: 22rem;
+}
+.editSetting3{
+  left: 11vw;
+}
+.editSetting31{
+  left: 11vw;
+}
+.editSetting32{
+  left: 11vw;
+}
+}
+@media screen and (max-width: 580px) {
+.editSetting2{
+  margin-left: 6vw;
+  top: 8rem;
+}
+.form-text-addAccount{
+  left: 6vw; 
+}
+.form-text-addAccount2{
+  left: 6vw; 
+}
+.form-text-addAccount3{
+  left: 6vw; 
+}
+.bankImg{
+  left: 7vw;
+}
+.bankNumImg{
+  left: 7vw;
+}
+.inputBox-addAccount{
+  left: 4vw; 
+  width: 22rem;
+}
+.inputBox-addAccount2{
+  left: 4vw; 
+  width: 22rem;
+}
+.inputBox-addAccount3{
+  left: 4vw; 
+  width: 22rem;
+}
+.editSetting31{
+  left: 7vw;
+}
+.editSetting32{
+  left: 7vw;
+}
+.editSetting21{
+  left: 20vw;
+}
+.account-card-add{
+  height: 7rem;
+}
+.account-card-add2{
+  height: 7rem;
+}
+.added-Account-title{
+  top: 3.5rem;
+  font-size: 12px;
+}
+.added-Account-name{
+  top: 5rem;
+  font-size: 8px;
+}
+.added-Account-number{
+  top: 5rem;
+  font-size: 8px;
+}
+.shielgImg{
+  position: absolute;
+  width: 4rem;
+  height: 5rem;
+  right: 0vw;
+  top: -4rem;
+  
+}
+.passView{
+  position: absolute;
+  left:  50vw;
+  top: 15.5rem;
+}
 }

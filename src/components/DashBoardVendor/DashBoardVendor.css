@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Karla&family=Lato:wght@900&family=Montserrat:wght@600&family=Poppins:wght@400;600&display=swap'); */
 .side {
     position: absolute;
     width: 14vw;
@@ -260,7 +264,7 @@ top: 4vh;
   position: relative;
   background: transparent;
   width: 30vw;
-  margin-left: 1rem;
+  margin-left: 1vw;
   font-size: 0.9rem;
   color: var(--color-black);
   background: rgba(192, 192, 192, 0.13);
@@ -288,43 +292,43 @@ top: 4vh;
   cursor: pointer;
 }
 
-main .container {
-  display: grid;
-  grid-template-columns: 50vw  28vw;
-  column-gap: 3rem;
-  margin-top: 7rem;
-  margin-left: 17vw;
+.containerDash {
+width: 84%;
+margin-left: 15%;
 }
-main .container.active {
-  display: grid;
-  grid-template-columns: 52vw  32vw;
-  column-gap: 3rem;
-  margin-top: 7rem;
-  margin-left: 10vw;
-}
-main .container .left {
-  height: max-content;
-height: 85vh;
+.containerDash.active{
+  width: 84%;
+  margin-left: 12%;
+  }
+.hide{
+  display: none;
 }
 .left{
-top: 0.5rem;
+position: relative;
+top: 4rem;
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
 }
 .left-top-card{
   background: #F9F9F9;
-
+  margin-top: 2rem;
+  margin-right: 1rem;
   box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
   border-radius: 15px;
   min-height: 15rem;
   max-height: 15rem; 
+  min-width: 30rem;
+  width: 45vw;
   padding: 0.5rem;
 }
 .vendor-trophy-img{
   width: 2.5rem;
-  margin-left: 0.5rem;
+  margin-left: 0.5vw;
   margin-top: -0.5rem;
 }
 .vendor-name{
-margin-left: 6rem;
+margin-left: 6vw;
 font-family: 'Poppins';
 font-style: normal;
 font-weight: 700;
@@ -335,7 +339,7 @@ color: #232164;
 
 .vendor-description{
 
-  margin-left: 6rem;
+  margin-left: 6vw;
 font-family: 'Karla';
 font-style: normal;
 font-weight: 400;
@@ -352,8 +356,8 @@ color: #707070;
   border-radius: 15px;
   min-height: 7rem;
   max-height: 7rem;
-  width: 70%;
-  margin-left: 15%;
+  width: 80%;
+  margin-left: 12%;
   margin-top: 0.5rem;
   padding: 0.5rem;
 }
@@ -363,7 +367,7 @@ color: #707070;
   min-height: 1.5rem;
   max-height: 1.5rem; 
   width: 5rem;
-  margin-left: 22%;
+  margin-left: 26%;
   margin-top: 3rem;
   position: absolute;
   font-family: 'Karla';
@@ -394,17 +398,17 @@ color: #4E3FF0;
   font-size: 14px;
   display: flex;
   color: #232164;
-  margin-left: 1rem;
+  margin-left: 1vw;
 }
 .card1-title{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 7rem;
+  margin-left: 7vw;
   margin-top: -0.5rem;
   position: absolute;
   display: flex;
-  gap: 7vw;
+  gap: 6vw;
 }
 .progress{
   background: #4E3FF0;
@@ -434,7 +438,7 @@ display: flex;
 .vendor-trophyCup-img{
 width: 3rem;
 height: 4rem;
-margin-left: 30%;
+margin-left: 30vw;
 margin-top: -0.5rem;
 position: absolute;
 }
@@ -445,7 +449,7 @@ position: absolute;
   max-height: 0.2rem; 
   min-width: 20vw;
   margin-top: 2rem;
-  margin-left: 2rem;
+  margin-left: 2vw;
 }
 .left-bottom-card{
   background: #FFFFFF;
@@ -455,18 +459,19 @@ position: absolute;
   max-height: 25rem; 
   padding: 0.5rem;
   margin-top: 2rem;
+  min-width: 30rem;
+  width: 45vw;
   
 }
 
 
-main .container .right {
-  height: max-content;
-  height: 80vh;
-  right: 0;
-  
-}
+
 .right{
-  top: 0.5rem;
+  position: relative;
+top: 4rem;
+  display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
   }
 .right-card{
   background: #FFFFFF;
@@ -483,24 +488,27 @@ main .container .right {
   min-height: 15rem;
   max-height: 15rem; 
   padding: 0.5rem;
+  min-width: 25rem;
+  width: 30vw;
+  margin-top: 2rem;
 }
 .card2-title{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 7rem;
+  margin-left: 7vw;
   margin-top: -0.5rem;
   position: absolute;
   display: flex;
-  gap: 7vw;
+  gap: 5vw;
 }
 .card2-text-left{
   font-family: 'Poppins';
 font-style: normal;
 font-weight: 700;
 font-size: 14px;
-margin-top: 0rem;
-margin-left: -5rem;
+margin-top: 1rem;
+margin-left: -5vw;
 color: #232164;
 }
 .card2-text-right{
@@ -509,12 +517,10 @@ font-style: normal;
 font-weight: 700;
 font-size: 12px;
 margin-top: 1rem;
-margin-left: 7rem;
+margin-left: 5vw;
 color: #232164;
 }
-.card2-text-right.active{
-margin-left: 3rem;
-}
+
 .card2-text-right2{
   font-family: 'Poppins';
   font-style: normal;
@@ -527,31 +533,26 @@ margin-left: 3rem;
 }
 .Line{
   background: #86D19B;
-position: absolute;
   box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
   height: 0.1rem;
-  width: 28vw;
-  position: relative;
-  animation: move 10s linear;
-  margin-left: -17vw;
-  margin-top: 0rem;
-}
-.Line.active{
-  height: 0.1rem;
   width: 24vw;
-  margin-left: -13vw;
+  min-width: 20rem;
+  animation: move 10s linear;
+  margin-top: 0rem;
+  margin-left: -58%;
 }
+
 .eyeIconWallet{
   background-color: #FFFF;
 border: 0.5px solid #D5D8DA;
 border-radius: 50%;
 cursor: pointer;
 margin-top: 4rem;
-margin-left: 93%;
+margin-left: 86%;
 }
 .Wallet-card-left-top{
   display: flex;
-  margin-left: 3rem;
+  margin-left: 2.5vw;
   position: absolute;
 }
 .Wallet-card-left-top-left-text-text{
@@ -576,11 +577,9 @@ margin-top: 2rem;
 margin-left: 0rem;
 }
 .Wallet-card-left-top-right{
-  margin-left: 15rem;
+  margin-left: 16vw;
 }
-.Wallet-card-left-top-right.active{
-  margin-left: 20rem;
-}
+
 .Wallet-card-left-top-right-text-text{
   font-family: 'Poppins';
 font-style: normal;
@@ -588,7 +587,7 @@ font-weight: 600;
 font-size: 10px;
 position: relative;
 margin-top: 0rem;
-margin-left: 2rem;
+margin-left: 2vw;
 color: #7D8287;
 }
 .Wallet-card-left-top-right-text-text2{
@@ -600,14 +599,17 @@ color: #7D8287;
   color: rgba(125, 130, 135, 0.49);
 position: absolute;
 margin-top: 1rem;
-margin-left: 2rem;
+margin-left: 2vw;
 }
-.eyeIconWallet.active{
-margin-left: 92%;
-}
+
 .Wallet-card-left-bottom{
   display: flex;
-  margin-left: 3rem;
+  margin-left: 2.5vw;
+  position: absolute;
+}
+.Wallet-card-left-bottom-right{
+  display: flex;
+  margin-left: 9vw;
   position: absolute;
 }
 .Secured{
@@ -621,7 +623,7 @@ margin-top: 5rem;
 display: flex;
 color: #706E6E;
 }
-.Withdraw{
+.Withdraw-btn{
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
@@ -631,17 +633,14 @@ color: #706E6E;
   background: #3AB75D;
 color: #FFFFFF;
 margin-top: 5rem;
-margin-left: 8vw;
 padding: 0.5rem;
 border-radius: 5px;
 height: 2rem;
-width: 7.3rem;
-position: relative;
+width: 8rem;
 cursor: pointer;
+margin-left: 9vw;
 }
-.Withdraw.active{
-  margin-left: 12vw;
-}
+
 .transactions {
   padding: 1rem;
   overflow: scroll;
@@ -742,8 +741,8 @@ width: 100%;
 
 .transactions .Transaction-body .Transaction-body-profile img {
   border-radius: 5px;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.2rem;
   padding-right: 0.5rem;
 }
 .Transaction-details{
@@ -756,6 +755,7 @@ font-size: 10px;
 
 color: #232164;
 }
+
 .Transaction-description{
   font-family: 'Karla';
 font-style: normal;
@@ -770,7 +770,7 @@ color: #A6A6A6;
   width: 100%;
   }
 ::-webkit-scrollbar{
-  width: 3px;
+  width: 0px;
   border-radius: 2px;
 }
 
@@ -793,20 +793,19 @@ color: #A6A6A6;
   max-height: 25rem; 
   margin-top: 2rem;
   padding: 0.5rem;
+  min-width: 25rem;
+  width: 30vw;
 }
 .mixed-chart{
-  margin-top: 7rem;
-  margin-left: 10%;
+ position: absolute;
+  margin-left: 1vw;
+  margin-top: 35rem;
   font-family: 'IBM Plex Sans';
 /* identical to box height, or 200% */
-
-align-items: center;
+width: 38%;
 
 
 color: #0357BF;
-}
-.mixed-chart.active{
-  margin-left: 7%;
 }
 .Chart-text-left{
   font-family: 'Poppins';
@@ -814,7 +813,7 @@ font-style: normal;
 font-weight: 700;
 font-size: 16px;
 margin-top: 1rem;
-margin-left: -5rem;
+margin-left: -5vw;
 color: #232164;
 }
 .Chart-text-right{
@@ -825,7 +824,7 @@ color: #232164;
 background: #FF9300;
 color: #FFFFFF;
 margin-top: 1rem;
-margin-left: 17vw;
+margin-left: 13vw;
 padding-top: 0.2rem;
 padding-left: 0.5rem;
 border-radius: 5px;
@@ -834,10 +833,14 @@ width: 6.5rem;
 position: absolute;
 cursor: pointer;
 }
-.Chart-text-right.active{
-  margin-left: 13vw;
-}
 .Rate3{
+  
+  position: absolute;
+  margin-left: -1vw;
+  margin-top: 38rem;
+
+}
+.Rate3A{
   height: 2.5rem;
   width: 2.5rem;
   border-radius: 50%;
@@ -858,8 +861,68 @@ cursor: pointer;
   0 0 0 20px rgba(50, 164, 82, 0.2);
 box-sizing: 50%;
 }
-.Rate3.active{
-  margin-left: 13.5rem;
+.Rate3B{
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  text-align: center;
+  padding: auto;
+  position: absolute;
+  background: rgba(1, 48, 107, 0.6);
+  color: #F2F2F2;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  margin-left: 15.5vw;
+  margin-top: -15rem;
+  box-shadow: 0 0 0 2px rgba(1, 48, 107, 0.5),
+  0 0 0 13px rgba(1, 48, 107, 0.4),
+  0 0 0 20px rgba(1, 48, 107, 0.3),
+  0 0 0 27px rgba(1, 48, 107, 0.2);
+box-sizing: 50%;
+}
+.Rate3C{
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  text-align: center;
+  padding: auto;
+  position: absolute;
+  background: rgba(220, 163, 16, 0.6);
+  color: #F2F2F2;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  margin-left: 15.5vw;
+  margin-top: -15rem;
+  box-shadow: 0 0 0 2px rgba(220, 163, 16, 0.5),
+  0 0 0 13px rgba(220, 163, 16, 0.4),
+  0 0 0 20px rgba(220, 163, 16, 0.3),
+  0 0 0 27px rgba(220, 163, 16, 0.2);
+box-sizing: 50%;
+}
+.Rate3D{
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  text-align: center;
+  padding: auto;
+  position: absolute;
+  background: rgba(208, 66, 5, 0.6);
+  color: #F2F2F2;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  margin-left: 15.5vw;
+  margin-top: -15rem;
+  box-shadow: 0 0 0 2px rgba(208, 66, 5, 0.5),
+  0 0 0 13px rgba(208, 66, 5, 0.4),
+  0 0 0 20px rgba(208, 66, 5, 0.3),
+  0 0 0 27px rgba(208, 66, 5, 0.2);
+box-sizing: 50%;
 }
 .Rate1{
   display: flex;
@@ -898,7 +961,7 @@ display: none;
   /* display: none; */
 }
 .welcome-message{
-  margin-left: 2rem;
+  margin-left: 3vw;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 700;
@@ -909,7 +972,7 @@ display: none;
   
   .welcome-description{
   
-    margin-left: 2rem;
+    margin-left: 4vw;
   font-family: 'Karla';
   font-style: normal;
   font-weight: 400;
@@ -927,6 +990,7 @@ display: none;
   /* or 284% */
   margin: 2rem;
   margin-top: 2rem;
+  margin-left: 4vw;
   color: #232164;
   }
   .welcome-cards{
@@ -937,11 +1001,22 @@ display: none;
     max-height: 6rem; 
     padding: 0.5rem;
     width: 20rem;
-    margin-left: 2rem;
+    margin-left: 3vw;
+    cursor: pointer;
+  }
+  .welcome-cards1{
+    background: #FFFFFF;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    min-height: 6rem;
+    max-height: 6rem; 
+    padding: 0.5rem;
+    width: 25rem;
+    margin-left: 3vw;
     cursor: pointer;
   }
   .action-card{
-    margin-left: 6.5rem;
+    margin-left: 6.5vw;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
@@ -949,14 +1024,26 @@ display: none;
     margin-top: 2rem;
     display: flex;
     align-items: flex-end;
-    
+    padding-left: 3rem;
     color: #262466;
     }
+    .action-card1{
+      margin-left: 6.5vw;
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      margin-top: 2rem;
+      display: flex;
+      align-items: flex-end;
+      padding-left: 3rem;
+      color: #262466;
+      }
   .help-cards{
     display: flex;
   }
   .action-icon{
-    margin-left: -4rem;
+    margin-left: -7vw;
     margin-top: 1rem;
     height: 2rem;
     width: 2rem;
@@ -972,7 +1059,7 @@ display: none;
   .welcome-card-close{
     position: absolute;
     bottom: 2rem;
-    right: 2rem;
+    right: 3vw;
     color: #262466;
     font-family: 'Poppins';
     font-style: normal;
@@ -980,6 +1067,14 @@ display: none;
     font-size: 16px;
     cursor: pointer;
   }
+  @media screen and (max-width: 1200px) {
+  .card2-text-right{
+    font-size: 10px;
+  }
+  .Withdraw-btn{
+      margin-left: 8vw;
+      }
+}
 @media screen and (max-width: 960px) {
   .header{
     position: absolute;
@@ -994,7 +1089,7 @@ display: none;
     position: absolute;
       width: 7.5vw;
       height: 100vh;
-      min-height: 50rem;
+      min-height: 50vh;
       left: 0px;
       top: 0px;
       background: linear-gradient(177.44deg, #0A439A 0%, #1A1E51 92.41%);
@@ -1133,6 +1228,142 @@ display: none;
     .toggle{
       display: none;
     }
+    .containerDash {
+  width: 84%;
+  margin-left: 12%;
+  }
+  .Withdraw-btn{
+  margin-left: 8vw;
+  }
+  .welcome-card{
+    position: absolute;
+    top: 54%;
+    left: 54%;
+  }
+}
+@media screen and (max-width: 860px) {
+  .containerDash {
+    width: 84%;
+    margin-left: 15%;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 44rem;
+    position: absolute;
+    top: 6rem;
+    }
+       .containerDash {
+  width: 90%;
+  margin-left: 8%;
+  }
+  .left{
+    top: 0rem;
+  }
+  .right{
+    margin-top: -4rem;
+  }
+    .left-top-card{
+      min-width: 30rem;
+      width: 70vw;
+    }
+   
+    .vendor-name{
+    font-size: 14px;
+    }
+    
+    .vendor-description{
+    font-size: 10px;
+    }
+    .left-top-card1{
+      margin-left: 9%;
+    }
+    .left-top-card2{
+      margin-left: 30%;
+    }
+    .progress-text-left{
+      font-size: 12px;
+    }
+    .progress-text-right{
+      font-size: 12px;
+    }
+    .progress{ 
+      min-width: 14vw;
+    }
+    .card1-text{
+      font-size: 12px;
+    }
+    .vendor-trophyCup-img{
+    margin-left: 40vw;
+    }
+    .progress-bar{
+      min-width: 15rem;
+      min-width: 25vw;
+    }
+    .right-top-card{
+      min-width: 30rem;
+      width: 70vw;
+    }
+    .card2-title{
+      margin-left: 10vw;
+      gap: 25vw;
+    }
+    .Line{
+      width: 55vw;
+      margin-left: -67%;
+    }
+    
+    .eyeIconWallet{
+    margin-left: 90%;
+    }
+    .card2-text-right{
+      font-size: 12px;
+    }
+    .Wallet-card-left-top{
+      margin-left: 6vw;
+    }
+    .Wallet-card-left-top-right{
+      margin-left: 45vw;
+    }
+    
+    .Wallet-card-left-bottom{
+      display: flex;
+      margin-left: 6vw;
+      position: absolute;
+    }
+    .Wallet-card-left-bottom-right{
+      margin-left: 38vw;
+    }
+    .left-bottom-card{
+      min-width: 30rem;
+      width: 70vw;
+    }
+    .right-bottom-card{
+      min-width: 30rem;
+      width: 70vw;
+    }
+    .mixed-chart{
+    width: 65%;
+    margin-left: 8vw;
+    }
+    .Chart-text-left{
+    font-size: 18px;
+    margin-left: -2vw;
+    }
+    .Chart-text-right{
+    margin-left: 45vw;
+    }
+    .Rate3{
+      
+      position: absolute;
+      margin-left: 16.5vw;
+      margin-top: 38rem;
+    
+    }
+    .welcome-card-close{
+      right: 6vw;
+    }
+    .Withdraw-btn{
+      margin-left: 7vw;
+      }
 }
 @media screen and (max-width: 720px) {
   .side-bar-logo.active{
@@ -1144,4 +1375,75 @@ display: none;
   .side-item2{
     bottom: -20vh;
   }
+  .userAbbrevation{
+right: 4vw;
+}
+.bell{
+right: 9vw;
+}
+.bellActive{
+  right: 9vw;
+}
+.search-bar {
+  margin-left: 1vw;
+  font-size: 0.7rem;
+}
+.search{
+  width: 0.8rem;
+}
+.action-icon{
+  margin-left: -10vw;
+}
+.progress-text-left{
+  margin-left: 5vw;
+}
+.vendor-trophyCup-img{
+margin-left: 45vw;
+}
+.card2-title{
+  margin-left: 10vw;
+  gap: 25vw;
+}
+
+}
+ @media screen and (max-width: 680px) {
+.card2-title{
+  margin-left: 10vw;
+  gap: 22vw;
+}
+.Line{
+  margin-left: -62%;
+}
+.Wallet-card-left-top-right{
+  margin-left: 41vw;
+}
+
+.Wallet-card-left-bottom-right{
+  margin-left: 35vw;
+
+} 
+
+ }
+@media screen and (max-width: 540px) {
+  .vendor-trophyCup-img{
+    margin-left: 48vw;
+    }
+    .card2-title{
+      margin-left: 10vw;
+      gap: 20vw;
+    }
+    .Line{
+      margin-left: -57%;
+    }
+    .mixed-chart{
+      width: 90%;
+      margin-left: -3vw;
+      }
+      .action-card{
+        font-size: 10px;
+        }
+  
+        .welcome-card{
+          left: 53%;
+        }
 }

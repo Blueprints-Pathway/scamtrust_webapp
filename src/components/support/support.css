@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
+.support-card{
+    position: absolute;
+    width: 84%;
+    height: 75%;
+    left: 15%;
+    top: 25%;
+    transform: translate(0%, 0%);
+    background: #FFFFFF;
+    box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
+    border-radius: 20px;
+    min-height: 30rem;
+    max-height: 30rem;
+   
+}
+.support-card.active{
+    left: 11.5%;
+}
+.support-img{
+    position: absolute;
+    width: 30%;
+    top: 8%;
+    left: 7%;
+}
+.support-card-body{
+    position: absolute;
+    right: 2%;
+}
+.support-title{
+    position: absolute;
+    width: 25vw;
+    right: 9.5vw;
+top: 5rem;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 45px;
+/* identical to box height */
+
+
+color: #232164;
+/* identical to box height */
+
+
+color: #232164;
+}
+
+.support-description{
+    position: absolute;
+    width: 40vw;
+    right: -1vw;
+    top: 10rem;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 10px;
+text-align: justify;
+
+color: #707070;
+/* identical to box height */
+
+
+color: #232164;
+}
+.support-actions{
+    display: flex;
+    margin: 1rem;
+}
+.support-action{
+    position: relative;
+
+    width: 17rem;
+    height: 5rem;
+    left: 13%;
+    top: 14rem;
+    margin-right: 8vw;
+    background: #FFFFFF;
+    border: 1px solid #232164;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.support-bottom{
+    position: relative;
+    width: 33vw;
+    height: 5vh;
+    left: 23vw;
+    top: 18rem;
+    
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 10px;
+/* or 209% */
+
+display: flex;
+color: #706E6E;
+}
+.support-bottom-img{
+    width: 4rem;
+    height: 2.5rem;
+    margin-left: 0.5rem;
+    margin-top: -0.5rem;
+}
+.support-action-icon{
+    background: #0257C0;
+    border-radius: 10px;
+    position: relative;
+padding: 0.6rem;
+    width: 3rem;
+    height: 3rem;
+    left: 13%;
+    top: 1rem;
+}
+.support-action-text{
+    position: relative;
+    left: 35%;
+    top: -1.5rem;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    /* or 209% */
+    color: #706E6E;
+}
+.support-action-text-title{
+    color: #000000;
+}
+.image-text1{
+    position: relative;
+    left: 33%;
+    top: -1.6rem;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    /* or 209% */
+    color: #FFFFFF;
+}
+.image-text2{
+    position: relative;
+    left: 40%;
+    top: -1.4rem;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    /* or 209% */
+    color: #FFFFFF;
+}
+@media screen and (max-width: 1200px) {
+    .support-action{
+        width: 17rem;
+        margin-right: 3vw;
+    }
+    .support-title{
+        right: 8vw;
+    }
+    
+    .support-description{
+        right: -3vw;
+    }
+    .support-img{
+        width: 35%;
+        top: 6%;
+        left: 2%;
+    }
+    .support-card-body{
+        right: 10vw;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .support-action{
+        width: 17rem;
+        margin-right: 4vw;
+    }
+    .support-title{
+        right: 11vw;
+        font-size: 18px;
+    }
+    
+    .support-description{
+        right: 1vw;
+        font-size: 12px;
+    }
+    .support-img{
+        width: 40%;
+        top: 12%;
+        left: -2%;
+    }
+  
+    
+}
+@media screen and (max-width: 980px) {
+    .support-action{
+        width: 17rem;
+        margin-right: 18vw;
+        margin-bottom: 1rem; 
+    }
+    .support-title{
+        right: 11vw;
+        font-size: 18px;
+    }
+    
+    .support-description{
+        right: 2vw;
+        font-size: 12px;
+    }
+    .support-img{
+        width: 40%;
+        top: 7%;
+        left: -2%;
+    }
+    .support-card-body{
+        right: 5vw;
+    }
+    .support-actions{
+        display: block;
+        margin-right: 0vw;
+        margin-top: -1rem; 
+    }
+    .support-bottom{
+        left: 12vw;
+        top: 15rem;
+    }
+}
+@media screen and (max-width: 960px) {
+    .support-card{
+        left: 11%;
+    }
+}
+@media screen and (max-width: 880px) {
+    .support-title{
+        font-size: 16px;
+    }
+    
+    .support-description{
+        font-size: 11px;
+    }
+    .support-card-body{
+        right: 0vw;
+    }
+    .support-img{
+        top: 12%;
+    }
+    .support-action{
+        margin-right: 16vw;
+    }
+}
+ @media screen and (max-width: 790px) {
+    .support-action{
+        margin-right: 14vw;
+    }
+    .support-card-body{
+        right: 5vw;
+    }
+    .support-title{
+        font-size: 16px;
+        width: 100%;
+        right: -10vw;
+    }
+    
+    .support-description{
+        font-size: 11px;
+        width: 60%;
+        right: 11vw;
+        text-align: center;
+    }
+    .support-img{
+        top: 20%;
+    }
+    .support-bottom{
+        left: -23vw;
+    }
+}
+@media screen and (max-width: 590px) {
+    .support-img{
+        top: 25%;
+    }
+    .support-title{
+        right: -12vw;
+    }
+    
+    .support-description{
+        right: 10vw;
+    }
+    .support-bottom{
+        left: -23vw;
+    }
+    .support-card-body{
+        right: 0vw;
+    }
+}
+@media screen and (max-width: 520px) {
+    .support-img{
+        top: 30%;
+    }
+    .support-title{
+        right: -14vw;
+    }
+    
+    .support-description{
+        right: 10vw;
+    }
+    .support-bottom{
+        left: -18vw;
+    }
+}
