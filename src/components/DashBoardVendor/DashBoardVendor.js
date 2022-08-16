@@ -1,20 +1,14 @@
-import React, { Component, useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './DashBoardVendor.css'
-import { sideBarItems } from '../SideBar/sideBarItems'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faArrowRight, faSearch, faThumbTack, faBook, faShareNodes, faEye, faWallet } from "@fortawesome/free-solid-svg-icons";
-import { faBell } from "@fortawesome/free-regular-svg-icons";
-//import { faMemo } from "@fortawesome/free-brand-svg-icons";
-import { Link } from 'react-router-dom';
-import scamTrust from '../../images/shielgg.png'
-import scamSheild from '../../images/shielgg3.png'
+import { faThumbTack, faBook, faShareNodes, faEye } from "@fortawesome/free-solid-svg-icons";
+
 import trophy2 from '../../images/trophy2 (3).png'
 import trophy from '../../images/trophy2 (1).png'
 import scamTrustLogo from '../../images/Group114(1).png'
-
 import Chart from 'react-apexcharts'
 import { TransactionItems } from './transactionItems'
-import Notification from '../Notification/Notification';
+import SideBar from '../SideBar/SideBar';
 
 function DashBoardVendor() {
 
@@ -116,71 +110,13 @@ const [notification, setNotification] = useState(true);
 
 
   return (
+    <div> 
+     
     <div className='main'>
-      <div className={click ? 'side active' : 'side'}>
-
-        {/* className={this.state.click ? 'inActive' : '{item.cName}'}> */}
-
-        <Link to='/Home'>
-          <div className='side-bar-top'>
-            <div className={click ? 'side-bar-title active' : 'side-bar-title'}>  Scam Trust </div>
-            <img className={click ? 'side-bar-logo active' : 'side-bar-logo'} src={scamTrust} alt="Scam Trust" />
-
-          </div>
-        </Link>
-
-        {sideBarItems.map((item, index) => {
-          return (
-            <div className='sides' key={index}>
-              <Link to={`/${item.link}`} className={click ? `${item.cName}` : `${item.cNameX}`}>
-                <div className={click ? 'side-item active' : 'side-item'}>
-                  <FontAwesomeIcon icon={item.icon} />
-                  <h6 className={click ? 'inActive' : 'Active'}>{item.name}</h6>
-                </div>
-              </Link>
-              <Link to={`/${item.link2}`} className={click ? `${item.cName2}` : `${item.cNameX2}`}>
-                <div className={click ? 'side-item2 active' : 'side-item2'}>
-                  <FontAwesomeIcon icon={item.icon2} />
-                  <p className={click ? 'inActive' : 'Active'}>{item.name2}</p>
-                </div>
-              </Link>
-
-            </div>
-          )
-
-        }
-        )}
-        <img className='side-bar-logo-bottom' src={scamSheild} alt="Scam Trust" />
-
-      </div>
-
-      <div className={click ? 'header active' : 'header'}>
-        <div className="side-icon" onClick={handleClick}>
-          <FontAwesomeIcon icon={click ? faArrowRight : faArrowLeft} className="toggle" />
-        </div>
-        <div className="header-title">
-          DashBoard
-        </div>
-        <div class="search-bar">
-
-          <input type="search" placeholder="Search vendor’s name" />
-          <FontAwesomeIcon icon={faSearch} className="search" />
-
-        </div>
-        <div className="Bell">
-                    <FontAwesomeIcon icon={faBell} className="bell" onClick={handleNotification} />
-                    <div className="bellActive"></div>
-                </div>
-        <div clasName="userAbbrevation-wrap">
-          <div className="userAbbrevation enclosed">
-            RV
-          </div>
-        </div>
-        
-      </div>
+      
 
       <div>
-        <div className={click ? 'containerDash active' : 'containerDash'}>
+        <div className='containerDash'>
 
           <div className='left'>
             <div className='left-top-card'>
@@ -201,7 +137,7 @@ const [notification, setNotification] = useState(true);
                     <p className='progress-text-left'>
                       Ratings
                     </p>
-                    <p className={click ? 'progress-text-right' : 'progress-text-right active'}>
+                    <p className='progress-text-right'>
                       200 transactions
                     </p>
                   </div>
@@ -498,13 +434,10 @@ const [notification, setNotification] = useState(true);
         </div>
       
       </div>
- {/*      {notification ? null : 
-                   
-                   <Notification
 
-                    />} */}
     </div>
-
+    <SideBar />
+    </div>
   )
 
 }
