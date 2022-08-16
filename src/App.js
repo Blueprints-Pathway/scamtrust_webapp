@@ -62,7 +62,7 @@ function App() {
         <Route path='/customersecurityquestion' element={<CustomerSecurityQuestion />} />
 
         <Route path='/sideBar' element={<SideBar />} />
-        <Route path='/DashBoardVendor' element={<DashBoardVendor />} />
+        <Route path='/vendor-dashboard' element={<DashBoardVendor />} />
         <Route path='/settingsVendor' element={<SettingsVendor />} />
         <Route path='/Support' element={<Support />} />
         <Route path='/VendorRating' element={<VendorRating />} />
