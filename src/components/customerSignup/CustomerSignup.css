@@ -375,7 +375,7 @@ box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
 border-radius: 20px;
 } */
 .card-titleBVN{
-    position: relative;
+    position: absolute;
     width: 40vw;
     left: 4vw;
 top: 2rem;
@@ -415,7 +415,7 @@ border-radius: 5px;
 }
 .form-textBVN2{
     width: 30vw;
- 
+
 font-family: 'Poppins';
 font-style: normal;
 font-weight: 500;
@@ -428,7 +428,7 @@ align-items: flex-end;
 color: #030303;
 }
 .input-field-bvn{
-margin-bottom: 2%;
+margin-bottom: -1rem;
 }
 .form-text-bvn{
     position: relative;
@@ -447,8 +447,8 @@ color: #232164;
 }
 .form-textBVN{
     position: absolute;
-    top: 0vh;
-    left: -1vw;
+    top: 1rem;
+     left: -3.5vw;
     width: 30vw;
     font-family: 'Poppins';
     font-style: normal;
@@ -472,7 +472,7 @@ border-radius: 50%;
     width: 33vw;
     height: 2.5rem;
     left: 0vw;
-    top: 110%;
+    margin-top: 1.5rem;
     
     font-family: 'Poppins';
 font-style: normal;
@@ -485,7 +485,7 @@ font-weight: 500;
     width: 33vw;
     height: 5vh;
     left: 11vw;
-    top: 29.5rem;
+    top: 29rem;
     
 
 font-family: 'Montserrat';
@@ -506,22 +506,18 @@ color: #706E6E;
 
 .bvn{
     position: absolute;
-    width: 40%;
     left: 3.5rem;
-    top: 7rem;
+    top: 8rem;
 }
 
 .skip-link{
 position: absolute;
-    width: 156px;
-    height: 24px;
     left: 21vw;
     
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 10px;
-    line-height: 24px;
     /* identical to box height */
     
     display: flex;
@@ -530,11 +526,24 @@ position: absolute;
     
     color: #232164;
 }
+.shiftBvn{
+    position: relative;
+    left: 0vw;
+    top: 1rem;
+}
 /* media queery for bvn page*/
+@media screen and (max-width: 1200px) {
+    .bvn-button{
+       
+    }
+}
 @media screen and (max-width: 980px) {
 .field-bottom-bvn{
     left: 9vw;
-    top: 29.5rem;
+    top: 28rem;
+}
+.bvn-button{
+   
 }
 }
 @media screen and (max-width: 920px) {
@@ -547,9 +556,7 @@ position: absolute;
     /* identical to box height */
     
     }
-    .form-textBVN{
-        width: 30vw;
-    }
+   
  
     .bvn{
         position: absolute;
@@ -573,7 +580,7 @@ position: absolute;
         width: 48vw;
     }
     
-    .form-textBVN{
+   /*  .form-textBVN{
         position: absolute;
         top: 1vh;
         left: 1vw;
@@ -581,14 +588,14 @@ position: absolute;
         font-family: 'Poppins';
         font-style: normal;
         font-size: 10px;
-    }
+    } */
    
     .bvn-button{
         width: 47vw;
     }
     .field-bottom-bvn{
         left: 11vw;
-        top: 29.5rem;
+        top: 28rem;
     }
     .skip-link{
         left: 33vw;
@@ -610,7 +617,9 @@ position: absolute;
     
     color: #030303;
     }
-    
+    .form-textBVN{
+        width: 50vw;
+    }
 }
  /* password page */
 .password-view-left-bottom-text{

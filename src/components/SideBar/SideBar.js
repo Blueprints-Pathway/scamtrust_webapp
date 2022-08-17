@@ -7,6 +7,7 @@ import { faBell } from "@fortawesome/free-regular-svg-icons";
 import { Link } from 'react-router-dom';
 import scamTrust from '../../images/shielgg.png'
 import scamSheild from '../../images/shielgg3.png'
+import Notification from '../Notification/Notification';
 
 function SideBar () {
 
@@ -15,16 +16,21 @@ function SideBar () {
 }
 const [click, setClick] = useState(false);
 
+const handleNotification = () => {
+    setNotification(!notification);
+}
+const [notification, setNotification] = useState(true);
+
     return (
       <div className='main'>
-                <div className={click ? 'side active' : 'side'}>
+                <div className='side'>
 
-                    {/* className={this.state.click ? 'inActive' : '{item.cName}'}> */}
+                  
 
                     <Link to='/Home'>
                         <div className='side-bar-top'>
-                            <div className={click ? 'side-bar-title active' : 'side-bar-title'}>  Scam Trust </div>
-                            <img className={click ? 'side-bar-logo active' : 'side-bar-logo'} src={scamTrust} alt="Scam Trust" />
+                            <div className= 'side-bar-title'>  Scam Trust </div>
+                            <img className={'side-bar-logo'} src={scamTrust} alt="Scam Trust" />
 
                         </div>
                     </Link>
@@ -32,17 +38,17 @@ const [click, setClick] = useState(false);
                     {sideBarItems.map((item, index) => {
                         return (
                             <div className='sides' key={index}>
-                                <Link to={`/${item.link}`} className={click ? `${item.cName}` : `${item.cNameX}`}>
-                                    <div className={click ? 'side-item active' : 'side-item'}>
+                                <Link to={`/${item.link}`} className={`${item.cName}`}>
+                                    <center className='side-item'>
                                         <FontAwesomeIcon icon={item.icon} />
-                                        <h6 className={click ? 'inActive' : 'Active'}>{item.name}</h6>
-                                    </div>
+                                        <h6 className='Active'>{item.name}</h6>
+                                    </center>
                                 </Link>
-                                <Link to={`/${item.link2}`} className={click ? `${item.cName2}` : `${item.cNameX2}`}>
-                                    <div className={click ? 'side-item2 active' : 'side-item2'}>
+                                <Link to={`/${item.link2}`} className={`${item.cName2}`}>
+                                    <center className='side-item2'>
                                         <FontAwesomeIcon icon={item.icon2} />
-                                        <p className={click ? 'inActive' : 'Active'}>{item.name2}</p>
-                                    </div>
+                                        <p className='Active'>{item.name2}</p>
+                                    </center>
                                 </Link>
 
                             </div>
@@ -54,10 +60,8 @@ const [click, setClick] = useState(false);
 
                 </div>
 
-                <div className={click ? 'header active' : 'header'}>
-                    <div className="side-icon" onClick={handleClick}>
-                        <FontAwesomeIcon icon={click ? faArrowRight : faArrowLeft} className="toggle" />
-                    </div>
+                <div className= 'header'>
+                   
                     <div className="header-title">
                         Settings
                     </div>
@@ -68,7 +72,7 @@ const [click, setClick] = useState(false);
 
                     </div>
                     <div className="Bell">
-                        <FontAwesomeIcon icon={faBell} className="bell" />
+                        <FontAwesomeIcon icon={faBell} className="bell"  onClick={handleNotification} />
                         <div className="bellActive"></div>
                     </div>
                     <div clasName="userAbbrevation-wrap">
@@ -77,7 +81,11 @@ const [click, setClick] = useState(false);
                         </div>
                     </div>
                 </div>
+            {notification ? null :
 
+                <Notification
+
+                />}
 
             </div>
 
