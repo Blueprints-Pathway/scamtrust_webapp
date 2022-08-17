@@ -152,7 +152,7 @@ const CustomerDashboard = (props) => {
           </button>
         </div>
 
-        <div className="overflow-x-auto relative">
+        <div className="overflow-x-auto max-w-xs mx-auto relative">
           <table className="w-full text-left">
             <thead className="text-sm font-bold text-[#A6A6A6]">
               <tr>
