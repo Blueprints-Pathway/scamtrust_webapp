@@ -24,8 +24,10 @@ const CustomerDashboard = () => {
     (state) => state.auth
   );
 
+  //@TODO  NAVIGATE USER TO LOGIN
+
   useEffect(() => {
-    // (async () => await fetchUser())();
+    (async () => console.log(await fetchUser()))();
     if (user.data.usertype !== USER_TYPE) {
       navigate("/#customer-dashboard");
     }
