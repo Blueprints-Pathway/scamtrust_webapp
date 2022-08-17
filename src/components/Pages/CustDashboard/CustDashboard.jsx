@@ -18,7 +18,7 @@ const CustomerDashboard = (props) => {
   const TOTAL_AMOUNT = +TRANSACTION_FEE + +transactionAmount;
 
   return (
-    <div className="flex flex-col md:flex-row gap-7 justify-between">
+    <div className="flex w-full px-2 flex-col md:flex-row gap-7 justify-between">
       <div className="min-w-[260px] mx-auto w-[70%] 2xl:w-[685px]">
         <div className="w-full bg-[#FFFEFE] lg:rounded-[24px] rounded-lg lg:px-[37px] px-5 py-3 lg:py-[29px] mb-[13px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
           <p className="font-semibold text-lg 2xl:text-2xl text-colorPrimary">
@@ -128,7 +128,7 @@ const CustomerDashboard = (props) => {
           </div>
         </div>
 
-        <div className="grid hidden lg:block place-content-center mt-[100px] mb-5">
+        <div className="hidden md:block place-content-center mt-[100px] mb-5">
           <img src={SecuredBy} alt="secured by scam trust" />
         </div>
       </div>
@@ -152,7 +152,7 @@ const CustomerDashboard = (props) => {
           </button>
         </div>
 
-        <div className="overflow-x-auto max-w-xs mx-auto relative">
+        <div className="overflow-x-auto mx-auto relative">
           <table className="w-full text-left">
             <thead className="text-sm font-bold text-[#A6A6A6]">
               <tr>
@@ -206,7 +206,7 @@ const CustomerDashboard = (props) => {
         </div>
       </div>
 
-      <div className="grid lg:hidden place-content-center my-[20px]">
+      <div className="grid md:hidden place-content-center my-[20px]">
         <img src={SecuredBy} alt="secured by scam trust" />
       </div>
     </div>
