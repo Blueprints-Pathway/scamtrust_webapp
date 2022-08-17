@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
 
 import Signin from "./pages/auth/Signin";
@@ -7,20 +7,20 @@ import CustomerDashboard from "./pages/dashboard/CustomerDashboard";
 import CustomerSignup from "./pages/auth/CustomerSignup";
 import SetPassword from "./pages/auth/SetPassword";
 import VendorDetails from "./pages/vendor/VendorDetails";
-import CustomerSignupPage from './components/customerSignup/CustomerSignup';
-import CustomerBVN from './components/customerSignup/CustomerBVN';
-import CustomerSetPassword from './components/customerSignup/CustomerSetPassword';
-import CustomerTransaction from './components/customerSignup/CustomerTransaction'
-import CustomerSecurityQuestion from './components/customerSignup/CustomerSecurityQuestion';
-import CustomerActivate from './components/customerSignup/CustomerActivate';
-import SideBar from './components/SideBar/SideBar';
-import PrivacySettings from './components/SettingsVendor/PrivacySettings';
-import DashBoardVendor from './components/DashBoardVendor/DashBoardVendor';
-import SettingsVendor from './components/SettingsVendor/SettingsVendor';
-import Support from './components/support/Support';
-import VendorRating from './components/vendorRating/VendorRating';
-import Withdrawal from './components/Withdrawal/Withdrawal';
-import VendorDashboard from './components/DashBoardVendor/VendorDashboard';
+import CustomerSignupPage from "./components/customerSignup/CustomerSignup";
+import CustomerBVN from "./components/customerSignup/CustomerBVN";
+import CustomerSetPassword from "./components/customerSignup/CustomerSetPassword";
+import CustomerTransaction from "./components/customerSignup/CustomerTransaction";
+import CustomerSecurityQuestion from "./components/customerSignup/CustomerSecurityQuestion";
+import CustomerActivate from "./components/customerSignup/CustomerActivate";
+import SideBar from "./components/SideBar/SideBar";
+import PrivacySettings from "./components/SettingsVendor/PrivacySettings";
+import DashBoardVendor from "./components/DashBoardVendor/DashBoardVendor";
+import SettingsVendor from "./components/SettingsVendor/SettingsVendor";
+import Support from "./components/support/Support";
+import VendorRating from "./components/vendorRating/VendorRating";
+import Withdrawal from "./components/Withdrawal/Withdrawal";
+import VendorDashboard from "./components/DashBoardVendor/VendorDashboard";
 
 // import PasswordEmail from "./passwordRecovery/PasswordEmail";
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -49,7 +49,6 @@ import VendorDashboard from './components/DashBoardVendor/VendorDashboard';
 
 function App() {
   return (
-    
     <Routes>
       <Route path="/" element={<Signin />} />
       <Route path="/customer-dashboard" element={<CustomerDashboard />} />
@@ -57,18 +56,20 @@ function App() {
       <Route path="/signup/set-password" element={<SetPassword />} />
       <Route path="/vendor/:slug" element={<VendorDetails />} />
 
-      <Route path='/customer-signup-page' element={<CustomerSignupPage />} />
-        <Route path='/customer-bvn' element={<CustomerBVN />} />
-        <Route path='/customer-set-password' element={<CustomerSetPassword />} />
-        <Route path='/customer-transaction' element={<CustomerTransaction />} />
-        <Route path='/customer-activate' element={<CustomerActivate />} />
-        <Route path='/customer-security-question' element={<CustomerSecurityQuestion />} />
-
-        <Route path='/vendor-dashboard' element={<DashBoardVendor />} />
-        <Route path='/vendor-settings' element={<SettingsVendor />} />
-        <Route path='/support' element={<Support />} />
-        <Route path='/vendor-rating' element={<VendorRating />} />
-        <Route path='/Withdrawal' element={<Withdrawal />} />
+      <Route path="/customer-signup-page" element={<CustomerSignupPage />} />
+      <Route path="/customer-bvn" element={<CustomerBVN />} />
+      <Route path="/customer-set-password" element={<CustomerSetPassword />} />
+      <Route path="/customer-transaction" element={<CustomerTransaction />} />
+      <Route path="/customer-activate" element={<CustomerActivate />} />
+      <Route
+        path="/customer-security-question"
+        element={<CustomerSecurityQuestion />}
+      />
+      <Route path="/vendor-dashboard" element={<DashBoardVendor />} />
+      <Route path="/vendor-settings" element={<SettingsVendor />} />
+      <Route path="/support" element={<Support />} />
+      <Route path="/vendor-rating" element={<VendorRating />} />
+      <Route path="/Withdrawal" element={<Withdrawal />} />
       {/* <Route path="/signup" element={<SetPassword />} /> */}
       {/*<Route path="/customersignup" element={<CustomerSignup />} />
       <Route path="/email" element={<PasswordEmail />} />

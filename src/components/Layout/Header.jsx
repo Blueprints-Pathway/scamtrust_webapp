@@ -78,10 +78,9 @@ const Header = (props) => {
               {VENDORS.map((vendor, idx) => {
                 const { name, logo, id, score } = vendor;
                 return (
-                  <div className="flex px-3 justify-between" onClick={() => navigate("/vendor/ridic-ventures")}>
+                  <div key={idx} className="flex px-3 justify-between" onClick={() => navigate("/vendor/ridic-ventures")}>
                     <div
                       className="flex items-center hover:opacity-75 mb-3 cursor-pointer"
-                      key={idx}
                     >
                       <div className="w-[28px] mr-3 grid place-content-center h-[28px] bg-[#EFF3FF] overflow-hidden">
                         <img

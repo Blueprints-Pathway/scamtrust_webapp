@@ -152,26 +152,26 @@ const CustomerDashboard = (props) => {
           </button>
         </div>
 
-        <div class="overflow-x-auto relative">
-          <table class="w-full text-left">
-            <thead class="text-sm font-bold text-[#A6A6A6]">
+        <div className="overflow-x-auto relative">
+          <table className="w-full text-left">
+            <thead className="text-sm font-bold text-[#A6A6A6]">
               <tr>
-                <th scope="col" class="py-3 px-6">
+                <th scope="col" className="py-3 px-6">
                   Transactions
                 </th>
-                <th scope="col" class="py-3 px-6">
+                <th scope="col" className="py-3 px-6">
                   Vendor name
                 </th>
-                <th scope="col" class="py-3 px-6">
+                <th scope="col" className="py-3 px-6">
                   Amount
                 </th>
-                <th scope="col" class="py-3 px-6">
+                <th scope="col" className="py-3 px-6">
                   Date
                 </th>
               </tr>
             </thead>
             <tbody className="text-colorPrimary font-medium text-xs">
-              {TRANSACTIONS.map((transaction) => {
+              {TRANSACTIONS.map((transaction, idx) => {
                 const { amount, date, status, vName } = transaction;
                 const bgColor =
                   status === "Awaiting approval"
@@ -182,10 +182,10 @@ const CustomerDashboard = (props) => {
                     ? "#FEF28B66"
                     : status === "Cancelled" && "#FF989E78";
                 return (
-                  <tr>
+                  <tr key={idx}>
                     <th
                       scope="row"
-                      class="py-4 flex items-center px-6 font-medium whitespace-nowrap"
+                      className="py-4 flex items-center px-6 font-medium whitespace-nowrap"
                     >
                       <div
                         className={`w-[25px] h-[25px] bg-[${bgColor}] rounded-md mr-2`}
