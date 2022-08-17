@@ -3,6 +3,7 @@ import { useMediaQuery } from "react-responsive";
 import { HiMenuAlt2 } from "react-icons/hi";
 
 import Logo from "../../assets/images/svg/logo-white.svg";
+import Shield from "../../assets/images/svg/shieldIcon.svg";
 import Dashboard from "../../assets/images/svg/dashboard.svg";
 import Transaction from "../../assets/images/svg/transaction.svg";
 import Wallet from "../../assets/images/svg/wallet.svg";
@@ -28,13 +29,16 @@ const Sidenav = (props) => {
     { symbol: Setting, name: "Settings", link: "/settings" },
   ];
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <ul className="mt-[58px] flex flex-col items-center w-full h-full text-[#F2F2F2]">
       {/* {!isTabletOrMobile ? ( */}
-      <li className="cursor-pointer" onClick={() => navigate("/customer-dashboard")}>
-        <img src={Logo} alt="logo-white" />
+      <li
+        className="cursor-pointer"
+        onClick={() => navigate("/customer-dashboard")}
+      >
+        <img src={isTabletOrMobile ? Shield : Logo} alt="logo-white" />
       </li>
       {/* ) : (
         <></>
