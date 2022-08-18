@@ -24,9 +24,10 @@ const Layout = (props) => {
     ? "fixed pl-0 w-full mb-[50px] bg-white z-20 h-[60px] top-0 left-0"
     : "fixed pl-[212.25px] 2xl:pl-[283px] z-20 w-full mb-[50px] bg-white h-[80px] 2xl:h-[133px] top-0 left-0";
 
-  const mainClassName = isTabletOrMobile
-    ? "ml-[25px] mt-[50px]"
-    : "pl-[230.25px] 2xl:ml-[283px] px-[25px] 2xl:mt-[183px]";
+  // const mainClassName = isTabletOrMobile
+  //   ? "ml-[25px] mt-[50px]"
+  //   : "pl-[230.25px] 2xl:ml-[283px] px-[25px] 2xl:mt-[183px]";
+  const mainClassName = isTabletOrMobile ? "ml-[50px]" : "ml-[50px]";
 
   const animation = "transition-all delay-100 duration-500";
 
@@ -37,7 +38,9 @@ const Layout = (props) => {
       </nav>
       <aside
         className={`${animation} ${asideClassName} fixed `}
-        style={{ width: !isTabletOrMobile ? "212px" : isSidenavOpen ? "150px" : "50px" }}
+        style={{
+          width: !isTabletOrMobile ? "212px" : isSidenavOpen ? "135px" : "50px",
+        }}
       >
         <Sidenav
           isSidenavOpen={isSidenavOpen}
@@ -45,7 +48,7 @@ const Layout = (props) => {
         />
       </aside>
 
-      <main className={`${"mainClassName"}${animation} px-[25px] `}>
+      <main style={{paddingLeft: isTabletOrMobile ? "75px": ""}} className={`${mainClassName}${animation} px-[25px] `}>
         {children}
       </main>
     </>
