@@ -21,7 +21,9 @@ import Support from "./components/support/Support";
 import VendorRating from "./components/vendorRating/VendorRating";
 import Withdrawal from "./components/Withdrawal/Withdrawal";
 import VendorDashboard from "./components/DashBoardVendor/VendorDashboard";
+import VendorTransaction from "./pages/vendor/VendorTransaction";
 
+// import CustomerTransaction from "./pages/VendorTransaction";
 // import PasswordEmail from "./passwordRecovery/PasswordEmail";
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Email from "./passwordRecovery/TokenEmail";
@@ -34,7 +36,6 @@ import VendorDashboard from "./components/DashBoardVendor/VendorDashboard";
 // import Wallet from "./components/wallet/wallet";
 // import CustomerWallet from "./components/wallet/CustomerWallet";
 // import SetPassword from "./pages/SetPin";
-// import CustomerTransaction from "./pages/VendorTransaction";
 // import VendorTransactionCancellation from "./pages/VendorTransactionCancellation";
 // import CustomerSignup from "./pages/signup/Signup";
 // import SetPassword from "./components/signup/setPassword";
@@ -43,7 +44,6 @@ import VendorDashboard from "./components/DashBoardVendor/VendorDashboard";
 // import Activate from "./components/signup/Activate";
 // import SideBar from "./components/SideBar/SideBar";
 // import SettingsVendor from "./components/SettingsVendor/SettingsVendor";
-// import VendorTransaction from "./pages/VendorTransaction";
 // import VendorTransactionDetails from "./pages/VendorTransactionDetails";
 // import VendorTransactionCompleted from "./pages/VendorTransactionCompleted";
 
@@ -52,10 +52,10 @@ function App() {
     <Routes>
       <Route path="/" element={<Signin />} />
       <Route path="/customer-dashboard" element={<CustomerDashboard />} />
+      <Route path="/customer-transaction" element={<VendorTransaction />} />
       <Route path="/signup/vendor" element={<CustomerSignup />} />
       <Route path="/signup/set-password" element={<SetPassword />} />
       <Route path="/vendor/:slug" element={<VendorDetails />} />
-
       <Route path="/customer-signup-page" element={<CustomerSignupPage />} />
       <Route path="/customer-bvn" element={<CustomerBVN />} />
       <Route path="/customer-set-password" element={<CustomerSetPassword />} />

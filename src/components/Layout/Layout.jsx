@@ -37,7 +37,7 @@ const Layout = (props) => {
       </nav>
       <aside
         className={`${animation} ${asideClassName} fixed `}
-        style={{ width: !isTabletOrMobile ? "212px" : isSidenavOpen ? "212px" : "50px" }}
+        style={{ width: !isTabletOrMobile ? "212px" : isSidenavOpen ? "150px" : "50px" }}
       >
         <Sidenav
           isSidenavOpen={isSidenavOpen}

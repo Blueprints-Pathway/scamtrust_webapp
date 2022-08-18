@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import Layout from "../components/Layout/Layout";
+import Layout from "../../components/Layout/Layout";
 
-import AwaitingApproval from "../assets/images/svg/awaiting-approval.svg";
-import Completed from "../assets/images/svg/completed.svg";
-import Cancelled from "../assets/images/svg/cancelled.svg";
-import Ongoing from "../assets/images/svg/on-going.svg";
-import CancelledTab from "../assets/images/svg/cancelled-tab.svg";
-import CompletedTab from "../assets/images/svg/completed-tab.svg";
-import TransactionType from "../components/TransactionType/TransactionType";
-import { fetchTransactions } from "../services/transactions";
+import AwaitingApproval from "../../assets/images/svg/awaiting-approval.svg";
+import Completed from "../../assets/images/svg/completed.svg";
+import Cancelled from "../../assets/images/svg/cancelled.svg";
+import Ongoing from "../../assets/images/svg/on-going.svg";
+import CancelledTab from "../../assets/images/svg/cancelled-tab.svg";
+import CompletedTab from "../../assets/images/svg/completed-tab.svg";
+import TransactionType from "../../components/TransactionType/TransactionType";
+import { fetchTransactions } from "../../services/transactions";
 
 const VendorTransaction = () => {
   const [activeTab, setActiveTab] = useState("All Transactions");

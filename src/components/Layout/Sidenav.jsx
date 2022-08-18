@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { HiMenuAlt2 } from "react-icons/hi";
+import { NavLink } from "react-router-dom";
 
 import Logo from "../../assets/images/svg/logo-white.svg";
 import Shield from "../../assets/images/svg/shieldIcon.svg";
@@ -23,8 +24,12 @@ const Sidenav = (props) => {
   const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
 
   const navItems = [
-    { symbol: Dashboard, name: "Dashboard", link: "/dashboard" },
-    { symbol: Transaction, name: "Transactions", link: "/transactions" },
+    { symbol: Dashboard, name: "Dashboard", link: "/customer-dashboard" },
+    {
+      symbol: Transaction,
+      name: "Transactions",
+      link: "/customer-transaction",
+    },
     { symbol: Wallet, name: "Wallet", link: "/wallet" },
     { symbol: Setting, name: "Settings", link: "/settings" },
   ];
@@ -58,21 +63,31 @@ const Sidenav = (props) => {
           {navItems.map((navItem) => (
             <li
               key={navItem.name}
-              className="uppercase mb-[40px] flex items-center"
+              className="uppercase mb-[30px] flex items-center"
             >
-              <span className="mr-[7px]">
-                <img src={navItem.symbol} alt={navItem.name} />
-              </span>
-              {!isTabletOrMobile ? (
-                navItem.name
-              ) : isSidenavOpen ? (
-                navItem.name
-              ) : (
-                <></>
-              )}
+              <NavLink
+                style={{ display: "flex" }}
+                className={(navData) =>
+                  navData.isActive && "text-colorSecondary"
+                }
+                to={navItem.link}
+              >
+                <span className="mr-[7px]">
+                  <img src={navItem.symbol} alt={navItem.name} />
+                </span>
+                <span>
+                  {!isTabletOrMobile ? (
+                    navItem.name
+                  ) : isSidenavOpen ? (
+                    navItem.name
+                  ) : (
+                    <></>
+                  )}
+                </span>
+              </NavLink>
             </li>
           ))}
-          <li className="uppercase mt-[70px] flex items-center">
+          <li className="uppercase mt-[50px] flex items-center">
             <span className="mr-[7px]">
               <img src={Support} alt={"support"} />
             </span>
