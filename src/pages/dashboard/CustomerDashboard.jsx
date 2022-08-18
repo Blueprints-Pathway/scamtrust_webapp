@@ -27,11 +27,14 @@ const CustomerDashboard = () => {
   //@TODO  NAVIGATE USER TO LOGIN
 
   useEffect(() => {
+    if (!user) {
+      navigate("/#customer-dashboard");
+    }
     (async () => console.log(await fetchUser()))();
     if (user.data.usertype !== USER_TYPE) {
       navigate("/#customer-dashboard");
     }
-  }, []);
+  }, [navigate, user]);
   return (
     <Layout heading="Dashboard">
       {showInitiateTransaction ? (

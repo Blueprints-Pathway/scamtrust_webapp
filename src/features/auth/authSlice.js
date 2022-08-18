@@ -64,5 +64,9 @@ export const authSlice = createSlice({
   },
 });
 
+export const logout = createAsyncThunk("auth/logout", async () => {
+  await authService.logout();
+});
+
 export const { reset } = authSlice.actions;
 export default authSlice.reducer;

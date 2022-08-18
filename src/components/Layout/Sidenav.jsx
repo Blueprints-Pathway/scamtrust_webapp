@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { HiMenuAlt2 } from "react-icons/hi";
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 import Logo from "../../assets/images/svg/logo-white.svg";
@@ -11,6 +12,7 @@ import Wallet from "../../assets/images/svg/wallet.svg";
 import Setting from "../../assets/images/svg/setting.svg";
 import Support from "../../assets/images/svg/support.svg";
 import Logout from "../../assets/images/svg/logout.svg";
+import { logout } from "../../features/auth/authSlice";
 
 const Sidenav = (props) => {
   const { setIsSidenavOpen, isSidenavOpen } = props;
@@ -35,6 +37,7 @@ const Sidenav = (props) => {
   ];
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
     <ul className="mt-[58px] flex flex-col items-center w-full h-full text-[#F2F2F2]">
@@ -93,7 +96,10 @@ const Sidenav = (props) => {
             </span>
             {!isTabletOrMobile ? "SUPPORT" : isSidenavOpen ? "SUPPORT" : <></>}
           </li>
-          <li className="uppercase mt-[40px] flex items-center">
+          <li
+            onClick={() => dispatch(logout())}
+            className="uppercase cursor-pointer mt-[40px] flex items-center"
+          >
             <span className="mr-[7px]">
               <img src={Logout} alt={"logout"} />
             </span>
