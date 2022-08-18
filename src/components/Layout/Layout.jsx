@@ -45,7 +45,7 @@ const Layout = (props) => {
         />
       </aside>
 
-      <main className={`${mainClassName}${animation} px-[25px] 2xl:mt-[133px] pt-8 mt-[60px]`}>
+      <main className={`${"mainClassName"}${animation} px-[25px] `}>
         {children}
       </main>
     </>

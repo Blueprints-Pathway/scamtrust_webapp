@@ -22,6 +22,7 @@ import VendorRating from "./components/vendorRating/VendorRating";
 import Withdrawal from "./components/Withdrawal/Withdrawal";
 import VendorDashboard from "./components/DashBoardVendor/VendorDashboard";
 import VendorTransaction from "./pages/vendor/VendorTransaction";
+import Wallet from "./pages/Wallet/Wallet";
 
 // import CustomerTransaction from "./pages/VendorTransaction";
 // import PasswordEmail from "./passwordRecovery/PasswordEmail";
@@ -70,6 +71,7 @@ function App() {
       <Route path="/support" element={<Support />} />
       <Route path="/vendor-rating" element={<VendorRating />} />
       <Route path="/Withdrawal" element={<Withdrawal />} />
+      <Route path="/wallet" element={<Wallet />} />
       {/* <Route path="/signup" element={<SetPassword />} /> */}
       {/*<Route path="/customersignup" element={<CustomerSignup />} />
       <Route path="/email" element={<PasswordEmail />} />
