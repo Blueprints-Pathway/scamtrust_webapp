@@ -21,7 +21,7 @@ const Layout = (props) => {
     : "w-[212.25px] z-30 2xl:w-[283px] top-0 left-0 bg-colorPrimary fixed h-screen";
 
   const headerClassName = isTabletOrMobile
-    ? "fixed pl-0 w-full mb-[50px] bg-white h-[60px] top-0 left-0"
+    ? "fixed pl-0 w-full mb-[50px] bg-white z-20 h-[60px] top-0 left-0"
     : "fixed pl-[212.25px] 2xl:pl-[283px] z-20 w-full mb-[50px] bg-white h-[80px] 2xl:h-[133px] top-0 left-0";
 
   const mainClassName = isTabletOrMobile
@@ -32,7 +32,7 @@ const Layout = (props) => {
 
   return (
     <>
-      <nav className={`${animation}${headerClassName} bg-white fixed`}>
+      <nav className={`${animation}${headerClassName} fixed`}>
         <Header heading={heading} />
       </nav>
       <aside
