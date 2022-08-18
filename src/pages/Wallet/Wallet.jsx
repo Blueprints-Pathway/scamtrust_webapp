@@ -7,7 +7,7 @@ const Wallet = () => {
   return (
     <Layout>
       <div className="w-full">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <div className="grid-cols-1 rounded-3xl bg-white w-full px-12 py-6">
               <div className="flex justify-between pb-1 border-b-2 border-b-colorSecondary mb-4">
@@ -93,7 +93,56 @@ const Wallet = () => {
               </div>
             </div>
           </div>
-          <div className="grid-cols-1 w-full bg-[#F2F2F2] rounded-[25px]">2</div>
+          <div className="grid-cols-1 w-full bg-[#F2F2F2] rounded-[25px] py-14 px-8">
+            <h5 className="font-medium text-xl">Wallet History</h5>
+
+            <div className="overflow-x-auto mx-auto relative">
+              <table className="w-full text-center">
+                <tbody className="text-colorPrimary font-medium text-xs">
+                  {WALLET_HISTORY.map((history, idx) => {
+                    const { credit, vName, vNo, amount, date } = history;
+                    return (
+                      <tr key={idx} className="grid grid-cols-4">
+                        <td
+                          scope="row"
+                          className="py-4 border border-[#707070] text-[#707070] flex items-center font-medium whitespace-nowrap"
+                        >
+                          {date}
+                        </td>
+                        <td className="py-4 px-6 text-left">
+                          <div className="flex flex-col">
+                            <p className="font-medium text-colorPrimary">
+                              {vName}
+                            </p>
+                            <p className="text-[#707070]">{vNo}</p>
+                          </div>
+                        </td>
+                        <td className="py-4 px-6">₦ {amount}</td>
+                        <td className="py-4">
+                          <div className="items-center w-[87px] py-2 rounded-md justify-end bg-white inline-block">
+                            <div
+                              className={`${
+                                credit ? "bg-colorSecondary" : "bg-[#FF0000]"
+                              } w-3 h-3 inline-block rounded-full mr-[10px]`}
+                            />
+                            <p
+                              className={`${
+                                credit
+                                  ? "text-colorSecondary"
+                                  : "text-[#FF0000]"
+                              } text-colorSecondary inline-block`}
+                            >
+                              {credit ? "Credit" : "Debit"}
+                            </p>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </Layout>
@@ -101,3 +150,76 @@ const Wallet = () => {
 };
 
 export default Wallet;
+
+const WALLET_HISTORY = [
+  {
+    credit: true,
+    vName: "Ilerioluwa Brown",
+    vNo: "TR-5347906",
+    amount: "500,000",
+    date: "10th Jan 2022",
+  },
+  {
+    credit: false,
+    vName: "Ilerioluwa Brown",
+    vNo: "TR-5347906",
+    amount: "500,000",
+    date: "10th Jan 2022",
+  },
+  {
+    credit: true,
+    vName: "Ilerioluwa Brown",
+    vNo: "TR-5347906",
+    amount: "500,000",
+    date: "10th Jan 2022",
+  },
+  {
+    credit: false,
+    vName: "Ilerioluwa Brown",
+    vNo: "TR-5347906",
+    amount: "500,000",
+    date: "10th Jan 2022",
+  },
+  {
+    credit: true,
+    vName: "Ilerioluwa Brown",
+    vNo: "TR-5347906",
+    amount: "500,000",
+    date: "10th Jan 2022",
+  },
+  {
+    credit: false,
+    vName: "Ilerioluwa Brown",
+    vNo: "TR-5347906",
+    amount: "500,000",
+    date: "10th Jan 2022",
+  },
+  {
+    credit: true,
+    vName: "Ilerioluwa Brown",
+    vNo: "TR-5347906",
+    amount: "500,000",
+    date: "10th Jan 2022",
+  },
+  {
+    credit: false,
+    vName: "Ilerioluwa Brown",
+    vNo: "TR-5347906",
+    amount: "500,000",
+    date: "10th Jan 2022",
+  },
+  {
+    credit: true,
+    vName: "Ilerioluwa Brown",
+    vNo: "TR-5347906",
+    amount: "500,000",
+    date: "10th Jan 2022",
+  },
+  {
+    credit: false,
+    vName: "Ilerioluwa Brown",
+    vNo: "TR-5347906",
+    amount: "500,000",
+    date: "10th Jan 2022",
+  },
+];
