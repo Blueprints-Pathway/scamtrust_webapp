@@ -32,7 +32,7 @@ const Layout = (props) => {
 
   return (
     <>
-      <nav className={`${animation}${headerClassName} fixed`}>
+      <nav className={`${animation}${headerClassName} bg-white fixed`}>
         <Header heading={heading} />
       </nav>
       <aside
