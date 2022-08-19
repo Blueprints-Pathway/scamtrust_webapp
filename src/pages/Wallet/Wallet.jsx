@@ -1,12 +1,25 @@
+import { useState } from "react";
+
 import Layout from "../../components/Layout/Layout";
 import Eye from "../../assets/images/svg/eye.svg";
 import Info from "../../assets/images/svg/info.svg";
 import Chat from "../../assets/images/svg/chat.svg";
 import MoreInfo from "../../assets/images/svg/more-info.svg";
+import FundWallet from "../../components/Pages/Wallet/FundWallet";
 
 const Wallet = () => {
+  const [showFundWallet, setShowFundWallet] = useState(false);
+
+  const fundWalletHandler = () => {
+    setShowFundWallet((prevState) => !prevState);
+  };
+
   return (
     <Layout>
+      <FundWallet
+        fundWalletHandler={fundWalletHandler}
+        showFundWallet={showFundWallet}
+      />
       <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
@@ -31,7 +44,7 @@ const Wallet = () => {
                   <p className="font-medium mb-8 2xl:mb-12 md:text-lg text-sm 2xl:text-xl text-colorPrimary">
                     Available Balance
                   </p>
-                  <button className="font-medium bg-[#E9303B] px-5 text-white py-3 rounded-md">
+                  <button className="font-medium bg-[#E9303B] w-24 hover:shadow-md transition-shadow duration-300 text-white py-3 rounded-md">
                     WITHDRAW
                   </button>
                 </div>
@@ -39,7 +52,7 @@ const Wallet = () => {
                   <p className="font-medium md:text-xl 2xl:text-3xl text-colorSecondary mb-2">
                     N 500,000
                   </p>
-                  <p className="font-medium flex md:text-lg text-sm 2xl:text-xl text-colorPrimary">
+                  <p className="font-medium mb-8 flex md:text-lg text-sm 2xl:text-xl text-colorPrimary">
                     <span>Outgoing Balance</span>
 
                     <img
@@ -48,9 +61,12 @@ const Wallet = () => {
                       alt="more_info"
                     />
                   </p>
-                  {/* <button className="font-medium bg-colorGreen px-5 text-white py-3 rounded-md">
+                  <button
+                    onClick={fundWalletHandler}
+                    className="font-medium bg-colorGreen w-24 hover:shadow-md transition-shadow duration-300 text-white py-3 rounded-md"
+                  >
                     Fund
-                  </button> */}
+                  </button>
                 </div>
               </div>
 
