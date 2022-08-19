@@ -2,6 +2,7 @@ import Layout from "../../components/Layout/Layout";
 import Eye from "../../assets/images/svg/eye.svg";
 import Info from "../../assets/images/svg/info.svg";
 import Chat from "../../assets/images/svg/chat.svg";
+import MoreInfo from "../../assets/images/svg/more-info.svg";
 
 const Wallet = () => {
   return (
@@ -9,10 +10,10 @@ const Wallet = () => {
       <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <div className="grid-cols-1 rounded-3xl bg-white w-full px-12 py-6">
+            <div className="grid-cols-1 rounded-3xl bg-white w-full px-5 md:px-9 2xl:px-12 py-6">
               <div className="flex justify-between pb-1 border-b-2 border-b-colorSecondary mb-4">
-                <p className="font-bold text-2xl">Account</p>
-                <p className="font-medium text-2xl text-colorPrimary">
+                <p className="font-bold text-xl 2xl:text-2xl">Account</p>
+                <p className="font-medium text-xl 2xl:text-2xl text-colorPrimary">
                   Ridic Ventures
                 </p>
               </div>
@@ -24,10 +25,10 @@ const Wallet = () => {
 
               <div className="flex justify-between mb-[40px]">
                 <div>
-                  <p className="font-medium text-3xl text-colorSecondary mb-2">
+                  <p className="font-medium md:text-xl 2xl:text-3xl text-colorSecondary mb-2">
                     N 500,000
                   </p>
-                  <p className="font-medium text-xl text-colorPrimary">
+                  <p className="font-medium mb-8 2xl:mb-12 md:text-lg text-sm 2xl:text-xl text-colorPrimary">
                     Available Balance
                   </p>
                   <button className="font-medium bg-[#E9303B] px-5 text-white py-3 rounded-md">
@@ -35,33 +36,39 @@ const Wallet = () => {
                   </button>
                 </div>
                 <div>
-                  <p className="font-medium text-3xl text-colorSecondary mb-2">
+                  <p className="font-medium md:text-xl 2xl:text-3xl text-colorSecondary mb-2">
                     N 500,000
                   </p>
-                  <p className="font-medium text-xl text-colorPrimary">
-                    Outgoing Balance
+                  <p className="font-medium flex md:text-lg text-sm 2xl:text-xl text-colorPrimary">
+                    <span>Outgoing Balance</span>
+
+                    <img
+                      className="2xl:ml-5 ml-3"
+                      src={MoreInfo}
+                      alt="more_info"
+                    />
                   </p>
-                  <button className="font-medium bg-colorGreen px-5 text-white py-3 rounded-md">
+                  {/* <button className="font-medium bg-colorGreen px-5 text-white py-3 rounded-md">
                     Fund
-                  </button>
+                  </button> */}
                 </div>
               </div>
 
               <div className="mt-[45px]">
                 <p className="font-medium text-xl mb-2">Primary Account</p>
                 <div className="bg-[#EAEAEA] rounded-2xl mb-5 flex justify-between p-5">
-                  <div>
-                    <p className="text-xl">
+                  <div className="text-sm 2xl:text-xl">
+                    <p>
                       <span className="text-colorSecondary">
                         N 1,100,000.00
                       </span>{" "}
                       Withdrawn so far
                     </p>
-                    <p className="font-medium text-xl">
+                    <p className="font-medium">
                       2009419261 Zenith Ilerioluwa Brown
                     </p>
                   </div>
-                  <button className="px-4 py-3 bg-colorPrimary text-white rounded-md">
+                  <button className="px-2 py-1 text-[8px] md:text-base 2xl:px-4 2xl:py-3 bg-colorPrimary text-white rounded-md">
                     Add Account
                   </button>
                 </div>
