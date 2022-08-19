@@ -36,7 +36,7 @@ const FundWallet = (props) => {
           to 7820857716. Select WEMA BANK as the destination bank. Funds will be
           credited to your ScamTrust account immediately
         </p>
-        <p className="font-semibold text-right">Done</p>
+        <p onClick={fundWalletHandler} className="font-semibold text-right">Done</p>
       </div>
     </div>
   );
