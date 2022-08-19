@@ -46,8 +46,8 @@ const Layout = (props) => {
       </aside>
 
       <main
-        style={{ paddingLeft: isTabletOrMobile ? "55px" : "212px" }}
-        className={`${mainClassName}${animation} ${isTabletOrMobile ? "pt-[80px]" : ""} pr-[5px]`}
+        style={{ paddingLeft: isTabletOrMobile ? "55px" : "232px", paddingRight: "20px" }}
+        className={`${mainClassName}${animation} ${isTabletOrMobile ? "pt-[80px]" : "pt-[100px]"} pr-[5px]`}
       >
         {children}
       </main>
