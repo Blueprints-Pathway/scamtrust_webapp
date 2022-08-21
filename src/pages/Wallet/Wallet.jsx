@@ -5,20 +5,33 @@ import Eye from "../../assets/images/svg/eye.svg";
 import Info from "../../assets/images/svg/info.svg";
 import Chat from "../../assets/images/svg/chat.svg";
 import MoreInfo from "../../assets/images/svg/more-info.svg";
+import CopyBlack from "../../assets/images/svg/copy-black.svg";
 import FundWallet from "../../components/Pages/Wallet/FundWallet";
+import ConfirmAccount from "../../components/Pages/Wallet/ConfirmAccount";
 
 const Wallet = () => {
   const [showFundWallet, setShowFundWallet] = useState(false);
+  const [showConfirmAccount, setShowConfirmAccont] = useState(false);
 
   const fundWalletHandler = () => {
     setShowFundWallet((prevState) => !prevState);
   };
 
+  const confirmAccountHandler = () => {
+    setShowConfirmAccont((prevState) => !prevState);
+  };
+
   return (
     <Layout>
       <FundWallet
+        setShowConfirmAccont={setShowConfirmAccont}
         fundWalletHandler={fundWalletHandler}
         showFundWallet={showFundWallet}
+      />
+      <ConfirmAccount
+        setShowFundWallet={setShowFundWallet}
+        showConfirmAccount={showConfirmAccount}
+        setShowConfirmAccont={setShowConfirmAccont}
       />
       <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -36,13 +49,19 @@ const Wallet = () => {
                 <img src={Eye} alt="eye" className="mb-3" />
               </div>
 
-              <div className="flex justify-between mb-[40px]">
+              <div className="flex justify-between ">
                 <div>
                   <p className="font-medium md:text-xl 2xl:text-3xl text-colorSecondary mb-2">
                     N 500,000
                   </p>
-                  <p className="font-medium mb-8 2xl:mb-12 md:text-lg text-sm 2xl:text-xl text-colorPrimary">
-                    Available Balance
+                  <p className="font-medium flex mb-8 2xl:mb-12 md:text-lg text-sm 2xl:text-xl text-colorPrimary">
+                    <span>Available Balance</span>
+
+                    <img
+                      className="2xl:ml-5 ml-3"
+                      src={MoreInfo}
+                      alt="more_info"
+                    />
                   </p>
                   <button className="font-medium bg-[#E9303B] w-24 hover:shadow-md transition-shadow duration-300 text-white py-3 rounded-md">
                     WITHDRAW
@@ -71,8 +90,29 @@ const Wallet = () => {
               </div>
 
               <div className="mt-[45px]">
-                <p className="font-medium text-xl mb-2">Primary Account</p>
-                <div className="bg-[#EAEAEA] rounded-2xl mb-5 flex justify-between p-5">
+                <div className="flex justify-between">
+                  <p className="font-medium items-center flex md:text-lg text-sm 2xl:text-xl mb-2">
+                    <span>Primary Account</span>
+
+                    <img
+                      className="2xl:ml-5 w-3 h-3 ml-3"
+                      src={MoreInfo}
+                      alt="more_info"
+                    />
+                  </p>
+                  <p
+                    onClick={confirmAccountHandler}
+                    className="cursor-pointer font-medium flex md:text-lg text-sm 2xl:text-xl mb-2"
+                  >
+                    <img
+                      className="2xl:ml-5 mr-3"
+                      src={CopyBlack}
+                      alt="more_info"
+                    />
+                    <span>7820857716</span>
+                  </p>
+                </div>
+                <div className="bg-[#EAEAEA] flex-col md:flex-row rounded-2xl mb-5 flex justify-between p-5">
                   <div className="text-sm 2xl:text-xl">
                     <p>
                       <span className="text-colorSecondary">
@@ -84,7 +124,7 @@ const Wallet = () => {
                       2009419261 Zenith Ilerioluwa Brown
                     </p>
                   </div>
-                  <button className="px-2 py-1 text-[8px] md:text-base 2xl:px-4 2xl:py-3 bg-colorPrimary text-white rounded-md">
+                  <button className="px-2 py-1 mt-3 md:mt-0 text-[8px] md:text-base 2xl:px-4 2xl:py-3 bg-colorPrimary text-white rounded-md">
                     Add Account
                   </button>
                 </div>
