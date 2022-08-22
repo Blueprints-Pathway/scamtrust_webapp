@@ -165,10 +165,10 @@ const Wallet = () => {
                   {WALLET_HISTORY.map((history, idx) => {
                     const { credit, vName, vNo, amount, date } = history;
                     return (
-                      <tr key={idx} className="grid grid-cols-4">
+                      <tr key={idx} className="grid grid-cols-4 border-b border-b-[#707070]">
                         <td
                           scope="row"
-                          className="py-4 border border-[#707070] text-[#707070] flex items-center font-medium whitespace-nowrap"
+                          className="py-4 text-[#707070] flex items-center font-medium whitespace-nowrap"
                         >
                           {date}
                         </td>
