@@ -35,9 +35,9 @@ const FundWallet = (props) => {
       />
       <div
         style={{ zIndex: "51" }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        className="absolute w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
       >
-        <div className="rounded-2xl text-center text-colorPrimary bg-white max-w-xs md:max-w-lg px-11 py-3">
+        <div className="rounded-2xl text-center text-colorPrimary bg-white max-w-[90%] mx-auto md:max-w-lg px-11 py-3">
           <p className="mt-6 mb-3 text-xl">Fund your ScamTrust Wallet</p>
           <p className="font-medium text-xl">Bank: WEMA BANK</p>
           <p
