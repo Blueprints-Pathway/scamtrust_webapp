@@ -10,6 +10,9 @@ import CustDashboard from "../../components/Pages/CustDashboard/CustDashboard";
 import Backdrop from "../../components/UI/Backdrop";
 import { fetchUser } from "../../services/auth";
 import WithdrawFunds from "../../components/Pages/CustDashboard/WithdrawFunds";
+import ConfirmWIthdrawFunds from "../../components/Pages/CustDashboard/ConfirmWIthdrawFunds";
+import ConfirmTransactionPin from "../../components/Pages/CustDashboard/ConfirmTransactionPin";
+import SuccessfulWithdrawal from "../../components/Pages/CustDashboard/SuccessfulWithdrawal";
 
 const USER_TYPE = "VENDOR";
 
@@ -18,7 +21,9 @@ const CustomerDashboard = () => {
   const [showTransactionPreview, setShowTransactionPreview] = useState(false);
   const [showTransactionSuccess, setShowTransactionSuccess] = useState(false);
   const [isWithdrawing, setIsWithdrawing] = useState(false);
-  // const [startWithdrawFunds]
+  const [confirmTransactionPin, setConfirmTransactionPin] = useState(false);
+  const [confirmWithdraw, setConfirmWithdraw] = useState(false);
+  const [withdrawSuccessful, setWithdrawSuccessful] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -49,10 +54,27 @@ const CustomerDashboard = () => {
         <WithdrawFunds
           setIsWithdrawing={setIsWithdrawing}
           startWithdrawFunds={isWithdrawing}
+          setConfirmTransactionPin={setConfirmTransactionPin}
         />
       ) : (
         <></>
       )}
+      <ConfirmWIthdrawFunds
+        setConfirmWithdraw={setConfirmWithdraw}
+        confirmWithdraw={confirmWithdraw}
+        setWithdrawSuccessful={setWithdrawSuccessful}
+        setConfirmTransactionPin={setConfirmTransactionPin}
+      />
+      <ConfirmTransactionPin
+        confirmTransactionPin={confirmTransactionPin}
+        setConfirmWithdraw={setConfirmWithdraw}
+        setIsWithdrawing={setIsWithdrawing}
+        setConfirmTransactionPin={setConfirmTransactionPin}
+      />
+      <SuccessfulWithdrawal
+        setWithdrawSuccessful={setWithdrawSuccessful}
+        withdrawSuccessful={withdrawSuccessful}
+      />
       {showInitiateTransaction ? (
         <Backdrop showInitiateTransaction={showInitiateTransaction}>
           <InitiateTransaction
