@@ -13,6 +13,17 @@ const Wallet = () => {
   const [showFundWallet, setShowFundWallet] = useState(false);
   const [showConfirmAccount, setShowConfirmAccont] = useState(false);
 
+  const [availableBalanceInfo, setAvailableBalanceInfo] = useState(false);
+  const [outgoingBalanceInfo, setOutgoingBalanceInfo] = useState(false);
+  const [primaryAccountBalanceInfo, primaryABalanceInfo] = useState(false);
+
+  const toggleAvailableBalanceInfo = () =>
+    setAvailableBalanceInfo((prevState) => !prevState);
+  const toggleOutgoingBalanceInfo = () =>
+    setOutgoingBalanceInfo((prevState) => !prevState);
+  const togglePrimaryAccountBalanceInfo = () =>
+    primaryABalanceInfo((prevState) => !prevState);
+
   const fundWalletHandler = () => {
     setShowFundWallet((prevState) => !prevState);
   };
@@ -57,11 +68,21 @@ const Wallet = () => {
                   <p className="font-medium flex mb-8 2xl:mb-12 md:text-lg text-sm 2xl:text-xl text-colorPrimary">
                     <span>Available Balance</span>
 
-                    <img
-                      className="2xl:ml-5 ml-3"
-                      src={MoreInfo}
-                      alt="more_info"
-                    />
+                    <div className="relative">
+                      <img
+                        className="2xl:ml-5 ml-3 cursor-pointer"
+                        src={MoreInfo}
+                        alt="more_info"
+                        onClick={toggleAvailableBalanceInfo}
+                      />
+                      {availableBalanceInfo ? (
+                        <div className="md:px-4 w-[70px] text-[8px] md:w-[185px] md:text-[10px] border-black border md:py-1 bg-white absolute top-[30px] left-1/2 -translate-x-1/2 -translate-y-1/2">
+                          Balance available means
+                        </div>
+                      ) : (
+                        <></>
+                      )}
+                    </div>
                   </p>
                   <button className="font-medium bg-[#E9303B] w-24 hover:shadow-md transition-shadow duration-300 text-white py-3 rounded-md">
                     WITHDRAW
@@ -74,11 +95,21 @@ const Wallet = () => {
                   <p className="font-medium mb-8 flex md:text-lg text-sm 2xl:text-xl text-colorPrimary">
                     <span>Outgoing Balance</span>
 
-                    <img
-                      className="2xl:ml-5 ml-3"
-                      src={MoreInfo}
-                      alt="more_info"
-                    />
+                    <div className="relative">
+                      <img
+                        className="2xl:ml-5 ml-3 cursor-pointer"
+                        src={MoreInfo}
+                        alt="more_info"
+                        onClick={toggleOutgoingBalanceInfo}
+                      />
+                      {outgoingBalanceInfo ? (
+                        <div className="md:px-4 w-[70px] text-[8px] md:w-[185px] md:text-[10px] border-black border md:py-1 bg-white absolute top-[30px] left-1/2 -translate-x-1/2 -translate-y-1/2">
+                          Pending balance available means
+                        </div>
+                      ) : (
+                        <></>
+                      )}
+                    </div>
                   </p>
                   <button
                     onClick={fundWalletHandler}
@@ -94,11 +125,21 @@ const Wallet = () => {
                   <p className="font-medium items-center flex md:text-lg text-sm 2xl:text-xl mb-2">
                     <span>Primary Account</span>
 
-                    <img
-                      className="2xl:ml-5 w-3 h-3 ml-3"
-                      src={MoreInfo}
-                      alt="more_info"
-                    />
+                    <div className="relative">
+                      <img
+                        className="2xl:ml-5 w-3 h-3 ml-3 cursor-pointer"
+                        src={MoreInfo}
+                        alt="more_info"
+                        onClick={togglePrimaryAccountBalanceInfo}
+                      />
+                      {primaryAccountBalanceInfo ? (
+                        <div className="px-4 w-[185px] text-[10px] border-black border py-1 bg-white absolute top-[30px] left-1/2 -translate-x-1/2 -translate-y-1/2">
+                          Primary available means
+                        </div>
+                      ) : (
+                        <></>
+                      )}
+                    </div>
                   </p>
                   <p
                     onClick={confirmAccountHandler}
@@ -165,7 +206,10 @@ const Wallet = () => {
                   {WALLET_HISTORY.map((history, idx) => {
                     const { credit, vName, vNo, amount, date } = history;
                     return (
-                      <tr key={idx} className="grid grid-cols-4 border-b border-b-[#707070]">
+                      <tr
+                        key={idx}
+                        className="grid grid-cols-4 border-b border-b-[#707070]"
+                      >
                         <td
                           scope="row"
                           className="py-4 text-[#707070] flex items-center font-medium whitespace-nowrap"
