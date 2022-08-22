@@ -8,6 +8,7 @@ import MoreInfo from "../../assets/images/svg/more-info.svg";
 import CopyBlack from "../../assets/images/svg/copy-black.svg";
 import FundWallet from "../../components/Pages/Wallet/FundWallet";
 import ConfirmAccount from "../../components/Pages/Wallet/ConfirmAccount";
+import { useNavigate } from "react-router-dom";
 
 const Wallet = () => {
   const [showFundWallet, setShowFundWallet] = useState(false);
@@ -31,6 +32,8 @@ const Wallet = () => {
   const confirmAccountHandler = () => {
     setShowConfirmAccont((prevState) => !prevState);
   };
+
+  const navigate = useNavigate();
 
   return (
     <Layout>
@@ -84,7 +87,10 @@ const Wallet = () => {
                       )}
                     </div>
                   </p>
-                  <button className="font-medium bg-[#E9303B] w-24 hover:shadow-md transition-shadow duration-300 text-white py-3 rounded-md">
+                  <button
+                    onClick={() => navigate("/customer-dashboard#withdraw")}
+                    className="font-medium bg-[#E9303B] w-24 hover:shadow-md transition-shadow duration-300 text-white py-3 rounded-md"
+                  >
                     WITHDRAW
                   </button>
                 </div>
@@ -112,7 +118,7 @@ const Wallet = () => {
                     </div>
                   </p>
                   <button
-                    onClick={fundWalletHandler}
+                    onClick={() => navigate("/customer-dashboard#fund")}
                     className="font-medium bg-colorGreen w-24 hover:shadow-md transition-shadow duration-300 text-white py-3 rounded-md"
                   >
                     Fund
