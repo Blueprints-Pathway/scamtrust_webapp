@@ -105,7 +105,10 @@ const CustomerDashboard = () => {
       ) : (
         <></>
       )}
-      <CustDashboard setShowInitiateTransaction={setShowInitiateTransaction} />
+      <CustDashboard
+        setIsWithdrawing={setIsWithdrawing}
+        setShowInitiateTransaction={setShowInitiateTransaction}
+      />
     </Layout>
   );
 };

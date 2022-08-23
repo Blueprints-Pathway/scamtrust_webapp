@@ -6,7 +6,7 @@ import SecuredBy from "../../../assets/images/svg/secured-by.svg";
 import Add from "../../../assets/images/svg/add.svg";
 
 const CustomerDashboard = (props) => {
-  const { setShowInitiateTransaction } = props;
+  const { setShowInitiateTransaction, setIsWithdrawing } = props;
 
   const [transactionAmount, setTransactionAmount] = useState("");
 
@@ -51,7 +51,10 @@ const CustomerDashboard = (props) => {
           </div>
 
           <div className="flex justify-between mt-[20px] 2xl:mt-[53px]">
-            <button className="bg-[#E9303B] text-xs lg:text-base w-[100px] hover:shadow-xl transition-all duration-300 2xl:w-[143px] text-center text-white py-[9px] rounded-lg">
+            <button
+              onClick={() => setIsWithdrawing(true)}
+              className="bg-[#E9303B] text-xs lg:text-base w-[100px] hover:shadow-xl transition-all duration-300 2xl:w-[143px] text-center text-white py-[9px] rounded-lg"
+            >
               WITHDRAW
             </button>
             <button className="bg-colorGreen text-xs lg:text-base w-[100px] hover:shadow-xl transition-all duration-300 2xl:w-[143px] text-center text-white py-[9px] rounded-lg">
@@ -135,10 +138,18 @@ const CustomerDashboard = (props) => {
 
       <div className="w-full h-[100%] overflow-y-scroll py-3 lg:py-8 px-4 lg:px-12 bg-white rounded-[24px]">
         <div className="w-full mb-3 font-medium 2xl:font-bold text-xs lg:text-base 2xl:text-lg text-colorPrimary flex justify-between border-b border-b-[#CFD8DC]">
-          <p className="border-b-[3px] border-b-colorSecondary pb-5 cursor-pointer hover:opacity-70">All</p>
-          <p className="cursor-pointer hover:opacity-70 hover:border-b-[3px] hover:border-b-colorSecondary transition-all duration-300">Outgoing</p>
-          <p className="cursor-pointer hover:opacity-70 hover:border-b-[3px] hover:border-b-colorSecondary transition-all duration-300">Cancelled </p>
-          <p className="cursor-pointer hover:opacity-70 hover:border-b-[3px] hover:border-b-colorSecondary transition-all duration-300">Completed</p>
+          <p className="border-b-[3px] border-b-colorSecondary pb-5 cursor-pointer hover:opacity-70">
+            All
+          </p>
+          <p className="cursor-pointer hover:opacity-70 hover:border-b-[3px] hover:border-b-colorSecondary transition-all duration-300">
+            Outgoing
+          </p>
+          <p className="cursor-pointer hover:opacity-70 hover:border-b-[3px] hover:border-b-colorSecondary transition-all duration-300">
+            Cancelled{" "}
+          </p>
+          <p className="cursor-pointer hover:opacity-70 hover:border-b-[3px] hover:border-b-colorSecondary transition-all duration-300">
+            Completed
+          </p>
         </div>
 
         <div className="flex justify-between mb-[10px]">
