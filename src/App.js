@@ -23,6 +23,7 @@ import Withdrawal from "./components/Withdrawal/Withdrawal";
 import VendorDashboard from "./components/DashBoardVendor/VendorDashboard";
 import VendorTransaction from "./pages/vendor/VendorTransaction";
 import Wallet from "./pages/Wallet/Wallet";
+import VendorSignup from "./pages/auth/VendorSignup";
 
 // import CustomerTransaction from "./pages/VendorTransaction";
 // import PasswordEmail from "./passwordRecovery/PasswordEmail";
@@ -57,7 +58,7 @@ function App() {
       <Route path="/signup/vendor" element={<CustomerSignup />} />
       <Route path="/signup/set-password" element={<SetPassword />} />
       <Route path="/vendor/:slug" element={<VendorDetails />} />
-      <Route path="/customer-signup-page" element={<CustomerSignupPage />} />
+      <Route path="/customer-signup" element={<CustomerSignupPage />} />
       <Route path="/customer-bvn" element={<CustomerBVN />} />
       <Route path="/customer-set-password" element={<CustomerSetPassword />} />
       <Route path="/customer-transaction" element={<CustomerTransaction />} />
@@ -70,8 +71,9 @@ function App() {
       <Route path="/vendor-settings" element={<SettingsVendor />} />
       <Route path="/support" element={<Support />} />
       <Route path="/vendor-rating" element={<VendorRating />} />
-      <Route path="/Withdrawal" element={<Withdrawal />} />
+      <Route path="/withdrawal" element={<Withdrawal />} />
       <Route path="/wallet" element={<Wallet />} />
+      <Route path="/vendor-signup" element={<VendorSignup />} />
       {/* <Route path="/signup" element={<SetPassword />} /> */}
       {/*<Route path="/customersignup" element={<CustomerSignup />} />
       <Route path="/email" element={<PasswordEmail />} />
