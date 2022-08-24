@@ -1,9 +1,15 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
-import SignupWrapper from "../components/HOC/SignupWrapper";
-import Button from "../components/UI/Button";
+import SignupWrapper from "../../components/HOC/SignupWrapper";
+import Button from "../../components/UI/Button";
+
+const inputClassName =
+  "h-[40px] w-[40px] focus:border-[#D5D8DA] focus:outline-none text-center rounded-lg text-colorPrimary text-xl border-[#D5D8DA] border-2 bg-[#fff]";
 
 const SetPin = () => {
+  const navigate = useNavigate();
+
   const firstInput = useRef();
   const secondInput = useRef();
   const thirdInput = useRef();
@@ -13,6 +19,10 @@ const SetPin = () => {
   const sixthInput = useRef();
   const seventhInput = useRef();
   const eigthInput = useRef();
+
+  const handleSubmit = () => {
+    navigate("/vendor-signup-security-question");
+  };
 
   const headingText = (
     <h3 className="font-extrabold text-lg 2xl:text-2xl 2xl:mb-[100px] mb-[75px]">
@@ -88,28 +98,28 @@ const SetPin = () => {
               ref={firstInput}
               name="input1"
               onChange={handleInputChange}
-              className="h-[40px] w-[40px] focus:border-[#D5D8DA] focus:outline-none text-center rounded-lg text-colorPrimary text-4xl border-[#D5D8DA] border-2 bg-[#fff]"
+              className={inputClassName}
             />
             <input
               maxLength={1}
               ref={secondInput}
               name="input2"
               onChange={handleInputChange}
-              className="h-[40px] w-[40px] focus:border-[#D5D8DA] focus:outline-none text-center rounded-lg text-colorPrimary text-4xl border-[#D5D8DA] border-2 bg-[#fff]"
+              className={inputClassName}
             />
             <input
               maxLength={1}
               ref={thirdInput}
               name="input3"
               onChange={handleInputChange}
-              className="h-[40px] w-[40px] focus:border-[#D5D8DA] focus:outline-none text-center rounded-lg text-colorPrimary text-4xl border-[#D5D8DA] border-2 bg-[#fff]"
+              className={inputClassName}
             />
             <input
               maxLength={1}
               ref={fourthInput}
               name="input4"
               onChange={handleInputChange}
-              className="h-[40px] w-[40px] focus:border-[#D5D8DA] focus:outline-none text-center rounded-lg text-colorPrimary text-4xl border-[#D5D8DA] border-2 bg-[#fff]"
+              className={inputClassName}
             />
           </div>
         </div>
@@ -122,34 +132,36 @@ const SetPin = () => {
               ref={fifthInput}
               name="input5"
               onChange={handleInputChange}
-              className="h-[40px] w-[40px] focus:border-[#D5D8DA] focus:outline-none text-center rounded-lg text-colorPrimary text-4xl border-[#D5D8DA] border-2 bg-[#fff]"
+              className={inputClassName}
             />
             <input
               maxLength={1}
               ref={sixthInput}
               name="input6"
               onChange={handleInputChange}
-              className="h-[40px] w-[40px] focus:border-[#D5D8DA] focus:outline-none text-center rounded-lg text-colorPrimary text-4xl border-[#D5D8DA] border-2 bg-[#fff]"
+              className={inputClassName}
             />
             <input
               maxLength={1}
               ref={seventhInput}
               name="input7"
               onChange={handleInputChange}
-              className="h-[40px] w-[40px] focus:border-[#D5D8DA] focus:outline-none text-center rounded-lg text-colorPrimary text-4xl border-[#D5D8DA] border-2 bg-[#fff]"
+              className={inputClassName}
             />
             <input
               maxLength={1}
               ref={eigthInput}
               name="input8"
               onChange={handleInputChange}
-              className="h-[40px] w-[40px] focus:border-[#D5D8DA] focus:outline-none text-center rounded-lg text-colorPrimary text-4xl border-[#D5D8DA] border-2 bg-[#fff]"
+              className={inputClassName}
             />
           </div>
         </div>
 
         <div className="2xl:mt-[40px] mb-[105px] 2xl:mb-[140px] mt-[30px]">
-          <Button forwardIcon={true}>Set security question</Button>
+          <Button onClick={handleSubmit} forwardIcon={true}>
+            Set security question
+          </Button>
         </div>
       </div>
     </SignupWrapper>

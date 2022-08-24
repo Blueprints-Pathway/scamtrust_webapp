@@ -15,7 +15,7 @@ const withdrawSchema = yup.object().shape({
 });
 
 const WithdrawFunds = (props) => {
-  const { startWithdrawFunds, setIsWithdrawing, setConfirmTransactionPin } =
+  const { startWithdrawFunds, setIsWithdrawing } =
     props;
 
   const {
@@ -36,7 +36,7 @@ const WithdrawFunds = (props) => {
   const onContinueClicked = (data) => {
     console.log(data);
     closeWithdraw();
-    setConfirmTransactionPin(true);
+    navigate("/customer-dashboard")
   };
 
   useEffect(() => {

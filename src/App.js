@@ -1,11 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
 
 import Signin from "./pages/auth/Signin";
 import CustomerDashboard from "./pages/dashboard/CustomerDashboard";
 import CustomerSignup from "./pages/auth/CustomerSignup";
-import SetPassword from "./pages/auth/SetPassword";
 import VendorDetails from "./pages/vendor/VendorDetails";
 import CustomerSignupPage from "./components/customerSignup/CustomerSignup";
 import CustomerBVN from "./components/customerSignup/CustomerBVN";
@@ -13,7 +12,6 @@ import CustomerSetPassword from "./components/customerSignup/CustomerSetPassword
 import CustomerTransaction from "./components/customerSignup/CustomerTransaction";
 import CustomerSecurityQuestion from "./components/customerSignup/CustomerSecurityQuestion";
 import CustomerActivate from "./components/customerSignup/CustomerActivate";
-import SideBar from "./components/SideBar/SideBar";
 import PrivacySettings from "./components/SettingsVendor/PrivacySettings";
 import DashBoardVendor from "./components/DashBoardVendor/DashBoardVendor";
 import SettingsVendor from "./components/SettingsVendor/SettingsVendor";
@@ -24,6 +22,10 @@ import VendorDashboard from "./components/DashBoardVendor/VendorDashboard";
 import VendorTransaction from "./pages/vendor/VendorTransaction";
 import Wallet from "./pages/Wallet/Wallet";
 import VendorSignup from "./pages/auth/VendorSignup";
+import VendorRc from "./pages/auth/VendorRc";
+import SetPin from "./pages/auth/SetPin";
+import SetPassword from "./pages/auth/SetPassword";
+import SecurityQuestion from "./pages/auth/SecurityQuestion";
 
 // import CustomerTransaction from "./pages/VendorTransaction";
 // import PasswordEmail from "./passwordRecovery/PasswordEmail";
@@ -63,6 +65,7 @@ function App() {
       <Route path="/customer-set-password" element={<CustomerSetPassword />} />
       <Route path="/customer-transaction" element={<CustomerTransaction />} />
       <Route path="/customer-activate" element={<CustomerActivate />} />
+      <Route path="/wallet" element={<Wallet />} />
       <Route
         path="/customer-security-question"
         element={<CustomerSecurityQuestion />}
@@ -72,8 +75,11 @@ function App() {
       <Route path="/support" element={<Support />} />
       <Route path="/vendor-rating" element={<VendorRating />} />
       <Route path="/withdrawal" element={<Withdrawal />} />
-      <Route path="/wallet" element={<Wallet />} />
       <Route path="/vendor-signup" element={<VendorSignup />} />
+      <Route path="/vendor-signup-rc" element={<VendorRc />} />
+      <Route path="/vendor-signup-setpin" element={<SetPin />} />
+      <Route path="/vendor-signup-setpassword" element={<SetPassword />} />
+      <Route path="/vendor-signup-security-question" element={<SecurityQuestion />} />
       {/* <Route path="/signup" element={<SetPassword />} /> */}
       {/*<Route path="/customersignup" element={<CustomerSignup />} />
       <Route path="/email" element={<PasswordEmail />} />

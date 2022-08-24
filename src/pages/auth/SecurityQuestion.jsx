@@ -1,8 +1,8 @@
-import SignupWrapper from "../components/HOC/SignupWrapper";
-import Button from "../components/UI/Button";
-import SecurityCard from "../assets/images/security-card.svg";
-import SelectGroup from "../components/UI/SelectGroup";
-import InputGroup from "../components/UI/InputGroup";
+import SignupWrapper from "../../components/HOC/SignupWrapper";
+import Button from "../../components/UI/Button";
+import SecurityCard from "../../assets/images/security-card.svg";
+import SelectGroup from "../../components/UI/SelectGroup";
+import InputGroup from "../../components/UI/InputGroup";
 
 const SecurityQuestion = () => {
   const headingText = (
