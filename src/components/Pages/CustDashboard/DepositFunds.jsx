@@ -27,16 +27,14 @@ const DepositFunds = (props) => {
 
   const navigate = useNavigate();
 
-  //   const closeWithdraw = () => {
-  //     navigate("/customer-dashboard");
-  //     setIsWithdrawing(false);
-  //   };
+    const closeFunding = () => {
+      navigate("/customer-dashboard");
+      setIsFunding(false);
+    };
 
   const onContinueClicked = (data) => {
     console.log(data);
     setIsFunding(false)
-    // closeWithdraw();
-    // setConfirmTransactionPin(true);
   };
 
   useEffect(() => {
@@ -63,7 +61,7 @@ const DepositFunds = (props) => {
         <div className="flex border-b pb-3 border-b-[#EAEAEA] justify-between items-center mb-11 md:mb-16">
           <p className="font-semibold text-xl md:text-[30px]">Fund wallet</p>
           <p
-            onClick={() => setIsFunding(false)}
+            onClick={closeFunding}
             className="font-extrabold cursor-pointer text-lg md:text-[25px]"
           >
             Close x

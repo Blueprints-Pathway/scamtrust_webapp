@@ -37,8 +37,12 @@ const CustomerDashboard = () => {
   //@TODO  NAVIGATE USER TO LOGIN
   useEffect(() => {
     const isWithdraw = window.location.href.split("#")[1] === "withdraw";
+    const isFunding = window.location.href.split("#")[1] === "fund";
     if (isWithdraw) {
       setIsWithdrawing(true);
+    }
+    if (isFunding) {
+      setIsFunding(true);
     }
 
     if (!user) {
