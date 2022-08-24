@@ -13,6 +13,7 @@ import WithdrawFunds from "../../components/Pages/CustDashboard/WithdrawFunds";
 import ConfirmWIthdrawFunds from "../../components/Pages/CustDashboard/ConfirmWIthdrawFunds";
 import ConfirmTransactionPin from "../../components/Pages/CustDashboard/ConfirmTransactionPin";
 import SuccessfulWithdrawal from "../../components/Pages/CustDashboard/SuccessfulWithdrawal";
+import DepositFunds from "../../components/Pages/CustDashboard/DepositFunds";
 
 const USER_TYPE = "VENDOR";
 
@@ -24,6 +25,7 @@ const CustomerDashboard = () => {
   const [confirmTransactionPin, setConfirmTransactionPin] = useState(false);
   const [confirmWithdraw, setConfirmWithdraw] = useState(false);
   const [withdrawSuccessful, setWithdrawSuccessful] = useState(false);
+  const [isFunding, setIsFunding] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -59,6 +61,7 @@ const CustomerDashboard = () => {
       ) : (
         <></>
       )}
+      <DepositFunds isFunding={isFunding} setIsFunding={setIsFunding} />
       <ConfirmWIthdrawFunds
         setConfirmWithdraw={setConfirmWithdraw}
         confirmWithdraw={confirmWithdraw}
@@ -106,6 +109,7 @@ const CustomerDashboard = () => {
         <></>
       )}
       <CustDashboard
+        setIsFunding={setIsFunding}
         setIsWithdrawing={setIsWithdrawing}
         setShowInitiateTransaction={setShowInitiateTransaction}
       />

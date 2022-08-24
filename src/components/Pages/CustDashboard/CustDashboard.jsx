@@ -6,7 +6,7 @@ import SecuredBy from "../../../assets/images/svg/secured-by.svg";
 import Add from "../../../assets/images/svg/add.svg";
 
 const CustomerDashboard = (props) => {
-  const { setShowInitiateTransaction, setIsWithdrawing } = props;
+  const { setShowInitiateTransaction, setIsWithdrawing, setIsFunding } = props;
 
   const [transactionAmount, setTransactionAmount] = useState("");
 
@@ -57,7 +57,10 @@ const CustomerDashboard = (props) => {
             >
               WITHDRAW
             </button>
-            <button className="bg-colorGreen text-xs lg:text-base w-[100px] hover:shadow-xl transition-all duration-300 2xl:w-[143px] text-center text-white py-[9px] rounded-lg">
+            <button
+              onClick={() => setIsFunding(true)}
+              className="bg-colorGreen text-xs lg:text-base w-[100px] hover:shadow-xl transition-all duration-300 2xl:w-[143px] text-center text-white py-[9px] rounded-lg"
+            >
               FUND
             </button>
           </div>
