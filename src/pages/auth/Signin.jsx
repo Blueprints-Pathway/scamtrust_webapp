@@ -42,9 +42,9 @@ const Signin = () => {
     if (isSuccess || user) {
       (async () => await fetchUser())();
       if (user.data.usertype === "VENDOR") {
-        navigate("/customer-dashboard");
-      } else if (user.data.usertype === "CUSTOMER") {
         navigate("/vendor-dashboard");
+      } else if (user.data.usertype === "CUSTOMER") {
+        navigate("/customer-dashboard");
       }
       dispatch(reset());
     }
@@ -102,7 +102,7 @@ const Signin = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   id="myInput"
-                  type={passwordVisibility ? "password" : "text"}
+                  type={!passwordVisibility ? "password" : "text"}
                   placeholder={"password"}
                   className={`border-[0.5px] w-full ${"h-[35px]"} border-[#D5D8DA] h-[30px] 2xl:h-[40px] rounded-[5px] focus:outline-none px-[15px] 2xl:text-lg py-2 placeholder:2xl:text-xl text-[13px] placeholder:text-[13px] placeholder:text-[#8E8E8E] placeholder:font-medium`}
                 />

@@ -6,7 +6,7 @@ import Signin from "./pages/auth/Signin";
 import CustomerDashboard from "./pages/dashboard/CustomerDashboard";
 import CustomerSignup from "./pages/auth/CustomerSignup";
 import VendorDetails from "./pages/vendor/VendorDetails";
-import CustomerSignupPage from "./components/customerSignup/CustomerSignup";
+import CustomerSignupPage from "./pages/auth/CustomerSignup";
 import CustomerBVN from "./components/customerSignup/CustomerBVN";
 import CustomerSetPassword from "./components/customerSignup/CustomerSetPassword";
 import CustomerTransaction from "./components/customerSignup/CustomerTransaction";
@@ -26,6 +26,7 @@ import VendorRc from "./pages/auth/VendorRc";
 import SetPin from "./pages/auth/SetPin";
 import SetPassword from "./pages/auth/SetPassword";
 import SecurityQuestion from "./pages/auth/SecurityQuestion";
+import ProtectedRoutes from "./utils/ProtectedRoutes";
 
 // import CustomerTransaction from "./pages/VendorTransaction";
 // import PasswordEmail from "./passwordRecovery/PasswordEmail";
@@ -55,32 +56,37 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Signin />} />
-      <Route path="/customer-dashboard" element={<CustomerDashboard />} />
-      <Route path="/customer-transaction" element={<VendorTransaction />} />
-      {/* <Route path="/signup/customer" element={<CustomerSignup />} /> */}
+      <Route element={<ProtectedRoutes />}>
+        <Route path="/customer-dashboard" element={<CustomerDashboard />} />
+        <Route path="/customer-transaction" element={<VendorTransaction />} />
+        <Route path="/vendor/:slug" element={<VendorDetails />} />
+        <Route path="/customer-transaction" element={<CustomerTransaction />} />
+        <Route path="/wallet" element={<Wallet />} />
+        <Route path="/vendor-dashboard" element={<DashBoardVendor />} />
+        <Route path="/vendor-settings" element={<SettingsVendor />} />
+        <Route path="/support" element={<Support />} />
+        <Route path="/vendor-rating" element={<VendorRating />} />
+        <Route path="/withdrawal" element={<Withdrawal />} />
+      </Route>
       <Route path="/signup/set-password" element={<SetPassword />} />
-      <Route path="/vendor/:slug" element={<VendorDetails />} />
       <Route path="/customer-signup" element={<CustomerSignupPage />} />
       <Route path="/customer-bvn" element={<CustomerBVN />} />
       <Route path="/customer-set-password" element={<CustomerSetPassword />} />
-      <Route path="/customer-transaction" element={<CustomerTransaction />} />
       <Route path="/customer-activate" element={<CustomerActivate />} />
-      <Route path="/wallet" element={<Wallet />} />
       <Route
         path="/customer-security-question"
         element={<CustomerSecurityQuestion />}
       />
-      <Route path="/vendor-dashboard" element={<DashBoardVendor />} />
-      <Route path="/vendor-settings" element={<SettingsVendor />} />
-      <Route path="/support" element={<Support />} />
-      <Route path="/vendor-rating" element={<VendorRating />} />
-      <Route path="/withdrawal" element={<Withdrawal />} />
       <Route path="/vendor-signup" element={<VendorSignup />} />
       <Route path="/vendor-signup-rc" element={<VendorRc />} />
       <Route path="/vendor-signup-setpin" element={<SetPin />} />
       <Route path="/vendor-signup-setpassword" element={<SetPassword />} />
-      <Route path="/vendor-signup-security-question" element={<SecurityQuestion />} />
+      <Route
+        path="/vendor-signup-security-question"
+        element={<SecurityQuestion />}
+      />
       {/* <Route path="/signup" element={<SetPassword />} /> */}
+      {/* <Route path="/signup/customer" element={<CustomerSignup />} /> */}
       {/*<Route path="/customersignup" element={<CustomerSignup />} />
       <Route path="/email" element={<PasswordEmail />} />
       <Route path="/token" element={<Email />} />

@@ -30,10 +30,25 @@ export const vendorRcShema = yup.object().shape({
 export const vendorSetPasswordSchema = yup.object().shape({
   password: yup
     .string("password should be a string")
-    .min(5, "password should have a minimum length of 5")
+    .min(8, "password should have a minimum length of 8")
     .required("password is required"),
   password_confirmation: yup
     .string("password should be a string")
     .oneOf([yup.ref("password")])
     .required("confirm password is required"),
+});
+
+export const customerRegistrationSchema = yup.object().shape({
+  email: yup
+    .string("email should be a string")
+    .email("please provide a valid email address")
+    .required("email address is required"),
+  username: yup
+    .string("username should be a string")
+    .required("username is required"),
+  phone: yup.string().required("phone is required"),
+  location: yup
+    .string("location should be a string")
+    .required("location is required"),
+  agree: yup.boolean().oneOf([true], "Please agree to terms and condition"),
 });

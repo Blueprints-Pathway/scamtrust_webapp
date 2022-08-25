@@ -12,7 +12,7 @@ import Wallet from "../../assets/images/svg/wallet.svg";
 import Setting from "../../assets/images/svg/setting.svg";
 import Support from "../../assets/images/svg/support.svg";
 import Logout from "../../assets/images/svg/logout.svg";
-import { logout } from "../../features/auth/authSlice";
+import { logout, reset } from "../../features/auth/authSlice";
 
 const Sidenav = (props) => {
   const { setIsSidenavOpen, isSidenavOpen } = props;
@@ -97,7 +97,10 @@ const Sidenav = (props) => {
             {!isTabletOrMobile ? "SUPPORT" : isSidenavOpen ? "SUPPORT" : <></>}
           </li>
           <li
-            onClick={() => dispatch(logout())}
+            onClick={() => {
+              dispatch(logout());
+              dispatch(reset())
+            }}
             className="uppercase cursor-pointer mt-[40px] flex items-center"
           >
             <span className="mr-[7px]">

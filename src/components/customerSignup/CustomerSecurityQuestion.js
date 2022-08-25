@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import './CustomerSignup.css'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleExclamation, faCreditCard } from "@fortawesome/free-solid-svg-icons";

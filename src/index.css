@@ -4,36 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* *,
-*::before,
-*::after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  outline: 0;
-  text-decoration: none;
-  list-style: none;
-  border: none;
-  font-family: "Poppins", "Lato", "Karla", sans-serif;
-  
-} */
-
-/* :root {
-  --dark-color:17%;
-  --light-color:95%;
-  --white-color:100%;
-  --primary-color-hue: 252;
-  --color-white: hsl(252, 30%, var(--white-color));
-  --color-light: hsl(252, 30%, var(--light-color));
-  --color-gray: hsl(252, 15%, 65%);
-  --color-primary: hsl(var(--primary-color-hue), 75%, 60%);
-  --color-secondary: hsl(252, 100%, 90%);
-  --color-success: hsl(120, 95%, 17%);
-  --color-danger: hsl(0, 95%, 65%);
-  --color-dark: hsl(252, 30%, var(--dark-color));
-  --color-black: hsl(252, 30%, 10%);
-  --afterC: '0';
-} */
 
 html {
   font-size: 80%;
@@ -52,58 +22,3 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
-
-/* body {
-  background: #E2E5EA;
-  background-color: var(--color-light);
-  overflow-x: hidden;   
-  color: var(--color-dark);
-  margin: auto;
-
-  padding-left: 0px;
-  padding-right: 0px;
-  font-size: .8rem;
-  font-family: "Poppins", "Lato", "Karla", sans-serif;
-  min-height: 100vh;
-  
-} */
-
-/* .container {
-  width: 70%;
-  margin: auto;
-
-}
-
-.row {
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-
-}
-
-.row.center {
-  justify-content: center;
-}
-  */
-
-/* footer start*/
-
-/* footer ends */
-
-/* main starts */
-/* main{
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-} */
-
-/* main ends */

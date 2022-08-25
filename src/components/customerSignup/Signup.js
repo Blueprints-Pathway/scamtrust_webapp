@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./signup.css";
-import "../../index.css";
 
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

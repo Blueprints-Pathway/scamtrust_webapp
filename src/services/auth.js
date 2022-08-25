@@ -26,9 +26,12 @@ export const registerVendor = async (data) => {
     const result = await fetch(`${scamtrustApi}/auth/register`, {
       method: "POST",
       body: data,
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
-    const user = await result.json();
-    return user;
+    const response = await result.json();
+    return response;
   } catch (error) {
     throw new Error(error);
   }

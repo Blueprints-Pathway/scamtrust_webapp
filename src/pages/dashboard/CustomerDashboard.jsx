@@ -30,10 +30,6 @@ const CustomerDashboard = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { isLoading, isError, user, message, isSuccess } = useSelector(
-    (state) => state.auth
-  );
-
   //@TODO  NAVIGATE USER TO LOGIN
   useEffect(() => {
     const isWithdraw = window.location.href.split("#")[1] === "withdraw";
@@ -45,14 +41,14 @@ const CustomerDashboard = () => {
       setIsFunding(true);
     }
 
-    if (!user) {
-      navigate("/#customer-dashboard");
-    }
-    (async () => console.log(await fetchUser()))();
-    if (user.data.usertype !== USER_TYPE) {
-      navigate("/#customer-dashboard");
-    }
-  }, [navigate, user]);
+    // if (!user) {
+    //   navigate("/#customer-dashboard");
+    // }
+    // (async () => console.log(await fetchUser()))();
+    // if (user.data.usertype !== USER_TYPE) {
+    //   navigate("/#customer-dashboard");
+    // }
+  }, []);
 
   return (
     <Layout heading="Dashboard">
