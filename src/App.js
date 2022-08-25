@@ -6,9 +6,7 @@ import Signin from "./pages/auth/Signin";
 import CustomerDashboard from "./pages/dashboard/CustomerDashboard";
 import CustomerSignup from "./pages/auth/CustomerSignup";
 import VendorDetails from "./pages/vendor/VendorDetails";
-import CustomerSignupPage from "./pages/auth/CustomerSignup";
 import CustomerBVN from "./components/customerSignup/CustomerBVN";
-import CustomerSetPassword from "./components/customerSignup/CustomerSetPassword";
 import CustomerTransaction from "./components/customerSignup/CustomerTransaction";
 import CustomerSecurityQuestion from "./components/customerSignup/CustomerSecurityQuestion";
 import CustomerActivate from "./components/customerSignup/CustomerActivate";
@@ -23,10 +21,11 @@ import VendorTransaction from "./pages/vendor/VendorTransaction";
 import Wallet from "./pages/Wallet/Wallet";
 import VendorSignup from "./pages/auth/VendorSignup";
 import VendorRc from "./pages/auth/VendorRc";
-import SetPin from "./pages/auth/SetPin";
-import SetPassword from "./pages/auth/SetPassword";
-import SecurityQuestion from "./pages/auth/SecurityQuestion";
+import SetPin from "./pages/auth/VendorSetpin";
+import VendorSetPassword from "./pages/auth/VendorSetPassword";
+import SecurityQuestion from "./pages/auth/VendorSecurityQuestion";
 import ProtectedRoutes from "./utils/ProtectedRoutes";
+import CustomerSetPassword from "./pages/auth/CustomerSetPassword";
 
 // import CustomerTransaction from "./pages/VendorTransaction";
 // import PasswordEmail from "./passwordRecovery/PasswordEmail";
@@ -68,8 +67,12 @@ function App() {
         <Route path="/vendor-rating" element={<VendorRating />} />
         <Route path="/withdrawal" element={<Withdrawal />} />
       </Route>
-      <Route path="/signup/set-password" element={<SetPassword />} />
-      <Route path="/customer-signup" element={<CustomerSignupPage />} />
+
+      <Route
+        path="/signup/customer-set-password"
+        element={<CustomerSetPassword />}
+      />
+      <Route path="/customer-signup" element={<CustomerSignup />} />
       <Route path="/customer-bvn" element={<CustomerBVN />} />
       <Route path="/customer-set-password" element={<CustomerSetPassword />} />
       <Route path="/customer-activate" element={<CustomerActivate />} />
@@ -80,7 +83,10 @@ function App() {
       <Route path="/vendor-signup" element={<VendorSignup />} />
       <Route path="/vendor-signup-rc" element={<VendorRc />} />
       <Route path="/vendor-signup-setpin" element={<SetPin />} />
-      <Route path="/vendor-signup-setpassword" element={<SetPassword />} />
+      <Route
+        path="/vendor-signup-setpassword"
+        element={<VendorSetPassword />}
+      />
       <Route
         path="/vendor-signup-security-question"
         element={<SecurityQuestion />}

@@ -7,7 +7,7 @@ import Button from "../../components/UI/Button";
 const inputClassName =
   "h-[40px] w-[40px] focus:border-[#D5D8DA] focus:outline-none text-center rounded-lg text-colorPrimary text-xl border-[#D5D8DA] border-2 bg-[#fff]";
 
-const SetPin = () => {
+const VendorSetpin = () => {
   const navigate = useNavigate();
 
   const firstInput = useRef();
@@ -168,4 +168,4 @@ const SetPin = () => {
   );
 };
 
-export default SetPin;
+export default VendorSetpin;

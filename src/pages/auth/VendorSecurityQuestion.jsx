@@ -8,7 +8,7 @@ import SelectGroup from "../../components/UI/SelectGroup";
 import InputGroup from "../../components/UI/InputGroup";
 import { registerVendor } from "../../services/auth";
 
-const SecurityQuestion = () => {
+const VendorSecurityQuestion = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -81,4 +81,4 @@ const SecurityQuestion = () => {
   );
 };
 
-export default SecurityQuestion;
+export default VendorSecurityQuestion;

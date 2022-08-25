@@ -9,7 +9,7 @@ import Eye from "../../assets/images/svg/eye.svg";
 import ErrorInfo from "../../assets/images/svg/error-info.svg";
 import { vendorSetPasswordSchema } from "../../model/registerModel";
 
-const SetPassword = () => {
+const VendorSetPassword = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const navigate = useNavigate();
@@ -110,4 +110,4 @@ const SetPassword = () => {
   );
 };
 
-export default SetPassword;
+export default VendorSetPassword;
