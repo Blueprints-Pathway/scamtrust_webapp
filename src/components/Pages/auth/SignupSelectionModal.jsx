@@ -43,7 +43,7 @@ const SignupSelectionModal = (props) => {
             onClick={() => navigate("/vendor-signup")}
             className="lg:w-[473px] lg:mr-11 lg:mb-0 mb-5 mx-auto w-[250px] h-[260px] overflow-hidden cursor-pointer rounded-3xl lg:h-[483px]"
           >
-            <div className="transition-all duration-500 hover:scale-110 w-full h-full relative bg-[#F5F6FA]">
+            <div className="transition-all duration-500 hover:scale-105 w-full h-full relative bg-[#F5F6FA]">
               <img
                 src={Ellipse}
                 alt="rounded_shape"
@@ -66,7 +66,7 @@ const SignupSelectionModal = (props) => {
             onClick={() => navigate("/customer-signup")}
             className="lg:w-[473px] mx-auto w-[250px] h-[260px] overflow-hidden cursor-pointer rounded-3xl lg:h-[483px]"
           >
-            <div className="transition-all duration-500 hover:scale-110 w-full h-full relative bg-[#F5F6FA]">
+            <div className="transition-all duration-500 hover:scale-105 w-full h-full relative bg-[#F5F6FA]">
               <img
                 src={Ellipse}
                 alt="rounded_shape"
