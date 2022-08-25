@@ -13,6 +13,7 @@ const Signin = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [passwordVisibility, setPasswordVisibility] = useState(false);
+  const [showSignupModal, setShowSignupModal] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -51,7 +52,10 @@ const Signin = () => {
 
   return (
     <>
-      <SignupSelectionModal />
+      <SignupSelectionModal
+        setShowSignupModal={setShowSignupModal}
+        showSignupModal={showSignupModal}
+      />
       <div className="grid grid-cols-1 lg:grid-cols-2 w-full relative min-h-screen">
         <div className="relative lg:block hidden bg-[#F9F9F9] px-[63px] 2xl:px-[89px] py-[36px] 2xl:py-[51px]">
           <Logo />
@@ -131,7 +135,7 @@ const Signin = () => {
             <div className="mt-[10px] text-center text-sm 2xl:text-xl text-[#8E8E8E]">
               Don&apos;t have an account?{" "}
               <div
-                to="/signup"
+                onClick={() => setShowSignupModal((prevState) => !prevState)}
                 className="text-colorPrimary inline-block cursor-pointer font-medium"
               >
                 Create

@@ -4,30 +4,34 @@ import Ellipse from "../../../assets/images/svg/ellipse.svg";
 import Ellipse2 from "../../../assets/images/svg/ellipse2.svg";
 
 const SignupSelectionModal = (props) => {
+  const { showSignupModal, setShowSignupModal } = props;
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       if (window) document.body.style.overflow = "hidden";
     }
 
-    // if (!confirmWithdraw) {
-    //   if (typeof window !== "undefined") {
-    //     if (window) document.body.style.overflow = "unset";
-    //   }
-    // }
-    //   }, [confirmWithdraw]);
-  }, []);
+    if (!showSignupModal) {
+      if (typeof window !== "undefined") {
+        if (window) document.body.style.overflow = "unset";
+      }
+    }
+  }, [showSignupModal]);
+
+  if (!showSignupModal) return <></>;
 
   return (
     <div>
       <div
+        onClick={() => setShowSignupModal(false)}
         style={{ zIndex: "51" }}
         className="fixed top-0 left-0 w-screen h-screen bg-[rgba(23,23,23,.70)]"
       />
       <div
         style={{ zIndex: "52" }}
-        className="fixed w-full text-center text-colorPrimary rounded-3xl p-4 md:p-6 mx-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        className="fixed text-center text-colorPrimary rounded-3xl p-4 md:p-6 mx-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
       >
-        <p className="text-white font-semibold text-[22px] lg:text-[46px]">
+        <p className="text-white font-semibold text-[18px] lg:text-[46px]">
           Welcome to ScamTrust <span className="ml-6">👋</span>{" "}
         </p>
 
@@ -44,7 +48,7 @@ const SignupSelectionModal = (props) => {
                 alt="rounded_shape"
                 className="absolute top-0 left-0"
               />
-              <div className="absolute text-left top-[60%] -translate-y-[60$] left-[26px]">
+              <div className="absolute text-left top-[60%] -translate-y-[60$] px-[20px]">
                 <p className="font-bold text-[28px]">Vendor</p>
                 <p className="text-sm lg:text-xl">
                   Get a risk-free payment for almost any product or service.
@@ -64,7 +68,7 @@ const SignupSelectionModal = (props) => {
                 alt="rounded_shape"
                 className="absolute top-0 left-0"
               />
-              <div className="absolute text-left top-[60%] -translate-y-[60$] left-[26px]">
+              <div className="absolute text-left top-[60%] -translate-y-[60$] px-[20px]">
                 <p className="font-bold text-[28px]">Customer</p>
                 <p className="text-sm lg:text-xl">
                   Verify and enjoy transaction transparency before product
