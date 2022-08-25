@@ -40,11 +40,11 @@ const Signin = () => {
       // SHOW ERROR FROM MESSAGE
     }
     if (isSuccess || user) {
-      // (async () => await fetchUser())();
+      (async () => await fetchUser())();
       if (user.data.usertype === "VENDOR") {
-        // navigate("/customer-dashboard");
-      } else if (user.data.usertype === "VENDOR") {
-        // navigate("/vendor-dashboard");
+        navigate("/customer-dashboard");
+      } else if (user.data.usertype === "CUSTOMER") {
+        navigate("/vendor-dashboard");
       }
       dispatch(reset());
     }

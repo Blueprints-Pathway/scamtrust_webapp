@@ -13,9 +13,9 @@ const login = async (loginData) => {
 };
 
 const logout = () => {
-  localStorage.removeItem("scam-trust-user")
-}
+  localStorage.removeItem("scam-trust-user");
+};
 
-const authService = { login };
+const authService = { login, logout };
 
 export default authService;
