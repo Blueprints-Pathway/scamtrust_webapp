@@ -32,7 +32,7 @@ const SignupSelectionModal = (props) => {
         </p>
 
         <div className="flex flex-col md:flex-row justify-around w-full mt-4 lg:mt-[53px]">
-          <div className="lg:w-[473px] lg:mb-0 mb-5 mx-auto w-[320px] h-[330px] overflow-hidden cursor-pointer rounded-3xl lg:h-[483px]">
+          <div className="lg:w-[473px] lg:mb-0 mb-5 mx-auto w-[250px] h-[260px] overflow-hidden cursor-pointer rounded-3xl lg:h-[483px]">
             <div className="transition-all duration-500 hover:scale-110 w-full h-full relative bg-[#F5F6FA]">
               <img
                 src={Ellipse}
@@ -46,13 +46,13 @@ const SignupSelectionModal = (props) => {
               />
               <div className="absolute text-left top-[60%] -translate-y-[60$] left-[26px]">
                 <p className="font-bold text-[28px]">Vendor</p>
-                <p className="text-xl">
+                <p className="text-sm lg:text-xl">
                   Get a risk-free payment for almost any product or service.
                 </p>
               </div>
             </div>
           </div>
-          <div className="lg:w-[473px] mx-auto w-[320px] h-[330px] overflow-hidden cursor-pointer rounded-3xl lg:h-[483px]">
+          <div className="lg:w-[473px] mx-auto w-[250px] h-[260px] overflow-hidden cursor-pointer rounded-3xl lg:h-[483px]">
             <div className="transition-all duration-500 hover:scale-110 w-full h-full relative bg-[#F5F6FA]">
               <img
                 src={Ellipse}
@@ -66,7 +66,7 @@ const SignupSelectionModal = (props) => {
               />
               <div className="absolute text-left top-[60%] -translate-y-[60$] left-[26px]">
                 <p className="font-bold text-[28px]">Customer</p>
-                <p className="text-xl">
+                <p className="text-sm lg:text-xl">
                   Verify and enjoy transaction transparency before product
                   delivery.
                 </p>
