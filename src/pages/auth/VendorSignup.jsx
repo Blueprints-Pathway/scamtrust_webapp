@@ -48,7 +48,8 @@ const VendorSignup = () => {
   }, []);
 
   const VendorSignupHandler = async (data) => {
-    localStorage.setItem("vendor-signup", JSON.stringify(data));
+    const type = "vendor";
+    localStorage.setItem("vendor-signup", JSON.stringify({ ...data, type }));
     navigate("/vendor-signup-rc");
   };
 
@@ -135,7 +136,9 @@ const VendorSignup = () => {
                   <option value="">Select Business Industry</option>
                   {businessIndustries?.map((industry) => {
                     return (
-                      <option value={industry?.id}>{industry?.name}</option>
+                      <option key={industry?.id} value={industry?.id}>
+                        {industry?.name}
+                      </option>
                     );
                   })}
                 </select>
@@ -182,7 +185,7 @@ const VendorSignup = () => {
                   <option value="">Select Business Type</option>
                   {businessTypes?.map((businessType) => {
                     return (
-                      <option value={businessType?.id}>
+                      <option key={businessType?.id} value={businessType?.id}>
                         {businessType?.name}
                       </option>
                     );

@@ -13,7 +13,20 @@ const apiConfig = (method) => {
 
 export const fetchUser = async () => {
   try {
-    const result = await fetch(`${scamtrustApi}user/getdetails`, apiConfig());
+    const result = await fetch(`${scamtrustApi}/user/getdetails`, apiConfig());
+    const user = await result.json();
+    return user;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const registerVendor = async (data) => {
+  try {
+    const result = await fetch(`${scamtrustApi}/auth/register`, {
+      method: "POST",
+      body: data,
+    });
     const user = await result.json();
     return user;
   } catch (error) {

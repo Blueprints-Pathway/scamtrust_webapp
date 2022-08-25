@@ -3,6 +3,7 @@ import Button from "../../components/UI/Button";
 import SecurityCard from "../../assets/images/security-card.svg";
 import SelectGroup from "../../components/UI/SelectGroup";
 import InputGroup from "../../components/UI/InputGroup";
+import { registerVendor } from "../../services/auth";
 
 const SecurityQuestion = () => {
   const headingText = (
@@ -14,6 +15,12 @@ const SecurityQuestion = () => {
       <img src={SecurityCard} alt="security card" />
     </div>
   );
+
+  const submitHandler = async () => {
+    const data = localStorage.getItem("vendor-signup");
+    const response = await registerVendor(data);
+    console.log(response)
+  };
 
   return (
     <SignupWrapper headingText={headingText}>
@@ -32,7 +39,9 @@ const SecurityQuestion = () => {
       </div>
 
       <div className="w-[280px] lg:w-[353.25px] 2xl:w-[471px] mb-[58px] lg:mb-[117px] 2xl:mb-[156px]">
-        <Button bgColor="bg-colorSecondary">Continue</Button>
+        <Button onClick={submitHandler} bgColor="bg-colorSecondary">
+          Continue
+        </Button>
       </div>
     </SignupWrapper>
   );
