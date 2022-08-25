@@ -7,7 +7,7 @@ import SignupWrapper from "../../components/HOC/SignupWrapper";
 import Button from "../../components/UI/Button";
 import Eye from "../../assets/images/svg/eye.svg";
 import ErrorInfo from "../../assets/images/svg/error-info.svg";
-import { vendorSetPasswordSchema } from "../../model/registerModel";
+import { CustomerSetPasswordSchema } from "../../model/registerModel";
 
 const CustomerSetPassword = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -17,17 +17,16 @@ const CustomerSetPassword = () => {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(vendorSetPasswordSchema) });
+  } = useForm({ resolver: yupResolver(CustomerSetPasswordSchema) });
 
   const handleFormSumit = (data) => {
-    const vendorSignupDetails = JSON.parse(
-      localStorage.getItem("vendor-signup")
-    );
-    const vendorSignupData = { ...vendorSignupDetails, ...data };
-    localStorage.setItem("vendor-signup", JSON.stringify(vendorSignupData));
-    navigate("/vendor-signup-setpin");
+    // const vendorSignupDetails = JSON.parse(
+    //   localStorage.getItem("vendor-signup")
+    // );
+    // const vendorSignupData = { ...vendorSignupDetails, ...data };
+    // localStorage.setItem("vendor-signup", JSON.stringify(vendorSignupData));
+    navigate("/customer-signup-setpin");
   };
 
   const headingText = (

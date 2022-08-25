@@ -52,3 +52,14 @@ export const customerRegistrationSchema = yup.object().shape({
     .required("location is required"),
   agree: yup.boolean().oneOf([true], "Please agree to terms and condition"),
 });
+
+export const CustomerSetPasswordSchema = yup.object().shape({
+  password: yup
+    .string("password should be a string")
+    .min(8, "password should have a minimum length of 8")
+    .required("password is required"),
+  password_confirmation: yup
+    .string("password should be a string")
+    .oneOf([yup.ref("password")])
+    .required("confirm password is required"),
+});

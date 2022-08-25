@@ -20,7 +20,7 @@ const CustomerSignup = () => {
 
   const customerSignupHandler = (data) => {
     console.log(data);
-    navigate("/signup/customer-set-password")
+    navigate("/customer-signup-setpassword")
   };
 
   return (
