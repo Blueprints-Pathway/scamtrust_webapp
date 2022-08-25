@@ -1,10 +1,13 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Ellipse from "../../../assets/images/svg/ellipse.svg";
 import Ellipse2 from "../../../assets/images/svg/ellipse2.svg";
 
 const SignupSelectionModal = (props) => {
   const { showSignupModal, setShowSignupModal } = props;
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -36,7 +39,10 @@ const SignupSelectionModal = (props) => {
         </p>
 
         <div className="flex flex-col md:flex-row justify-around w-full mt-4 lg:mt-[53px]">
-          <div className="lg:w-[473px] lg:mb-0 mb-5 mx-auto w-[250px] h-[260px] overflow-hidden cursor-pointer rounded-3xl lg:h-[483px]">
+          <div
+            onClick={() => navigate("/vendor-signup")}
+            className="lg:w-[473px] lg:mr-11 lg:mb-0 mb-5 mx-auto w-[250px] h-[260px] overflow-hidden cursor-pointer rounded-3xl lg:h-[483px]"
+          >
             <div className="transition-all duration-500 hover:scale-110 w-full h-full relative bg-[#F5F6FA]">
               <img
                 src={Ellipse}
@@ -56,7 +62,10 @@ const SignupSelectionModal = (props) => {
               </div>
             </div>
           </div>
-          <div className="lg:w-[473px] mx-auto w-[250px] h-[260px] overflow-hidden cursor-pointer rounded-3xl lg:h-[483px]">
+          <div
+            onClick={() => navigate("/customer-signup")}
+            className="lg:w-[473px] mx-auto w-[250px] h-[260px] overflow-hidden cursor-pointer rounded-3xl lg:h-[483px]"
+          >
             <div className="transition-all duration-500 hover:scale-110 w-full h-full relative bg-[#F5F6FA]">
               <img
                 src={Ellipse}

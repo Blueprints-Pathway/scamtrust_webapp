@@ -135,7 +135,7 @@ const Signin = () => {
             <div className="mt-[10px] text-center text-sm 2xl:text-xl text-[#8E8E8E]">
               Don&apos;t have an account?{" "}
               <div
-                onClick={() => setShowSignupModal((prevState) => !prevState)}
+                onClick={() => setShowSignupModal(true)}
                 className="text-colorPrimary inline-block cursor-pointer font-medium"
               >
                 Create

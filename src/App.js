@@ -57,7 +57,7 @@ function App() {
       <Route path="/" element={<Signin />} />
       <Route path="/customer-dashboard" element={<CustomerDashboard />} />
       <Route path="/customer-transaction" element={<VendorTransaction />} />
-      <Route path="/signup/vendor" element={<CustomerSignup />} />
+      {/* <Route path="/signup/customer" element={<CustomerSignup />} /> */}
       <Route path="/signup/set-password" element={<SetPassword />} />
       <Route path="/vendor/:slug" element={<VendorDetails />} />
       <Route path="/customer-signup" element={<CustomerSignupPage />} />
