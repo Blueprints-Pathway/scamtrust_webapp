@@ -4,7 +4,7 @@ const SignupWrapper = (props) => {
   const { children, headingText, showSecuredLogo } = props;
 
   return (
-    <div className="2xl:py-[51px] py-[19px] lg:py-[38.25px] px-[32px] lg:px-[67.5px] 2xl:px-[90px] relative min-h-screen">
+    <div className="2xl:py-[51px] bg-white py-[19px] lg:py-[38.25px] px-[32px] lg:px-[67.5px] 2xl:px-[90px] relative min-h-screen">
       <Logo />
 
       <div className="mt-[15px] lg:mt-[31px] w-[350px] lg:w-[534.75px] 2xl:w-[713px] pl-[16px] lg:pl-[37.5px] 2xl:pl-[50px] pr-[76.25px] 2xl:pr-[103px] text-left absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[20px] border shadow-md">

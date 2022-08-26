@@ -21,11 +21,11 @@ const CustomerSetPassword = () => {
   } = useForm({ resolver: yupResolver(CustomerSetPasswordSchema) });
 
   const handleFormSumit = (data) => {
-    // const vendorSignupDetails = JSON.parse(
-    //   localStorage.getItem("vendor-signup")
-    // );
-    // const vendorSignupData = { ...vendorSignupDetails, ...data };
-    // localStorage.setItem("vendor-signup", JSON.stringify(vendorSignupData));
+    const customerSignupDetails = JSON.parse(
+      localStorage.getItem("customer-signup")
+    );
+    const customerSignupData = { ...customerSignupDetails, ...data };
+    localStorage.setItem("customer-signup", JSON.stringify(customerSignupData));
     navigate("/customer-signup-setpin");
   };
 
@@ -53,7 +53,7 @@ const CustomerSetPassword = () => {
                 id="password"
                 {...register("password")}
                 name="password"
-                className={`border-[0.5px] w-full  border-[#D5D8DA] h-[30px] 2xl:h-[40px] rounded-[5px] focus:outline-none px-[15px] 2xl:text-lg py-2 placeholder:2xl:text-xl text-[13px] placeholder:text-[12px] placeholder:text-[#8E8E8E]`}
+                className={`border-[0.5px] text-black w-full  border-[#D5D8DA] h-[30px] 2xl:h-[40px] rounded-[5px] focus:outline-none px-[15px] 2xl:text-lg py-2 placeholder:2xl:text-xl text-[13px] placeholder:text-[12px] placeholder:text-[#8E8E8E]`}
               />
             </div>
             <img
@@ -64,7 +64,7 @@ const CustomerSetPassword = () => {
             />
           </div>
           {errors.password ? (
-            <span className="flex items-center mt-2">
+            <span className="flex text-xs items-center mt-2">
               <img src={ErrorInfo} className="mr-2" alt="error_info" />
               <span className="text-[#FC0D1B]">{errors.password.message}</span>
             </span>
@@ -90,7 +90,7 @@ const CustomerSetPassword = () => {
             />
           </div>
           {errors.password_confirmation ? (
-            <span className="flex items-center mt-2">
+            <span className="flex text-xs items-center mt-2">
               <img src={ErrorInfo} className="mr-2" alt="error_info" />
               <span className="text-[#FC0D1B]">
                 {errors.password_confirmation.message}

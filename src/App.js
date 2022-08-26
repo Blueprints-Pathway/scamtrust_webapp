@@ -8,7 +8,6 @@ import CustomerSignup from "./pages/auth/CustomerSignup";
 import VendorDetails from "./pages/vendor/VendorDetails";
 import CustomerBVN from "./components/customerSignup/CustomerBVN";
 import CustomerTransaction from "./components/customerSignup/CustomerTransaction";
-import CustomerSecurityQuestion from "./components/customerSignup/CustomerSecurityQuestion";
 import CustomerActivate from "./components/customerSignup/CustomerActivate";
 import PrivacySettings from "./components/SettingsVendor/PrivacySettings";
 import DashBoardVendor from "./components/DashBoardVendor/DashBoardVendor";
@@ -27,6 +26,7 @@ import VendorSetPassword from "./pages/auth/VendorSetPassword";
 import SecurityQuestion from "./pages/auth/VendorSecurityQuestion";
 import ProtectedRoutes from "./utils/ProtectedRoutes";
 import CustomerSetPassword from "./pages/auth/CustomerSetPassword";
+import CustomerSecurityQuestion from "./pages/auth/CustomerSecurityQuestion";
 
 function App() {
   return (
@@ -54,7 +54,7 @@ function App() {
       <Route path="/customer-set-password" element={<CustomerSetPassword />} />
       <Route path="/customer-activate" element={<CustomerActivate />} />
       <Route
-        path="/customer-security-question"
+        path="/customer-signup-security-question"
         element={<CustomerSecurityQuestion />}
       />
       <Route path="/customer-signup-setpin" element={<CustomerSetpin />} />

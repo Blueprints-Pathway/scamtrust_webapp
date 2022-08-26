@@ -19,6 +19,8 @@ const SignupSelectionModal = (props) => {
         if (window) document.body.style.overflow = "unset";
       }
     }
+
+    return () => (document.body.style.overflow = "unset");
   }, [showSignupModal]);
 
   if (!showSignupModal) return <></>;

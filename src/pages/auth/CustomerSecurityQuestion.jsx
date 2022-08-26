@@ -8,7 +8,7 @@ import SelectGroup from "../../components/UI/SelectGroup";
 import InputGroup from "../../components/UI/InputGroup";
 import { registerUser } from "../../services/auth";
 
-const VendorSecurityQuestion = () => {
+const CustomerSecurityQuestion = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -27,7 +27,7 @@ const VendorSecurityQuestion = () => {
   const submitHandler = async () => {
     if (loading) return;
     setErrorMessage("");
-    const data = localStorage.getItem("vendor-signup");
+    const data = localStorage.getItem("customer-signup");
     setLoading(true);
     try {
       const response = await registerUser(data);
@@ -81,4 +81,4 @@ const VendorSecurityQuestion = () => {
   );
 };
 
-export default VendorSecurityQuestion;
+export default CustomerSecurityQuestion;

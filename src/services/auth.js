@@ -21,7 +21,7 @@ export const fetchUser = async () => {
   }
 };
 
-export const registerVendor = async (data) => {
+export const registerUser = async (data) => {
   try {
     const result = await fetch(`${scamtrustApi}/auth/register`, {
       method: "POST",

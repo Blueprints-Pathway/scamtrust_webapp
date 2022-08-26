@@ -21,7 +21,7 @@ const CustomerSetpin = () => {
   const eigthInput = useRef();
 
   const handleSubmit = () => {
-    navigate("/vendor-signup-security-question");
+    navigate("/customer-signup-security-question");
   };
 
   const headingText = (

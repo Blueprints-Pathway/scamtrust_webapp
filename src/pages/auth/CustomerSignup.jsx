@@ -16,11 +16,12 @@ const CustomerSignup = () => {
     resolver: yupResolver(customerRegistrationSchema),
   });
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const customerSignupHandler = (data) => {
-    console.log(data);
-    navigate("/customer-signup-setpassword")
+    const type = "customer";
+    localStorage.setItem("customer-signup", JSON.stringify({ ...data, type }));
+    navigate("/customer-signup-setpassword");
   };
 
   return (
