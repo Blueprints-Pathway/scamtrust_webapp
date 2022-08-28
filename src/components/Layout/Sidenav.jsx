@@ -71,7 +71,7 @@ const Sidenav = (props) => {
               <NavLink
                 style={{ display: "flex" }}
                 className={(navData) =>
-                  navData.isActive && "text-colorSecondary"
+                  navData.isActive ? "text-colorSecondary" : ""
                 }
                 to={navItem.link}
               >
@@ -99,7 +99,7 @@ const Sidenav = (props) => {
           <li
             onClick={() => {
               dispatch(logout());
-              dispatch(reset())
+              dispatch(reset());
             }}
             className="uppercase cursor-pointer mt-[40px] flex items-center"
           >

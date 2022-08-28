@@ -1,10 +1,18 @@
 import { useForm } from "react-hook-form";
+import { useSelector } from "react-redux";
 
 import SecuredBy from "../../assets/images/svg/secured-by.svg";
 import { createTransaction } from "../../services/transactions";
 
 const TransactionPreview = (props) => {
-  const { setShowTransactionPreview, setShowTransactionSuccess } = props;
+  const {
+    setShowTransactionPreview,
+    setShowTransactionSuccess,
+    setShowInitiateTransaction,
+  } = props;
+
+  const state = useSelector((state) => state);
+  const token = state.auth.user.data.access_token;
 
   const {
     register,
@@ -18,7 +26,8 @@ const TransactionPreview = (props) => {
       localStorage.getItem("scam-trust-txnInitiation")
     );
     try {
-      await createTransaction(transactionData);
+      const result = await createTransaction(JSON.stringify(transactionData), token);
+      console.log(result);
       setShowTransactionPreview(false);
       setShowTransactionSuccess(true);
     } catch (error) {
@@ -38,7 +47,10 @@ const TransactionPreview = (props) => {
         </h3>{" "}
         <div
           className="font-extrabold text-xs lg:font-[25px] cursor-pointer"
-          onClick={() => null}
+          onClick={() => {
+            setShowTransactionPreview(false);
+            setShowInitiateTransaction(true);
+          }}
         >
           Edit form
         </div>

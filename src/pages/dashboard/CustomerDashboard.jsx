@@ -15,8 +15,6 @@ import ConfirmTransactionPin from "../../components/Pages/CustDashboard/ConfirmT
 import SuccessfulWithdrawal from "../../components/Pages/CustDashboard/SuccessfulWithdrawal";
 import DepositFunds from "../../components/Pages/CustDashboard/DepositFunds";
 
-const USER_TYPE = "VENDOR";
-
 const CustomerDashboard = () => {
   const [showInitiateTransaction, setShowInitiateTransaction] = useState(false);
   const [showTransactionPreview, setShowTransactionPreview] = useState(false);
@@ -92,6 +90,7 @@ const CustomerDashboard = () => {
       {showTransactionPreview ? (
         <Backdrop showTransactionPreview={showTransactionPreview}>
           <TransactionPreview
+            setShowInitiateTransaction={setShowInitiateTransaction}
             setShowTransactionPreview={setShowTransactionPreview}
             setShowTransactionSuccess={setShowTransactionSuccess}
           />

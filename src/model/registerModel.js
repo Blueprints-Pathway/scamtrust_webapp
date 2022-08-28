@@ -63,3 +63,27 @@ export const CustomerSetPasswordSchema = yup.object().shape({
     .oneOf([yup.ref("password")])
     .required("confirm password is required"),
 });
+
+export const createTransactionSchema = yup.object().shape({
+  vendor_id: yup
+    .string("vendor id must be a string")
+    .required("vendor id is required"),
+  product_name: yup
+    .string("product name must be a string")
+    .required("product name is is required"),
+  phone: yup
+    .string()
+    .length(11, "phone must be 11 digits long")
+    .required("phone is required"),
+  amount: yup.number("amount must be a number").required("amount is required"),
+  quantity: yup
+    .number("quantity must be a number")
+    .required("quantity is required"),
+  due_date: yup
+    .string("due date must be a number")
+    .required("due date is required"),
+  description: yup
+    .string("description must be a string")
+    .required("description is required"),
+  agree: yup.boolean().oneOf([true], "Please agree to terms and condition"),
+});
