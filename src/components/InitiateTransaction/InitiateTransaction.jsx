@@ -58,7 +58,7 @@ const InitiateTransaction = (props) => {
   }, []);
 
   return (
-    <div className="h-[90vh] py-4 relative overflow-y-scroll w-full">
+    <div className="h-[90vh] md:grid md:place-content-center py-4 relative overflow-y-scroll w-full">
       <form
         onSubmit={handleSubmit((data) => {
           handleFormSumit(data);
