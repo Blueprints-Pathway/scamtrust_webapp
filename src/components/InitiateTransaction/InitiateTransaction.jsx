@@ -58,12 +58,12 @@ const InitiateTransaction = (props) => {
   }, []);
 
   return (
-    <div className="">
+    <div className="h-[90vh] py-4 relative overflow-y-scroll w-full">
       <form
         onSubmit={handleSubmit((data) => {
           handleFormSumit(data);
         })}
-        className="absolute ml-[25px] w-[85vw] bg-white rounded-[20px] top-1/2 left-1/2 lg:w-[70vw] 2xl:w-[1097px] lg:p-8 p-4 2xl:p-16 -translate-x-1/2 -translate-y-1/2 z-30"
+        className="w-[90%] mx-auto bg-white rounded-[20px] lg:w-[900px] 2xl:w-[1097px] lg:p-8 p-4 2xl:p-16"
         >
         <div className="flex items-center border-b-[2px] justify-between border-b-[#EAEAEA]">
           <h3 className="text-colorPrimary font-medium text-lg lg:font-semibold lg:text-3xl">
@@ -279,17 +279,17 @@ const InitiateTransaction = (props) => {
           )}
         </div>
 
-        <div className="flex justify-between px-14 mt-9">
+        <div className="flex justify-between px-4 md:px-14 mt-9">
           <div />
           <div className="flex items-center">
             <img
               src={SecuredBy}
               alt="secured_by_scam_trust"
-              className="w-[169px] mr-6"
+              className="md:w-[169px] w-[100px] mr-6"
             />
             <button
               type="submit"
-              className="bg-colorPrimary text-white rounded-md font-semibold px-[50px] py-[10px]"
+              className="bg-colorPrimary text-white rounded-md font-semibold px-[25px] md:px-[50px] py-[10px]"
             >
               Continue
             </button>

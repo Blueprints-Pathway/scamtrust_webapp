@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { HiMenuAlt2 } from "react-icons/hi";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 import Logo from "../../assets/images/svg/logo-white.svg";
@@ -25,6 +25,8 @@ const Sidenav = (props) => {
   const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
   const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
 
+  const state = useSelector(state => state)
+console.log(state)
   const navItems = [
     { symbol: Dashboard, name: "Dashboard", link: "/customer-dashboard" },
     {
@@ -33,7 +35,12 @@ const Sidenav = (props) => {
       link: "/customer-transaction",
     },
     { symbol: Wallet, name: "Wallet", link: "/wallet" },
-    { symbol: Setting, name: "Settings", link: "/settings" },
+    {
+      symbol: Setting,
+      name: "Settings",
+      link: "/vendor-settings",
+      vendorLink: "/vendor-settings",
+    },
   ];
 
   const navigate = useNavigate();
