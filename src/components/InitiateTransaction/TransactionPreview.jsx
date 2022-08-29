@@ -73,7 +73,7 @@ const TransactionPreview = (props) => {
         </div>
 
         {errorMessage.length ? (
-          <div className="bg-red-500 mb-2 mt-4 text-center text-white rounded-md py-2 px-3">
+          <div className="bg-red-500 max-w-2xl mx-auto mb-2 mt-4 text-center text-white rounded-md py-2 px-3">
             {errorMessage}
           </div>
         ) : (
