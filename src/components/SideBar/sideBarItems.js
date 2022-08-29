@@ -1,16 +1,18 @@
 
 import { faStar, faHouse, faGear, faArrowRightFromBracket, faUserGroup, faWallet, faArrowRightArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
+
+
 export const sideBarItems = [
     {
          name: 'DASHBOARD',
-         link: 'vendor-dashboard',
+         link: 'customer-dashboard',
          cName: 'side-link',
          icon: faHouse
      },
      {
          name: 'TRANSACTIONS',
-         link: 'TRANSACTIONS',
+         link: 'customer-transaction',
          cName: 'side-link',
             icon: faArrowRightArrowLeft
      },
@@ -29,7 +31,7 @@ export const sideBarItems = [
     {
          name: 'SETTINGS',
          link: 'vendor-settings',
-         cName: 'side-link ActiveView',
+         cName: 'side-link',
             icon: faGear
      },
      {

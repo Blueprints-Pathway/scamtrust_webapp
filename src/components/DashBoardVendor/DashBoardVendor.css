@@ -4,13 +4,12 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Karla&family=Lato:wght@900&family=Montserrat:wght@600&family=Poppins:wght@400;600&display=swap'); */
 
 .containerDash {
-width: 84%;
-margin-left: 15%;
+width: 80%;
+left: 18vw;
+top: 1rem;
+position: fixed;
 }
-.containerDash.active{
-  width: 84%;
-  margin-left: 12%;
-  }
+
 .hide{
   display: none;
 }
@@ -24,7 +23,7 @@ flex-wrap: wrap;
 .left-top-card{
   background: #F9F9F9;
   margin-top: 2rem;
-  margin-right: 1rem;
+  margin-right: 0rem;
   box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
   border-radius: 15px;
   min-height: 15rem;
@@ -59,6 +58,18 @@ font-size: 11px;
 
 
 color: #707070;
+}
+.left-bottom-card{
+  background: #FFFFFF;
+  box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
+  border-radius: 15px;
+  min-height: 25rem;
+  max-height: 25rem; 
+  padding: 0.5rem;
+  margin-top: 2rem;
+  min-width: 30rem;
+  width: 45vw;
+  
 }
 .left-top-card1{
   background: #E9E7FD;
@@ -162,18 +173,7 @@ position: absolute;
   margin-top: 2rem;
   margin-left: 2vw;
 }
-.left-bottom-card{
-  background: #FFFFFF;
-  box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
-  border-radius: 15px;
-  min-height: 25rem;
-  max-height: 25rem; 
-  padding: 0.5rem;
-  margin-top: 2rem;
-  min-width: 30rem;
-  width: 45vw;
-  
-}
+
 
 
 
@@ -376,16 +376,17 @@ color: #232164;
   display: flex;
   margin-bottom: 1rem;
   cursor: pointer;
+  width: 43vw;
 }
 
 .transactions .sub-category {
   display: flex;
   margin-bottom: 1rem;
-  width: 47.5vw;
+  width: 43vw;
 }
 
 .transactions .category h6 {
-  width: 100%;
+  width: 30vw;
   text-align: left;
   
 transform: rotate(0.08deg);
@@ -431,7 +432,7 @@ font-size: 12px;
 color: #023A81;
 }
 .transactions .Transaction .Transaction-body{
-width: 100%;
+  width: 43vw;
 }
 .transactions .Transaction {
   display: flex;
@@ -507,6 +508,26 @@ color: #A6A6A6;
   min-width: 25rem;
   width: 30vw;
 }
+.container {
+  width: 70%;
+  margin: auto;
+
+}
+
+.row {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+}
+
+.row.center {
+  justify-content: center;
+}
+
 .mixed-chart{
  position: absolute;
   margin-left: 1vw;
@@ -647,9 +668,9 @@ box-sizing: 50%;
   position: absolute;
 }
 .welcome{
-  position: absolute;
-width: 100%;
-height: 100%;
+  position: fixed;
+width: 100vw;
+height: 100vh;
 left: 0rem;
 top: 0rem;
 
@@ -779,19 +800,24 @@ display: none;
     cursor: pointer;
   }
   @media screen and (max-width: 1200px) {
+    .containerDash {
+      left: 10vw;
+      width: 85%;
+      }
   .card2-text-right{
     font-size: 10px;
   }
   .Withdraw-btn{
       margin-left: 8vw;
       }
+
 }
 @media screen and (max-width: 960px) {
   
-    .containerDash {
+  /*   .containerDash {
   width: 84%;
   margin-left: 12%;
-  }
+  } */
   .Withdraw-btn{
   margin-left: 8vw;
   }
@@ -803,18 +829,26 @@ display: none;
 }
 @media screen and (max-width: 860px) {
   .containerDash {
-    width: 84%;
-    margin-left: 15%;
+    width: 120%;
+    margin-left: -18vw;
+    margin-top: 3rem;
     overflow: scroll;
     overflow-x: hidden;
-    height: 44rem;
+   height: 100vh;
+   position: fixed;
+   /* 
     position: absolute;
-    top: 6rem;
+    top: 6rem;  */
+    left: 13vw;
     }
-       .containerDash {
+
+   /*  .containerDash {
+      left: 13vw;
+      } */
+  /*      .containerDash {
   width: 90%;
   margin-left: 8%;
-  }
+  } */
   .left{
     top: 0rem;
   }
@@ -896,6 +930,65 @@ display: none;
       min-width: 30rem;
       width: 70vw;
     }
+    .transactions .category {
+      display: flex;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      width: 63vw;
+    }
+    
+    .transactions .sub-category {
+      display: flex;
+      margin-bottom: 1rem;
+      width: 63vw;
+    }
+    
+    .transactions .category h6 {
+      width: 60vw; 
+      text-align: left;
+      
+    transform: rotate(0.08deg);
+      border-bottom: 4px solid #CFD8DC;
+      padding-bottom: 0.5rem;
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      /* or 253% */
+      
+      
+      color: #A6A6A6;
+      
+    }
+    
+    .transactions .sub-category h6 {
+      width: 100%;
+      text-align: left;
+      
+      padding-bottom: 0rem;
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 10px;
+      /* or 253% */
+      
+      
+      color: #A6A6A6;
+      
+    }
+    
+    .transactions .category .active {
+      border-color: #3AB75D;
+    
+      font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    /* or 253% */
+    
+    
+    color: #023A81;
+    }
     .right-bottom-card{
       min-width: 30rem;
       width: 70vw;
@@ -960,7 +1053,7 @@ margin-left: 45vw;
 } 
 
  }
-@media screen and (max-width: 540px) {
+ @media screen and (max-width: 540px) {
   .vendor-trophyCup-img{
     margin-left: 48vw;
     }
@@ -981,5 +1074,65 @@ margin-left: 45vw;
   
         .welcome-card{
           left: 53%;
+        }
+        
+}
+@media screen and (max-width: 420px) {
+  .welcome-card{
+    left: 57%;
+  }
+  .containerDash {
+    width: 100%;
+    margin-left: -6vw;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 95vh;
+    transform: scale(0.98);
+    }
+    .welcome-cards1{
+      transform: scale(0.8);
+      margin-left: -10vw;
+    }
+    .welcome-cards{
+      transform: scale(0.8);
+      margin-left: -6vw;
+    }
+    .action-card-title{
+      margin-top: 1rem;
+    }
+  /*   .left{
+      width: 85%;
+    }
+    .right{
+      width: 85%;;
+    } 
+ */
+ .Line{
+  margin-left: -48%;
+}
+ .card2-text-right{
+  margin-left: 0vw;
+}
+ .vendor-trophyCup-img{
+  margin-left: 48vw;
+  }
+  .Wallet-card-left-top-right{
+  margin-left: 41vw;
+}
+        .left-top-card{
+          min-width: 23.5rem;
+          width: 70vw;
+        }
+        .left-bottom-card{
+          min-width: 23.5rem;
+          width: 70vw;
+        }
+        .right-top-card{
+          min-width: 23.5rem;
+          width: 70vw;
+        }
+        .right-bottom-card{
+          min-width: 23.5rem;
+          width: 70vw;
         }
 }

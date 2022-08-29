@@ -6,6 +6,7 @@ import Message from "../../assets/images/svg/message.svg";
 import Check from "../../assets/images/svg/check.svg";
 import Location from "../../assets/images/svg/location.svg";
 import Phone from "../../assets/images/svg/phone.svg";
+import SideBar from "../../components/SideBar/SideBar";
 
 const VendorDetails = () => {
 	return (
@@ -163,6 +164,7 @@ const VendorDetails = () => {
 					</div>
 				</div>
 			</div>
+			
 		</Layout>
 	);
 };

@@ -7,6 +7,8 @@ import SideBar from '../SideBar/SideBar';
 import PrivacySettings from './PrivacySettings';
 import SecuritySettings from './SecuritySettings';
 import GeneralSettings from './GeneralSettings';
+import Layout from "../../components/Layout/Layout";
+import '../../index.css'
 
 
 
@@ -39,9 +41,11 @@ function SettingsVendor() {
     }
     const [checked, setChecked] = useState(false);
 
+    
+
     return (
         <>
-            <div className='containerSettings' >
+            <Layout className='containerSettings' name="Settings">
                 <div className='containerSettings2' >
                     <div className={checked ? 'Center active' : 'Center'}>
 
@@ -67,35 +71,35 @@ function SettingsVendor() {
 
 
                                 <div className="category">
-                                    {select ? (<h6 className="Selection active" onClick={handleSelect}>General Settings</h6>
+                                    {select ? (<h6 className="Selection active" >General Settings</h6>
                                     ) : <h6 className="Selection" onClick={handleSelect}>General Settings</h6>}
-                                    {select2 ? <h6 className="Selection active" onClick={handleSelect2}>Security Settings</h6> : <h6 className="Selection" onClick={handleSelect2}>Security Settings</h6>}
-                                    {select3 ? <h6 className="Selection active" onClick={handleSelect3}>Privacy Settings</h6> : <h6 className="Selection" onClick={handleSelect3}>Privacy Settings</h6>}
+                                    {select2 ? <h6 className="Selection active" >Security Settings</h6> : <h6 className="Selection" onClick={handleSelect2}>Security Settings</h6>}
+                                    {select3 ? <h6 className="Selection active" >Privacy Settings</h6> : <h6 className="Selection" onClick={handleSelect3}>Privacy Settings</h6>}
 
                                 </div>
 
                                 <div className={select ? "form-GeneralSettings white-bg" : 'hide'} >
-                                    
+
                                     <GeneralSettings />
 
 
                                 </div>
                                 <div className={select2 ? "password-GeneralSettings white-bg" : 'hide'} >
-                                    
+
                                     <SecuritySettings />
 
                                 </div>
 
                                 <div className={select3 ? "security-GeneralSettings" : 'hide'} >
-                                <PrivacySettings />
-                                    
+                                    <PrivacySettings />
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                    </div>
-                <SideBar /> 
-            </div>
+                </div>
+                {/* <SideBar /> */}
+            </Layout>
         </>
     )
 }

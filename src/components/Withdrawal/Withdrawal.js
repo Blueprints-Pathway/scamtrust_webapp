@@ -120,7 +120,7 @@ function Withdrawal() {
 
     return (
         <div className="SettingsVendor">
-            <div className={closed1 ? "EditDone active" : "EditDone"}>
+            <div className={closed1 ? "EditDone1 active" : "EditDone1"}>
                 <div className='EditDone-card'>
                     <div className='EditDone-message'>
                         Withdrawal
@@ -179,7 +179,7 @@ function Withdrawal() {
                     
                 </div>
             </div>
-            <div className={ closed2 ? "EditDone active" : Open2 ? "EditDone" : "EditDone active"}>
+            <div className={ closed2 ? "EditDone1 active" : Open2 ? "EditDone1" : "EditDone1 active"}>
                 <div className='EditDone-card'>
                  
                     <div className='EditDone-message'>
@@ -226,7 +226,7 @@ function Withdrawal() {
                     {(submitted && !error.Transaction) ? (<button onClick={handleOpen4} className='confirm-button yes'> Confirm </button>) : (submitted && error.Transaction) ? (<button onClick={handleSubmit} className='confirm-button yes'> confirm </button>) : (<button onClick={handleSubmit} className='confirm-button yes'> confirm </button>)}
                 </div>
             </div>
-            <div className={ closed3 ? "EditDone active" : Open4 ? "EditDone" : "EditDone active"}>
+            <div className={ closed3 ? "EditDone1 active" : Open4 ? "EditDone1" : "EditDone1 active"}>
                 <div className='EditDone-card'>
                     <div className='EditDone-message'>
                         Withdrawal details
@@ -262,7 +262,7 @@ function Withdrawal() {
                 </div>
 
             </div>
-            <div className={ closed4 ? "EditDone active" : Open ? "EditDone" : "EditDone active"}>
+            <div className={ closed4 ? "EditDone1 active" : Open ? "EditDone1" : "EditDone1 active"}>
 
                 <div className='Bank-card'>
                     <img className="AccountImg" src={shielgg} alt="Scam Trust" />
@@ -290,7 +290,7 @@ function Withdrawal() {
 
 
             </div>
-            <div className={ closed5 ? "EditDone active" : Open3 ? "EditDone" : "EditDone active"}>
+            <div className={ closed5 ? "EditDone1 active" : Open3 ? "EditDone1" : "EditDone1 active"}>
 
                 <div className='Bank-card2'>
 

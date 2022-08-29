@@ -3,11 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
 /* @import url('https://fonts.googleapis.com/css2?family=Karla&family=Lato:wght@900&family=Montserrat:wght@600&family=Poppins:wght@400;600&display=swap'); */
 
+
 .Center{
     position: absolute;
 width: 68vw;
 height: 20vh;
-left: 25vw;
+left: 23vw;
 top: 15vh;
 
 background: linear-gradient(92.05deg, #0D3E8F -1.37%, #1A1E51 101.15%);
@@ -40,7 +41,7 @@ color: #707070;
     position: absolute;
     width: 68vw;
     min-height: 32rem;
-    left: 25vw;
+    left: 23vw;
     top: 35vh;
 display: flex;
 background: #FFFFFF;
@@ -51,7 +52,7 @@ border-radius: 0px 0px 25px 25px;
     width: 8rem;
     height: 8rem;
     left: 1vw;
-    top: -7vh;
+    top: -4rem;
     border-radius: 50%;
     background: #FFFFFF;
 }
@@ -83,15 +84,16 @@ border-radius: 0px 0px 25px 25px;
   background: #FFFFFF;
   transform: translate(0%, 0%);
 }
-.category {
+.GeneralSettings .category {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
   margin-top: 0.5rem;
   width: 50vw;
+  
 }
 
-.category h6 {
+.GeneralSettings .category h6 {
   width: 100%;
   text-align: left;
   border-bottom: 1.5px solid #EAEAEA;
@@ -106,7 +108,7 @@ font-size: 12px;
 
 color: #232164;
 }
-.category .active {
+.GeneralSettings .category .active {
   border-color: #86D19B;
 }
 .form-text-GeneralSettings{
@@ -142,8 +144,8 @@ padding: 5px;
   left: 6vw;
   top: 3.5rem;
   cursor: pointer;
+  
 }
-
 .vendorAction{
   position: absolute;
   /* identical to box height */
@@ -808,7 +810,18 @@ color: #013C86;
   top: -0.3rem;
   border: 0.6px solid #C0C0C0;
 }
+.notificationPopUp{
+  position: absolute;
+  right: 1.3vw;
+  top: 2.5rem;
+}
 @media screen and (max-width: 1200px) {
+  .Center{
+left: 20vw;
+}
+.CenterBottom{
+    left: 20vw;
+}
   .EditDone-card-title1{
     position: relative;
     left: -18.5vw;
@@ -1175,6 +1188,15 @@ color: #013C86;
         }
         .GeneralSettings{
           width: 60vw;
+          left: 3rem;
+        }
+        .GeneralSettings .category {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 1rem;
+          margin-top: 0.5rem;
+          width: 65vw;
+          font-size: 5px;
         }
         .security-GeneralSettings{
           width: 60vw;
@@ -1448,4 +1470,38 @@ margin-left: 1vw;
   left:  50vw;
   top: 15.5rem;
 }
+
 }
+ @media screen and (max-width: 400px) {
+  .GeneralSettings{
+    position: absolute;
+    /* identical to box height */
+    left: 5vw;
+    top: 5rem;
+    cursor: pointer;
+    
+  }
+  .GeneralSettings .category h6 {
+  font-size: 9.5px;
+  }
+  .edit1{
+    right: -5vw;
+    top: 6rem;
+  }
+  .edit2{
+    right: -5vw;
+    top: 10.5rem;
+  }
+  .edit3{
+    right: -5vw;
+    top: 15rem;
+  }
+  .edit4{
+    right: -5vw;
+    top: 19rem;
+  }
+  .edit5{
+    right: -5vw;
+    top: 23rem;
+  }
+} 

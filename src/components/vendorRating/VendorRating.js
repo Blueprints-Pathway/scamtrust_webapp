@@ -11,6 +11,7 @@ import shielgg from '../../images/shielgg.png'
 import Frame318 from '../../images/Frame318.png'
 import './VendorRating.css'
 import SideBar from '../SideBar/SideBar';
+import Layout from "../../components/Layout/Layout";
 
 
 function VendorRating() {
@@ -70,7 +71,7 @@ function VendorRating() {
 
 
     return (
-        <div className='main'>
+        <Layout className='main' name="Ratings">
             
 
             <div className='containerRating' >
@@ -274,9 +275,9 @@ function VendorRating() {
 
                 </div>
             </div>
-            <SideBar />
+           {/*  <SideBar /> */}
             
-        </div>
+        </Layout>
 
     )
 

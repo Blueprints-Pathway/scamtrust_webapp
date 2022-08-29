@@ -16,18 +16,14 @@ function GeneralSettings() {
         businessName: 'Ridic Business Ventures',
         phoneNumber: '08156711115',
         phoneNumber2: '',
-        phoneNumber3: '',
         phoneNumber4: '',
         email: 'Ridicventures@gmail.com',
         email2: '',
-        email3: '',
         email4: '',
         office: 'Store 9, Linexx Mall, Lekki Phase 1, Lagos, Nigeria',
         office2: '',
         account: 'Nill',
         account2: '',
-        password: '',
-        passwordCheck: '',
         bank: '',
         bankNumber: '',
         bankName: '',
@@ -64,18 +60,14 @@ function GeneralSettings() {
         businessName: '',
         phoneNumber: '',
         phoneNumber2: '',
-        phoneNumber3: '',
         phoneNumber4: '',
         email: '',
         email2: '',
-        email3: '',
         email4: '',
         office: '',
         office2: '',
         account: '',
         account2: '',
-        password: '',
-        passwordCheck: '',
         bank: '',
         bankNumber: '',
         bankName: '',
@@ -208,18 +200,6 @@ function GeneralSettings() {
 
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
         const regex2 = /^[0-9]{11}$/;
-        const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
-        if (!values.password) {
-            error.password = 'Password is required';
-        } else if (!regexPassword.test(values.password)) {
-            error.password = ' Must contain 8 characters, 1 uppercase, 1 lowercase, 1 number, 1 special character';
-        }
-        if (!values.passwordCheck) {
-            error.passwordCheck = 'Confirm password is required';
-        } else if (values.passwordCheck !== values.password) {
-            error.passwordCheck = 'Password must match';
-        }
 
         if (!values.phoneNumber) {
             error.phoneNumber = 'Phone Number is required';
@@ -230,10 +210,6 @@ function GeneralSettings() {
         }
         if (!values.phoneNumber2) {
             error.phoneNumber2 = 'Please Answer security the question';
-
-        }
-        if (!values.phoneNumber3) {
-            error.phoneNumber3 = 'Please enter a transaction pin';
 
         }
         if (!values.phoneNumber4) {
@@ -252,9 +228,6 @@ function GeneralSettings() {
         }
         if (!values.email2) {
             error.email2 = 'Please Answer security the question';
-        }
-        if (!values.email3) {
-            error.email3 = 'Please Answer security the question';
         }
         if (!values.email4) {
             error.email4 = 'Please enter new email';
@@ -327,8 +300,8 @@ function GeneralSettings() {
     }
     const [Edit, setEdit] = useState(false);
 
-    
-  
+
+
 
     const handleClosed1 = () => {
         setClosed1(!closed1);
@@ -350,7 +323,7 @@ function GeneralSettings() {
     }
     const [closed4, setClosed4] = useState(false);
 
-   
+
     const handleClosed11 = () => {
         setClosed11(!closed11);
     }
@@ -377,7 +350,7 @@ function GeneralSettings() {
     }
     const [closed14, setClosed14] = useState(false);
 
-   
+
 
     const handleClosed17 = () => {
         setClosed17(!closed17);
@@ -442,7 +415,7 @@ function GeneralSettings() {
     }
     const [closed25, setClosed25] = useState(false);
 
-   
+
     const handleEdit1 = () => {
         setEdit1(!Edit1);
         setClosed1(false);
@@ -546,7 +519,7 @@ function GeneralSettings() {
     const [Edit24, setEdit24] = useState(false);
 
     const [submitted, setSubmitted] = useState(false);
-  
+
 
 
     const handleSubmit = (event) => {
@@ -560,25 +533,27 @@ function GeneralSettings() {
 
     return (
         <div>
+            {/*  General Settings Static field */}
             <form onSubmit={handleSubmit}>
                 <div className="vendorAction" onClick={handleEdit}>
                     {Edit ? '' : <p>Edit <FontAwesomeIcon icon={faPen} className="pen" /></p>}
 
                 </div>
+
                 <div className="input-field-GeneralSettings">
                     <label className='form-text-GeneralSettings'>Business name</label>
                     {Edit ? <p onClick={handleEdit1} className="edit1">Edit</p> : ''}
 
-                    {Edit ? <input onChange={handleChange} value={values.businessName} className="inputBox-GeneralSettings" name='businessName' type="text" placeholder="" autoComplete='off' disabled /> : <input onChange={handleChange} value={values.businessName} className="inputBox-GeneralSettings" name='businessName' type="text" placeholder="" autoComplete='off' disabled />}
+                    <input onChange={handleChange} value={values.businessName} className="inputBox-GeneralSettings" name='businessName' type="text" placeholder="" autoComplete='off' disabled />
 
 
                 </div>
-                {submitted && error.businessName && <div className='error editSetting'><FontAwesomeIcon className='exIconTrans' icon={faCircleExclamation} />{error.businessName}</div>}
+
                 <div className="input-field-GeneralSettings">
                     <label className='form-text-GeneralSettings'>Phone Number</label>
                     {Edit ? <p className="edit2" onClick={handleEdit2}>Edit</p> : ''}
 
-                    {Edit ? <input
+                    <input
                         onChange={handleChange}
                         value={values.phoneNumber}
                         className="inputBox-GeneralSettings"
@@ -587,57 +562,44 @@ function GeneralSettings() {
                         type="text"
                         autoComplete='off'
                         inputMode='numeric'
-                        maxLength="11" disabled /> : <input
-                        onChange={handleChange}
-                        value={values.phoneNumber}
-                        className="inputBox-GeneralSettings"
-                        name='phoneNumber'
-                        placeholder=""
-                        type="text"
-                        autoComplete='off'
-                        inputMode='numeric'
-                        maxLength="11" disabled />}
-
-
+                        maxLength="11" disabled />
 
                 </div>
-                {submitted && error.phoneNumber && <div className='error editSetting'><FontAwesomeIcon className='exIconTrans' icon={faCircleExclamation} />{error.phoneNumber}</div>}
-
 
 
                 <div className="input-field-GeneralSettings">
                     <label className='form-text-GeneralSettings'>Email address</label>
                     {Edit ? <p className="edit3" onClick={handleEdit3}>Edit</p> : ''}
 
-                    {Edit ? <input onChange={handleChange} value={values.email} className="inputBox-GeneralSettings" name='email' placeholder="" type="text" autoComplete='off' disabled /> : <input onChange={handleChange} value={values.email} className="inputBox-GeneralSettings" name='email' placeholder="" type="text" autoComplete='off' disabled />}
+                    <input onChange={handleChange} value={values.email} className="inputBox-GeneralSettings" name='email' placeholder="" type="text" autoComplete='off' disabled />
 
 
                 </div>
 
-                {submitted && error.email && <div className='error editSetting'><FontAwesomeIcon className='exIconTrans' icon={faCircleExclamation} />{error.email}</div>}
 
                 <div className="input-field-GeneralSettings">
                     <label className='form-text-GeneralSettings'>Office address</label>
                     {Edit ? <p className="edit4" onClick={handleEdit4}>Edit</p> : ''}
 
-                    {Edit ? <input onChange={handleChange} value={values.office} className="inputBox-GeneralSettings" name='userName' type="text" placeholder="" autoComplete='off' disabled /> : <input onChange={handleChange} value={values.office} className="inputBox-GeneralSettings" name='userName' type="text" placeholder="" autoComplete='off' disabled />}
+                    <input onChange={handleChange} value={values.office} className="inputBox-GeneralSettings" name='userName' type="text" placeholder="" autoComplete='off' disabled />
 
 
                 </div>
-                {submitted && error.office && <div className='error editSetting'><FontAwesomeIcon className='exIconTrans' icon={faCircleExclamation} />{error.office}</div>}
 
 
                 <div className="input-field-GeneralSettings">
                     <label className='form-text-GeneralSettings'>Active cashout account</label>
                     {Edit ? <p className="edit5" onClick={handleEdit11}>Add</p> : ''}
 
-                    {Edit ? <input onChange={handleChange} handleEmail value={values.account} className="inputBox-GeneralSettings" name='account' type="text" placeholder="" autoComplete='off' disabled /> : <input onChange={handleChange} handleEmail value={values.account} className="inputBox-GeneralSettings" name='account' type="text" placeholder="" autoComplete='off' disabled />}
+                    <input onChange={handleChange} handleEmail value={values.account} className="inputBox-GeneralSettings" name='account' type="text" placeholder="" autoComplete='off' disabled />
 
 
                 </div>
 
-                {submitted && error.account && <div className='error editSetting'><FontAwesomeIcon className='exIconTrans' icon={faCircleExclamation} />{error.account}</div>}
+
             </form>
+
+            {/*  Edit Business name */}
             <div className={closed1 ? "EditDone active" : Edit1 ? "EditDone" : "EditDone active"}>
                 <div className='EditDone-card'>
                     <div className='EditDone-message'>
@@ -656,6 +618,8 @@ function GeneralSettings() {
                 </div>
 
             </div>
+
+            {/*  Edit Phone number */}
             <div className={closed2 ? "EditDone active" : Edit2 ? "EditDone" : "EditDone active"}>
                 <div className='EditDone-card'>
                     <div className='EditDone-message'>
@@ -691,6 +655,7 @@ function GeneralSettings() {
 
             </div>
 
+            {/*  Edit Email Address */}
             <div className={closed3 ? "EditDone active" : Edit3 ? "EditDone" : "EditDone active"}>
                 <div className='EditDone-card'>
                     <div className='EditDone-message'>
@@ -727,6 +692,7 @@ function GeneralSettings() {
 
             </div>
 
+            {/*  Edit office address */}
             <div className={closed4 ? "EditDone active" : Edit4 ? "EditDone" : "EditDone active"}>
                 <div className='EditDone-card'>
                     <div className='EditDone-message'>
@@ -746,10 +712,7 @@ function GeneralSettings() {
 
             </div>
 
-
-
-
-
+            {/*  Add Cashout Account */}
             <div className={closed11 ? "EditDone active" : Edit11 ? "EditDone" : "EditDone active"}>
                 <div className='EditDone-card'>
                     <div className='EditDone-message'>
@@ -788,6 +751,7 @@ function GeneralSettings() {
 
             </div>
 
+            {/*  Add First Cashout Account */}
             <div className={closed12 ? "EditDone active" : Edit10 ? "EditDone" : "EditDone active"}>
                 <div className='EditDone-card'>
                     <div className='EditDone-message'>
@@ -849,6 +813,7 @@ function GeneralSettings() {
 
             </div>
 
+            {/* First Cashout Account Added */}
             <div className={closed22 ? "EditDone active" : Edit21 ? "EditDone" : "EditDone active"}>
                 <div className='EditDone-card'>
                     <div className='EditDone-message'>
@@ -894,6 +859,7 @@ function GeneralSettings() {
 
             </div>
 
+            {/* First Cashout Account Added Confirmation Message */}
             <div className={closed24 ? "EditDone active" : Edit23 ? "EditDone" : "EditDone active"}>
                 <div className='EditDone-card'>
                     <div className='EditDone-message'>
@@ -922,7 +888,7 @@ function GeneralSettings() {
 
             </div>
 
-
+            {/*  Add Second Cashout Account */}
             <div className={closed13 ? "EditDone active" : Edit12 ? "EditDone" : "EditDone active"}>
                 <div className='EditDone-card'>
                     <div className='EditDone-message'>
@@ -984,6 +950,7 @@ function GeneralSettings() {
 
             </div>
 
+            {/* First and Second Cashout Account Added */}
             <div className={closed23 ? "EditDone active" : Edit22 ? "EditDone" : "EditDone active"}>
                 <div className='EditDone-card'>
                     <div className='EditDone-message'>
@@ -1015,21 +982,18 @@ function GeneralSettings() {
                                 <h6 className='added-Account-number'><img className="shielgImg" src={shielgg} alt="Scam Trust" />4058090355</h6>
                             </div>
 
-
-
                             <div className='Wallet-card-left-bottom-left'>
                                 <div className='Secured editSetting2'> Secured by <img className='field-bottom-img' src={scamTrustLogo} alt="Scam Trust" /> </div>
                             </div>
                             <button onClick={handleEdit24} className='Next-button yes'> Done </button>
                         </div>
 
-
-
                     </form>
                 </div>
 
             </div>
 
+            {/* Second Cashout Account Added Confirmation Message */}
             <div className={closed25 ? "EditDone active" : Edit24 ? "EditDone" : "EditDone active"}>
                 <div className='EditDone-card'>
                     <div className='EditDone-message'>
@@ -1056,10 +1020,7 @@ function GeneralSettings() {
                 </div>
             </div>
 
-
-
-
-
+            {/* Edit Email Address */}
             <div className={closed19 ? "EditDone active" : Edit18 ? "EditDone" : "EditDone active"}>
                 <div className='EditDone-card'>
                     <div className='EditDone-message'>
@@ -1095,6 +1056,7 @@ function GeneralSettings() {
 
             </div>
 
+            {/* Edit Email Address OTP */}
             <div className={closed20 ? "EditDone active" : Edit19 ? "EditDone" : "EditDone active"}>
                 <div className='EditDone-card'>
                     <div className='EditDone-message'>
@@ -1200,6 +1162,7 @@ function GeneralSettings() {
 
             </div>
 
+            {/* Edit Email Address Confrimation Message */}
             <div className={closed17 ? "EditDone active" : Edit16 ? "EditDone" : "EditDone active"}>
                 <div className='EditDone-card'>
                     <div className='EditDone-message'>
@@ -1227,6 +1190,7 @@ function GeneralSettings() {
 
             </div>
 
+            {/* Edit Phone number */}
             <div className={closed18 ? "EditDone active" : Edit17 ? "EditDone" : "EditDone active"}>
                 <div className='EditDone-card'>
                     <div className='EditDone-message'>
@@ -1263,6 +1227,7 @@ function GeneralSettings() {
 
             </div>
 
+            {/* Edit Phone number OTP */}
             <div className={closed21 ? "EditDone active" : Edit20 ? "EditDone" : "EditDone active"}>
                 <div className='EditDone-card'>
                     <div className='EditDone-message'>
@@ -1369,6 +1334,7 @@ function GeneralSettings() {
 
             </div>
 
+            {/* Edit Phone number Confrimation Message */}
             <div className={closed14 ? "EditDone active" : Edit13 ? "EditDone" : "EditDone active"}>
                 <div className='EditDone-card'>
                     <div className='EditDone-message'>

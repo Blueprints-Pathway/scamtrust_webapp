@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import './settingsVendor.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  faCircleExclamation, faEyeSlash, faEye, faCircleQuestion} from "@fortawesome/free-solid-svg-icons";

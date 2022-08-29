@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
 
 .support-card{
-    position: absolute;
+    position: fixed;
     width: 84%;
     height: 75%;
     left: 15%;
@@ -279,6 +279,9 @@ padding: 0.6rem;
     }
 }
 @media screen and (max-width: 590px) {
+    .support-card{
+        left: 12.5%;
+    }
     .support-img{
         top: 25%;
     }
@@ -308,6 +311,20 @@ padding: 0.6rem;
         right: 10vw;
     }
     .support-bottom{
-        left: -18vw;
+        left: -12vw;
     }
+    .support-action{
+        transform: scale(0.75);
+    }
+}
+
+@media screen and (max-width: 440px) {
+.support-card{
+    left: 15%;
+    transform: scale(0.98);
+}
+
+.support-bottom{
+    left: -5vw;
+}
 }

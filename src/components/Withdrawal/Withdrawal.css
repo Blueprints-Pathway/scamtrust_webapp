@@ -90,6 +90,14 @@
     position: relative;
     top: 3rem;
 }
+.EditDone1 {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0rem;
+    top: 0rem;
+    background: rgba(23, 23, 23, 0.47);
+}
 .EditDone {
     position: absolute;
     width: 100vw;
@@ -99,6 +107,9 @@
     background: rgba(23, 23, 23, 0.47);
 }
 .EditDone.active {
+    display: none;
+}
+.EditDone1.active {
     display: none;
 }
 .EditDone-description{

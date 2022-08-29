@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import './CustomerSignup.css'
 import { Link } from 'react-router-dom';
 import scamTrustLogo from '../../images/Group114(1).png'
 import ellipse2 from '../../images/Ellipse2.png'

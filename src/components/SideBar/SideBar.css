@@ -11,12 +11,39 @@
   background: linear-gradient(177.44deg, #0A439A 0%, #1A1E51 92.41%);
   transition: 360ms;
 }
-
+.position{
+  position: relative;
+  width: 80%;
+  height: 100%;
+  top: 8rem;
+  left: 17vw; 
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 80vh;
+}
 .side-item{
 display: flex;
 gap: 1rem;
+
+}
+.side-item:hover{
+  color: #3AB75D;
+}
+.side-item2:hover{
+  color: #3AB75D;
 }
 
+
+.side-link.ActiveView {
+  color: #3AB75D;
+}
+
+.side-link2.ActiveView {
+  color: #3AB75D;
+}
+ nav a.active {
+  color: #3AB75D;
+}
 .side-link{
 
 position: relative;
@@ -51,7 +78,7 @@ position: relative;
 width: 1rem;
 height: 1rem;
 left: 3vw;
-top: 28vh;
+top: 20rem;
 margin-bottom: 1rem;
 font-family: 'Poppins';
 font-style: normal;
@@ -93,6 +120,9 @@ height: 16px;
 right: 4vw;
 top: 1.5rem;
 }
+.side-icon{
+  display: none;
+  }
 
 .side-bar-logo-bottom{
 position: absolute;
@@ -108,7 +138,7 @@ display: flex;
 .header{
   position: absolute;
 width: 86vw;
-height: 10vh;
+height: 5rem;
 right: 0;
 top: 0px;
 transition: 360ms;
@@ -119,11 +149,10 @@ background: #FFFFFF;
 .header-title{
   position: absolute;
 font-weight: 600;
-font-size: 30px;
 width: 1rem;
 height: 1rem;
 left: 3vw;
-top: 4vh;
+top: 1.8rem;
 margin-bottom: 3rem;
 font-family: 'Poppins';
 font-size: 20px;
@@ -135,12 +164,18 @@ align-items: flex-end;
 
 color: #232164;
 }
+.Notification{
+  position: absolute;
+  right: 3vw;
+  top: 3.5vh;
+  cursor: pointer;
+}
 .userAbbrevation{
   position: absolute;
   width: 1.5rem;
   height: 1.5rem;
 right: 3vw;
-top: 3.5vh;
+top: 1.6rem;
 
 font-family: 'Poppins';
 font-style: normal;
@@ -163,8 +198,9 @@ position: absolute;
 width: 1rem;
 height: 1rem;
 right: 6vw;
-top: 4vh;
+top: 1.8rem;
 color: #232164;
+cursor: pointer;
 }
 .bellActive{
 width: 0.5rem;
@@ -175,12 +211,10 @@ background: #3AB75D;
 bottom: 0;
 right: 0;
 right: 6vw;
-top: 4vh;
+top: 1.7rem;
+cursor: pointer;
 }
-.side-icon{
-position: absolute;
-left: 1vw;
-}
+
 .search-bar {
 position: relative;
 background: transparent;
@@ -212,14 +246,7 @@ height: 1rem;
 right: 3vw;
 cursor: pointer;
 }
-.ActiveView {
-  color: #3AB75D;
-  font-family: 'Poppins';
-font-style: normal;
-font-weight: 400;
-font-size: 10px;
-line-height: 10px;
-}
+
 @media screen and (max-width: 1200px) {
   .side-bar-logo{
     right: 3.8vw;
@@ -231,7 +258,6 @@ line-height: 10px;
     width: 92.5vw;
     height: 10vh;
     right: 0;
-    top: 0px;
     transition: 360ms;
     background: #FFFFFF;
   }
@@ -245,7 +271,9 @@ line-height: 10px;
       background: linear-gradient(177.44deg, #0A439A 0%, #1A1E51 92.41%);
       transition: 360ms;
   }
- 
+  .position{
+    left: 13vw;
+  }
   
   .side-bar-title{
     display: none;
@@ -260,14 +288,139 @@ line-height: 10px;
       transition: 360ms;  transform: rotate(360deg);
       transition: 500ms;
     }
+    .side-icon{
+      position: absolute;
+      width: 14px;
+      height: 16px;
+      right: 3.3vw;
+      top: 5rem;
+      font-size: 2rem;
+      color: #FFFFFF;
+      display: block;
+      cursor: pointer;
+      }
     .Active{
       display: none
     }
 
+    /* active toggle */
+    .side.active {
+      position: absolute;
+      width: 12rem;
+      height: 100vh;
+      left: 0px;
+      top: 0px;
+      background: linear-gradient(177.44deg, #0A439A 0%, #1A1E51 92.41%);
+      transition: 360ms;
+    }
+    .Active.active{
+      display: block
+    }
+    .side-item.active{
+    display: flex;
+    gap: 1rem;
+    margin-left: 1.5vw;
+    }
+    .side-item2.active{
+      display: flex;
+      gap: 1rem;
+      margin-left: 1.5vw;
+      }
+    .side-link.active{
+    
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    left: 3vw;
+    top: 22vh;
+    margin-bottom: 2rem;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 10px;
+    /* identical to box height */
+    
+    display: flex;
+    align-items: flex-end;
+    
+    }
+    
+    .side-item2.active{
+    position: relative;
+    bottom: -12vh;
+    display: flex;
+    gap: 1rem;
+    }
+    
+    .side-link2.active{
+    
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    left: 3vw;
+    top: 28vh;
+    margin-bottom: 1rem;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 10px;
+    /* identical to box height */
+    
+    display: flex;
+    align-items: flex-end;
+    
+    }
+    
+    
+    .side-bar-logo.active{
+         position: absolute;
+      width: 27px;
+      height: 30px;
+      left: 2vw;
+      top: 1.8rem;
+      transition: 360ms;  transform: rotate(360deg);
+      transition: 500ms;
+    }
+    
+    
+    .side-bar-logo-bottom.active{
+    position: absolute;
+    bottom: 0;
+    width: 40%;
+    left: 3rem; 
+    }
+    
+    .header.active{
+      position: absolute;
+      width: 93vw;
+      height: 5rem;
+      right: 0;
+      top: 0px;
+      transition: 360ms;
+      background: #FFFFFF;
+      border-radius: 0px 0 0 50px;
+    }
+    .header-title.active{
+    font-size: 16px;
+    line-height: 10px;
+    margin-left: 2rem;
+    }
+    .search-bar.active {
+      width: 30vw;
+      margin-right: -15vw;
+      font-size: 0.7rem;
+      top: 1.2rem;
+      left: 45vw;
+      }
+
+
+/* active toggle */    
      .header{
     position: absolute;
     width: 92.5vw;
-    height: 10vh;
+    height: 5rem;
     right: 0;
     top: 0px;
     transition: 360ms;
@@ -283,10 +436,6 @@ line-height: 10px;
       transition: 360ms;
   }
 
-  .side-bar-title{
-    display: none;
-    transition: 360ms;
-    }
     .side-bar-logo{
       position: absolute;
       width: 27px;
@@ -329,4 +478,9 @@ right: 9vw;
   width: 0.8rem;
 }
 
+}
+@media screen and (max-width: 720px) {
+.position{
+  height: 85vh;
+}
 }

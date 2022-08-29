@@ -6,12 +6,13 @@ import scamTrustLogo from '../../images/Group114(1).png'
 import chat from '../../images/chart.png'
 import FAQs from '../../images/FAQs.png'
 import SideBar from '../SideBar/SideBar';
+import Layout from "../../components/Layout/Layout";
 
 function Support() {
 
 
     return (
-        <div className='main'>
+        <Layout className='main' name="Support">
             
             <div className='support-card'>
                 <div className='support-card-header'>
@@ -63,8 +64,8 @@ function Support() {
                     <div className='support-bottom'> Secured by <img className='support-bottom-img' src={scamTrustLogo} alt="Scam Trust" /> </div>
                 </div>
             </div>
-            <SideBar />
-        </div>
+            {/* <SideBar /> */}
+        </Layout>
 
     )
 

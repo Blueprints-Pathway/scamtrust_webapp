@@ -5,11 +5,19 @@
 @tailwind utilities;
 
 
+
+
 html {
   font-size: 80%;
   scrollbar-color: #a6a6a6 #3ab75d;
   scrollbar-width: 2px;
 }
+
+body {
+  overflow-x: hidden;
+  font-size: .8rem;
+}
+
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

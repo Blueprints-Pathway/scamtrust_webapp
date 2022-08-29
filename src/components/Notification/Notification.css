@@ -6,8 +6,8 @@
 .dropdown{
     position: absolute;
     margin: 1rem;
-    right: 2%;
-    top: 5.5%;
+    right: 3vw;
+    top: 0.5rem;
     bottom: 0%;
     width: 30rem;
     min-height: 38rem;

@@ -12,7 +12,7 @@ const InitiationSuccessful = (props) => {
   };
 
   return (
-    <div className="absolute ml-[25px] w-[280px] bg-white rounded-[20px] top-1/2 left-1/2 lg:w-[900px] 2xl:w-[1097px] lg:p-8 p-4 2xl:p-16 -translate-x-1/2 -translate-y-1/2 z-30">
+    <div className="absolute ml-[25px] w-[80vw] bg-white rounded-[20px] top-1/2 left-1/2 lg:w-[70vw] 2xl:w-[1097px] lg:p-8 p-4 2xl:p-16 -translate-x-1/2 -translate-y-1/2 z-30">
       <div className="flex mb-[52px] items-center border-b-[2px] justify-between border-b-[#EAEAEA]">
         <h3 className="text-colorPrimary font-medium text-lg lg:font-semibold lg:text-3xl">
           Withdrawal details
