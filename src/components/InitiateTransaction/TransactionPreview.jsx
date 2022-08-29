@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 
@@ -10,6 +11,8 @@ const TransactionPreview = (props) => {
     setShowTransactionSuccess,
     setShowInitiateTransaction,
   } = props;
+
+  const [sendingTransaction, setSendingTransaction] = useState(false);
 
   const state = useSelector((state) => state);
   const token = state.auth.user.data.access_token;
@@ -26,14 +29,20 @@ const TransactionPreview = (props) => {
       localStorage.getItem("scam-trust-txnInitiation")
     );
     try {
+      setSendingTransaction(true);
       const result = await createTransaction(
         JSON.stringify(transactionData),
         token
       );
-      console.log(result);
+      if (result.status === false) {
+        alert(result.message);
+        return;
+      }
+      setSendingTransaction(false);
       setShowTransactionPreview(false);
       setShowTransactionSuccess(true);
     } catch (error) {
+      setSendingTransaction(false);
       console.log(error.message);
     }
   };
@@ -131,10 +140,11 @@ const TransactionPreview = (props) => {
                 </span>
               )}
               <button
+                disabled={sendingTransaction}
                 type="submit"
                 className="px-[31px] my-[27px] rounded-md py-[11px] text-colorPrimary bg-[#2321644F]"
               >
-                Confirm
+                {sendingTransaction ? "Loading..." : "Confirm"}
               </button>
               <img
                 src={SecuredBy}
