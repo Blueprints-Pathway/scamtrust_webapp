@@ -13,6 +13,7 @@ const TransactionPreview = (props) => {
   } = props;
 
   const [sendingTransaction, setSendingTransaction] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const state = useSelector((state) => state);
   const token = state.auth.user.data.access_token;
@@ -25,6 +26,7 @@ const TransactionPreview = (props) => {
   } = useForm();
 
   const onConfirmClicked = async (data) => {
+    setErrorMessage("");
     const transactionData = JSON.parse(
       localStorage.getItem("scam-trust-txnInitiation")
     );
@@ -35,7 +37,8 @@ const TransactionPreview = (props) => {
         token
       );
       if (result.status === false) {
-        alert(result.message);
+        setSendingTransaction(false);
+        setErrorMessage(result.message);
         return;
       }
       setSendingTransaction(false);
@@ -69,6 +72,13 @@ const TransactionPreview = (props) => {
           </div>
         </div>
 
+        {errorMessage.length ? (
+          <div className="bg-red-500 mb-2 mt-4 text-center text-white rounded-md py-2 px-3">
+            {errorMessage}
+          </div>
+        ) : (
+          <></>
+        )}
         <div className="flex flex-col md:flex-row justify-between mt-[25px]">
           <div className="w-[250px] mx-auto p-5 bg-[#F8F8FA] lg:w-[630px]">
             <div className="border-b mb-4 pb-4 flex justify-between border-b-[#02479D]">
