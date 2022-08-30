@@ -38,8 +38,7 @@ console.log(state)
     {
       symbol: Setting,
       name: "Settings",
-      link: "/vendor-settings",
-      vendorLink: "/vendor-settings",
+      link: "/settings",
     },
   ];
 

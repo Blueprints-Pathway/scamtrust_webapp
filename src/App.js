@@ -39,7 +39,7 @@ function App() {
         <Route path="/customer-transaction" element={<CustomerTransaction />} />
         <Route path="/wallet" element={<Wallet />} />
         <Route path="/vendor-dashboard" element={<DashBoardVendor />} />
-        <Route path="/vendor-settings" element={<SettingsVendor />} />
+        <Route path="/settings" element={<SettingsVendor />} />
         <Route path="/support" element={<Support />} />
         <Route path="/vendor-rating" element={<VendorRating />} />
         <Route path="/withdrawal" element={<Withdrawal />} />
