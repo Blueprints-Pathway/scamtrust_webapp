@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import Layout from "../../components/Layout/Layout";
 import Eye from "../../assets/images/svg/eye.svg";
@@ -8,7 +10,8 @@ import MoreInfo from "../../assets/images/svg/more-info.svg";
 import CopyBlack from "../../assets/images/svg/copy-black.svg";
 import FundWallet from "../../components/Pages/Wallet/FundWallet";
 import ConfirmAccount from "../../components/Pages/Wallet/ConfirmAccount";
-import { useNavigate } from "react-router-dom";
+import EmptyTxn from "../../assets/images/svg/EmptyTxn.svg";
+import { fetchUser } from "../../services/auth";
 
 const Wallet = () => {
   const [showFundWallet, setShowFundWallet] = useState(false);
@@ -17,6 +20,15 @@ const Wallet = () => {
   const [availableBalanceInfo, setAvailableBalanceInfo] = useState(false);
   const [outgoingBalanceInfo, setOutgoingBalanceInfo] = useState(false);
   const [primaryAccountBalanceInfo, primaryABalanceInfo] = useState(false);
+  const [userFromBackend, setUserFromBackend] = useState(null);
+
+  const { user } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    (async () => setUserFromBackend(await fetchUser(user.data.access_token)))();
+  }, []);
+
+  console.log(userFromBackend);
 
   const toggleAvailableBalanceInfo = () =>
     setAvailableBalanceInfo((prevState) => !prevState);
@@ -50,7 +62,7 @@ const Wallet = () => {
       <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <div className="grid-cols-1 rounded-3xl bg-white w-full px-5 md:px-9 2xl:px-12 py-6">
+            <div className="grid-cols-1 rounded-3xl bg-white w-full px-5 md:px-9 2xl:px-12 py-6 hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
               <div className="flex justify-between pb-1 border-b-2 border-b-colorSecondary mb-4">
                 <p className="font-bold text-xl 2xl:text-2xl">Account</p>
                 <p className="font-medium text-xl 2xl:text-2xl text-colorPrimary">
@@ -66,7 +78,7 @@ const Wallet = () => {
               <div className="flex justify-between ">
                 <div>
                   <p className="font-medium md:text-xl 2xl:text-3xl text-colorSecondary mb-2">
-                    N 500,000
+                    &#8358; {userFromBackend?.walletBalance}
                   </p>
                   <p className="font-medium flex mb-8 2xl:mb-12 md:text-lg text-sm 2xl:text-xl text-colorPrimary">
                     <span>Available Balance</span>
@@ -96,7 +108,7 @@ const Wallet = () => {
                 </div>
                 <div>
                   <p className="font-medium md:text-xl 2xl:text-3xl text-colorSecondary mb-2">
-                    N 500,000
+                    &#8358; {userFromBackend?.outgoingWalletBalance}
                   </p>
                   <p className="font-medium mb-8 flex md:text-lg text-sm 2xl:text-xl text-colorPrimary">
                     <span>Outgoing Balance</span>
@@ -163,12 +175,12 @@ const Wallet = () => {
                   <div className="text-sm 2xl:text-xl">
                     <p>
                       <span className="text-colorSecondary">
-                        N 1,100,000.00
+                        &#8358; 1,100,000.00
                       </span>{" "}
                       Withdrawn so far
                     </p>
                     <p className="font-medium">
-                      2009419261 Zenith Ilerioluwa Brown
+                      2009419261 {userFromBackend?.name}
                     </p>
                   </div>
                   <button className="px-2 py-1 mt-3 md:mt-0 text-[8px] md:text-base 2xl:px-4 2xl:py-3 bg-colorPrimary text-white rounded-md">
@@ -205,7 +217,6 @@ const Wallet = () => {
           </div>
           <div className="grid-cols-1 w-full bg-[#F2F2F2] rounded-[25px] py-14 px-8">
             <h5 className="font-medium text-xl">Wallet History</h5>
-
             <div className="overflow-x-auto mx-auto relative">
               <table className="w-full text-center">
                 <tbody className="text-colorPrimary font-medium text-xs">
@@ -255,6 +266,17 @@ const Wallet = () => {
                 </tbody>
               </table>
             </div>
+
+            <div className="min-h-[60vh] min-w-full mx-auto w-full grid place-content-center">
+              <img
+                src={EmptyTxn}
+                className="w-[149.6px] mb-4 mx-auto h-[149.6px]"
+                alt="empty-transaction"
+              />
+              <p className="text-center font-medium text-2xl">
+                No recent transaction yet
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -265,74 +287,74 @@ const Wallet = () => {
 export default Wallet;
 
 const WALLET_HISTORY = [
-  {
-    credit: true,
-    vName: "Ilerioluwa Brown",
-    vNo: "TR-5347906",
-    amount: "500,000",
-    date: "10th Jan 2022",
-  },
-  {
-    credit: false,
-    vName: "Ilerioluwa Brown",
-    vNo: "TR-5347906",
-    amount: "500,000",
-    date: "10th Jan 2022",
-  },
-  {
-    credit: true,
-    vName: "Ilerioluwa Brown",
-    vNo: "TR-5347906",
-    amount: "500,000",
-    date: "10th Jan 2022",
-  },
-  {
-    credit: false,
-    vName: "Ilerioluwa Brown",
-    vNo: "TR-5347906",
-    amount: "500,000",
-    date: "10th Jan 2022",
-  },
-  {
-    credit: true,
-    vName: "Ilerioluwa Brown",
-    vNo: "TR-5347906",
-    amount: "500,000",
-    date: "10th Jan 2022",
-  },
-  {
-    credit: false,
-    vName: "Ilerioluwa Brown",
-    vNo: "TR-5347906",
-    amount: "500,000",
-    date: "10th Jan 2022",
-  },
-  {
-    credit: true,
-    vName: "Ilerioluwa Brown",
-    vNo: "TR-5347906",
-    amount: "500,000",
-    date: "10th Jan 2022",
-  },
-  {
-    credit: false,
-    vName: "Ilerioluwa Brown",
-    vNo: "TR-5347906",
-    amount: "500,000",
-    date: "10th Jan 2022",
-  },
-  {
-    credit: true,
-    vName: "Ilerioluwa Brown",
-    vNo: "TR-5347906",
-    amount: "500,000",
-    date: "10th Jan 2022",
-  },
-  {
-    credit: false,
-    vName: "Ilerioluwa Brown",
-    vNo: "TR-5347906",
-    amount: "500,000",
-    date: "10th Jan 2022",
-  },
+  // {
+  //   credit: true,
+  //   vName: "Ilerioluwa Brown",
+  //   vNo: "TR-5347906",
+  //   amount: "500,000",
+  //   date: "10th Jan 2022",
+  // },
+  // {
+  //   credit: false,
+  //   vName: "Ilerioluwa Brown",
+  //   vNo: "TR-5347906",
+  //   amount: "500,000",
+  //   date: "10th Jan 2022",
+  // },
+  // {
+  //   credit: true,
+  //   vName: "Ilerioluwa Brown",
+  //   vNo: "TR-5347906",
+  //   amount: "500,000",
+  //   date: "10th Jan 2022",
+  // },
+  // {
+  //   credit: false,
+  //   vName: "Ilerioluwa Brown",
+  //   vNo: "TR-5347906",
+  //   amount: "500,000",
+  //   date: "10th Jan 2022",
+  // },
+  // {
+  //   credit: true,
+  //   vName: "Ilerioluwa Brown",
+  //   vNo: "TR-5347906",
+  //   amount: "500,000",
+  //   date: "10th Jan 2022",
+  // },
+  // {
+  //   credit: false,
+  //   vName: "Ilerioluwa Brown",
+  //   vNo: "TR-5347906",
+  //   amount: "500,000",
+  //   date: "10th Jan 2022",
+  // },
+  // {
+  //   credit: true,
+  //   vName: "Ilerioluwa Brown",
+  //   vNo: "TR-5347906",
+  //   amount: "500,000",
+  //   date: "10th Jan 2022",
+  // },
+  // {
+  //   credit: false,
+  //   vName: "Ilerioluwa Brown",
+  //   vNo: "TR-5347906",
+  //   amount: "500,000",
+  //   date: "10th Jan 2022",
+  // },
+  // {
+  //   credit: true,
+  //   vName: "Ilerioluwa Brown",
+  //   vNo: "TR-5347906",
+  //   amount: "500,000",
+  //   date: "10th Jan 2022",
+  // },
+  // {
+  //   credit: false,
+  //   vName: "Ilerioluwa Brown",
+  //   vNo: "TR-5347906",
+  //   amount: "500,000",
+  //   date: "10th Jan 2022",
+  // },
 ];

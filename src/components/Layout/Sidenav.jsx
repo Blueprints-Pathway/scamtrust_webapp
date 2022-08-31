@@ -12,7 +12,8 @@ import Wallet from "../../assets/images/svg/wallet.svg";
 import Setting from "../../assets/images/svg/setting.svg";
 import Support from "../../assets/images/svg/support.svg";
 import Logout from "../../assets/images/svg/logout.svg";
-import { logout, reset } from "../../features/auth/authSlice";
+import { logoutUser, reset } from "../../features/auth/authSlice";
+import { useEffect } from "react";
 
 const Sidenav = (props) => {
   const { setIsSidenavOpen, isSidenavOpen } = props;
@@ -25,8 +26,8 @@ const Sidenav = (props) => {
   const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
   const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
 
-  const state = useSelector(state => state)
-console.log(state)
+  const state = useSelector((state) => state);
+  // console.log(state);
   const navItems = [
     { symbol: Dashboard, name: "Dashboard", link: "/customer-dashboard" },
     {
@@ -104,8 +105,8 @@ console.log(state)
           </li>
           <li
             onClick={() => {
-              dispatch(logout());
-              dispatch(reset());
+              // dispatch(logout());
+              dispatch(logoutUser());
             }}
             className="uppercase cursor-pointer mt-[40px] flex items-center"
           >

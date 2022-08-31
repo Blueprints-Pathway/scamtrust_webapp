@@ -101,7 +101,8 @@ const TransactionPreview = (props) => {
             </div>
             <div className="border-b mb-4 pb-4 flex justify-between border-b-[#02479D]">
               <p>Transaction cost</p>
-              <p className="text-[#7D8287]">₦{300}</p>
+              {/* <p className="text-[#7D8287]">₦{0}</p> */}
+              <p className="text-[#7D8287]">Nil</p>
             </div>
             <div className="border-b mb-4 pb-4 flex justify-between border-b-[#02479D]">
               <p> Due date</p>

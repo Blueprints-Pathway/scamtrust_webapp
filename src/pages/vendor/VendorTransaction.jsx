@@ -12,7 +12,7 @@ import CompletedTab from "../../assets/images/svg/completed-tab.svg";
 import TransactionType from "../../components/TransactionType/TransactionType";
 import { fetchTransactions } from "../../services/transactions";
 import SideBar from "../../components/SideBar/SideBar";
-import './VendorTransaction.css'
+// import './VendorTransaction.css'
 import {VendorTransactionItems} from './VendorTransactionItems'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";

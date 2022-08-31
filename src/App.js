@@ -27,6 +27,7 @@ import SecurityQuestion from "./pages/auth/VendorSecurityQuestion";
 import ProtectedRoutes from "./utils/ProtectedRoutes";
 import CustomerSetPassword from "./pages/auth/CustomerSetPassword";
 import CustomerSecurityQuestion from "./pages/auth/CustomerSecurityQuestion";
+import ActivateAccount from "./pages/auth/ActivateAccount";
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
         element={<CustomerSetPassword />}
       />
       <Route path="/customer-signup" element={<CustomerSignup />} />
+      <Route path="/active-account" element={<ActivateAccount />} />
       <Route path="/customer-bvn" element={<CustomerBVN />} />
       <Route path="/customer-set-password" element={<CustomerSetPassword />} />
       <Route path="/customer-activate" element={<CustomerActivate />} />
