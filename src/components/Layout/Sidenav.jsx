@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { HiMenuAlt2 } from "react-icons/hi";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 import Logo from "../../assets/images/svg/logo-white.svg";
@@ -12,7 +12,8 @@ import Wallet from "../../assets/images/svg/wallet.svg";
 import Setting from "../../assets/images/svg/setting.svg";
 import Support from "../../assets/images/svg/support.svg";
 import Logout from "../../assets/images/svg/logout.svg";
-import { logout, reset } from "../../features/auth/authSlice";
+import { logoutUser, reset } from "../../features/auth/authSlice";
+import { useEffect } from "react";
 
 const Sidenav = (props) => {
   const { setIsSidenavOpen, isSidenavOpen } = props;
@@ -25,6 +26,8 @@ const Sidenav = (props) => {
   const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
   const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
 
+  const state = useSelector((state) => state);
+  // console.log(state);
   const navItems = [
     { symbol: Dashboard, name: "Dashboard", link: "/customer-dashboard" },
     {
@@ -33,7 +36,11 @@ const Sidenav = (props) => {
       link: "/customer-transaction",
     },
     { symbol: Wallet, name: "Wallet", link: "/wallet" },
-    { symbol: Setting, name: "Settings", link: "/settings" },
+    {
+      symbol: Setting,
+      name: "Settings",
+      link: "/settings",
+    },
   ];
 
   const navigate = useNavigate();
@@ -98,8 +105,8 @@ const Sidenav = (props) => {
           </li>
           <li
             onClick={() => {
-              dispatch(logout());
-              dispatch(reset());
+              // dispatch(logout());
+              dispatch(logoutUser());
             }}
             className="uppercase cursor-pointer mt-[40px] flex items-center"
           >

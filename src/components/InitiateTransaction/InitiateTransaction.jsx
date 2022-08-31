@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useEffect, useState } from "react";
 
 import SecuredBy from "../../assets/images/svg/secured-by.svg";
 import { createTransactionSchema } from "../../model/registerModel";
@@ -8,21 +7,31 @@ import { createTransactionSchema } from "../../model/registerModel";
 const InitiateTransaction = (props) => {
   const { setShowInitiateTransaction, setShowTransactionPreview } = props;
 
-  const [vendorId, setVendorId] = useState("");
-  const [productName, setProductName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [dueDate, setDueDate] = useState("");
-  const [productAmount, setProductAmount] = useState("");
-  const [productQuantity, setProductQuantity] = useState("");
-  const [productDescription, setProductDescription] = useState("");
-  const [stateFromLocalStorage, setStateFromLocalStorage] = useState(false);
+  const transactionDetailsFromStorage = localStorage.getItem(
+    "scam-trust-txnInitiation"
+  );
+
+  const transactionDetails = transactionDetailsFromStorage
+    ? JSON.parse(transactionDetailsFromStorage)
+    : null;
+
+  const defaultValues = {
+    vendor_id: transactionDetails.vendor_id,
+    product_name: transactionDetails.product_name,
+    phone: transactionDetails.phone,
+    due_date: transactionDetails.due_date,
+    amount: transactionDetails.amount,
+    quantity: transactionDetails.quantity,
+    description: transactionDetails.description,
+  };
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(createTransactionSchema)
+    defaultValues: defaultValues || {},
+    resolver: yupResolver(createTransactionSchema),
   });
 
   const onCloseTransactionClicked = () => {
@@ -40,31 +49,18 @@ const InitiateTransaction = (props) => {
     onContinueClicked();
   };
 
-  useEffect(() => {
-    const transactionDetails = JSON.parse(
-      localStorage.getItem("scam-trust-txnInitiation")
-    );
-    console.log(transactionDetails, "transactionDetails");
-    if (transactionDetails) {
-      setStateFromLocalStorage(true);
-      setVendorId(transactionDetails.vendor_id);
-      setProductName(transactionDetails.product_name);
-      setPhoneNumber(transactionDetails.phone);
-      setDueDate(transactionDetails.due_date);
-      setProductAmount(transactionDetails.amount);
-      setProductQuantity(transactionDetails.quantity);
-      setProductDescription(transactionDetails.description);
-    }
-  }, []);
+  // useEffect(() => {
+
+  // }, []);
 
   return (
-    <div className="">
+    <div className="h-[90vh] md:grid md:place-content-center py-4 relative overflow-y-scroll w-full">
       <form
         onSubmit={handleSubmit((data) => {
           handleFormSumit(data);
         })}
-        className="absolute ml-[25px] w-[85vw] bg-white rounded-[20px] top-1/2 left-1/2 lg:w-[70vw] 2xl:w-[1097px] lg:p-8 p-4 2xl:p-16 -translate-x-1/2 -translate-y-1/2 z-30"
-        >
+        className="w-[90%] mx-auto bg-white rounded-[20px] lg:w-[900px] 2xl:w-[1097px] lg:p-8 p-4 2xl:p-16"
+      >
         <div className="flex items-center border-b-[2px] justify-between border-b-[#EAEAEA]">
           <h3 className="text-colorPrimary font-medium text-lg lg:font-semibold lg:text-3xl">
             Initiate transaction
@@ -90,12 +86,10 @@ const InitiateTransaction = (props) => {
             <div className="relative">
               <input
                 type="text"
-                defaultValue={vendorId}
                 name="vendor_id"
                 placeholder="Vendor ID"
                 {...register("vendor_id", {
                   required: "Vendor ID is required",
-                  value: vendorId,
                 })}
                 className={`${
                   errors.vendor_id && "border-red-400"
@@ -124,7 +118,6 @@ const InitiateTransaction = (props) => {
                 placeholder="Product name"
                 {...register("product_name", {
                   required: "Product name is required",
-                  value: productName,
                 })}
                 className={`${
                   errors.product_name && "border-red-400"
@@ -157,7 +150,6 @@ const InitiateTransaction = (props) => {
                 placeholder="Phone number"
                 {...register("phone", {
                   required: "Phone number is required",
-                  value: phoneNumber,
                 })}
                 className={`${
                   errors.phone && "border-red-400"
@@ -185,8 +177,7 @@ const InitiateTransaction = (props) => {
                 name="due_date"
                 placeholder="Due date"
                 {...register("due_date", {
-                  required: "Due date is required",
-                  value: dueDate,
+                  required: "Due date is required"
                 })}
                 className={`${
                   errors.due_date && "border-red-400"
@@ -218,7 +209,6 @@ const InitiateTransaction = (props) => {
                 placeholder="Product amount"
                 {...register("amount", {
                   required: "Product amount is required",
-                  value: productAmount,
                 })}
                 className={`${
                   errors.amount && "border-red-400"
@@ -246,7 +236,6 @@ const InitiateTransaction = (props) => {
                 placeholder="Quantity"
                 {...register("quantity", {
                   required: "Quantity is required",
-                  value: productQuantity,
                 })}
                 className={`${
                   errors.quantity && "border-red-400"
@@ -267,7 +256,6 @@ const InitiateTransaction = (props) => {
             cols="100"
             {...register("description", {
               required: "Please describe the product",
-              value: productDescription,
             })}
             rows="2"
             className="px-3 py-4 placeholder:text-xs border border-[#02489F]"
@@ -279,17 +267,17 @@ const InitiateTransaction = (props) => {
           )}
         </div>
 
-        <div className="flex justify-between px-14 mt-9">
+        <div className="flex justify-between px-4 md:px-14 mt-9">
           <div />
           <div className="flex items-center">
             <img
               src={SecuredBy}
               alt="secured_by_scam_trust"
-              className="w-[169px] mr-6"
+              className="md:w-[169px] w-[100px] mr-6"
             />
             <button
               type="submit"
-              className="bg-colorPrimary text-white rounded-md font-semibold px-[50px] py-[10px]"
+              className="bg-colorPrimary text-white rounded-md font-semibold px-[25px] md:px-[50px] py-[10px]"
             >
               Continue
             </button>

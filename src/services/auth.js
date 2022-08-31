@@ -11,9 +11,15 @@ const apiConfig = (method) => {
   return config;
 };
 
-export const fetchUser = async () => {
+export const fetchUser = async (token) => {
   try {
-    const result = await fetch(`${scamtrustApi}/user/getdetails`, apiConfig());
+    const result = await fetch(`${scamtrustApi}/user/getdetails`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
     const user = await result.json();
     return user;
   } catch (error) {
@@ -26,6 +32,37 @@ export const registerUser = async (data) => {
     const result = await fetch(`${scamtrustApi}/auth/register`, {
       method: "POST",
       body: data,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const response = await result.json();
+    return response;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+export const setSignupPin = async (data, token) => {
+  try {
+    const result = await fetch(`${scamtrustApi}/auth/set-pin`, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+        AUTHORIZATION: `Bearer ${token}`,
+      },
+    });
+    const response = await result.json();
+    return response;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+export const setSecurityQuestion = async (data) => {
+  try {
+    const result = await fetch(`${scamtrustApi}/auth/set-security-question`, {
+      method: "POST",
+      body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json",
       },

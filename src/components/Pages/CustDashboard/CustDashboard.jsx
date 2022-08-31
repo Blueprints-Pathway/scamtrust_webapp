@@ -1,14 +1,22 @@
-import { useState } from "react";
+import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
 
 import Info from "../../../assets/images/svg/info.svg";
 import Chat from "../../../assets/images/svg/chat.svg";
 import SecuredBy from "../../../assets/images/svg/secured-by.svg";
 import Add from "../../../assets/images/svg/add.svg";
+import EmptyTxn from "../../../assets/images/svg/EmptyTxn.svg";
+import { fetchUser } from "../../../services/auth";
 
 const CustomerDashboard = (props) => {
   const { setShowInitiateTransaction, setIsWithdrawing, setIsFunding } = props;
 
   const [transactionAmount, setTransactionAmount] = useState("");
+  const [userFromBackend, setUserFromBackend] = useState(null);
+
+  const { user } = useSelector((state) => state.auth);
+
+  console.log(userFromBackend);
 
   const onCreateTransactionClicked = () => {
     setShowInitiateTransaction((prevState) => !prevState);
@@ -17,15 +25,19 @@ const CustomerDashboard = (props) => {
   const TRANSACTION_FEE = transactionAmount * 0.02;
   const TOTAL_AMOUNT = +TRANSACTION_FEE + +transactionAmount;
 
+  useEffect(() => {
+    (async () => setUserFromBackend(await fetchUser(user.data.access_token)))();
+  }, []);
+
   return (
     <div className="flex w-full px-2 flex-col md:flex-row gap-7 justify-between">
       <div className="min-w-[260px] mx-auto w-[70%] 2xl:w-[685px]">
         <div className="w-full bg-[#FFFEFE] lg:rounded-[24px] rounded-lg lg:px-[37px] px-5 py-3 lg:py-[29px] mb-[13px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
           <p className="font-semibold text-lg 2xl:text-2xl text-colorPrimary">
-            Chukwudi Osinachi
+            {userFromBackend?.data.name}
           </p>
           <p className="font-semibold text-lg 2xl:text-2xl text-[#7D8287]">
-            ID - 6057702
+            ID - {userFromBackend?.data.id}
           </p>
 
           <div className="border-b-2 mb-5 2xl:mb-[53px] border-b-colorGreen mt-[13px]" />
@@ -36,7 +48,7 @@ const CustomerDashboard = (props) => {
                 Total Balance
               </h4>
               <h2 className="text-colorPrimary font-semibold text-sm 2xl:font-bold lg:text-lg 2xl:text-3xl">
-                N 500,000.00
+                &#8358; {userFromBackend?.walletBalance}
               </h2>
             </div>
 
@@ -45,7 +57,7 @@ const CustomerDashboard = (props) => {
                 Pending Balance
               </h4>
               <h2 className="text-[#7d8287] font-semibold text-sm 2xl:font-bold lg:text-lg 2xl:text-3xl">
-                N 250,000.00
+                &#8358; {userFromBackend?.outgoingWalletBalance}
               </h2>
             </div>
           </div>
@@ -218,6 +230,16 @@ const CustomerDashboard = (props) => {
             </tbody>
           </table>
         </div>
+        <div className="min-h-[60vh] min-w-full mx-auto w-full grid place-content-center">
+          <img
+            src={EmptyTxn}
+            className="w-[149.6px] mb-4 mx-auto h-[149.6px]"
+            alt="empty-transaction"
+          />
+          <p className="text-center font-medium text-2xl">
+            No recent transaction yet
+          </p>
+        </div>
       </div>
 
       <div className="grid md:hidden place-content-center my-[20px]">
@@ -228,54 +250,54 @@ const CustomerDashboard = (props) => {
 };
 
 const TRANSACTIONS = [
-  {
-    status: "Awaiting approval",
-    vName: "Ridic Ventures",
-    amount: "250,000.00",
-    date: "25th May, 2022",
-  },
-  {
-    status: "Completed",
-    vName: "Ridic Ventures",
-    amount: "250,000.00",
-    date: "25th May, 2022",
-  },
-  {
-    status: "On-going",
-    vName: "Ridic Ventures",
-    amount: "250,000.00",
-    date: "25th May, 2022",
-  },
-  {
-    status: "Cancelled",
-    vName: "Ridic Ventures",
-    amount: "250,000.00",
-    date: "25th May, 2022",
-  },
-  {
-    status: "Awaiting approval",
-    vName: "Ridic Ventures",
-    amount: "250,000.00",
-    date: "25th May, 2022",
-  },
-  {
-    status: "Completed",
-    vName: "Ridic Ventures",
-    amount: "250,000.00",
-    date: "25th May, 2022",
-  },
-  {
-    status: "On-going",
-    vName: "Ridic Ventures",
-    amount: "250,000.00",
-    date: "25th May, 2022",
-  },
-  {
-    status: "Cancelled",
-    vName: "Ridic Ventures",
-    amount: "250,000.00",
-    date: "25th May, 2022",
-  },
+  // {
+  //   status: "Awaiting approval",
+  //   vName: "Ridic Ventures",
+  //   amount: "250,000.00",
+  //   date: "25th May, 2022",
+  // },
+  // {
+  //   status: "Completed",
+  //   vName: "Ridic Ventures",
+  //   amount: "250,000.00",
+  //   date: "25th May, 2022",
+  // },
+  // {
+  //   status: "On-going",
+  //   vName: "Ridic Ventures",
+  //   amount: "250,000.00",
+  //   date: "25th May, 2022",
+  // },
+  // {
+  //   status: "Cancelled",
+  //   vName: "Ridic Ventures",
+  //   amount: "250,000.00",
+  //   date: "25th May, 2022",
+  // },
+  // {
+  //   status: "Awaiting approval",
+  //   vName: "Ridic Ventures",
+  //   amount: "250,000.00",
+  //   date: "25th May, 2022",
+  // },
+  // {
+  //   status: "Completed",
+  //   vName: "Ridic Ventures",
+  //   amount: "250,000.00",
+  //   date: "25th May, 2022",
+  // },
+  // {
+  //   status: "On-going",
+  //   vName: "Ridic Ventures",
+  //   amount: "250,000.00",
+  //   date: "25th May, 2022",
+  // },
+  // {
+  //   status: "Cancelled",
+  //   vName: "Ridic Ventures",
+  //   amount: "250,000.00",
+  //   date: "25th May, 2022",
+  // },
 ];
 
 export default CustomerDashboard;

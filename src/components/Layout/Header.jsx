@@ -1,10 +1,14 @@
+import { useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import BellNotification from "../../assets/images/svg/bell-notification.svg";
 import Search from "../../assets/images/svg/search.svg";
 import RidicVentures from "../../assets/images/svg/ridic.svg";
 import APlus from "../../assets/images/svg/a-plus.svg";
+import { fetchUser } from "../../services/auth";
+import { useState } from "react";
 
 const VENDORS = [
   {
@@ -35,6 +39,14 @@ const VENDORS = [
 
 const Header = (props) => {
   const { heading } = props;
+
+  const { user } = useSelector((state) => state.auth);
+
+  const [userFromBackend, setUserFromBackend] = useState(null);
+
+  useEffect(() => {
+    (async () => setUserFromBackend(await fetchUser(user.data.access_token)))();
+  }, []);
 
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1224px)",
@@ -78,10 +90,12 @@ const Header = (props) => {
               {VENDORS.map((vendor, idx) => {
                 const { name, logo, id, score } = vendor;
                 return (
-                  <div key={idx} className="flex px-3 justify-between" onClick={() => navigate("/vendor/ridic-ventures")}>
-                    <div
-                      className="flex items-center hover:opacity-75 mb-3 cursor-pointer"
-                    >
+                  <div
+                    key={idx}
+                    className="flex px-3 justify-between"
+                    onClick={() => navigate("/vendor/ridic-ventures")}
+                  >
+                    <div className="flex items-center hover:opacity-75 mb-3 cursor-pointer">
                       <div className="w-[28px] mr-3 grid place-content-center h-[28px] bg-[#EFF3FF] overflow-hidden">
                         <img
                           src={logo}

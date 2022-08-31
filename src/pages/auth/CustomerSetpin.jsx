@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -8,6 +9,8 @@ const inputClassName =
   "h-[40px] w-[40px] focus:border-[#D5D8DA] focus:outline-none text-center rounded-lg text-colorPrimary text-xl border-[#D5D8DA] border-2 bg-[#fff]";
 
 const CustomerSetpin = () => {
+  const [errorMessage, setErrorMessage] = useState("");
+
   const navigate = useNavigate();
 
   const firstInput = useRef();
@@ -21,6 +24,43 @@ const CustomerSetpin = () => {
   const eigthInput = useRef();
 
   const handleSubmit = () => {
+    setErrorMessage("");
+
+    if (
+      !firstInput.current.value ||
+      !secondInput.current.value ||
+      !thirdInput.current.value ||
+      !fourthInput.current.value ||
+      !fifthInput.current.value ||
+      !sixthInput.current.value ||
+      !seventhInput.current.value ||
+      !eigthInput.current.value
+    ) {
+      setErrorMessage("All fields are required");
+      return;
+    }
+    const firstInputValues =
+      firstInput.current.value +
+      secondInput.current.value +
+      thirdInput.current.value +
+      fourthInput.current.value;
+    const secondInputValues =
+      fifthInput.current.value +
+      sixthInput.current.value +
+      seventhInput.current.value +
+      eigthInput.current.value;
+    if (firstInputValues !== secondInputValues) {
+      setErrorMessage("Pin does not match");
+      return;
+    }
+    const customerSignupDetails = JSON.parse(
+      localStorage.getItem("customer-signup")
+    );
+    const customerSignupData = {
+      ...customerSignupDetails,
+      pin: firstInputValues,
+    };
+    localStorage.setItem("customer-signup", JSON.stringify(customerSignupData));
     navigate("/customer-signup-security-question");
   };
 
@@ -157,6 +197,14 @@ const CustomerSetpin = () => {
             />
           </div>
         </div>
+
+        {errorMessage.length ? (
+          <div className="text-center bg-red-400 text-white rounded-md py-3 px-2">
+            {errorMessage}
+          </div>
+        ) : (
+          <></>
+        )}
 
         <div className="2xl:mt-[40px] mb-[105px] 2xl:mb-[140px] mt-[30px]">
           <Button onClick={handleSubmit} forwardIcon={true}>

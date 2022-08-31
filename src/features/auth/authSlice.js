@@ -44,6 +44,10 @@ export const authSlice = createSlice({
       state.message = "";
       state.isSuccess = false;
     },
+    logoutUser: (state) => {
+      localStorage.removeItem("scam-trust-user");
+      state.user = null;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -64,9 +68,9 @@ export const authSlice = createSlice({
   },
 });
 
-export const logout = createAsyncThunk("auth/logout", async () => {
-  await authService.logout()
-});
+// export const logout = createAsyncThunk("auth/logout", async () => {
+//   await authService.logout();
+// });
 
-export const { reset } = authSlice.actions;
+export const { reset, logoutUser } = authSlice.actions;
 export default authSlice.reducer;

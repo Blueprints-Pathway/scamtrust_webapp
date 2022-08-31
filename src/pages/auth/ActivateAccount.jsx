@@ -1,9 +1,12 @@
-import Logo from "../components/branding/Logo/Logo";
-import CustomerTestimony from "../components/CustomerTestimony/CustomerTestimony";
-import Tick from "../assets/images/tick.svg";
-import Button from "../components/UI/Button";
+import { useNavigate } from "react-router-dom";
+
+import Logo from "../../components/branding/Logo/Logo";
+import CustomerTestimony from "../../components/CustomerTestimony/CustomerTestimony";
+import Tick from "../../assets/images/tick.svg";
 
 const ActivateAccount = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen font-secondary">
       {/* Left Grid Content */}
@@ -21,7 +24,12 @@ const ActivateAccount = () => {
             Kindly click to activate Your ScamTrust account
           </p>
 
-          <Button>Check Mail</Button>
+          <button
+            onClick={() => navigate("/")}
+            className="bg-colorPrimary justify-center flex items-center px-[10px] w-full rounded-[5px] py-2 text-white text-[13px] 2xl:text-lg"
+          >
+            Check Mail
+          </button>
         </div>
       </div>
 
