@@ -27,6 +27,8 @@ import SecurityQuestion from "./pages/auth/VendorSecurityQuestion";
 import ProtectedRoutes from "./utils/ProtectedRoutes";
 import CustomerSetPassword from "./pages/auth/CustomerSetPassword";
 import CustomerSecurityQuestion from "./pages/auth/CustomerSecurityQuestion";
+import Ratting from "./pages/vendor/Ratting";
+
 import ActivateAccount from "./pages/auth/ActivateAccount";
 
 function App() {
@@ -44,6 +46,7 @@ function App() {
         <Route path="/support" element={<Support />} />
         <Route path="/vendor-rating" element={<VendorRating />} />
         <Route path="/withdrawal" element={<Withdrawal />} />
+        < Route path="/customer-ratting" element={<Ratting />}/>
       </Route>
 
       <Route
