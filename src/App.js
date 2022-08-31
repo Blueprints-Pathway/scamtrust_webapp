@@ -27,6 +27,7 @@ import SecurityQuestion from "./pages/auth/VendorSecurityQuestion";
 import ProtectedRoutes from "./utils/ProtectedRoutes";
 import CustomerSetPassword from "./pages/auth/CustomerSetPassword";
 import CustomerSecurityQuestion from "./pages/auth/CustomerSecurityQuestion";
+import Ratting from "./pages/vendor/Ratting";
 
 function App() {
   return (
@@ -39,10 +40,11 @@ function App() {
         <Route path="/customer-transaction" element={<CustomerTransaction />} />
         <Route path="/wallet" element={<Wallet />} />
         <Route path="/vendor-dashboard" element={<DashBoardVendor />} />
-        <Route path="/vendor-settings" element={<SettingsVendor />} />
+        <Route path="/settings" element={<SettingsVendor />} />
         <Route path="/support" element={<Support />} />
         <Route path="/vendor-rating" element={<VendorRating />} />
         <Route path="/withdrawal" element={<Withdrawal />} />
+        < Route path="/customer-ratting" element={<Ratting />}/>
       </Route>
 
       <Route

@@ -51,7 +51,7 @@
   
   .Transactions .Category h6 {
     text-align: left;
-    width: 100%;
+    /* width: 100%; */
   transform: rotate(0.08deg);
     border-bottom: 2px solid #CFD8DC;
     padding-bottom: 0.5rem;
@@ -85,10 +85,10 @@
   }
   .Transactions .Transaction1 {
     display: flex;
-    gap: 0rem;
-    align-items: start;
-    margin-bottom: 0rem;
-    margin-top: 1rem;
+    gap: 3rem;
+    align-items: center;
+  
+    /* margin-top: 1rem; */
   }
   
   .Transactions .Transaction1 p {
@@ -113,9 +113,9 @@ border: 1px solid #D9D8D8;
 border-radius: 15px;
 padding: 5px;
   }
-  .pushDown{
+  /* .pushDown{
     margin-top: 1rem;
-  }
+  } */
   .pushDown1{
     margin-top: 0.7rem;
   }
@@ -124,9 +124,10 @@ padding: 5px;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
-  /* or 284% */
+ text-align: center;
   width: 100%;
-  
+ 
+ align-self: center;
   color: #232164;
   }
   .Transaction-details2{
