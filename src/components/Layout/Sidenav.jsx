@@ -26,10 +26,19 @@ const Sidenav = (props) => {
   const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
   const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
 
-  const state = useSelector((state) => state);
-  // console.log(state);
+  const { data } = useSelector((state) => state.auth.user);
+
   const navItems = [
-    { symbol: Dashboard, name: "Dashboard", link: "/customer-dashboard" },
+    {
+      symbol: Dashboard,
+      name: "Dashboard",
+      link:
+        data.usertype === "CUSTOMER"
+          ? "/customer-dashboard"
+          : data.usertype === "VENDOR"
+          ? "/vendor-dashboard"
+          : "",
+    },
     {
       symbol: Transaction,
       name: "Transactions",
@@ -42,6 +51,8 @@ const Sidenav = (props) => {
       link: "/settings",
     },
   ];
+
+  console.log(data.usertype);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
