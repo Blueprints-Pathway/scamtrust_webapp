@@ -700,7 +700,7 @@ const changePhone = async (e) => {
 
 						<input
 							onChange={handleChange}
-							value={values.office}
+							value={details?.location}
 							className="inputBox-GeneralSettings"
 							name="userName"
 							type="text"

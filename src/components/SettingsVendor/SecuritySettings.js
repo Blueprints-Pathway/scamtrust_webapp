@@ -185,7 +185,7 @@ function SecuritySettings() {
 			console.log(errorMessage, "error");
 			swal({
 				icon: "error",
-				text: errorMessage,
+				text: errorMessage || "your inputs field are empty",
 			});
 		}
 	};
@@ -474,7 +474,7 @@ function SecuritySettings() {
 							</label>
 
 							<input
-								onChange={(e)=>setPins(e.target.value)}
+								onChange={(e) => setPins(e.target.value)}
 								onClick={handleInput}
 								value={pins}
 								className="inputBox-EditSettings2"
