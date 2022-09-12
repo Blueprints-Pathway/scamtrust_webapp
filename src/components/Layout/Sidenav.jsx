@@ -42,7 +42,12 @@ const Sidenav = (props) => {
     {
       symbol: Transaction,
       name: "Transactions",
-      link: "/customer-transaction",
+      link:
+        data.usertype === "CUSTOMER"
+          ? "/customer-transaction"
+          : data.usertype === "VENDOR"
+          ? "/vendor-transaction"
+          : "",
     },
     { symbol: Wallet, name: "Wallet", link: "/wallet" },
     {
@@ -51,8 +56,6 @@ const Sidenav = (props) => {
       link: "/settings",
     },
   ];
-
-  console.log(data.usertype);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();

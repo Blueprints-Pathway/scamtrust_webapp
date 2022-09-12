@@ -37,7 +37,7 @@ function App() {
       <Route path="/" element={<Signin />} />
       <Route element={<ProtectedRoutes />}>
         <Route path="/customer-dashboard" element={<CustomerDashboard />} />
-        <Route path="/customer-transaction" element={<VendorTransaction />} />
+        <Route path="/vendor-transaction" element={<VendorTransaction />} />
         <Route path="/vendor/:slug" element={<VendorDetails />} />
         <Route path="/customer-transaction" element={<CustomerTransaction />} />
         <Route path="/wallet" element={<Wallet />} />
@@ -54,7 +54,7 @@ function App() {
         element={<CustomerSetPassword />}
       />
       <Route path="/customer-signup" element={<CustomerSignup />} />
-      <Route path="/active-account" element={<ActivateAccount />} />
+      <Route path="/activate-account" element={<ActivateAccount />} />
       <Route path="/customer-bvn" element={<CustomerBVN />} />
       <Route path="/customer-set-password" element={<CustomerSetPassword />} />
       <Route path="/customer-activate" element={<CustomerActivate />} />

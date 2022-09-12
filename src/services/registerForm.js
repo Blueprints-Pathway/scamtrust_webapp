@@ -22,9 +22,19 @@ export const fetchBusinessIndustries = async () => {
     console.log(error);
   }
 };
+
 export const fetchBusinessTypes = async () => {
   try {
     const result = await axios.get(`${ApiEndPoint}/misc/list/businesstypes`);
+    return result.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const fetchSecurityQuestion = async () => {
+  try {
+    const result = await axios.get(`${ApiEndPoint}/misc/list/questions`);
     return result.data;
   } catch (error) {
     console.log(error);
