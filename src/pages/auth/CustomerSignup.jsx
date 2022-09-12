@@ -7,12 +7,26 @@ import CustomerTestimony from "../../components/CustomerTestimony/CustomerTestim
 import Logo from "../../components/branding/Logo/Logo";
 import { customerRegistrationSchema } from "../../model/registerModel";
 
+const signupDetailsFromStorage = localStorage.getItem("customer-signup");
+
+const signupDetails = signupDetailsFromStorage
+  ? JSON.parse(signupDetailsFromStorage)
+  : null;
+
+const defaultValues = {
+  email: signupDetails.email,
+  username: signupDetails.username,
+  phone: signupDetails.phone,
+  location: signupDetails.location
+};
+
 const CustomerSignup = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
+    defaultValues: defaultValues || {},
     resolver: yupResolver(customerRegistrationSchema),
   });
 

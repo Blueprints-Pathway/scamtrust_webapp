@@ -37,13 +37,10 @@ const CustomerSecurityQuestion = () => {
         "https://scamtrust.herokuapp.com/api/v1/misc/list/questions"
       );
       const data = await result.json();
-      console.log(data.data);
       setSecurityQuestion(data.data);
     };
     fetchSecurityQuestions();
   }, []);
-
-  console.log(JSON.parse(selectedQuestion));
 
   const submitHandler = async () => {
     setErrorMessage("");
@@ -91,6 +88,7 @@ const CustomerSecurityQuestion = () => {
       const token = response.data.access_token;
       await setSignupPin(pin, token);
       await setUserSecurityQuestion(securityQuestionAnswer, token);
+      localStorage.removeItem("customer-signup");
       setLoading(false);
       navigate("/activate-account");
     } catch (error) {
