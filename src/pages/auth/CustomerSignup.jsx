@@ -13,12 +13,14 @@ const signupDetails = signupDetailsFromStorage
   ? JSON.parse(signupDetailsFromStorage)
   : null;
 
-const defaultValues = {
-  email: signupDetails.email,
-  username: signupDetails.username,
-  phone: signupDetails.phone,
-  location: signupDetails.location
-};
+const defaultValues = signupDetails
+  ? {
+      email: signupDetails.email,
+      username: signupDetails.username,
+      phone: signupDetails.phone,
+      location: signupDetails.location,
+    }
+  : null;
 
 const CustomerSignup = () => {
   const {

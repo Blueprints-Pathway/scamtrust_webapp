@@ -29,7 +29,7 @@ export const login = createAsyncThunk(
             error.response.data.message) ||
           error.message ||
           error.toString();
-      return thunkApi.rejectWithValue(message);
+      return thunkApi.rejectWithValue("Invalid Email or Password");
     }
   }
 );
