@@ -14,7 +14,7 @@ function Pin({
 	const [pin, setPin] = useState();
 	const [withdraws, setWithdraws] = useState();
 	const [hide, setHide] = useState(false);
-	const navigate = useNavigate();
+	
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
 	console.log("user amount", selectedBank);
 	const withdraw = async () => {
