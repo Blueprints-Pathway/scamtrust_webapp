@@ -19,6 +19,7 @@ import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 import sucess from "../../images/done.svg";
 import cancled from "../../images/failled.svg";
 import ongoing from "../../images/ongoing.svg";
+
 const VendorTransaction = (props) => {
 	const { data } = props;
 	const [activeTab, setActiveTab] = useState("All Transactions");
@@ -205,7 +206,7 @@ const VendorTransaction = (props) => {
 	}, []);
 	// console.log(cancelled,"hello");
 	return (
-		<Layout>
+		<Layout heading="Transaction">
 			<div className="transactions-card-cover ">
 				<div className="transactions-card">
 					<div className="Transactions">

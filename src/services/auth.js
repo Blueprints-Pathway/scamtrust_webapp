@@ -58,13 +58,14 @@ export const setSignupPin = async (data, token) => {
     throw new Error(error);
   }
 };
-export const setSecurityQuestion = async (data) => {
+export const setUserSecurityQuestion = async (data, token) => {
   try {
     const result = await fetch(`${scamtrustApi}/auth/set-security-question`, {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json",
+        AUTHORIZATION: `Bearer ${token}`,
       },
     });
     const response = await result.json();

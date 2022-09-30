@@ -12,7 +12,7 @@ import { fetchUser } from "../../services/auth";
 import WithdrawFunds from "../../components/Pages/CustDashboard/WithdrawFunds";
 import ConfirmWIthdrawFunds from "../../components/Pages/CustDashboard/ConfirmWIthdrawFunds";
 import ConfirmTransactionPin from "../../components/Pages/CustDashboard/ConfirmTransactionPin";
-import SuccessfulWithdrawal from "../../components/Pages/CustDashboard/SuccessfulWithdrawal";
+// import SuccessfulWithdrawal from "../../components/Pages/CustDashboard/SuccessfulWithdrawal";
 import DepositFunds from "../../components/Pages/CustDashboard/DepositFunds";
 
 const CustomerDashboard = () => {
@@ -72,10 +72,10 @@ const CustomerDashboard = () => {
         setIsWithdrawing={setIsWithdrawing}
         setConfirmTransactionPin={setConfirmTransactionPin}
       />
-      <SuccessfulWithdrawal
+      {/* <SuccessfulWithdrawal
         setWithdrawSuccessful={setWithdrawSuccessful}
         withdrawSuccessful={withdrawSuccessful}
-      />
+      /> */}
       {showInitiateTransaction ? (
         <Backdrop showInitiateTransaction={showInitiateTransaction}>
           <InitiateTransaction

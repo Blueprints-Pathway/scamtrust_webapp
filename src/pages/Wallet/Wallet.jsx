@@ -168,7 +168,7 @@ const Wallet = () => {
 											src={CopyBlack}
 											alt="more_info"
 										/>
-										<span>7820857716</span>
+										<span>78208577167</span>
 									</p>
 								</div>
 								<div className="bg-[#EAEAEA] flex-col md:flex-row rounded-2xl mb-5 flex justify-between p-5">
