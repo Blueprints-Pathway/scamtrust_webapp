@@ -5,25 +5,6 @@ import SecuredBy from "../../../assets/images/svg/secured-by.svg";
 import Encrypted from "../../../assets/images/svg/encrypted.svg";
 
 function Success({ setDisplay, setShow, setIsWithdrawing }) {
-	// const { withdrawSuccessful, setWithdrawSuccessful } = props;
-
-	// const onConfirmed = () => {
-	// 	setWithdrawSuccessful(false);
-	// };
-
-	// useEffect(() => {
-	// 	if (typeof window !== "undefined") {
-	// 		if (window) document.body.style.overflow = "hidden";
-	// 	}
-
-	// 	if (!withdrawSuccessful) {
-	// 		if (typeof window !== "undefined") {
-	// 			if (window) document.body.style.overflow = "unset";
-	// 		}
-	// 	}
-	// }, [withdrawSuccessful]);
-
-	// if (!withdrawSuccessful) return <></>;
 	const navigate = useNavigate();
 	const dashboard = () => {
 		navigate("/wallet");
