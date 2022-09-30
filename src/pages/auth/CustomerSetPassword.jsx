@@ -53,6 +53,7 @@ const CustomerSetPassword = () => {
                 id="password"
                 {...register("password")}
                 name="password"
+                placeholder="password"
                 className={`border-[0.5px] text-black w-full  border-[#D5D8DA] h-[30px] 2xl:h-[40px] rounded-[5px] focus:outline-none px-[15px] 2xl:text-lg py-2 placeholder:2xl:text-xl text-[13px] placeholder:text-[12px] placeholder:text-[#8E8E8E]`}
               />
             </div>
@@ -80,6 +81,7 @@ const CustomerSetPassword = () => {
               {...register("password_confirmation")}
               id="confirmPassword"
               name="password_confirmation"
+              placeholder="Confirm Password"
               className={`border-[0.5px] w-full border-[#D5D8DA] h-[30px] 2xl:h-[40px] rounded-[5px] focus:outline-none px-[15px] 2xl:text-lg py-2 placeholder:2xl:text-xl text-[13px] placeholder:text-[12px] placeholder:text-[#8E8E8E]`}
             />
             <img

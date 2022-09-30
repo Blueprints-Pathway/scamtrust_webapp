@@ -14,6 +14,7 @@ const Signin = () => {
   const [email, setEmail] = useState("");
   const [passwordVisibility, setPasswordVisibility] = useState(false);
   const [showSignupModal, setShowSignupModal] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -28,6 +29,11 @@ const Signin = () => {
 
   const loginHandler = (e) => {
     e.preventDefault();
+    if (password.trim().length < 8) {
+      setErrorMessage("Password must be at least 8 characters long");
+      return;
+    }
+    setErrorMessage("");
     const payload = {
       email,
       password,
@@ -48,7 +54,7 @@ const Signin = () => {
       }
       dispatch(reset());
     }
-  }, [user, isError, isSuccess, message, navigate, dispatch]);
+  }, [user, isError, isSuccess, message, navigate, dispatch, errorMessage]);
 
   return (
     <>
@@ -69,6 +75,13 @@ const Signin = () => {
             onSubmit={loginHandler}
             className="px-[20px] lg:px-[63px] 2xl:px-[89px] absolute mt-10 lg:mt-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] lg:w-[420px] 2xl:w-[560px]"
           >
+            {errorMessage.length ? (
+              <div className="bg-[#FF0000] text-center text-white rounded-md py-3 mb-[30px] text-sm">
+                {errorMessage}
+              </div>
+            ) : (
+              <></>
+            )}
             {isError ? (
               <div className="bg-[#FF0000] text-center text-white rounded-md py-3 mb-[30px] text-sm">
                 {message}
