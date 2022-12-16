@@ -629,7 +629,8 @@ const changePhone = async (e) => {
 
 					<input
 						onChange={handleChange}
-						value={details.name}
+						value={details?.username
+						}
 						className="inputBox-GeneralSettings"
 						name="businessName"
 						type="text"

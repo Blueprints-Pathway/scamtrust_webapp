@@ -137,6 +137,8 @@ border: 0.5px solid #D5D8DA;
 border-radius: 5px;
 text-align: right;
 padding: 5px;
+padding-right: 20vh;
+
 }
 .GeneralSettings{
   position: absolute;
