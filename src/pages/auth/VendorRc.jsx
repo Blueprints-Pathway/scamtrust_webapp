@@ -9,11 +9,7 @@ import ErrorInfo from "../../assets/images/svg/error-info.svg";
 
 const VendorRc = () => {
   const headingText = (
-<<<<<<< HEAD
     <h3 className="text-[#232164] font-semibold text-base lg:text-xl 2xl:text-3xl mb-[5px] mt-[43px] lg:mt-[87.75px] 2xl:mt-[117px] px-[85px]">
-=======
-    <h3 className=" text-center text-[#232164] font-semibold text-base lg:text-xl 2xl:text-3xl mb-[5px] mt-[43px] lg:mt-[87.75px] 2xl:mt-[117px]">
->>>>>>> cac16a4d51a0bfddad6913788587e44c1a900fd2
       Registered Company Number
     </h3>
   );
@@ -39,7 +35,6 @@ const VendorRc = () => {
 
   return (
     <SignupWrapper showSecuredLogo={true} headingText={headingText}>
-<<<<<<< HEAD
       <div className="flex justify-center">
       <p className="text-[rgba(35,33,100,0.5)] mb-[30px] lg:mb-[61px] text-[12px] 2xl:text-base w-[280px] lg:w-[353.25px] 2xl:w-[471px]">
         We use your RC Number to verify that your business is duly registered.
@@ -47,13 +42,6 @@ const VendorRc = () => {
       </div>
       <form onSubmit={handleSubmit(rcHandler)} className="flex flex-col items-center">
         <div className="mb-[26.25px] 2xl:mb-[35px] w-[280px] lg:w-[353.25px] 2xl:w-[471px]">
-=======
-      <p className="text-center text-[rgba(35,33,100,0.5)] mb-[30px] lg:mb-[61px] text-[12px] 2xl:text-base w-full lg:w-[353.25px] 2xl:w-full">
-        We use your RC Number to verify that your business is duly registered.
-      </p>
-      <form onSubmit={handleSubmit(rcHandler)}>
-        <div className=" text-center  2xl:mb-10 w-full lg:w-full 2xl:w-full px-10">
->>>>>>> cac16a4d51a0bfddad6913788587e44c1a900fd2
           <label
             htmlFor="rc"
             className=" text-center text-[13.5px] 2xl:text-lg text-colorPrimary"
