@@ -66,7 +66,7 @@ function SettingsVendor() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	return (
-		<>
+		<div>
 			<Layout className="containerSettings" name="Settings">
 				<div className="containerSettings2">
 					<div className={checked ? "Center active" : "Center"}>
@@ -137,7 +137,7 @@ function SettingsVendor() {
 				</div>
 				{/* <SideBar /> */}
 			</Layout>
-		</>
+		</div>
 	);
 }
 

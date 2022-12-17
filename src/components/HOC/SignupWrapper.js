@@ -13,9 +13,9 @@ const SignupWrapper = (props) => {
         {children}
 
         {showSecuredLogo && (
-          <div className="flex relative items-end justify-center mb-[46px]">
+          <div className="flex relative items-end justify-center mb-[12px] mx-[90px]">
             <div className="absolute left-[22%] lg:left-[25%] 2xl:left-[35%]">
-              <p className="text-[#706E6E] font-semibold flex">Secured by</p>
+              <p className="text-[#706E6E] font-semibold flex justify-center text-base">Secured by</p>
             </div>
             <div className="h-[31px] w-[75px] absolute left-[80%] -translate-x-[80%] lg:left-[60%] lg:-translate-x-[60%] bottom-[20px]">
               <Logo logosm={true} />

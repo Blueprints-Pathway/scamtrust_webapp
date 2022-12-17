@@ -85,7 +85,7 @@ const Wallet = () => {
 
 										<div className="relative">
 											<img
-												className="2xl:ml-5 ml-3 cursor-pointer"
+												className="3xl:ml-5 ml-3 cursor-pointer py-2"
 												src={MoreInfo}
 												alt="more_info"
 												onClick={toggleAvailableBalanceInfo}
@@ -115,7 +115,7 @@ const Wallet = () => {
 
 										<div className="relative">
 											<img
-												className="2xl:ml-5 ml-3 cursor-pointer"
+												className="3xl:ml-5 ml-3 cursor-pointer py-2"
 												src={MoreInfo}
 												alt="more_info"
 												onClick={toggleOutgoingBalanceInfo}
@@ -145,7 +145,7 @@ const Wallet = () => {
 
 										<div className="relative">
 											<img
-												className="2xl:ml-5 w-3 h-3 ml-3 cursor-pointer"
+												className="3xl:ml-5 w-3 h-3 ml-3 cursor-pointer"
 												src={MoreInfo}
 												alt="more_info"
 												onClick={togglePrimaryAccountBalanceInfo}

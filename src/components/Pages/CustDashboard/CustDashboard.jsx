@@ -80,7 +80,7 @@ const CustomerDashboard = (props) => {
 
         {/* FEE CALCULATOR */}
         <div className="w-full bg-[#FFFEFE] lg:rounded-[24px] rounded-lg lg:px-[37px] px-5 py-3 lg:py-[29px] mb-[13px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
-          <p className="2xl:text-xl text-colorPrimary">Fee Calculator</p>
+          <p className="2xl:text-xl text-colorPrimary text-base font-normal">Fee Calculator</p>
 
           <div className="border-b-2 mb-5 2xl:mb-[53px] border-b-colorGreen mt-[13px]" />
 
@@ -93,8 +93,8 @@ const CustomerDashboard = (props) => {
                 type="text"
                 value={transactionAmount}
                 onChange={(e) => setTransactionAmount(e.target.value)}
-                placeholder="Enter amount"
-                className="w-[100px] lg:w-[144px] ml-4 inline-block text-[10px] h-7 2xl:h-[34px] items-center border focus:outline-none border-[#E6E7E8] placeholder:text-[8px] 2xl:placeholder:text-xs pl-6 rounded-md"
+                placeholder="₦   Enter amount"
+                className="w-[100px] lg:w-[120px] ml-4 inline-block text-[10px] h-7 2xl:h-[34px] items-center focus:outline-none border-[#E6E7E8] placeholder:text-[11px] 2xl:placeholder:text-xs pl-2 border-[1px] rounded"
               />
             </div>
             <div className="flex justify-between items-center text-left mb-4 2xl:mb-5">
@@ -105,7 +105,8 @@ const CustomerDashboard = (props) => {
                 type="text"
                 value={TRANSACTION_FEE === 0 ? "" : TRANSACTION_FEE}
                 disabled
-                className="w-[100px] lg:w-[144px] ml-4 inline-block text-[10px] h-7 2xl:h-[34px] items-center disabled:bg-[#E6E7E8] border focus:outline-none border-[#E6E7E8] placeholder:text-[8px] 2xl:placeholder:text-xs pl-6 rounded-md"
+                placeholder="₦"
+                className="w-[100px] lg:w-[120px] ml-4 inline-block text-[10px] h-7 2xl:h-[34px] items-center disabled:bg-[#E6E7E8] focus:outline-none border-[#E6E7E8] placeholder:text-[12px] 2xl:placeholder:text-xs pl-2 border-[1px] rounded"
               />
             </div>
             <div className="flex justify-between items-center text-left mb-4 2xl:mb-5">
@@ -116,7 +117,8 @@ const CustomerDashboard = (props) => {
                 type="text"
                 disabled
                 value={TOTAL_AMOUNT === 0 ? "" : TOTAL_AMOUNT}
-                className="w-[100px] lg:w-[144px] ml-4 inline-block text-[10px] h-7 2xl:h-[34px] items-center disabled:bg-[#E6E7E8] border focus:outline-none border-[#E6E7E8] placeholder:text-[8px] 2xl:placeholder:text-xs pl-6 rounded-md"
+                placeholder="₦"
+                className="w-[100px] lg:w-[120px] ml-4 inline-block text-[10px] h-7 2xl:h-[34px] items-center disabled:bg-[#E6E7E8] focus:outline-none border-[#E6E7E8]  placeholder:text-[12px] placeholdercolor-white pl-2 border-[1px] rounded"
               />
             </div>
           </div>
@@ -146,7 +148,7 @@ const CustomerDashboard = (props) => {
           </div>
         </div>
 
-        <div className="hidden md:block place-content-center mt-[100px] mb-5">
+        <div className="hidden md:block place-content-center mt-[50px] mb-5 mx-[130px]">
           <img src={SecuredBy} alt="secured by scam trust" />
         </div>
       </div>

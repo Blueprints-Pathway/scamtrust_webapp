@@ -130,9 +130,9 @@ const Signin = () => {
             </div>
 
             <div className="flex justify-between font-normal text-sm 2xl:text-xl text-[#8E8E8E] mb-[75px] 2xl:mb-[100px]">
-              <div className="">
-                <span>Remember Me </span>
-                <input type="checkbox" />
+              <div className="flex items-center justify-between">
+                <p className="px-2">Remember Me</p>
+                <input type="checkbox"/>
               </div>
               <a className="">Forgot Password? </a>
             </div>

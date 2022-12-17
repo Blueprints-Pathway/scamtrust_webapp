@@ -144,7 +144,7 @@ padding: 5px;
   left: 6vw;
   top: 3.5rem;
   cursor: pointer;
-  
+  margin: 20px 0px;
 }
 .vendorAction{
   position: absolute;

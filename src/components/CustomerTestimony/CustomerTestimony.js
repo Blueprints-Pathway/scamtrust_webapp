@@ -4,7 +4,7 @@ const CustomerTestimony = () => {
   return (
     <div className="font-primary absolute left-1/2 -translate-x-1/2 top-[40%] -translate-y-[40%]">
       <div className="relative">
-        <div className="absolute left-[-10%] top-[-10%] text-colorPrimaryDark bg-white font-black text-[30.75] 2xl:text-[41px] flex items-center justify-center h-[33.75px] w-[33.75px] 2xl:h-[45px] 2xl:w-[45px] rounded-full border-[1.5px] border-[#CFD7DE]">
+        <div className="text-colorPrimaryDark bg-white font-black text-[30.75] 2xl:text-[41px] flex justify-center h-[33.75px] w-[33.75px] 2xl:h-[45px] 2xl:w-[45px] rounded-full border-[1.5px] border-[#CFD7DE] text-4xl pt-1">
           “
         </div>
         <h3 className="mb-[40.5px] 2xl:mb-[54px] min-w-[497px] max-w-[663px] font-extrabold text-[20px] 2xl:text-3xl text-colorPrimaryDark">

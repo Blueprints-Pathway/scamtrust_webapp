@@ -9,7 +9,7 @@ import ErrorInfo from "../../assets/images/svg/error-info.svg";
 
 const VendorRc = () => {
   const headingText = (
-    <h3 className="text-[#232164] font-semibold text-base lg:text-xl 2xl:text-3xl mb-[5px] mt-[43px] lg:mt-[87.75px] 2xl:mt-[117px]">
+    <h3 className="text-[#232164] font-semibold text-base lg:text-xl 2xl:text-3xl mb-[5px] mt-[43px] lg:mt-[87.75px] 2xl:mt-[117px] px-[85px]">
       Registered Company Number
     </h3>
   );
@@ -35,10 +35,12 @@ const VendorRc = () => {
 
   return (
     <SignupWrapper showSecuredLogo={true} headingText={headingText}>
+      <div className="flex justify-center">
       <p className="text-[rgba(35,33,100,0.5)] mb-[30px] lg:mb-[61px] text-[12px] 2xl:text-base w-[280px] lg:w-[353.25px] 2xl:w-[471px]">
         We use your RC Number to verify that your business is duly registered.
       </p>
-      <form onSubmit={handleSubmit(rcHandler)}>
+      </div>
+      <form onSubmit={handleSubmit(rcHandler)} className="flex flex-col items-center">
         <div className="mb-[26.25px] 2xl:mb-[35px] w-[280px] lg:w-[353.25px] 2xl:w-[471px]">
           <label
             htmlFor="rc"
