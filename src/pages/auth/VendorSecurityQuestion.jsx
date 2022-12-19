@@ -49,7 +49,7 @@ const VendorSecurityQuestion = () => {
 
 	console.log(question, "question securitys");
 	const headingText = (
-		<div className=" flex justify-center content-center  text-center mb-[15px] mt-[43px] lg:mt-[87.75px] 2xl:mb-[42px] 2xl:mt-[117px]">
+		<div className=" flex justify-center space-x-96 content-center  text-center mb-[15px] mt-[43px] lg:mt-[87.75px] 2xl:mb-[42px] 2xl:mt-[117px]">
 			<h3 className="text-center  text-[#232164] font-semibold text-base lg:text-xl 2xl:text-3xl">
 				Security Question
 			</h3>
@@ -86,13 +86,14 @@ const VendorSecurityQuestion = () => {
 	console.log(answer, "hello answer");
 	return (
 		<SignupWrapper headingText={headingText}>
-			<p className="text-center  text-[rgba(35,33,100,0.5)] mb-[30px] lg:mb-[61px] text-[12px] 2xl:text-base w-full lg:w-full 2xl:w-full">
+			<p className=" ml-20  text-[rgba(35,33,100,0.5)] mb-[30px] lg:mb-[61px] text-[12px] 2xl:text-base w-full lg:w-full 2xl:w-full">
 				Security questions add an extra layer of security to your account; It is
 				to
 				<br /> verify if the account really belongs to you.
 			</p>
 			<div className="grid mb-[15px] 2xl:mb-[35px] w-full lg:w-full 2xl:w-full">
 				<label
+        className='ml-20 '
 					style={{
 						fontFamily: "Poppins",
 						fontStyle: "normal",
@@ -104,7 +105,7 @@ const VendorSecurityQuestion = () => {
 				>
 					Security Question
 				</label>
-				<select className="question  mb-[26.25px] 2xl:mb-[35px] w-[280px] lg:w-full 2xl:w-full">
+				<select className="question ml-20 mb-[26.25px] 2xl:mb-[35px] w-[280px] lg:w-96 2xl:w-5/6">
 					{question?.data?.map((newquestion) => {
 						return (
 							<option key={newquestion?.id}>{newquestion?.question}</option>
@@ -112,7 +113,21 @@ const VendorSecurityQuestion = () => {
 					})}
 				</select>
 			</div>
-			<div className="question   mb-[26.25px] 2xl:mb-[35px] w-full lg:w-full 2xl:w-full">
+      <label
+        className='ml-20 '
+					style={{
+						fontFamily: "Poppins",
+						fontStyle: "normal",
+						fontWeight: 400,
+						fontSize: "18px",
+						lineHeight: "27px",
+						color: "#232164",
+					}}
+				>
+					Your Answer
+				</label>
+			<div className="question ml-20  mb-[26.25px] 2xl:mb-[35px] w-full lg:w-full 2xl:w-5/6">
+        
 				<input
 					value={answer}
 					className="mx-10"
@@ -130,7 +145,7 @@ const VendorSecurityQuestion = () => {
 				<></>
 			)}
 
-			<div className=" w-[280px] lg:w-[353.25px] 2xl:w-full mb-[58px] lg:mb-[117px] 2xl:mb-[156px]">
+			<div className=" w-[280px] ml-20 lg:w-[353.25px] 2xl:w-5/6 mb-[58px] lg:mb-[117px] 2xl:mb-[156px]">
 				<Button
 					onClick={() => {
 						submitHandler();
