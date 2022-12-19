@@ -15,7 +15,7 @@ position: fixed;
 }
 .left{
 position: relative;
-top: 4rem;
+top: 12rem;
 display: flex;
 justify-content: space-around;
 flex-wrap: wrap;
@@ -66,7 +66,7 @@ color: #707070;
   min-height: 25rem;
   max-height: 25rem; 
   padding: 0.5rem;
-  margin-top: 2rem;
+  margin-top: 15rem;
   min-width: 30rem;
   width: 45vw;
   
@@ -323,8 +323,11 @@ margin-left: 2vw;
   margin-left: 9vw;
   position: absolute;
 }
+.field-bottom-img{
+  width:50px
+}
 .Secured{
-  position: relative;
+  /* position: relative; */
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 600;
@@ -503,7 +506,7 @@ color: #A6A6A6;
   border-radius: 15px;
   min-height: 25rem;
   max-height: 25rem; 
-  margin-top: 2rem;
+  margin-top: 15rem;
   padding: 0.5rem;
   min-width: 25rem;
   width: 30vw;

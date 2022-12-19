@@ -19,3 +19,11 @@ align-items: flex-end;
 
 color: #333333;
 }
+.question{
+    background: #FFFFFF;
+border: 2px solid #D5D8DA;
+border-radius: 5px;
+padding: 10px;
+margin-top: 10px;
+/* margin-right: 50px; */
+}
