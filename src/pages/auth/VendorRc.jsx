@@ -9,7 +9,7 @@ import ErrorInfo from "../../assets/images/svg/error-info.svg";
 
 const VendorRc = () => {
   const headingText = (
-    <h3 className="text-[#232164] font-semibold text-base lg:text-xl 2xl:text-3xl mb-[5px] mt-[43px] lg:mt-[87.75px] 2xl:mt-[117px] px-[85px]">
+    <h3 className="text-[#232164] font-semibold text-base lg:text-xl 2xl:text-3xl mb-[5px] mt-[43px] lg:mt-[87.75px] 2xl:mt-[117px] px-[80px] lg:px-[150px]">
       Registered Company Number
     </h3>
   );

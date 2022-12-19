@@ -33,7 +33,7 @@ const VendorSetPassword = () => {
 	};
 
   const headingText = (
-    <h3 className="font-extrabold text-colorPrimary text-base md:text-lg 2xl:text-2xl pt-[42px] 2xl:mb-[152px] mb-[80px] mt-5 px-[50px]">
+    <h3 className="font-extrabold text-colorPrimary text-base md:text-lg 2xl:text-2xl pt-[42px] 2xl:mb-[152px] mb-[40px] mt-5 px-[50px]">
       {" "}
       Let&apos;s help you secure your{" "}
       <span className="text-colorSecondary">ScamTrust</span> Vendor account.
@@ -107,7 +107,7 @@ const VendorSetPassword = () => {
           )}
         </div>
 
-        <div className="my-[40px] mb-[100px] 2xl:mb-[152px] mx-[40px]">
+        <div className="my-[30px] mb-[60px] 2xl:mb-[152px] mx-[40px]">
           <Button forwardIcon={true}>Proceed to set a transaction pin</Button>
         </div>
       </form>
