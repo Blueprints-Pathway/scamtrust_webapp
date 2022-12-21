@@ -7,9 +7,11 @@ import Button from "../../components/UI/Button";
 import SecurityCard from "../../assets/images/security-card.svg";
 
 import InputGroup from "../../components/UI/InputGroup";
+import SelectGroup from "../../components/UI/SelectGroup"
 import { registerUser } from "../../services/auth";
 import axios from "axios";
 import "./rcSettings.css";
+
 const VendorSecurityQuestion = () => {
 	const [errorMessage, setErrorMessage] = useState("");
 	const [loading, setLoading] = useState(false);
