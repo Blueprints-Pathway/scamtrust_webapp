@@ -107,7 +107,7 @@ const VendorSetPassword = () => {
           )}
         </div>
 
-        <div className="my-[30px] mb-[60px] 2xl:mb-[152px] mx-[40px]">
+        <div className="my-[30px] mb-[80px] 2xl:mb-[152px] mx-[40px]">
           <Button forwardIcon={true}>Proceed to set a transaction pin</Button>
         </div>
       </form>

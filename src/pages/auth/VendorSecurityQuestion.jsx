@@ -50,12 +50,14 @@ const VendorSecurityQuestion = () => {
 	}, []);
 
   const headingText = (
-    <div className="flex justify-between items-center mb-[15px] mt-[43px] lg:mt-[87.75px] 2xl:mb-[42px] 2xl:mt-[117px]">
-      <h3 className="text-[#232164] font-semibold text-base lg:text-xl 2xl:text-3xl">
+    <div className="flex justify-between items-center mb-[20px] mt-[43px] mx-[27px] lg:mt-[60px] lg:mx-[85px] 2xl:mb-[42px] 2xl:mt-[117px]">
+      <h3 className="text-[#232164] font-bold text-xl lg:text-2xl 2xl:text-3xl">
         Security Question
       </h3>
 
-      <img src={SecurityCard} alt="security card" />
+      <img 
+	 className="w-12" 
+	  src={SecurityCard} alt="security card" />
     </div>
   );
 
@@ -87,7 +89,8 @@ const VendorSecurityQuestion = () => {
 
   return (
     <SignupWrapper headingText={headingText}>
-      <p className="text-[rgba(35,33,100,0.5)] mb-[30px] lg:mb-[61px] text-[12px] 2xl:text-base w-[280px] lg:w-[353.25px] 2xl:w-[471px]">
+		<div className="px-[27px] lg:mx-[55px]">
+      <p className="text-[rgba(35,33,100,0.5)] mb-[30px] lg:mb-[37px] text-[12px] 2xl:text-base w-[280px] lg:w-[353.25px] 2xl:w-[471px]">
         Security questions add an extra layer of security to your account; It is
         to verify if the account really belongs to you.
       </p>
@@ -109,11 +112,12 @@ const VendorSecurityQuestion = () => {
         <></>
       )}
 
-      <div className="w-[280px] lg:w-[353.25px] 2xl:w-[471px] mb-[58px] lg:mb-[117px] 2xl:mb-[156px]">
+      <div className="w-[280px] lg:w-[353.25px] 2xl:w-[471px] mb-[58px] mt-[50px] lg:mb-[60px] 2xl:mb-[156px]">
         <Button onClick={submitHandler} bgColor="bg-colorSecondary">
           {loading ? "Loading..." : "Continue"}
         </Button>
       </div>
+	  </div>
     </SignupWrapper>
   );
 };

@@ -229,7 +229,6 @@ function DashBoardVendor() {
                     {select2 ? <h6 className="Selection active" >Outgoing</h6> : <h6 className="Selection" onClick={handleSelect2}>Outgoing</h6>}
                     {select3 ? <h6 className="Selection active">Cancelled</h6> : <h6 className="Selection" onClick={handleSelect3}>Cancelled</h6>}
                     {select4 ? <h6 className="Selection active" >Completed</h6> : <h6 className="Selection" onClick={handleSelect4}>Completed</h6>}
-
                   </div>
 
                   <div className="sub-category">
