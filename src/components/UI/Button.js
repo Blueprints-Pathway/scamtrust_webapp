@@ -9,7 +9,7 @@ const Button = (props) => {
       disabled={disabled}
       className={`disabled:bg-[#D5D8DA] justify-center flex items-center px-[10px] w-full rounded-[5px] ${
         bgColor ? `${bgColor}` : "bg-colorPrimary"
-      } py-2 text-white text-[13px] 2xl:text-lg`}
+      } py-3 text-white text-[13px] 2xl:text-lg`}
     >
       {children}
       {forwardIcon && (

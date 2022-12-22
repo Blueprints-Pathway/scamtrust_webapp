@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import './DashBoardVendor.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbTack, faBook, faShareNodes, faEye } from "@fortawesome/free-solid-svg-icons";
+import payment from '../../assets/payment-img.png'
+import faq from '../../assets/conversation-img.png'
+import chat from '../../assets/chat-img.png'
 
 import trophy2 from '../../images/trophy2 (3).png'
 import trophy from '../../images/trophy2 (1).png'
@@ -226,7 +229,6 @@ function DashBoardVendor() {
                     {select2 ? <h6 className="Selection active" >Outgoing</h6> : <h6 className="Selection" onClick={handleSelect2}>Outgoing</h6>}
                     {select3 ? <h6 className="Selection active">Cancelled</h6> : <h6 className="Selection" onClick={handleSelect3}>Cancelled</h6>}
                     {select4 ? <h6 className="Selection active" >Completed</h6> : <h6 className="Selection" onClick={handleSelect4}>Completed</h6>}
-
                   </div>
 
                   <div className="sub-category">
@@ -397,43 +399,61 @@ function DashBoardVendor() {
         </div>
         <div className={close ? "welcome active" : "welcome"}>
           <div className='welcome-card'>
+            <div className='px-[10px]'>
             <div className='welcome-message'>
               Welcome to ScamTrust!
             </div>
-            <small className='welcome-description'>
-              Get secuired by ScamTrust
+            <small className='welcome-description pl-[5px]'>
+              Get secured by ScamTrust
             </small>
-            <div className="action-card-title">
-              <h5>Get Started</h5>
             </div>
+
+            <div className=' flex flex-col items-center justify-center mx-[135px]'>
+            {/* <div className="action-card-title text-sm pr-[70px]"> */}
+            <div className="action-card-title text-sm">
+              <h5 className='ml-[-12px] md:ml-[10px]'>Get Started</h5>
+            {/* </div> */}
             <div className='welcome-cards1'>
-              <div className='action-card1'>
-                <FontAwesomeIcon icon={faShareNodes} className="action-icon" /> Add withdarwal account
-              </div>
+              {/* <div className='action-card1'> */}
+                {/* <FontAwesomeIcon icon={faShareNodes} className="action-icon" /> */}
+                <img className='w-8' src={payment} alt='payment icon' />
+                <p className='px-2'>Add withdrawal account</p>
+              {/* </div> */}
+            </div>
+            </div>
 
-            </div>
-            <div className='help-section'>
-              <div className="action-card-title">
-                <h5> Need help?</h5>
-              </div>
-              <div className='help-cards'>
-                <div className='welcome-cards'>
-                  <div className='action-card'>
-                    <FontAwesomeIcon icon={faShareNodes} className="action-icon" />FAQs
-                  </div>
+            {/* <div className='help-section'> */}
+            {/* <div className='flex-column items-center justify-center mt-3 mx-[58px]'> */}
+              <div className='md:flex'>
+              <div className="action-card-title text-sm md:px-5">
+                <h5 className='ml-[-12px] md:ml-[10px]'>Need help?</h5>
+              {/* <div className='help-cards'> */}
+                <div className='welcome-cards1 pr-[90px]'>
+                  {/* <div className='action-card'> */}
+                  <img className='w-8' src={faq} alt='faq icon' />
+                  <p className='px-4'>FAQs</p>
+                  {/* </div> */}
                 </div>
-                <div className='welcome-cards'>
-                  <div className='action-card'>
-                    <FontAwesomeIcon icon={faShareNodes} className="action-icon" />Chat with us
-                  </div>
                 </div>
-                <div className='welcome-card-close'>
-                  <h1 onClick={handleClosed}>Close X </h1>
+
+                <div className="action-card-title text-sm md:px-5">
+                <h5 className='ml-[-12px] md:ml-[10px]'>Chat with us</h5>
+                <div className='welcome-cards1 pr-[60px]'>
+                  {/* <div className='action-card'> */}
+                  <img className='w-8' src={chat} alt='chat icon' />
+                  <p className='px-4'>Chat with us</p>
+                  {/* </div> */}
                 </div>
-              </div>
-            </div>
+                </div>
+                </div>
+                </div>
+              {/* </div> */}
+            {/* </div> */}
+
+            <div className='welcome-card-close'>
+                  <h1 onClick={handleClosed}>Close  x </h1>
+                </div>
           </div>
-
         </div>
 
       </div>

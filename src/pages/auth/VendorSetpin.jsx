@@ -5,7 +5,7 @@ import SignupWrapper from "../../components/HOC/SignupWrapper";
 import Button from "../../components/UI/Button";
 
 const inputClassName =
-  "h-[40px] w-[40px] focus:border-[#D5D8DA] focus:outline-none text-center rounded-lg text-colorPrimary text-xl border-[#D5D8DA] border-2 bg-[#fff]";
+  "h-[30px] w-[30px] focus:border-[#D5D8DA] focus:outline-none text-center rounded text-colorPrimary text-xl border-[#D5D8DA] border-[1px] bg-[#fff]";
 
 const VendorSetpin = () => {
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ const VendorSetpin = () => {
   };
 
   const headingText = (
-    <h3 className="font-extrabold text-lg 2xl:text-2xl 2xl:mb-[100px] mb-[75px]">
+    <h3 className="font-extrabold text-lg 2xl:text-2xl 2xl:mb-[100px] mb-[75px] px-8 mx-8 mt-8 pt-5 text-[#262466]">
       {" "}
       Let&apos;s help you secure your{" "}
       <span className="text-colorSecondary">ScamTrust</span> Vendor account.
@@ -84,15 +84,16 @@ const VendorSetpin = () => {
   };
 
   return (
+    <div className="mb-12">
     <SignupWrapper headingText={headingText} showSecuredLogo={true}>
       <div className="w-[248.25px] 2xl:w-[331px] mx-auto">
         <p className="text-center text-[#7D8287] text-[11px]">
           To set up your pin, input your 4-digit code and confirm it below.
         </p>
 
-        <div className="mb-[20px]">
-          <p>Transaction pin</p>
-          <div className="mb-[1.46rem] flex justify-between">
+        <div className="mb-[20px] mt-3">
+          <p className="text-base font-medium pb-2 flex px-10">Transaction pin</p>
+          <div className="mb-[1.46rem] flex justify-between mx-10">
             <input
               maxLength={1}
               ref={firstInput}
@@ -125,8 +126,8 @@ const VendorSetpin = () => {
         </div>
 
         <div className="mb-[20px]">
-          <p>Confirm transaction pin</p>
-          <div className="mb-[1.46rem] flex justify-between">
+          <p className="text-base font-medium pb-2 flex px-10">Confirm transaction pin</p>
+          <div className="mb-[1.46rem] flex justify-between mx-10">
             <input
               maxLength={1}
               ref={fifthInput}
@@ -165,6 +166,7 @@ const VendorSetpin = () => {
         </div>
       </div>
     </SignupWrapper>
+    </div>
   );
 };
 

@@ -5,7 +5,7 @@ import "../../index.css";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faCircleQuestion,
-	faCaretRight,
+	// faCaretRight,
 } from "@fortawesome/free-solid-svg-icons";
 import scamTrustLogo from "../../images/Group114(1).png";
 import ellipse2 from "../../images/Ellipse2.png";

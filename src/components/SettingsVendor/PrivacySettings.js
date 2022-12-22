@@ -50,7 +50,7 @@ function PrivacySettings() {
 						<label className="security-text">RC number</label>
 						<label className="security-text2">7654321</label>
 						<label className="security-text-hash">
-							Control your notifications from here
+						   Display RC Number on your profile
 						</label>
 					</div>
 

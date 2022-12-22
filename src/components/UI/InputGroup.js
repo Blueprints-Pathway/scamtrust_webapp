@@ -9,7 +9,7 @@ const InputGroup = (props) => {
     <div className="flex flex-col">
       <div className="flex items-center">
         <label
-          className="text-[13px] 2xl:text-lg text-colorTertiary mb-[10px] 2xl:mb-[15px]"
+          className="text-[13px] 2xl:text-lg text-[#232164] mb-[10px] 2xl:mb-[15px]"
           htmlFor={label}
         >
           {label}

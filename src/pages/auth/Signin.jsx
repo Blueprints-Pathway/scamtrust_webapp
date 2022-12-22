@@ -75,24 +75,24 @@ const Signin = () => {
             onSubmit={loginHandler}
             className="px-[20px] lg:px-[63px] 2xl:px-[89px] absolute mt-10 lg:mt-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] lg:w-[420px] 2xl:w-[560px]"
           >
-            {errorMessage.length ? (
+            {/* {errorMessage.length ? (
               <div className="bg-[#FF0000] text-center text-white rounded-md py-3 mb-[30px] text-sm">
                 {errorMessage}
               </div>
             ) : (
               <></>
-            )}
+            )} */}
             {isError ? (
               <div className="bg-[#FF0000] text-center text-white rounded-md py-3 mb-[30px] text-sm">
                 {message}
               </div>
             ) : (
-              <h3 className="text-colorPrimary mb-[30px] font-extrabold text-2xl">
+              <h3 className="text-colorPrimary mb-[30px] font-extrabold text-2xl md:mb-[20px]">
                 Welcome Back
               </h3>
             )}
 
-            <div className="mb-[30px]">
+            <div className="mb-[30px] md:mb-[20px]">
               <div className="relative">
                 <label className="text-[13px] 2xl:text-lg text-colorTertiary mb-[10px] 2xl:mb-[15px]">
                   Email
@@ -106,7 +106,7 @@ const Signin = () => {
                 />
               </div>
             </div>
-            <div className="mb-[30px]">
+            <div className="mb-[30px] md:mb-[20px]">
               <div className="relative">
                 <label className="text-[13px] 2xl:text-lg text-colorTertiary mb-[10px] 2xl:mb-[15px]">
                   Password
@@ -129,17 +129,25 @@ const Signin = () => {
               </div>
             </div>
 
-            <div className="flex justify-between font-normal text-sm 2xl:text-xl text-[#8E8E8E] mb-[75px] 2xl:mb-[100px]">
-              <div className="">
-                <span>Remember Me </span>
-                <input type="checkbox" />
+            <div className="flex justify-between font-normal text-sm 2xl:text-xl text-[#8E8E8E] mb-[30px] mt-[-20px] 2xl:mb-[100px] md:mb-[57px] md:mt-[-10px]">
+              <div className="flex items-center justify-between">
+                <p className="px-2">Remember Me</p>
+                <input type="checkbox"/>
               </div>
               <a className="">Forgot Password? </a>
             </div>
 
+            {errorMessage.length ? (
+              <div className="bg-[#FF0000] text-center text-white rounded-md py-3 mb-[10px] text-sm md:mb-[45px] md:mt-[-45px] sm:mt-[-50px] sm:mb-[30px] lg:mt-[-45px] lg:mb-[40px]">
+                {errorMessage}
+              </div>
+            ) : (
+              <></>
+            )}
+
             <button
               disabled={!password.length || !email.length}
-              className={`disabled:bg-[#D5D8DA] justify-center flex items-center px-[10px] w-full rounded-[5px] ${"bg-colorPrimary"} py-2 text-white text-[13px] 2xl:text-lg`}
+              className={`disabled:bg-[#D5D8DA] justify-center flex items-center px-[10px] w-full rounded-[5px] ${"bg-colorPrimary"} py-2 text-white text-[13px] 2xl:text-lg md:mt-[-30px] lg:mt-[-30px]`}
               type="submit"
             >
               {isLoading ? "Loading..." : "Continue"}

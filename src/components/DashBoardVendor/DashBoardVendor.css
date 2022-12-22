@@ -688,7 +688,7 @@ display: none;
   left: 58%;
   transform: translate(-50%, -50%);
   background: #EAEAEA;
-  width: 80%;
+  width: 72%;
   height: 40rem;
   border-radius: 15px;
   box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
@@ -700,8 +700,8 @@ display: none;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
-  margin-top: 6rem;
+  font-size: 27px;
+  margin-top: 4rem;
   color: #232164;
   }
   
@@ -711,7 +711,7 @@ display: none;
   font-family: 'Karla';
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
   /* identical to box height */
  
   
@@ -722,10 +722,7 @@ display: none;
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
-  /* or 284% */
-  margin: 2rem;
   margin-top: 2rem;
-  margin-left: 4vw;
   color: #232164;
   }
   .welcome-cards{
@@ -743,12 +740,19 @@ display: none;
     background: #FFFFFF;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    min-height: 6rem;
-    max-height: 6rem; 
-    padding: 0.5rem;
-    width: 25rem;
-    margin-left: 3vw;
+    /* padding: 0.5rem; */
+    width: 15rem;
+    height: 6.5rem;
+    /* margin-left: 3vw; */
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 5px;
+    font-weight: 600;
+    font-size: 12px;
+    color: #262466;
+    /* margin: 0px 400px; */
   }
   .action-card{
     margin-left: 6.5vw;
@@ -762,7 +766,7 @@ display: none;
     padding-left: 3rem;
     color: #262466;
     }
-    .action-card1{
+    /* .action-card1{
       margin-left: 6.5vw;
       font-family: 'Poppins';
       font-style: normal;
@@ -770,15 +774,15 @@ display: none;
       font-size: 12px;
       margin-top: 2rem;
       display: flex;
-      align-items: flex-end;
-      padding-left: 3rem;
+      align-items: center;
+      justify-content: center;
       color: #262466;
-      }
+      } */
   .help-cards{
     display: flex;
   }
-  .action-icon{
-    margin-left: -7vw;
+  /* .action-icon{
+    margin-left: -10vw;
     margin-top: 1rem;
     height: 2rem;
     width: 2rem;
@@ -786,12 +790,11 @@ display: none;
     text-align: center;
     padding: auto;
     position: absolute;
-    color: #262466;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-  }
-  .welcome-card-close{
+  } */
+  /* .welcome-card-close{
     position: absolute;
     bottom: 2rem;
     right: 3vw;
@@ -801,7 +804,19 @@ display: none;
     font-weight: 700;
     font-size: 16px;
     cursor: pointer;
+  } */
+
+  .welcome-card-close{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 35px 60px 0px 60px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    color: #262466;
   }
+
   @media screen and (max-width: 1200px) {
     .containerDash {
       left: 10vw;
@@ -1081,6 +1096,12 @@ margin-left: 45vw;
         
 }
 @media screen and (max-width: 420px) {
+  .welcome-message{
+    font-size: 16px;
+    text-align: center;
+    width: 300px;
+    margin: 20px -45px 0px -45px;
+  }
   .welcome-card{
     left: 57%;
   }
