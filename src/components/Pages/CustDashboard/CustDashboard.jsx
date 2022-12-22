@@ -10,9 +10,9 @@ import SecuredBy from "../../../assets/images/svg/secured-by.svg";
 import Add from "../../../assets/images/svg/add.svg";
 import EmptyTxn from "../../../assets/images/svg/EmptyTxn.svg";
 import { fetchUser } from "../../../services/auth";
-import ChatModal from "./ChatModal";
+
 import useModal from "./AnimeList";
-const CustomerDashboard = (props) => {
+const CustomerDashboard = (props ) => {
 	const { setShowInitiateTransaction, setIsWithdrawing, setIsFunding } = props;
 	const { isShowing, toggle } = useModal();
 	const [transactionAmount, setTransactionAmount] = useState("");
@@ -172,14 +172,14 @@ const CustomerDashboard = (props) => {
 						</div>
 						<h6 className="font-semibold text-xl">Chat</h6>
 						<div onClick={setModalIsOpenToTrue}>
-							<button>Click to Open Modal</button>
+							<button>Click to chat</button>
 
 							<Modal
 								isOpen={modalIsOpen}
 								style={customStyles}
 								onRequestClose={() => setModalIsOpen(false)}
 							>
-								<button onClick={setModalIsOpenToFalse}>x</button>
+								<button onClick={setModalIsOpenToFalse} >x</button>
 								<AnimeList />
 							</Modal>
 						</div>
