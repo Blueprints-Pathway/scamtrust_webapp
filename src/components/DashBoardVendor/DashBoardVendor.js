@@ -97,11 +97,17 @@ function DashBoardVendor() {
         foreground: "#FF9300",
         toolbar: { show: false },
       },
+      
       xaxis: {
+        style: {
+          colors: ["#0357BF"],
+         
+      },
         categories: ['', 'Quality', 'Delivery', '', 'Price', 'Service']
       }
     },
     series: [
+      
       {
         name: "Competence Score",
         data: [2.5, Quality, Delivery, 2.5, Price, Service]
@@ -377,12 +383,12 @@ function DashBoardVendor() {
                     <FontAwesomeIcon icon={faShareNodes} className="share px-2" />
                   </p>
                 </div>
-                <div className="row">
+                <div className="row" >
                   <div className='Rate3'>
                     <div className={(percent < 60) ? 'Rate3D' : (percent > 60 && percent < 70) ? 'Rate3C' : (percent > 70 && percent < 80) ? 'Rate3B' : 'Rate3A'}>
                       <div className='Rate2'>
                         <div className='Rate1'>
-                          <p>{(percent < 60) ? 'D' : (percent > 60 && percent < 70) ? 'C' : (percent > 70 && percent < 80) ? 'B' : 'A'}</p> <p className='Rate1Up'>+</p>
+                          <p >{(percent < 60) ? 'D' : (percent > 60 && percent < 70) ? 'C' : (percent > 70 && percent < 80) ? 'B' : 'A'}</p> <p className='Rate1Up'>+</p>
                         </div>
                       </div>
                     </div>
@@ -416,8 +422,8 @@ function DashBoardVendor() {
 
             <div className=' flex flex-col items-center justify-center mx-[135px]'>
             {/* <div className="action-card-title text-sm pr-[70px]"> */}
-            <div className="action-card-title text-sm">
-              <h5 className='ml-[-12px] md:ml-[10px]'>Get Started</h5>
+            <div className="action-card-title text-sm ">
+              <h5 className='ml-[-12px] md:ml-[10px] smallsize'>Get Started</h5>
             {/* </div> */}
             <div className='welcome-cards1'>
               {/* <div className='action-card1'> */}
@@ -431,8 +437,8 @@ function DashBoardVendor() {
             {/* <div className='help-section'> */}
             {/* <div className='flex-column items-center justify-center mt-3 mx-[58px]'> */}
               <div className='md:flex'>
-              <div className="action-card-title text-sm md:px-5">
-                <h5 className='ml-[-12px] md:ml-[10px]'>Need help?</h5>
+              <div className="action-card-title text-sm  md:px-5">
+                <h5 className='smallsize ml-[-12px] md:ml-[10px]'>Need help?</h5>
               {/* <div className='help-cards'> */}
                 <div className='welcome-cards1 pr-[90px]'>
                   {/* <div className='action-card'> */}
@@ -442,8 +448,8 @@ function DashBoardVendor() {
                 </div>
                 </div>
 
-                <div className="action-card-title text-sm md:px-5">
-                <h5 className='ml-[-12px] md:ml-[10px]'>Chat with us</h5>
+                <div className="action-card-title text-sm  md:px-5">
+                <h5 className=' smallsize  ml-[-12px] md:ml-[10px]'>Chat with us</h5>
                 <div className='welcome-cards1 pr-[60px]'>
                   {/* <div className='action-card'> */}
                   <img className='w-8' src={chat} alt='chat icon' />
