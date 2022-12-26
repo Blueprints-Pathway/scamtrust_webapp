@@ -410,20 +410,20 @@ function DashBoardVendor() {
           </div>
         </div>
         <div className={close ? "welcome active" : "welcome"}>
-          <div className='welcome-card'>
-            <div className='px-[10px]'>
+          <div className='welcome-card md:mt-[75px] ml-3 lg:mt-[-25px] lg:ml-[50px]'>
+            <div className='md:pt-5 mt-[-50px] text-xs text-center leading-10 pr-5 lg:mt-3'>
             <div className='welcome-message'>
               Welcome to ScamTrust!
             </div>
-            <small className='welcome-description pl-[5px]'>
+            <small className='welcome-description'>
               Get secured by ScamTrust
             </small>
             </div>
 
-            <div className=' flex flex-col items-center justify-center mx-[135px]'>
+            <div className=' flex flex-col items-center justify-center mt-[-12px] md:pt-2 '>
             {/* <div className="action-card-title text-sm pr-[70px]"> */}
-            <div className="action-card-title text-sm ">
-              <h5 className='ml-[-12px] md:ml-[10px] smallsize'>Get Started</h5>
+            <div className="action-card-title text-sm">
+              <h5 className='ml-[-12px] text-lg pb-1 pl-5'>Get Started</h5>
             {/* </div> */}
             <div className='welcome-cards1'>
               {/* <div className='action-card1'> */}
@@ -436,11 +436,11 @@ function DashBoardVendor() {
 
             {/* <div className='help-section'> */}
             {/* <div className='flex-column items-center justify-center mt-3 mx-[58px]'> */}
-              <div className='md:flex'>
-              <div className="action-card-title text-sm  md:px-5">
-                <h5 className='smallsize ml-[-12px] md:ml-[10px]'>Need help?</h5>
+              <div className='md:flex md:mb-[-10px] lg:mt-4'>
+              <div className="action-card-title text-sm md:px-5 lg:mx-12">
+                <h5 className='ml-[-12px] text-lg pb-1 pl-5'>Need help?</h5>
               {/* <div className='help-cards'> */}
-                <div className='welcome-cards1 pr-[90px]'>
+                <div className='welcome-cards1 pr-[80px]'>
                   {/* <div className='action-card'> */}
                   <img className='w-8' src={faq} alt='faq icon' />
                   <p className='px-4'>FAQs</p>
@@ -448,8 +448,8 @@ function DashBoardVendor() {
                 </div>
                 </div>
 
-                <div className="action-card-title text-sm  md:px-5">
-                <h5 className=' smallsize  ml-[-12px] md:ml-[10px]'>Chat with us</h5>
+                <div className="action-card-title text-sm  md:px-5 lg:mx-12">
+                <h5 className='ml-[-12px] text-lg pb-1 pl-5'>Chat with us</h5>
                 <div className='welcome-cards1 pr-[60px]'>
                   {/* <div className='action-card'> */}
                   <img className='w-8' src={chat} alt='chat icon' />
@@ -462,7 +462,7 @@ function DashBoardVendor() {
               {/* </div> */}
             {/* </div> */}
 
-            <div className='welcome-card-close'>
+            <div className='welcome-card-close cursor-pointer mr-1 md:mr-5 md:mb-5 lg:mr-[75px] lg:font-bold'>
                   <h1 onClick={handleClosed}>Close  x </h1>
                 </div>
           </div>

@@ -1107,6 +1107,25 @@ color: #262466;
       justify-content: space-between;
       margin: 0px -200px;
     }
+    .welcome-cards1{
+      background: #FFFFFF;
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+      border-radius: 5px;
+      /* padding: 0.5rem; */
+      width: 15rem;
+      height: 5.5rem;
+      /* margin-left: 3vw; */
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0px 5px;
+      font-weight: 600;
+      font-size: 12px;
+      color: #262466;
+      margin-bottom: 0px;
+      /* margin: 0px 400px; */
+    }
 
 }
 @media screen and (max-width: 480px) {
@@ -1375,6 +1394,25 @@ color: #262466;
     }
     .Withdraw-btn{
       margin-left: 7vw;
+      }
+      .welcome-cards1{
+        background: #FFFFFF;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        /* padding: 0.5rem; */
+        width: 15rem;
+        height: 5.2rem;
+        /* margin-left: 3vw; */
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 5px;
+        font-weight: 600;
+        font-size: 12px;
+        color: #262466;
+        margin-bottom: -8px;
+        /* margin: 0px 400px; */
       }
 }
 
