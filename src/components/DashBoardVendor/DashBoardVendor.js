@@ -139,7 +139,7 @@ function DashBoardVendor() {
                     <h1 className='card1-text'> Elite <br /> Vendor</h1>
                     <div className='card1-title'>
                       <p className='progress-text-left'>
-                        Ratings
+                        Progress
                       </p>
                       <p className='progress-text-right'>
                         200 transactions
@@ -184,9 +184,9 @@ function DashBoardVendor() {
                             Total Balance
                           </p>
                           {eye ? <p className='Wallet-card-left-top-left-text-text2'>
-                            $********
+                            ₦********
                           </p> : <p className='Wallet-card-left-top-left-text-text2'>
-                            $500,000.00
+                           <sup>₦</sup>500,000.00
                           </p>}
                         </div>
                       </div>
@@ -196,13 +196,14 @@ function DashBoardVendor() {
                             Incoming Balance
                           </p>
                           {eye ? <p className='Wallet-card-left-top-right-text-text2'>
-                            $********
+                           ₦********
                           </p> : <p className='Wallet-card-left-top-right-text-text2'>
-                            $250,000.00
+                            <sup>₦</sup>250,000.00
                           </p>}
                         </div>
                       </div>
                     </div>
+
                     <div className='Wallet-card-left-bottom'>
                       <div className='Wallet-card-left-bottom-left'>
                         <div className='Secured'> Secured by <img className='field-bottom-img' src={scamTrustLogo} alt="Scam Trust" /> </div>
@@ -217,25 +218,28 @@ function DashBoardVendor() {
                 </div>
               </div>
             </div>
-            <div className='right '>
+                  
+                  {/* BOTTOM CARDS */}
+            <div className='right'>
               <div className='left-bottom-card'>
                 <div className="transactions">
                   <div className="heading">
-                    <h4>Transaction</h4>
+                    <h4>Transactions</h4>
                   </div>
                   <div className="category">
                     {select ? (<h6 className="Selection active" >All</h6>
                     ) : <h6 className="Selection" onClick={handleSelect}>All</h6>}
-                    {select2 ? <h6 className="Selection active" >Outgoing</h6> : <h6 className="Selection" onClick={handleSelect2}>Outgoing</h6>}
+                    {select2 ? <h6 className="Selection active">Outgoing</h6> : <h6 className="Selection" onClick={handleSelect2}>Outgoing</h6>}
                     {select3 ? <h6 className="Selection active">Cancelled</h6> : <h6 className="Selection" onClick={handleSelect3}>Cancelled</h6>}
                     {select4 ? <h6 className="Selection active" >Completed</h6> : <h6 className="Selection" onClick={handleSelect4}>Completed</h6>}
+                  
                   </div>
 
                   <div className="sub-category">
                     <h6>Transactions</h6>
-                    <h6>vendor’s Name</h6>
-                    <h6>Amount</h6>
-                    <h6>Date</h6>
+                    <h6 className='vendor-title'>vendor’s Name</h6>
+                    <h6 className='amount-title'>Amount</h6>
+                    <h6 className='amount-date'>Date</h6>
                   </div>
 
 
@@ -362,13 +366,15 @@ function DashBoardVendor() {
                   )}
                 </div>
               </div>
+
               <div className='right-bottom-card'>
-                <div className='card1-title'>
+                <div className='card4-title card1-title'>
                   <p className='Chart-text-left'>
                     Ratings
                   </p>
                   <p className='Chart-text-right'>
-                    Share Stats <FontAwesomeIcon icon={faShareNodes} className="share" />
+                    Share Stats 
+                    <FontAwesomeIcon icon={faShareNodes} className="share px-2" />
                   </p>
                 </div>
                 <div className="row">
