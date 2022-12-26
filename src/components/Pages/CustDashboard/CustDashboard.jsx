@@ -186,7 +186,7 @@ const CustomerDashboard = (props ) => {
 					</div>
 				</div>
 
-				<div className="hidden md:block place-content-center mt-[100px] mb-5">
+				<div className="hidden md:flex justify-center mt-[50px] mb-5">
 					<img src={SecuredBy} alt="secured by scam trust" />
 				</div>
 			</div>
@@ -282,8 +282,8 @@ const CustomerDashboard = (props ) => {
 				</div>
 			</div>
 
-			<div className="grid md:hidden place-content-center my-[20px]">
-				<img src={SecuredBy} alt="secured by scam trust" />
+			<div className="lg:hidden md:hidden my-7 flex items-center justify-center">
+				<img src={SecuredBy} className="ml-5" alt="secured by scam trust" />
 			</div>
 		</div>
 	);
