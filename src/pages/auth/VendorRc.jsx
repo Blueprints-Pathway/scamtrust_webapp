@@ -71,7 +71,7 @@ const VendorRc = () => {
           <div className="flex justify-between mt-[7px] lg:mt-[15px] 2xl:mt-[20px] mb-[58px] lg:mb-[100px] 2xl:mb-[156px]">
             <div />
             <span onClick={() => navigate("/vendor-signup-setpassword")}
-             className="underline text-colorPrimaryDark text-base mt-4 font-medium">
+             className="underline cursor-pointer text-colorPrimaryDark text-base mt-4 font-medium">
               Skip
             </span>
           </div>

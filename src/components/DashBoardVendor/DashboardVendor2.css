@@ -186,10 +186,13 @@ position: absolute;
 
 
 .right{
+  /* position: relative; */
+/* top: 5rem; */
   display: flex;
 justify-content: space-between;
 align-items: flex-start;
 margin: -140px 0px 15px 0px;
+/* flex-wrap: wrap; */
   }
 
 .right-card{
@@ -210,6 +213,7 @@ margin: -140px 0px 15px 0px;
   min-width: 25rem;
   width: 30vw;
   margin: 25px 0px 0px 25px;
+  /* margin-top: 2rem; */
 }
 .card2-title{
   display: flex;
@@ -325,7 +329,7 @@ margin-left: -0.5vw;
 .Wallet-card-left-bottom{
   display: flex;
   margin-left: 2.5vw;
-  margin-top: 2.3rem;
+  margin-top: 1.5rem;
   position: absolute;
 }
 .Wallet-card-left-bottom-right{
@@ -334,8 +338,7 @@ margin-left: -0.5vw;
   position: absolute;
 }
 .field-bottom-img{
-  width: 50px;
-  margin-left: 5px;
+  width:50px;
 }
 .Secured{
   /* position: relative; */
@@ -344,8 +347,7 @@ font-style: normal;
 font-weight: 600;
 font-size: 10px;
 /* or 209% */
-margin-top: 5.5rem;
-padding: 0px 10px;
+margin-top: 5rem;
 display: flex;
 color: #706E6E;
 }
@@ -545,7 +547,6 @@ color: #A6A6A6;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-top: 30px;
 
 }
 
@@ -556,7 +557,7 @@ color: #A6A6A6;
 .mixed-chart{
  position: absolute;
   margin-left: 1vw;
-  margin-top: 37rem;
+  margin-top: 35rem;
   font-family: 'IBM Plex Sans';
 /* identical to box height, or 200% */
 width: 38%;
@@ -703,17 +704,6 @@ background: rgba(23, 23, 23, 0.47);
 }
 .welcome.active{
 display: none;
-}
-.smallsize{
-  font-family: 'Poppins';
-font-style: normal;
-font-weight: 800;
-font-size: 15px;
-line-height: 38px;
-display: flex;
-align-items: flex-end;
-
-color: #262466;
 }
 .welcome-card{
   position: absolute;
@@ -878,680 +868,40 @@ color: #262466;
     left: 54%;
   }
 
- 
-@media screen and (max-width: 860px) {
-  .containerDash {
-    width: 100vw;
-    margin-left: 3rem;
-    margin-top: 5rem;
-    overflow: scroll;
-    overflow-x: hidden;
-    height: 100vh;
-    position: fixed;
-    left: 13vw;
-  }
-  .left{
-    top: 0rem;
-    display: flex;
-    flex-direction: column;
-  }
-  .right{
-    margin-top: -4rem;
-  }
-    .left-top-card{
-      background: #F9F9F9;
-      margin-top: 2rem;
-      margin: 25px 0px 0px 0px;
-      box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
-      border-radius: 15px;
-      min-height: 16rem;
-      max-height: 16rem;
-      min-width: 30rem;
-      width: 70vw;
-      padding: 0.5rem;
-    }
-   
-    .vendor-name{
-    font-size: 14px;
-    margin-top: -1rem;
-    margin-left: 65px;
-    }
-    
-    .vendor-description{
-    font-size: 10px;
-    margin-left: 65px;
-    }
-    .left-top-card1{
-      background: #E9E7FD;
-      box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
-      border-radius: 15px;
-      min-height: 8rem;
-      max-height: 8rem;
-      width: 75%;
-      margin: 8px 65px 0px 65px;
-      padding: 0.5rem;
-    }
-    .left-top-card2{
-      background: hsl(0, 0%, 100%);
-      box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
-      min-height: 1.5rem;
-      max-height: 1.5rem; 
-      width: 6rem;
-      margin-left: 29%;
-      margin-top: 3.5rem;
-      position: absolute;
-      font-family: 'Karla';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 16px;
-    align-items: center;
-    justify-content: space-between;
-    display: flex;
-    padding: 2px 1rem 1px 1rem;
-    border-radius: 15px;
-    color: #4E3FF0;
-    }
-    .left-top-card1-text{
-      display: flex;
-      }
-    .left-top-card2{
-      margin-left: 30%;
-    }
-    .progress-text-left{
-      font-size: 12px;
-  }
-    .progress-text-right{
-      font-size: 12px;
-    }
-    .progress{ 
-      min-width: 20vw;
-    }
-    .card1-title{
-      padding: 0px 225px;
-    }
-    .card1-text{
-      font-size: 12px;
-    }
-    .vendor-trophyCup-img{
-    margin-left: 43vw;
-    }
-    .progress-bar{
-      min-width: 32vw;
-    }
-    .right-top-card{
-      width: 70vw;
-      min-width: 15rem;
-      margin-left: 0px;
-    }
-    
-    .card2-title{
-      margin-left: 10vw;
-      gap: 25vw;
-    }
-    .Line{
-      width: 55vw;
-      margin-left: -67%;
-    }
-    
-    .eyeIconWallet{
-    margin-left: 85%;
-    }
-    .card2-text-right{
-      font-size: 12px;
-      margin-right: 20px;
-    }
-    .Wallet-card-left-top{
-      margin-left: 6vw;
-    }
-    .Wallet-card-left-top-right{
-      margin-left: 45vw;
-    }
-    
-    .Wallet-card-left-bottom{
-      display: flex;
-      margin-left: 6vw;
-      position: absolute;
-    }
-    .Wallet-card-left-bottom-right{
-      margin-left: 38vw;
-    }
-    .right{
-      display: flex;
-      flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: -166px 0px 0px 0px;
-      }
-    .left-bottom-card{
-      min-width: 30rem;
-      width: 70vw;
-    }
-    .transactions .category {
-      display: flex;
-      margin-bottom: 1rem;
-      cursor: pointer;
-      width: 63vw;
-    }
-    .transactions .sub-category {
-      display: flex;
-      margin-bottom: 1rem;
-      width: 63vw;
-    }
-    .transactions .category h6 {
-      width: 60vw; 
-      text-align: left; 
-      transform: rotate(0.08deg);
-      border-bottom: 4px solid #CFD8DC;
-      padding-bottom: 0.5rem;
-      font-family: 'Lato';
-      font-style: normal;
-      font-weight: 700;
-      font-size: 12px;
-      color: #A6A6A6; 
-    } 
-    .transactions .sub-category h6 {
-      width: 100%;
-      text-align: left;
-      padding-bottom: 0rem;
-      font-family: 'Lato';
-      font-style: normal;
-      font-weight: 700;
-      font-size: 10px;
-      color: #A6A6A6; 
-    }
-    .transactions .category .active {
-      border-color: #3AB75D;
-      font-family: 'Lato';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    color: #023A81;
-    }
-    .right-bottom-card{
-      min-width: 30rem;
-      width: 70vw;
-      margin: 30px 0px 80px -25px;
-    }
-    .card1-title{
-      margin-left: -8.5rem;
-    }
-    .row{
-      margin-top: 20px;
-    }
-    .mixed-chart{
-    width: 55%;
-    margin-left: 5vw;
-    }
-    .Chart-text-left{
-    font-size: 18px;
-    margin-left: -2vw;
-    }
-    .Chart-text-right{
-    margin-left: 45vw;
-    }
-    .Rate3{
-      position: absolute;
-      margin-left: 14vw;
-      margin-top: 38rem;
-    }
-    .welcome-card-close{
-      right: 6vw;
-    }
-    .Withdraw-btn{
-      margin-left: 7vw;
-    }
-    .card4-title{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin: 0px -200px;
-    }
-    .welcome-cards1{
-      background: #FFFFFF;
-      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
-      border-radius: 5px;
-      /* padding: 0.5rem; */
-      width: 15rem;
-      height: 5.5rem;
-      /* margin-left: 3vw; */
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0px 5px;
-      font-weight: 600;
-      font-size: 12px;
-      color: #262466;
-      margin-bottom: 0px;
-      /* margin: 0px 400px; */
-    }
-
-}
-@media screen and (max-width: 480px) {
-  .containerDash {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    margin: 0px 0px;
-    margin-top: 5rem;
-    overflow: scroll;
-    overflow-x: hidden;
-    height: 100vh;
-  }
-  .left{
-    top: 0rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: -50px; 
-  }
-  .right{
-    margin-top: -4rem;
-  }
-    .left-top-card{
-      background: #F9F9F9;
-      margin-top: 2rem;
-      margin: 25px 0px 0px 0px;
-      box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
-      border-radius: 15px;
-      min-height: 14rem;
-      max-height: 14rem;
-      min-width: 25rem;
-      padding: 0.5rem;
-    }
-   
-    .vendor-name{
-    font-size: 14px;
-    margin-top: -1rem;
-    margin-left: 45px;
-    }
-    
-    .vendor-description{
-    font-size: 10px;
-    margin-left: 45px;
-    }
-    .left-top-card1{
-      background: #E9E7FD;
-      box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
-      border-radius: 15px;
-      min-height: 7rem;
-      max-height: 7rem;
-      width: 90%;
-      margin: 7px 15px 0px 15px;
-    }
-    .pin{
-      font-size: 10px;
-    }
-    .left-top-card1-text{
-      display: flex;
-      justify-content: flex-start;
-      margin-left: -5px;
-    }
-    .left-top-card2{
-      background: hsl(0, 0%, 100%);
-      box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
-      min-height: 1.3rem;
-      max-height: 1.3rem; 
-      width: 6rem;
-      margin-left: 25%;
-      margin-top: 2.8rem;
-      position: absolute;
-      font-family: 'Karla';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 16px;
-    align-items: center;
-    justify-content: space-between;
-    display: flex;
-    padding: 2px 1rem 1px 1rem;
-    border-radius: 15px;
-    color: #4E3FF0;
-    }
-    .progress-text-left{
-      font-size: 12px;
-    }
-    .progress-text-right{
-      font-size: 12px;
-    }
-    .progress{ 
-      min-width: 20vw;
-    }
-    .card1-title{
-      display: flex;
-      justify-content: center;
-      padding: 0px 67px;
-      margin-left: 0rem;
-    }
-    .card1-text{
-      font-size: 12px;
-    }
-    .vendor-trophyCup-img{
-    margin-left: 58vw;
-    margin-top: -5px;
-    width: 30px;
-    }
-    .progress-bar{
-      min-width: 40vw;
-    }
-    .right-top-card{
-      width: 70vw;
-      min-height: 18.5rem;
-      min-width: 25rem;
-      margin-left: 0px;
-    }
-    .card2-title{
-      margin-left: 10vw;
-      gap: 20vw;
-    }
-    .Line{
-      width: 75vw;
-     margin-left: -55%;
-    }
-    
-    .eyeIconWallet{
-    margin-left: 85%;
-    }
-    .card2-text-right{
-      font-size: 10px;
-    }
-    .Wallet-card-left-top{
-      margin-left: 6vw;
-    }
-    .Wallet-card-left-top-right{
-      margin-left: 45vw;
-    }
-    
-    .Wallet-card-left-bottom{
-      display: flex;
-      margin-left: 6vw;
-      margin-top: 10px;
-      position: absolute;
-    }
-    .field-bottom-img{
-      margin-left: 5px;
-    }
-    .Wallet-card-left-bottom-right{
-      margin-left: 38vw;
-    }
-    .right{
-      display: flex;
-      flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: -166px 23px 0px 0px;
-      }
-    .left-bottom-card{
-      min-width: 25rem;
-      width: 70vw;
-    }
-
-    .transactions .heading {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    cursor: pointer;
-    color: #232164;
-    padding-bottom: 15px;
-    margin-top: -15px;
-    }
-
-    .transactions .category {
-      display: flex;
-      margin-bottom: 1rem;
-      cursor: pointer;
-      width: 50vw;
-    }
-    .transactions .sub-category {
-      display: flex;
-      margin-bottom: 1rem;
-      width: 63vw;
-    }
-    .transactions .category h6 {
-      width: 60vw; 
-      text-align: left; 
-      transform: rotate(0.08deg);
-      border-bottom: 4px solid #CFD8DC;
-      padding: 0px 6px;
-      padding-bottom: 0.5rem;
-      font-family: 'Lato';
-      font-style: normal;
-      font-weight: 700;
-      font-size: 12px;
-      color: #A6A6A6; 
-    } 
-    .transactions .sub-category h6 {
-      width: 100%;
-      text-align: center;
-      padding-bottom: 0rem;
-      padding-top: 10px;
-      font-family: 'Lato';
-      font-style: normal;
-      font-weight: 700;
-      font-size: 10px;
-      color: #A6A6A6; 
-    }
-    .transactions .category .active {
-      border-color: #3AB75D;
-      font-family: 'Lato';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    color: #023A81;
-    padding: 0px 10px;
-    }
-    .vendor-title{
-      margin-left: 18px;
-    }
-    .amount-title{
-      margin-left: 5px;
-    }
-    .Amount{
-      margin-left: -28px;
-    }
-    .date{
-      margin-left: -10px;
-    }
-    .right-bottom-card{
-      min-width: 25rem;
-      width: 70vw;
-      margin: 30px 30px 80px 0px;
-    }
-    .card4-title{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin: 0px 0px;
-    }
-    .row{
-      margin-top: 50px;
-    }
-    .mixed-chart{
-    width: 95%;
-    margin-left: -13vw;
-    margin-bottom: 25px;
-    }
-    .Chart-text-left{
-    font-size: 18px;
-    margin-left: -15vw;
-    }
-    .Chart-text-right{
-    margin-left: 85px;
-    }
-    .Rate3{
-      position: absolute;
-      margin-left: 13vw;
-      margin-top: 38rem;
-    }
-    .welcome-card-close{
-      right: 6vw;
-    }
-    .Withdraw-btn{
-      margin-left: 7vw;
-      }
-      .welcome-cards1{
-        background: #FFFFFF;
-        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
-        border-radius: 5px;
-        /* padding: 0.5rem; */
-        width: 15rem;
-        height: 5.2rem;
-        /* margin-left: 3vw; */
-        cursor: pointer;
+  @media screen and (max-width: 768px){
+    .containerDash {
+        width: 50%;
+        /* left: 18vw; */
+        /* top: 0rem; */
+        top: -1rem;
+        position: relative;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0px 5px;
-        font-weight: 600;
-        font-size: 12px;
-        color: #262466;
-        margin-bottom: -8px;
-        /* margin: 0px 400px; */
-      }
-}
-
-@media screen and (max-width: 360px) {
-  .vendor-trophyCup-img{
-    margin-left: 62vw;
-    margin-top: -5px;
-    width: 30px;
-    }
-    .Amount{
-      margin-left: -35px;
-    }
-    .date{
-      margin-left: -20px;
-    }
-}
-
-
-/* @media screen and (max-width: 720px) {
-  
-.action-icon{
-  margin-left: -10vw;
-}
-.progress-text-left{
-  margin-left: 5vw;
-}
-.vendor-trophyCup-img{
-margin-left: 45vw;
-}
-.card2-title{
-  margin-left: 10vw;
-  gap: 25vw;
-}
-
-}
- @media screen and (max-width: 680px) {
-.card2-title{
-  margin-left: 10vw;
-  gap: 22vw;
-}
-.Line{
-  margin-left: -62%;
-}
-.Wallet-card-left-top-right{
-  margin-left: 41vw;
-}
-
-.Wallet-card-left-bottom-right{
-  margin-left: 35vw;
-
-} 
-
- }
- @media screen and (max-width: 540px) {
-  .vendor-trophyCup-img{
-    margin-left: 48vw;
-    }
-    .card2-title{
-      margin-left: 10vw;
-      gap: 20vw;
-    }
-    .Line{
-      margin-left: -57%;
-    }
-    .mixed-chart{
-      width: 90%;
-      margin-left: -3vw;
-      }
-      .action-card{
-        font-size: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
         }
-  
-        .welcome-card{
-          left: 53%;
-        }
-        
-}
-@media screen and (max-width: 420px) {
-  .welcome-message{
-    font-size: 16px;
-    text-align: center;
-    width: 300px;
-    margin: 20px -45px 0px -45px;
+        .left{
+            /* position: relative; */
+            top: 12rem;
+            display: flex;
+            justify-content: space-around;
+            /* flex-wrap: wrap; */
+            }
+            .left-top-card{
+                background: #F9F9F9;
+                margin-top: 5rem;
+                /* margin-right: 0rem; */
+                margin: 25px 25px 0px 0px;
+                box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
+                border-radius: 15px;
+                min-height: 15rem;
+                max-height: 15rem;
+                min-width: 30rem;
+                width: 10vw;
+                padding: 0.5rem;
+              }
+              .right-top-card{
+                width: 200px;
+                margin-top: 200px;
+              }
   }
-  .welcome-card{
-    left: 57%;
-  }
-  .containerDash {
-    width: 100%;
-    margin-left: -6vw;
-    overflow: scroll;
-    overflow-x: hidden;
-    height: 95vh;
-    transform: scale(0.98);
-    }
-    .welcome-cards1{
-      transform: scale(0.8);
-      margin-left: -10vw;
-    }
-    .welcome-cards{
-      transform: scale(0.8);
-      margin-left: -6vw;
-    }
-    .action-card-title{
-      margin-top: 1rem;
-    }
-  /*   .left{
-      width: 85%;
-    }
-    .right{
-      width: 85%;;
-    } 
- */
- /* .Line{
-  margin-left: -48%;
-}
- .card2-text-right{
-  margin-left: 0vw;
-}
- .vendor-trophyCup-img{
-  margin-left: 48vw;
-  }
-  .Wallet-card-left-top-right{
-  margin-left: 41vw;
-}
-        .left-top-card{
-          min-width: 23.5rem;
-          width: 70vw;
-        }
-        .left-bottom-card{
-          min-width: 23.5rem;
-          width: 70vw;
-        }
-        .right-top-card{
-          min-width: 23.5rem;
-          width: 70vw;
-        }
-        .right-bottom-card{
-          min-width: 23.5rem;
-          width: 70vw;
-        } 
-      }*/
