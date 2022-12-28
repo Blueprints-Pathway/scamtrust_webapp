@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -8,8 +8,8 @@ import Search from "../../assets/images/svg/search.svg";
 import RidicVentures from "../../assets/images/svg/ridic.svg";
 import APlus from "../../assets/images/svg/a-plus.svg";
 import { fetchUser } from "../../services/auth";
-import { useState } from "react";
 
+import axios from "axios";
 const VENDORS = [
   {
     logo: RidicVentures,
@@ -41,7 +41,7 @@ const Header = (props) => {
   const { heading } = props;
 
   const { user } = useSelector((state) => state.auth);
-
+const [details,setDetails]=useState()
   const [userFromBackend, setUserFromBackend] = useState(null);
 
   useEffect(() => {
@@ -61,7 +61,36 @@ const Header = (props) => {
     : "px-[25px] ";
 
   const navigate = useNavigate();
+  const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
+	useEffect(() => {
+		(async () => {
+			try {
+				const API_URL = `https://scamtrust.herokuapp.com/api/v1/user/getdetails`;
+				const config = {
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${user_details?.data?.access_token}`,
+					},
+				};
 
+				const data = await axios.get(API_URL, config);
+
+				// console.log(data?.data.data, "user data");
+				setDetails(data?.data?.data);
+				// console.log(values, "values");
+				// return response;
+			} catch (error) {
+				console.log(error, "error");
+			}
+		})();
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+	console.log("details", details);
+const nameOf=details?.name
+const first=nameOf?.at(0)
+const last =nameOf?.at(-1)
+console.log("name to use",last);
   return (
     <div
       className={`${headerItemClassName} flex justify-between items-center w-full h-full shadow-md z-50`}
@@ -123,7 +152,7 @@ const Header = (props) => {
           className="w-[22px] h-[24px] mr-2 lg:mr-[56px]"
         />
         <span className="lg:w-[46px] w-[30px] h-[30px] lg:h-[46px] font-bold text-base lg:text-[21px] text-white bg-[#E36969] grid place-content-center overflow-hidden rounded-full">
-          CO
+        {first}{last}
         </span>
       </div>
     </div>

@@ -143,7 +143,9 @@ function DashBoardVendor() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	console.log("details", details);
-
+// const nameOf=details?.name
+// const first=nameOf.at(0)
+// console.log("name to use",first);
 	return (
 		<Layout>
 			<div className="main">
