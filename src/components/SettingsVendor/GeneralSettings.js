@@ -20,11 +20,14 @@ import otp from "../../images/otp.png";
 import TokenEmail from "./TokenEmail";
 import TokenPhone from "./TokenPhone";
 function GeneralSettings() {
-	const [hide, setHide] = useState(true);
+	const [images,setImages] = useState("");
 	// const [email, setEmail] = useState();
 	const [details, setDetails] = useState({});
 	const [newEmail, setNewEmail] = useState();
 	const [newPhone, setNewPhone]=useState()
+
+	const previewURL =
+		"https://ichef.bbci.co.uk/news/976/cpsprodpb/D8B9/production/_121018455_gettyimages-577003673.jpg";
 
 	const [values, setValues] = useState({
 		businessName: "",
@@ -200,6 +203,7 @@ function GeneralSettings() {
 
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
 	useEffect(() => {
+			
 		(async () => {
 			try {
 				const API_URL = `https://scamtrust.herokuapp.com/api/v1/user/getdetails`;
@@ -600,7 +604,7 @@ const changePhone = async (e) => {
 		setError(validate(values));
 		setErrors(error.All === true ? true : false);
 	};
-
+	
 	return (
 		<div>
 			{/*  General Settings Static field */}
@@ -629,7 +633,7 @@ const changePhone = async (e) => {
 
 					<input
 						onChange={handleChange}
-						value={details?.username
+						value={details?.name
 						}
 						className="inputBox-GeneralSettings"
 						name="businessName"

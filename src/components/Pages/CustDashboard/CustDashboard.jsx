@@ -10,12 +10,13 @@ import SecuredBy from "../../../assets/images/svg/secured-by.svg";
 import Add from "../../../assets/images/svg/add.svg";
 import EmptyTxn from "../../../assets/images/svg/EmptyTxn.svg";
 import { fetchUser } from "../../../services/auth";
-
+import axios from "axios";
 import useModal from "./AnimeList";
 const CustomerDashboard = (props ) => {
 	const { setShowInitiateTransaction, setIsWithdrawing, setIsFunding } = props;
 	const { isShowing, toggle } = useModal();
 	const [transactionAmount, setTransactionAmount] = useState("");
+	const [details, setDetails]=useState()
 	const [userFromBackend, setUserFromBackend] = useState(null);
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 	const customStyles = {
@@ -54,7 +55,32 @@ const CustomerDashboard = (props ) => {
 	useEffect(() => {
 		(async () => setUserFromBackend(await fetchUser(user.data.access_token)))();
 	}, []);
+	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
+	useEffect(() => {
+		(async () => {
+			try {
+				const API_URL = `https://scamtrust.herokuapp.com/api/v1/user/getdetails`;
+				const config = {
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${user_details?.data?.access_token}`,
+					},
+				};
 
+				const data = await axios.get(API_URL, config);
+
+				// console.log(data?.data.data, "user data");
+				setDetails(data?.data?.data);
+				// console.log(values, "values");
+				// return response;
+			} catch (error) {
+				console.log(error, "error");
+			}
+		})();
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+	console.log("details",details);
 	return (
 		<div className="flex w-full px-2 flex-col md:flex-row gap-7 justify-between">
 			<div className="min-w-[260px] mx-auto w-[70%] 2xl:w-[685px]">
