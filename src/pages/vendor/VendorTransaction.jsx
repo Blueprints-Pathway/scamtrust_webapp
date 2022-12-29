@@ -422,8 +422,8 @@ const VendorTransaction = (props) => {
 					{/* pagination */}
 				</div>
 			</div>
-			{/*    </div> */}
-		</Layout>
+	      {/* </div> */}
+        </Layout>
 	);
 };
 

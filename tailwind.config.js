@@ -1,5 +1,10 @@
 module.exports = {
-	content: ["./src/**/*.{js,jsx,ts,tsx}"],
+	plugins: [require("daisyui")],
+	content: ['./src/**/*.{html,js}', './node_modules/tw-elements/dist/js/**/*.js'],
+  plugins: [
+    require('tw-elements/dist/plugin')
+  ],
+    content: ["./src/**/*.{js,jsx,ts,tsx}"],
 	theme: {
 		extend: {
 			// fontFamily: {
@@ -19,5 +24,4 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require("daisyui")],
 };

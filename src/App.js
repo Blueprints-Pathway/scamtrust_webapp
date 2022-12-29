@@ -7,7 +7,8 @@ import CustomerDashboard from "./pages/dashboard/CustomerDashboard";
 import CustomerSignup from "./pages/auth/CustomerSignup";
 import VendorDetails from "./pages/vendor/VendorDetails";
 import CustomerBVN from "./components/customerSignup/CustomerBVN";
-import CustomerTransaction from "./components/customerSignup/CustomerTransaction";
+// import CustomerTransaction from "./components/customerSignup/CustomerTransaction";
+import CustomerTransact from "./components/Pages/CustomerTransact";
 import CustomerActivate from "./components/customerSignup/CustomerActivate";
 import PrivacySettings from "./components/SettingsVendor/PrivacySettings";
 import DashBoardVendor from "./components/DashBoardVendor/DashBoardVendor";
@@ -28,8 +29,8 @@ import ProtectedRoutes from "./utils/ProtectedRoutes";
 import CustomerSetPassword from "./pages/auth/CustomerSetPassword";
 import CustomerSecurityQuestion from "./pages/auth/CustomerSecurityQuestion";
 import Ratting from "./pages/vendor/Ratting";
-
 import ActivateAccount from "./pages/auth/ActivateAccount";
+
 
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
 				<Route path="/customer-dashboard" element={<CustomerDashboard />} />
 				<Route path="/vendor-transaction" element={<VendorTransaction />} />
 				<Route path="/vendor/:slug" element={<VendorDetails />} />
-				<Route path="/customer-transaction" element={<CustomerTransaction />} />
+				<Route path="/customer-transaction" element={<CustomerTransact />} />
 				<Route path="/wallet" element={<Wallet />} />
 				<Route path="/vendor-dashboard" element={<DashBoardVendor />} />
 				<Route path="/settings" element={<SettingsVendor />} />
