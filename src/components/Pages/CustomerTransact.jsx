@@ -125,7 +125,7 @@ const CustomerTransact = () => {
         <img className='w-6' src={completed} alt="Awaiting icon" />
         <div className='pl-1.5 pt-2'>
           <p className='text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]'>Airpod</p>
-          <small className='text-[#262466] block whitespace-nowrap w-[50px] overflow-hidden text-ellipsis md:w-[65px]'>Completed</small>
+          <small className='block whitespace-nowrap w-[50px] overflow-hidden text-ellipsis md:w-[65px]'>Completed</small>
         </div>   
        </div>
        <p className='text-[#262466] text-center'>Computer village</p>
@@ -138,7 +138,7 @@ const CustomerTransact = () => {
         <img className='w-6' src={cancelled} alt="Awaiting icon" />
         <div className='pl-1.5 pt-2'>
           <p className='text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]'>PS-5</p>
-          <small className='text-[#262466] block whitespace-nowrap w-[50px] overflow-hidden text-ellipsis md:w-[65px]'>Cancelled</small>
+          <small className='block whitespace-nowrap w-[50px] overflow-hidden text-ellipsis md:w-[65px]'>Cancelled</small>
         </div>   
        </div>
        <p className='text-[#262466] text-center'>Demo Gadgets</p>
@@ -151,7 +151,7 @@ const CustomerTransact = () => {
         <img className='w-6' src={onGoing} alt="Awaiting icon" />
         <div className='pl-1.5 pt-2'>
           <p className='text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]'>YEEZY 450</p>
-          <small className='text-[#262466] block whitespace-nowrap w-[50px] overflow-hidden text-ellipsis md:w-[65px]'>On-going</small>
+          <small className='block whitespace-nowrap w-[50px] overflow-hidden text-ellipsis md:w-[65px]'>On-going</small>
         </div>   
        </div>
        <p className='text-[#262466] text-center'>Prince wears</p>
@@ -168,7 +168,7 @@ const CustomerTransact = () => {
         <img className='w-6' src={onGoing} alt="Awaiting icon" />
         <div className='pl-1.5 pt-2'>
           <p className='text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]'>YEEZY 450</p>
-          <small className='text-[#262466] block whitespace-nowrap w-[50px] overflow-hidden text-ellipsis md:w-[65px]'>On-going</small>
+          <small className='block whitespace-nowrap w-[50px] overflow-hidden text-ellipsis md:w-[65px]'>On-going</small>
         </div>   
        </div>
        <p className='text-[#262466] text-center'>Prince wears</p>
@@ -180,7 +180,7 @@ const CustomerTransact = () => {
         <img className='w-6' src={onGoing} alt="Awaiting icon" />
         <div className='pl-1.5 pt-2'>
           <p className='text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]'>YEEZY 450</p>
-          <small className='text-[#262466] block whitespace-nowrap w-[50px] overflow-hidden text-ellipsis md:w-[65px]'>On-going</small>
+          <small className='block whitespace-nowrap w-[50px] overflow-hidden text-ellipsis md:w-[65px]'>On-going</small>
         </div>   
        </div>
        <p className='text-[#262466] text-center'>Prince wears</p>
@@ -196,7 +196,7 @@ const CustomerTransact = () => {
         <img className='w-6' src={completed} alt="Awaiting icon" />
         <div className='pl-1.5 pt-2'>
           <p className='text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]'>Airpod</p>
-          <small className='text-[#262466] block whitespace-nowrap w-[50px] overflow-hidden text-ellipsis md:w-[65px]'>Completed</small>
+          <small className='block whitespace-nowrap w-[50px] overflow-hidden text-ellipsis md:w-[65px]'>Completed</small>
         </div>   
        </div>
        <p className='text-[#262466] text-center'>Computer village</p>
@@ -208,7 +208,7 @@ const CustomerTransact = () => {
         <img className='w-6' src={completed} alt="Awaiting icon" />
         <div className='pl-1.5 pt-2'>
           <p className='text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]'>Airpod</p>
-          <small className='text-[#262466] block whitespace-nowrap w-[50px] overflow-hidden text-ellipsis md:w-[65px]'>Completed</small>
+          <small className='block whitespace-nowrap w-[50px] overflow-hidden text-ellipsis md:w-[65px]'>Completed</small>
         </div>   
        </div>
        <p className='text-[#262466] text-center'>Computer village</p>
@@ -220,7 +220,7 @@ const CustomerTransact = () => {
         <img className='w-6' src={completed} alt="Awaiting icon" />
         <div className='pl-1.5 pt-2'>
           <p className='text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]'>Airpod</p>
-          <small className='text-[#262466] block whitespace-nowrap w-[50px] overflow-hidden text-ellipsis md:w-[65px]'>Completed</small>
+          <small className='block whitespace-nowrap w-[50px] overflow-hidden text-ellipsis md:w-[65px]'>Completed</small>
         </div>   
        </div>
        <p className='text-[#262466] text-center'>Computer village</p>
@@ -236,7 +236,7 @@ const CustomerTransact = () => {
         <img className='w-6' src={cancelled} alt="Awaiting icon" />
         <div className='pl-1.5 pt-2'>
           <p className='text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]'>PS-5</p>
-          <small className='text-[#262466] block whitespace-nowrap w-[50px] overflow-hidden text-ellipsis md:w-[65px]'>Cancelled</small>
+          <small className='block whitespace-nowrap w-[50px] overflow-hidden text-ellipsis md:w-[65px]'>Cancelled</small>
         </div>   
        </div>
        <p className='text-[#262466] text-center'>Demo Gadgets</p>
