@@ -496,18 +496,18 @@ function DashBoardVendor() {
 					</div>
 				</div>
 				<div className={close ? "welcome active" : "welcome"}>
-					<div className="welcome-card">
-						<div className="px-[10px]">
+					<div className="welcome-card mx-3 md:mx-[-10px] lg:mx-[50px]">
+						<div className="mx-[-25px] mb-3.5">
 							<div className="welcome-message">Welcome to ScamTrust!</div>
-							<small className="welcome-description pl-[5px]">
+							<small className="welcome-description px-12">
 								Get secured by ScamTrust
 							</small>
-						</div>
+						    </div>
 
-						<div className=" flex flex-col items-center justify-center mx-[135px]">
+						<div className=" flex flex-col items-center justify-center mx-0 mt-[-30px]">
 							{/* <div className="action-card-title text-sm pr-[70px]"> */}
 							<div className="action-card-title text-sm ">
-								<h5 className="ml-[-12px] md:ml-[10px] smallsize">
+								<h5 className="ml-1 md:ml-[10px] smallsize">
 									Get Started
 								</h5>
 								{/* </div> */}
@@ -524,7 +524,7 @@ function DashBoardVendor() {
 							{/* <div className='flex-column items-center justify-center mt-3 mx-[58px]'> */}
 							<div className="md:flex">
 								<div className="action-card-title text-sm  md:px-5">
-									<h5 className="smallsize ml-[-12px] md:ml-[10px]">
+									<h5 className="smallsize ml-1 md:ml-[10px]">
 										Need help?
 									</h5>
 									{/* <div className='help-cards'> */}
@@ -537,7 +537,7 @@ function DashBoardVendor() {
 								</div>
 
 								<div className="action-card-title text-sm  md:px-5">
-									<h5 className=" smallsize  ml-[-12px] md:ml-[10px]">
+									<h5 className=" smallsize ml-1 md:ml-[10px]">
 										Chat with us
 									</h5>
 									<div className="welcome-cards1 pr-[60px]">
