@@ -72,7 +72,7 @@ const Wallet = () => {
 
 							<div className="flex justify-between">
 								<div />
-								<img src={Eye} alt="eye" className="mb-3" />
+								<img src={Eye} alt="eye" className="mb-3 cursor-pointer" />
 							</div>
 
 							<div className="flex justify-between ">

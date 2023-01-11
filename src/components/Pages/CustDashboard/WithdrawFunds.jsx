@@ -73,7 +73,7 @@ const WithdrawFunds = (props) => {
 				setBank(data?.data?.data);
 			} catch (error) {
 				// Alert.alert("failed login details");
-				console.log(error, "errrors");
+				console.log(error, "errors");
 			}
 		};
 		details();
@@ -101,7 +101,7 @@ const WithdrawFunds = (props) => {
 					</div>
 
 					<div className="mb-11 md:mb-16">
-						<label className="text-xl md:text-3xl block" htmlFor="amount">
+						<label className="text-xl md:text-3xl block" for="amount">
 							Amount
 						</label>
 						<input
@@ -109,6 +109,7 @@ const WithdrawFunds = (props) => {
 							value={amount}
 							onChange={(e) => setAmount(e.target.value)}
 							name="amount"
+							type="number"
 							placeholder="Enter amount"
 							className={`block placeholder:text-[#E5E7E9] ${
 								errors.amount ? "border-b-red-600" : ""
@@ -127,6 +128,7 @@ const WithdrawFunds = (props) => {
 							value={accountNumber}
 							onChange={(e) => setAccountNumber(e.target.value)}
 							name="amount"
+							type="number"
 							placeholder="Enter Account Number"
 							className={`block placeholder:text-[#E5E7E9] ${
 								errors.accountNumber ? "border-b-red-600" : ""

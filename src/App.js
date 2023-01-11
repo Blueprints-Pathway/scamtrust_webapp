@@ -16,7 +16,7 @@ import SettingsVendor from "./components/SettingsVendor/SettingsVendor";
 import Support from "./components/support/Support";
 import VendorRating from "./components/vendorRating/VendorRating";
 import Withdrawal from "./components/Withdrawal/Withdrawal";
-import VendorDashboard from "./components/DashBoardVendor/VendorDashboard";
+// import VendorDashboard from "./components/DashBoardVendor/VendorDashboard";
 import VendorTransaction from "./pages/vendor/VendorTransaction";
 import Wallet from "./pages/Wallet/Wallet";
 import VendorSignup from "./pages/auth/VendorSignup";
