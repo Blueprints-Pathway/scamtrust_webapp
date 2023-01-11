@@ -183,7 +183,7 @@ const Wallet = () => {
 											2009419261 {userFromBackend?.name}
 										</p>
 									</div>
-									<button className="px-2 py-1 mt-3 md:mt-0 text-[8px] md:text-base 2xl:px-4 2xl:py-3 bg-colorPrimary text-white rounded-md">
+									<button onClick={confirmAccountHandler} className="px-2 py-1 mt-3 md:mt-0 text-[8px] md:text-base 2xl:px-4 2xl:py-3 bg-colorPrimary text-white rounded-md">
 										Add Account
 									</button>
 								</div>
