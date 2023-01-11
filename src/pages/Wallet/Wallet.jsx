@@ -1,3 +1,5 @@
+/** @format */
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -12,16 +14,17 @@ import FundWallet from "../../components/Pages/Wallet/FundWallet";
 import ConfirmAccount from "../../components/Pages/Wallet/ConfirmAccount";
 import EmptyTxn from "../../assets/images/svg/EmptyTxn.svg";
 import { fetchUser } from "../../services/auth";
-
+import NotAvailable from "../../components/Pages/Wallet/NotAvailable";
+import axios from "axios";
 const Wallet = () => {
 	const [showFundWallet, setShowFundWallet] = useState(false);
 	const [showConfirmAccount, setShowConfirmAccont] = useState(false);
-
+	const [available, setAvailable] = useState(false);
 	const [availableBalanceInfo, setAvailableBalanceInfo] = useState(false);
 	const [outgoingBalanceInfo, setOutgoingBalanceInfo] = useState(false);
 	const [primaryAccountBalanceInfo, primaryABalanceInfo] = useState(false);
 	const [userFromBackend, setUserFromBackend] = useState(null);
-
+	const [details, setDetails] = useState();
 	const { user } = useSelector((state) => state.auth);
 
 	useEffect(() => {
@@ -46,7 +49,32 @@ const Wallet = () => {
 	};
 
 	const navigate = useNavigate();
+	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
+	useEffect(() => {
+		(async () => {
+			try {
+				const API_URL = `https://scamtrust.herokuapp.com/api/v1/user/getdetails`;
+				const config = {
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${user_details?.data?.access_token}`,
+					},
+				};
 
+				const data = await axios.get(API_URL, config);
+
+				// console.log(data?.data.data, "user data");
+				setDetails(data?.data?.data);
+				// console.log(values, "values");
+				// return response;
+			} catch (error) {
+				console.log(error, "error");
+			}
+		})();
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+	console.log(details, "wallet details");
 	return (
 		<Layout>
 			<FundWallet
@@ -168,7 +196,7 @@ const Wallet = () => {
 											src={CopyBlack}
 											alt="more_info"
 										/>
-										<span>78208577167</span>
+										<span>{details?.virtual_account?.account_number}</span>
 									</p>
 								</div>
 								<div className="bg-[#EAEAEA] flex-col md:flex-row rounded-2xl mb-5 flex justify-between p-5">
@@ -183,10 +211,14 @@ const Wallet = () => {
 											2009419261 {userFromBackend?.name}
 										</p>
 									</div>
-									<button onClick={confirmAccountHandler} className="px-2 py-1 mt-3 md:mt-0 text-[8px] md:text-base 2xl:px-4 2xl:py-3 bg-colorPrimary text-white rounded-md">
+									<button
+										onClick={() => setAvailable(true)}
+										className="px-2 py-1 mt-3 md:mt-0 text-[8px] md:text-base 2xl:px-4 2xl:py-3 bg-colorPrimary text-white rounded-md"
+									>
 										Add Account
 									</button>
 								</div>
+								{available ? <NotAvailable /> : null}
 							</div>
 						</div>
 

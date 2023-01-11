@@ -131,7 +131,7 @@ const Header = (props) => {
 	const first = nameOf?.at(0);
 	const last = nameOf?.at(-1);
 
-	console.log(details,"name");
+	// console.log(user_details,"name");
 	const searchItems = (searchValue) => {
 		setSearchInput(searchValue);
 		if (searchInput !== "") {
