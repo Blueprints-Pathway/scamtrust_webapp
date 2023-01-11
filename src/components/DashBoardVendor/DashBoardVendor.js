@@ -197,7 +197,7 @@ function DashBoardVendor() {
 									<p className="card2-text-left">Wallet</p>
 									<p className="card2-text-right">
 										{details?.name}
-										<h5 className="card2-text-right2">ID - {details?.vendor?.vendor_id}</h5>
+										<h5 className="card2-text-right2">ID -{details?.vendor?.vendor_id}</h5>
 										<div className="Line"></div>
 									</p>
 								</div>
