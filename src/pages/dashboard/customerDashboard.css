@@ -1,0 +1,193 @@
+.cust-welcome{
+    position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0rem;
+  top: 0rem;
+  background: rgba(23, 23, 23, 0.47);
+  }
+  .cust-active{
+    display: hidden;
+  }
+  .welcome-cust-card{
+    position: absolute;
+    top: 55%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    background: #EAEAEA;
+    color: #262466;
+    width: 72%;
+    height: 40rem;
+    border-radius: 15px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
+    padding: 2rem;
+  }
+  .card-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #262466;
+  }
+  .card-con{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cust-card{
+    background: #FFFFFF;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    width: 15rem;
+    height: 5.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 5px;
+    font-weight: 600;
+    font-size: 12px;
+    color: #262466;
+    margin-bottom: -8px;
+}
+
+  @media screen and (max-width: 768px) {
+    .cust-welcome{
+        position: fixed;
+      width: 100vw;
+      height: 100vh;
+      left: 0rem;
+      top: 0rem;
+      background: rgba(23, 23, 23, 0.47);
+      }
+      .cust-active{
+        display: hidden;
+      }
+      .welcome-cust-card{
+        position: absolute;
+        top: 55%;
+        left: 58%;
+        transform: translate(-50%, -50%);
+        background: #EAEAEA;
+        color: #262466;
+        width: 72%;
+        height: 40rem;
+        border-radius: 15px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
+        padding: 2rem;
+      }
+      .card-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #262466;
+      }
+      .card-con{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .cust-card{
+        background: #FFFFFF;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        width: 15rem;
+        height: 5.2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 5px;
+        font-weight: 600;
+        font-size: 12px;
+        color: #262466;
+        margin-bottom: -8px;
+    }
+    
+  }
+
+  @media screen and (max-width: 480px) {
+    .welcome-cust-card{
+        position: absolute;
+        top: 53%;
+        left: 58%;
+        transform: translate(-50%, -50%);
+        background: #EAEAEA;
+        color: #262466;
+        width: 72%;
+        height: 60rem;
+        border-radius: 15px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
+        padding: 20px 10px 0px 10px;
+      }
+      .cust-card{
+        background: #FFFFFF;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        width: 15rem;
+        height: 5.2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 5px;
+        font-weight: 600;
+        font-size: 12px;
+        color: #262466;
+        margin-bottom: -8px;
+    }
+  }
+
+  @media screen and (min-width: 375px) {
+    .welcome-cust-card{
+        position: absolute;
+        top: 54%;
+        left: 58%;
+        transform: translate(-50%, -50%);
+        background: #EAEAEA;
+        color: #262466;
+        width: 72%;
+        height: 46rem;
+        border-radius: 15px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
+        padding: 20px 10px 0px 10px;
+      }
+      .cust-message{
+        /* width: 100vw; */
+      }
+      .cust-card{
+        background: #FFFFFF;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        width: 15rem;
+        height: 5.2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 5px;
+        font-weight: 600;
+        font-size: 12px;
+        color: #262466;
+        margin-bottom: -8px;
+    }
+    .cust-group2{
+        margin-top: -20px;
+        margin-bottom: 0px;
+    }
+    .cust-group{
+        margin-top: -10px;
+        margin-bottom: 0px;
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    .cust-close-btn{
+      position: absolute;
+      margin-top: -20px;
+      margin-left: -60px;
+    }
+  }
+  
+  

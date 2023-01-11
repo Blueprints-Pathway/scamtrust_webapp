@@ -495,6 +495,7 @@ function DashBoardVendor() {
 						</div>
 					</div>
 				</div>
+
 				<div className={close ? "welcome active" : "welcome"}>
 					<div className="welcome-card mx-3 md:mx-[-10px] lg:mx-[50px]">
 						<div className="mx-[-25px] mb-3.5">
@@ -525,7 +526,7 @@ function DashBoardVendor() {
 							<div className="md:flex">
 								<div className="action-card-title text-sm  md:px-5">
 									<h5 className="smallsize ml-1 md:ml-[10px]">
-										Need help?
+									0	Need help?
 									</h5>
 									{/* <div className='help-cards'> */}
 									<div className="welcome-cards1 pr-[90px]">
