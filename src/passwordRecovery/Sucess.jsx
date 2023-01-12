@@ -14,7 +14,7 @@ function Sucess() {
 			<div className="m-5">
 				<img className="px-5" alt="logo" src={Logo} />
 			</div>
-			<div className="mx-auto box-border  top-10 md:top-40 lg:top-40 sm:w-full lg:w-5/12   md:6/12  card p-4 border-2 mt-5 password bottom-20  left-30 right-30 relative">
+			<div className="mx-auto box-border  top-10 md:top-40 lg:top-40 sm:w-full lg:w-5/12   md:6/12  card p-4 border-2 mt-5 pass bottom-20  left-30 right-30 relative">
 				<div className="text-center ">
 					<h3 className="password-recovery mt-5">Password Change Sucessful</h3>
 				</div>

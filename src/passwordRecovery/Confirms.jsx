@@ -23,7 +23,7 @@ function Confirms() {
       <div className="m-5">
         <img className="px-5" alt="logo" src={Logo} />
       </div>
-      <div className="mx-auto box-border  sm:w-full lg:w-5/12   md:6/12  card p-4 border-2 mt-5 password  top-20 left-30 right-30 relative">
+      <div className="mx-auto box-border  sm:w-full lg:w-5/12   md:6/12  card p-4 border-2 mt-5 pass  top-20 left-30 right-30 relative">
         <div className="text-center ">
           <h3 className="password-recovery mt-5">Password Recovery</h3>
         </div>
