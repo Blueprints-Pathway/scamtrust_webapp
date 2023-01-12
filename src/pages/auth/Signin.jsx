@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 import Logo from "../../components/branding/Logo/Logo";
 import CustomerTestimony from "../../components/CustomerTestimony/CustomerTestimony";
 import Eye from "../../assets/images/svg/eye.svg";
@@ -134,7 +134,7 @@ const Signin = () => {
                 <p className="px-2">Remember Me</p>
                 <input type="checkbox"/>
               </div>
-              <a className="">Forgot Password? </a>
+              <Link  to="password-recovery">Forgot Password? </Link>
             </div>
 
             {errorMessage.length ? (

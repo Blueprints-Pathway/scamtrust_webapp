@@ -74,7 +74,7 @@ function PasswordPhoneNumber() {
 											errors.phoneNumber}
 									</label>
 									<div className="mt-3 text-decoration:line password-recovery-bottom">
-										<Link to="/email">Use Email Address</Link>
+										<Link to="/password-recovery">Use Email Address</Link>
 									</div>
 									<div className="grid justify-items-center mt-4	">
 										<button

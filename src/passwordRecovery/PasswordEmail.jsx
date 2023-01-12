@@ -7,7 +7,7 @@ function PasswordEmail() {
   const navigate = useNavigate();
   const [email, setEmail] = useState();
   const confirm = () => {
-    navigate("/token");
+    navigate("/tokenEmail");
   };
   return (
     <div className="container-fluid ">

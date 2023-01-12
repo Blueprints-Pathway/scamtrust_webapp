@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
@@ -30,8 +32,12 @@ import CustomerSetPassword from "./pages/auth/CustomerSetPassword";
 import CustomerSecurityQuestion from "./pages/auth/CustomerSecurityQuestion";
 import Ratting from "./pages/vendor/Ratting";
 import ActivateAccount from "./pages/auth/ActivateAccount";
-
-
+import PasswordEmail from "../src/passwordRecovery/PasswordEmail";
+import PasswordPhoneNumber from "./passwordRecovery/passwordPhoneNumber";
+import TokenPhone from "./passwordRecovery/TokenPhone";
+import TokenEmail from "./passwordRecovery/TokenEmail";
+import Confirms from "./passwordRecovery/Confirms";
+import Sucess from "./passwordRecovery/Sucess";
 
 function App() {
 	return (
@@ -48,7 +54,7 @@ function App() {
 				<Route path="/support" element={<Support />} />
 				<Route path="/vendor-rating" element={<VendorRating />} />
 				<Route path="/withdrawal" element={<Withdrawal />} />
- 
+
 				<Route path="/customer-ratting" element={<Ratting />} />
 			</Route>
 
@@ -77,7 +83,12 @@ function App() {
 				path="/vendor-signup-security-question"
 				element={<SecurityQuestion />}
 			/>
-		
+			<Route path="/password-recovery" element={<PasswordEmail />} />
+			<Route path="/phoneNumber" element={<PasswordPhoneNumber />} />
+			<Route path="/tokenEmail" element={<TokenEmail />} />
+			<Route path="/tokenPhone" element={<TokenPhone />} />
+			<Route path="/password-sucess" element={<Sucess />} />
+			<Route path="/confirmPassword" element={<Confirms/>} />
 		</Routes>
 	);
 }

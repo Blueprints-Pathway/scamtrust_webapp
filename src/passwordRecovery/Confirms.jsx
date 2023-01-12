@@ -8,7 +8,7 @@ function Confirms() {
   const [confirmPassword, setConfirmPassword] = useState();
   const navigate = useNavigate();
   const sucess = () => {
-    navigate("/sucess");
+    navigate("/password-sucess");
   };
   const password = () => {
     var x = document.getElementById("myInput");

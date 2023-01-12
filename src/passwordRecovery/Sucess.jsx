@@ -7,7 +7,7 @@ function Sucess() {
 	const navigate = useNavigate();
 
 	const confirm = () => {
-		navigate("/token");
+		navigate("/");
 	};
 	return (
 		<div className="container-fluid ">
