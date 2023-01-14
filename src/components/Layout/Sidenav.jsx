@@ -111,7 +111,7 @@ const Sidenav = (props) => {
               </NavLink>
             </li>
           ))}
-          <li className="uppercase mt-[50px] flex items-center">
+          <li className="uppercase mt-[50px] flex items-center cursor-pointer">
             <span className="mr-[7px]">
               <img src={Support} alt={"support"} />
             </span>

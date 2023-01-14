@@ -50,6 +50,7 @@ const CustomerDashboard = () => {
       setIsFunding(true);
     }
 
+
     // if (!user) {
     //   navigate("/#customer-dashboard");
     // }
@@ -58,6 +59,7 @@ const CustomerDashboard = () => {
     //   navigate("/#customer-dashboard");
     // }
   }, []);
+
 
   return (
     <Layout heading="Dashboard">
@@ -146,10 +148,10 @@ const CustomerDashboard = () => {
               <img className='w-8' src={create} alt="create transaction" /> 
               <p className='pl-2'>Create New Transaction</p>
               </div>
-            <div className="cust-card my-4 lg:mx-14 md:mx-5">
+            <button className="cust-card my-4 lg:mx-14 md:mx-5">
               <img className='w-8' src={wallet} alt="fund wallet" />
               <p className='mr-12 pl-2'>Fund your wallet</p>
-              </div>
+              </button>
             <div className="cust-card my-4 lg:mx-14 md:mt-4 md:mr-[17.6rem] lg:mt-5">
               <img className='w-8' src={KYC} alt="complete KYC" />
               <p className='mr-12 pl-2'>Complete KYC</p>
@@ -177,7 +179,7 @@ const CustomerDashboard = () => {
           '>
            <button className='cust-close-btn' onClick={handleClose}>Close x</button>
           </div>
-      </div>            
+      </div>         
       </div>             
     </Layout>
   );

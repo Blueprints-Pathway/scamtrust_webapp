@@ -312,7 +312,7 @@ function DashBoardVendor() {
 												<div className="Transaction-body">
 													<div className="Transaction-body-profile">
 														<img
-															className="TransactionStatusimg"
+															className="TransactionStatusimg w-48 h-48 mt-3 md:mt-1 lg:w-60 lg:h-60"
 															src={item.satusImg}
 															alt="Scam Trust"
 														/>
@@ -347,7 +347,7 @@ function DashBoardVendor() {
 												<div className="Transaction-body">
 													<div className="Transaction-body-profile">
 														<img
-															className="TransactionStatusimg"
+															className="TransactionStatusimg w-48 h-48 mt-3 md:mt-1"
 															src={item.satusImg}
 															alt="Scam Trust"
 														/>
@@ -382,7 +382,7 @@ function DashBoardVendor() {
 												<div className="Transaction-body">
 													<div className="Transaction-body-profile">
 														<img
-															className="TransactionStatusimg"
+															className="TransactionStatusimg w-48 h-48 mt-3 md:mt-1"
 															src={item.satusImg}
 															alt="Scam Trust"
 														/>
@@ -417,7 +417,7 @@ function DashBoardVendor() {
 												<div className="Transaction-body">
 													<div className="Transaction-body-profile">
 														<img
-															className="TransactionStatusimg"
+															className="TransactionStatusimg w-48 h-48 mt-3 md:mt-1"
 															src={item.satusImg}
 															alt="Scam Trust"
 														/>
