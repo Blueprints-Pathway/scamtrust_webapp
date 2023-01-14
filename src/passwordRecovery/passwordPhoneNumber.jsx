@@ -14,7 +14,7 @@ function PasswordPhoneNumber() {
 			<div className="m-5">
 				<img className="px-5" src={Logo} alt="logo" />
 			</div>
-			<div className="mx-auto box-border  sm:w-full lg:w-5/12   md:6/12  card p-4 border-2 mt-5 password  top-10 md:top-40 lg:top-40 left-30 right-30 relative">
+			<div className="mx-auto box-border  sm:w-full lg:w-5/12   md:6/12  card p-4 border-2 mt-5 pass  top-10 md:top-40 lg:top-40 left-30 right-30 relative">
 				<div className="text-center ">
 					<h3 className="password-recovery mt-5">Password Recovery</h3>
 				</div>
@@ -74,7 +74,7 @@ function PasswordPhoneNumber() {
 											errors.phoneNumber}
 									</label>
 									<div className="mt-3 text-decoration:line password-recovery-bottom">
-										<Link to="/email">Use Email Address</Link>
+										<Link to="/password-recovery">Use Email Address</Link>
 									</div>
 									<div className="grid justify-items-center mt-4	">
 										<button

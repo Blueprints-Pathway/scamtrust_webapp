@@ -127,10 +127,11 @@ const Header = (props) => {
 
 	// 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	// }, []);
-	const nameOf = details?.name;
+	const nameOf = details?.name || details?.username;
 	const first = nameOf?.at(0);
 	const last = nameOf?.at(-1);
 
+	// console.log(user_details,"name");
 	const searchItems = (searchValue) => {
 		setSearchInput(searchValue);
 		if (searchInput !== "") {

@@ -148,7 +148,7 @@ function CustomerWallet() {
 															color: "#FFFFFF",
 														}}
 													>
-														Add Account
+														Adds Account
 													</button>
 												</div>
 											</div>

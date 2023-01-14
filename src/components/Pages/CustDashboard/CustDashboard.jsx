@@ -80,7 +80,7 @@ const CustomerDashboard = (props ) => {
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-	console.log("details",details);
+	console.log("details",userFromBackend);
 	return (
 		<div className="flex w-full px-2 flex-col md:flex-row gap-7 justify-between">
 			<div className="min-w-[260px] mx-auto w-[70%] 2xl:w-[685px]">
