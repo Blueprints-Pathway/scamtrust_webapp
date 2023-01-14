@@ -1,10 +1,9 @@
 import React, { useState, useRef } from "react";
 
-const Token = ({ length, label, loading, onComplete }) => {
-  const [code, setCode] = useState([...Array(length)].map(() => ""));
+const Token = ({ length, label, loading, onComplete ,code,setCode}) => {
+ 
   const inputs = useRef([]);
-  // Typescript
-  // useRef<(HTMLInputElement | null)[]>([])
+
 
   const processInput = (e, slot) => {
     const num = e.target.value;
@@ -28,10 +27,12 @@ const Token = ({ length, label, loading, onComplete }) => {
       inputs.current[slot - 1].focus();
     }
   };
+
   return (
     <div className="code-input grid  p-3  container-fluid">
       <div className="code-inputs mt-5">
         {code.map((num, idx) => {
+            console.log(num,"value");
           return (
             <input
               key={idx}
