@@ -1,4 +1,5 @@
 import React from "react";
+import introImg from '../../assets/Rectangle 197.png'
 
 const CustomerTestimony = () => {
   return (
@@ -14,11 +15,11 @@ const CustomerTestimony = () => {
         </h3>
 
         <div className="flex items-center">
-          <div className="2xl:w-[70px] w-[52.5px] h-[52.5px] 2xl:h-[70px] rounded-full overflow-hidden object-cover mr-[28.5px] 2xl:mr-[38px]">
+          <div className="2xl:w-[70px] border-2 border-colorPrimary w-[52.5px] h-[52.5px] 2xl:h-[70px] rounded-full overflow-hidden object-cover mr-[28.5px] 2xl:mr-[38px]">
             <img
-              src="https://images.unsplash.com/photo-1657468477493-a86fc4f36b14?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+              src={introImg}
               alt="customer_img"
-              className="w-full h-full"
+              className="w-full h-full object-cover"
             />
           </div>
 

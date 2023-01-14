@@ -12,6 +12,7 @@ import EmptyTxn from "../../../assets/images/svg/EmptyTxn.svg";
 import { fetchUser } from "../../../services/auth";
 import axios from "axios";
 import useModal from "./AnimeList";
+
 const CustomerDashboard = (props ) => {
 	const { setShowInitiateTransaction, setIsWithdrawing, setIsFunding } = props;
 	const { isShowing, toggle } = useModal();
@@ -33,13 +34,13 @@ const CustomerDashboard = (props ) => {
 			backgroundColor: "#ffffffff",
 		},
 	};
-	const setModalIsOpenToTrue = () => {
-		setModalIsOpen(true);
-	};
+	// const setModalIsOpenToTrue = () => {
+	// 	setModalIsOpen(true);
+	// };
 
-	const setModalIsOpenToFalse = () => {
-		setModalIsOpen(false);
-	};
+	// const setModalIsOpenToFalse = () => {
+	// 	setModalIsOpen(false);
+	// };
 
 	const { user } = useSelector((state) => state.auth);
 
@@ -186,7 +187,7 @@ const CustomerDashboard = (props ) => {
 						<p>Find answers instantly</p>
 					</div>
 					<div
-						onClick={setModalIsOpenToTrue}
+						onClick={()=>setModalIsOpen(true)}
 						className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#E2D8F1] rounded-3xl"
 					>
 						<div className="bg-[#5F0AC3] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
@@ -197,7 +198,7 @@ const CustomerDashboard = (props ) => {
 							/>
 						</div>
 						<h6 className="font-semibold text-xl">Chat</h6>
-						<div onClick={setModalIsOpenToTrue}>
+						<div onClick={()=>setModalIsOpen(true)}>
 							<button>Click to chat</button>
 
 							<Modal
@@ -205,7 +206,7 @@ const CustomerDashboard = (props ) => {
 								style={customStyles}
 								onRequestClose={() => setModalIsOpen(false)}
 							>
-								<button onClick={setModalIsOpenToFalse} >x</button>
+								<button onClick={()=>setModalIsOpen(false)}>x</button>
 								<AnimeList />
 							</Modal>
 						</div>

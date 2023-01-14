@@ -20,6 +20,10 @@ import faq from '../../assets/conversation-img.png'
 import wallet from '../../assets/payment-img.png'
 import create from '../../assets/create.png'
 import KYC from '../../assets/KYC.png'
+import ChatModal from '../../components/Pages/CustDashboard/ChatModal';
+import { Modal } from '@mui/material';
+import AnimeList from '../../components/Pages/CustDashboard/AnimeList';
+// import ChatModal from '../../components/Pages/CustDashboard/ChatModal'
 
 const CustomerDashboard = () => {
   const [showInitiateTransaction, setShowInitiateTransaction] = useState(false);
@@ -31,6 +35,22 @@ const CustomerDashboard = () => {
   const [withdrawSuccessful, setWithdrawSuccessful] = useState(false);
   const [isFunding, setIsFunding] = useState(false);
   const [close, setClose] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const customStyles = {
+		content: {
+			width: "50vh",
+			color: "#01306B",
+
+			top: "50%",
+			left: "50%",
+			right: "auto",
+			bottom: "auto",
+			marginRight: "-50%",
+			transform: "translate(-50%, -50%)",
+			backgroundColor: "#ffffffff",
+		},
+	};
+
 
   const handleClose = () => {
     setClose(!close);
@@ -43,6 +63,7 @@ const CustomerDashboard = () => {
   useEffect(() => {
     const isWithdraw = window.location.href.split("#")[1] === "withdraw";
     const isFunding = window.location.href.split("#")[1] === "fund";
+    const modalIsOpen = window.location.href.split("#")[1] === "chat";
     if (isWithdraw) {
       setIsWithdrawing(true);
     }
@@ -90,7 +111,7 @@ const CustomerDashboard = () => {
         setWithdrawSuccessful={setWithdrawSuccessful}
         withdrawSuccessful={withdrawSuccessful}
       /> */}
-      {showInitiateTransaction ? (
+8      {showInitiateTransaction ? (
         <Backdrop showInitiateTransaction={showInitiateTransaction}>
           <InitiateTransaction
             setShowInitiateTransaction={setShowInitiateTransaction}
@@ -148,10 +169,11 @@ const CustomerDashboard = () => {
               <img className='w-8' src={create} alt="create transaction" /> 
               <p className='pl-2'>Create New Transaction</p>
               </div>
-            <button className="cust-card my-4 lg:mx-14 md:mx-5">
+            <div onClick={() => setIsFunding(true)}
+            className="cust-card my-4 lg:mx-14 md:mx-5">
               <img className='w-8' src={wallet} alt="fund wallet" />
               <p className='mr-12 pl-2'>Fund your wallet</p>
-              </button>
+              </div>
             <div className="cust-card my-4 lg:mx-14 md:mt-4 md:mr-[17.6rem] lg:mt-5">
               <img className='w-8' src={KYC} alt="complete KYC" />
               <p className='mr-12 pl-2'>Complete KYC</p>
@@ -168,9 +190,19 @@ const CustomerDashboard = () => {
               <img className='w-8' src={faq} alt="faq" /> 
               <p className='mr-28 pl-3'>FAQs</p>
               </div>
-            <div className="cust-card my-4 lg:mx-14 md:mx-5">
+            <div 
+            onClick={()=>setModalIsOpen(true)}
+            className="cust-card my-4 lg:mx-14 md:mx-5">
               <img className='w-8' src={chat} alt="chat" />
               <p className='mr-16 pl-3'>Chat with us</p>
+              {/* <Modal
+								isOpen={modalIsOpen}
+								style={customStyles}
+								onRequestClose={() => setModalIsOpen(false)}
+							>
+								<button onClick={()=>setModalIsOpen(false)}>x</button>
+								<AnimeList />
+							</Modal> */}
               </div>
           </div>
           </div>
@@ -179,7 +211,7 @@ const CustomerDashboard = () => {
           '>
            <button className='cust-close-btn' onClick={handleClose}>Close x</button>
           </div>
-      </div>         
+      </div>        
       </div>             
     </Layout>
   );

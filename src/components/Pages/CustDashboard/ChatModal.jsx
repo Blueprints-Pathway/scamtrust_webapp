@@ -20,7 +20,7 @@ function ChatModal() {
 			<button onClick={setModalIsOpenToTrue}>Click to Open Modal</button>
 
 			<Modal isOpen={modalIsOpen}>
-				<button onClick={setModalIsOpenToFalse}>x</button>
+				<button onClick={setModalIsOpenToFalse}> X </button>
 				<AnimeList />
 			</Modal>
 		</>
