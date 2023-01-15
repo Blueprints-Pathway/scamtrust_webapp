@@ -146,7 +146,7 @@ const Header = (props) => {
 			setFilteredResults(items);
 		}
 	};
-
+console.log(details,"user details");
 	return (
 		<div
 			className={`${headerItemClassName} flex justify-between items-center w-full h-full shadow-md z-50`}
@@ -156,19 +156,21 @@ const Header = (props) => {
 			</h3>
 			<div className="flex items-center" onClick={getSearch}>
 				<div className="2xl:w-[541px] mr-2 lg:mr-[56px] relative lg:w-[400px] h-[47px] md:w-[300px] w-[50px]">
-					<input
+				{details?.usertype === "CUSTOMER"
+	?<input
 						onInput={getSearch}
 						type="text"
 						value={searchInput}
 						onChange={(e) => searchItems(e.target.value)}
 						placeholder="Search vendor's name"
 						className="bg-[#C0C0C021] w-full h-full rounded-[50px] focus:outline-none pl-5 pr-5 md:pr-[60px]"
-					/>
-					<img
+					/>:null}
+							{details?.usertype === "CUSTOMER"
+	?	<img
 						src={Search}
 						alt="search_icon"
 						className="absolute h-[24px] right-[15px] -translate-x-0px] md:right-[20px] top-1/2 -translate-y-1/2"
-					/>
+					/>:null}
 					<div>
 						{searchInput.length > 0
 							? items?.map((item, id) => {
