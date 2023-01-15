@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 import Logo from "../../assets/images/svg/logo-white.svg";
 import Shield from "../../assets/images/svg/shieldIcon.svg";
@@ -112,10 +112,12 @@ const Sidenav = (props) => {
             </li>
           ))}
           <li className="uppercase mt-[50px] flex items-center cursor-pointer">
+            <Link to="/support" className="flex">
             <span className="mr-[7px]">
               <img src={Support} alt={"support"} />
             </span>
             {!isTabletOrMobile ? "SUPPORT" : isSidenavOpen ? "SUPPORT" : <></>}
+            </Link>
           </li>
           <li
             onClick={() => {

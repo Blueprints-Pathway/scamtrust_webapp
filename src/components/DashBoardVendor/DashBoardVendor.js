@@ -21,6 +21,7 @@ import { TransactionItems } from "./transactionItems";
 import SideBar from "../SideBar/SideBar";
 import Layout from "../../components/Layout/Layout";
 import axios from "axios";
+
 function DashBoardVendor() {
 	const handleSelect = () => {
 		setSelect(!select);
