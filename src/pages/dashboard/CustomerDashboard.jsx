@@ -36,11 +36,11 @@ const CustomerDashboard = () => {
   const [isFunding, setIsFunding] = useState(false);
   const [close, setClose] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+
   const customStyles = {
 		content: {
 			width: "50vh",
 			color: "#01306B",
-
 			top: "50%",
 			left: "50%",
 			right: "auto",
@@ -81,6 +81,12 @@ const CustomerDashboard = () => {
     // }
   }, []);
 
+  const openFaq = () => {
+    navigate("/faq")
+  }
+  // const openChat = () => {
+  //   navigate("/chat")
+  // }
 
   return (
     <Layout heading="Dashboard">
@@ -111,7 +117,7 @@ const CustomerDashboard = () => {
         setWithdrawSuccessful={setWithdrawSuccessful}
         withdrawSuccessful={withdrawSuccessful}
       /> */}
-8      {showInitiateTransaction ? (
+      {showInitiateTransaction ? (
         <Backdrop showInitiateTransaction={showInitiateTransaction}>
           <InitiateTransaction
             setShowInitiateTransaction={setShowInitiateTransaction}
@@ -186,23 +192,17 @@ const CustomerDashboard = () => {
           md:ml-[-17rem] md:text-lg
           '>Need help?</h3>
           <div className="card-con lg:mr-[22.8rem]">
-            <div className='cust-card my-4 lg:mx-14 md:mx-5'>
+            <div 
+            onClick={openFaq}
+            className='cust-card my-4 lg:mx-14 md:mx-5'>
               <img className='w-8' src={faq} alt="faq" /> 
               <p className='mr-28 pl-3'>FAQs</p>
               </div>
             <div 
-            onClick={()=>setModalIsOpen(true)}
+            // onClick={openChat}
             className="cust-card my-4 lg:mx-14 md:mx-5">
               <img className='w-8' src={chat} alt="chat" />
               <p className='mr-16 pl-3'>Chat with us</p>
-              {/* <Modal
-								isOpen={modalIsOpen}
-								style={customStyles}
-								onRequestClose={() => setModalIsOpen(false)}
-							>
-								<button onClick={()=>setModalIsOpen(false)}>x</button>
-								<AnimeList />
-							</Modal> */}
               </div>
           </div>
           </div>

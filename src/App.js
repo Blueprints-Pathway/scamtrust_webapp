@@ -38,6 +38,10 @@ import TokenPhone from "./passwordRecovery/TokenPhone";
 import TokenEmail from "./passwordRecovery/TokenEmail";
 import Confirms from "./passwordRecovery/Confirms";
 import Sucess from "./passwordRecovery/Sucess";
+import Faq from "./components/faq/Faq";
+import VendorFaq from "./components/faq/VendorFaq";
+import BuyerFaq from "./components/faq/BuyerFaq";
+import ChatModal from "./components/Pages/CustDashboard/ChatModal";
 
 function App() {
 	return (
@@ -54,6 +58,10 @@ function App() {
 				<Route path="/support" element={<Support />} />
 				<Route path="/vendor-rating" element={<VendorRating />} />
 				<Route path="/withdrawal" element={<Withdrawal />} />
+				<Route path="/faq" element={<Faq />} />
+				<Route path="/vendor-faq" element={<VendorFaq />} />
+				<Route path="/buyer-faq" element={<BuyerFaq />} />
+				<Route path="/chat" element={<ChatModal />} />
 
 				<Route path="/customer-ratting" element={<Ratting />} />
 			</Route>
