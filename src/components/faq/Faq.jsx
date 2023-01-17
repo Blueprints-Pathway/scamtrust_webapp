@@ -6,11 +6,6 @@ import VendorFaq from './VendorFaq'
 import BuyerFaq from './BuyerFaq'
 
 const Faq = () => {
-    const [nav, setNav] = useState(false)
-
-    const changeNav = () => {
-        setNav(true);
-    }
 
     const navigate = useNavigate()
 
@@ -18,55 +13,12 @@ const Faq = () => {
         navigate("/")
     }
 
-    const initialStyle = `
-    file:nav-link
-    no-underline
-    text-colorPrimary
-    active:underline
-    lg:underline-offset-4
-    text-center
-    font-medium
-    text-xl
-    lg:text-2xl
-    bg-white
-    leading-tight
-    px-6
-    md:px-12
-    lg:px-12
-    py-3
-    my-2
-    mx-3
-    rounded-lg
-    lg:text-left
-    active `
-    const afterStyle =`
-    file:nav-link
-    no-underline
-    text-white
-    active:underline
-    lg:underline-offset-4
-    text-center
-    font-medium
-    text-xl
-    lg:text-2xl
-    bg-colorPrimary
-    leading-tight
-    px-6
-    md:px-12
-    lg:px-12
-    py-3
-    my-2
-    mx-3
-    rounded-lg
-    lg:text-left
-    active `
-
   return (
     <div>
             {/* H E A D E R */}
         <div className='flex items-center justify-between px-7 box-border shadow'>
             <div>
-                <img className='w-36 h-36 md:ml-12 lg:ml-28'
+                <img className='w-36 h-36 md:ml-12 lg:ml-16'
                 src={logo} alt="" />
             </div>
             <div>
@@ -172,7 +124,7 @@ const Faq = () => {
                 {/* M E N U */}
         <div>
             <div className='flex items-center justify-center lg:justify-end mt-20 lg:mt-12 lg:mx-12'>
-                <input className='border-2 w-[80%] lg:w-[30%] rounded-2xl h-[50px] lg:h-[75px] px-5 md:placeholder-pl-12 outline-colorPrimary'
+                <input className='border-[1px] border-black w-[80%] lg:w-[30%] rounded-2xl h-[40px] lg:h-[55px] px-5 md:placeholder-pl-12 outline-none'
                 type="search" placeholder='&#128269; Search help articles...' />
             </div>
                          {/* T A B S */}
@@ -181,18 +133,17 @@ const Faq = () => {
   <ul className="nav nav-tabs flex items-center justify-center list-none mx-5 pt-8 lg:pb-3" id="tabs-tabVertical">
     <li className="nav-item lg:my-7">
       <a href="#tabs-vendorVertical" 
-      onClick={changeNav}
       className="file:nav-link
         no-underline
         text-colorPrimary
-        active:underline
         lg:underline-offset-4
         text-center
         font-medium
         text-xl
         lg:text-2xl
         bg-white
-        leading-tight
+        focus:bg-colorPrimary
+        focus:text-white
         px-6
         md:px-12
         lg:px-12
@@ -206,17 +157,16 @@ const Faq = () => {
     </li>
     <li className="nav-item text-center lg:my-7" role="presentation">
       <a href="#tabs-buyerVertical"
-      onClick={changeNav} 
       className="file:nav-link
       no-underline
       text-colorPrimary
-      active:underline
-      lg:underline-offset-4
       text-center
       font-medium
       text-xl
       lg:text-2xl
       bg-white
+      focus:bg-colorPrimary
+      focus:text-white
       leading-tight
       px-6
       md:px-12

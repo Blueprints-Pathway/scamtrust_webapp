@@ -29,7 +29,7 @@ const VendorFaq = () => {
                 </p>
             </div>
             <div className='my-4'>
-                <h1 className='text-xl font-boldl text-colorPrimary'>How can I use ScamTrust?</h1>
+                <h1 className='text-xl font-bold text-colorPrimary'>How can I use ScamTrust?</h1>
                 <p className='text-xl text-gray-500 leading-9'>
                 A vendor is a person who sells goods or offers services to another party and requires the payment to be held in ScamTrust pending the time of delivery or completion of the service. 
 
@@ -38,7 +38,7 @@ const VendorFaq = () => {
             </div>
             <div className='my-4'>
                 <h1 className='text-xl font-bold text-colorPrimary'>When should I use ScamTrust?</h1>
-                <ul className='text-xl text-gray-500 leading-9 list-disc'>
+                <ul className='text-xl text-gray-500 leading-9 list-disc ml-5'>
                     <li>When you are in a first-time business transaction and want to avoid the attendant uncertainty of service delivery</li>
                     <li>When it's a short-term transaction.</li>
                     <li>When it's a high-value transaction.</li>

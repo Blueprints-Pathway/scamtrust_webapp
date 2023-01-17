@@ -51,7 +51,7 @@ const BuyerFaq = () => {
             </div>
             <div className='my-4'>
                 <h1 className='text-xl font-bold text-colorPrimary'>When should I use ScamTrust?</h1>
-                <ul className='text-xl text-gray-500 leading-9 list-disc'>
+                <ul className='text-xl text-gray-500 leading-9 list-disc ml-5'>
                     <li>When you are in a first-time business transaction and want to avoid the attendant uncertainty of service delivery.</li>
                     <li>When it's a short-term transaction.</li>
                     <li>When it's a high-value transaction.</li>
