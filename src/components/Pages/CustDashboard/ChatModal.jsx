@@ -16,14 +16,17 @@ function ChatModal() {
 	};
 
 	return (
-		<>
+		<div>
 			<button onClick={setModalIsOpenToTrue}>Click to Open Modal</button>
 
-			<Modal isOpen={modalIsOpen}>
-				<button onClick={setModalIsOpenToFalse}> X </button>
+			<Modal 
+			isOpen={modalIsOpen}
+			onRequestClose={setModalIsOpenToFalse}
+			>
+				<button onClick={setModalIsOpenToFalse}>X</button>
 				<AnimeList />
 			</Modal>
-		</>
+		</div>
 	);
 }
 export default ChatModal;

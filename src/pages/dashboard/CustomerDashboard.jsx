@@ -20,10 +20,8 @@ import faq from '../../assets/conversation-img.png'
 import wallet from '../../assets/payment-img.png'
 import create from '../../assets/create.png'
 import KYC from '../../assets/KYC.png'
-import ChatModal from '../../components/Pages/CustDashboard/ChatModal';
-import { Modal } from '@mui/material';
+import Modal from "react-modal"
 import AnimeList from '../../components/Pages/CustDashboard/AnimeList';
-// import ChatModal from '../../components/Pages/CustDashboard/ChatModal'
 
 const CustomerDashboard = () => {
   const [showInitiateTransaction, setShowInitiateTransaction] = useState(false);
@@ -36,11 +34,19 @@ const CustomerDashboard = () => {
   const [isFunding, setIsFunding] = useState(false);
   const [close, setClose] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const setModalIsOpenToTrue = () => {
+    setModalIsOpen(true);
+  }
+
+  const setModalIsOpenToFalse = () => {
+    setModalIsOpen(false);
+  }
+
   const customStyles = {
 		content: {
 			width: "50vh",
 			color: "#01306B",
-
 			top: "50%",
 			left: "50%",
 			right: "auto",
@@ -81,6 +87,10 @@ const CustomerDashboard = () => {
     // }
   }, []);
 
+  const openFaq = () => {
+    navigate("/faq")
+  }
+ 
 
   return (
     <Layout heading="Dashboard">
@@ -111,7 +121,7 @@ const CustomerDashboard = () => {
         setWithdrawSuccessful={setWithdrawSuccessful}
         withdrawSuccessful={withdrawSuccessful}
       /> */}
-8      {showInitiateTransaction ? (
+      {showInitiateTransaction ? (
         <Backdrop showInitiateTransaction={showInitiateTransaction}>
           <InitiateTransaction
             setShowInitiateTransaction={setShowInitiateTransaction}
@@ -186,24 +196,28 @@ const CustomerDashboard = () => {
           md:ml-[-17rem] md:text-lg
           '>Need help?</h3>
           <div className="card-con lg:mr-[22.8rem]">
-            <div className='cust-card my-4 lg:mx-14 md:mx-5'>
+            <div 
+            onClick={openFaq}
+            className='cust-card my-4 lg:mx-14 md:mx-5'>
               <img className='w-8' src={faq} alt="faq" /> 
               <p className='mr-28 pl-3'>FAQs</p>
               </div>
             <div 
-            onClick={()=>setModalIsOpen(true)}
+            onClick={setModalIsOpenToTrue}
             className="cust-card my-4 lg:mx-14 md:mx-5">
               <img className='w-8' src={chat} alt="chat" />
               <p className='mr-16 pl-3'>Chat with us</p>
-              {/* <Modal
-								isOpen={modalIsOpen}
-								style={customStyles}
-								onRequestClose={() => setModalIsOpen(false)}
-							>
-								<button onClick={()=>setModalIsOpen(false)}>x</button>
-								<AnimeList />
-							</Modal> */}
               </div>
+
+              <Modal
+              isOpen={modalIsOpen}
+              style={customStyles}
+              onRequestClose={setModalIsOpenToFalse}
+              >
+                <button className='pl-28 pt-5 text-lg md:pl-5 lg:pl-16' onClick={setModalIsOpenToFalse}>X</button>
+                <AnimeList />
+              </Modal>
+
           </div>
           </div>
           <div className='cust-close text-lg font-semibold text-right mr-4 mt-3

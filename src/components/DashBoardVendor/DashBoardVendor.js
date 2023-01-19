@@ -21,8 +21,41 @@ import { TransactionItems } from "./transactionItems";
 import SideBar from "../SideBar/SideBar";
 import Layout from "../../components/Layout/Layout";
 import axios from "axios";
+import Modal from "react-modal"
+import AnimeList from "../Pages/CustDashboard/AnimeList";
+import { useNavigate } from "react-router-dom";
 
 function DashBoardVendor() {
+	const [modalIsOpen, setModalIsOpen] = useState(false);
+
+	const setModalIsOpenToTrue = () => {
+		setModalIsOpen(true);
+	  }
+	
+	  const setModalIsOpenToFalse = () => {
+		setModalIsOpen(false);
+	  }
+
+	  const customStyles = {
+		content: {
+			width: "50vh",
+			color: "#01306B",
+			top: "50%",
+			left: "50%",
+			right: "auto",
+			bottom: "auto",
+			marginRight: "-50%",
+			transform: "translate(-50%, -50%)",
+			backgroundColor: "#ffffffff",
+		},
+	};
+
+	const navigate = useNavigate();
+
+	const openFaq = () => {
+		navigate("/faq")
+	}
+	
 	const handleSelect = () => {
 		setSelect(!select);
 		setSelect2(false);
@@ -313,7 +346,7 @@ function DashBoardVendor() {
 												<div className="Transaction-body">
 													<div className="Transaction-body-profile">
 														<img
-															className="TransactionStatusimg w-48 h-48 mt-3 md:mt-1 lg:w-60 lg:h-60"
+															className="TransactionStatusimg w-56 mt-3 md:mt-1 lg:w-60 lg:h-60"
 															src={item.satusImg}
 															alt="Scam Trust"
 														/>
@@ -507,34 +540,26 @@ function DashBoardVendor() {
 						    </div>
 
 						<div className=" flex flex-col items-center justify-center mx-0 mt-[-30px]">
-							{/* <div className="action-card-title text-sm pr-[70px]"> */}
 							<div className="action-card-title text-sm ">
 								<h5 className="ml-1 md:ml-[10px] smallsize">
 									Get Started
 								</h5>
-								{/* </div> */}
 								<div className="welcome-cards1">
-									{/* <div className='action-card1'> */}
-									{/* <FontAwesomeIcon icon={faShareNodes} className="action-icon" /> */}
 									<img className="w-8" src={payment} alt="payment icon" />
 									<p className="px-2">Add withdrawal account</p>
-									{/* </div> */}
 								</div>
 							</div>
 
-							{/* <div className='help-section'> */}
-							{/* <div className='flex-column items-center justify-center mt-3 mx-[58px]'> */}
 							<div className="md:flex">
 								<div className="action-card-title text-sm  md:px-5">
 									<h5 className="smallsize ml-1 md:ml-[10px]">
 									0	Need help?
 									</h5>
-									{/* <div className='help-cards'> */}
-									<div className="welcome-cards1 pr-[90px]">
-										{/* <div className='action-card'> */}
+									<div 
+									onClick={openFaq}
+									className="welcome-cards1 pr-[90px]">
 										<img className="w-8" src={faq} alt="faq icon" />
 										<p className="px-4">FAQs</p>
-										{/* </div> */}
 									</div>
 								</div>
 
@@ -542,17 +567,24 @@ function DashBoardVendor() {
 									<h5 className=" smallsize ml-1 md:ml-[10px]">
 										Chat with us
 									</h5>
-									<div className="welcome-cards1 pr-[60px]">
-										{/* <div className='action-card'> */}
+									<div 
+									onClick={setModalIsOpenToTrue}
+									className="welcome-cards1 pr-[60px]">
 										<img className="w-8" src={chat} alt="chat icon" />
 										<p className="px-4">Chat with us</p>
-										{/* </div> */}
 									</div>
+
+									<Modal
+                                     isOpen={modalIsOpen}
+                                     style={customStyles}
+                                     onRequestClose={setModalIsOpenToFalse}
+                                     >
+                                       <button className='pl-28 pt-5 text-lg md:pl-5 lg:pl-16' onClick={setModalIsOpenToFalse}>X</button>
+                                       <AnimeList />
+                                     </Modal>
 								</div>
 							</div>
 						</div>
-						{/* </div> */}
-						{/* </div> */}
 
 						<div className="welcome-card-close">
 							<h1 onClick={handleClosed}>Close x </h1>
@@ -560,7 +592,6 @@ function DashBoardVendor() {
 					</div>
 				</div>
 			</div>
-			{/* <SideBar /> */}
 		</Layout>
 	);
 }

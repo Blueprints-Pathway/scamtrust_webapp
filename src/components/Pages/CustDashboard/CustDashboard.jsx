@@ -12,6 +12,7 @@ import EmptyTxn from "../../../assets/images/svg/EmptyTxn.svg";
 import { fetchUser } from "../../../services/auth";
 import axios from "axios";
 import useModal from "./AnimeList";
+import { Link, useNavigate } from "react-router-dom";
 
 const CustomerDashboard = (props ) => {
 	const { setShowInitiateTransaction, setIsWithdrawing, setIsFunding } = props;
@@ -24,7 +25,6 @@ const CustomerDashboard = (props ) => {
 		content: {
 			width: "50vh",
 			color: "#01306B",
-
 			top: "50%",
 			left: "50%",
 			right: "auto",
@@ -34,13 +34,14 @@ const CustomerDashboard = (props ) => {
 			backgroundColor: "#ffffffff",
 		},
 	};
-	// const setModalIsOpenToTrue = () => {
-	// 	setModalIsOpen(true);
-	// };
+	const setModalIsOpenToTrue = () => {
+		setModalIsOpen(true);
+	};
 
-	// const setModalIsOpenToFalse = () => {
-	// 	setModalIsOpen(false);
-	// };
+	const setModalIsOpenToFalse = (e) => {
+		e.stopPropagation();
+		setModalIsOpen(false);
+	};
 
 	const { user } = useSelector((state) => state.auth);
 
@@ -82,6 +83,13 @@ const CustomerDashboard = (props ) => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	console.log("details",userFromBackend);
+
+	const navigate = useNavigate();
+
+	const handleFaq = () => {
+		navigate("/faq");
+	}
+
 	return (
 		<div className="flex w-full px-2 flex-col md:flex-row gap-7 justify-between">
 			<div className="min-w-[260px] mx-auto w-[70%] 2xl:w-[685px]">
@@ -175,7 +183,7 @@ const CustomerDashboard = (props ) => {
 					</div>
 				</div>
 				<div className="flex flex-col lg:flex-row justify-around text-colorPrimary">
-					<div className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5">
+					<div onClick={handleFaq} className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5">
 						<div className="bg-[#ff9300] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
 							<img
 								className="w-[23px] h-[23px] object-contain"
@@ -186,8 +194,9 @@ const CustomerDashboard = (props ) => {
 						<h6 className="font-semibold text-xl">FAQs</h6>
 						<p>Find answers instantly</p>
 					</div>
+
 					<div
-						onClick={()=>setModalIsOpen(true)}
+						onClick={setModalIsOpenToTrue}
 						className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#E2D8F1] rounded-3xl"
 					>
 						<div className="bg-[#5F0AC3] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
@@ -198,15 +207,15 @@ const CustomerDashboard = (props ) => {
 							/>
 						</div>
 						<h6 className="font-semibold text-xl">Chat</h6>
-						<div onClick={()=>setModalIsOpen(true)}>
+						<div onClick={setModalIsOpenToTrue}>
 							<button>Click to chat</button>
 
 							<Modal
 								isOpen={modalIsOpen}
 								style={customStyles}
-								onRequestClose={() => setModalIsOpen(false)}
+								onRequestClose={setModalIsOpenToFalse}
 							>
-								<button onClick={()=>setModalIsOpen(false)}>x</button>
+								<button className='pl-28 pt-5 text-lg md:pl-5 lg:pl-16' onClick={setModalIsOpenToFalse}>X</button>
 								<AnimeList />
 							</Modal>
 						</div>
