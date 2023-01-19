@@ -4,6 +4,7 @@ import {GiHamburgerMenu} from 'react-icons/gi'
 import { Link, useNavigate } from 'react-router-dom'
 import VendorFaq from './VendorFaq'
 import BuyerFaq from './BuyerFaq'
+import Layout from '../Layout/Layout'
 
 const Faq = () => {
 
@@ -14,9 +15,10 @@ const Faq = () => {
     }
 
   return (
+    <Layout>
     <div>
             {/* H E A D E R */}
-        <div className='flex items-center justify-between px-7 box-border shadow'>
+        {/* <div className='flex items-center justify-between px-7 box-border shadow'>
             <div>
                 <img className='w-36 h-36 md:ml-12 lg:ml-16'
                 src={logo} alt="" />
@@ -120,15 +122,15 @@ const Faq = () => {
                            </div>
                          </div>
             </div>
-        </div>
+        </div> */}
                 {/* M E N U */}
         <div>
-            <div className='flex items-center justify-center lg:justify-end mt-20 lg:mt-12 lg:mx-12'>
+            {/* <div className='flex items-center justify-center lg:justify-end mt-20 lg:mt-12 lg:mx-12'>
                 <input className='border-[1px] border-black w-[80%] lg:w-[30%] rounded-2xl h-[40px] lg:h-[55px] px-5 md:placeholder-pl-12 outline-none'
                 type="search" placeholder='&#128269; Search help articles...' />
-            </div>
+            </div> */}
                          {/* T A B S */}
-    <div className="faq-tab flex-col items-center justify-center mt-5 px-4 md:mt-12 lg:mx-3">
+    <div className="faq-tab flex-col items-center justify-center mt-5 md:mt-12 lg:mx-3">
 
   <ul className="nav nav-tabs flex items-center justify-center list-none mx-5 pt-8 lg:pb-3" id="tabs-tabVertical">
     <li className="nav-item lg:my-7">
@@ -147,10 +149,10 @@ const Faq = () => {
         px-6
         md:px-12
         lg:px-12
+        rounded-lg
         py-3
         my-2
         mx-3
-        rounded-lg
         lg:text-left
         active" id="tabs-vendor-tabVertical" data-bs-toggle="pill" data-bs-target="#tabs-vendorVertical" role="tab"
         aria-controls="tabs-vendorVertical" aria-selected="true">VENDOR</a>
@@ -171,17 +173,17 @@ const Faq = () => {
       px-6
       md:px-12
       lg:px-12
+      rounded-lg
       py-3
       my-2
       mx-3
-      rounded-lg
       lg:text-left"
       id="tabs-buyer-tabVertical" data-bs-toggle="pill" data-bs-target="#tabs-buyerVertical" role="tab"
         aria-controls="tabs-buyerVertical" aria-selected="false">BUYER</a>
     </li>
   </ul>
 
-  <div className="tab-content mt-5 flex-col items-center justify-center mx-8" id="tabs-tabContentVertical">
+  <div className="tab-content mt-5 flex-col items-center justify-center" id="tabs-tabContentVertical">
     <div className="tab-pane fade show active" id="tabs-vendorVertical" role="tabpanel"
       aria-labelledby="tabs-vendor-tabVertical">
       <VendorFaq />
@@ -197,6 +199,7 @@ const Faq = () => {
         <br />           
         <br />           
     </div>
+    </Layout>
   )
 }
 
