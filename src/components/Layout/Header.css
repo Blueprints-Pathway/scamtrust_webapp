@@ -1,0 +1,48 @@
+.notice{
+    width:215px;
+    float:left;
+    overflow-y:auto;
+    padding:0 0 0 5px;
+    position:relative;
+    float:left;
+    border-right: 1px #f8f7f3 solid;
+}
+.notice2{
+     height:100px;
+    width:215px; 
+    /* background-color:#CCC; */		
+    overflow-y:auto;
+    float:left;
+    position:relative;
+    margin-left:-5px; 
+}
+body {
+    margin: 20px;
+ }
+ 
+ .text{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+ }
+ .text2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+            line-clamp: 4; 
+    -webkit-box-orient: vertical;
+ }
+ .btn:active{
+    width: fit-content;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+            line-clamp: 4; 
+    -webkit-box-orient: vertical;
+   background-color:black
+ }

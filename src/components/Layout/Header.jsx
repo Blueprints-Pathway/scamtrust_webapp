@@ -4,13 +4,14 @@ import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-
+import "./Header.css";
 import BellNotification from "../../assets/images/svg/bell-notification.svg";
 import Search from "../../assets/images/svg/search.svg";
 import RidicVentures from "../../assets/images/svg/ridic.svg";
 import APlus from "../../assets/images/svg/a-plus.svg";
 import { fetchUser } from "../../services/auth";
 
+import moment from "moment";
 import axios from "axios";
 const VENDORS = [
 	{
@@ -44,14 +45,16 @@ const Header = (props) => {
 
 	const { user } = useSelector((state) => state.auth);
 	const [details, setDetails] = useState();
+	const [notification, setNotification] = useState();
+	const [toggle, setToggle] = useState(false);
 	const [userFromBackend, setUserFromBackend] = useState(null);
 	const [error, setError] = useState(null);
 	const [isLoaded, setIsLoaded] = useState(false);
-
+	const [id, setId] = useState();
 	const [items, setItems] = useState([]);
 	const [filteredResults, setFilteredResults] = useState([]);
 	const [searchInput, setSearchInput] = useState("");
-
+	const [showMore, setShowMore] = useState(false);
 	useEffect(() => {
 		(async () => setUserFromBackend(await fetchUser(user.data.access_token)))();
 	}, []);
@@ -95,6 +98,15 @@ const Header = (props) => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	// console.log("details", details);
+
+	// notification?.data?.map((newLngth)=>{
+	// const get=newLngth?.status===
+	// "UNREAD"
+	// console.log(get,"get");
+	// 	return(
+	// 		<div></div>
+	// 	)
+	// })
 	const getSearch = async () => {
 		try {
 			const API_URL = `https://scamtrust.herokuapp.com/api/v1/misc/vendor/search`;
@@ -122,6 +134,58 @@ const Header = (props) => {
 		}
 	};
 
+	const getNotification = async () => {
+		try {
+			const API_URL = `https://scamtrust.herokuapp.com/api/v1/misc/toggle/notification`;
+			const config = {
+				headers: {
+					"Content-Type": "application/json",
+					Authorization: `Bearer ${user_details?.data?.access_token}`,
+				},
+			};
+			const payload = {
+				notification_id: id,
+			};
+
+			const data = await axios.post(API_URL, payload, config);
+
+			console.log(data, "id");
+			setIsLoaded(true);
+
+			// console.log(values, "values");
+			// return response;
+		} catch (error) {
+			setIsLoaded(true);
+			setError(error);
+			console.log(error, "errorss");
+		}
+	};
+	///notifications start///
+	useEffect(() => {
+		(async () => {
+			try {
+				const API_URL = `https://scamtrust.herokuapp.com/api/v1/misc/list/notifications?page=1`;
+				const config = {
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${user_details?.data?.access_token}`,
+					},
+				};
+
+				const data = await axios.get(API_URL, config);
+
+				// console.log(data?.data.data, "user data");
+				setNotification(data?.data?.data?.data);
+				// console.log(values, "values");
+				// return response;
+			} catch (error) {
+				console.log(error, "error");
+			}
+		})();
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+	///notification end///
 	// useEffect(() => {
 	// 	();
 
@@ -131,7 +195,7 @@ const Header = (props) => {
 	const first = nameOf?.at(0);
 	const last = nameOf?.at(-1);
 
-	// console.log(user_details,"name");
+	console.log(notification, "notice");
 	const searchItems = (searchValue) => {
 		setSearchInput(searchValue);
 		if (searchInput !== "") {
@@ -146,7 +210,20 @@ const Header = (props) => {
 			setFilteredResults(items);
 		}
 	};
-console.log(details,"user details");
+	const check = () => {
+		setToggle(!toggle);
+	};
+	const close = () => {
+		setToggle(false);
+	};
+	const handleRemove = () => {
+		const items = notification;
+		if (items.length > 0) {
+			const lastIndex = items.length - 1;
+			setNotification(items.filter((item, index) => index !== lastIndex));
+		}
+	};
+	
 	return (
 		<div
 			className={`${headerItemClassName} flex justify-between items-center w-full h-full shadow-md z-50`}
@@ -156,27 +233,29 @@ console.log(details,"user details");
 			</h3>
 			<div className="flex items-center" onClick={getSearch}>
 				<div className="2xl:w-[541px] mr-2 lg:mr-[56px] relative lg:w-[400px] h-[47px] md:w-[300px] w-[50px]">
-				{details?.usertype === "CUSTOMER"
-	?<input
-						onInput={getSearch}
-						type="text"
-						value={searchInput}
-						onChange={(e) => searchItems(e.target.value)}
-						placeholder="Search vendor's name"
-						className="bg-[#C0C0C021] w-full h-full rounded-[50px] focus:outline-none pl-5 pr-5 md:pr-[60px]"
-					/>:null}
-							{details?.usertype === "CUSTOMER"
-	?	<img
-						src={Search}
-						alt="search_icon"
-						className="absolute h-[24px] right-[15px] -translate-x-0px] md:right-[20px] top-1/2 -translate-y-1/2"
-					/>:null}
-					<div>
+					{details?.usertype === "CUSTOMER" ? (
+						<input
+							onInput={getSearch}
+							type="text"
+							value={searchInput}
+							onChange={(e) => searchItems(e.target.value)}
+							placeholder="Search vendor's name"
+							className="bg-[#C0C0C021] w-full h-full rounded-[50px] focus:outline-none pl-5 pr-5 md:pr-[60px]"
+						/>
+					) : null}
+					{details?.usertype === "CUSTOMER" ? (
+						<img
+							src={Search}
+							alt="search_icon"
+							className="absolute h-[24px] right-[15px] -translate-x-0px] md:right-[20px] top-1/2 -translate-y-1/2"
+						/>
+					) : null}
+					<div className="overflow-y-scroll h-62">
 						{searchInput.length > 0
 							? items?.map((item, id) => {
 									console.log(item, "new data");
 									return (
-										<div key={item?.id}>
+										<div key={item?.id} className="overflow-y-scroll h-32">
 											<div class="py-8 px-8 max-w-sm mx-auto bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
 												<img
 													class="block mx-auto h-24 rounded-full sm:mx-0 sm:shrink-0"
@@ -246,11 +325,77 @@ console.log(details,"user details");
 						</div>
 					</div>
 				</div>
-				<img
-					src={BellNotification}
-					alt="notification"
-					className="w-[22px] h-[24px] mr-2 lg:mr-[56px]"
-				/>
+				<div>
+					<div className="flex-auto flex mt-40 " onClick={check}>
+						<p className="text-rose-600">{notification?.length}</p>
+						<img
+							src={BellNotification}
+							alt="notification"
+							className=" w-[22px] h-[24px] mr-2 lg:mr-[56px]"
+						/>
+					</div>
+					<div className=" overflow-y-scroll h-40 ">
+						{notification?.map((newNotice) => {
+							return (
+								<div className="h-32">
+									{toggle === true ? (
+										<div className=" " key={newNotice?.id}>
+											<div  key={newNotice?.id} class="block notice2 p-6 rounded-lg shadow-lg bg-white max-w-sm ">
+												{" "}
+												<button onClick={()=>{
+													close()
+												}}>close</button>
+												{/* <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">
+													{newNotice?.status}
+												</h5> */}
+												{/* <p style={{ 
+													
+												 }} class="text-gray-700 text-base mb-4 text">
+													{newNotice?.content}
+												</p> */}
+												<h6 >
+													{showMore
+														? newNotice?.content
+														: `${newNotice?.content.substring(0, 30)}`}
+														<br />
+													<button
+													key={newNotice?.id}
+														className="btn"
+														onClick={() => {
+															getNotification();
+															setShowMore(!showMore);
+															setId(newNotice?.id);
+														}}
+													>
+														{showMore ? "Show less" : "Show more"}
+													</button>
+												</h6>
+												<div className="flex">
+													<span>
+														{moment(newNotice?.created_at).format("DD/MM/YYYY")}
+													</span>
+													<span className="px-3">
+														{newNotice?.notification_time}
+													</span>
+												</div>
+												{/* <button
+													className="btn"
+													onClick={() => {
+														getNotification();
+														setId(newNotice?.id);
+													}}
+												>
+													Read
+												</button> */}
+											</div>
+										</div>
+									) : null}
+								</div>
+							);
+						})}
+					</div>
+				</div>
+
 				<span className="lg:w-[46px] w-[30px] h-[30px] lg:h-[46px] font-bold text-base lg:text-[21px] text-white bg-[#E36969] grid place-content-center overflow-hidden rounded-full">
 					{first}
 					{last}
