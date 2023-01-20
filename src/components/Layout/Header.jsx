@@ -223,7 +223,7 @@ const Header = (props) => {
 			setNotification(items.filter((item, index) => index !== lastIndex));
 		}
 	};
-	
+
 	return (
 		<div
 			className={`${headerItemClassName} flex justify-between items-center w-full h-full shadow-md z-50`}
@@ -271,7 +271,14 @@ const Header = (props) => {
 															{item?.vendor_id}
 														</p>
 													</div>
-													<button class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">
+													<button
+														onClick={() => {
+															navigate(`/vendor/${item?.vendor_id}`, {
+																state: {id:item?.vendor_id},
+															});
+														}}
+														class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+													>
 														Message
 													</button>
 												</div>
@@ -340,11 +347,18 @@ const Header = (props) => {
 								<div className="h-32">
 									{toggle === true ? (
 										<div className=" " key={newNotice?.id}>
-											<div  key={newNotice?.id} class="block notice2 p-6 rounded-lg shadow-lg bg-white max-w-sm ">
+											<div
+												key={newNotice?.id}
+												class="block notice2 p-6 rounded-lg shadow-lg bg-white max-w-sm "
+											>
 												{" "}
-												<button onClick={()=>{
-													close()
-												}}>close</button>
+												<button
+													onClick={() => {
+														close();
+													}}
+												>
+													close
+												</button>
 												{/* <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">
 													{newNotice?.status}
 												</h5> */}
@@ -353,13 +367,13 @@ const Header = (props) => {
 												 }} class="text-gray-700 text-base mb-4 text">
 													{newNotice?.content}
 												</p> */}
-												<h6 >
+												<h6>
 													{showMore
 														? newNotice?.content
 														: `${newNotice?.content.substring(0, 30)}`}
-														<br />
+													<br />
 													<button
-													key={newNotice?.id}
+														key={newNotice?.id}
 														className="btn"
 														onClick={() => {
 															getNotification();

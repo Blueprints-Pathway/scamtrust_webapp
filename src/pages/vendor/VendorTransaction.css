@@ -279,3 +279,6 @@ cursor: pointer;
     margin-left: 3vw;
   }
 }
+svg.star-svg {
+  display: inline;
+}

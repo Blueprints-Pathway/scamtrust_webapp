@@ -633,7 +633,7 @@ const changePhone = async (e) => {
 
 					<input
 						onChange={handleChange}
-						value={details?.name
+						value={details?.name || details?.username
 						}
 						className="inputBox-GeneralSettings"
 						name="businessName"
