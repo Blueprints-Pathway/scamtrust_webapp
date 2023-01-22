@@ -1,28 +1,28 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-
+import { useEffect,useState } from "react";
 import SecuredBy from "../../assets/images/svg/secured-by.svg";
 import { createTransactionSchema } from "../../model/registerModel";
 
 const InitiateTransaction = (props) => {
   const { setShowInitiateTransaction, setShowTransactionPreview } = props;
-
-  const transactionDetailsFromStorage = localStorage.getItem(
+  const [items, setItems] = useState([]);
+  const transactionDetailsFromStorage = localStorage?.getItem(
     "scam-trust-txnInitiation"
   );
-
+// console.log(transactionDetailsFromStorage,"hello");
   const transactionDetails = transactionDetailsFromStorage
     ? JSON.parse(transactionDetailsFromStorage)
     : null;
 
   const defaultValues = {
-    vendor_id: transactionDetails.vendor_id,
-    product_name: transactionDetails.product_name,
-    phone: transactionDetails.phone,
-    due_date: transactionDetails.due_date,
-    amount: transactionDetails.amount,
-    quantity: transactionDetails.quantity,
-    description: transactionDetails.description,
+    vendor_id: items?.vendor_id,
+    product_name: transactionDetails?.product_name,
+    phone: transactionDetails?.phone,
+    due_date: transactionDetails?.due_date,
+    amount: transactionDetails?.amount,
+    quantity: transactionDetails?.quantity,
+    description: transactionDetails?.description,
   };
 
   const {
@@ -52,7 +52,15 @@ const InitiateTransaction = (props) => {
   // useEffect(() => {
 
   // }, []);
+ 
 
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem('dataKey'));
+    if (items) {
+     setItems(items);
+    }
+  }, []);
+  console.log(items,"items");
   return (
     <div className="h-[90vh] md:grid md:place-content-center py-4 relative overflow-y-scroll w-full">
       <form
@@ -85,6 +93,8 @@ const InitiateTransaction = (props) => {
             </div>
             <div className="relative">
               <input
+              value={items?.vendor_id
+              }
                 type="text"
                 name="vendor_id"
                 placeholder="Vendor ID"
@@ -276,7 +286,7 @@ const InitiateTransaction = (props) => {
               className="md:w-[169px] w-[100px] mr-6"
             />
             <button
-              type="submit"
+              // type="submit"
               className="bg-colorPrimary text-white rounded-md font-semibold px-[25px] md:px-[50px] py-[10px]"
             >
               Continue

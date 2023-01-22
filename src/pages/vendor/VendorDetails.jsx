@@ -10,12 +10,21 @@ import Check from "../../assets/images/svg/check.svg";
 import Location from "../../assets/images/svg/location.svg";
 import Phone from "../../assets/images/svg/phone.svg";
 import axios from "axios";
+import Backdrop from "../../components/UI/Backdrop";
 import { useLocation } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
+import InitiateTransaction from "../../components/InitiateTransaction/InitiateTransaction";
+import TransactionPreview from "../../components/InitiateTransaction/TransactionPreview";
+import InitiationSuccessful from "../../components/InitiateTransaction/InitiationSuccessful";
 const VendorDetails = () => {
 	const [details, setDetails] = useState();
 	const [rating, setRating] = useState(0);
+	const [showInitiateTransaction, setShowInitiateTransaction] = useState(false);
+	const [data, setData] = useState([]);
+	const [showTransactionPreview, setShowTransactionPreview] = useState(false);
+	const [showTransactionSuccess, setShowTransactionSuccess] = useState(false);
 	const location = useLocation();
+	const [initiate, setInitiate] = useState(false);
 	const id = location?.state?.id;
 
 	// const handleRating = (rate: number) => {
@@ -23,7 +32,9 @@ const VendorDetails = () => {
 
 	// 	// other logic
 	// };
-
+	const trans = () => {
+		setInitiate(!initiate);
+	};
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
 	useEffect(() => {
 		(async () => {
@@ -35,13 +46,10 @@ const VendorDetails = () => {
 						Authorization: `Bearer ${user_details?.data?.access_token}`,
 					},
 				};
-
 				const data = await axios.get(API_URL, config);
-
-				// console.log(data?.data.data, "user data");
 				setDetails(data?.data?.data);
-				// console.log(values, "values");
-				// return response;
+				setData(data?.data?.data)
+				
 			} catch (error) {
 				console.log(error, "error");
 			}
@@ -49,7 +57,13 @@ const VendorDetails = () => {
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-	console.log(details, "location");
+	useEffect(() => {
+		localStorage.setItem('dataKey', JSON.stringify(data));
+	  }, [data]);
+	console.log(data, "locations");
+	const onCreateTransactionClicked = () => {
+		setShowInitiateTransaction((prevState) => !prevState);
+	};
 	return (
 		<Layout>
 			<div className="rounded-[25px] min-h-[60vh] overflow-hidden ">
@@ -83,14 +97,47 @@ const VendorDetails = () => {
 							<div className="flex justify-between mt-5 md:mt-0">
 								<button
 									//   onClick={onCreateTransactionClicked}
+
+									onClick={onCreateTransactionClicked}
 									className="bg-colorPrimary  text-xs lg:text-base flex text-white items-center rounded-md px-2 py-2 lg:py-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-700"
 								>
 									<span>Create transaction</span>
+
 									<img src={Add} alt="add" className="mb-[-6px]" />
 								</button>
 							</div>
 						</div>
 					</div>
+					{showInitiateTransaction ? (
+						<Backdrop showInitiateTransaction={showInitiateTransaction}>
+							<InitiateTransaction
+								setShowInitiateTransaction={setShowInitiateTransaction}
+								setShowTransactionPreview={setShowTransactionPreview}
+							/>
+						</Backdrop>
+					) : (
+						<></>
+					)}
+				  {showTransactionPreview ? (
+        <Backdrop showTransactionPreview={showTransactionPreview}>
+          <TransactionPreview
+            setShowInitiateTransaction={setShowInitiateTransaction}
+            setShowTransactionPreview={setShowTransactionPreview}
+            setShowTransactionSuccess={setShowTransactionSuccess}
+          />
+        </Backdrop>
+      ) : (
+        <></>
+      )}
+	   {showTransactionSuccess ? (
+        <Backdrop showTransactionSuccess={showTransactionSuccess}>
+          <InitiationSuccessful
+            setShowTransactionSuccess={setShowTransactionSuccess}
+          />
+        </Backdrop>
+      ) : (
+        <></>
+      )}
 				</div>
 
 				<div className="pt-28 md:pt-36 px-4 md:px-28 bg-white mb-9 pb-9 rounded-b-[25px]">
@@ -145,16 +192,16 @@ const VendorDetails = () => {
 										className="flex mb-5 justify-between pb-2 border-b-[#EFF3FF] border-b-[3px]"
 									>
 										<div className="flex ">
-											<div  class="inline-block align-middle  flex-initial w-64 ..."> {service}</div>
-										<div
-										 class="flex-initial w-64 ..."	
-										>
-											<span><Rating
-  transition 
-/></span>
+											<div class="inline-block align-middle  flex-initial w-64 ...">
+												{" "}
+												{service}
+											</div>
+											<div class="flex-initial w-64 ...">
+												<span>
+													<Rating transition />
+												</span>
+											</div>
 										</div>
-										</div>
-										
 									</div>
 								);
 							})}

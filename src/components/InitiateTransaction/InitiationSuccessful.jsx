@@ -1,16 +1,32 @@
-import React from "react";
-
+import React,{useEffect,useState} from "react";
+import { useNavigate } from "react-router-dom";
 import SuccessIcon from "../../assets/images/svg/encrypted.svg";
 import CompanyIcon from "../../assets/images/svg/company-icon.svg";
 import SecuredBy from "../../assets/images/svg/secured-by.svg";
 
 const InitiationSuccessful = (props) => {
   const { setShowTransactionSuccess } = props;
-
+  const [items, setItems] = useState([]);
   const onDoneClicked = () => {
     setShowTransactionSuccess(false);
   };
-
+  const transactionDetailsFromStorage = localStorage?.getItem(
+    "scam-trust-txnInitiation"
+  );
+  const transactionDetails = transactionDetailsFromStorage
+  ? JSON.parse(transactionDetailsFromStorage)
+  : null;
+	const navigate = useNavigate();
+  useEffect(() => {
+    const items = JSON.parse(localStorage?.getItem('dataKey'));
+    if (items) {
+     setItems(items);
+    }
+  }, []);
+  console.log(items,"isu");
+const sucess=()=>{
+  navigate("/customer-dashboard")
+}
   return (
     <div className="absolute ml-[25px] w-[80vw] bg-white rounded-[20px] top-1/2 left-1/2 lg:w-[70vw] 2xl:w-[1097px] lg:p-8 p-4 2xl:p-16 -translate-x-1/2 -translate-y-1/2 z-30">
       <div className="flex mb-[52px] items-center border-b-[2px] justify-between border-b-[#EAEAEA]">
@@ -32,7 +48,7 @@ const InitiationSuccessful = (props) => {
 
       <div className="text-colorPrimary mt-4 font-normal text-center w-[377px] mx-auto">
         <p className="max-w-[377px] text-center">
-          A notification has been sent to <br /> Ridic Ventures.
+          A notification has been sent to <br /> {items?.user?.name}.
         </p>
         <p className="max-w-[377px] text-center">
           You will be notified once the vendor responds <br /> to the request.
@@ -49,14 +65,14 @@ const InitiationSuccessful = (props) => {
               className="w-[52px] h-[52px] mr-3"
             />
             <div className="flex flex-col">
-              <p className="text-[22px]">Ridic ventures</p>
-              <p className="text-[#444445] text-lg">ID-50572218</p>
+              <p className="text-[22px]">{items?.user?.name}</p>
+              <p className="text-[#444445] text-lg">{items?.vendor_id}</p>
             </div>
           </div>
 
           <div className="flex flex-col text-right text-[#44444566]">
-            <p>30th May 2022</p>
-            <p> 8:48 AM</p>
+            <p>{transactionDetails?.due_date}</p>
+            {/* <p> 8:48 AM</p> */}
           </div>
         </div>
       </div>
@@ -70,7 +86,7 @@ const InitiationSuccessful = (props) => {
             className="w-[169px] mr-6"
           />
           <button
-            onClick={onDoneClicked}
+            onClick={sucess}
             className="bg-colorPrimary text-white rounded-md font-semibold px-[50px] py-[10px]"
           >
             Done
