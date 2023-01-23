@@ -93,8 +93,8 @@ const InitiateTransaction = (props) => {
             </div>
             <div className="relative">
               <input
-              value={items?.vendor_id
-              }
+              // value={items?.vendor_id
+              // }
                 type="text"
                 name="vendor_id"
                 placeholder="Vendor ID"

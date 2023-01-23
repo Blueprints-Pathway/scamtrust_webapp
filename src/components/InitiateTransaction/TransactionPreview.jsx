@@ -56,10 +56,11 @@ const TransactionPreview = (props) => {
 	const transactionDetails = JSON.parse(
 		localStorage.getItem("scam-trust-txnInitiation")
 	);
-
+console.log(transactionDetails,"trsns");
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
 	const initiateTransaction = async (e) => {
 		e.preventDefault();
+  
 		try {
 			const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/create`;
 			const config = {
