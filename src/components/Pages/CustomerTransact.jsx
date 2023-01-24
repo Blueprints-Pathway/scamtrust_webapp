@@ -9,16 +9,25 @@ import completed from '../../assets/complete-icon.png'
 import Layout from '../Layout/Layout'
 
 
-const CustomerTransact = () => {
+const CustomerTransact = (props) => {
+  const {setShowInitiateTransaction} = props;
+
+  const onCreateTransactionClicked = () => {
+		setShowInitiateTransaction((prevState) => !prevState);
+	};
+
   return (
     <Layout>
     <div className='mt-[140px] ml-5 bg-white rounded-[10px] h-[35rem] md:h-[33rem] lg:h-[37rem] py-7 px-3 md:mb-[30px] md:mt-[0px] md:mx[25px] lg:mt-[10px] lg:px-[50px] lg:mx-12'>
         <div className='flex justify-between items-center my-5 mx-3 md:mx-12 lg:mx-[10px]'>
             <h1 className='text-xl lg:text-3xl text-[#262466] font-semibold lg:font-bold md:text-2xl'>Transactions</h1>
-            <button className='bg-[#3ab75d] text-white rounded-md flex justify-center py-0 pl-2 w-[125px] lg:w-[150px]'>
+
+            <button onClick={onCreateTransactionClicked}
+            className='bg-[#3ab75d] text-white rounded-md flex justify-center py-0 pl-2 w-[125px] lg:w-[150px]'>
             <span className='pt-3 text-xs lg:text-sm'>Create transaction</span>
             <span className='pl-1 pt-1.5'><img src={add} alt="..." /></span>
             </button>
+
         </div>
      <ul class="nav nav-tabs flex justify-center lg:justify-start list-none border-b-0 mt-3 mb-5" id="tabs-tab"
   role="tablist">

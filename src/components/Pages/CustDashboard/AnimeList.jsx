@@ -5,9 +5,9 @@ function AnimeList() {
 		<div>
 			<div className="w-[200px] mx-auto md:px-1 hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#ffffff]  rounded-2xl">
 				<div className="border my-5 w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#ffffff]  rounded-2xl">
-        <i class="    p-3 fa fa-phone" aria-hidden="true"></i>
-					<span className="py-1">Call us now</span>
-					<br />
+                   <i className="pl-3 fa fa-phone text-base"></i>
+			       <span className="p-3">Call us now</span>
+		           <br />
 					<span className="p-3">+2348169199932</span>
 				</div>
 				<div className="border  w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#ffffff]  rounded-2xl my-5">
@@ -17,7 +17,7 @@ function AnimeList() {
 						rel="noopener noreferrer"
 						href="https://wa.me/+23407067302238"
 					>
-						<i class="fa fa-whatsapp whatsapp-icon"></i>
+						<i className="fa fa-whatsapp whatsapp-icon text-lg"></i>
 						<span className="p-3">Whatsapp</span>
 						<br />
 						<span className="p-3">Chat with Dami </span>
