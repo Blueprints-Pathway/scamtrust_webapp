@@ -38,7 +38,9 @@ const CustomerDashboard = () => {
   const setModalIsOpenToTrue = () => {
     setModalIsOpen(true);
   }
-
+  const onCreateTransactionClicked = () => {
+		setShowInitiateTransaction((prevState) => !prevState);
+	};
   const setModalIsOpenToFalse = () => {
     setModalIsOpen(false);
   }
@@ -179,9 +181,7 @@ const CustomerDashboard = () => {
           md:ml-[-17rem] md:text-lg
           '>Get Started</h3>
           <div className="card-con lg:mt-[-9px]">
-
-            <div onClick={onCreateTransactionClicked}
-            className='cust-card my-4 lg:mx-14 md:mx-5'>
+            <div 		onClick={onCreateTransactionClicked} className='cust-card my-4 lg:mx-14 md:mx-5'>
               <img className='w-8' src={create} alt="create transaction" /> 
               <p className='pl-2'>Create New Transaction</p>
               </div>
