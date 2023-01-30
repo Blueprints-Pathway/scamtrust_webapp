@@ -2,7 +2,6 @@ import './customerDashboard.css'
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
 import InitiateTransaction from "../../components/InitiateTransaction/InitiateTransaction";
 import InitiationSuccessful from "../../components/InitiateTransaction/InitiationSuccessful";
 import TransactionPreview from "../../components/InitiateTransaction/TransactionPreview";
@@ -22,6 +21,7 @@ import create from '../../assets/create.png'
 import KYC from '../../assets/KYC.png'
 import Modal from "react-modal"
 import AnimeList from '../../components/Pages/CustDashboard/AnimeList';
+
 
 const CustomerDashboard = () => {
   const [showInitiateTransaction, setShowInitiateTransaction] = useState(false);
@@ -69,12 +69,12 @@ const CustomerDashboard = () => {
 
   //@TODO  NAVIGATE USER TO LOGIN
   useEffect(() => {
-    const isWithdraw = window.location.href.split("#")[1] === "withdraw";
+    // const isWithdraw = window.location.href.split("#")[1] === "withdraw";
     const isFunding = window.location.href.split("#")[1] === "fund";
     const modalIsOpen = window.location.href.split("#")[1] === "chat";
-    if (isWithdraw) {
-      setIsWithdrawing(true);
-    }
+    // if (isWithdraw) {
+    //   setIsWithdrawing(true);
+    // }
     if (isFunding) {
       setIsFunding(true);
     }
@@ -93,9 +93,9 @@ const CustomerDashboard = () => {
     navigate("/faq")
   }
 
-  const onCreateTransactionClicked = () => {
-		setShowInitiateTransaction((prevState) => !prevState);
-	};
+  // const onCreateTransactionClicked = () => {
+	// 	setShowInitiateTransaction((prevState) => !prevState);
+	// };
  
 
   return (

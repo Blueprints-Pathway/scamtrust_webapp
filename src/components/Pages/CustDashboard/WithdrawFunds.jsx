@@ -59,6 +59,7 @@ const WithdrawFunds = (props) => {
 	// }, [startWithdrawFunds]);
 
 	// if (!startWithdrawFunds) return <></>;
+	
 	useEffect(() => {
 		const details = async () => {
 			try {

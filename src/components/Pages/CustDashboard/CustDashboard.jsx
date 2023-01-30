@@ -21,6 +21,7 @@ const CustomerDashboard = (props ) => {
 	const [details, setDetails]=useState()
 	const [userFromBackend, setUserFromBackend] = useState(null);
 	const [modalIsOpen, setModalIsOpen] = useState(false);
+
 	const customStyles = {
 		content: {
 			width: "50vh",
@@ -207,7 +208,8 @@ const CustomerDashboard = (props ) => {
 							/>
 						</div>
 						<h6 className="font-semibold text-xl">Chat</h6>
-						<div onClick={setModalIsOpenToTrue}>
+						<div 
+						>
 							<button>Click to chat</button>
 
 							<Modal

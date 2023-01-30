@@ -16,6 +16,13 @@ import EmptyTxn from "../../assets/images/svg/EmptyTxn.svg";
 import { fetchUser } from "../../services/auth";
 import NotAvailable from "../../components/Pages/Wallet/NotAvailable";
 import axios from "axios";
+import Modal from "react-modal";
+import AnimeList from "../../components/Pages/CustDashboard/AnimeList";
+
+
+
+
+
 const Wallet = () => {
 	const [showFundWallet, setShowFundWallet] = useState(false);
 	const [showConfirmAccount, setShowConfirmAccont] = useState(false);
@@ -26,6 +33,29 @@ const Wallet = () => {
 	const [userFromBackend, setUserFromBackend] = useState(null);
 	const [details, setDetails] = useState();
 	const { user } = useSelector((state) => state.auth);
+	const [modalOpen, setModalIsOpen] = useState(false);
+
+	const customStyles = {
+		content: {
+			width: "50vh",
+			color: "#01306B",
+			top: "50%",
+			left: "50%",
+			right: "auto",
+			bottom: "auto",
+			marginRight: "-50%",
+			transform: "translate(-50%, -50%)",
+			backgroundColor: "#ffffffff",
+		},
+	};
+	const setModalIsOpenToTrue = () => {
+		setModalIsOpen(true);
+	};
+
+	const setModalIsOpenToFalse = (e) => {
+		e.stopPropagation();
+		setModalIsOpen(false);
+	};
 
 	useEffect(() => {
 		(async () => setUserFromBackend(await fetchUser(user.data.access_token)))();
@@ -223,7 +253,10 @@ const Wallet = () => {
 						</div>
 
 						<div className="flex bg-white mt-4 py-14 flex-col lg:flex-row justify-between rounded-3xl text-colorPrimary">
-							<div className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5">
+							
+							<div 
+							onClick={() => navigate('/faq')}
+							className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5">
 								<div className="bg-[#ff9300] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
 									<img
 										className="w-[23px] h-[23px] object-contain"
@@ -234,7 +267,10 @@ const Wallet = () => {
 								<h6 className="font-semibold text-xl">FAQs</h6>
 								<p>Find answers instantly</p>
 							</div>
-							<div className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#E2D8F1] rounded-3xl">
+
+							<div 
+							onClick={setModalIsOpenToTrue}
+							className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#E2D8F1] rounded-3xl">
 								<div className="bg-[#5F0AC3] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
 									<img
 										className="w-[23px] h-[23px] object-contain"
@@ -244,6 +280,14 @@ const Wallet = () => {
 								</div>
 								<h6 className="font-semibold text-xl">Chat</h6>
 								<p>Start a conversation now</p>
+							<Modal
+								isOpen={modalOpen}
+								style={customStyles}
+								onRequestClose={setModalIsOpenToFalse}
+							>
+								<button className='pl-28 pt-5 text-lg md:pl-5 lg:pl-16' onClick={setModalIsOpenToFalse}>X</button>
+								<AnimeList />
+							</Modal>
 							</div>
 						</div>
 					</div>

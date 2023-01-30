@@ -16,7 +16,7 @@ const Faq = () => {
 
   return (
     <Layout>
-    <div>
+    <div className='h-[100vh] overflow-y-scroll'>
             {/* H E A D E R */}
         {/* <div className='flex items-center justify-between px-7 box-border shadow'>
             <div>

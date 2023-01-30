@@ -47,7 +47,7 @@ const Sidenav = (props) => {
           ? "/customer-transaction"
           : data.usertype === "VENDOR"
           ? "/vendor-transaction"
-          : "",
+            : "",
     },
     { symbol: Wallet, name: "Wallet", link: "/wallet" },
     {
@@ -65,7 +65,7 @@ const Sidenav = (props) => {
       {/* {!isTabletOrMobile ? ( */}
       <li
         className="cursor-pointer"
-        onClick={() => navigate("/customer-dashboard")}
+        // onClick={() => navigate("/customer-dashboard")}
       >
         <img src={isTabletOrMobile ? Shield : Logo} alt="logo-white" />
       </li>

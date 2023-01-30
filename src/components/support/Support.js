@@ -1,14 +1,42 @@
 import React, { useState } from 'react'
 import './support.css'
-
 import support from '../../images/support.png'
 import scamTrustLogo from '../../images/Group114(1).png'
 import chat from '../../images/chart.png'
 import FAQs from '../../images/FAQs.png'
-import SideBar from '../SideBar/SideBar';
+// import SideBar from '../SideBar/SideBar';
 import Layout from "../../components/Layout/Layout";
+import { useNavigate } from 'react-router-dom'
+import Modal from "react-modal"
+import AnimeList from '../../components/Pages/CustDashboard/AnimeList';
 
 function Support() {
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+    const navigate = useNavigate();
+
+    const setModalIsOpenToTrue = () => {
+        setModalIsOpen(true);
+      };
+      const setModalIsOpenToFalse = () => {
+        setModalIsOpen(false);
+      }
+
+      const customStyles = {
+		content: {
+			width: "50vh",
+			color: "#01306B",
+			top: "50%",
+			left: "50%",
+			right: "auto",
+			bottom: "auto",
+			marginRight: "-50%",
+			transform: "translate(-50%, -50%)",
+			backgroundColor: "#ffffffff",
+		},
+	};
+
 
 
     return (
@@ -25,8 +53,12 @@ function Support() {
                     <div className='support-description'>
                         Need support? Find out how we can serve you better
                     </div>
+
                     <div className='support-actions'>
-                        <div className='support-action'>
+
+                        <div
+                        onClick={setModalIsOpenToTrue} 
+                        className='support-action'>
                             <div className='support-action-icon'>
                             <img src={chat} alt="Scam Trust" /><small className='image-text1'>...</small>
                             </div>
@@ -39,10 +71,20 @@ function Support() {
                                 </div>
                                 
                             </div>
-                            
-                            
                         </div>
-                        <div className='support-action'>
+
+                        <Modal
+                          isOpen={modalIsOpen}
+                          style={customStyles}
+                          onRequestClose={setModalIsOpenToFalse}
+                          >
+                         <button className='pl-28 pt-5 text-lg md:pl-5 lg:pl-16' onClick={setModalIsOpenToFalse}>X</button>
+                         <AnimeList />
+                       </Modal>
+
+                        <div 
+                        onClick={() => navigate('/faq')}
+                        className='support-action'>
                             <div className='support-action-icon'>
                             <img src={FAQs} alt="Scam Trust" /><small className='image-text2'>i</small>
                             </div>
