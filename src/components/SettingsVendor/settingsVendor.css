@@ -1440,13 +1440,21 @@
 		left: 50vw;
 		top: 15.5rem;
 	}
+	.GeneralSettings .category {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 1rem;
+		margin-top: 3rem;
+		width: 65vw;
+		font-size: 5px;
+	}
 }
 @media screen and (max-width: 400px) {
 	.GeneralSettings {
 		position: absolute;
 		/* identical to box height */
 		left: 5vw;
-		top: 5rem;
+		top: 3.5rem;
 		cursor: pointer;
 	}
 	.GeneralSettings .category h6 {
