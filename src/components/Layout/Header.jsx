@@ -216,13 +216,6 @@ const Header = (props) => {
 	const close = () => {
 		setToggle(false);
 	};
-	const handleRemove = () => {
-		const items = notification;
-		if (items.length > 0) {
-			const lastIndex = items.length - 1;
-			setNotification(items.filter((item, index) => index !== lastIndex));
-		}
-	};
 
 	return (
 		<div

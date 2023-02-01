@@ -15,16 +15,17 @@ import "../../index.css";
 
 function SettingsVendor() {
 	const [details, setDetails] = useState();
-	const [image, setImage] = useState(null);
-
+	const [image, setImage] = useState();
+	const [preview, setPreview] = useState();
 	const handleSelect = () => {
 		setSelect(!select);
 		setSelect2(false);
 		setSelect3(false);
 	};
 	function onImageChange(e) {
-		setImage(e.target.files[0]);
-		console.log(e.target.files);
+		setImage((e.target.files[0]))
+		setPreview(URL.createObjectURL(e.target.files[0]));
+		console.log(URL.createObjectURL(e.target.files[0]), "filesss");
 		// URL.createObjectURL(e.target.files[0]);
 	}
 	const [select, setSelect] = useState(true);
@@ -64,7 +65,8 @@ function SettingsVendor() {
 
 				// console.log(data?.data.data, "user data");
 				setDetails(data?.data?.data);
-				// console.log(values, "values");
+				// setImage(data?.data?.data?.image_url);
+				setPreview(data?.data?.data?.image_url)
 				// return response;
 			} catch (error) {
 				console.log(error, "error");
@@ -74,31 +76,18 @@ function SettingsVendor() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	// const upload = async () => {
-
-	// 	const formData = new FormData();
-	// 	formData.append("images", images);
-	// 	try {
-	// 		const response = await axios({
-	// 			method: "post",
-	// 			url: `https://scamtrust.herokuapp.com/api/v1/settings/upload/picture`,
-	// 			data: formData ,
-	// 			headers: {
-	// 				"Content-Type": "multipart/form-data",
-	// 				Authorization: `Bearer ${user_details?.data?.access_token}`,
-	// 			},
-	// 		});
-	// 		console.log(response, "response");
-	// 	} catch (error) {
-	// 		console.log(error);
-	// 	}
-	// };
+	console.log("details", image);
 	const upload = async () => {
+		if (!image) {
+			return;
+		}
+
 		try {
 			const API_URL = `https://scamtrust.herokuapp.com/api/v1/settings/upload/picture`;
 			const config = {
 				headers: {
 					"Content-Type": "multipart/form-data",
+
 					Authorization: `Bearer ${user_details?.data?.access_token}`,
 				},
 			};
@@ -114,7 +103,6 @@ function SettingsVendor() {
 		}
 	};
 
-	console.log("details", details);
 	return (
 		<div>
 			<Layout className="containerSettings" name="Settings">
@@ -134,7 +122,7 @@ function SettingsVendor() {
 									<div className="col-md-3">
 										<div>
 											<img
-												src={details?.image_url}
+												src={preview}
 												className="CenterImage1"
 												alt="https://www.pexels.com/search/beautiful/"
 											/>
@@ -149,7 +137,9 @@ function SettingsVendor() {
 													className="input-image my-3 px-auto"
 													type="file"
 													accept="image/*"
-													onChange={onImageChange}
+													onChange={(e) => {
+														onImageChange(e);
+													}}
 												/>
 											</div>
 										</div>
