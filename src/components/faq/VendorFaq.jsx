@@ -2,7 +2,7 @@ import React from 'react'
 
 const VendorFaq = () => {
   return (
-    <div>
+    <div className='h-[100vh] mb-[20rem]'>
         <div className='text-center'>
             <h1 className='mt-[5rem] mb-7 underline underline-offset-[6px] text-colorPrimary text-2xl lg:text-4xl lg:my-12 font-normal'>SCAMTRUST VENDOR FAQ</h1>
         </div>
@@ -81,12 +81,12 @@ const VendorFaq = () => {
                 </p>
             </div>
             <div className='my-4 border-[1px] border-gray-500 p-3 rounded-lg'>
-                <h1 className='text-xl font-bold text-colorPrimary'>What payment methods exist on AtaraPay to enable payment for my goods and services?</h1>
+                <h1 className='text-xl font-bold text-colorPrimary'>What payment methods exist on ScamTrust to enable payment for my goods and services?</h1>
                 <p className='text-xl text-colorTertiary leading-9'>
                 ScamTrsut supports the following payment methods; Scamtrust Wallet Bank Transfer into Unique account number
                 </p>
             </div>
-            <div className='my-4 border-[1px] border-gray-500 p-3 rounded-lg'>
+            <div className='my-4 border-[1px] border-gray-500 p-3 rounded-lg mb-12'>
                 <h1 className='text-xl font-bold text-colorPrimary'>What are your charges?</h1>
                 <p className='text-xl text-colorTertiary leading-9'>
                 ST offers a tier-based pricing system.

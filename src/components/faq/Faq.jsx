@@ -16,119 +16,7 @@ const Faq = () => {
 
   return (
     <Layout>
-    <div className='h-[100vh] overflow-y-scroll'>
-            {/* H E A D E R */}
-        {/* <div className='flex items-center justify-between px-7 box-border shadow'>
-            <div>
-                <img className='w-36 h-36 md:ml-12 lg:ml-16'
-                src={logo} alt="" />
-            </div>
-            <div>
-                <div className='hidden md:hidden lg:flex items-center justify-between mr-12'>
-                    <button onClick={handleClick} className='bg-colorPrimary py-3 px-5 rounded-lg text-white text-xl mx-3'>Sign in</button>
-                    <button onClick={handleClick} className='bg-colorPrimary py-3 px-5 rounded-lg text-white text-xl mx-3'>Register</button>
-                </div>
-                <div className='lg:hidden'>
-                      <div>
-                        <div className='md:mr-12'>
-                          <a
-                            href="#"
-                            type="button"
-                            id="dropdownMenuButton2"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                          >
-                           <GiHamburgerMenu className='text-4xl text-colorPrimary' />
-                          </a>
-                          <ul
-                            class="
-                              dropdown-menu
-                              min-w-max
-                              absolute
-                              text-base
-                              z-50
-                              bg-white
-                              hiddden
-                              float-left
-                              py-2
-                              list-none
-                              text-left
-                              rounded-lg
-                              shadow-lg
-                              hidden
-                              mt-1
-                              m-0
-                              bg-clip-padding
-                              border-none
-                            "
-                            aria-labelledby="dropdownMenuButton2"
-                          >
-                            <li>
-                              <Link
-                                class="
-                                                      dropdown-item
-                                  text-lg
-                                   py-2
-                                   px-4
-                                   font-semi-bold
-                                   block
-                                   w-full
-                                   whitespace-nowrap
-                                   bg-transparent
-                                   text-gray-700
-                                   hover:bg-gray-100
-                                 "
-                                 to="/"
-                                 >Sign In</Link>
-                             </li>
-                             <li>
-                               <Link
-                                 className="
-                                   dropdown-item
-                                   text-lg
-                                   py-2
-                                   px-4
-                                   font-semibold
-                                   block
-                                  w-full
-                                  whitespace-nowrap
-                                  bg-transparent
-                                  text-gray-700
-                                  hover:bg-gray-100
-                                "
-                                to="/"
-                                >Register</Link>
-                            </li>
-                            <li>
-                              <a
-                                className="
-                                  dropdown-item
-                                  text-sm
-                                  py-2
-                                  px-4
-                                  font-normal
-                                  block
-                                  w-full
-                                  whitespace-nowrap
-                                  bg-transparent
-                                  text-gray-700
-                                  hover:bg-gray-100
-                                  "
-                                  href='#'
-                                >Privacy policy</a>
-                             </li>
-                               </ul>
-                             </div>
-                           </div>
-                         </div>
-            </div>
-        </div> */}
-                {/* M E N U */}
-        <div>
-            {/* <div className='flex items-center justify-center lg:justify-end mt-20 lg:mt-12 lg:mx-12'>
-                <input className='border-[1px] border-black w-[80%] lg:w-[30%] rounded-2xl h-[40px] lg:h-[55px] px-5 md:placeholder-pl-12 outline-none'
-                type="search" placeholder='&#128269; Search help articles...' />
-            </div> */}
+    <div>
                          {/* T A B S */}
     <div className="faq-tab flex-col items-center justify-center mt-5 md:mt-12 lg:mx-3">
 
@@ -198,7 +86,6 @@ const Faq = () => {
         <br />           
         <br />           
         <br />           
-    </div>
     </Layout>
   )
 }

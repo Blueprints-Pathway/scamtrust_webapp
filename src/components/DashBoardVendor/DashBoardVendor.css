@@ -211,7 +211,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-left: 7vw;
+	margin-left: 7.5vw;
 	margin-top: 0.4rem;
 	position: absolute;
 	display: flex;
@@ -262,8 +262,8 @@
 	border: 0.5px solid #d5d8da;
 	border-radius: 50%;
 	cursor: pointer;
-	margin-top: 5.7rem;
-	margin-bottom: 0.7rem;
+	margin-top: 4.9rem;
+	margin-bottom: 1rem;
 	margin-left: 87%;
 	font-size: 12px;
 }
@@ -1127,6 +1127,7 @@ padding-left: 0.5rem; */
 		color: #262466;
 	}
 }
+
 @media screen and (max-width: 480px) {
 	.containerDash {
 		display: flex;
@@ -1244,17 +1245,19 @@ padding-left: 0.5rem; */
 	.card2-title {
 		margin-left: 10vw;
 		gap: 20vw;
+		margin-bottom: -100px;
 	}
 	.Line {
-		width: 75vw;
-		margin-left: -55%;
+		width: 77vw;
+		margin-left: -44.5%;
 	}
-
 	.eyeIconWallet {
 		margin-left: 85%;
+		margin-bottom: 10px;
 	}
 	.card2-text-right {
 		font-size: 10px;
+		margin-left: -5px;
 	}
 	.Wallet-card-left-top {
 		margin-left: 6vw;
@@ -1262,7 +1265,6 @@ padding-left: 0.5rem; */
 	.Wallet-card-left-top-right {
 		margin-left: 45vw;
 	}
-
 	.Wallet-card-left-bottom {
 		display: flex;
 		margin-left: 6vw;

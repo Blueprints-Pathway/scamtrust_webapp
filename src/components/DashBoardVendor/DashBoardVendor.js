@@ -1,3 +1,5 @@
+
+
 /** @format */
 
 import React, { useState, useEffect } from "react";
@@ -24,9 +26,21 @@ import axios from "axios";
 import Modal from "react-modal"
 import AnimeList from "../Pages/CustDashboard/AnimeList";
 import { useNavigate } from "react-router-dom";
+import { IoLogoWindows, IoMdCopy } from 'react-icons/io'
+import CopyToClipboard from "react-copy-to-clipboard";
+
+
+
 
 function DashBoardVendor() {
 	const [modalIsOpen, setModalIsOpen] = useState(false);
+
+	const [copy, setCopy] = useState(false);
+
+	const handleCopy = () => {
+		setCopy(true);
+		setTimeout(() => setCopy(false), 1500)
+	}
 
 	const setModalIsOpenToTrue = () => {
 		setModalIsOpen(true);
@@ -151,6 +165,10 @@ function DashBoardVendor() {
 		],
 	});
 
+	const vendorID = details?.vendor?.vendor_id
+
+	
+
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
 	useEffect(() => {
 		(async () => {
@@ -231,8 +249,17 @@ function DashBoardVendor() {
 									<p className="card2-text-left">Wallet</p>
 									<p className="card2-text-right">
 										{details?.name}
-										<h5 className="card2-text-right2">ID -{details?.vendor?.vendor_id}</h5>
-										<div className="Line"></div>
+										<h5 className="card2-text-right2">
+											<span className="text-[12px] text-[#FF9300] font-semibold pr-2">ID :</span>
+											{vendorID}
+										</h5>
+												<CopyToClipboard text={vendorID}>
+													<button onClick={() => setCopy(handleCopy)}>
+														{copy ? <p className="my-2">copied!</p> : <IoMdCopy className="text-[20px] text-[#86D19B]" /> }
+												       {/* <IoMdCopy className="text-[20px] text-[#86D19B]" /> */}
+													</button>
+												</CopyToClipboard>
+										<div className="Line mt-3 pl-20"></div>
 									</p>
 								</div>
 								<FontAwesomeIcon
@@ -240,7 +267,7 @@ function DashBoardVendor() {
 									onClick={handleEye}
 									icon={faEye}
 								/>
-								<div className="Wallet-card">
+								<div className="Wallet-card mt-5">
 									<div className="Wallet-card-left">
 										<div className="Wallet-card-left-top">
 											<div className="Wallet-card-left-top-left">
