@@ -76,7 +76,7 @@ const DepositFunds = (props) => {
 	}, [isFunding]);
 
 	if (!isFunding) return <></>;
-console.log(bank,"banks");
+
 	return (
 		<div>
 			<div className="w-screen h-screen fixed z-40 top-0 left-0 bg-[rgba(23,23,23,0.54)]" />
