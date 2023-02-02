@@ -18,6 +18,8 @@ import NotAvailable from "../../components/Pages/Wallet/NotAvailable";
 import axios from "axios";
 import Modal from "react-modal";
 import AnimeList from "../../components/Pages/CustDashboard/AnimeList";
+import WithdrawFunds from "../../components/Pages/CustDashboard/WithdrawFunds";
+import DepositFunds from "../../components/Pages/CustDashboard/DepositFunds";
 
 
 
@@ -30,11 +32,12 @@ const Wallet = () => {
 	const [availableBalanceInfo, setAvailableBalanceInfo] = useState(false);
 	const [outgoingBalanceInfo, setOutgoingBalanceInfo] = useState(false);
 	const [primaryAccountBalanceInfo, primaryABalanceInfo] = useState(false);
+	const [isFunding, setIsFunding] = useState(false);
 	const [userFromBackend, setUserFromBackend] = useState(null);
 	const [details, setDetails] = useState();
 	const { user } = useSelector((state) => state.auth);
 	const [modalOpen, setModalIsOpen] = useState(false);
-
+	const [isWithdrawing, setIsWithdrawing] = useState(false);
 	const customStyles = {
 		content: {
 			width: "50vh",
@@ -56,7 +59,8 @@ const Wallet = () => {
 		e.stopPropagation();
 		setModalIsOpen(false);
 	};
-
+	let amount=userFromBackend?.walletBalance
+	const balance= Math.round((amount + Number.EPSILON) * 100) / 100;  
 	useEffect(() => {
 		(async () => setUserFromBackend(await fetchUser(user.data.access_token)))();
 	}, []);
@@ -105,6 +109,7 @@ const Wallet = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	console.log(details, "wallet details");
+	
 	return (
 		<Layout>
 			<FundWallet
@@ -136,7 +141,7 @@ const Wallet = () => {
 							<div className="flex justify-between ">
 								<div>
 									<p className="font-medium md:text-xl 2xl:text-3xl text-colorSecondary mb-2">
-										&#8358; {userFromBackend?.walletBalance}
+										&#8358; {balance}
 									</p>
 									<p className="font-medium flex mb-8 2xl:mb-12 md:text-lg text-sm 2xl:text-xl text-colorPrimary">
 										<span>Available Balance</span>
@@ -158,12 +163,22 @@ const Wallet = () => {
 										</div>
 									</p>
 									<button
-										onClick={() => navigate("/customer-dashboard#withdraw")}
+										onClick={() => setIsWithdrawing(true)}
 										className="font-medium bg-[#E9303B] w-24 hover:shadow-md transition-shadow duration-300 text-white py-3 rounded-md"
 									>
 										WITHDRAW
 									</button>
+									{isWithdrawing ? (
+        <WithdrawFunds
+          setIsWithdrawing={setIsWithdrawing}
+          startWithdrawFunds={isWithdrawing}
+        
+        />
+      ) : (
+        <></>
+      )}
 								</div>
+								
 								<div>
 									<p className="font-medium md:text-xl 2xl:text-3xl text-colorSecondary mb-2">
 										&#8358; {userFromBackend?.outgoingWalletBalance}
@@ -188,12 +203,13 @@ const Wallet = () => {
 										</div>
 									</p>
 									<button
-										onClick={() => navigate("/customer-dashboard#fund")}
+										onClick={() => setIsFunding(true)}
 										className="font-medium bg-colorGreen w-24 hover:shadow-md transition-shadow duration-300 text-white py-3 rounded-md"
 									>
 										Fund
 									</button>
 								</div>
+								<DepositFunds isFunding={isFunding} setIsFunding={setIsFunding} />
 							</div>
 
 							<div className="mt-[45px]">

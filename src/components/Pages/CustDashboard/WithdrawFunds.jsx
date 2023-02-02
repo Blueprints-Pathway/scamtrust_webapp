@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 
 import { useForm } from "react-hook-form";
@@ -42,24 +44,7 @@ const WithdrawFunds = (props) => {
 		setIsWithdrawing(false);
 	};
 
-	// const onContinueClicked = (data) => {
-	// 	navigate("");
-	// };
 
-	// useEffect(() => {
-	// 	if (typeof window !== "undefined") {
-	// 		if (window) document.body.style.overflow = "hidden";
-	// 	}
-
-	// 	if (!startWithdrawFunds) {
-	// 		if (typeof window !== "undefined") {
-	// 			if (window) document.body.style.overflow = "unset";
-	// 		}
-	// 	}
-	// }, [startWithdrawFunds]);
-
-	// if (!startWithdrawFunds) return <></>;
-	
 	useEffect(() => {
 		const details = async () => {
 			try {

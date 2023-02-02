@@ -35,6 +35,8 @@ const CustomerDashboard = (props ) => {
 			backgroundColor: "#ffffffff",
 		},
 	};
+	let amount=userFromBackend?.walletBalance
+	const balance= Math.round((amount + Number.EPSILON) * 100) / 100;    
 	const setModalIsOpenToTrue = () => {
 		setModalIsOpen(true);
 	};
@@ -110,7 +112,7 @@ const CustomerDashboard = (props ) => {
 								Total Balance
 							</h4>
 							<h2 className="text-colorPrimary font-semibold text-sm 2xl:font-bold lg:text-lg 2xl:text-3xl">
-								&#8358; {userFromBackend?.walletBalance}
+								&#8358; {balance}
 							</h2>
 						</div>
 

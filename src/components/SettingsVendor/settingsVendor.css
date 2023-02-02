@@ -79,7 +79,7 @@
 	position: relative;
 	height: 90px;
 	width: 90px;
-
+	margin-left: -5px;
 	border-radius: 50%;
 }
 .GeneralSettings .category {
@@ -941,6 +941,7 @@
 		left: 0.9vw;
 		top: 1.6vh;
 		border-radius: 40%;
+		margin-right: 30px;
 	}
 
 	.vendorName {
