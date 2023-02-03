@@ -1,24 +1,44 @@
 import React, { useState } from 'react'
-import logo from '../../assets/images/logo.svg'
-import {GiHamburgerMenu} from 'react-icons/gi'
-import { Link, useNavigate } from 'react-router-dom'
+// import {GiHamburgerMenu} from 'react-icons/gi'
+// import { Link, useNavigate } from 'react-router-dom'
 import VendorFaq from './VendorFaq'
 import BuyerFaq from './BuyerFaq'
 import Layout from '../Layout/Layout'
+import './faq.css'
 
 const Faq = () => {
 
-    const navigate = useNavigate()
+  const [faq, setFaq] = useState(false);
 
-    const handleClick = () => {
-        navigate("/")
-    }
+  const handleVendor = () => {
+    setFaq(false)
+  }
+  const handleBuyer = () => {
+    setFaq(true)
+  }
+
+  const faqButton = "bg-[#262466] mx-5 px-5 py-2 rounded text-xl text-[#fff]"
 
   return (
     <Layout>
     <div>
+        
+        <div className='flex-column justify-center items-center mt-10'>
+          <div className='flex items-center justify-center'>
+          <button onClick={handleVendor}
+          className={faq ?'mx-12 text-xl' : faqButton}>Vendor</button>
+
+          <button onClick={handleBuyer} 
+          className={faq ? faqButton : 'mx-12 text-xl'}>Buyer</button>
+          </div>
+
+        {faq ? <BuyerFaq /> : <VendorFaq /> }
+
+        </div>
+
+
                          {/* T A B S */}
-    <div className="faq-tab flex-col items-center justify-center mt-5 md:mt-12 lg:mx-3">
+    {/* <div className="faq-tab flex-col items-center justify-center mt-5 md:mt-12 lg:mx-3">
 
   <ul className="nav nav-tabs flex items-center justify-center list-none mx-5 pt-8 lg:pb-3" id="tabs-tabVertical">
     <li className="nav-item lg:my-7">
@@ -80,7 +100,9 @@ const Faq = () => {
       <BuyerFaq />
     </div>
   </div>
-</div>
+</div> */}
+
+
         </div>
         <hr />
         <br />           
