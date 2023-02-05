@@ -13,6 +13,10 @@ import { fetchUser } from "../../services/auth";
 
 import moment from "moment";
 import axios from "axios";
+
+// import { IoClose } from 'react-icons/io5'
+import { IoMdCloseCircle } from 'react-icons/io'
+
 const VENDORS = [
 	{
 		logo: RidicVentures,
@@ -221,11 +225,11 @@ const Header = (props) => {
 		<div
 			className={`${headerItemClassName} flex justify-between items-center w-full h-full shadow-md z-50`}
 		>
-			<h3 className="font-medium lg:font-semibold text-xl lg:text-3xl text-colorPrimary">
+			<h3 className="hidden md:flex font-medium lg:font-semibold text-xl lg:text-3xl text-colorPrimary">
 				{heading}
 			</h3>
 			<div className="flex items-center" onClick={getSearch}>
-				<div className="2xl:w-[541px] mr-2 lg:mr-[56px] relative lg:w-[400px] h-[47px] md:w-[300px] w-[50px]">
+				<div className="2xl:w-[541px] mr-2 lg:mr-[56px] relative lg:w-[400px] h-[47px] md:w-[300px] w-[201px]">
 					{details?.usertype === "CUSTOMER" ? (
 						<input
 							onInput={getSearch}
@@ -240,7 +244,7 @@ const Header = (props) => {
 						<img
 							src={Search}
 							alt="search_icon"
-							className="absolute h-[24px] right-[15px] -translate-x-0px] md:right-[20px] top-1/2 -translate-y-1/2"
+							className="absolute h-[18px] right-[15px] -translate-x-0px] md:right-[20px] top-1/2 -translate-y-1/2"
 						/>
 					) : null}
 					<div className="overflow-y-scroll h-62">
@@ -325,32 +329,34 @@ const Header = (props) => {
 						</div>
 					</div>
 				</div>
-				<div>
-					<div className="flex-auto flex mt-40 " onClick={check}>
+				<div className="flex-column items-end justify-center">
+					<div className="flex-auto flex mt-[250px] " onClick={check}>
 						<p className="text-rose-600">{notification?.length}</p>
 						<img
 							src={BellNotification}
 							alt="notification"
-							className=" w-[22px] h-[24px] mr-2 lg:mr-[56px]"
+							className="w-[22px] h-[24px] mr-5 mb-4 lg:mr-[56px]"
 						/>
 					</div>
-					<div className=" overflow-y-scroll h-40 ">
+					<div className=" overflow-y-scroll h-[18rem] ml-[-130px]">
 						{notification?.map((newNotice) => {
 							return (
-								<div className="h-32">
+								<div className="h-[8.5rem]">
 									{toggle === true ? (
 										<div className=" " key={newNotice?.id}>
 											<div
 												key={newNotice?.id}
-												class="block notice2 p-6 rounded-lg shadow-lg bg-white max-w-sm "
+												class="block notice2 py-4 px-6 rounded-lg shadow-lg bg-white max-w-sm bg-[#cdcbf6]"
 											>
 												{" "}
 												<button
+												className="text-2xl rounded mb-1 text-[#E36969]"
 													onClick={() => {
 														close();
 													}}
 												>
-													close
+												 {/* Close <IoClose className="mt-1 ml-1" /> */}
+												 <IoMdCloseCircle />
 												</button>
 												{/* <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">
 													{newNotice?.status}
@@ -360,7 +366,7 @@ const Header = (props) => {
 												 }} class="text-gray-700 text-base mb-4 text">
 													{newNotice?.content}
 												</p> */}
-												<h6>
+												<h2 className="text-[13px]">
 													{showMore
 														? newNotice?.content
 														: `${newNotice?.content.substring(0, 30)}`}
@@ -374,9 +380,9 @@ const Header = (props) => {
 															setId(newNotice?.id);
 														}}
 													>
-														{showMore ? "Show less" : "Show more"}
+														{showMore ? <p className="font-bold text-[11px] pb-1">show less</p> : <p className="font-bold text-[11px] pb-1">show more</p>}
 													</button>
-												</h6>
+												</h2>
 												<div className="flex">
 													<span>
 														{moment(newNotice?.created_at).format("DD/MM/YYYY")}
@@ -403,10 +409,12 @@ const Header = (props) => {
 					</div>
 				</div>
 
-				<span className="lg:w-[46px] w-[30px] h-[30px] lg:h-[46px] font-bold text-base lg:text-[21px] text-white bg-[#E36969] grid place-content-center overflow-hidden rounded-full">
+                <div className="fixed left-[26rem] md:relative md:left-0">
+				<span className="flex lg:w-[46px] w-[30px] h-[30px] lg:h-[46px] font-bold text-base lg:text-[21px] text-white bg-[#E36969] grid place-content-center overflow-hidden rounded-full">
 					{first}
 					{last}
 				</span>
+				</div>
 			</div>
 		</div>
 	);

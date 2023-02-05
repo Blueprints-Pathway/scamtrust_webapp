@@ -7,6 +7,7 @@ import SecuredBy from "../../assets/images/svg/secured-by.svg";
 const InitiationSuccessful = (props) => {
   const { setShowTransactionSuccess } = props;
   const [items, setItems] = useState([]);
+  
   const onDoneClicked = () => {
     setShowTransactionSuccess(false);
   };

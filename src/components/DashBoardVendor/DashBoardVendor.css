@@ -1063,7 +1063,7 @@ padding-left: 0.5rem; */
 		margin-left: -2vw;
 	}
 	.Chart-text-right {
-		margin-left: 45vw;
+		margin-left: 30vw;
 	}
 	.Rate3 {
 		position: absolute;
@@ -1383,7 +1383,8 @@ padding-left: 0.5rem; */
 		margin-left: -15vw;
 	}
 	.Chart-text-right {
-		margin-left: 85px;
+		margin-left: 0px;
+		margin-right: -21.5rem;
 	}
 	.Rate3 {
 		position: absolute;

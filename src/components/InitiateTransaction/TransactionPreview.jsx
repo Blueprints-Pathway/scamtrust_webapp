@@ -92,6 +92,12 @@ console.log(transactionDetails,"trsns");
       swal("Oops!", error?.response?.data?.message, );
 		}
 	};
+
+	const onCancelClicked = () => {
+		setShowInitiateTransaction(false);
+		setShowTransactionPreview(false);
+	}
+
 	return (
 		<div className="h-[90vh] md:grid md:place-content-center py-4 relative overflow-y-scroll w-full">
 			<div className="w-[90%] mx-auto bg-white rounded-[20px] lg:w-[900px] 2xl:w-[1097px] lg:p-8 p-4 2xl:p-16">
@@ -100,13 +106,21 @@ console.log(transactionDetails,"trsns");
 						Transaction summary
 					</h3>{" "}
 					<div
-						className="font-extrabold text-xs lg:font-[25px] cursor-pointer"
+						className="text-sm font-semibold lg:font-[25px] cursor-pointer"
+					>
+						<button
+						className="mx-3 p-2 px-3 rounded mb-2 bg-[#86D19B]"
 						onClick={() => {
 							setShowTransactionPreview(false);
 							setShowInitiateTransaction(true);
 						}}
-					>
+						>
 						Edit form
+						</button>
+						<button
+						className="mx-3 p-2 px-3 rounded mb-2 bg-[#E36969]"
+						onClick={onCancelClicked}
+						>Cancel X</button>
 					</div>
 				</div>
 

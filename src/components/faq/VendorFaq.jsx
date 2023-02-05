@@ -86,7 +86,7 @@ const VendorFaq = () => {
                 ScamTrsut supports the following payment methods; Scamtrust Wallet Bank Transfer into Unique account number
                 </p>
             </div>
-            <div className='my-4 border-[1px] border-gray-500 p-3 rounded-lg mb-12'>
+            <div className='my-4 border-[1px] border-gray-500 p-3 rounded-lg mb-28'>
                 <h1 className='text-xl font-bold text-colorPrimary'>What are your charges?</h1>
                 <p className='text-xl text-colorTertiary leading-9'>
                 ST offers a tier-based pricing system.

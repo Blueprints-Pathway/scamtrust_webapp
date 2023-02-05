@@ -44,6 +44,7 @@
     "react-simple-star-rating": "^4.1.1",
     "react-tabs": "^6.0.0",
     "react-use-clipboard": "^1.0.9",
+    "styled-components": "^5.3.6",
     "sweetalert": "^2.1.2",
     "tw-elements": "^1.0.0-alpha13",
     "web-vitals": "^2.1.4"
