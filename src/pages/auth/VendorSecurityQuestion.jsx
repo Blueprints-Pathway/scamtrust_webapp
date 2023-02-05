@@ -17,39 +17,42 @@ const VendorSecurityQuestion = (props) => {
 	const [errorMessage, setErrorMessage] = useState("");
 	const [loading, setLoading] = useState(false);
 	const [question, setQuestion] = useState();
-	const [answer, setAnswer] = useState();
+	const [id, setId] = useState();
+	const [choice, setChoice] = useState();
 	const getData = async () => {
 		const { data } = await axios.get(
 			`https://scamtrust.herokuapp.com/api/v1/misc/list/questions`
 		);
 		setQuestion(data);
 	};
-	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
+
 	const answers = async () => {
+		const user_auth = JSON.parse(localStorage.getItem("auth"));
 		try {
 			const API_URL = `https://scamtrust.herokuapp.com/api/v1/auth/set-security-question`;
 			const config = {
 				headers: {
 					"Content-Type": "application/json",
-					Authorization: `Bearer ${user_details?.data?.access_token}`,
+					Authorization: `Bearer ${user_auth}`,
 				},
 			};
 			const payload = {
-				question_id: "104",
-				answer,
+				question_id: id,
+				answer: choice,
 			};
 			const data = await axios.post(API_URL, payload, config);
 			console.log(data, "data");
-
+			navigate("/");
 			console.log(data, "data");
 		} catch (error) {
 			console.log(error, "errror");
 		}
 	};
+
 	useEffect(() => {
 		getData();
 	}, []);
-	console.log(question, "question");
+
 	const headingText = (
 		<div className="flex justify-between items-center mb-[20px] mt-[43px] mx-[27px] lg:mt-[60px] lg:mx-[85px] 2xl:mb-[42px] 2xl:mt-[117px]">
 			<h3 className="text-[#232164] font-bold text-xl lg:text-2xl 2xl:text-3xl">
@@ -66,6 +69,7 @@ const VendorSecurityQuestion = (props) => {
 		if (loading) return;
 		setErrorMessage("");
 		const data = localStorage.getItem("vendor-signup");
+
 		setLoading(true);
 		try {
 			const response = await registerUser(data);
@@ -76,7 +80,7 @@ const VendorSecurityQuestion = (props) => {
 				return;
 			}
 			setLoading(false);
-			navigate("/");
+		
 		} catch (error) {
 			setLoading(false);
 			// const message =
@@ -85,7 +89,7 @@ const VendorSecurityQuestion = (props) => {
 			//     : error.message;
 		}
 	};
-
+	console.log(id, choice, "id");
 	return (
 		<SignupWrapper headingText={headingText}>
 			<div className="px-[27px] lg:mx-[55px]">
@@ -99,12 +103,15 @@ const VendorSecurityQuestion = (props) => {
 							className="text-[13px] 2xl:text-lg text-[#232164] 2xl:mb-[15px] mb-[10px]"
 							htmlFor={label}
 						>
-							{label}
+							Security Question
 						</label>
-						<select className="border-[0.5px] border-[#D5D8DA] 2xl:text-base text-[12px] h-[30px] 2xl:h-[40px] rounded-[5px]">
+						<select
+							onChange={(e) => setId(e.target.value)}
+							className="border-[0.5px] border-[#D5D8DA] 2xl:text-base text-[12px] h-[30px] 2xl:h-[40px] rounded-[5px]"
+						>
 							{question?.data?.map((newdata) => {
 								return (
-									<option value={newdata?.question} key={newdata?.id}>
+									<option value={newdata?.id} key={newdata?.id}>
 										{newdata?.question}
 									</option>
 								);
@@ -113,7 +120,19 @@ const VendorSecurityQuestion = (props) => {
 					</div>
 				</div>
 				<div className="mb-[26.25px] 2xl:mb-[35px] w-[280px] lg:w-[353.25px] 2xl:w-[471px]">
-					<InputGroup label="Your Answer" type="text" />
+					<div className="flex flex-col">
+						<label
+							className="text-[13px] 2xl:text-lg text-[#232164] 2xl:mb-[15px] mb-[10px]"
+							htmlFor={label}
+						>
+					Your Answer
+						</label>
+						<input
+							value={choice}
+							onChange={(e) => setChoice(e.target.value)}
+							className="border-[0.5px] border-[#D5D8DA] 2xl:text-base text-[12px] h-[30px] 2xl:h-[40px] rounded-[5px]"
+						/>
+					</div>
 				</div>
 
 				{errorMessage.length ? (
