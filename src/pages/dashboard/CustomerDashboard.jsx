@@ -127,6 +127,7 @@ const CustomerDashboard = () => {
         setWithdrawSuccessful={setWithdrawSuccessful}
         withdrawSuccessful={withdrawSuccessful}
       /> */}
+      
       {showInitiateTransaction ? (
         <Backdrop showInitiateTransaction={showInitiateTransaction}>
           <InitiateTransaction

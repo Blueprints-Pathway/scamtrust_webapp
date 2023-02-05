@@ -378,7 +378,7 @@ function DashBoardVendor() {
 															alt="Scam Trust"
 														/>
 														<div>
-															<h5 className="Transaction-details">
+															<h5 className="Transaction-details mt-[-4px]">
 																{item.itemName}
 															</h5>
 															<p className="Transaction-description">

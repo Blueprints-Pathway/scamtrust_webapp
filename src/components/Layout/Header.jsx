@@ -330,7 +330,7 @@ const Header = (props) => {
 					</div>
 				</div>
 				<div className="flex-column items-end justify-center">
-					<div className="flex-auto flex mt-[250px] " onClick={check}>
+					<div className="flex-auto flex mt-[250px] mx-7" onClick={check}>
 						<p className="text-rose-600">{notification?.length}</p>
 						<img
 							src={BellNotification}
@@ -409,7 +409,7 @@ const Header = (props) => {
 					</div>
 				</div>
 
-                <div className="fixed left-[26rem] md:relative md:left-0">
+                <div className="fixed left-[27.5rem] md:relative md:left-0">
 				<span className="flex lg:w-[46px] w-[30px] h-[30px] lg:h-[46px] font-bold text-base lg:text-[21px] text-white bg-[#E36969] grid place-content-center overflow-hidden rounded-full">
 					{first}
 					{last}

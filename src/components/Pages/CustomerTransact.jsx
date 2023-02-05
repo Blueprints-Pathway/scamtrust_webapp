@@ -7,13 +7,17 @@ import onGoing from '../../assets/on-going-icon.png'
 import cancelled from '../../assets/cancel-icon.png'
 import completed from '../../assets/complete-icon.png'
 import Layout from '../Layout/Layout'
+import { useNavigate } from 'react-router-dom'
 
 
 const CustomerTransact = (props) => {
   const {setShowInitiateTransaction} = props;
 
-  const onCreateTransactionClicked = () => {
-		setShowInitiateTransaction((prevState) => !prevState);
+  const navigate = useNavigate();
+
+  const handleCreateTransaction = () => {
+    // navigate('/initiateTransaction')
+    setShowInitiateTransaction((prevState) => !prevState);
 	};
 
   return (
@@ -22,7 +26,7 @@ const CustomerTransact = (props) => {
         <div className='flex justify-between items-center my-5 mx-3 md:mx-12 lg:mx-[10px]'>
             <h1 className='text-xl lg:text-3xl text-[#262466] font-semibold lg:font-bold md:text-2xl'>Transactions</h1>
 
-            <button onClick={onCreateTransactionClicked}
+            <button onClick={handleCreateTransaction}
             className='bg-[#3ab75d] text-white rounded-md flex justify-center py-0 pl-2 w-[125px] lg:w-[150px]'>
             <span className='pt-3 text-xs lg:text-sm'>Create transaction</span>
             <span className='pl-1 pt-1.5'><img src={add} alt="..." /></span>
