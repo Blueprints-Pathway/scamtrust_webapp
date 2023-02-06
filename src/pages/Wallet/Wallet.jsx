@@ -23,8 +23,6 @@ import DepositFunds from "../../components/Pages/CustDashboard/DepositFunds";
 
 
 
-
-
 const Wallet = () => {
 	const [showFundWallet, setShowFundWallet] = useState(false);
 	const [showConfirmAccount, setShowConfirmAccont] = useState(false);
