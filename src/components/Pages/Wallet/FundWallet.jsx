@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-
 import Copy from "../../../assets/images/svg/copy.svg";
 
 const FundWallet = (props) => {
@@ -65,7 +64,7 @@ const FundWallet = (props) => {
       >
         <div className="rounded-2xl text-center text-colorPrimary bg-white max-w-[90%] mx-auto md:max-w-lg px-11 py-3">
           <p className="mt-6 mb-3 text-xl">Fund your ScamTrust Wallet</p>
-          <p className="font-medium text-xl">Bank: {details?.virtual_account?.bank_name }Wema Bank</p>
+          <p className="font-medium text-xl">Bank: {details?.virtual_account?.bank_name } Bank</p>
           <p
             onClick={() => copyNumberHandler()}
             className="max-w-[190px] cursor-pointer md:w-[280px] my-3 flex justify-center items-center font-medium text-sm px-4 2xl:text-2xl mx-auto bg-[#0257C0] text-white text-center py-2 rounded-md xl:rounded-[33px]"
@@ -76,7 +75,7 @@ const FundWallet = (props) => {
           </p>
           <p className="mb-7">
             This works like a regular bank account number. Transfer from any
-            source to {details?.virtual_account?.account_number}. Select Wema {details?.virtual_account?.bank_name }BANK as the destination bank.
+            source to {details?.virtual_account?.account_number}. Select {details?.virtual_account?.bank_name }BANK as the destination bank.
             Funds will be credited to your ScamTrust account immediately
           </p>
           {numberCopied ? (
