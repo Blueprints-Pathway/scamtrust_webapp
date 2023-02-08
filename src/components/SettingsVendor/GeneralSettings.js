@@ -624,9 +624,11 @@ const changePhone = async (e) => {
 						{details.usertype === "CUSTOMER" ? "UserName" : "Business names"}
 					</label>
 					{Edit ? (
+						<span>
 						<p onClick={handleEdit1} className="edit1">
 							Edit
 						</p>
+						</span>
 					) : (
 						""
 					)}
@@ -721,7 +723,7 @@ const changePhone = async (e) => {
 						Active cashout account
 					</label>
 					{Edit ? (
-						<p className="edit5" onClick={handleEdit11}>
+						<p className="edit5 flex" onClick={handleEdit11}>
 							Add
 						</p>
 					) : (

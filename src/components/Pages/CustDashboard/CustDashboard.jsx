@@ -232,7 +232,7 @@ const CustomerDashboard = (props ) => {
 			</div>
 
 			<div className="w-full h-[100%] overflow-y-scroll py-3 lg:py-8 px-4 lg:px-12 bg-white rounded-[24px]">
-				<div className="w-full mb-3 font-medium 2xl:font-bold text-xs lg:text-base 2xl:text-lg text-colorPrimary flex justify-between border-b border-b-[#CFD8DC]">
+				<div className="w-full mb-3 font-medium 2xl:font-bold text-xs lg:text-base 2xl:text-lg text-colorPrimary flex justify-between items-start border-b border-b-[#CFD8DC]">
 					<p className="border-b-[3px] border-b-colorSecondary pb-5 cursor-pointer hover:opacity-70">
 						All
 					</p>
@@ -261,7 +261,7 @@ const CustomerDashboard = (props ) => {
 				<div className="overflow-x-auto mx-auto relative">
 					<table className="w-full text-left">
 						<thead className="text-sm font-bold text-[#A6A6A6]">
-							<tr>
+							<tr className="flex justify-center items-start">
 								<th scope="col" className="py-3 px-6">
 									Transactions
 								</th>

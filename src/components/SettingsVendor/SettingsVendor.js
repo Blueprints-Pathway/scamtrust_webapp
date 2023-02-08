@@ -131,10 +131,10 @@ function SettingsVendor() {
 											Upload
 										</button>
 
-										<div className="">
+										<div>
 											<div className="d-flex justify-content-center">
 												<input
-													className="input-image my-3 px-auto"
+													className="input-image my-3 px-auto cursor-pointer"
 													type="file"
 													accept="image/*"
 													onChange={(e) => {
