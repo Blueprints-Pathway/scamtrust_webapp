@@ -1,5 +1,4 @@
 /** @format */
-
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { useNavigate } from "react-router-dom";
@@ -247,24 +246,25 @@ const Header = (props) => {
 							className="absolute h-[18px] right-[15px] -translate-x-0px] md:right-[20px] top-1/2 -translate-y-1/2"
 						/>
 					) : null}
-					<div className="overflow-y-scroll h-62">
+					<div className="overflow-y-scroll flex-column items-center justify-center h-62">
 						{searchInput.length > 0
 							? items?.map((item, id) => {
 									console.log(item, "new data");
+
 									return (
-										<div key={item?.id} className="overflow-y-scroll h-32">
-											<div class="py-8 px-8 max-w-sm mx-auto bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
+										<div key={item?.id} className="flex items-center justify-center overflow-y-scroll h-32">
+											<div className="flex items-center justify-center py-2 px-3 max-w-sm ml-auto bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
 												<img
-													class="block mx-auto h-24 rounded-full sm:mx-0 sm:shrink-0"
+													class="block mx-auto h-16 rounded-full sm:mx-0 sm:shrink-0"
 													src={item?.user?.image_url}
-													alt="Woman's Face"
+													alt="Vendor pic"
 												/>
 												<div class="text-center space-y-2 sm:text-left">
 													<div class="space-y-0.5">
-														<p class="text-lg text-black font-semibold">
+														<p class="text-base text-black font-semibold">
 															{item?.user?.name}
 														</p>
-														<p class="text-slate-500 font-medium">
+														<p class="text-slate-500 text-xs font-medium">
 															{item?.vendor_id}
 														</p>
 													</div>
@@ -274,7 +274,7 @@ const Header = (props) => {
 																state: {id:item?.vendor_id},
 															});
 														}}
-														class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+														className="px-12 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
 													>
 														Message
 													</button>
@@ -330,12 +330,12 @@ const Header = (props) => {
 					</div>
 				</div>
 				<div className="flex-column items-end justify-center">
-					<div className="flex-auto flex mt-[250px] " onClick={check}>
+					<div className="flex-auto flex mt-[250px] mx-7" onClick={check}>
 						<p className="text-rose-600">{notification?.length}</p>
 						<img
 							src={BellNotification}
 							alt="notification"
-							className="w-[22px] h-[24px] mr-5 mb-4 lg:mr-[56px]"
+							className="w-[22px] h-[24px] mr-5 mb-6 lg:mr-[56px]"
 						/>
 					</div>
 					<div className=" overflow-y-scroll h-[18rem] ml-[-130px]">
@@ -409,7 +409,7 @@ const Header = (props) => {
 					</div>
 				</div>
 
-                <div className="fixed left-[26rem] md:relative md:left-0">
+                <div className="fixed left-[27.5rem] md:relative md:left-0">
 				<span className="flex lg:w-[46px] w-[30px] h-[30px] lg:h-[46px] font-bold text-base lg:text-[21px] text-white bg-[#E36969] grid place-content-center overflow-hidden rounded-full">
 					{first}
 					{last}

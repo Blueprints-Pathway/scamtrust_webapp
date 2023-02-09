@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-// import {GiHamburgerMenu} from 'react-icons/gi'
-// import { Link, useNavigate } from 'react-router-dom'
 import VendorFaq from './VendorFaq'
 import BuyerFaq from './BuyerFaq'
 import Layout from '../Layout/Layout'
 import './faq.css'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 const Faq = () => {
 
@@ -24,7 +24,7 @@ const Faq = () => {
     <div>
         
         <div className='flex-column justify-center items-center mt-10'>
-          <div className='flex items-center justify-center'>
+          <div className='flex items-center justify-start'>
           <button onClick={handleVendor}
           className={faq ?'mx-12 text-xl' : faqButton}>Vendor</button>
 
@@ -36,78 +36,25 @@ const Faq = () => {
 
         </div>
 
+      </div>          
 
-                         {/* T A B S */}
-    {/* <div className="faq-tab flex-col items-center justify-center mt-5 md:mt-12 lg:mx-3">
+       {/* <Tabs className="mt-12">
+    <TabList className="flex items-center justify-center">
+      <Tab className="mx-12 text-3xl font-semibold py-2 px-5 text-[#262466]">Vendor</Tab>
+      
+      <Tab onClick={() => {console.log("tab clicked")
+      }}
+      className="mx-12 text-3xl font-semibold py-2 px-5 text-[#262466]">Buyer</Tab>
+    </TabList>
 
-  <ul className="nav nav-tabs flex items-center justify-center list-none mx-5 pt-8 lg:pb-3" id="tabs-tabVertical">
-    <li className="nav-item lg:my-7">
-      <a href="#tabs-vendorVertical" 
-      className="file:nav-link
-        no-underline
-        text-colorPrimary
-        lg:underline-offset-4
-        text-center
-        font-medium
-        text-xl
-        lg:text-2xl
-        bg-white
-        focus:bg-colorPrimary
-        focus:text-white
-        px-6
-        md:px-12
-        lg:px-12
-        rounded-lg
-        py-3
-        my-2
-        mx-3
-        lg:text-left
-        active" id="tabs-vendor-tabVertical" data-bs-toggle="pill" data-bs-target="#tabs-vendorVertical" role="tab"
-        aria-controls="tabs-vendorVertical" aria-selected="true">VENDOR</a>
-    </li>
-    <li className="nav-item text-center lg:my-7" role="presentation">
-      <a href="#tabs-buyerVertical"
-      className="file:nav-link
-      no-underline
-      text-colorPrimary
-      text-center
-      font-medium
-      text-xl
-      lg:text-2xl
-      bg-white
-      focus:bg-colorPrimary
-      focus:text-white
-      leading-tight
-      px-6
-      md:px-12
-      lg:px-12
-      rounded-lg
-      py-3
-      my-2
-      mx-3
-      lg:text-left"
-      id="tabs-buyer-tabVertical" data-bs-toggle="pill" data-bs-target="#tabs-buyerVertical" role="tab"
-        aria-controls="tabs-buyerVertical" aria-selected="false">BUYER</a>
-    </li>
-  </ul>
+    <TabPanel>
+        <VendorFaq />
+    </TabPanel>
+    <TabPanel>
+        <BuyerFaq />
+    </TabPanel>
+  </Tabs> */}
 
-  <div className="tab-content mt-5 flex-col items-center justify-center" id="tabs-tabContentVertical">
-    <div className="tab-pane fade show active" id="tabs-vendorVertical" role="tabpanel"
-      aria-labelledby="tabs-vendor-tabVertical">
-      <VendorFaq />
-    </div>
-    <div className="tab-pane fade" id="tabs-buyerVertical" role="tabpanel" aria-labelledby="tabs-buyer-tabVertical">
-      <BuyerFaq />
-    </div>
-  </div>
-</div> */}
-
-
-        </div>
-        <hr />
-        <br />           
-        <br />           
-        <br />           
     </Layout>
   )
 }

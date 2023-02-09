@@ -16,6 +16,9 @@ import { Rating } from "react-simple-star-rating";
 import InitiateTransaction from "../../components/InitiateTransaction/InitiateTransaction";
 import TransactionPreview from "../../components/InitiateTransaction/TransactionPreview";
 import InitiationSuccessful from "../../components/InitiateTransaction/InitiationSuccessful";
+import Modal from "react-modal";
+import AnimeList from "../../components/Pages/CustDashboard/AnimeList";
+
 const VendorDetails = () => {
 	const [details, setDetails] = useState();
 	const [rating, setRating] = useState(0);
@@ -26,6 +29,8 @@ const VendorDetails = () => {
 	const location = useLocation();
 	const [initiate, setInitiate] = useState(false);
 	const id = location?.state?.id;
+	const [modalIsOpen, setModalIsOpen] = useState(false);
+
 
 	// const handleRating = (rate: number) => {
 	// 	setRating(rate);
@@ -61,9 +66,33 @@ const VendorDetails = () => {
 		localStorage.setItem('dataKey', JSON.stringify(data));
 	  }, [data]);
 	console.log(data, "locations");
+	
 	const onCreateTransactionClicked = () => {
 		setShowInitiateTransaction((prevState) => !prevState);
 	};
+
+	const customStyles = {
+		content: {
+			width: "50vh",
+			color: "#01306B",
+			top: "50%",
+			left: "50%",
+			right: "auto",
+			bottom: "auto",
+			marginRight: "-50%",
+			transform: "translate(-50%, -50%)",
+			backgroundColor: "#ffffffff",
+		},
+	};
+		
+	const setModalIsOpenToTrue = () => {
+		setModalIsOpen(!modalIsOpen);
+	  }
+	
+	  const setModalIsOpenToFalse = () => {
+		setModalIsOpen(modalIsOpen);
+	  }
+
 	return (
 		<Layout>
 			<div className="rounded-[25px] min-h-[60vh] overflow-hidden ">
@@ -78,28 +107,27 @@ const VendorDetails = () => {
 						</div>
 						<div className="-mt-8  mx-auto w-[90%] flex items-center  justify-between ">
 							<div className="md:flex flex-row items-center gap-3">
-								<div className="bg-[#D3530B] grid place-content-center font-semibold w-[45px] h-[45px] sm:w-[70px] sm:h-[70px] text-xl md:text-[40px] border-2 md:border-4 shadow-md border-white  text-white  rounded-full md:w-[132px] md:h-[132px]">
+								<div className="bg-[#D3530B] grid place-content-center font-semibold w-[50px] h-[50px] sm:w-[70px] sm:h-[70px] text-xl md:text-[40px] border-2 md:border-4 shadow-md border-white  text-white  rounded-full md:w-[132px] md:h-[132px]">
 									<img
-										className=" grid place-content-center font-semibold w-[45px] h-[45px] sm:w-[70px] sm:h-[70px] text-xl md:text-[40px] border-2 md:border-4 shadow-md border-white  text-white  rounded-full md:w-[132px] md:h-[132px]"
+										className="grid place-content-center object-cover font-semibold w-[50px] h-[50px] sm:w-[75px] sm:h-[70px] md:text-[40px] border-2 md:border-4 shadow-md border-white  text-white  rounded-full md:w-[132px] md:h-[132px]"
 										src={details?.user?.image_url}
 										alt="shield"
 										// className="mt-2 mx-3 md:mx-10 w-[10vh] h-[120px] md:w-[12vh] md:h-[150px] "
 									/>
 								</div>
 								{/* </div> */}
-								<div className="flex flex-col">
-									<h5 className="font-bold text-xs md:text-2xl text-[#707070]">
+								<div className="flex flex-col mt-5">
+									<h5 className="font-bold text-sm md:text-2xl text-[#707070]">
 										{details?.name || details?.username}
 									</h5>
 									<p className="text-xs md:text-2xl">{details?.vendor_id}</p>
 								</div>
 							</div>
-							<div className="flex justify-between mt-5 md:mt-0">
+							<div className="flex justify-between mt-8 md:mt-0">
 								<button
-									//   onClick={onCreateTransactionClicked}
 
 									onClick={onCreateTransactionClicked}
-									className="bg-colorPrimary  text-xs lg:text-base flex text-white items-center rounded-md px-2 py-2 lg:py-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-700"
+									className="bg-colorPrimary  text-xs lg:text-base flex text-white items-center rounded-md px-2 py-1 lg:py-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-700"
 								>
 									<span>Create transaction</span>
 
@@ -140,50 +168,50 @@ const VendorDetails = () => {
       )}
 				</div>
 
-				<div className="pt-28 md:pt-36 px-4 md:px-28 bg-white mb-9 pb-9 rounded-b-[25px]">
+				<div className="pt-28 md:pt-52 px-4 md:px-2 lg:px-20 bg-white mb-9 pb-9 rounded-b-[25px]">
 					<div className="">
 						<div className="px-5 mb-9 flex justify-between items-center border-b-2 border-b-[#EAEAEA]">
-							<div className="flex">
+							<div className="flex mb-2">
 								<img src={Message} alt="message_icon" className="mr-6" />
-								<span className="font-medium text-[8px] md:text-2xl">
+								<span className="font-medium text-xs md:text-2xl">
 									Email address
 								</span>
 							</div>
-							<p className="text-[8px] md:text-base">{details?.user?.email}</p>
+							<p className="text-xs md:text-base">{details?.user?.email}</p>
 						</div>
 						<div className="px-5 mb-9 flex justify-between items-center border-b-2 border-b-[#EAEAEA]">
-							<div className="flex">
+							<div className="flex mb-2">
 								<img src={Phone} alt="message_icon" className="mr-6" />
-								<span className="font-medium text-[8px] md:text-2xl">
+								<span className="font-medium text-xs md:text-2xl">
 									Phone number
 								</span>
 							</div>
-							<p className="text-[8px] md:text-base">{details?.user?.phone}</p>
+							<p className="text-sm md:text-base">{details?.user?.phone}</p>
 						</div>
 						<div className="px-5 mb-9 flex justify-between items-center border-b-2 border-b-[#EAEAEA]">
-							<div className="flex">
+							<div className="flex mb-2">
 								<img src={Location} alt="message_icon" className="mr-6" />
-								<span className="font-medium text-[8px] md:text-2xl">
+								<span className="font-medium text-xs md:text-2xl">
 									Office address
 								</span>
 							</div>
-							<p className="text-[8px] md:text-base">
+							<p className="text-sm md:text-base">
 								{details?.user?.location}
 							</p>
 						</div>
 						<div className="px-5 mb-9 flex justify-between items-center border-b-2 border-b-[#EAEAEA]">
-							<div className="flex">
+							<div className="flex mb-2">
 								<img src={Check} alt="message_icon" className="mr-6" />
-								<span className="font-medium text-[8px] md:text-2xl">
+								<span className="font-medium text-xs md:text-2xl">
 									RC Number
 								</span>
 							</div>
-							<p className="text-xs md:text-base">7654321</p>
+							<p className="text-sm md:text-base">7654321</p>
 						</div>
 					</div>
 
-					<div className="flex flex-col md:flex-row justify-between">
-						<div className="bg-[rgba(237,237,237,0.4)] py-4 px-2 md:px-11 mb-5 md:mb-0 md:w-[624px] rounded-2xl">
+					<div className="flex flex-col md:flex-row justify-between lg:mx-1">
+						<div className="bg-[rgba(237,237,237,0.4)] py-4 px-2 md:px-11 mb-5 md:mb-0 md:w-[375px] lg:w-[600px] rounded-2xl">
 							{RATING.map((serv) => {
 								const { rating, service } = serv;
 								return (
@@ -191,12 +219,12 @@ const VendorDetails = () => {
 										key={service}
 										className="flex mb-5 justify-between pb-2 border-b-[#EFF3FF] border-b-[3px]"
 									>
-										<div className="flex ">
-											<div class="inline-block align-middle  flex-initial w-64 ...">
+										<div className="flex items-center justify-center">
+											<div className="inline-block align-middle text-base  flex-initial w-28 md:w-32 lg:w-80">
 												{" "}
 												{service}
 											</div>
-											<div class="flex-initial w-64 ...">
+											<div className="flex-initial">
 												<span>
 													<Rating transition />
 												</span>
@@ -209,19 +237,21 @@ const VendorDetails = () => {
 						<div>
 							<div className="bg-[#F8F8F8] md:w-[296px] rounded-2xl">
 								<div className="flex items-center justify-between px-2 py-4">
-									<p className="font-medium">Competence Score</p>
-									<p className="bg-colorGreen text-white py-2 w-11 text-center rounded-lg">
+									<p className="font-medium text-base">Competence Score</p>
+									<p className="bg-colorGreen text-white py-2 px-2 w-11 text-center rounded-lg">
 										80%
 									</p>
 								</div>
 								<div className="flex items-center justify-between px-2 py-4">
-									<p className="font-medium">Grade</p>
-									<p className="bg-colorGreen text-white w-11 text-center py-2 rounded-lg">
+									<p className="font-medium text-base">Grade</p>
+									<p className="bg-colorGreen text-white w-11 text-center py-2 px-2 rounded-lg">
 										A
 									</p>
 								</div>
 							</div>
-							<div className="mt-3 p-6 flex items-center bg-[#E2D8F1] text-colorPrimary md:w-[296px] rounded-2xl">
+									
+							<div onClick={setModalIsOpenToTrue}
+							className="mt-3 p-6 flex items-center bg-[#E2D8F1] text-colorPrimary md:w-[296px] rounded-2xl">
 								<div className="w-10 h-10 bg-colorPrimary grid place-content-center mr-3 rounded-full">
 									<img src={Chat} alt="report_vendor" />
 								</div>
@@ -229,6 +259,15 @@ const VendorDetails = () => {
 									<p className="font-semibold text-lg">Report vendor</p>
 									<p>Chat with us</p>
 								</div>
+
+								<Modal
+                                     isOpen={modalIsOpen}
+                                     style={customStyles}
+                                     onRequestClose={setModalIsOpenToFalse}
+                                     >
+                                       <button className='pl-28 pt-5 text-lg md:pl-5 lg:pl-16' onClick={setModalIsOpenToFalse}>X</button>
+                                       <AnimeList />
+                                     </Modal>
 							</div>
 						</div>
 					</div>

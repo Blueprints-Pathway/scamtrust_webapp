@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-
 import Copy from "../../../assets/images/svg/copy.svg";
 
 const FundWallet = (props) => {
@@ -75,7 +74,7 @@ const FundWallet = (props) => {
               {details?.virtual_account?.account_number}
           </p>
           <p className="mb-7">
-            This works like a regular bank account number. Transferfrom any
+            This works like a regular bank account number. Transfer from any
             source to {details?.virtual_account?.account_number}. Select {details?.virtual_account?.bank_name }BANK as the destination bank.
             Funds will be credited to your ScamTrust account immediately
           </p>

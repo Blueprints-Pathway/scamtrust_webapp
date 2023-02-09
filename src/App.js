@@ -42,6 +42,7 @@ import Faq from "./components/faq/Faq";
 import VendorFaq from "./components/faq/VendorFaq";
 import BuyerFaq from "./components/faq/BuyerFaq";
 import ChatModal from "./components/Pages/CustDashboard/ChatModal";
+import InitiateTransaction from "./components/InitiateTransaction/InitiateTransaction";
 
 function App() {
 	return (
@@ -62,6 +63,7 @@ function App() {
 				<Route path="/vendor-faq" element={<VendorFaq />} />
 				<Route path="/buyer-faq" element={<BuyerFaq />} />
 				<Route path="/chat" element={<ChatModal />} />
+				<Route path="/initiateTransaction" element={<InitiateTransaction />} />
 
 				<Route path="/customer-ratting" element={<Ratting />} />
 			</Route>

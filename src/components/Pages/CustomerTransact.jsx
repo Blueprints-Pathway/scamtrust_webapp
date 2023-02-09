@@ -1,4 +1,4 @@
-/** @format */
+
 
 import React, { useEffect, useState } from "react";
 import add from "../../assets/create-icon.png";
@@ -17,7 +17,7 @@ const CustomerTransact = (props) => {
 	const [outgoing, setOutGoing] = useState();
 	const [completeData, setCompleteData] = useState();
 	const [cancelData, setCancelData] = useState();
-	const [transaction, setTransaction] = useState();
+	
 	const [view, setView] = useState();
 	const [out,setOut]=useState()
 	const [done ,setDone]=useState()
@@ -39,9 +39,7 @@ const CustomerTransact = (props) => {
 
 				const data = await axios.get(API_URL, config);
 
-				console.log(data?.data.data, "user data");
-				setTransaction(data?.data?.data);
-
+				
 				const mappeddata = data?.data?.data?.map((data) => data);
 				const datas = mappeddata?.filter(
 					(filtered) => filtered?.status === "PENDING VENDOR ACCEPTANCE"
