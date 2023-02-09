@@ -580,7 +580,7 @@ function DashBoardVendor() {
 							<div className="md:flex">
 								<div className="action-card-title text-sm  md:px-5">
 									<h5 className="smallsize ml-1 md:ml-[10px]">
-									0	Need help?
+									    Need help?
 									</h5>
 									<div 
 									onClick={openFaq}

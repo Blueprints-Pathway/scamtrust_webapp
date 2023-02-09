@@ -120,6 +120,7 @@ const Wallet = () => {
 				showConfirmAccount={showConfirmAccount}
 				setShowConfirmAccont={setShowConfirmAccont}
 			/>
+
 			<div className="w-full">
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 					<div>
@@ -167,11 +168,12 @@ const Wallet = () => {
 										WITHDRAW
 									</button>
 									{isWithdrawing ? (
-        <WithdrawFunds
-          setIsWithdrawing={setIsWithdrawing}
-          startWithdrawFunds={isWithdrawing}
-        
-        />
+	 	<div  className="mt-48 lg:mt-60 ml-52 ">
+			 <WithdrawFunds
+			   setIsWithdrawing={setIsWithdrawing}
+			   startWithdrawFunds={isWithdrawing}
+			 />
+		</div>								
       ) : (
         <></>
       )}
@@ -200,14 +202,17 @@ const Wallet = () => {
 											)}
 										</div>
 									</p>
+									{details?.usertype === "CUSTOMER" ? (
 									<button
-										onClick={() => setIsFunding(true)}
+										// onClick={() => setIsFunding(true)}
+										onClick={confirmAccountHandler}
 										className="font-medium text-sm bg-colorGreen w-28 hover:shadow-md transition-shadow duration-300 text-white py-3 rounded-md"
 									>
 										Fund
 									</button>
+									) : null }
 								</div>
-								<DepositFunds isFunding={isFunding} setIsFunding={setIsFunding} />
+								{/* <DepositFunds isFunding={isFunding} setIsFunding={setIsFunding} /> */}
 							</div>
 
 							<div className="mt-[30px]">
