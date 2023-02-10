@@ -269,18 +269,19 @@ const CustomerDashboard = (props ) => {
 						Completed
 					</p>
 				</div>
-
-				<div className="flex justify-between mb-[10px]">
-					<div />
+			
+				<div className="flex justify-between mb-[10px]" 		onClick={onCreateTransactionClicked}>
+			
 					<button
-						onClick={onCreateTransactionClicked}
+				
+		
 						className="bg-colorGreen text-xs lg:text-base flex text-white items-center rounded-md px-2 py-2 lg:py-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-700"
 					>
 						<span>Create transaction</span>
 						<img src={Add} alt="add" className="mb-[-6px]" />
 					</button>
 				</div>
-
+				<div />
 				<div className="overflow-x-auto mx-auto relative">
 					<table className="w-full text-left">
 						<thead className="text-sm font-bold text-[#A6A6A6]">
