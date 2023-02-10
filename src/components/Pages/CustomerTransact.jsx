@@ -306,31 +306,73 @@ const CustomerTransact = (props) => {
       md:text-sm
       lg:text-base
       focus:border-transparent
-    " id="tabs-cancel-tab" data-bs-toggle="pill" data-bs-target="#tabs-cancel" role="tab"
-      aria-controls="tabs-cancel" aria-selected="false">
-      <span className='px-1'><img src={cancel} alt="..." /></span>
-      <span>Cancelled</span>
-      </a>
-  </li>
-</ul>
-           
-                         {/* TAB CONTENT */}
-<div class="tab-content" id="tabs-tabContent">
+    "
+							id="tabs-cancel-tab"
+							data-bs-toggle="pill"
+							data-bs-target="#tabs-cancel"
+							role="tab"
+							aria-controls="tabs-cancel"
+							aria-selected="false"
+						>
+							<span className="px-1">
+								<img src={cancel} alt="..." />
+							</span>
+							<span>Cancelled</span>
+						</a>
+					</li>
+				</ul>
 
-                      {/* ALL TRANSACTONS */}
-  <div className="tab-pane fade show active" id="tabs-home" role="tabpanel" aria-labelledby="tabs-home-tab">
-    <div className='flex items-center px-0.5 pl-2 mb-4 justify-between border-[1.5px] rounded-md md:px-4'>
-       <div className='flex items-center justify-center'>
-        <img className='w-6' src={awaiting} alt="Awaiting icon" />
-        <div className='pl-1.5 pt-2 '>
-          <p className='text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]'>iphone11</p>
-          <small className=' w-[30px]  '>Awaiting approval</small>
-        </div>   
-       </div>
-       <p className='text-[#262466] text-center'>Ridic Ventures</p>
-       <p className='text-[#262466] block whitespace-nowrap w-[0px] text-center overflow-hidden text-ellipsis md:w-[60px]'>₦250,000</p>
-       <p className='text-[#262466] text-center'>25th May, 2022</p>
-    </div>
+				{/* TAB CONTENT */}
+				<div class="tab-content" id="tabs-tabContent">
+					{/* ALL TRANSACTONS */}
+
+					{active === "alltransaction" && (
+						<div>
+							
+								
+									<div
+								
+										
+										className="tab-pane fade show active"
+										id="tabs-home"
+										role="tabpanel"
+										aria-labelledby="tabs-home-tab"
+									>
+										
+
+										{
+											done?.map((item)=>(
+												<div onClick={() => {
+													setView(item?.transaction_id);
+													getTransaction();
+												}} className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md  md:px-4">
+											<div className="flex items-center justify-center">
+												<img
+													className="w-6"
+													src={completed}
+													alt="Awaiting icon"
+												/>
+												<div className="pl-1.5 pt-2">
+													<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+														{item?.product_name}
+													</p>
+													<small className=" w-[50px] overflow-hidden md:w-[65px]">
+														Completed
+													</small>
+												</div>
+											</div>
+											<p className="text-[#262466] text-center">
+												{item?.vendor?.location}
+											</p>
+											<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+												₦{item?.amount}
+											</p>
+											<p className="text-[#262466] text-center">
+												{moment(item?.created_at).format("DD/MM/YYYY")}
+											</p>
+										</div>
+											))
+										}
 
 									{
 										cancels?.map((item)=>(
@@ -364,142 +406,245 @@ const CustomerTransact = (props) => {
 											</p>
 										</div>
 
-    <div className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4'>
-       <div className='flex items-center justify-center'>
-        <img className='w-6' src={cancelled} alt="Awaiting icon" />
-        <div className='pl-1.5 pt-2'>
-          <p className='text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]'>PS-5</p>
-          <small className=' w-[50px] overflow-hidden md:w-[65px]'>Cancelled</small>
-        </div>   
-       </div>
-       <p className='text-[#262466] text-center'>Demo Gadgets</p>
-       <p className='text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]'>₦500,000</p>
-       <p className='text-[#262466] text-center'>2nd June, 2022</p>
-    </div>
+										))
+									}
+									{out?.map((item)=>(
+											<div  onClick={() => {
+												setView(item?.transaction_id);
+												getTransaction();
+											}} className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4">
+											<div className="flex items-center justify-center">
+												<img
+													className="w-6"
+													src={onGoing}
+													alt="Awaiting icon"
+												/>
+												<div className="pl-1.5 pt-2">
+													<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+														{item?.product_name}
+													</p>
+													<small className=" w-[50px] overflow-hidden md:w-[65px]">
+														{item?.status}
+													</small>
+												</div>
+											</div>
+											<p className="text-[#262466] text-center">
+												{item?.product_name}
+											</p>
+											<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+												₦{item?.amount}
+											</p>
+											<p className="text-[#262466] text-center">
+												{moment(item?.created_at).format("DD/MM/YYYY")}
+											</p>
+										</div>
+									))}
+									</div>
+								
+						
+						</div>
+					)}
 
-    <div className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4'>
-       <div className='flex items-center justify-center'>
-        <img className='w-6' src={onGoing} alt="Awaiting icon" />
-        <div className='pl-1.5 pt-2'>
-          <p className='text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]'>YEEZY 450</p>
-          <small className=' w-[50px] overflow-hidden md:w-[65px]'>On-going</small>
-        </div>   
-       </div>
-       <p className='text-[#262466] text-center'>Prince wears</p>
-       <p className='text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]'>₦50,000</p>
-       <p className='text-[#262466] text-center'>14th June, 2022</p>
-    </div>
+					{/* OUT-GOING */}
 
-    </div>
+					{active === "ongoing" && (
+						<div>
+							{console.log(outgoing, "outgoing")}
+							{outgoing?.map((newout) => {
+								console.log(newout, "new out");
+								return (
+									<div
+										onClick={() => {
+											setView(newout?.transaction_id);
+											getTransaction();
+										}}
+										key={newout?.id}
+										className="tab-pane fade show active"
+										id="tabs-home"
+										role="tabpanel"
+										aria-labelledby="tabs-home-tab"
+									>
+										<div className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4">
+											<div className="flex items-center justify-center">
+												<img
+													className="w-6"
+													src={onGoing}
+													alt="Awaiting icon"
+												/>
+												<div className="pl-1.5 pt-2">
+													<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+														{newout?.product_name}
+													</p>
+													<small className="block whitespace-nowrap w-[50px]   md:w-[65px]">
+														On-going
+													</small>
+												</div>
+											</div>
+											<p className="text-[#262466] text-center">
+												{newout?.product_name}
+											</p>
+											<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+												{newout?.amount}
+											</p>
+											<p className="text-[#262466] text-center">
+												{moment(newout?.created_at).format("DD/MM/YYYY")}
+											</p>
+										</div>
+									</div>
+								);
+							})}
+						</div>
+					)}
 
-                            {/* OUT-GOING */}
-  <div class="tab-pane fade" id="tabs-profile" role="tabpanel" aria-labelledby="tabs-profile-tab">
-     <div className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4'>
-       <div className='flex items-center justify-center'>
-        <img className='w-6' src={onGoing} alt="Awaiting icon" />
-        <div className='pl-1.5 pt-2'>
-          <p className='text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]'>YEEZY 450</p>
-          <small className='block whitespace-nowrap w-[50px]   md:w-[65px]'>On-going</small>
-        </div>   
-       </div>
-       <p className='text-[#262466] text-center'>Prince wears</p>
-       <p className='text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]'>₦50,000</p>
-       <p className='text-[#262466] text-center'>14th June, 2022</p>
-    </div>
-    <div className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4'>
-       <div className='flex items-center justify-center'>
-        <img className='w-6' src={onGoing} alt="Awaiting icon" />
-        <div className='pl-1.5 pt-2'>
-          <p className='text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]'>YEEZY 450</p>
-          <small className='block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]'>On-going</small>
-        </div>   
-       </div>
-       <p className='text-[#262466] text-center'>Prince wears</p>
-       <p className='text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]'>₦50,000</p>
-       <p className='text-[#262466] text-center'>14th June, 2022</p>
-    </div>
-  </div>
-       
-                                 {/* COMPLETED */}
-   <div class="tab-pane fade" id="tabs-messages" role="tabpanel" aria-labelledby="tabs-profile-tab">
-   <div className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md  md:px-4'>
-       <div className='flex items-center justify-center'>
-        <img className='w-6' src={completed} alt="Awaiting icon" />
-        <div className='pl-1.5 pt-2'>
-          <p className='text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]'>Airpod</p>
-          <small className='block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]'>Completed</small>
-        </div>   
-       </div>
-       <p className='text-[#262466] text-center'>Computer village</p>
-       <p className='text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]'>₦150,000</p>
-       <p className='text-[#262466] text-center'>31th May, 2022</p>
-    </div>
-    <div className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md  md:px-4'>
-       <div className='flex items-center justify-center'>
-        <img className='w-6' src={completed} alt="Awaiting icon" />
-        <div className='pl-1.5 pt-2'>
-          <p className='text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]'>Airpod</p>
-          <small className='block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]'>Completed</small>
-        </div>   
-       </div>
-       <p className='text-[#262466] text-center'>Computer village</p>
-       <p className='text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]'>₦150,000</p>
-       <p className='text-[#262466] text-center'>31th May, 2022</p>
-    </div>
-    <div className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md  md:px-4'>
-       <div className='flex items-center justify-center'>
-        <img className='w-6' src={completed} alt="Awaiting icon" />
-        <div className='pl-1.5 pt-2'>
-          <p className='text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]'>Airpod</p>
-          <small className='block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]'>Completed</small>
-        </div>   
-       </div>
-       <p className='text-[#262466] text-center'>Computer village</p>
-       <p className='text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]'>₦150,000</p>
-       <p className='text-[#262466] text-center'>31th May, 2022</p>
-    </div>
-   </div>
+					{/* COMPLETED */}
+					{active === "completed" && (
+						<div>
+							{console.log(completeData, "complete")}
+							{completeData?.map((completeS) => {
+								return (
+									<div
+										onClick={() => {
+											setView(completeS?.transaction_id);
+											getTransaction();
+										}}
+										key={completeS.id}
+										className="tab-pane fade show active"
+										id="tabs-home"
+										role="tabpanel"
+										aria-labelledby="tabs-home-tab"
+									>
+										<div className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md  md:px-4">
+											<div className="flex items-center justify-center">
+												<img
+													className="w-6"
+													src={completed}
+													alt="Awaiting icon"
+												/>
+												<div className="pl-1.5 pt-2">
+													<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+														{completeS?.product_name}
+													</p>
+													<small className="block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]">
+														Completed
+													</small>
+												</div>
+											</div>
+											<p className="text-[#262466] text-center">
+												{completeS?.location}
+											</p>
+											<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+												{completeS?.amount}
+											</p>
+											<p className="text-[#262466] text-center">
+												{moment(completeS?.created_at).format("DD/MM/YYYY")}
+											</p>
+										</div>
+									</div>
+								);
+							})}
+						</div>
+					)}
+					{/* CANCELLED  */}
+					{active === "cancelled" && (
+						<div>
+							{cancelData?.map((newcancel) => {
+								return (
+									<div
+										onClick={() => {
+											setView(newcancel?.transaction_id);
+											getTransaction();
+										}}
+										key={newcancel?.id}
+										className="tab-pane fade show active"
+										id="tabs-home"
+										role="tabpanel"
+										aria-labelledby="tabs-home-tab"
+									>
+										<div className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4">
+											<div className="flex items-center justify-center">
+												<img
+													className="w-6"
+													src={cancelled}
+													alt="Awaiting icon"
+												/>
+												<div className="pl-1.5 pt-2">
+													<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+														{newcancel?.product_name}
+													</p>
+													<small className="block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]">
+														Cancelled
+													</small>
+												</div>
+											</div>
+											<p className="text-[#262466] text-center">
+												{newcancel?.product_name}
+											</p>
+											<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+												{newcancel?.amount}
+											</p>
+											<p className="text-[#262466] text-center">
+												{moment(newcancel?.created_at).format("DD/MM/YYYY")}
+											</p>
+										</div>
+									</div>
+								);
+							})}
+						</div>
+					)}
+				</div>
 
-                                    {/* CANCELLED  */}
-  <div class="tab-pane fade" id="tabs-cancel" role="tabpanel" aria-labelledby="tabs-cancel-tab">
-  <div className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4'>
-       <div className='flex items-center justify-center'>
-        <img className='w-6' src={cancelled} alt="Awaiting icon" />
-        <div className='pl-1.5 pt-2'>
-          <p className='text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]'>PS-5</p>
-          <small className='block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]'>Cancelled</small>
-        </div>   
-       </div>
-       <p className='text-[#262466] text-center'>Demo Gadgets</p>
-       <p className='text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]'>₦500,000</p>
-       <p className='text-[#262466] text-center'>2nd June, 2022</p>
-    </div>
-  </div>
-</div>
+				{/* PAGINATION */}
+				<div class="flex justify-end mt-10 md:mt-5 lg:mt-[50px]">
+					<nav aria-label="Page navigation example">
+						<ul class="flex list-style-none">
+							<li class="page-item disabled">
+								<a
+									class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-500 pointer-events-none focus:shadow-none"
+									href="#"
+									tabindex="-1"
+									aria-disabled="true"
+								>
+									Previous
+								</a>
+							</li>
+							<li class="page-item active">
+								<a
+									class="page-link relative block py-1.5 px-3 rounded border-0 bg-blue-600 outline-none transition-all duration-300 rounded text-white hover:text-white hover:bg-blue-600 shadow-md focus:shadow-md"
+									href="#"
+								>
+									1 <span class="visually-hidden">(current)</span>
+								</a>
+							</li>
+							<li class="page-item">
+								<a
+									class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+									href="#"
+								>
+									2
+								</a>
+							</li>
+							<li class="page-item">
+								<a
+									class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+									href="#"
+								>
+									3
+								</a>
+							</li>
+							<li class="page-item">
+								<a
+									class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+									href="#"
+								>
+									Next
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</Layout>
+	);
+};
 
-                                   {/* PAGINATION */}
-<div class="flex justify-end mt-10 md:mt-5 lg:mt-[50px]">
-  <nav aria-label="Page navigation example">
-    <ul class="flex list-style-none">
-      <li class="page-item disabled"><a
-          class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-500 pointer-events-none focus:shadow-none"
-          href="#" tabindex="-1" aria-disabled="true">Previous</a></li>
-      <li class="page-item active"><a
-          class="page-link relative block py-1.5 px-3 rounded border-0 bg-blue-600 outline-none transition-all duration-300 rounded text-white hover:text-white hover:bg-blue-600 shadow-md focus:shadow-md"
-          href="#">1 <span class="visually-hidden">(current)</span></a></li>
-           <li class="page-item"><a
-          class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-          href="#">2</a></li>
-      <li class="page-item"><a
-          class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-          href="#">3</a></li>
-      <li class="page-item"><a
-          class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-          href="#">Next</a></li>
-    </ul>
-  </nav>
-</div>
-</div>
-</Layout>
-  )
-}
+export default CustomerTransact;
