@@ -15,6 +15,21 @@ const CustomerTransact = (props) => {
 
   const navigate = useNavigate();
 
+  const handleAwaiting = () => {
+    navigate('/awaiting-approval');
+  }
+
+  const handleOutgoing = () => {
+    navigate('/outgoing');
+  }
+
+  const handleCompleted = () => {
+    navigate('/completed');
+  }
+  const handleCancelled = () => {
+    navigate('/pending-cancelled');
+  }
+
   const handleCreateTransaction = () => {
     // navigate('/initiateTransaction')
     setShowInitiateTransaction((prevState) => !prevState);
@@ -119,7 +134,8 @@ const CustomerTransact = (props) => {
 <div class="tab-content" id="tabs-tabContent">
 
                       {/* ALL TRANSACTONS */}
-  <div className="tab-pane fade show active" id="tabs-home" role="tabpanel" aria-labelledby="tabs-home-tab">
+  <div onClick={handleAwaiting}
+  className="tab-pane fade show active" id="tabs-home" role="tabpanel" aria-labelledby="tabs-home-tab">
     <div className='flex items-center px-0.5 pl-2 mb-4 justify-between border-[1.5px] rounded-md md:px-4'>
        <div className='flex items-center justify-center'>
         <img className='w-6' src={awaiting} alt="Awaiting icon" />
@@ -159,7 +175,8 @@ const CustomerTransact = (props) => {
        <p className='text-[#262466] text-center'>2nd June, 2022</p>
     </div>
 
-    <div className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4'>
+    <div onClick={handleOutgoing }
+    className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4'>
        <div className='flex items-center justify-center'>
         <img className='w-6' src={onGoing} alt="Awaiting icon" />
         <div className='pl-1.5 pt-2'>
@@ -176,7 +193,9 @@ const CustomerTransact = (props) => {
 
                             {/* OUT-GOING */}
   <div class="tab-pane fade" id="tabs-profile" role="tabpanel" aria-labelledby="tabs-profile-tab">
-     <div className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4'>
+     
+     <div onClick={handleOutgoing }
+     className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4'>
        <div className='flex items-center justify-center'>
         <img className='w-6' src={onGoing} alt="Awaiting icon" />
         <div className='pl-1.5 pt-2'>
@@ -188,7 +207,9 @@ const CustomerTransact = (props) => {
        <p className='text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]'>₦50,000</p>
        <p className='text-[#262466] text-center'>14th June, 2022</p>
     </div>
-    <div className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4'>
+
+    <div onClick={handleOutgoing }
+    className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4'>
        <div className='flex items-center justify-center'>
         <img className='w-6' src={onGoing} alt="Awaiting icon" />
         <div className='pl-1.5 pt-2'>
@@ -203,8 +224,10 @@ const CustomerTransact = (props) => {
   </div>
        
                                  {/* COMPLETED */}
-   <div class="tab-pane fade" id="tabs-messages" role="tabpanel" aria-labelledby="tabs-profile-tab">
-   <div className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md  md:px-4'>
+   <div className="tab-pane fade" id="tabs-messages" role="tabpanel" aria-labelledby="tabs-profile-tab">
+
+   <div onClick={handleCompleted}
+   className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md  md:px-4'>
        <div className='flex items-center justify-center'>
         <img className='w-6' src={completed} alt="Awaiting icon" />
         <div className='pl-1.5 pt-2'>
@@ -216,7 +239,9 @@ const CustomerTransact = (props) => {
        <p className='text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]'>₦150,000</p>
        <p className='text-[#262466] text-center'>31th May, 2022</p>
     </div>
-    <div className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md  md:px-4'>
+
+    <div onClick={handleCompleted} 
+    className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md  md:px-4'>
        <div className='flex items-center justify-center'>
         <img className='w-6' src={completed} alt="Awaiting icon" />
         <div className='pl-1.5 pt-2'>
@@ -228,7 +253,9 @@ const CustomerTransact = (props) => {
        <p className='text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]'>₦150,000</p>
        <p className='text-[#262466] text-center'>31th May, 2022</p>
     </div>
-    <div className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md  md:px-4'>
+
+    <div onClick={handleCompleted}
+    className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md  md:px-4'>
        <div className='flex items-center justify-center'>
         <img className='w-6' src={completed} alt="Awaiting icon" />
         <div className='pl-1.5 pt-2'>
@@ -244,7 +271,9 @@ const CustomerTransact = (props) => {
 
                                     {/* CANCELLED  */}
   <div class="tab-pane fade" id="tabs-cancel" role="tabpanel" aria-labelledby="tabs-cancel-tab">
-  <div className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4'>
+
+  <div  onClick={handleCancelled}
+  className='flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4'>
        <div className='flex items-center justify-center'>
         <img className='w-6' src={cancelled} alt="Awaiting icon" />
         <div className='pl-1.5 pt-2'>
@@ -260,24 +289,29 @@ const CustomerTransact = (props) => {
 </div>
 
                                    {/* PAGINATION */}
-<div class="flex justify-end mt-10 md:mt-5 lg:mt-[50px]">
+<div className="flex justify-end mt-10 md:mt-5 lg:mt-[50px]">
   <nav aria-label="Page navigation example">
-    <ul class="flex list-style-none">
-      <li class="page-item disabled"><a
-          class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-500 pointer-events-none focus:shadow-none"
-          href="#" tabindex="-1" aria-disabled="true">Previous</a></li>
-      <li class="page-item active"><a
-          class="page-link relative block py-1.5 px-3 rounded border-0 bg-blue-600 outline-none transition-all duration-300 rounded text-white hover:text-white hover:bg-blue-600 shadow-md focus:shadow-md"
-          href="#">1 <span class="visually-hidden">(current)</span></a></li>
-           <li class="page-item"><a
-          class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-          href="#">2</a></li>
-      <li class="page-item"><a
-          class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-          href="#">3</a></li>
-      <li class="page-item"><a
-          class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-          href="#">Next</a></li>
+    <ul className="flex list-style-none">
+      <li className="page-item disabled">
+        <a className="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-500 pointer-events-none focus:shadow-none"
+          href="#" tabindex="-1" aria-disabled="true">Previous</a>
+          </li>
+      <li className="page-item active">
+        <a className="page-link relative block py-1.5 px-3 rounded border-0 bg-blue-600 outline-none transition-all duration-300 rounded text-white hover:text-white hover:bg-blue-600 shadow-md focus:shadow-md"
+          href="#">1 <span class="visually-hidden">(current)</span></a>
+          </li>
+           <li className="page-item">
+            <a className="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+          href="#">2</a>
+          </li>
+      <li className="page-item">
+        <a className="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+          href="#">3</a>
+          </li>
+      <li className="page-item">
+        <a className="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+          href="#">Next</a>
+          </li>
     </ul>
   </nav>
 </div>
