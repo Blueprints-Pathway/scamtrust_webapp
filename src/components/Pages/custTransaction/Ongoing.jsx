@@ -1,10 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Layout from '../../Layout/Layout'
 import Logo from '../../../assets/images/logo.svg'
 import { BsArrowLeft } from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom'
+import Modal from 'react-modal';
+
 
 const Ongoing = () => {
+
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
+    function openModal() {
+        setModalIsOpen(true);
+      }
+
+      function closeModal() {
+        setModalIsOpen(false);
+      }
+
+    const customStyles = {
+        content: {
+          top: '50%',
+          left: '56%',
+          right: 'auto',
+          bottom: 'auto',
+          marginRight: '-50%',
+          transform: 'translate(-50%, -50%)',
+          backgroundColor: '#002257',
+          color: '#ffff',
+          borderRadius: '15px'
+        },
+      };
 
     const navigate = useNavigate();
 
@@ -107,8 +133,39 @@ const Ongoing = () => {
                 </div>
 
                 <div className='flex items-center justify-between mt-10 mx-5 md:mx-36 lg:mx-56 md:mt-12 lg:mt-24'>
-                    <button className='text-black bg-[#EDEDED] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-10 lg:px-32 md:px-12'>Cancel</button>
-                    <button className='text-[#ffff] bg-[#3AB75D] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-7 lg:px-28'>Complete</button>
+                    <button onClick={openModal}
+                    className='text-black bg-[#EDEDED] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-10 lg:px-32 md:px-12'>
+                        Cancel
+                    </button>
+                    <button onClick={() => navigate('/customer-transaction')}
+                    className='text-[#ffff] bg-[#3AB75D] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-7 lg:px-28'>
+                        Complete
+                    </button>
+
+
+                              {/* CANCEL TRANSACTION MODAL  */}
+                    <Modal
+                    isOpen={modalIsOpen}
+                    onRequestClose={closeModal}
+                    style={customStyles}
+                    >
+                        <div className='text-[#ffff]'> 
+                           <h1 className='text-base pt-12 lg:text-3xl lg:w-[45rem] lg:mt-20 lg:text-center'>
+                                Are you sure you want to cancel this transaction?
+                           </h1>
+                           <div className='flex items-center justify-between mx-12 mt-10 mb-10 lg:mt-28 lg:mb-28'>
+                            <button onClick={() => navigate('/cancellation-reason')}
+                            className='border-[1px] py-1 px-10 text-sm lg:text-xl lg:py-4 lg:px-28 hover:bg-[#fff] hover:text-[#002257]'>
+                                Yes
+                            </button>
+                            <button onClick={closeModal}
+                            className='border-[1px] py-1 px-10 text-sm lg:text-xl lg:py-4 lg:px-28 hover:bg-[#fff] hover:text-[#002257]'>
+                                No
+                            </button>
+                           </div>
+                        </div>
+                    </Modal>
+
                 </div>
 
                 <div className='flex items-center justify-center mt-10 lg:mt-12 lg:mb-40'>

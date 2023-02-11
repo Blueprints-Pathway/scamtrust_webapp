@@ -13,7 +13,7 @@ const Cancelled = () => {
          <Layout>
             <div className=' bg-[#fff] rounded-3xl ml-4 mt-10 md:mt-4 lg:mt-7 py-10 pt-12 lg:pt-12 md:pt-8 md:px-12 px-5'>
 
-                <h6 onClick={() => navigate(-1)}
+                <h6 onClick={() => navigate('/customer-transaction')}
                 className='flex items-center text-[#262466] text-sm mb-4 md:mb-0 lg:mb-8 lg:ml-4'>
                     <BsArrowLeft className='text-lg lg:text-4xl' /><span className='mx-1 lg:text-2xl lg:mb-1 lg:font-semibold'>Back</span>
                 </h6>

@@ -47,6 +47,7 @@ import AwaitingApproval from "./components/Pages/custTransaction/AwaitingApprova
 import Ongoing from "./components/Pages/custTransaction/Ongoing";
 import Completed from "./components/Pages/custTransaction/Completed";
 import Cancelled from "./components/Pages/custTransaction/Cancelled";
+import CancellationReason from "./components/Pages/custTransaction/CancellationReason";
 
 function App() {
 	return (
@@ -108,6 +109,7 @@ function App() {
 			<Route path="/outgoing" element={<Ongoing />} />
 			<Route path="/completed" element={<Completed />} />
 			<Route path="/pending-cancelled" element={<Cancelled />} />
+			<Route path="/cancellation-reason" element={<CancellationReason />} />
 
 		</Routes>
 	);

@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from "react";
 import add from "../../assets/create-icon.png";
 import cancel from "../../assets/cancelled-icon.png";
@@ -11,6 +9,8 @@ import completed from "../../assets/complete-icon.png";
 import Layout from "../Layout/Layout";
 import axios from "axios";
 import moment from "moment";
+import { useNavigate } from "react-router-dom";
+
 const CustomerTransact = (props) => {
 	const { setShowInitiateTransaction } = props;
 	const [active, setActive] = useState("alltransaction");
@@ -149,6 +149,9 @@ const CustomerTransact = (props) => {
 			console.log(error, "errorss");
 		}
 	};
+
+  const navigate = useNavigate();
+
 	return (
 		<Layout>
 			<div className="mt-[140px] ml-5 bg-white rounded-[10px] h-[35rem] md:h-[33rem] lg:h-full py-7 px-3 md:mb-[30px] md:mt-[0px] md:mx[25px] lg:mt-[10px] lg:px-[50px] lg:mx-12">
@@ -593,7 +596,8 @@ const CustomerTransact = (props) => {
 					)}
 				</div>
 
-				{/* PAGINATION */}
+
+			        	{/* PAGINATION */}
 				<div class="flex justify-end mt-10 md:mt-5 lg:mt-[50px]">
 					<nav aria-label="Page navigation example">
 						<ul class="flex list-style-none">
@@ -648,3 +652,5 @@ const CustomerTransact = (props) => {
 };
 
 export default CustomerTransact;
+
+
