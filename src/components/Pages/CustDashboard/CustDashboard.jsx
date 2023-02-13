@@ -275,9 +275,9 @@ const CustomerDashboard = (props ) => {
 					<button
 				
 		
-						className="bg-colorGreen text-xs lg:text-base flex text-white items-center rounded-md px-2 py-2 lg:py-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-700"
+						className="bg-colorGreen text-xs lg:text-base flex text-white items-center rounded-md px-2 py-2 lg:py-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-700 pointer-events-auto"
 					>
-						<span>Create transaction</span>
+						<span >Create transaction</span>
 						<img src={Add} alt="add" className="mb-[-6px]" />
 					</button>
 				</div>
