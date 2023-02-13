@@ -14,7 +14,7 @@ import moment from "moment";
 import axios from "axios";
 
 // import { IoClose } from 'react-icons/io5'
-import { IoMdCloseCircle } from 'react-icons/io'
+import { IoMdCloseCircle } from "react-icons/io";
 
 const VENDORS = [
 	{
@@ -58,6 +58,7 @@ const Header = (props) => {
 	const [filteredResults, setFilteredResults] = useState([]);
 	const [searchInput, setSearchInput] = useState("");
 	const [showMore, setShowMore] = useState(false);
+	const [filtredSearch, setFilteredSearch] = useState();
 	useEffect(() => {
 		(async () => setUserFromBackend(await fetchUser(user.data.access_token)))();
 	}, []);
@@ -179,8 +180,12 @@ const Header = (props) => {
 
 				// console.log(data?.data.data, "user data");
 				setNotification(data?.data?.data?.data);
-				// console.log(values, "values");
-				// return response;
+				const mappeddata = data?.data?.data?.data?.map((data) => data);
+				const datas = mappeddata?.filter(
+					(filtered) => filtered?.status === "UNREAD"
+				);
+			console.log(datas,"filterd")
+			setFilteredSearch(datas)
 			} catch (error) {
 				console.log(error, "error");
 			}
@@ -198,7 +203,7 @@ const Header = (props) => {
 	const first = nameOf?.at(0);
 	const last = nameOf?.at(-1);
 
-	console.log(notification, "notice");
+
 	const searchItems = (searchValue) => {
 		setSearchInput(searchValue);
 		if (searchInput !== "") {
@@ -252,7 +257,10 @@ const Header = (props) => {
 									console.log(item, "new data");
 
 									return (
-										<div key={item?.id} className="flex items-center justify-center overflow-y-scroll h-32">
+										<div
+											key={item?.id}
+											className="flex items-center justify-center overflow-y-scroll h-32"
+										>
 											<div className="flex items-center justify-center py-2 px-3 max-w-sm ml-auto bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
 												<img
 													class="block mx-auto h-16 rounded-full sm:mx-0 sm:shrink-0"
@@ -271,7 +279,7 @@ const Header = (props) => {
 													<button
 														onClick={() => {
 															navigate(`/vendor/${item?.vendor_id}`, {
-																state: {id:item?.vendor_id},
+																state: { id: item?.vendor_id },
 															});
 														}}
 														className="px-12 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
@@ -331,7 +339,7 @@ const Header = (props) => {
 				</div>
 				<div className="flex-column items-end justify-center">
 					<div className="flex-auto flex mt-[250px] mx-7" onClick={check}>
-						<p className="text-rose-600">{notification?.length}</p>
+						<p className="text-rose-600">{filtredSearch?.length}</p>
 						<img
 							src={BellNotification}
 							alt="notification"
@@ -339,7 +347,7 @@ const Header = (props) => {
 						/>
 					</div>
 					<div className=" overflow-y-scroll h-[18rem] ml-[-130px]">
-						{notification?.map((newNotice) => {
+						{filtredSearch?.map((newNotice) => {
 							return (
 								<div className="h-[8.5rem]">
 									{toggle === true ? (
@@ -350,13 +358,13 @@ const Header = (props) => {
 											>
 												{" "}
 												<button
-												className="text-2xl rounded mb-1 text-[#E36969]"
+													className="text-2xl rounded mb-1 text-[#E36969]"
 													onClick={() => {
 														close();
 													}}
 												>
-												 {/* Close <IoClose className="mt-1 ml-1" /> */}
-												 <IoMdCloseCircle />
+													{/* Close <IoClose className="mt-1 ml-1" /> */}
+													<IoMdCloseCircle />
 												</button>
 												{/* <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">
 													{newNotice?.status}
@@ -380,7 +388,15 @@ const Header = (props) => {
 															setId(newNotice?.id);
 														}}
 													>
-														{showMore ? <p className="font-bold text-[11px] pb-1">show less</p> : <p className="font-bold text-[11px] pb-1">show more</p>}
+														{showMore ? (
+															<p className="font-bold text-[11px] pb-1">
+																show less
+															</p>
+														) : (
+															<p className="font-bold text-[11px] pb-1">
+																show more
+															</p>
+														)}
 													</button>
 												</h2>
 												<div className="flex">
@@ -409,11 +425,11 @@ const Header = (props) => {
 					</div>
 				</div>
 
-                <div className="fixed left-[27.5rem] md:relative md:left-0">
-				<span className="flex lg:w-[46px] w-[30px] h-[30px] lg:h-[46px] font-bold text-base lg:text-[21px] text-white bg-[#E36969] grid place-content-center overflow-hidden rounded-full">
-					{first}
-					{last}
-				</span>
+				<div className="fixed left-[27.5rem] md:relative md:left-0">
+					<span className="flex lg:w-[46px] w-[30px] h-[30px] lg:h-[46px] font-bold text-base lg:text-[21px] text-white bg-[#E36969] grid place-content-center overflow-hidden rounded-full">
+						{first}
+						{last}
+					</span>
 				</div>
 			</div>
 		</div>
