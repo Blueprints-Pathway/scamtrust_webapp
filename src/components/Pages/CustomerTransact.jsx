@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useEffect, useState } from "react";
 import add from "../../assets/create-icon.png";
 import cancel from "../../assets/cancelled-icon.png";
@@ -10,22 +12,36 @@ import Layout from "../Layout/Layout";
 import axios from "axios";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
-
+import Ongoing from "./custTransaction/Ongoing";
+import Completed from "./custTransaction/Completed";
+import Cancelled from "./custTransaction/Cancelled";
 const CustomerTransact = (props) => {
 	const { setShowInitiateTransaction } = props;
 	const [active, setActive] = useState("alltransaction");
 	const [outgoing, setOutGoing] = useState();
 	const [completeData, setCompleteData] = useState();
 	const [cancelData, setCancelData] = useState();
-	
+
 	const [view, setView] = useState();
-	const [out,setOut]=useState()
-	const [done ,setDone]=useState()
-	const [cancels,setCancels]=useState()
+	const [out, setOut] = useState();
+	const [done, setDone] = useState();
+	const [cancels, setCancels] = useState();
 	const onCreateTransactionClicked = () => {
 		setShowInitiateTransaction((prevState) => !prevState);
 	};
+	const [showCanceled, setShowCanceled] = useState(false);
+	const [showCompleted, setShowCompleted] = useState(false);
+	const [showOngoing, setShowOngoing] = useState(false);
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
+	const showOngoingHandler = () => {
+		setShowOngoing((prevState) => !prevState);
+	};
+	const showCancelHandler = () => {
+		setShowCanceled((prevState) => !prevState);
+	};
+	const showCompletedHandler = () => {
+		setShowCompleted((prevState) => !prevState);
+	};
 	useEffect(() => {
 		(async () => {
 			try {
@@ -39,7 +55,6 @@ const CustomerTransact = (props) => {
 
 				const data = await axios.get(API_URL, config);
 
-				
 				const mappeddata = data?.data?.data?.map((data) => data);
 				const datas = mappeddata?.filter(
 					(filtered) => filtered?.status === "PENDING VENDOR ACCEPTANCE"
@@ -52,7 +67,7 @@ const CustomerTransact = (props) => {
 				);
 				setOut(datas);
 				setDone(datacompleted);
-				setCancels(datacancelled)
+				setCancels(datacancelled);
 			} catch (error) {
 				console.log(error, "error");
 			}
@@ -150,44 +165,66 @@ const CustomerTransact = (props) => {
 		}
 	};
 
-  const navigate = useNavigate();
+	const navigate = useNavigate();
 
 	return (
 		<Layout>
-			<div className="mt-[140px] ml-5 bg-white rounded-[10px] h-[35rem] md:h-[33rem] lg:h-full py-7 px-3 md:mb-[30px] md:mt-[0px] md:mx[25px] lg:mt-[10px] lg:px-[50px] lg:mx-12">
-				<div className="flex justify-between items-center my-5 mx-3 md:mx-12 lg:mx-[10px]">
-					<h1 className="text-xl lg:text-3xl text-[#262466] font-semibold lg:font-bold md:text-2xl">
-						Transactions
-					</h1>
-					<div>
-						<button
-							onClick={onCreateTransactionClicked}
-							className="bg-[#3ab75d] text-white rounded-md flex justify-center py-0 pl-2 w-[125px] lg:w-[150px]"
-						>
-							<span className="pt-3 text-xs lg:text-sm">
-								Create transaction
-							</span>
-							<span className="pl-1 pt-1.5">
-								<img src={add} alt="..." />
-							</span>
-						</button>
-					</div>
+			{showOngoing || showCanceled || showCompleted ? (
+				<div>
+					{showOngoing && (
+						<Ongoing
+							showOngoingHandler={showOngoingHandler}
+							showOngoing={showOngoing}
+						/>
+					)}
+					{showCompleted && (
+						<Completed
+							showCompletedHandler={showCompletedHandler}
+							showCompleted={showCompleted}
+						/>
+					)}
+					{showCanceled && (
+						<Cancelled
+							showCancelHandler={showCancelHandler}
+							showCanceled={showCanceled}
+						/>
+					)}
 				</div>
-				<ul
-					class="nav nav-tabs flex justify-center lg:justify-start list-none border-b-0 mt-3 mb-5"
-					id="tabs-tab"
-					role="tablist"
-				>
-					<li
-						onClick={() => {
-							setActive("alltransaction");
-						}}
-						className="nav-item md:px-5"
-						role="presentation"
+			) : (
+				<div className="mt-[140px] ml-5 bg-white rounded-[10px] h-[35rem] md:h-[33rem] lg:h-full py-7 px-3 md:mb-[30px] md:mt-[0px] md:mx[25px] lg:mt-[10px] lg:px-[50px] lg:mx-12">
+					<div className="flex justify-between items-center my-5 mx-3 md:mx-12 lg:mx-[10px]">
+						<h1 className="text-xl lg:text-3xl text-[#262466] font-semibold lg:font-bold md:text-2xl">
+							Transactions
+						</h1>
+						<div>
+							<button
+								onClick={onCreateTransactionClicked}
+								className="bg-[#3ab75d] text-white rounded-md flex justify-center py-0 pl-2 w-[125px] lg:w-[150px]"
+							>
+								<span className="pt-3 text-xs lg:text-sm">
+									Create transaction
+								</span>
+								<span className="pl-1 pt-1.5">
+									<img src={add} alt="..." />
+								</span>
+							</button>
+						</div>
+					</div>
+					<ul
+						class="nav nav-tabs flex justify-center lg:justify-start list-none border-b-0 mt-3 mb-5"
+						id="tabs-tab"
+						role="tablist"
 					>
-						<a
-							href="/"
-							className="
+						<li
+							onClick={() => {
+								setActive("alltransaction");
+							}}
+							className="nav-item md:px-5"
+							role="presentation"
+						>
+							<a
+								href="/"
+								className="
       nav-link
       block
       font-medium
@@ -200,27 +237,27 @@ const CustomerTransact = (props) => {
       lg:text-base
       active
     "
-							id="tabs-home-tab"
-							data-bs-toggle="pill"
-							data-bs-target="#tabs-home"
-							role="tab"
-							aria-controls="tabs-home"
-							aria-selected="true"
+								id="tabs-home-tab"
+								data-bs-toggle="pill"
+								data-bs-target="#tabs-home"
+								role="tab"
+								aria-controls="tabs-home"
+								aria-selected="true"
+							>
+								All Transactions
+							</a>
+						</li>
+						<li
+							onClick={() => {
+								setActive("ongoing");
+								console.log(active, "active");
+							}}
+							className="nav-item md:px-5"
+							role="presentation"
 						>
-							All Transactions
-						</a>
-					</li>
-					<li
-						onClick={() => {
-							setActive("ongoing");
-							console.log(active, "active");
-						}}
-						className="nav-item md:px-5"
-						role="presentation"
-					>
-						<a
-							href="/"
-							class="
+							<a
+								href="/"
+								class="
       nav-link
       block
       font-medium
@@ -234,27 +271,27 @@ const CustomerTransact = (props) => {
       lg:text-base
       focus:border-transparent
     "
-							id="tabs-profile-tab"
-							data-bs-toggle="pill"
-							data-bs-target="#tabs-profile"
-							role="tab"
-							aria-controls="tabs-profile"
-							aria-selected="false"
+								id="tabs-profile-tab"
+								data-bs-toggle="pill"
+								data-bs-target="#tabs-profile"
+								role="tab"
+								aria-controls="tabs-profile"
+								aria-selected="false"
+							>
+								Out-going
+							</a>
+						</li>
+						<li
+							onClick={() => {
+								setActive("completed");
+								console.log(active, "active");
+							}}
+							className="nav-item md:px-5"
+							role="presentation"
 						>
-							Out-going
-						</a>
-					</li>
-					<li
-						onClick={() => {
-							setActive("completed");
-							console.log(active, "active");
-						}}
-						className="nav-item md:px-5"
-						role="presentation"
-					>
-						<a
-							href="/"
-							class="
+							<a
+								href="/"
+								class="
       nav-link
       flex
       items-center
@@ -270,30 +307,30 @@ const CustomerTransact = (props) => {
       lg:text-base
       focus:border-transparent
     "
-							id="tabs-messages-tab"
-							data-bs-toggle="pill"
-							data-bs-target="#tabs-messages"
-							role="tab"
-							aria-controls="tabs-messages"
-							aria-selected="false"
+								id="tabs-messages-tab"
+								data-bs-toggle="pill"
+								data-bs-target="#tabs-messages"
+								role="tab"
+								aria-controls="tabs-messages"
+								aria-selected="false"
+							>
+								<span className="px-1">
+									<img src={complete} alt="..." />
+								</span>
+								<span>Completed</span>
+							</a>
+						</li>
+						<li
+							onClick={() => {
+								setActive("cancelled");
+								console.log(active, "active");
+							}}
+							className="nav-item md:px-5"
+							role="presentation"
 						>
-							<span className="px-1">
-								<img src={complete} alt="..." />
-							</span>
-							<span>Completed</span>
-						</a>
-					</li>
-					<li
-						onClick={() => {
-							setActive("cancelled");
-							console.log(active, "active");
-						}}
-						className="nav-item md:px-5"
-						role="presentation"
-					>
-						<a
-							href="/"
-							class="
+							<a
+								href="/"
+								class="
       nav-link
       flex
       items-center
@@ -310,45 +347,46 @@ const CustomerTransact = (props) => {
       lg:text-base
       focus:border-transparent
     "
-							id="tabs-cancel-tab"
-							data-bs-toggle="pill"
-							data-bs-target="#tabs-cancel"
-							role="tab"
-							aria-controls="tabs-cancel"
-							aria-selected="false"
-						>
-							<span className="px-1">
-								<img src={cancel} alt="..." />
-							</span>
-							<span>Cancelled</span>
-						</a>
-					</li>
-				</ul>
+								id="tabs-cancel-tab"
+								data-bs-toggle="pill"
+								data-bs-target="#tabs-cancel"
+								role="tab"
+								aria-controls="tabs-cancel"
+								aria-selected="false"
+							>
+								<span className="px-1">
+									<img src={cancel} alt="..." />
+								</span>
+								<span>Cancelled</span>
+							</a>
+						</li>
+					</ul>
 
-				{/* TAB CONTENT */}
-				<div class="tab-content" id="tabs-tabContent">
-					{/* ALL TRANSACTONS */}
+					{/* TAB CONTENT */}
+					<div class="tab-content" id="tabs-tabContent">
+						{/* ALL TRANSACTONS */}
 
-					{active === "alltransaction" && (
-						<div>
-							
-								
-									<div
-								
-										
-										className="tab-pane fade show active"
-										id="tabs-home"
-										role="tabpanel"
-										aria-labelledby="tabs-home-tab"
-									>
-										
-
-										{
-											done?.map((item)=>(
-												<div onClick={() => {
-													setView(item?.transaction_id);
-													getTransaction();
-												}} className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md  md:px-4">
+						{active === "alltransaction" && (
+							<div>
+								<div
+									className="tab-pane fade show active"
+									id="tabs-home"
+									role="tabpanel"
+									aria-labelledby="tabs-home-tab"
+								>
+									{done?.map((item) => (
+										<div
+											onClick={() => {
+												setView(item?.transaction_id);
+												getTransaction();
+												showCompletedHandler(item?.transaction_id);
+												window?.localStorage?.setItem(
+													"idCompleted",
+													item?.transaction_id
+												);
+											}}
+											className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md  md:px-4"
+										>
 											<div className="flex items-center justify-center">
 												<img
 													className="w-6"
@@ -374,15 +412,21 @@ const CustomerTransact = (props) => {
 												{moment(item?.created_at).format("DD/MM/YYYY")}
 											</p>
 										</div>
-											))
-										}
+									))}
 
-									{
-										cancels?.map((item)=>(
-											<div onClick={() => {
+									{cancels?.map((item) => (
+										<div
+											onClick={() => {
 												setView(item?.transaction_id);
 												getTransaction();
-											}} className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4">
+												showCancelHandler();
+												window?.localStorage?.setItem(
+													"idCancelled",
+													item?.transaction_id
+												);
+											}}
+											className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4"
+										>
 											<div className="flex items-center justify-center">
 												<img
 													className="w-6"
@@ -408,14 +452,20 @@ const CustomerTransact = (props) => {
 												{moment(item?.created_at).format("DD/MM/YYYY")}
 											</p>
 										</div>
-
-										))
-									}
-									{out?.map((item)=>(
-											<div  onClick={() => {
+									))}
+									{out?.map((item) => (
+										<div
+											onClick={() => {
 												setView(item?.transaction_id);
 												getTransaction();
-											}} className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4">
+												window?.localStorage?.setItem(
+													"idOngoing",
+													item?.transaction_id
+												);
+												showOngoingHandler(item?.transaction_id);
+											}}
+											className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4"
+										>
 											<div className="flex items-center justify-center">
 												<img
 													className="w-6"
@@ -442,215 +492,226 @@ const CustomerTransact = (props) => {
 											</p>
 										</div>
 									))}
-									</div>
-								
-						
-						</div>
-					)}
+								</div>
+							</div>
+						)}
 
-					{/* OUT-GOING */}
+						{/* OUT-GOING */}
 
-					{active === "ongoing" && (
-						<div>
-							{console.log(outgoing, "outgoing")}
-							{outgoing?.map((newout) => {
-								console.log(newout, "new out");
-								return (
-									<div
-										onClick={() => {
-											setView(newout?.transaction_id);
-											getTransaction();
-										}}
-										key={newout?.id}
-										className="tab-pane fade show active"
-										id="tabs-home"
-										role="tabpanel"
-										aria-labelledby="tabs-home-tab"
-									>
-										<div className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4">
-											<div className="flex items-center justify-center">
-												<img
-													className="w-6"
-													src={onGoing}
-													alt="Awaiting icon"
-												/>
-												<div className="pl-1.5 pt-2">
-													<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
-														{newout?.product_name}
-													</p>
-													<small className="block whitespace-nowrap w-[50px]   md:w-[65px]">
-														On-going
-													</small>
+						{active === "ongoing" && (
+							<div>
+								{console.log(outgoing, "outgoing")}
+								{outgoing?.map((newout) => {
+									console.log(newout, "new out");
+									return (
+										<div
+											onClick={() => {
+												setView(newout?.transaction_id);
+												getTransaction();
+												window?.localStorage?.setItem(
+													"idOngoing",
+													newout?.transaction_id
+												);
+												showOngoingHandler(newout?.transaction_id);
+											}}
+											key={newout?.id}
+											className="tab-pane fade show active"
+											id="tabs-home"
+											role="tabpanel"
+											aria-labelledby="tabs-home-tab"
+										>
+											<div className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4">
+												<div className="flex items-center justify-center">
+													<img
+														className="w-6"
+														src={onGoing}
+														alt="Awaiting icon"
+													/>
+													<div className="pl-1.5 pt-2">
+														<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+															{newout?.product_name}
+														</p>
+														<small className="block whitespace-nowrap w-[50px]   md:w-[65px]">
+															On-going
+														</small>
+													</div>
 												</div>
+												<p className="text-[#262466] text-center">
+													{newout?.product_name}
+												</p>
+												<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+													{newout?.amount}
+												</p>
+												<p className="text-[#262466] text-center">
+													{moment(newout?.created_at).format("DD/MM/YYYY")}
+												</p>
 											</div>
-											<p className="text-[#262466] text-center">
-												{newout?.product_name}
-											</p>
-											<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
-												{newout?.amount}
-											</p>
-											<p className="text-[#262466] text-center">
-												{moment(newout?.created_at).format("DD/MM/YYYY")}
-											</p>
 										</div>
-									</div>
-								);
-							})}
-						</div>
-					)}
+									);
+								})}
+							</div>
+						)}
 
-					{/* COMPLETED */}
-					{active === "completed" && (
-						<div>
-							{console.log(completeData, "complete")}
-							{completeData?.map((completeS) => {
-								return (
-									<div
-										onClick={() => {
-											setView(completeS?.transaction_id);
-											getTransaction();
-										}}
-										key={completeS.id}
-										className="tab-pane fade show active"
-										id="tabs-home"
-										role="tabpanel"
-										aria-labelledby="tabs-home-tab"
-									>
-										<div className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md  md:px-4">
-											<div className="flex items-center justify-center">
-												<img
-													className="w-6"
-													src={completed}
-													alt="Awaiting icon"
-												/>
-												<div className="pl-1.5 pt-2">
-													<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
-														{completeS?.product_name}
-													</p>
-													<small className="block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]">
-														Completed
-													</small>
+						{/* COMPLETED */}
+						{active === "completed" && (
+							<div>
+								{console.log(completeData, "complete")}
+								{completeData?.map((completeS) => {
+									return (
+										<div
+											onClick={() => {
+												setView(completeS?.transaction_id);
+												getTransaction();
+												showCompletedHandler(completeS?.transaction_id);
+												window?.localStorage?.setItem(
+													"idCompleted",
+													completeS?.transaction_id
+												);
+											}}
+											key={completeS.id}
+											className="tab-pane fade show active"
+											id="tabs-home"
+											role="tabpanel"
+											aria-labelledby="tabs-home-tab"
+										>
+											<div className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md  md:px-4">
+												<div className="flex items-center justify-center">
+													<img
+														className="w-6"
+														src={completed}
+														alt="Awaiting icon"
+													/>
+													<div className="pl-1.5 pt-2">
+														<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+															{completeS?.product_name}
+														</p>
+														<small className="block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]">
+															Completed
+														</small>
+													</div>
 												</div>
+												<p className="text-[#262466] text-center">
+													{completeS?.location}
+												</p>
+												<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+													{completeS?.amount}
+												</p>
+												<p className="text-[#262466] text-center">
+													{moment(completeS?.created_at).format("DD/MM/YYYY")}
+												</p>
 											</div>
-											<p className="text-[#262466] text-center">
-												{completeS?.location}
-											</p>
-											<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
-												{completeS?.amount}
-											</p>
-											<p className="text-[#262466] text-center">
-												{moment(completeS?.created_at).format("DD/MM/YYYY")}
-											</p>
 										</div>
-									</div>
-								);
-							})}
-						</div>
-					)}
-					{/* CANCELLED  */}
-					{active === "cancelled" && (
-						<div>
-							{cancelData?.map((newcancel) => {
-								return (
-									<div
-										onClick={() => {
-											setView(newcancel?.transaction_id);
-											getTransaction();
-										}}
-										key={newcancel?.id}
-										className="tab-pane fade show active"
-										id="tabs-home"
-										role="tabpanel"
-										aria-labelledby="tabs-home-tab"
-									>
-										<div className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4">
-											<div className="flex items-center justify-center">
-												<img
-													className="w-6"
-													src={cancelled}
-													alt="Awaiting icon"
-												/>
-												<div className="pl-1.5 pt-2">
-													<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
-														{newcancel?.product_name}
-													</p>
-													<small className="block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]">
-														Cancelled
-													</small>
+									);
+								})}
+							</div>
+						)}
+						{/* CANCELLED  */}
+						{active === "cancelled" && (
+							<div>
+								{cancelData?.map((newcancel) => {
+									return (
+										<div
+											onClick={() => {
+												setView(newcancel?.transaction_id);
+												getTransaction();
+												showCancelHandler();
+												window?.localStorage?.setItem(
+													"idCancelled",
+													newcancel?.transaction_id
+												);
+											}}
+											key={newcancel?.id}
+											className="tab-pane fade show active"
+											id="tabs-home"
+											role="tabpanel"
+											aria-labelledby="tabs-home-tab"
+										>
+											<div className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4">
+												<div className="flex items-center justify-center">
+													<img
+														className="w-6"
+														src={cancelled}
+														alt="Awaiting icon"
+													/>
+													<div className="pl-1.5 pt-2">
+														<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+															{newcancel?.product_name}
+														</p>
+														<small className="block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]">
+															Cancelled
+														</small>
+													</div>
 												</div>
+												<p className="text-[#262466] text-center">
+													{newcancel?.product_name}
+												</p>
+												<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+													{newcancel?.amount}
+												</p>
+												<p className="text-[#262466] text-center">
+													{moment(newcancel?.created_at).format("DD/MM/YYYY")}
+												</p>
 											</div>
-											<p className="text-[#262466] text-center">
-												{newcancel?.product_name}
-											</p>
-											<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
-												{newcancel?.amount}
-											</p>
-											<p className="text-[#262466] text-center">
-												{moment(newcancel?.created_at).format("DD/MM/YYYY")}
-											</p>
 										</div>
-									</div>
-								);
-							})}
-						</div>
-					)}
+									);
+								})}
+							</div>
+						)}
+					</div>
+
+					{/* PAGINATION */}
+					<div class="flex justify-end mt-10 md:mt-5 lg:mt-[50px]">
+						<nav aria-label="Page navigation example">
+							<ul class="flex list-style-none">
+								<li class="page-item disabled">
+									<a
+										class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-500 pointer-events-none focus:shadow-none"
+										href="#"
+										tabindex="-1"
+										aria-disabled="true"
+									>
+										Previous
+									</a>
+								</li>
+								<li class="page-item active">
+									<a
+										class="page-link relative block py-1.5 px-3 rounded border-0 bg-blue-600 outline-none transition-all duration-300 rounded text-white hover:text-white hover:bg-blue-600 shadow-md focus:shadow-md"
+										href="#"
+									>
+										1 <span class="visually-hidden">(current)</span>
+									</a>
+								</li>
+								<li class="page-item">
+									<a
+										class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+										href="#"
+									>
+										2
+									</a>
+								</li>
+								<li class="page-item">
+									<a
+										class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+										href="#"
+									>
+										3
+									</a>
+								</li>
+								<li class="page-item">
+									<a
+										class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+										href="#"
+									>
+										Next
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
 				</div>
-
-
-			        	{/* PAGINATION */}
-				<div class="flex justify-end mt-10 md:mt-5 lg:mt-[50px]">
-					<nav aria-label="Page navigation example">
-						<ul class="flex list-style-none">
-							<li class="page-item disabled">
-								<a
-									class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-500 pointer-events-none focus:shadow-none"
-									href="#"
-									tabindex="-1"
-									aria-disabled="true"
-								>
-									Previous
-								</a>
-							</li>
-							<li class="page-item active">
-								<a
-									class="page-link relative block py-1.5 px-3 rounded border-0 bg-blue-600 outline-none transition-all duration-300 rounded text-white hover:text-white hover:bg-blue-600 shadow-md focus:shadow-md"
-									href="#"
-								>
-									1 <span class="visually-hidden">(current)</span>
-								</a>
-							</li>
-							<li class="page-item">
-								<a
-									class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-									href="#"
-								>
-									2
-								</a>
-							</li>
-							<li class="page-item">
-								<a
-									class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-									href="#"
-								>
-									3
-								</a>
-							</li>
-							<li class="page-item">
-								<a
-									class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-									href="#"
-								>
-									Next
-								</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
-			</div>
+			)}
 		</Layout>
 	);
 };
 
 export default CustomerTransact;
-
-
