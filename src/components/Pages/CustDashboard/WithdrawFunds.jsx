@@ -8,6 +8,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import SecuredBy from "../../../assets/images/svg/secured-by.svg";
 import Pin from "./Pin";
+import { useNavigate } from "react-router-dom";
 
 const withdrawSchema = yup.object().shape({
 	amount: yup
@@ -40,7 +41,6 @@ const WithdrawFunds = (props) => {
 	// const navigate = useNavigate();
 
 	const closeWithdraw = () => {
-		// navigate("/customer-dashboard");
 		setIsWithdrawing(false);
 	};
 
@@ -66,6 +66,7 @@ const WithdrawFunds = (props) => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	// console.log(bank, "banks");
+	
 	return (
 		<div>
 			<div className="w-screen h-screen fixed z-40 top-0 left-0 bg-[rgba(23,23,23,0.54)]" />

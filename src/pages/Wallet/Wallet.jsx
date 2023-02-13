@@ -19,7 +19,7 @@ import axios from "axios";
 import Modal from "react-modal";
 import AnimeList from "../../components/Pages/CustDashboard/AnimeList";
 import WithdrawFunds from "../../components/Pages/CustDashboard/WithdrawFunds";
-import DepositFunds from "../../components/Pages/CustDashboard/DepositFunds";
+// import DepositFunds from "../../components/Pages/CustDashboard/DepositFunds";
 
 
 
@@ -36,6 +36,7 @@ const Wallet = () => {
 	const { user } = useSelector((state) => state.auth);
 	const [modalOpen, setModalIsOpen] = useState(false);
 	const [isWithdrawing, setIsWithdrawing] = useState(false);
+	
 	const customStyles = {
 		content: {
 			width: "50vh",
@@ -108,6 +109,10 @@ const Wallet = () => {
 	}, []);
 	console.log(details, "wallet details");
 	
+	const handleWithdraw = () => {
+		setIsWithdrawing((prevState)=>!prevState)
+	}
+
 	return (
 		<Layout>
 			<FundWallet
@@ -120,6 +125,15 @@ const Wallet = () => {
 				showConfirmAccount={showConfirmAccount}
 				setShowConfirmAccont={setShowConfirmAccont}
 			/>
+			{isWithdrawing ? (
+		      	 <WithdrawFunds
+		      	   setIsWithdrawing={setIsWithdrawing}
+		      	//    startWithdrawFunds={isWithdrawing}
+		     	 />			
+            ) : (
+               <></>
+              )}
+
 
 			<div className="w-full">
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -162,21 +176,21 @@ const Wallet = () => {
 										</div>
 									</p>
 									<button
-										onClick={() => setIsWithdrawing(true)}
+										onClick={handleWithdraw}
 										className="font-medium bg-[#E9303B] w-28 hover:shadow-md transition-shadow duration-300 text-white py-3 rounded-md cursor-pointer"
 									>
 										WITHDRAW
 									</button>
-									{isWithdrawing ? (
-	 	<div  className="mt-48 lg:mt-60 ml-52 ">
-			 <WithdrawFunds
-			   setIsWithdrawing={setIsWithdrawing}
-			   startWithdrawFunds={isWithdrawing}
-			 />
-		</div>								
-      ) : (
-        <></>
-      )}
+									{/* {isWithdrawing ? (
+	 	                                 <div  className="mt-48 lg:mt-60 ml-52 ">
+		                                 	 <WithdrawFunds
+		                                 	   setIsWithdrawing={setIsWithdrawing}
+		                                 	   startWithdrawFunds={isWithdrawing}
+		                                 	 />
+		                                 </div>					
+                                       ) : (
+                                         <></>
+                                       )} */}
 								</div>
 								
 								<div>
