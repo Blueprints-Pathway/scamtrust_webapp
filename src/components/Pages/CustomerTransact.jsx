@@ -7,21 +7,38 @@ import onGoing from '../../assets/on-going-icon.png'
 import cancelled from '../../assets/cancel-icon.png'
 import completed from '../../assets/complete-icon.png'
 import Layout from '../Layout/Layout'
+import Backdrop from "../../components/UI/Backdrop";
+import InitiateTransaction from "../../components/InitiateTransaction/InitiateTransaction";
 import { useNavigate } from 'react-router-dom'
+import {useState} from 'react'
 
 
 const CustomerTransact = (props) => {
-  const {setShowInitiateTransaction} = props;
+//  const {setShowInitiateTransaction} = props;
 
+  const [showInitiateTransaction, setShowInitiateTransaction] = useState(false);
+  const [showTransactionPreview, setShowTransactionPreview] = useState(false);
+ 
   const navigate = useNavigate();
 
   const handleCreateTransaction = () => {
     // navigate('/initiateTransaction')
     setShowInitiateTransaction((prevState) => !prevState);
+    console.log(props)
 	};
 
   return (
     <Layout>
+       {showInitiateTransaction ? (
+        <Backdrop showInitiateTransaction={showInitiateTransaction}>
+          <InitiateTransaction
+            setShowInitiateTransaction={setShowInitiateTransaction}
+            setShowTransactionPreview={setShowTransactionPreview}
+          />
+        </Backdrop>
+      ) : (
+        <></>
+      )}
     <div className='mt-[140px] ml-5 bg-white rounded-[10px] h-[35rem] md:h-[33rem] lg:h-[37rem] py-7 px-3 md:mb-[30px] md:mt-[0px] md:mx[25px] lg:mt-[10px] lg:px-[50px] lg:mx-12'>
         <div className='flex justify-between items-center my-5 mx-3 md:mx-12 lg:mx-[10px]'>
             <h1 className='text-xl lg:text-3xl text-[#262466] font-semibold lg:font-bold md:text-2xl'>Transactions</h1>
