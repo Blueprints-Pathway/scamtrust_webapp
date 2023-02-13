@@ -10,20 +10,20 @@ import Layout from '../Layout/Layout'
 import Backdrop from "../../components/UI/Backdrop";
 import InitiateTransaction from "../../components/InitiateTransaction/InitiateTransaction";
 import { useNavigate } from 'react-router-dom'
-import {useState} from 'react'
 
-import React, { useEffect, useState } from "react";
-import add from "../../assets/create-icon.png";
-import cancel from "../../assets/cancelled-icon.png";
-import complete from "../../assets/completed-icon.png";
-import awaiting from "../../assets/awaiting-icon.png";
-import onGoing from "../../assets/on-going-icon.png";
-import cancelled from "../../assets/cancel-icon.png";
-import completed from "../../assets/complete-icon.png";
-import Layout from "../Layout/Layout";
+
+import { useEffect, useState } from "react";
+// import add from "../../assets/create-icon.png";
+// import cancel from "../../assets/cancelled-icon.png";
+// import complete from "../../assets/completed-icon.png";
+// import awaiting from "../../assets/awaiting-icon.png";
+// import onGoing from "../../assets/on-going-icon.png";
+// import cancelled from "../../assets/cancel-icon.png";
+// import completed from "../../assets/complete-icon.png";
+// import Layout from "../Layout/Layout";
 import axios from "axios";
 import moment from "moment";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import Ongoing from "./custTransaction/Ongoing";
 import Completed from "./custTransaction/Completed";
 import Cancelled from "./custTransaction/Cancelled";
