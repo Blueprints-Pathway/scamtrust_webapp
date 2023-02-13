@@ -21,6 +21,8 @@ import create from '../../assets/create.png'
 import KYC from '../../assets/KYC.png'
 import Modal from "react-modal"
 import AnimeList from '../../components/Pages/CustDashboard/AnimeList';
+import FundWallet from '../../components/Pages/Wallet/FundWallet';
+import ConfirmAccount from '../../components/Pages/Wallet/ConfirmAccount';
 
 
 const CustomerDashboard = () => {
@@ -34,6 +36,8 @@ const CustomerDashboard = () => {
   const [isFunding, setIsFunding] = useState(false);
   const [close, setClose] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [showFundWallet, setShowFundWallet] = useState(false);
+	const [showConfirmAccount, setShowConfirmAccont] = useState(false);
 
   const setModalIsOpenToTrue = () => {
     setModalIsOpen(true);
@@ -43,6 +47,14 @@ const CustomerDashboard = () => {
 	};
   const setModalIsOpenToFalse = () => {
     setModalIsOpen(false);
+  }
+
+  const fundWalletHandler = () => {
+    setShowFundWallet((prevState) => !prevState)
+  }
+
+  const handleConfirmAccount = () => {
+    setShowConfirmAccont((prevState) => !prevState)
   }
 
   const customStyles = {
@@ -100,6 +112,16 @@ const CustomerDashboard = () => {
 
   return (
     <Layout heading="Dashboard">
+      <FundWallet
+				setShowConfirmAccont={setShowConfirmAccont}
+				fundWalletHandler={fundWalletHandler}
+				showFundWallet={showFundWallet}
+			/>
+			<ConfirmAccount
+				setShowFundWallet={setShowFundWallet}
+				showConfirmAccount={showConfirmAccount}
+				setShowConfirmAccont={setShowConfirmAccont}
+			/>
       <div className='h-[100vh]'>
       {isWithdrawing ? (
         <WithdrawFunds
@@ -186,7 +208,9 @@ const CustomerDashboard = () => {
               <img className='w-8' src={create} alt="create transaction" /> 
               <p className='pl-2'>Create New Transaction</p>
               </div>
-            <div onClick={() => setIsFunding(true)}
+            <div 
+            // onClick={() => setIsFunding(true)}
+            onClick={handleConfirmAccount}
             className="cust-card my-4 lg:mx-14 md:mx-5">
               <img className='w-8' src={wallet} alt="fund wallet" />
               <p className='mr-12 pl-2'>Fund your wallet</p>

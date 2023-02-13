@@ -19,7 +19,7 @@ import axios from "axios";
 import Modal from "react-modal";
 import AnimeList from "../../components/Pages/CustDashboard/AnimeList";
 import WithdrawFunds from "../../components/Pages/CustDashboard/WithdrawFunds";
-import DepositFunds from "../../components/Pages/CustDashboard/DepositFunds";
+// import DepositFunds from "../../components/Pages/CustDashboard/DepositFunds";
 
 
 
@@ -36,6 +36,7 @@ const Wallet = () => {
 	const { user } = useSelector((state) => state.auth);
 	const [modalOpen, setModalIsOpen] = useState(false);
 	const [isWithdrawing, setIsWithdrawing] = useState(false);
+	
 	const customStyles = {
 		content: {
 			width: "50vh",
@@ -108,6 +109,10 @@ const Wallet = () => {
 	}, []);
 	console.log(details, "wallet details");
 	
+	const handleWithdraw = () => {
+		setIsWithdrawing((prevState)=>!prevState)
+	}
+
 	return (
 		<Layout>
 			<FundWallet
@@ -120,11 +125,21 @@ const Wallet = () => {
 				showConfirmAccount={showConfirmAccount}
 				setShowConfirmAccont={setShowConfirmAccont}
 			/>
+			{isWithdrawing ? (
+		      	 <WithdrawFunds
+		      	   setIsWithdrawing={setIsWithdrawing}
+		      	//    startWithdrawFunds={isWithdrawing}
+		     	 />			
+            ) : (
+               <></>
+              )}
+
+
 			<div className="w-full">
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 					<div>
-						<div className="grid-cols-1 rounded-3xl bg-white w-full px-5 md:px-9 2xl:px-12 py-6 hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
-							<div className="flex justify-between pb-1 border-b-2 border-b-colorSecondary mb-4">
+						<div className="grid-cols-1 rounded-3xl bg-white w-full md:px-5 lg:px-16 2xl:px-12 py-8 px-5 lg:py-16 hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
+							<div className="flex justify-between items-center pb-1 border-b-2 border-b-colorSecondary mb-4">
 								<p className="font-bold text-xl 2xl:text-2xl">Account</p>
 								<p className="font-medium text-xl 2xl:text-2xl text-colorPrimary">
 									Ridic Ventures
@@ -138,7 +153,7 @@ const Wallet = () => {
 
 							<div className="flex justify-between ">
 								<div>
-									<p className="font-medium md:text-xl 2xl:text-3xl text-colorSecondary mb-2">
+									<p className="font-medium text-xl md:text-xl lg:text-2xl 2xl:text-3xl text-colorSecondary mb-2">
 										&#8358; {balance}
 									</p>
 									<p className="font-medium flex mb-8 2xl:mb-12 md:text-lg text-sm 2xl:text-xl text-colorPrimary">
@@ -146,7 +161,7 @@ const Wallet = () => {
 
 										<div className="relative">
 											<img
-												className="3xl:ml-5 ml-3 cursor-pointer py-2"
+												className="3xl:ml-5 ml-3 cursor-pointer py-1 lg:py-2"
 												src={MoreInfo}
 												alt="more_info"
 												onClick={toggleAvailableBalanceInfo}
@@ -161,24 +176,25 @@ const Wallet = () => {
 										</div>
 									</p>
 									<button
-										onClick={() => setIsWithdrawing(true)}
-										className="font-medium bg-[#E9303B] w-24 hover:shadow-md transition-shadow duration-300 text-white py-3 rounded-md"
+										onClick={handleWithdraw}
+										className="font-medium bg-[#E9303B] w-28 hover:shadow-md transition-shadow duration-300 text-white py-3 rounded-md cursor-pointer"
 									>
 										WITHDRAW
 									</button>
-									{isWithdrawing ? (
-        <WithdrawFunds
-          setIsWithdrawing={setIsWithdrawing}
-          startWithdrawFunds={isWithdrawing}
-        
-        />
-      ) : (
-        <></>
-      )}
+									{/* {isWithdrawing ? (
+	 	                                 <div  className="mt-48 lg:mt-60 ml-52 ">
+		                                 	 <WithdrawFunds
+		                                 	   setIsWithdrawing={setIsWithdrawing}
+		                                 	   startWithdrawFunds={isWithdrawing}
+		                                 	 />
+		                                 </div>					
+                                       ) : (
+                                         <></>
+                                       )} */}
 								</div>
 								
 								<div>
-									<p className="font-medium md:text-xl 2xl:text-3xl text-colorSecondary mb-2">
+									<p className="font-medium text-xl md:text-xl 2xl:text-3xl text-colorSecondary mb-2">
 										&#8358; {userFromBackend?.outgoingWalletBalance}
 									</p>
 									<p className="font-medium mb-8 flex md:text-lg text-sm 2xl:text-xl text-colorPrimary">
@@ -186,7 +202,7 @@ const Wallet = () => {
 
 										<div className="relative">
 											<img
-												className="3xl:ml-5 ml-3 cursor-pointer py-2"
+												className="3xl:ml-5 ml-3 cursor-pointer py-1 lg:py-2"
 												src={MoreInfo}
 												alt="more_info"
 												onClick={toggleOutgoingBalanceInfo}
@@ -200,17 +216,20 @@ const Wallet = () => {
 											)}
 										</div>
 									</p>
+									{details?.usertype === "CUSTOMER" ? (
 									<button
-										onClick={() => setIsFunding(true)}
-										className="font-medium bg-colorGreen w-24 hover:shadow-md transition-shadow duration-300 text-white py-3 rounded-md"
+										// onClick={() => setIsFunding(true)}
+										onClick={confirmAccountHandler}
+										className="font-medium text-sm bg-colorGreen w-28 hover:shadow-md transition-shadow duration-300 text-white py-3 rounded-md"
 									>
 										Fund
 									</button>
+									) : null }
 								</div>
-								<DepositFunds isFunding={isFunding} setIsFunding={setIsFunding} />
+								{/* <DepositFunds isFunding={isFunding} setIsFunding={setIsFunding} /> */}
 							</div>
 
-							<div className="mt-[45px]">
+							<div className="mt-[30px]">
 								<div className="flex justify-between">
 									<p className="font-medium items-center flex md:text-lg text-sm 2xl:text-xl mb-2">
 										<span>Primary Account</span>
@@ -233,7 +252,7 @@ const Wallet = () => {
 									</p>
 									<p
 										onClick={confirmAccountHandler}
-										className="cursor-pointer font-medium flex md:text-lg text-sm 2xl:text-xl mb-2"
+										className="cursor-pointer font-medium flex md:text-lg text-sm 2xl:text-xl mb-3 mr-[20px]"
 									>
 										<img
 											className="2xl:ml-5 mr-3"
@@ -243,7 +262,7 @@ const Wallet = () => {
 										<span>{details?.virtual_account?.account_number}</span>
 									</p>
 								</div>
-								<div className="bg-[#EAEAEA] flex-col md:flex-row rounded-2xl mb-5 flex justify-between p-5">
+								<div className="bg-[#EAEAEA] flex-col md:flex-row rounded-2xl mb-1 flex justify-between p-5">
 									<div className="text-sm 2xl:text-xl">
 										<p>
 											<span className="text-colorSecondary">

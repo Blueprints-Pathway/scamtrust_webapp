@@ -28,14 +28,15 @@ import AnimeList from "../Pages/CustDashboard/AnimeList";
 import { useNavigate } from "react-router-dom";
 import { IoLogoWindows, IoMdCopy } from 'react-icons/io'
 import CopyToClipboard from "react-copy-to-clipboard";
+import WithdrawFunds from "../Pages/CustDashboard/WithdrawFunds";
 
 
 
 
 function DashBoardVendor() {
 	const [modalIsOpen, setModalIsOpen] = useState(false);
-
 	const [copy, setCopy] = useState(false);
+	const [isWithdrawing, setIsWithdrawing] = useState(false);
 
 	const handleCopy = () => {
 		setCopy(true);
@@ -198,8 +199,21 @@ function DashBoardVendor() {
 // const nameOf=details?.name
 // const first=nameOf.at(0)
 // console.log("name to use",first);
+
+const handleWithdraw = () => {
+	setIsWithdrawing((prevState) => !prevState)
+
+}
+
 	return (
 		<Layout>
+			{isWithdrawing ? (
+				<WithdrawFunds 
+				setIsWithdrawing={setIsWithdrawing}
+				/>
+			) : (
+				<></>
+			)}
 			<div className="main">
 				<div>
 					<div className="containerDash">
@@ -256,7 +270,6 @@ function DashBoardVendor() {
 												<CopyToClipboard text={vendorID}>
 													<button onClick={() => setCopy(handleCopy)}>
 														{copy ? <p className="my-2">copied!</p> : <IoMdCopy className="text-[20px] text-[#86D19B]" /> }
-												       {/* <IoMdCopy className="text-[20px] text-[#86D19B]" /> */}
 													</button>
 												</CopyToClipboard>
 										<div className="Line mt-3 pl-20"></div>
@@ -316,7 +329,8 @@ function DashBoardVendor() {
 												</div>
 											</div>
 											<div className="Wallet-card-left-bottom-right">
-												<p className="Withdraw-btn">WITHDRAWAL</p>
+												<p onClick={handleWithdraw}
+												className="Withdraw-btn">WITHDRAWAL</p>
 											</div>
 										</div>
 									</div>
@@ -580,7 +594,7 @@ function DashBoardVendor() {
 							<div className="md:flex">
 								<div className="action-card-title text-sm  md:px-5">
 									<h5 className="smallsize ml-1 md:ml-[10px]">
-									0	Need help?
+									    Need help?
 									</h5>
 									<div 
 									onClick={openFaq}

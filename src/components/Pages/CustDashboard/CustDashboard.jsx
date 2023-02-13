@@ -13,6 +13,8 @@ import { fetchUser } from "../../../services/auth";
 import axios from "axios";
 import useModal from "./AnimeList";
 import { Link, useNavigate } from "react-router-dom";
+import ConfirmAccount from "../Wallet/ConfirmAccount";
+import FundWallet from "../Wallet/FundWallet";
 
 const CustomerDashboard = (props ) => {
 	const { setShowInitiateTransaction, setIsWithdrawing, setIsFunding } = props;
@@ -21,6 +23,8 @@ const CustomerDashboard = (props ) => {
 	const [details, setDetails]=useState()
 	const [userFromBackend, setUserFromBackend] = useState(null);
 	const [modalIsOpen, setModalIsOpen] = useState(false);
+	const [showConfirmAccount, setShowConfirmAccont] = useState(false);
+	const [showFundWallet, setShowFundWallet] = useState(false)
 
 	const customStyles = {
 		content: {
@@ -45,6 +49,14 @@ const CustomerDashboard = (props ) => {
 		e.stopPropagation();
 		setModalIsOpen(false);
 	};
+
+	const handleConfirmAccount = () => {
+		setShowConfirmAccont((prevState) => !prevState)
+	}
+
+	const fundWalletHandler = () => {
+		setShowFundWallet((prevState) => !prevState);
+	}
 
 	const { user } = useSelector((state) => state.auth);
 
@@ -95,6 +107,16 @@ const CustomerDashboard = (props ) => {
 
 	return (
 		<div className="flex w-full px-2 flex-col md:flex-row gap-7 justify-between">
+			           <FundWallet 
+					   setShowConfirmAccont={setShowConfirmAccont}
+					   fundWalletHandler={fundWalletHandler}
+					   showFundWallet={showFundWallet}
+					   />
+					    <ConfirmAccount 
+						setShowFundWallet={setShowFundWallet}
+						showConfirmAccount = {showConfirmAccount}
+						setShowConfirmAccont = {setShowConfirmAccont}
+				        />
 			<div className="min-w-[260px] mx-auto w-[70%] 2xl:w-[685px]">
 				<div className="w-full bg-[#FFFEFE] lg:rounded-[24px] rounded-lg lg:px-[37px] px-5 py-3 lg:py-[29px] mb-[13px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
 					<p className="font-semibold text-lg 2xl:text-2xl text-colorPrimary">
@@ -134,7 +156,8 @@ const CustomerDashboard = (props ) => {
 							WITHDRAW
 						</button>
 						<button
-							onClick={() => setIsFunding(true)}
+							// onClick={() => setIsFunding(true)}
+							onClick={handleConfirmAccount}
 							className="bg-colorGreen text-xs lg:text-base w-[100px] hover:shadow-xl transition-all duration-300 2xl:w-[143px] text-center text-white py-[9px] rounded-lg"
 						>
 							FUND
@@ -232,7 +255,7 @@ const CustomerDashboard = (props ) => {
 			</div>
 
 			<div className="w-full h-[100%] overflow-y-scroll py-3 lg:py-8 px-4 lg:px-12 bg-white rounded-[24px]">
-				<div className="w-full mb-3 font-medium 2xl:font-bold text-xs lg:text-base 2xl:text-lg text-colorPrimary flex justify-between border-b border-b-[#CFD8DC]">
+				<div className="w-full mb-3 font-medium 2xl:font-bold text-xs lg:text-base 2xl:text-lg text-colorPrimary flex justify-between items-start border-b border-b-[#CFD8DC]">
 					<p className="border-b-[3px] border-b-colorSecondary pb-5 cursor-pointer hover:opacity-70">
 						All
 					</p>
@@ -246,22 +269,23 @@ const CustomerDashboard = (props ) => {
 						Completed
 					</p>
 				</div>
-
-				<div className="flex justify-between mb-[10px]">
-					<div />
+			
+				<div className="flex justify-between mb-[10px]" 		onClick={onCreateTransactionClicked}>
+			
 					<button
-						onClick={onCreateTransactionClicked}
+				
+		
 						className="bg-colorGreen text-xs lg:text-base flex text-white items-center rounded-md px-2 py-2 lg:py-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-700 pointer-events-auto"
 					>
 						<span >Create transaction</span>
 						<img src={Add} alt="add" className="mb-[-6px]" />
 					</button>
 				</div>
-
+				<div />
 				<div className="overflow-x-auto mx-auto relative">
 					<table className="w-full text-left">
 						<thead className="text-sm font-bold text-[#A6A6A6]">
-							<tr>
+							<tr className="flex justify-center items-start">
 								<th scope="col" className="py-3 px-6">
 									Transactions
 								</th>
