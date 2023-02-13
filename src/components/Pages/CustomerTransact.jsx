@@ -1,16 +1,19 @@
-import React from 'react'
-import add from '../../assets/create-icon.png'
-import cancel from '../../assets/cancelled-icon.png'
-import complete from '../../assets/completed-icon.png'
-import awaiting from '../../assets/awaiting-icon.png'
-import onGoing from '../../assets/on-going-icon.png'
-import cancelled from '../../assets/cancel-icon.png'
-import completed from '../../assets/complete-icon.png'
-import Layout from '../Layout/Layout'
-import Backdrop from "../../components/UI/Backdrop";
-import InitiateTransaction from "../../components/InitiateTransaction/InitiateTransaction";
-import { useNavigate } from 'react-router-dom'
+/** @format */
 
+import React from "react";
+import add from "../../assets/create-icon.png";
+import cancel from "../../assets/cancelled-icon.png";
+import complete from "../../assets/completed-icon.png";
+import awaiting from "../../assets/awaiting-icon.png";
+import onGoing from "../../assets/on-going-icon.png";
+import cancelled from "../../assets/cancel-icon.png";
+import completed from "../../assets/complete-icon.png";
+import Layout from "../Layout/Layout";
+import Backdrop from "../../components/UI/Backdrop";
+import InitiationSuccessful from "../InitiateTransaction/InitiationSuccessful";
+import TransactionPreview from "../InitiateTransaction/TransactionPreview";
+import InitiateTransaction from "../../components/InitiateTransaction/InitiateTransaction";
+import { useNavigate } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 // import add from "../../assets/create-icon.png";
@@ -28,11 +31,12 @@ import Ongoing from "./custTransaction/Ongoing";
 import Completed from "./custTransaction/Completed";
 import Cancelled from "./custTransaction/Cancelled";
 const CustomerTransact = (props) => {
-//	const { setShowInitiateTransaction } = props;
+	//	const { setShowInitiateTransaction } = props;
 
-  const [showInitiateTransaction, setShowInitiateTransaction] = useState(false);
-  const [showTransactionPreview, setShowTransactionPreview] = useState(false);
- 	const [active, setActive] = useState("alltransaction");
+	const [showInitiateTransaction, setShowInitiateTransaction] = useState(false);
+	const [showTransactionPreview, setShowTransactionPreview] = useState(false);
+	const [showTransactionSuccess, setShowTransactionSuccess] = useState(false);
+	const [active, setActive] = useState("alltransaction");
 	const [outgoing, setOutGoing] = useState();
 	const [completeData, setCompleteData] = useState();
 	const [cancelData, setCancelData] = useState();
@@ -43,7 +47,7 @@ const CustomerTransact = (props) => {
 	const [cancels, setCancels] = useState();
 	const onCreateTransactionClicked = () => {
 		setShowInitiateTransaction((prevState) => !prevState);
-    console.log(props)
+		console.log(props);
 	};
 	const [showCanceled, setShowCanceled] = useState(false);
 	const [showCompleted, setShowCompleted] = useState(false);
@@ -185,16 +189,36 @@ const CustomerTransact = (props) => {
 
 	return (
 		<Layout>
-       {showInitiateTransaction ? (
-        <Backdrop showInitiateTransaction={showInitiateTransaction}>
-          <InitiateTransaction
-            setShowInitiateTransaction={setShowInitiateTransaction}
-            setShowTransactionPreview={setShowTransactionPreview}
-          />
-        </Backdrop>
-      ) : (
-        <></>
-      )}
+			{showInitiateTransaction ? (
+				<Backdrop showInitiateTransaction={showInitiateTransaction}>
+					<InitiateTransaction
+						setShowInitiateTransaction={setShowInitiateTransaction}
+						setShowTransactionPreview={setShowTransactionPreview}
+					/>
+				</Backdrop>
+			) : (
+				<></>
+			)}{" "}
+			{showTransactionPreview ? (
+				<Backdrop showTransactionPreview={showTransactionPreview}>
+					<TransactionPreview
+						setShowInitiateTransaction={setShowInitiateTransaction}
+						setShowTransactionPreview={setShowTransactionPreview}
+						setShowTransactionSuccess={setShowTransactionSuccess}
+					/>
+				</Backdrop>
+			) : (
+				<></>
+			)}{" "}
+			{showTransactionSuccess ? (
+				<Backdrop showTransactionSuccess={showTransactionSuccess}>
+					<InitiationSuccessful
+						setShowTransactionSuccess={setShowTransactionSuccess}
+					/>
+				</Backdrop>
+			) : (
+				<></>
+			)}
 			{showOngoing || showCanceled || showCompleted ? (
 				<div>
 					{showOngoing && (
