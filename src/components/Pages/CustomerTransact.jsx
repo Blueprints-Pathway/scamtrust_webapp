@@ -191,7 +191,7 @@ const CustomerTransact = (props) => {
 					)}
 				</div>
 			) : (
-				<div className="mt-[140px] ml-5 bg-white rounded-[10px] h-[35rem] md:h-[33rem] lg:h-full py-7 px-3 md:mb-[30px] md:mt-[0px] md:mx[25px] lg:mt-[10px] lg:px-[50px] lg:mx-12">
+				<div className="mt-[140px] ml-5 bg-white rounded-[10px] h-full md:h-full lg:h-full py-7 px-3 md:mb-[30px] md:mt-[0px] md:mx[25px] lg:mt-[10px] lg:px-[50px] lg:mx-12">
 					<div className="flex justify-between items-center my-5 mx-3 md:mx-12 lg:mx-[10px]">
 						<h1 className="text-xl lg:text-3xl text-[#262466] font-semibold lg:font-bold md:text-2xl">
 							Transactions
@@ -403,7 +403,7 @@ const CustomerTransact = (props) => {
 												</div>
 											</div>
 											<p className="text-[#262466] text-center">
-												{item?.vendor?.location}
+												{item?.vendor?.location?.toUpperCase()}
 											</p>
 											<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
 												₦{item?.amount}
@@ -443,7 +443,7 @@ const CustomerTransact = (props) => {
 												</div>
 											</div>
 											<p className="text-[#262466] text-center">
-												{item?.vendor?.name}
+												{item?.vendor?.location?.toUpperCase()}
 											</p>
 											<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
 												₦{item?.amount}
@@ -482,7 +482,7 @@ const CustomerTransact = (props) => {
 												</div>
 											</div>
 											<p className="text-[#262466] text-center">
-												{item?.product_name}
+												{item?.vendor?.location?.toUpperCase()}
 											</p>
 											<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
 												₦{item?.amount}
@@ -537,10 +537,10 @@ const CustomerTransact = (props) => {
 													</div>
 												</div>
 												<p className="text-[#262466] text-center">
-													{newout?.product_name}
+													{newout?.amount}
 												</p>
 												<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
-													{newout?.amount}
+													{newout?.vendor?.location.toUpperCase()}
 												</p>
 												<p className="text-[#262466] text-center">
 													{moment(newout?.created_at).format("DD/MM/YYYY")}
@@ -591,7 +591,7 @@ const CustomerTransact = (props) => {
 													</div>
 												</div>
 												<p className="text-[#262466] text-center">
-													{completeS?.location}
+													{completeS?.vendor?.location.toUpperCase()}
 												</p>
 												<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
 													{completeS?.amount}
@@ -643,7 +643,7 @@ const CustomerTransact = (props) => {
 													</div>
 												</div>
 												<p className="text-[#262466] text-center">
-													{newcancel?.product_name}
+													{newcancel?.vendor?.location?.toUpperCase()}
 												</p>
 												<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
 													{newcancel?.amount}
