@@ -232,8 +232,8 @@ const Header = (props) => {
 			<h3 className="hidden md:flex font-medium lg:font-semibold text-xl lg:text-3xl text-colorPrimary">
 				{heading}
 			</h3>
-			<div className="flex items-center" onClick={getSearch}>
-				<div className="2xl:w-[541px] mr-2 lg:mr-[56px] relative lg:w-[400px] h-[47px] md:w-[300px] w-[201px]">
+			<div className="flex items-center pointer-events-none" >
+				<div className="2xl:w-[541px] mr-2 lg:mr-[56px] relative lg:w-[400px] h-[47px] md:w-[300px] w-[201px] pointer-events-auto">
 					{details?.usertype === "CUSTOMER" ? (
 						<input
 							onInput={getSearch}

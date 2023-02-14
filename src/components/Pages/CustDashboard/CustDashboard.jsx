@@ -271,7 +271,7 @@ const CustomerDashboard = (props ) => {
 				</div>
 			
 				<div className="flex justify-between mb-[10px]" 		onClick={onCreateTransactionClicked}>
-			
+					
 					<button
 				
 		
