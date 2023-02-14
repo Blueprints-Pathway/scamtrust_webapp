@@ -11,7 +11,7 @@ const Declined = () => {
   return (
     <div>
          <Layout>
-            <div className=' bg-[#fff] rounded-3xl ml-4 mt-10 md:mt-4 lg:mt-7 py-10 pt-12 lg:pt-12 md:pt-8 md:px-12 px-5'>
+            <div className='trans-container bg-[#fff] rounded-3xl w-[25rem] ml-[-41px] md:w-[53rem] md:mt-[-72px] lg:w-[90rem] lg:ml-[-16.8rem] lg:mt-[-40px] lg:pb-16 py-10 pt-12 lg:pt-12 md:pt-8 md:px-12 px-5'>
 
                 <h6 onClick={() => navigate(-1)}
                 className='flex items-center text-[#262466] text-sm mb-4 md:mb-0 lg:mb-8 lg:ml-4'>
@@ -20,7 +20,9 @@ const Declined = () => {
 
                 <div className='flex flex-wrap items-center justify-between md:mx-5'>
                     <div>
-                        <h1 className='font-bold text-base lg:text-4xl lg:font-bold'>ID - 6057702</h1>
+                        <h1 className='font-bold text-sm lg:text-2xl lg:font-bold'>
+                        <span className="text-[#3AB75D] pr-1">ID:</span> - 6057702
+                        </h1>
                         <p className='text-sm lg:text-2xl font-bold text-[#262466] my-1 lg:my-4'>Ridic  Ventures </p>
                     </div>
                     <div className='md:ml-[-80px] lg:ml-[-15rem]'>
@@ -109,7 +111,7 @@ const Declined = () => {
                         </div>
                     </div>
                 </div>
-                <div className='flex items-center justify-center mt-10 lg:mt-24 lg:mb-60'>
+                <div className='flex items-center justify-center mt-10 lg:mt-24 lg:mb-1'>
                     <h1 className='text-sm text-[#8D9296] mx-1'>Secured by</h1>
                     <img className='w-24 mx-1' src={Logo} alt="Scamtrust logo" />
                 </div>

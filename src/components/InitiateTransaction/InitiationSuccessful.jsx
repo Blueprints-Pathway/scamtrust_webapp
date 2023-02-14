@@ -17,7 +17,9 @@ const InitiationSuccessful = (props) => {
   const transactionDetails = transactionDetailsFromStorage
   ? JSON.parse(transactionDetailsFromStorage)
   : null;
+
 	const navigate = useNavigate();
+
   useEffect(() => {
     const items = JSON.parse(localStorage?.getItem('dataKey'));
     if (items) {
@@ -25,9 +27,12 @@ const InitiationSuccessful = (props) => {
     }
   }, []);
   console.log(items,"isu");
-const sucess=()=>{
+
+const success=()=>{
+  setShowTransactionSuccess(false);
   navigate("/customer-dashboard")
 }
+
   return (
     <div className="absolute ml-[25px] w-[80vw] bg-white rounded-[20px] top-1/2 left-1/2 lg:w-[70vw] 2xl:w-[1097px] lg:p-8 p-4 2xl:p-16 -translate-x-1/2 -translate-y-1/2 z-30">
       <div className="flex mb-[52px] items-center border-b-[2px] justify-between border-b-[#EAEAEA]">
@@ -87,7 +92,7 @@ const sucess=()=>{
             className="w-[169px] mr-6"
           />
           <button
-            onClick={sucess}
+            onClick={success}
             className="bg-colorPrimary text-white rounded-md font-semibold px-[50px] py-[10px]"
           >
             Done

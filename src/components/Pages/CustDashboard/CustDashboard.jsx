@@ -140,7 +140,7 @@ const CustomerDashboard = (props ) => {
 
 						<div className="flex flex-col text-left">
 							<h4 className="text-[#7d8287] font-normal 2xl:font-semibold text-sm 2xl:text-lg">
-								Pending Balance
+								Outgoing Balance
 							</h4>
 							<h2 className="text-[#7d8287] font-semibold text-sm 2xl:font-bold lg:text-lg 2xl:text-3xl">
 								&#8358; {userFromBackend?.outgoingWalletBalance}

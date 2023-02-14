@@ -90,7 +90,7 @@ const Ongoing = ({showOngoingHandler}) => {
 	return (
 		<div>
 			<Layout>
-				<div className=" bg-[#fff] rounded-3xl ml-4 mt-7 md:mt-2 lg:mt-7 py-10 pt-12 lg:pt-12 md:pt-8 md:px-12 px-5">
+				<div className="trans-container bg-[#fff] rounded-3xl w-[25rem] ml-[-41px] md:w-[53rem] md:mt-[-72px] lg:w-[90rem] lg:ml-[-16.8rem] lg:mt-[-40px] lg:pb-16 py-10 pt-12 lg:pt-12 md:pt-8 md:px-12 px-5">
 					<h6
 						onClick={back}
 						className="flex items-center text-[#262466] text-sm mb-4 md:mb-0 lg:mb-8 lg:ml-4"
@@ -103,14 +103,14 @@ const Ongoing = ({showOngoingHandler}) => {
 
 					<div className="flex flex-wrap items-center justify-between md:mx-5">
 						<div>
-							<h1 className="font-bold text-base lg:text-2xl lg:font-bold">
-								ID - {going?.transaction_id}
+							<h1 className="font-bold text-sm lg:text-2xl lg:font-bold">
+							<span className="text-[#3AB75D] pr-1">ID:</span> {going?.transaction_id}
 							</h1>
 							<p className="text-sm lg:text-2xl font-bold text-[#262466] my-1 lg:my-4">
 								{going?.vendor?.name || going?.vendor?.username}
 							</p>
 						</div>
-						<div className="md:ml-[-80px] lg:ml-[-15rem]">
+						<div className="md:ml-[-30px] lg:ml-[-15rem]">
 							<p className="text-sm lg:text-2xl font-bold">
 								Status:
 								<span className="font-normal pl-1 text-[#95999D] text-sm lg:text-2xl lg:px-5">
@@ -248,7 +248,7 @@ const Ongoing = ({showOngoingHandler}) => {
 						</Modal>
 					</div>
 
-					<div className="flex items-center justify-center mt-10 lg:mt-12 lg:mb-40">
+					<div className="flex items-center justify-center mt-10 lg:mt-24 lg:mb-1">
 						<h1 className="text-sm text-[#8D9296] mx-1">Secured by</h1>
 						<img className="w-24 mx-1" src={Logo} alt="Scamtrust logo" />
 					</div>

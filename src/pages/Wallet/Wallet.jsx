@@ -198,7 +198,7 @@ const Wallet = () => {
 										&#8358; {userFromBackend?.outgoingWalletBalance}
 									</p>
 									<p className="font-medium mb-8 flex md:text-lg text-sm 2xl:text-xl text-colorPrimary">
-										<span>Outgoing Balance</span>
+										<span>{details?.usertype === "CUSTOMER" ? 'Outgoing Balance' : 'Incoming Balance'}</span>
 
 										<div className="relative">
 											<img

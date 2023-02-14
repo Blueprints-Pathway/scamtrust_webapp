@@ -191,7 +191,8 @@ const CustomerTransact = (props) => {
 					)}
 				</div>
 			) : (
-				<div className="mt-[140px] ml-5 bg-white rounded-[10px] h-[35rem] md:h-[33rem] lg:h-full py-7 px-3 md:mb-[30px] md:mt-[0px] md:mx[25px] lg:mt-[10px] lg:px-[50px] lg:mx-12">
+				// md:h-[33rem] lg:h-full 
+				<div className="mt-2 ml-5 bg-white rounded-[10px] py-7 px-3 md:mb-[30px] md:mt-2 md:mx[25px] lg:mt-5 lg:px-[50px] lg:mx-12">
 					<div className="flex justify-between items-center my-5 mx-3 md:mx-12 lg:mx-[10px]">
 						<h1 className="text-xl lg:text-3xl text-[#262466] font-semibold lg:font-bold md:text-2xl">
 							Transactions
