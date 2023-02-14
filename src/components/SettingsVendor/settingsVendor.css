@@ -136,11 +136,12 @@
 }
 .inputBox-GeneralSettings {
 	width: 55vw;
+	color:"#000000";
 	height: 2.3rem;
 	background-color: #ffff;
 	border: 0.5px solid #d5d8da;
 	border-radius: 5px;
-	text-align: right;
+	/* text-align: right; */
 	padding: 5px;
 	padding-right: 20vh;
 }
