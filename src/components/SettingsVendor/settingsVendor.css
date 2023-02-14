@@ -82,6 +82,15 @@
 	margin-left: -5px;
 	border-radius: 50%;
 }
+@media (max-width: 754px) and (min-width: 358px) {
+	.CenterImage1 {
+		position: relative;
+		height: 90px;
+		width: 90px;
+		margin-left: 0px;
+		border-radius: 50%;
+	}
+}
 .GeneralSettings .category {
 	display: flex;
 	justify-content: space-between;
@@ -136,9 +145,9 @@
 	padding-right: 20vh;
 }
 .uploads {
-	color: "#ffff"!important;
+	color: "#ffff" !important;
 
-  background-color:" #01316c"!important
+	background-color: " #01316c" !important;
 }
 .GeneralSettings {
 	position: absolute;

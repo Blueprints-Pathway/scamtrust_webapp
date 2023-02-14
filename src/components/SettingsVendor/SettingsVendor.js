@@ -98,7 +98,7 @@ function SettingsVendor() {
 			console.log(data, "data");
 			swal({
 				icon: "success",
-				text: "image uploaded successfully",
+				text: "Image uploaded successfully",
 			});
 			console.log(data, "data");
 		} catch (error) {
