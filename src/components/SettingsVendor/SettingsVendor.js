@@ -127,7 +127,7 @@ function SettingsVendor() {
 							<div className="CenterImg2">
 								<div className="CenterImg3">
 									<div className="col-md-3">
-										<div>
+										<div onClick={upload}>
 											<img
 												src={preview}
 												className="CenterImage1"
