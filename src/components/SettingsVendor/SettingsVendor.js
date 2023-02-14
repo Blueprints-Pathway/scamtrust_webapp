@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import "./settingsVendor.css";
-
+import swal from "sweetalert";
 import shielgg from "../../images/shielgg.png";
 import Frame318 from "../../images/Frame318.png";
 import SideBar from "../SideBar/SideBar";
@@ -25,7 +25,7 @@ function SettingsVendor() {
 	function onImageChange(e) {
 		setImage((e.target.files[0]))
 		setPreview(URL.createObjectURL(e.target.files[0]));
-		console.log(URL.createObjectURL(e.target.files[0]), "filesss");
+		
 		// URL.createObjectURL(e.target.files[0]);
 	}
 	const [select, setSelect] = useState(true);
@@ -96,10 +96,17 @@ function SettingsVendor() {
 			};
 			const data = await axios.post(API_URL, payload, config);
 			console.log(data, "data");
-
+			swal({
+				icon: "success",
+				text: "image uploaded successfully",
+			});
 			console.log(data, "data");
 		} catch (error) {
 			console.log(error, "errror");
+			swal({
+				icon: "error",
+				text: error,
+			});
 		}
 	};
 
