@@ -328,7 +328,7 @@ const CustomerTransact = (props) => {
 								aria-controls="tabs-profile"
 								aria-selected="false"
 							>
-								Out-going
+								On-going
 							</a>
 						</li>
 						<li
