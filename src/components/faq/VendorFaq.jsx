@@ -4,7 +4,7 @@ const VendorFaq = () => {
   return (
     <div className='h-[100vh] mb-[20rem]'>
         <div className='text-center'>
-            <h1 className='mt-[5rem] mb-7 underline underline-offset-[6px] text-colorPrimary text-2xl lg:text-4xl lg:my-12 font-normal'>SCAMTRUST VENDOR FAQ</h1>
+            <h1 className='mt-[3rem] mb-7 underline underline-offset-[6px] text-colorPrimary text-2xl lg:text-4xl lg:my-12 font-normal'>SCAMTRUST VENDOR FAQ</h1>
         </div>
         <div className='ml-2'>
             <div className='my-4 border-[1px] border-gray-500 p-3 rounded-lg'>

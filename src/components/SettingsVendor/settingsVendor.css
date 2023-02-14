@@ -143,6 +143,7 @@
 .GeneralSettings {
 	position: absolute;
 	/* identical to box height */
+	pointer-events: none;
 	left: 6vw;
 	top: 6rem;
 	cursor: pointer;

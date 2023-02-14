@@ -20,8 +20,8 @@ const Faq = () => {
     <Layout>
     <div>
         
-        <div className='flex-column justify-center items-center mt-44'>
-          <div className='flex items-center justify-start'>
+        <div className='flex-column justify-center items-center mt-5'>
+          <div className='flex items-center justify-center'>
           <button onClick={handleVendor}
           className={faq ?'mx-12 text-xl' : faqButton}>Vendor</button>
 
