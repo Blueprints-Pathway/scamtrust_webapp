@@ -106,7 +106,8 @@ const CustomerDashboard = (props ) => {
 	}
 
 	return (
-		<div className="flex w-full px-2 flex-col md:flex-row gap-7 justify-between">
+		<div className="flex-column w-full px-2 flex-col md:flex-row gap-7 justify-between">
+			
 			           <FundWallet 
 					   setShowConfirmAccont={setShowConfirmAccont}
 					   fundWalletHandler={fundWalletHandler}
@@ -117,7 +118,11 @@ const CustomerDashboard = (props ) => {
 						showConfirmAccount = {showConfirmAccount}
 						setShowConfirmAccont = {setShowConfirmAccont}
 				        />
-			<div className="min-w-[260px] mx-auto w-[70%] 2xl:w-[685px]">
+
+		  <div className="flex w-full px-2 flex-col md:flex-row gap-7 justify-between">
+
+		  <div className="min-w-[260px] mx-auto w-[70%] 2xl:w-[685px]">
+				
 				<div className="w-full bg-[#FFFEFE] lg:rounded-[24px] rounded-lg lg:px-[37px] px-5 py-3 lg:py-[29px] mb-[13px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
 					<p className="font-semibold text-lg 2xl:text-2xl text-colorPrimary">
 						{userFromBackend?.data.name}
@@ -208,50 +213,11 @@ const CustomerDashboard = (props ) => {
 						</div>
 					</div>
 				</div>
-				<div className="flex flex-col lg:flex-row justify-around text-colorPrimary">
-					<div onClick={handleFaq} className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5">
-						<div className="bg-[#ff9300] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
-							<img
-								className="w-[23px] h-[23px] object-contain"
-								src={Info}
-								alt="info"
-							/>
-						</div>
-						<h6 className="font-semibold text-xl">FAQs</h6>
-						<p>Find answers instantly</p>
-					</div>
-
-					<div
-						onClick={setModalIsOpenToTrue}
-						className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#E2D8F1] rounded-3xl"
-					>
-						<div className="bg-[#5F0AC3] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
-							<img
-								className="w-[23px] h-[23px] object-contain"
-								src={Chat}
-								alt="chat"
-							/>
-						</div>
-						<h6 className="font-semibold text-xl">Chat</h6>
-						<div 
-						>
-							<button>Click to chat</button>
-
-							<Modal
-								isOpen={modalIsOpen}
-								style={customStyles}
-								onRequestClose={setModalIsOpenToFalse}
-							>
-								<button className='pl-28 pt-5 text-lg md:pl-5 lg:pl-16' onClick={setModalIsOpenToFalse}>X</button>
-								<AnimeList />
-							</Modal>
-						</div>
-					</div>
-				</div>
-
-				<div className="hidden md:flex justify-center mt-[50px] mb-5">
+				     
+                                   {/* TRANSACTIONS PAGE */}
+				{/* <div className="hidden md:flex justify-center mt-[50px] mb-5">
 					<img src={SecuredBy} alt="secured by scam trust" />
-				</div>
+				</div> */}
 			</div>
 
 			<div className="w-full h-[100%] overflow-y-scroll py-3 lg:py-8 px-4 lg:px-12 bg-white rounded-[24px]">
@@ -345,10 +311,52 @@ const CustomerDashboard = (props ) => {
 					</p>
 				</div>
 			</div>
+		  </div>
+			                        {/* FAQ AND CHAT BUTTON */}
+				<div className="flex-col lg:flex-row justify-around text-colorPrimary">
+					<div onClick={handleFaq} className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5">
+						<div className="bg-[#ff9300] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
+							<img
+								className="w-[23px] h-[23px] object-contain"
+								src={Info}
+								alt="info"
+							/>
+						</div>
+						<h6 className="font-semibold text-xl">FAQs</h6>
+						<p>Find answers instantly</p>
+					</div>
 
-			<div className="lg:hidden md:hidden my-7 flex items-center justify-center">
+					<div
+						onClick={setModalIsOpenToTrue}
+						className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#E2D8F1] rounded-3xl"
+					>
+						<div className="bg-[#5F0AC3] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
+							<img
+								className="w-[23px] h-[23px] object-contain"
+								src={Chat}
+								alt="chat"
+							/>
+						</div>
+						<h6 className="font-semibold text-xl">Chat</h6>
+						<div 
+						>
+							<button>Click to chat</button>
+
+							<Modal
+								isOpen={modalIsOpen}
+								style={customStyles}
+								onRequestClose={setModalIsOpenToFalse}
+							>
+								<button className='pl-28 pt-5 text-lg md:pl-5 lg:pl-16' onClick={setModalIsOpenToFalse}>X</button>
+								<AnimeList />
+							</Modal>
+						</div>
+					</div>
+				</div>
+
+			{/* <div className="lg:hidden md:hidden my-7 flex items-center justify-center">
 				<img src={SecuredBy} className="ml-5" alt="secured by scam trust" />
-			</div>
+			</div> */}
 		</div>
 	);
 };
