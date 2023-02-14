@@ -41,7 +41,7 @@ const Ongoing = ({showOngoingHandler}) => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
     const accepted = async () => {
-		navigate("/customer-transaction");
+		navigate("/");
 		try {
 			const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/customer/approve/${id}`;
 			const config = {

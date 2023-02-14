@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import add from "../../assets/create-icon.png";
 import cancel from "../../assets/cancelled-icon.png";
 import complete from "../../assets/completed-icon.png";
@@ -9,14 +9,33 @@ import onGoing from "../../assets/on-going-icon.png";
 import cancelled from "../../assets/cancel-icon.png";
 import completed from "../../assets/complete-icon.png";
 import Layout from "../Layout/Layout";
+import Backdrop from "../../components/UI/Backdrop";
+import InitiationSuccessful from "../InitiateTransaction/InitiationSuccessful";
+import TransactionPreview from "../InitiateTransaction/TransactionPreview";
+import InitiateTransaction from "../../components/InitiateTransaction/InitiateTransaction";
+import { useNavigate } from "react-router-dom";
+
+import { useEffect, useState } from "react";
+// import add from "../../assets/create-icon.png";
+// import cancel from "../../assets/cancelled-icon.png";
+// import complete from "../../assets/completed-icon.png";
+// import awaiting from "../../assets/awaiting-icon.png";
+// import onGoing from "../../assets/on-going-icon.png";
+// import cancelled from "../../assets/cancel-icon.png";
+// import completed from "../../assets/complete-icon.png";
+// import Layout from "../Layout/Layout";
 import axios from "axios";
 import moment from "moment";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import Ongoing from "./custTransaction/Ongoing";
 import Completed from "./custTransaction/Completed";
 import Cancelled from "./custTransaction/Cancelled";
 const CustomerTransact = (props) => {
-	const { setShowInitiateTransaction } = props;
+	//	const { setShowInitiateTransaction } = props;
+
+	const [showInitiateTransaction, setShowInitiateTransaction] = useState(false);
+	const [showTransactionPreview, setShowTransactionPreview] = useState(false);
+	const [showTransactionSuccess, setShowTransactionSuccess] = useState(false);
 	const [active, setActive] = useState("alltransaction");
 	const [outgoing, setOutGoing] = useState();
 	const [completeData, setCompleteData] = useState();
@@ -28,6 +47,7 @@ const CustomerTransact = (props) => {
 	const [cancels, setCancels] = useState();
 	const onCreateTransactionClicked = () => {
 		setShowInitiateTransaction((prevState) => !prevState);
+		console.log(props);
 	};
 	const [showCanceled, setShowCanceled] = useState(false);
 	const [showCompleted, setShowCompleted] = useState(false);
@@ -169,6 +189,36 @@ const CustomerTransact = (props) => {
 
 	return (
 		<Layout>
+			{showInitiateTransaction ? (
+				<Backdrop showInitiateTransaction={showInitiateTransaction}>
+					<InitiateTransaction
+						setShowInitiateTransaction={setShowInitiateTransaction}
+						setShowTransactionPreview={setShowTransactionPreview}
+					/>
+				</Backdrop>
+			) : (
+				<></>
+			)}{" "}
+			{showTransactionPreview ? (
+				<Backdrop showTransactionPreview={showTransactionPreview}>
+					<TransactionPreview
+						setShowInitiateTransaction={setShowInitiateTransaction}
+						setShowTransactionPreview={setShowTransactionPreview}
+						setShowTransactionSuccess={setShowTransactionSuccess}
+					/>
+				</Backdrop>
+			) : (
+				<></>
+			)}{" "}
+			{showTransactionSuccess ? (
+				<Backdrop showTransactionSuccess={showTransactionSuccess}>
+					<InitiationSuccessful
+						setShowTransactionSuccess={setShowTransactionSuccess}
+					/>
+				</Backdrop>
+			) : (
+				<></>
+			)}
 			{showOngoing || showCanceled || showCompleted ? (
 				<div>
 					{showOngoing && (
@@ -191,8 +241,12 @@ const CustomerTransact = (props) => {
 					)}
 				</div>
 			) : (
+<<<<<<< HEAD
 				// md:h-[33rem] lg:h-full 
 				<div className="mt-2 ml-5 bg-white rounded-[10px] py-7 px-3 md:mb-[30px] md:mt-2 md:mx[25px] lg:mt-5 lg:px-[50px] lg:mx-12">
+=======
+				<div className="mt-[140px] ml-5 bg-white rounded-[10px] h-full md:h-full lg:h-full py-7 px-3 md:mb-[30px] md:mt-[0px] md:mx[25px] lg:mt-[10px] lg:px-[50px] lg:mx-12">
+>>>>>>> c0657a715d959c523c5adf315670e16b7084c9f9
 					<div className="flex justify-between items-center my-5 mx-3 md:mx-12 lg:mx-[10px]">
 						<h1 className="text-xl lg:text-3xl text-[#262466] font-semibold lg:font-bold md:text-2xl">
 							Transactions
@@ -404,7 +458,7 @@ const CustomerTransact = (props) => {
 												</div>
 											</div>
 											<p className="text-[#262466] text-center">
-												{item?.vendor?.location}
+												{item?.vendor?.location?.toUpperCase()}
 											</p>
 											<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
 												₦{item?.amount}
@@ -444,7 +498,7 @@ const CustomerTransact = (props) => {
 												</div>
 											</div>
 											<p className="text-[#262466] text-center">
-												{item?.vendor?.name}
+												{item?.vendor?.location?.toUpperCase()}
 											</p>
 											<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
 												₦{item?.amount}
@@ -483,7 +537,7 @@ const CustomerTransact = (props) => {
 												</div>
 											</div>
 											<p className="text-[#262466] text-center">
-												{item?.product_name}
+												{item?.vendor?.location?.toUpperCase()}
 											</p>
 											<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
 												₦{item?.amount}
@@ -538,10 +592,10 @@ const CustomerTransact = (props) => {
 													</div>
 												</div>
 												<p className="text-[#262466] text-center">
-													{newout?.product_name}
+													{newout?.amount}
 												</p>
 												<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
-													{newout?.amount}
+													{newout?.vendor?.location.toUpperCase()}
 												</p>
 												<p className="text-[#262466] text-center">
 													{moment(newout?.created_at).format("DD/MM/YYYY")}
@@ -592,7 +646,7 @@ const CustomerTransact = (props) => {
 													</div>
 												</div>
 												<p className="text-[#262466] text-center">
-													{completeS?.location}
+													{completeS?.vendor?.location.toUpperCase()}
 												</p>
 												<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
 													{completeS?.amount}
@@ -644,7 +698,7 @@ const CustomerTransact = (props) => {
 													</div>
 												</div>
 												<p className="text-[#262466] text-center">
-													{newcancel?.product_name}
+													{newcancel?.vendor?.location?.toUpperCase()}
 												</p>
 												<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
 													{newcancel?.amount}
