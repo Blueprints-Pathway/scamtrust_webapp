@@ -136,9 +136,9 @@ upload()
 												alt="https://www.pexels.com/search/beautiful/"
 											/>
 										</div>
-										<button className="uploads" >
+										{/* <button className="uploads" >
 											Upload
-										</button>
+										</button> */}
 
 										<div>
 											<div className="d-flex justify-content-center">

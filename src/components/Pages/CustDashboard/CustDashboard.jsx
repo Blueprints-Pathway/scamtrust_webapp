@@ -106,7 +106,7 @@ const CustomerDashboard = (props ) => {
 	}
 
 	return (
-		<div className="flex-column w-full px-2 flex-col md:flex-row gap-7 justify-between">
+		<div className="flex-col w-full px-2 pb-10 md:flex-row gap-7">
 			
 			           <FundWallet 
 					   setShowConfirmAccont={setShowConfirmAccont}
@@ -213,14 +213,11 @@ const CustomerDashboard = (props ) => {
 						</div>
 					</div>
 				</div>
-				     
-                                   {/* TRANSACTIONS PAGE */}
-				{/* <div className="hidden md:flex justify-center mt-[50px] mb-5">
-					<img src={SecuredBy} alt="secured by scam trust" />
-				</div> */}
+		
 			</div>
 
-			<div className="w-full h-[100%] overflow-y-scroll py-3 lg:py-8 px-4 lg:px-12 bg-white rounded-[24px]">
+                                   {/* TRANSACTIONS PAGE */}
+			<div className="w-full h-[100%] overflow-y-scroll mt-[-20px] md:mt-0 mx-1 py-7 lg:py-8 px-7 lg:px-12 bg-white rounded-[24px]">
 				<div className="w-full mb-3 font-medium 2xl:font-bold text-xs lg:text-base 2xl:text-lg text-colorPrimary flex justify-between items-start border-b border-b-[#CFD8DC]">
 					<p className="border-b-[3px] border-b-colorSecondary pb-5 cursor-pointer hover:opacity-70">
 						All
@@ -310,11 +307,17 @@ const CustomerDashboard = (props ) => {
 						No recent transaction yet
 					</p>
 				</div>
-			</div>
+				</div>
 		  </div>
+
+				<div className="hidden md:flex md:justify-center md:items-center md:ml-96 md:mt-16 md:mb-5 lg:hidden">
+					<img src={SecuredBy} alt="secured by scam trust" />
+				</div>
+
 			                        {/* FAQ AND CHAT BUTTON */}
-				<div className="flex-col lg:flex-row justify-around text-colorPrimary">
-					<div onClick={handleFaq} className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5">
+				<div className="flex flex-wrap md:flex-col lg:flex-row lg:mt-[-180px] lg:mx-8 justify-start items-start text-colorPrimary mt-6 md:mt-[-23.7rem] md:ml-11 ml-9">
+					<div onClick={handleFaq}
+					 className="w-[200px] mx-auto md:mx-0 lg:mx-0 hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5">
 						<div className="bg-[#ff9300] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
 							<img
 								className="w-[23px] h-[23px] object-contain"
@@ -328,7 +331,7 @@ const CustomerDashboard = (props ) => {
 
 					<div
 						onClick={setModalIsOpenToTrue}
-						className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#E2D8F1] rounded-3xl"
+						className="w-[200px] mx-auto md:mx-0 lg:mx-0 hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#E2D8F1] rounded-3xl"
 					>
 						<div className="bg-[#5F0AC3] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
 							<img
@@ -354,9 +357,9 @@ const CustomerDashboard = (props ) => {
 					</div>
 				</div>
 
-			{/* <div className="lg:hidden md:hidden my-7 flex items-center justify-center">
+			<div className="lg:flex lg:mt-28 lg:mb-0 md:hidden mt-16 flex items-center justify-center">
 				<img src={SecuredBy} className="ml-5" alt="secured by scam trust" />
-			</div> */}
+			</div>
 		</div>
 	);
 };

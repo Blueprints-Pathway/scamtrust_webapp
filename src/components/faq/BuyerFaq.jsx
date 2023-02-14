@@ -4,7 +4,7 @@ const BuyerFaq = () => {
   return (
     <div>
         <div className='text-center'>
-            <h1 className='mt-[5rem] mb-7 underline underline-offset-[6px] text-colorPrimary text-2xl lg:text-4xl lg:my-12 font-normal'>SCAMTRUST BUYER FAQ</h1>
+            <h1 className='mt-[3rem] mb-7 underline underline-offset-[6px] text-colorPrimary text-2xl lg:text-4xl lg:my-12 font-normal'>SCAMTRUST BUYER FAQ</h1>
         </div>
 
         <div className='ml-2'>
