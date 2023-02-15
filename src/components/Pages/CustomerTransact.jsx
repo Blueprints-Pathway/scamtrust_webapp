@@ -10,6 +10,7 @@ import cancelled from "../../assets/cancel-icon.png";
 import completed from "../../assets/complete-icon.png";
 import Layout from "../Layout/Layout";
 import Backdrop from "../../components/UI/Backdrop";
+import notrans from "../../assets/notrans.svg";
 import InitiationSuccessful from "../InitiateTransaction/InitiationSuccessful";
 import TransactionPreview from "../InitiateTransaction/TransactionPreview";
 import InitiateTransaction from "../../components/InitiateTransaction/InitiateTransaction";
@@ -198,7 +199,7 @@ const CustomerTransact = (props) => {
 				</Backdrop>
 			) : (
 				<></>
-			)}{" "}
+			)}
 			{showTransactionPreview ? (
 				<Backdrop showTransactionPreview={showTransactionPreview}>
 					<TransactionPreview
@@ -209,7 +210,7 @@ const CustomerTransact = (props) => {
 				</Backdrop>
 			) : (
 				<></>
-			)}{" "}
+			)}
 			{showTransactionSuccess ? (
 				<Backdrop showTransactionSuccess={showTransactionSuccess}>
 					<InitiationSuccessful
@@ -328,7 +329,7 @@ const CustomerTransact = (props) => {
 								aria-controls="tabs-profile"
 								aria-selected="false"
 							>
-								Out-going
+								On-going
 							</a>
 						</li>
 						<li
@@ -424,45 +425,58 @@ const CustomerTransact = (props) => {
 									role="tabpanel"
 									aria-labelledby="tabs-home-tab"
 								>
-									{done?.map((item) => (
-										<div
-											onClick={() => {
-												setView(item?.transaction_id);
-												getTransaction();
-												showCompletedHandler(item?.transaction_id);
-												window?.localStorage?.setItem(
-													"idCompleted",
-													item?.transaction_id
-												);
-											}}
-											className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md  md:px-4"
-										>
-											<div className="flex items-center justify-center">
-												<img
-													className="w-6"
-													src={completed}
-													alt="Awaiting icon"
-												/>
-												<div className="pl-1.5 pt-2">
-													<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
-														{item?.product_name}
+									{done.length === 0 ? (
+									<div>
+									<img
+										className="w-[283px] h-[223px] object-contain"
+										src={notrans}
+										alt="info"
+									/>
+								</div>
+									) : (
+										<div>
+										
+											{done?.map((item) => (
+												<div
+													onClick={() => {
+														setView(item?.transaction_id);
+														getTransaction();
+														showCompletedHandler(item?.transaction_id);
+														window?.localStorage?.setItem(
+															"idCompleted",
+															item?.transaction_id
+														);
+													}}
+													className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md  md:px-4"
+												>
+													<div className="flex items-center justify-center">
+														<img
+															className="w-6"
+															src={completed}
+															alt="Awaiting icon"
+														/>
+														<div className="pl-1.5 pt-2">
+															<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+																{item?.product_name}
+															</p>
+															<small className=" w-[50px] overflow-hidden md:w-[65px]">
+																Completed
+															</small>
+														</div>
+													</div>
+													<p className="text-[#262466] text-center">
+														{item?.vendor?.location?.toUpperCase()}
 													</p>
-													<small className=" w-[50px] overflow-hidden md:w-[65px]">
-														Completed
-													</small>
+													<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+														₦{item?.amount}
+													</p>
+													<p className="text-[#262466] text-center">
+														{moment(item?.created_at).format("DD/MM/YYYY")}
+													</p>
 												</div>
-											</div>
-											<p className="text-[#262466] text-center">
-												{item?.vendor?.location?.toUpperCase()}
-											</p>
-											<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
-												₦{item?.amount}
-											</p>
-											<p className="text-[#262466] text-center">
-												{moment(item?.created_at).format("DD/MM/YYYY")}
-											</p>
+											))}
 										</div>
-									))}
+									)}
 
 									{cancels?.map((item) => (
 										<div
@@ -550,161 +564,199 @@ const CustomerTransact = (props) => {
 
 						{active === "ongoing" && (
 							<div>
-								{console.log(outgoing, "outgoing")}
-								{outgoing?.map((newout) => {
-									console.log(newout, "new out");
-									return (
-										<div
-											onClick={() => {
-												setView(newout?.transaction_id);
-												getTransaction();
-												window?.localStorage?.setItem(
-													"idOngoing",
-													newout?.transaction_id
-												);
-												showOngoingHandler(newout?.transaction_id);
-											}}
-											key={newout?.id}
-											className="tab-pane fade show active"
-											id="tabs-home"
-											role="tabpanel"
-											aria-labelledby="tabs-home-tab"
-										>
-											<div className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4">
-												<div className="flex items-center justify-center">
-													<img
-														className="w-6"
-														src={onGoing}
-														alt="Awaiting icon"
-													/>
-													<div className="pl-1.5 pt-2">
-														<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
-															{newout?.product_name}
+								{outgoing?.length === 0 ? (
+									<div>
+										<img
+											className="w-[283px] h-[223px] object-contain"
+											src={notrans}
+											alt="info"
+										/>
+									</div>
+								) : (
+									<div>
+										{outgoing?.map((newout) => {
+											console.log(newout, "new out");
+											return (
+												<div
+													onClick={() => {
+														setView(newout?.transaction_id);
+														getTransaction();
+														window?.localStorage?.setItem(
+															"idOngoing",
+															newout?.transaction_id
+														);
+														showOngoingHandler(newout?.transaction_id);
+													}}
+													key={newout?.id}
+													className="tab-pane fade show active"
+													id="tabs-home"
+													role="tabpanel"
+													aria-labelledby="tabs-home-tab"
+												>
+													<div className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4">
+														<div className="flex items-center justify-center">
+															<img
+																className="w-6"
+																src={onGoing}
+																alt="Awaiting icon"
+															/>
+															<div className="pl-1.5 pt-2">
+																<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+																	{newout?.product_name}
+																</p>
+																<small className="block whitespace-nowrap w-[50px]   md:w-[65px]">
+																	On-going
+																</small>
+															</div>
+														</div>
+														<p className="text-[#262466] text-center">
+															{newout?.amount}
 														</p>
-														<small className="block whitespace-nowrap w-[50px]   md:w-[65px]">
-															On-going
-														</small>
+														<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+															{newout?.vendor?.location.toUpperCase()}
+														</p>
+														<p className="text-[#262466] text-center">
+															{moment(newout?.created_at).format("DD/MM/YYYY")}
+														</p>
 													</div>
 												</div>
-												<p className="text-[#262466] text-center">
-													{newout?.amount}
-												</p>
-												<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
-													{newout?.vendor?.location.toUpperCase()}
-												</p>
-												<p className="text-[#262466] text-center">
-													{moment(newout?.created_at).format("DD/MM/YYYY")}
-												</p>
-											</div>
-										</div>
-									);
-								})}
+											);
+										})}
+									</div>
+								)}
 							</div>
 						)}
 
 						{/* COMPLETED */}
 						{active === "completed" && (
 							<div>
-								{console.log(completeData, "complete")}
-								{completeData?.map((completeS) => {
-									return (
-										<div
-											onClick={() => {
-												setView(completeS?.transaction_id);
-												getTransaction();
-												showCompletedHandler(completeS?.transaction_id);
-												window?.localStorage?.setItem(
-													"idCompleted",
-													completeS?.transaction_id
-												);
-											}}
-											key={completeS.id}
-											className="tab-pane fade show active"
-											id="tabs-home"
-											role="tabpanel"
-											aria-labelledby="tabs-home-tab"
-										>
-											<div className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md  md:px-4">
-												<div className="flex items-center justify-center">
-													<img
-														className="w-6"
-														src={completed}
-														alt="Awaiting icon"
-													/>
-													<div className="pl-1.5 pt-2">
-														<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
-															{completeS?.product_name}
+								{completeData.length === 0 ? (
+									<div>
+										<img
+											className="w-[283px] h-[223px] object-contain"
+											src={notrans}
+											alt="info"
+										/>
+									</div>
+								) : (
+									<div>
+										{completeData?.map((completeS) => {
+											return (
+												<div
+													onClick={() => {
+														setView(completeS?.transaction_id);
+														getTransaction();
+														showCompletedHandler(completeS?.transaction_id);
+														window?.localStorage?.setItem(
+															"idCompleted",
+															completeS?.transaction_id
+														);
+													}}
+													key={completeS.id}
+													className="tab-pane fade show active"
+													id="tabs-home"
+													role="tabpanel"
+													aria-labelledby="tabs-home-tab"
+												>
+													<div className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md  md:px-4">
+														<div className="flex items-center justify-center">
+															<img
+																className="w-6"
+																src={completed}
+																alt="Awaiting icon"
+															/>
+															<div className="pl-1.5 pt-2">
+																<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+																	{completeS?.product_name}
+																</p>
+																<small className="block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]">
+																	Completed
+																</small>
+															</div>
+														</div>
+														<p className="text-[#262466] text-center">
+															{completeS?.vendor?.location.toUpperCase()}
 														</p>
-														<small className="block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]">
-															Completed
-														</small>
+														<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+															{completeS?.amount}
+														</p>
+														<p className="text-[#262466] text-center">
+															{moment(completeS?.created_at).format(
+																"DD/MM/YYYY"
+															)}
+														</p>
 													</div>
 												</div>
-												<p className="text-[#262466] text-center">
-													{completeS?.vendor?.location.toUpperCase()}
-												</p>
-												<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
-													{completeS?.amount}
-												</p>
-												<p className="text-[#262466] text-center">
-													{moment(completeS?.created_at).format("DD/MM/YYYY")}
-												</p>
-											</div>
-										</div>
-									);
-								})}
+											);
+										})}
+									</div>
+								)}
 							</div>
 						)}
 						{/* CANCELLED  */}
 						{active === "cancelled" && (
 							<div>
-								{cancelData?.map((newcancel) => {
-									return (
-										<div
-											onClick={() => {
-												setView(newcancel?.transaction_id);
-												getTransaction();
-												showCancelHandler();
-												window?.localStorage?.setItem(
-													"idCancelled",
-													newcancel?.transaction_id
-												);
-											}}
-											key={newcancel?.id}
-											className="tab-pane fade show active"
-											id="tabs-home"
-											role="tabpanel"
-											aria-labelledby="tabs-home-tab"
-										>
-											<div className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4">
-												<div className="flex items-center justify-center">
-													<img
-														className="w-6"
-														src={cancelled}
-														alt="Awaiting icon"
-													/>
-													<div className="pl-1.5 pt-2">
-														<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
-															{newcancel?.product_name}
+								{cancelData?.length === 0 ? (
+									<div>
+										<img
+											className="w-[283px] h-[223px] object-contain"
+											src={notrans}
+											alt="info"
+										/>
+									</div>
+								) : (
+									<div>
+										{cancelData?.map((newcancel) => {
+											return (
+												<div
+													onClick={() => {
+														setView(newcancel?.transaction_id);
+														getTransaction();
+														showCancelHandler();
+														window?.localStorage?.setItem(
+															"idCancelled",
+															newcancel?.transaction_id
+														);
+													}}
+													key={newcancel?.id}
+													className="tab-pane fade show active"
+													id="tabs-home"
+													role="tabpanel"
+													aria-labelledby="tabs-home-tab"
+												>
+													<div className="flex items-center px-1.5 mb-4 justify-between border-[1.5px] rounded-md md:px-4">
+														<div className="flex items-center justify-center">
+															<img
+																className="w-6"
+																src={cancelled}
+																alt="Awaiting icon"
+															/>
+															<div className="pl-1.5 pt-2">
+																<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+																	{newcancel?.product_name}
+																</p>
+																<small className="block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]">
+																	Cancelled
+																</small>
+															</div>
+														</div>
+														<p className="text-[#262466] text-center">
+															{newcancel?.vendor?.location?.toUpperCase()}
 														</p>
-														<small className="block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]">
-															Cancelled
-														</small>
+														<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+															{newcancel?.amount}
+														</p>
+														<p className="text-[#262466] text-center">
+															{moment(newcancel?.created_at).format(
+																"DD/MM/YYYY"
+															)}
+														</p>
 													</div>
 												</div>
-												<p className="text-[#262466] text-center">
-													{newcancel?.vendor?.location?.toUpperCase()}
-												</p>
-												<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
-													{newcancel?.amount}
-												</p>
-												<p className="text-[#262466] text-center">
-													{moment(newcancel?.created_at).format("DD/MM/YYYY")}
-												</p>
-											</div>
-										</div>
-									);
-								})}
+											);
+										})}
+									</div>
+								)}
 							</div>
 						)}
 					</div>

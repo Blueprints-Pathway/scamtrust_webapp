@@ -98,7 +98,7 @@ function SettingsVendor() {
 			console.log(data, "data");
 			swal({
 				icon: "success",
-				text: "image uploaded successfully",
+				text: "Image uploaded successfully",
 			});
 			console.log(data, "data");
 		} catch (error) {
@@ -109,7 +109,9 @@ function SettingsVendor() {
 			});
 		}
 	};
-
+useEffect(()=>{
+upload()
+},[preview])
 	return (
 		<div>
 			<Layout className="containerSettings" name="Settings">
@@ -127,16 +129,16 @@ function SettingsVendor() {
 							<div className="CenterImg2">
 								<div className="CenterImg3">
 									<div className="col-md-3">
-										<div onClick={upload}>
+										<div >
 											<img
 												src={preview}
 												className="CenterImage1"
 												alt="https://www.pexels.com/search/beautiful/"
 											/>
 										</div>
-										<button className="uploads" onClick={upload}>
+										{/* <button className="uploads" >
 											Upload
-										</button>
+										</button> */}
 
 										<div>
 											<div className="d-flex justify-content-center">

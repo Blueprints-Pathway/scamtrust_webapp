@@ -232,7 +232,7 @@ const Header = (props) => {
 			<h3 className="hidden md:flex font-medium lg:font-semibold text-xl lg:text-3xl text-colorPrimary">
 				{heading}
 			</h3>
-			<div className="flex items-center pointer-events-none" onClick={getSearch}>
+			<div className="flex items-center" onClick={getSearch}>
 				<div className="2xl:w-[541px] mr-2 lg:mr-[56px] relative lg:w-[400px] h-[47px] md:w-[300px] w-[201px]">
 					{details?.usertype === "CUSTOMER" ? (
 						<input
@@ -241,7 +241,7 @@ const Header = (props) => {
 							value={searchInput}
 							onChange={(e) => searchItems(e.target.value)}
 							placeholder="Search vendor's name"
-							className="bg-[#C0C0C021] w-full h-full rounded-[50px] focus:outline-none pl-5 pr-5 md:pr-[60px] pointer-events-auto"
+							className="bg-[#C0C0C021] w-full h-full rounded-[50px] focus:outline-none pl-5 pr-5 md:pr-[60px]"
 						/>
 					) : null}
 					{details?.usertype === "CUSTOMER" ? (
@@ -347,7 +347,7 @@ const Header = (props) => {
 						/>
 					</div>
 					<div className=" overflow-y-scroll h-[18rem] ml-[-130px]">
-						{filtredSearch?.map((newNotice) => {
+						{notification?.map((newNotice) => {
 							return (
 								<div className="h-[8.5rem]">
 									{toggle === true ? (
