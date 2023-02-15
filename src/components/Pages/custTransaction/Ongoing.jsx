@@ -110,10 +110,10 @@ const Ongoing = ({showOngoingHandler}) => {
 								{going?.vendor?.name || going?.vendor?.username}
 							</p>
 						</div>
-						<div className="md:ml-[-30px] lg:ml-[-15rem]">
-							<p className="text-sm lg:text-2xl font-bold">
+						<div className="md:ml-[-30px] lg:ml-[-5rem]">
+							<p className="text-sm lg:text-xl font-bold">
 								Status:
-								<span className="font-normal pl-1 text-[#95999D] text-sm lg:text-2xl lg:px-5">
+								<span className="font-normal pl-1 text-[#95999D] text-sm lg:text-xl lg:px-3">
 									{going?.status}
 								</span>{" "}
 							</p>

@@ -55,15 +55,15 @@ const back=()=>{
 
 					<div className="flex flex-wrap items-center justify-between md:mx-5">
 						<div>
-							<h1 className="font-bold text-sm lg:text-2xl lg:font-bold">
+							<h1 className="font-bold text-sm lg:text-xl lg:font-bold">
 							<span className="text-[#3AB75D] pr-1">ID:</span> {cancelled?.transaction_id}
 							</h1>
-							<p className="text-sm lg:text-2xl font-bold text-[#262466] my-1 lg:my-4">
+							<p className="text-sm lg:text-xl font-bold text-[#262466] my-1 lg:my-4">
 								
 								{cancelled?.vendor?.name || cancelled?.vendor?.username}
 							</p>
 						</div>
-						<div className="md:ml-[-30px] lg:ml-[-15rem]">
+						<div className="md:ml-[-30px] lg:ml-[-5rem]">
 							<p className="text-sm lg:text-2xl font-bold">
 								Status:
 								<span className="font-normal pl-1 text-[#95999D] text-sm lg:text-2xl lg:px-5">
