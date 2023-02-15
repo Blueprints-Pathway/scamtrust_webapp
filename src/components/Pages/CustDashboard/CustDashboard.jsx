@@ -317,7 +317,7 @@ const CustomerDashboard = (props ) => {
 			                        {/* FAQ AND CHAT BUTTON */}
 				<div className="flex flex-wrap md:flex-col lg:flex-row lg:mt-[-180px] lg:mx-8 justify-start items-start text-colorPrimary mt-6 md:mt-[-23.7rem] md:ml-11 ml-9">
 					<div onClick={handleFaq}
-					 className="w-[200px] mx-auto md:mx-0 lg:mx-0 hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5">
+					 className="w-[200px] mx-auto md:mx-0 lg:mx-0 hover:scale-105 transition-all duration-500 2xl:w-[180px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5">
 						<div className="bg-[#ff9300] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
 							<img
 								className="w-[23px] h-[23px] object-contain"
@@ -331,7 +331,7 @@ const CustomerDashboard = (props ) => {
 
 					<div
 						onClick={setModalIsOpenToTrue}
-						className="w-[200px] mx-auto md:mx-0 lg:mx-0 hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#E2D8F1] rounded-3xl"
+						className="w-[200px] mx-auto md:mx-0 lg:mx-0 hover:scale-105 transition-all duration-500 2xl:w-[180px] py-[31px] px-[35px] bg-[#E2D8F1] rounded-3xl"
 					>
 						<div className="bg-[#5F0AC3] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
 							<img
