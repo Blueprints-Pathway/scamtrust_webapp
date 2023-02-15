@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import "./settingsVendor.css";
-
+import swal from "sweetalert";
 import shielgg from "../../images/shielgg.png";
 import Frame318 from "../../images/Frame318.png";
 import SideBar from "../SideBar/SideBar";
@@ -25,7 +25,7 @@ function SettingsVendor() {
 	function onImageChange(e) {
 		setImage((e.target.files[0]))
 		setPreview(URL.createObjectURL(e.target.files[0]));
-		console.log(URL.createObjectURL(e.target.files[0]), "filesss");
+		
 		// URL.createObjectURL(e.target.files[0]);
 	}
 	const [select, setSelect] = useState(true);
@@ -96,13 +96,22 @@ function SettingsVendor() {
 			};
 			const data = await axios.post(API_URL, payload, config);
 			console.log(data, "data");
-
+			swal({
+				icon: "success",
+				text: "Image uploaded successfully",
+			});
 			console.log(data, "data");
 		} catch (error) {
 			console.log(error, "errror");
+			swal({
+				icon: "error",
+				text: error,
+			});
 		}
 	};
-
+useEffect(()=>{
+upload()
+},[preview])
 	return (
 		<div>
 			<Layout className="containerSettings" name="Settings">
@@ -120,16 +129,16 @@ function SettingsVendor() {
 							<div className="CenterImg2">
 								<div className="CenterImg3">
 									<div className="col-md-3">
-										<div>
+										<div >
 											<img
 												src={preview}
 												className="CenterImage1"
 												alt="https://www.pexels.com/search/beautiful/"
 											/>
 										</div>
-										<button className="uploads" onClick={upload}>
+										{/* <button className="uploads" >
 											Upload
-										</button>
+										</button> */}
 
 										<div>
 											<div className="d-flex justify-content-center">

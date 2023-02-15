@@ -192,7 +192,7 @@ const CustomerDashboard = () => {
         <div className={close ? "cust-active hidden" : "welcome-cust-card h-[49rem] lg:h-[42rem]"}>
           <div className='lg:m-28 lg:ml-[12.1rem] md:mt-16 xl:ml-[9.5rem]'>
             <h1 className='cust-message text-2xl text-center font-extrabold
-            lg:text-4xl lg:text-left md:text-3xl
+            lg:text-4xl lg:text-left md:text-1xl
             '>Welcome to ScamTrust!</h1>
             <p className='text-[13px] text-[#707070] text-center pt-2 pb-6
             lg:text-left lg:my-2 lg:text-lg lg:pl-1

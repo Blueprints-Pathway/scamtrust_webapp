@@ -82,6 +82,15 @@
 	margin-left: -5px;
 	border-radius: 50%;
 }
+@media (max-width: 754px) and (min-width: 358px) {
+	.CenterImage1 {
+		position: relative;
+		height: 90px;
+		width: 90px;
+		margin-left: 0px;
+		border-radius: 50%;
+	}
+}
 .GeneralSettings .category {
 	display: flex;
 	justify-content: space-between;
@@ -127,18 +136,19 @@
 }
 .inputBox-GeneralSettings {
 	width: 55vw;
+	color:"#000000";
 	height: 2.3rem;
 	background-color: #ffff;
 	border: 0.5px solid #d5d8da;
 	border-radius: 5px;
-	text-align: right;
+	/* text-align: right; */
 	padding: 5px;
 	padding-right: 20vh;
 }
 .uploads {
-	color: "#ffff"!important;
+	color: "#ffff" !important;
 
-  background-color:" #01316c"!important
+	background-color: " #01316c" !important;
 }
 .GeneralSettings {
 	position: absolute;
