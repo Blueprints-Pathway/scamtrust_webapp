@@ -315,7 +315,8 @@ const CustomerDashboard = (props ) => {
 				</div>
 
 			                        {/* FAQ AND CHAT BUTTON */}
-				<div className="flex flex-wrap md:flex-col lg:flex-row lg:mt-[-180px] lg:mx-8 justify-start items-start text-colorPrimary mt-6 md:mt-[-23.7rem] md:ml-11 ml-9">
+			    <div className="flex-col items-center justify-center">
+				<div className="flex flex-wrap md:flex-col lg:flex-row lg:mt-[-21rem] lg:mx-8 justify-start items-start text-colorPrimary mt-6 md:mt-[-23.7rem] md:ml-11 ml-9">
 					<div onClick={handleFaq}
 					 className="w-[200px] mx-auto md:mx-0 lg:mx-0 hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5">
 						<div className="bg-[#ff9300] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
@@ -356,10 +357,10 @@ const CustomerDashboard = (props ) => {
 						</div>
 					</div>
 				</div>
-
-			<div className="lg:flex lg:mt-28 lg:mb-0 md:hidden mt-16 flex items-center justify-center">
-				<img src={SecuredBy} className="ml-5" alt="secured by scam trust" />
-			</div>
+					<div className="lg:flex lg:mt-16 lg:mb-0 md:hidden mt-16 flex items-center justify-center lg:justify-start lg:ml-[135px]">
+				       <img src={SecuredBy} className="ml-5" alt="secured by scam trust" />
+			        </div>
+				</div>						
 		</div>
 	);
 };
