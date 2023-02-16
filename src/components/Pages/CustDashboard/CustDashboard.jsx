@@ -364,7 +364,7 @@ const CustomerDashboard = (props) => {
 				{/* TRANSACTIONS PAGE */}
 				<div className="w-full h-[100%] overflow-y-scroll mt-[-20px] md:mt-0 mx-1 py-7 lg:py-8 px-7 lg:px-12 bg-white rounded-[24px]">
 				<div
-						className="flex justify-end "
+						className=" "
 						onClick={onCreateTransactionClicked}
 					>
 						<button className="bg-colorGreen text-xs lg:text-base flex text-white items-center rounded-md px-2 py-2 lg:py-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-700 pointer-events-auto">
