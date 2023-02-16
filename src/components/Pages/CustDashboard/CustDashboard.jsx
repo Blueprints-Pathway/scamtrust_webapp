@@ -362,9 +362,9 @@ const CustomerDashboard = (props) => {
 				</div>
 
 				{/* TRANSACTIONS PAGE */}
-				<div className="w-full h-[100%] overflow-y-scroll mt-[-20px] md:mt-0 mx-1 py-7 lg:py-8 px-7 lg:px-12 bg-white rounded-[24px]">
+				<div className="w-full  h-[100%] overflow-y-scroll mt-[-20px] md:mt-0 mx-1 py-7 lg:py-8 px-7 lg:px-12 bg-white rounded-[24px]">
 				<div
-						className=" "
+						className="flex justify-end "
 						onClick={onCreateTransactionClicked}
 					>
 						<button className="bg-colorGreen text-xs lg:text-base flex text-white items-center rounded-md px-2 py-2 lg:py-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-700 pointer-events-auto">
@@ -415,22 +415,7 @@ const CustomerDashboard = (props) => {
 
 					<div className=" overflow-x-auto mx-auto h-[57rem]">
 						<table className="w-full  justify-between text-left">
-							{/* <thead className="text-sm font-bold text-[#A6A6A6]">
-							<tr className=" ">
-								<th scope="col" className="py-3 px-6">
-									Transactions
-								</th>
-								<th scope="col" className="py-3 px-6">
-									Vendor name
-								</th>
-								<th scope="col" className="py-3 px-6">
-									Amount
-								</th>
-								<th scope="col" className="py-3 px-6">
-									Date
-								</th>
-							</tr>
-						</thead> */}
+							
 
 						{
 							showOngoing || showCanceled || showCompleted ?(
