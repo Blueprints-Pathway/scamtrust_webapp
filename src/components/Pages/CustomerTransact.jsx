@@ -4,7 +4,7 @@ import React from "react";
 import add from "../../assets/create-icon.png";
 import cancel from "../../assets/cancelled-icon.png";
 import complete from "../../assets/completed-icon.png";
-import awaiting from "../../assets/awaiting-icon.png";
+
 import onGoing from "../../assets/on-going-icon.png";
 import cancelled from "../../assets/cancel-icon.png";
 import completed from "../../assets/complete-icon.png";
@@ -15,7 +15,7 @@ import InitiationSuccessful from "../InitiateTransaction/InitiationSuccessful";
 import TransactionPreview from "../InitiateTransaction/TransactionPreview";
 import InitiateTransaction from "../../components/InitiateTransaction/InitiateTransaction";
 import { useNavigate } from "react-router-dom";
-
+import "./customerTransact.css"
 import { useEffect, useState } from "react";
 // import add from "../../assets/create-icon.png";
 // import cancel from "../../assets/cancelled-icon.png";
@@ -246,7 +246,7 @@ const CustomerTransact = (props) => {
 						<h1 className="text-xl lg:text-3xl text-[#262466] font-semibold lg:font-bold md:text-2xl">
 							Transactions
 						</h1>
-						<div>
+						<div className="flex justify-end">
 							<button
 								onClick={onCreateTransactionClicked}
 								className="bg-[#3ab75d] text-white rounded-md flex justify-center py-0 pl-2 w-[125px] lg:w-[150px]"
@@ -458,7 +458,7 @@ const CustomerTransact = (props) => {
 															<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 																{item?.product_name}
 															</p>
-															<small className=" w-[50px] overflow-hidden md:w-[65px]">
+															<small className="location w-[50px] overflow-hidden md:w-[65px]">
 																Completed
 															</small>
 														</div>
@@ -500,12 +500,12 @@ const CustomerTransact = (props) => {
 													<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 														{item?.product_name}
 													</p>
-													<small className=" w-[50px] overflow-hidden md:w-[65px]">
+													<small className="w-[50px] overflow-hidden md:w-[65px]">
 														{item?.status}
 													</small>
 												</div>
 											</div>
-											<p className="text-[#262466] text-center">
+											<p className="location text-[#262466] text-center">
 												{item?.vendor?.location?.toUpperCase()}
 											</p>
 											<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
@@ -539,12 +539,12 @@ const CustomerTransact = (props) => {
 													<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 														{item?.product_name}
 													</p>
-													<small className=" w-[50px] overflow-hidden md:w-[65px]">
+													<small className=" w-[50px] location overflow-hidden md:w-[65px]">
 														{item?.status}
 													</small>
 												</div>
 											</div>
-											<p className="text-[#262466] text-center">
+											<p className="location text-center">
 												{item?.vendor?.location?.toUpperCase()}
 											</p>
 											<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
