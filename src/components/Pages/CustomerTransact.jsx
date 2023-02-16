@@ -177,7 +177,6 @@ const CustomerTransact = (props) => {
 
 			const data = await axios.get(API_URL, config);
 
-			console.log(data, "view");
 
 			// console.log(values, "values");
 			// return response;
@@ -425,7 +424,7 @@ const CustomerTransact = (props) => {
 									role="tabpanel"
 									aria-labelledby="tabs-home-tab"
 								>
-									{done.length === 0 ? (
+									{done?.length === 0 ? (
 									<div>
 									<img
 										className="w-[283px] h-[223px] object-contain"
@@ -630,7 +629,7 @@ const CustomerTransact = (props) => {
 						{/* COMPLETED */}
 						{active === "completed" && (
 							<div>
-								{completeData.length === 0 ? (
+								{completeData?.length === 0 ? (
 									<div>
 										<img
 											className="w-[283px] h-[223px] object-contain"
