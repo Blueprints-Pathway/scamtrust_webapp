@@ -18,7 +18,7 @@ export const VendorTransactionItems = [
         id: 1,
         itemName: 'Iphone 11',
         satusImg: cancled,
-        status: 'canclled',
+        status: 'cancelled',
         date: '25th May, 2022',
         amount: '250,000.00',
         businessName: 'Ilerioluwa Brown',

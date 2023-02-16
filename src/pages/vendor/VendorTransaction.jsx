@@ -244,7 +244,7 @@ const VendorTransaction = (props) => {
 							)}
 						</div>
 
-						{transaction?.map((item, index, id) => {
+						{VendorTransactionItems?.map((item, index, id) => {
 							return (
 								<div className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center">
 									<div
@@ -260,7 +260,7 @@ const VendorTransaction = (props) => {
 												/>
 												<div>
 													<h5 className="Transaction-details1">
-														{item.product_name}
+														{item.itemName}
 													</h5>
 													<p className="Transaction-description">
 														{item.status}
@@ -269,13 +269,13 @@ const VendorTransaction = (props) => {
 											</div>
 										</div>
 										<div className="Transaction-details1 ">
-											<h5>{item.vendor.answer}</h5>
+											<h5>{item.businessName}</h5>
 										</div>
 										<div className="Transaction-details1 pushDown">
 											<h5>{item.amount}</h5>
 										</div>
 										<div className="Transaction-details1 pushDown">
-											<h5>{item.due_date}</h5>
+											<h5>{item.date}</h5>
 										</div>
 										<div className="Transaction-details2 pushDown">
 											<h5>
@@ -287,9 +287,9 @@ const VendorTransaction = (props) => {
 							);
 						})}
 
-						{onGoing
+						{VendorTransactionItems
 							?.filter((item) => {
-								return item.status === "PENDING VENDOR ACCEPTANCE";
+								return item.status === "outgoing";
 							})
 							.map((item, index, id) => {
 								return (
@@ -306,7 +306,7 @@ const VendorTransaction = (props) => {
 												/>
 												<div>
 													<h5 className="Transaction-details1">
-														{item.product_name}
+														{item.itemName}
 													</h5>
 													<p className="Transaction-description">
 														{item.status}
@@ -315,13 +315,13 @@ const VendorTransaction = (props) => {
 											</div>
 										</div>
 										<div className="Transaction-details1 pushDown">
-											<h5>{item.vendor.answer}</h5>
+											<h5>{item.businessName}</h5>
 										</div>
 										<div className="Transaction-details1 pushDown">
 											<h5>{item.amount}</h5>
 										</div>
 										<div className="Transaction-details1 pushDown">
-											<h5>{item.due_date}</h5>
+											<h5>{item.date}</h5>
 										</div>
 										<div className="Transaction-details2 pushDown">
 											<h5>
@@ -332,9 +332,9 @@ const VendorTransaction = (props) => {
 								);
 							})}
 
-						{cancelled
+						{VendorTransactionItems
 							?.filter((item) => {
-								return item.status === "CANCELLED BY VENDOR";
+								return item.status === "cancelled";
 							})
 							.map((item, index) => {
 								return (
@@ -350,7 +350,7 @@ const VendorTransaction = (props) => {
 													/>
 													<div>
 														<h5 className="Transaction-details1">
-															{item?.product_name}
+															{item?.itemName}
 														</h5>
 														<p className="Transaction-description">
 															{item.status}
@@ -359,13 +359,13 @@ const VendorTransaction = (props) => {
 												</div>
 											</div>{" "}
 											<div className="Transaction-details1 pushDown">
-												<h5>{item?.vendor?.name}</h5>
+												<h5>{item?.businessName}</h5>
 											</div>
 											<div className="Transaction-details1 pushDown">
 												<h5>{item?.amount}</h5>
 											</div>
 											<div className="Transaction-details1 pushDown">
-												<h5>{item?.due_date}</h5>
+												<h5>{item?.date}</h5>
 											</div>
 											<div className="Transaction-details2 pushDown">
 												<h5>

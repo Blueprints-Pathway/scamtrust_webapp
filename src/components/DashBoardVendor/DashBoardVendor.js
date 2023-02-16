@@ -450,7 +450,7 @@ const handleWithdraw = () => {
 									})}
 
 									{TransactionItems.filter((item) => {
-										return item.status === "canclled";
+										return item.status === "cancelled";
 									}).map((item, index) => {
 										return (
 											<div className={select3 ? "Transaction" : "hide"}>
