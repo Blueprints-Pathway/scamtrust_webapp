@@ -112,6 +112,7 @@ function SettingsVendor() {
 useEffect(()=>{
 upload()
 },[preview])
+
 	return (
 		<div>
 			<Layout className="containerSettings" name="Settings">
@@ -156,7 +157,9 @@ upload()
 								</div>
 							</div>
 						</div>
+
 						{/* <div className="CenterGeneralSettings"> */}
+						
 							<div className="GeneralSettings">
 								<div className="category">
 									{select ? (

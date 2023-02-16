@@ -277,7 +277,7 @@ const CustomerDashboard = (props) => {
 							ID - {userFromBackend?.data.id}
 						</p>
 
-						<div className="border-b-2 mb-5 2xl:mb-[53px] border-b-colorGreen mt-[13px]" />
+						<div className="border-b-2 mb-5 2xl:mb-[53px] border-b-[#3AB75D] mt-[13px]" />
 
 						<div className="flex justify-between">
 							<div className="flex flex-col text-left">
@@ -309,7 +309,7 @@ const CustomerDashboard = (props) => {
 							<button
 								// onClick={() => setIsFunding(true)}
 								onClick={handleConfirmAccount}
-								className="bg-colorGreen text-xs lg:text-base w-[100px] hover:shadow-xl transition-all duration-300 2xl:w-[143px] text-center text-white py-[9px] rounded-lg"
+								className="bg-[#3AB75D] text-xs lg:text-base w-[100px] hover:shadow-xl transition-all duration-300 2xl:w-[143px] text-center text-white py-[9px] rounded-lg"
 							>
 								FUND
 							</button>
@@ -320,7 +320,7 @@ const CustomerDashboard = (props) => {
 					<div className="w-full bg-[#FFFEFE] lg:rounded-[24px] rounded-lg lg:px-[37px] px-5 py-3 lg:py-[29px] mb-[13px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
 						<p className="2xl:text-xl text-colorPrimary">Fee Calculator</p>
 
-						<div className="border-b-2 mb-5 2xl:mb-[53px] border-b-colorGreen mt-[13px]" />
+						<div className="border-b-2 mb-5 2xl:mb-[53px] border-b-[#3AB75D] mt-[13px]" />
 
 						<div className="">
 							<div className="flex justify-between items-center text-left mb-4 2xl:mb-5">
@@ -367,7 +367,7 @@ const CustomerDashboard = (props) => {
 						className="flex justify-end  mb-5"
 						onClick={onCreateTransactionClicked}
 					>
-						<button className="bg-colorGreen text-xs lg:text-base flex text-white items-center rounded-md px-2 py-2 lg:py-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-700 pointer-events-auto">
+						<button className="bg-[#3AB75D] text-xs lg:text-base flex text-white items-center rounded-md px-2 py-2 lg:py-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-700 pointer-events-auto">
 							<span>Create transaction</span>
 							<img src={Add} alt="add" className="mb-[-6px]" />
 						</button>
@@ -377,7 +377,7 @@ const CustomerDashboard = (props) => {
 							onClick={() => {
 								setActive("alltransaction");
 							}}
-							className="border-b-[3px] border-b-colorSecondary pb-5 cursor-pointer hover:opacity-70"
+							className="border-b-[3px] border-b-[#3AB75D] pb-5 cursor-pointer hover:opacity-70"
 						>
 							All
 						</span>

@@ -500,7 +500,7 @@ const CustomerTransact = (props) => {
 													<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 														{item?.product_name}
 													</p>
-													<small className="w-[50px] overflow-hidden md:w-[65px]">
+													<small className="location overflow-hidden md:w-[65px]">
 														{item?.status}
 													</small>
 												</div>

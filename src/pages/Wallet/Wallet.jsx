@@ -139,7 +139,7 @@ const Wallet = () => {
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 					<div>
 						<div className="grid-cols-1 rounded-3xl bg-white w-full md:px-5 lg:px-16 2xl:px-12 py-8 px-5 lg:py-16 hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
-							<div className="flex justify-between items-center pb-1 border-b-2 border-b-colorSecondary mb-4">
+							<div className="flex justify-between items-center pb-1 border-b-2 border-b-[#3AB75D] mb-4">
 								<p className="font-bold text-xl 2xl:text-2xl">Account</p>
 								<p className="font-medium text-xl 2xl:text-2xl text-colorPrimary">
 									Ridic Ventures
@@ -220,7 +220,7 @@ const Wallet = () => {
 									<button
 										// onClick={() => setIsFunding(true)}
 										onClick={confirmAccountHandler}
-										className="font-medium text-sm bg-colorGreen w-28 hover:shadow-md transition-shadow duration-300 text-white py-3 rounded-md"
+										className="font-medium text-sm bg-[#3AB75D] w-28 hover:shadow-md transition-shadow duration-300 text-white py-3 rounded-md"
 									>
 										Fund
 									</button>
