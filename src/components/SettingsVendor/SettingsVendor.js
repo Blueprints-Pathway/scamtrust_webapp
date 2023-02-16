@@ -156,7 +156,7 @@ upload()
 								</div>
 							</div>
 						</div>
-						<div className="CenterGeneralSettings">
+						{/* <div className="CenterGeneralSettings"> */}
 							<div className="GeneralSettings">
 								<div className="category">
 									{select ? (
@@ -199,7 +199,7 @@ upload()
 									<PrivacySettings />
 								</div>
 							</div>
-						</div>
+						{/* </div> */}
 					</div>
 				</div>
 				{/* <SideBar /> */}
