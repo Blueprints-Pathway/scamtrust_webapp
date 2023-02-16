@@ -53,7 +53,7 @@ const Ongoing = ({showOngoingHandler}) => {
 
 			const data = await axios.get(API_URL, config);
 
-			console.log(data?.data?.data, "trans done");
+			console.log(data, "trans done");
 
 			// console.log(values, "values");
 			// return response;
