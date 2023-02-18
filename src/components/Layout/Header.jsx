@@ -338,7 +338,7 @@ const Header = (props) => {
 						</div>
 					</div>
 				</div>
-				<div className="flex-column items-end justify-center">
+				<div className="flex-column items-end justify-center pointer-events-auto">
 					<div className="flex-auto flex mt-[250px] mx-7" onClick={check}>
 						<p className="text-rose-600">{filtredSearch?.length}</p>
 						<img
