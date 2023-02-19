@@ -20,6 +20,7 @@ import moment from "moment";
 import Ongoings from ".././custTransaction/Ongoing";
 import Completeds from ".././custTransaction/Completed";
 import Cancelleds from ".././custTransaction/Cancelled";
+import "./modal.css"
 const CustomerDashboard = (props) => {
 	const { setShowInitiateTransaction, setIsWithdrawing, setIsFunding } = props;
 	const { isShowing, toggle } = useModal();
@@ -796,10 +797,10 @@ const CustomerDashboard = (props) => {
 
 
 			                        {/* FAQ AND CHAT BUTTON */}
-			<div className="flex-column lg:flex bg-white py-9 md:px-10 md:w-[270px] lg:w-[450px] rounded-3xl lg:mt-[-34rem] lg:mx-2 justify-start items-start text-colorPrimary mt-6 md:mt-[-48rem] md:ml-1 ml-3">
+			<div className="faqmain flex-column lg:flex pt-64 md:px-10 md:w-[270px] lg:w-[450px] rounded-3xl lg:mt-[-29rem] lg:mx-2 justify-start items-start text-colorPrimary mt-6 md:mt-[-48rem] md:ml-1 ml-3">
 				<div
 					onClick={handleFaq}
-					className="w-[200px] mx-auto md:mx-0 lg:mx-0 hover:scale-105 transition-all duration-500 2xl:w-[180px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5"
+					className=" faq w-[200px] mx-auto md:mx-0 lg:mx-0 hover:scale-105 transition-all duration-500 2xl:w-[180px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5"
 				>
 					<div className="bg-[#ff9300] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
 						<img
@@ -814,7 +815,7 @@ const CustomerDashboard = (props) => {
 
 				<div
 					onClick={setModalIsOpenToTrue}
-					className="w-[200px] mx-auto md:mx-0 lg:mx-0 hover:scale-105 transition-all duration-500 2xl:w-[180px] py-[31px] px-[35px] bg-[#E2D8F1] rounded-3xl"
+					className=" faqs w-[200px] mx-auto md:mx-0 lg:mx-0 hover:scale-105 transition-all duration-500 2xl:w-[180px] py-[31px] px-[35px] bg-[#E2D8F1] rounded-3xl"
 				>
 					<div className="bg-[#5F0AC3] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
 						<img
