@@ -9,8 +9,9 @@ import {
 	faThumbTack,
 	faBook,
 	faShareNodes,
-	faEye,
+	// faEye,
 } from "@fortawesome/free-solid-svg-icons";
+import Eye from "../../assets/images/svg/eye.svg";
 import payment from "../../assets/payment-img.png";
 import faq from "../../assets/conversation-img.png";
 import chat from "../../assets/chat-img.png";
@@ -116,11 +117,11 @@ function DashBoardVendor() {
 	};
 	const [close, setClosed] = useState(false);
 
+	const [eye, setEye] = useState(false);
+	
 	const handleEye = () => {
 		setEye(!eye);
 	};
-	const [eye, setEye] = useState(false);
-
 	const handleNotification = () => {
 		setNotification(!notification);
 	};
@@ -202,7 +203,6 @@ function DashBoardVendor() {
 
 const handleWithdraw = () => {
 	setIsWithdrawing((prevState) => !prevState)
-
 }
 
 	return (
@@ -259,9 +259,9 @@ const handleWithdraw = () => {
 							</div>
 
 							<div className="right-top-card">
-								<div className="card2-title">
+								<div className="card2-title pointer-events-none">
 									<p className="card2-text-left">Wallet</p>
-									<p className="card2-text-right">
+									<p className="card2-text-right pointer-events-none">
 										{details?.name}
 										<h5 className="card2-text-right2">
 											<span className="text-[12px] text-[#FF9300] font-semibold pr-2">ID :</span>
@@ -275,11 +275,17 @@ const handleWithdraw = () => {
 										<div className="Line mt-3 pl-20"></div>
 									</p>
 								</div>
-								<FontAwesomeIcon
-									className="eyeIconWallet no"
-									onClick={handleEye}
-									icon={faEye}
-								/>
+
+								{/* <button className="eyeIconWallet no" onClick={handleEye}>	
+								   <FontAwesomeIcon
+								   	className="eyeIconWallet no"
+								   	icon={faEye}
+								   />
+								</button> */}
+
+								<img onClick={handleEye}
+								src={Eye} alt="eye" className="eyeIconWallet" />
+
 								<div className="Wallet-card mt-5">
 									<div className="Wallet-card-left">
 										<div className="Wallet-card-left-top">
@@ -288,15 +294,13 @@ const handleWithdraw = () => {
 													<p className="Wallet-card-left-top-left-text-text">
 														Total Balance
 													</p>
-													{eye ? (
-														<p className="Wallet-card-left-top-left-text-text2">
-															$********
-														</p>
-													) : (
+													{eye ? <p className="Wallet-card-left-top-left-text-text2">
+															₦********
+														</p> 
+														    : 
 														<p className="Wallet-card-left-top-left-text-text2">
 															₦500,000.00
-														</p>
-													)}
+														</p>}
 												</div>
 											</div>
 											<div className="Wallet-card-left-top-right">
@@ -304,15 +308,13 @@ const handleWithdraw = () => {
 													<p className="Wallet-card-left-top-right-text-text">
 														Incoming Balance
 													</p>
-													{eye ? (
+													{eye ? <p className="Wallet-card-left-top-right-text-text2">
+															₦********
+														</p> 
+														  :
 														<p className="Wallet-card-left-top-right-text-text2">
-															$********
-														</p>
-													) : (
-														<p className="Wallet-card-left-top-right-text-text2">
-															$250,000.00
-														</p>
-													)}
+															₦250,000.00
+														</p>}
 												</div>
 											</div>
 										</div>
@@ -337,7 +339,7 @@ const handleWithdraw = () => {
 								</div>
 							</div>
 						</div>
-						<div className="right ">
+						<div className="right pointer-events-none">
 							<div className="left-bottom-card">
 								<div className="transactions">
 									<div className="heading">

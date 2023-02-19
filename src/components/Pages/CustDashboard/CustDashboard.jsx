@@ -1,5 +1,3 @@
-
-
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import Modal from "react-modal";
@@ -796,8 +794,9 @@ const CustomerDashboard = (props) => {
 				<img src={SecuredBy} alt="secured by scam trust" />
 			</div>
 
-			{/* FAQ AND CHAT BUTTON */}
-			<div className="flex flex-wrap md:flex-col lg:flex-row lg:mt-[-180px] lg:mx-8 justify-start items-start text-colorPrimary mt-6 md:mt-[-23.7rem] md:ml-11 ml-9">
+
+			                        {/* FAQ AND CHAT BUTTON */}
+			<div className="flex-column lg:flex bg-white py-9 md:px-10 md:w-[270px] lg:w-[450px] rounded-3xl lg:mt-[-34rem] lg:mx-2 justify-start items-start text-colorPrimary mt-6 md:mt-[-48rem] md:ml-1 ml-3">
 				<div
 					onClick={handleFaq}
 					className="w-[200px] mx-auto md:mx-0 lg:mx-0 hover:scale-105 transition-all duration-500 2xl:w-[180px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5"
@@ -845,8 +844,8 @@ const CustomerDashboard = (props) => {
 				</div>
 			</div>
 
-			<div className="lg:flex lg:mt-28 lg:mb-0 md:hidden mt-16 flex items-center justify-center">
-				<img src={SecuredBy} className="ml-5" alt="secured by scam trust" />
+			<div className="lg:flex lg:mt-28 lg:mb-0 lg:mx-40 md:hidden mt-16 flex items-center justify-center lg:justify-start">
+				<img src={SecuredBy} className="ml-5 lg:w-60" alt="secured by scam trust" />
 			</div>
 		</div>
 	);

@@ -338,13 +338,13 @@ const Header = (props) => {
 						</div>
 					</div>
 				</div>
-				<div className="flex-column items-end justify-center pointer-events-auto">
+				<div className="flex-column items-end justify-center">
 					<div className="flex-auto flex mt-[250px] mx-7" onClick={check}>
 						<p className="text-rose-600">{filtredSearch?.length}</p>
 						<img
 							src={BellNotification}
 							alt="notification"
-							className="w-[22px] h-[24px] mr-5 mb-6 lg:mr-[56px]"
+							className="w-[22px] h-[24px] mr-5 mb-[19.5rem] lg:mr-[56px]"
 						/>
 					</div>
 					<div className=" overflow-y-scroll h-[18rem] ml-[-130px]">
@@ -364,17 +364,8 @@ const Header = (props) => {
 														close();
 													}}
 												>
-													{/* Close <IoClose className="mt-1 ml-1" /> */}
 													<IoMdCloseCircle />
 												</button>
-												{/* <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">
-													{newNotice?.status}
-												</h5> */}
-												{/* <p style={{ 
-													
-												 }} class="text-gray-700 text-base mb-4 text">
-													{newNotice?.content}
-												</p> */}
 												<h2 className="text-[13px]">
 													{showMore
 														? newNotice?.content
@@ -408,15 +399,6 @@ const Header = (props) => {
 														{newNotice?.notification_time}
 													</span>
 												</div>
-												{/* <button
-													className="btn"
-													onClick={() => {
-														getNotification();
-														setId(newNotice?.id);
-													}}
-												>
-													Read
-												</button> */}
 											</div>
 										</div>
 									) : null}

@@ -620,18 +620,10 @@ const changePhone = async (e) => {
 				</div>
 
 				<div className="input-field-GeneralSettings">
+						
 					<label className="form-text-GeneralSettings">
 						{details.usertype === "CUSTOMER" ? "UserName" : "Business names"}
 					</label>
-					{Edit ? (
-						<span>
-						<p onClick={handleEdit1} className="edit1">
-							Edit
-						</p>
-						</span>
-					) : (
-						""
-					)}
 
 					<input
 						onChange={handleChange}
@@ -644,17 +636,19 @@ const changePhone = async (e) => {
 						autoComplete="off"
 						disabled
 					/>
+					{Edit ? (
+						<span>
+						<span onClick={handleEdit1} className="edit1">
+							Edit
+						</span>
+						</span>
+					) : (
+						""
+					)}
 				</div>
 
 				<div className="input-field-GeneralSettings">
 					<label className="form-text-GeneralSettings">Phone Number</label>
-					{Edit ? (
-						<p className="edit2" onClick={handleEdit2}>
-							Edit
-						</p>
-					) : (
-						""
-					)}
 
 					<input
 						onChange={handleChange}
@@ -668,17 +662,18 @@ const changePhone = async (e) => {
 						maxLength="11"
 						disabled
 					/>
+					{Edit ? (
+						<span className="edit2" onClick={handleEdit2}>
+							Edit
+						</span>
+					) : (
+						""
+					)}
 				</div>
 
 				<div className="input-field-GeneralSettings">
 					<label className="form-text-GeneralSettings">Email address</label>
-					{Edit ? (
-						<p className="edit3" onClick={handleEdit3}>
-							Edit
-						</p>
-					) : (
-						""
-					)}
+
 
 					<input
 						onChange={handleChange}
@@ -690,6 +685,13 @@ const changePhone = async (e) => {
 						autoComplete="off"
 						disabled
 					/>
+					{Edit ? (
+						<span className="edit3" onClick={handleEdit3}>
+							Edit
+						</span>
+					) : (
+						""
+					)}
 				</div>
 
 				{details.usertype === "CUSTOMER" ? (
@@ -697,13 +699,6 @@ const changePhone = async (e) => {
 				) : (
 					<div className="input-field-GeneralSettings">
 						<label className="form-text-GeneralSettings">Office address</label>
-						{Edit ? (
-							<p className="edit4" onClick={handleEdit4}>
-								Edit
-							</p>
-						) : (
-							""
-						)}
 
 						<input
 							onChange={handleChange}
@@ -715,6 +710,13 @@ const changePhone = async (e) => {
 							autoComplete="off"
 							disabled
 						/>
+						{Edit ? (
+							<span className="edit4" onClick={handleEdit4}>
+								Edit
+							</span>
+						) : (
+							""
+						)}
 					</div>
 				)}
 
@@ -722,14 +724,6 @@ const changePhone = async (e) => {
 					<label className="form-text-GeneralSettings">
 						Active cashout account
 					</label>
-					{Edit ? (
-						<p className="edit5 flex" onClick={handleEdit11}>
-							Add
-						</p>
-					) : (
-						""
-					)}
-
 					<input
 						onChange={handleChange}
 						// handleEmail
@@ -741,6 +735,14 @@ const changePhone = async (e) => {
 						autoComplete="off"
 						disabled
 					/>
+					{Edit ? (
+						<span className="edit5 flex" onClick={handleEdit11}>
+							Add
+						</span>
+					) : (
+						""
+					)}
+
 				</div>
 			</form>
 

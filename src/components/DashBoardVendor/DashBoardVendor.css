@@ -258,12 +258,13 @@
 }
 
 .eyeIconWallet {
+	pointer-events: auto;
 	background-color: #ffff;
 	border: 0.5px solid #d5d8da;
 	border-radius: 50%;
 	cursor: pointer;
 	margin-top: 4.9rem;
-	margin-bottom: 1rem;
+	margin-bottom: 1.5rem;
 	margin-left: 87%;
 	font-size: 12px;
 }
@@ -971,6 +972,7 @@ padding-left: 0.5rem; */
 
 	.eyeIconWallet {
 		margin-left: 85%;
+		margin-bottom: 1.5rem;
 	}
 	.card2-text-right {
 		font-size: 12px;

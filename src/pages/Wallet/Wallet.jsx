@@ -1,9 +1,7 @@
 /** @format */
-
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-
 import Layout from "../../components/Layout/Layout";
 import Eye from "../../assets/images/svg/eye.svg";
 import Info from "../../assets/images/svg/info.svg";
@@ -19,7 +17,6 @@ import axios from "axios";
 import Modal from "react-modal";
 import AnimeList from "../../components/Pages/CustDashboard/AnimeList";
 import WithdrawFunds from "../../components/Pages/CustDashboard/WithdrawFunds";
-// import DepositFunds from "../../components/Pages/CustDashboard/DepositFunds";
 
 
 
@@ -36,6 +33,7 @@ const Wallet = () => {
 	const { user } = useSelector((state) => state.auth);
 	const [modalOpen, setModalIsOpen] = useState(false);
 	const [isWithdrawing, setIsWithdrawing] = useState(false);
+	const [showBalance, setShowBalance] = useState(false);
 	
 	const customStyles = {
 		content: {
@@ -113,6 +111,10 @@ const Wallet = () => {
 		setIsWithdrawing((prevState)=>!prevState)
 	}
 
+	const handleBalance = () => {
+		setShowBalance(!showBalance);
+	}
+
 	return (
 		<Layout>
 			<FundWallet
@@ -136,9 +138,9 @@ const Wallet = () => {
 
 
 			<div className="w-full">
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-					<div>
-						<div className="grid-cols-1 rounded-3xl bg-white w-full md:px-5 lg:px-16 2xl:px-12 py-8 px-5 lg:py-16 hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
+				<div className="pl-5 mx-[-20px]">
+					<div className="z-20 flex-column md:flex md:items-start md:justify-between items-center justify-center">
+						<div className="grid-cols-1 rounded-3xl bg-white w-full md:px-4 md:mr-5 lg:px-16 2xl:px-12 py-8 px-4 lg:py-16 hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
 							<div className="flex justify-between items-center pb-1 border-b-2 border-b-[#3AB75D] mb-4">
 								<p className="font-bold text-xl 2xl:text-2xl">Account</p>
 								<p className="font-medium text-xl 2xl:text-2xl text-colorPrimary">
@@ -146,15 +148,17 @@ const Wallet = () => {
 								</p>
 							</div>
 
-							<div className="flex justify-between">
-								<div />
-								<img src={Eye} alt="eye" className="mb-3 cursor-pointer" />
+							<div className="flex justify-between"><div />
+
+								<img onClick={handleBalance}
+								src={Eye} alt="eye" className="mb-3 cursor-pointer" />
+
 							</div>
 
 							<div className="flex justify-between ">
 								<div>
-									<p className="font-medium text-xl md:text-xl lg:text-2xl 2xl:text-3xl text-colorSecondary mb-2">
-										&#8358; {balance}
+									 <p className="font-medium text-xl md:text-xl lg:text-2xl 2xl:text-3xl text-colorSecondary mb-2">
+										{showBalance ? "₦*****" : <span>&#8358; {balance}</span>}
 									</p>
 									<p className="font-medium flex mb-8 2xl:mb-12 md:text-lg text-sm 2xl:text-xl text-colorPrimary">
 										<span>Available Balance</span>
@@ -181,22 +185,14 @@ const Wallet = () => {
 									>
 										WITHDRAW
 									</button>
-									{/* {isWithdrawing ? (
-	 	                                 <div  className="mt-48 lg:mt-60 ml-52 ">
-		                                 	 <WithdrawFunds
-		                                 	   setIsWithdrawing={setIsWithdrawing}
-		                                 	   startWithdrawFunds={isWithdrawing}
-		                                 	 />
-		                                 </div>					
-                                       ) : (
-                                         <></>
-                                       )} */}
 								</div>
 								
 								<div>
-									<p className="font-medium text-xl md:text-xl 2xl:text-3xl text-colorSecondary mb-2">
-										&#8358; {userFromBackend?.outgoingWalletBalance}
+
+									<p className="font-medium text-xl md:text-xl lg:text-2xl 2xl:text-3xl text-colorSecondary mb-2">
+										{showBalance ? "₦*****" : <span>&#8358; {userFromBackend?.outgoingWalletBalance}</span>}
 									</p>
+
 									<p className="font-medium mb-8 flex md:text-lg text-sm 2xl:text-xl text-colorPrimary">
 										<span>{details?.usertype === "CUSTOMER" ? 'Outgoing Balance' : 'Incoming Balance'}</span>
 
@@ -285,46 +281,10 @@ const Wallet = () => {
 							</div>
 						</div>
 
-						<div className="flex bg-white mt-4 py-14 flex-col lg:flex-row justify-between rounded-3xl text-colorPrimary">
-							
-							<div 
-							onClick={() => navigate('/faq')}
-							className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5">
-								<div className="bg-[#ff9300] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
-									<img
-										className="w-[23px] h-[23px] object-contain"
-										src={Info}
-										alt="info"
-									/>
-								</div>
-								<h6 className="font-semibold text-xl">FAQs</h6>
-								<p>Find answers instantly</p>
-							</div>
 
-							<div 
-							onClick={setModalIsOpenToTrue}
-							className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#E2D8F1] rounded-3xl">
-								<div className="bg-[#5F0AC3] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
-									<img
-										className="w-[23px] h-[23px] object-contain"
-										src={Chat}
-										alt="chat"
-									/>
-								</div>
-								<h6 className="font-semibold text-xl">Chat</h6>
-								<p>Start a conversation now</p>
-							<Modal
-								isOpen={modalOpen}
-								style={customStyles}
-								onRequestClose={setModalIsOpenToFalse}
-							>
-								<button className='pl-28 pt-5 text-lg md:pl-5 lg:pl-16' onClick={setModalIsOpenToFalse}>X</button>
-								<AnimeList />
-							</Modal>
-							</div>
-						</div>
-					</div>
-					<div className="grid-cols-1 w-full bg-[#F2F2F2] rounded-[25px] py-14 px-8">
+						     {/* W A L L E T    H I S T O R Y */}
+								
+					<div className="grid-cols-1 w-full md:h-[62rem] lg:h-[58rem] bg-[#F2F2F2] rounded-[25px] py-14 mt-7 md:mt-0 px-8">
 						<h5 className="font-medium text-xl">Wallet History</h5>
 						<div className="overflow-x-auto mx-auto relative">
 							<table className="w-full text-center">
@@ -387,6 +347,47 @@ const Wallet = () => {
 							</p>
 						</div>
 					</div>
+                         
+					</div>
+
+					                 {/* F A Q  & C H A T   */}
+					<div className="flex justify-center items-center bg-white mt-7 py-14 flex-col md:float-left md:mt-[-32rem] lg:mt-[-23rem] md:mx-0 px-[45px] md:px-20 lg:px-[88px] lg:flex-row rounded-3xl text-colorPrimary">
+							<div 
+							onClick={() => navigate('/faq')}
+							className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5">
+								<div className="bg-[#ff9300] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
+									<img
+										className="w-[23px] h-[23px] object-contain"
+										src={Info}
+										alt="info"
+									/>
+								</div>
+								<h6 className="font-semibold text-xl">FAQs</h6>
+								<p>Find answers instantly</p>
+							</div>
+
+							<div 
+							onClick={setModalIsOpenToTrue}
+							className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#E2D8F1] rounded-3xl">
+								<div className="bg-[#5F0AC3] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
+									<img
+										className="w-[23px] h-[23px] object-contain"
+										src={Chat}
+										alt="chat"
+									/>
+								</div>
+								<h6 className="font-semibold text-xl">Chat</h6>
+								<p>Start a conversation now</p>
+							<Modal
+								isOpen={modalOpen}
+								style={customStyles}
+								onRequestClose={setModalIsOpenToFalse}
+							>
+								<button className='pl-28 pt-5 text-lg md:pl-5 lg:pl-16' onClick={setModalIsOpenToFalse}>X</button>
+								<AnimeList />
+							</Modal>
+							</div>
+						</div>
 				</div>
 			</div>
 		</Layout>
