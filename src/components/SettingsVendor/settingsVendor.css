@@ -64,7 +64,7 @@
 	left: 0.6vw;
 	top: 1vh;
 	border-radius: 50%;
-	background: #eaeaea;
+	/* background: #eaeaea; */
 }
 .CenterImg {
 	position: absolute;
@@ -77,8 +77,8 @@
 }
 .CenterImage1 {
 	position: relative;
-	height: 60px;
-	width: 50px;
+	height: 90px;
+	width: 90px;
 	margin-left: -5px;
 	border-radius: 50%;
 }
@@ -1461,26 +1461,6 @@
 		width: 65vw;
 		font-size: 5px;
 	}
-	.edit1 {
-		right: -4vw;
-		top: 9.8rem;
-	}
-	.edit2 {
-		right: -4vw;
-		top: 13.6rem;
-	}
-	.edit3 {
-		right: -4vw;
-		top: 17.9rem;
-	}
-	.edit4 {
-		right: -4vw;
-		top: 22.2rem;
-	}
-	.edit5 {
-		right: -4vw;
-		top: 24.8rem;
-	}
 }
 @media screen and (max-width: 400px) {
 	.GeneralSettings {
@@ -1495,22 +1475,22 @@
 	}
 	.edit1 {
 		right: -5vw;
-		top: 8rem;
+		top: 6rem;
 	}
 	.edit2 {
 		right: -5vw;
-		top: 12.2rem;
+		top: 10.5rem;
 	}
 	.edit3 {
 		right: -5vw;
-		top: 16.5rem;
+		top: 15rem;
 	}
 	.edit4 {
 		right: -5vw;
-		top: 20.8rem;
+		top: 19rem;
 	}
 	.edit5 {
 		right: -5vw;
-		top: 25rem;
+		top: 23rem;
 	}
 }
