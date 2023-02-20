@@ -44,7 +44,7 @@ const CustomerSetpin = () => {
       secondInput.current.value +
       thirdInput.current.value +
       fourthInput.current.value;
-    const secondInputValues =
+      const secondInputValues =
       fifthInput.current.value +
       sixthInput.current.value +
       seventhInput.current.value +

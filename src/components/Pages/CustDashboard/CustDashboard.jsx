@@ -797,55 +797,46 @@ const CustomerDashboard = (props) => {
 
 
 			                        {/* FAQ AND CHAT BUTTON */}
-			<div className="faqmain flex-column lg:flex pt-64 md:px-10 md:w-[270px] lg:w-[450px] rounded-3xl lg:mt-[-29rem] lg:mx-2 justify-start items-start text-colorPrimary mt-6 md:mt-[-48rem] md:ml-1 ml-3">
-				<div
-					onClick={handleFaq}
-					className=" faq w-[200px] mx-auto md:mx-0 lg:mx-0 hover:scale-105 transition-all duration-500 2xl:w-[180px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5"
-				>
-					<div className="bg-[#ff9300] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
-						<img
-							className="w-[23px] h-[23px] object-contain"
-							src={Info}
-							alt="info"
-						/>
-					</div>
-					<h6 className="font-semibold text-xl">FAQs</h6>
-					<p>Find answers instantly</p>
-				</div>
 
-				<div
-					onClick={setModalIsOpenToTrue}
-					className=" faqs w-[200px] mx-auto md:mx-0 lg:mx-0 hover:scale-105 transition-all duration-500 2xl:w-[180px] py-[31px] px-[35px] bg-[#E2D8F1] rounded-3xl"
-				>
-					<div className="bg-[#5F0AC3] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
-						<img
-							className="w-[23px] h-[23px] object-contain"
-							src={Chat}
-							alt="chat"
-						/>
-					</div>
-					<h6 className="font-semibold text-xl">Chat</h6>
-					<div>
-						<button>Click to chat</button>
+					<div className="flex justify-center items-center bg-white mt-7 py-14 flex-col md:float-left md:mt-[-46rem] lg:mt-[-33rem] md:mx-0 px-[45px] md:px-11 lg:px-[20px] lg:ml-1 lg:flex-row rounded-3xl text-colorPrimary">
+							<div 
+							onClick={() => navigate('/faq')}
+							className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5">
+								<div className="bg-[#ff9300] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
+									<img
+										className="w-[23px] h-[23px] object-contain"
+										src={Info}
+										alt="info"
+									/>
+								</div>
+								<h6 className="font-semibold text-xl">FAQs</h6>
+								<p>Find answers instantly</p>
+							</div>
 
-						<Modal
-							isOpen={modalIsOpen}
-							style={customStyles}
-							onRequestClose={setModalIsOpenToFalse}
-						>
-							<button
-								className="pl-28 pt-5 text-lg md:pl-5 lg:pl-16"
-								onClick={setModalIsOpenToFalse}
+							<div 
+							onClick={setModalIsOpenToTrue}
+							className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#E2D8F1] rounded-3xl">
+								<div className="bg-[#5F0AC3] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
+									<img
+										className="w-[23px] h-[23px] object-contain"
+										src={Chat}
+										alt="chat"
+									/>
+								</div>
+								<h6 className="font-semibold text-xl">Chat</h6>
+								<p>Start a conversation now</p>
+							<Modal
+								isOpen={modalIsOpen}
+								style={customStyles}
+								onRequestClose={setModalIsOpenToFalse}
 							>
-								X
-							</button>
-							<AnimeList />
-						</Modal>
-					</div>
-				</div>
-			</div>
+								<button className='pl-28 pt-5 text-lg md:pl-5 lg:pl-16' onClick={setModalIsOpenToFalse}>X</button>
+								<AnimeList />
+							</Modal>
+							</div>
+						</div>
 
-			<div className="lg:flex lg:mt-28 lg:mb-0 lg:mx-40 md:hidden mt-16 flex items-center justify-center lg:justify-start">
+			<div className="lg:flex lg:mt-[-5rem] lg:mb-0 lg:mx-40 md:hidden mt-16 flex items-center justify-center lg:justify-start">
 				<img src={SecuredBy} className="ml-5 lg:w-60" alt="secured by scam trust" />
 			</div>
 		</div>
