@@ -201,7 +201,7 @@ const Header = (props) => {
 	// }, []);
 	const nameOf = details?.name || details?.username;
 	const first = nameOf?.at(0);
-	const last = nameOf?.at(-1);
+	const last = nameOf?.match(/\b(\w)/g).at(1);
 
 
 	const searchItems = (searchValue) => {

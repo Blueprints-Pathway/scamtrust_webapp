@@ -29,7 +29,7 @@ const Wallet = () => {
 	const [primaryAccountBalanceInfo, primaryABalanceInfo] = useState(false);
 	const [isFunding, setIsFunding] = useState(false);
 	const [userFromBackend, setUserFromBackend] = useState(null);
-	const [details, setDetails] = useState();
+	const [details, setDetails] = useState('Loading...');
 	const { user } = useSelector((state) => state.auth);
 	const [modalOpen, setModalIsOpen] = useState(false);
 	const [isWithdrawing, setIsWithdrawing] = useState(false);
@@ -94,7 +94,7 @@ const Wallet = () => {
 
 				const data = await axios.get(API_URL, config);
 
-				// console.log(data?.data.data, "user data");
+				 console.log(data?.data.data, "user data");
 				setDetails(data?.data?.data);
 				// console.log(values, "values");
 				// return response;
@@ -144,7 +144,7 @@ const Wallet = () => {
 							<div className="flex justify-between items-center pb-1 border-b-2 border-b-[#3AB75D] mb-4">
 								<p className="font-bold text-xl 2xl:text-2xl">Account</p>
 								<p className="font-medium text-xl 2xl:text-2xl text-colorPrimary">
-									Ridic Ventures
+									{details.name}
 								</p>
 							</div>
 

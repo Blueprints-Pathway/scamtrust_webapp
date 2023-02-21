@@ -96,6 +96,7 @@ function DashBoardVendor() {
 		setSelect4(false);
 	};
 	const [details, setDetails] = useState();
+	const [walletInfo, setWalletInfo] = useState('Loading...');
 	const [select3, setSelect3] = useState(false);
 
 	const handleSelect4 = () => {
@@ -185,8 +186,9 @@ function DashBoardVendor() {
 
 				const data = await axios.get(API_URL, config);
 
-				// console.log(data?.data.data, "user data");
+				console.log(data.data, "user data");
 				setDetails(data?.data?.data);
+				setWalletInfo(data.data);
 				// console.log(values, "values");
 				// return response;
 			} catch (error) {
@@ -299,7 +301,7 @@ const handleWithdraw = () => {
 														</p> 
 														    : 
 														<p className="Wallet-card-left-top-left-text-text2">
-															₦500,000.00
+															₦{walletInfo['walletBalance']}
 														</p>}
 												</div>
 											</div>
@@ -313,7 +315,7 @@ const handleWithdraw = () => {
 														</p> 
 														  :
 														<p className="Wallet-card-left-top-right-text-text2">
-															₦250,000.00
+															₦{walletInfo['incomingWalletBalance']}
 														</p>}
 												</div>
 											</div>
