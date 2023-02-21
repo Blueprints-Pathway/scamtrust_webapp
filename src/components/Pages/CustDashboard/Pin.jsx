@@ -11,9 +11,19 @@ function Pin({
 	selectedBank,
 	accountNumber,
 }) {
-	const [pin, setPin] = useState();
+	const [pin, setPin] = useState('');
+	const [pinError, setPinError] = useState();
 	const [withdraws, setWithdraws] = useState();
 	const [hide, setHide] = useState(false);
+
+	const submitPinHandler = async () => {
+		if(+pin.length !==4 || pin === ''){
+			setPinError('Input a Valid Pin!')
+		}
+		const response = await withdraw();
+		console.log(response)
+		setHide(true);
+	}
 	
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
 	console.log("user amount", selectedBank);
@@ -33,8 +43,9 @@ function Pin({
 				pin: pin,
 			};
 
-			const data = await axios.post(API_URL, payload, config);
-
+			const data = await axios.post(API_URL, JSON.stringify(payload), config);
+		
+			console.log(data.status + 'axios')
 			setWithdraws(data?.status);
 		} catch (error) {
 			// Alert.alert("failed login details");
@@ -73,29 +84,32 @@ function Pin({
 					</label>
 					<input
 						value={pin}
-						onChange={(e) => setPin(e.target.value)}
+						onChange={(e) => {setPin(e.target.value); setPinError(false);}}
 						name="pin"
 						placeholder="Enter transaction pin
 						"
-						className={`block placeholder:text-[#E5E7E9] focus:outline-none w-full p-2 border-b border-b-[#C0C0C0]`}
+						className={`block placeholder:text-[#E5E7E9]${
+							pinError ? "border-b-red-600" : ""
+						} focus:outline-none w-full p-2 border-b border-b-[#C0C0C0]`}
 					/>
+					{pinError && (
+							<p className="text-red-600">{pinError}</p>
+						)}
+
 				</div>
 
 				<div className="flex justify-between items-center">
 					{/* <img src={SecuredBy} alt="SecuredByScamTrust" /> */}
 					<button
 						type="submit"
-						onClick={() => {
-							setHide(true);
-							withdraw();
-						}}
+						onClick={submitPinHandler}
 						className="bg-colorPrimary text-white px-7 py-3 rounded-md"
 					>
 						Continue
 					</button>
 				</div>
 			</div>
-			{hide && <Success setDisplay={setHide} setShow={setShow} setIsWithdrawing={setIsWithdrawing}/>}
+			{hide && <Success setDisplay={setHide} setShow={setShow} setIsWithdrawing={setIsWithdrawing} amount = {amount} selectedBank = {selectedBank}/>}
 		</div>
 	);
 }

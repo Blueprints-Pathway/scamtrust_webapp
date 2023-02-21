@@ -346,7 +346,8 @@ function DashBoardVendor() {
 	return (
 		<Layout>
 			{isWithdrawing ? (
-				<WithdrawFunds setIsWithdrawing={setIsWithdrawing} />
+				<WithdrawFunds setIsWithdrawing={setIsWithdrawing}
+				availableBalance  = {walletInfo['walletBalance']} />
 			) : (
 				<></>
 			)}
@@ -447,7 +448,7 @@ function DashBoardVendor() {
 													) : (
 														<p className="Wallet-card-left-top-left-text-text2">
 															₦{walletInfo['walletBalance']}
-														</p>}
+														</p>)}
 												</div>
 											</div>
 											<div className="Wallet-card-left-top-right">
@@ -462,7 +463,7 @@ function DashBoardVendor() {
 													) : (
 														<p className="Wallet-card-left-top-right-text-text2">
 															₦{walletInfo['incomingWalletBalance']}
-														</p>}
+														</p>)}
 												</div>
 											</div>
 										</div>

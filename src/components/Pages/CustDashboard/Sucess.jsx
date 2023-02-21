@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import SecuredBy from "../../../assets/images/svg/secured-by.svg";
 import Encrypted from "../../../assets/images/svg/encrypted.svg";
 
-function Success({ setDisplay, setShow, setIsWithdrawing }) {
+function Success({ setDisplay, setShow, setIsWithdrawing,amount, selectedBank }) {
 	const navigate = useNavigate();
 	const dashboard = () => {
 		navigate("/wallet");
@@ -39,10 +39,10 @@ function Success({ setDisplay, setShow, setIsWithdrawing }) {
 					className="w-[127px] mx-auto mb-6"
 				/>
 
-				<h5 className="text-center font-bold text-2xl">₦25,000</h5>
+				<h5 className="text-center font-bold text-2xl">₦{amount}</h5>
 
 				<p className="text-center max-w-[300px] mx-auto text-2xl md:max-w-[410px]">
-					has been successfuly sent to your Zenith Bank account
+					has been successfuly sent to your {selectedBank} account
 				</p>
 
 				<div className="flex mt-16 justify-between items-center">
