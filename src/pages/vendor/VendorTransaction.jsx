@@ -1,3 +1,5 @@
+/** @format */
+
 import { useState, useEffect } from "react";
 import Layout from "../../components/Layout/Layout";
 import ReactPaginate from "react-paginate";
@@ -16,20 +18,33 @@ import "./VendorTransaction.css";
 import { VendorTransactionItems } from "./VendorTransactionItems";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
-import sucess from "../../images/done.svg";
-import cancled from "../../images/failled.svg";
-import ongoing from "../../images/ongoing.svg";
-
+import notrans from "../../assets/notrans.svg";
+import Ongoings from "../../components/Pages/custTransaction/Ongoing";
+import Completeds from "../../components/Pages/custTransaction/Completed";
+import Cancelleds from "../../components/Pages/custTransaction/Cancelled";
+import moment from "moment";
 const VendorTransaction = (props) => {
 	const { data } = props;
-	const [activeTab, setActiveTab] = useState("All Transactions");
-	const [transaction, setTransaction] = useState();
-	const [onGoing, setOngoing] = useState();
-	const [cancelled, setCancelled] = useState();
-	const transactionTabChangeHandler = (transactionTabName) => {
-		setActiveTab(transactionTabName);
+	const [modalIsOpen, setModalIsOpen] = useState(false);
+	
+	const [view, setView] = useState();
+	
+	const [isWithdrawing, setIsWithdrawing] = useState(false);
+	
+	const [showCanceled, setShowCanceled] = useState(false);
+	const [showCompleted, setShowCompleted] = useState(false);
+	const [showOngoing, setShowOngoing] = useState(false);
+	const [outgoing, setOutGoing] = useState();
+	const [completeData, setCompleteData] = useState();
+	const [cancelData, setCancelData] = useState();
+	const [out, setOut] = useState();
+	const [done, setDone] = useState();
+	const [cancels, setCancels] = useState();
+	const [active, setActive] = useState("alltransaction");
+	
+	const showOngoingHandler = () => {
+		setShowOngoing((prevState) => !prevState);
 	};
-
 	const handleSelect = () => {
 		setSelect(!select);
 		setSelect2(false);
@@ -114,7 +129,7 @@ const VendorTransaction = (props) => {
 	useEffect(() => {
 		(async () => {
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/lists/customer`;
+				const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/lists/vendor`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",
@@ -123,9 +138,42 @@ const VendorTransaction = (props) => {
 				};
 
 				const data = await axios.get(API_URL, config);
-				setTransaction(data?.data?.data);
+				console.log(data?.data?.data, "data");
+				const mappeddata = data?.data?.data?.map((data) => data);
+				const datas = mappeddata?.filter(
+					(filtered) => filtered?.status === "PENDING VENDOR ACCEPTANCE"
+				);
+				const datacompleted = mappeddata?.filter(
+					(filtered) => filtered?.status === "COMPLETED"
+				);
+				const datacancelled = mappeddata?.filter(
+					(filtered) => filtered?.status === "CANCELLED BY VENDOR"
+				);
+				setOut(datas);
+				setDone(datacompleted);
+				setCancels(datacancelled);
+			} catch (error) {
+				console.log(error, "error");
+			}
+		})();
 
-				// return response;
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+	useEffect(() => {
+		(async () => {
+			try {
+				const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/lists/vendor/ongoing`;
+				const config = {
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${user_details?.data?.access_token}`,
+					},
+				};
+
+				const data = await axios.get(API_URL, config);
+
+				console.log(data?.data.data, "out");
+				setOutGoing(data?.data?.data);
 			} catch (error) {
 				console.log(error, "error");
 			}
@@ -137,7 +185,7 @@ const VendorTransaction = (props) => {
 	useEffect(() => {
 		(async () => {
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/lists/customer/ongoing`;
+				const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/lists/vendor/cancelled`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",
@@ -146,11 +194,9 @@ const VendorTransaction = (props) => {
 				};
 
 				const data = await axios.get(API_URL, config);
-				setOngoing(data?.data?.data);
-				const response = data?.data;
-				// console.log(data.data.data, "ongoing data");
 
-				// return response;
+				console.log(data?.data.data, "completed");
+				setCancelData(data?.data?.data);
 			} catch (error) {
 				console.log(error, "error");
 			}
@@ -158,11 +204,11 @@ const VendorTransaction = (props) => {
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
+
 	useEffect(() => {
 		(async () => {
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/lists/customer/cancelled
-        `;
+				const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/lists/vendor/completed`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",
@@ -171,7 +217,9 @@ const VendorTransaction = (props) => {
 				};
 
 				const data = await axios.get(API_URL, config);
-				setCancelled(data?.data?.data);
+
+				console.log(data?.data.data, "completed");
+				setCompleteData(data?.data?.data);
 			} catch (error) {
 				console.log(error, "error");
 			}
@@ -179,34 +227,65 @@ const VendorTransaction = (props) => {
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-	useEffect(() => {
-		(async () => {
-			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/lists/customer/completed
-        `;
-				const config = {
-					headers: {
-						"Content-Type": "application/json",
-						Authorization: `Bearer ${user_details?.data?.access_token}`,
-					},
-				};
+	const handleWithdraw = () => {
+		setIsWithdrawing((prevState) => !prevState);
+	};
+	const getTransaction = async () => {
+		try {
+			const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/view/${view}`;
+			const config = {
+				headers: {
+					"Content-Type": "application/json",
+					Authorization: `Bearer ${user_details?.data?.access_token}`,
+				},
+			};
 
-				const data = await axios.get(API_URL, config);
-				setCancelled(data?.data?.data);
-				// const response = data?.data;
-				console.log(cancelled, "cancelled data");
+			const data = await axios.get(API_URL, config);
 
-				// return response;
-			} catch (error) {
-				console.log(error, "error");
-			}
-		})();
+			console.log(data, "view on customer");
 
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
-	// console.log(cancelled,"hello");
+			// console.log(values, "values");
+			// return response;
+		} catch (error) {
+			console.log(error, "errorss");
+		}
+	};
+	const showCompletedHandler = () => {
+		setShowCompleted((prevState) => !prevState);
+	};
+	const setModalIsOpenToTrue = () => {
+		setModalIsOpen(true);
+	};
+	const showCancelHandler = () => {
+		setShowCanceled((prevState) => !prevState);
+	};
+	const setModalIsOpenToFalse = () => {
+		setModalIsOpen(false);
+	};
 	return (
 		<Layout heading="Transaction">
+			{showOngoing || showCanceled || showCompleted ? (
+				<div>
+					{showOngoing && (
+						<Ongoings
+							showOngoingHandler={showOngoingHandler}
+							showOngoing={showOngoing}
+						/>
+					)}
+					{showCompleted && (
+						<Completeds
+							showCompletedHandler={showCompletedHandler}
+							showCompleted={showCompleted}
+						/>
+					)}
+					{showCanceled && (
+						<Cancelleds
+							showCancelHandler={showCancelHandler}
+							showCanceled={showCanceled}
+						/>
+					)}
+				</div>
+			) :(
 			<div className="transactions-card-cover ">
 				<div className="transactions-card">
 					<div className="Transactions">
@@ -215,38 +294,105 @@ const VendorTransaction = (props) => {
 						</div>
 						<div className="Category flex gap-6">
 							{select ? (
-								<h6 className="Selection active">All Transaction</h6>
+								<h6
+									onClick={() => {
+										setActive("alltransaction");
+									}}
+									className="Selection active"
+								>
+									All Transaction
+								</h6>
 							) : (
-								<h6 className="Selection" onClick={handleSelect}>
+								<h6
+									className="Selection"
+									onClick={() => {
+										setActive("alltransaction");
+										handleSelect();
+									}}
+								>
 									All Transaction
 								</h6>
 							)}
 							{select2 ? (
-								<h6 className="Selection active">Out-going</h6>
+								<h6
+									onClick={() => {
+										setActive("ongoing");
+										console.log(active, "active");
+									}}
+									className="Selection active"
+								>
+									Out-going
+								</h6>
 							) : (
-								<h6 className="Selection" onClick={handleSelect2}>
+								<h6
+									className="Selection"
+									onClick={() => {
+										setActive("ongoing");
+										handleSelect2();
+										console.log(active, "active");
+									}}
+								>
 									Out-going
 								</h6>
 							)}
 							{select3 ? (
-								<h6 className="Selection active">Cancelled</h6>
+								<h6
+									onClick={() => {
+										setActive("cancelled");
+										console.log(active, "active");
+									}}
+									className="Selection active"
+								>
+									Cancelled
+								</h6>
 							) : (
-								<h6 className="Selection" onClick={handleSelect3}>
+								<h6
+									className="Selection"
+									onClick={() => {
+										setActive("cancelled");
+										console.log(active, "active");
+										handleSelect3();
+									}}
+								>
 									Cancelled
 								</h6>
 							)}
 							{select4 ? (
-								<h6 className="Selection active">Completed</h6>
+								<h6
+									onClick={() => {
+										setActive("completed");
+										console.log(active, "active");
+									}}
+									className="Selection active"
+								>
+									Completed
+								</h6>
 							) : (
-								<h6 className="Selection" onClick={handleSelect4}>
+								<h6
+									className="Selection"
+									onClick={() => {
+										setActive("completed");
+										console.log(active, "active");
+										handleSelect4();
+									}}
+								>
 									Completed
 								</h6>
 							)}
 						</div>
 
-						{VendorTransactionItems?.map((item, index, id) => {
+						{out?.map((item, index, id) => {
+							console.log(item, "out vendor");
 							return (
-								<div className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center">
+								<div 	onClick={() => {
+									setView(item?.transaction_id);
+									getTransaction();
+									window?.localStorage?.setItem(
+										"idOngoing",
+										item?.transaction_id
+									);
+									showOngoingHandler(item?.transaction_id);
+								}} className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center">
 									<div
 										className={select ? "Transaction1 border" : "hide"}
 										key={item.id}
@@ -254,13 +400,13 @@ const VendorTransaction = (props) => {
 										<div className="Transaction-body">
 											<div className="Transaction-body-profile pushDown3">
 												<img
-													className="TransactionStatusimg pushDown1"
-													src={ongoing}
+													className="TransactionStatusimg pushDown1 inline-block h-8 w-8 rounded-full ring-2 ring-white "
+													src={item?.customer?.image_url}
 													alt="Scam Trust"
 												/>
 												<div>
 													<h5 className="Transaction-details1">
-														{item.itemName}
+														{item?.product_name}
 													</h5>
 													<p className="Transaction-description">
 														{item.status}
@@ -269,13 +415,13 @@ const VendorTransaction = (props) => {
 											</div>
 										</div>
 										<div className="Transaction-details1 ">
-											<h5>{item.businessName}</h5>
+											<h5>{item.customer?.name || item?.customer?.username}</h5>
 										</div>
 										<div className="Transaction-details1 pushDown">
 											<h5>{item.amount}</h5>
 										</div>
 										<div className="Transaction-details1 pushDown">
-											<h5>{item.date}</h5>
+											<h5>{item?.due_date}</h5>
 										</div>
 										<div className="Transaction-details2 pushDown">
 											<h5>
@@ -286,27 +432,81 @@ const VendorTransaction = (props) => {
 								</div>
 							);
 						})}
-
-						{VendorTransactionItems
-							?.filter((item) => {
-								return item.status === "outgoing";
-							})
-							.map((item, index, id) => {
-								return (
+						{done?.map((item, index, id) => {
+							return (
+								<div 	onClick={() => {
+									setView(item?.transaction_id);
+									getTransaction();
+									showCompletedHandler(item?.transaction_id);
+									window?.localStorage?.setItem(
+										"idCompleted",
+										item?.transaction_id
+									);
+								}}className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center">
 									<div
-										className={select2 ? "Transaction1 border" : "hide"}
+										className={select ? "Transaction1 border" : "hide"}
+										key={item.id}
+									>
+										<div className="Transaction-body">
+											<div className="Transaction-body-profile pushDown3 ">
+												<img
+													className="TransactionStatusimg pushDown1 inline-block h-8 w-8 rounded-full ring-2 ring-white"
+													src={item?.customer?.image_url}
+													alt="Scam Trust"
+												/>
+												<div>
+													<h5 className="Transaction-details1">
+														{item?.product_name}
+													</h5>
+													<p className="Transaction-description">
+														{item.status}
+													</p>
+												</div>
+											</div>
+										</div>
+										<div className="Transaction-details1 ">
+											<h5>{item.customer?.name || item?.customer?.username}</h5>
+										</div>
+										<div className="Transaction-details1 pushDown">
+											<h5>{item.amount}</h5>
+										</div>
+										<div className="Transaction-details1 pushDown">
+											<h5>{item.due_date}</h5>
+										</div>
+										<div className="Transaction-details2 pushDown">
+											<h5>
+												<FontAwesomeIcon icon={faEllipsis} />
+											</h5>
+										</div>
+									</div>
+								</div>
+							);
+						})}
+						{cancels?.map((item, index, id) => {
+							return (
+								<div 	onClick={() => {
+									setView(item?.transaction_id);
+									getTransaction();
+									showCancelHandler();
+									window?.localStorage?.setItem(
+										"idCancelled",
+										item?.transaction_id
+									);
+								}} className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center">
+									<div
+										className={select ? "Transaction1 border" : "hide"}
 										key={item.id}
 									>
 										<div className="Transaction-body">
 											<div className="Transaction-body-profile pushDown3">
 												<img
-													className="TransactionStatusimg pushDown1"
-													src={ongoing}
+													className="TransactionStatusimg pushDown1 inline-block h-8 w-8 rounded-full ring-2 ring-white"
+													src={item?.customer?.image_url}
 													alt="Scam Trust"
 												/>
 												<div>
 													<h5 className="Transaction-details1">
-														{item.itemName}
+														{item.product_name}
 													</h5>
 													<p className="Transaction-description">
 														{item.status}
@@ -314,100 +514,14 @@ const VendorTransaction = (props) => {
 												</div>
 											</div>
 										</div>
-										<div className="Transaction-details1 pushDown">
-											<h5>{item.businessName}</h5>
+										<div className="Transaction-details1 ">
+											<h5>{item.customer?.name || item?.customer?.username}</h5>
 										</div>
 										<div className="Transaction-details1 pushDown">
 											<h5>{item.amount}</h5>
 										</div>
 										<div className="Transaction-details1 pushDown">
-											<h5>{item.date}</h5>
-										</div>
-										<div className="Transaction-details2 pushDown">
-											<h5>
-												<FontAwesomeIcon icon={faEllipsis} />
-											</h5>
-										</div>
-									</div>
-								);
-							})}
-
-						{VendorTransactionItems
-							?.filter((item) => {
-								return item.status === "cancelled";
-							})
-							.map((item, index) => {
-								return (
-									<div className="px-9">
-										{" "}
-										<div className={select3 ? "Transaction1 border" : "hide"}>
-											<div className="Transaction-body ">
-												<div className="Transaction-body-profile pushDown3">
-													<img
-														className="TransactionStatusimg pushDown1"
-														src={cancled}
-														alt="Scam Trust"
-													/>
-													<div>
-														<h5 className="Transaction-details1">
-															{item?.itemName}
-														</h5>
-														<p className="Transaction-description">
-															{item.status}
-														</p>
-													</div>
-												</div>
-											</div>{" "}
-											<div className="Transaction-details1 pushDown">
-												<h5>{item?.businessName}</h5>
-											</div>
-											<div className="Transaction-details1 pushDown">
-												<h5>{item?.amount}</h5>
-											</div>
-											<div className="Transaction-details1 pushDown">
-												<h5>{item?.date}</h5>
-											</div>
-											<div className="Transaction-details2 pushDown">
-												<h5>
-													<FontAwesomeIcon icon={faEllipsis} />
-												</h5>
-											</div>
-										</div>
-									</div>
-								);
-							})}
-
-						{VendorTransactionItems.filter((item) => {
-							return item.status === "completed";
-						}).map((item, index) => {
-							return (
-								<div className="px-9 py-2">
-									<div className={select4 ? "Transaction1 border" : "hide"}>
-										<div className="Transaction-body">
-											<div className="Transaction-body-profile pushDown3">
-												<img
-													className="TransactionStatusimg pushDown1"
-													src={item.satusImg}
-													alt="Scam Trust"
-												/>
-												<div>
-													<h5 className="Transaction-details1">
-														{item.itemName}
-													</h5>
-													<p className="Transaction-description">
-														{item.status}
-													</p>
-												</div>
-											</div>
-										</div>
-										<div className="Transaction-details1 pushDown">
-											<h5>{item.businessName}</h5>
-										</div>
-										<div className="Transaction-details1 pushDown">
-											<h5>{item.amount}</h5>
-										</div>
-										<div className="Transaction-details1 pushDown1">
-											<h5>{item.date}</h5>
+											<h5>{item.due_date}</h5>
 										</div>
 										<div className="Transaction-details2 pushDown">
 											<h5>
@@ -418,12 +532,214 @@ const VendorTransaction = (props) => {
 								</div>
 							);
 						})}
+
+						{active === "ongoing" && (
+							<div>
+								{outgoing?.length === 0 ? (
+									<div>
+										<img
+											className="w-[283px] h-[223px] object-contain"
+											src={notrans}
+											alt="info"
+										/>
+									</div>
+								) : (
+									<div>
+										{outgoing?.map((newout) => {
+											return (
+												<div
+													onClick={() => {
+														setView(newout?.transaction_id);
+														getTransaction();
+														window?.localStorage?.setItem(
+															"idOngoing",
+															newout?.transaction_id
+														);
+														showOngoingHandler(newout?.transaction_id);
+													}}
+													key={newout?.id}
+													className="tab-pane border  my-6 fade show active"
+													id="tabs-home"
+													role="tabpanel"
+													aria-labelledby="tabs-home-tab"
+												>
+													<div className="flex items-center px-1.5 mb-4 justify-between rounded-md md:px-4">
+														<div className="flex items-center Transaction-body-profile pushDown3 justify-center">
+															<img
+																className=" inline-block h-8 w-8 rounded-full ring-2 ring-white "
+																src={newout?.customer?.image_url}
+																alt="Awaiting icon"
+															/>
+															<div className="pl-1.5 pt-2">
+																<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+																	{newout?.product_name}
+																</p>
+																<small className="block whitespace-nowrap w-[50px]   md:w-[65px]">
+																	On-going
+																</small>
+															</div>
+														</div>
+														<p className="text-[#262466] text-center">
+															{newout?.customer?.name ||
+																newout?.customer?.username}
+														</p>
+														<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+															{newout?.amount}
+														</p>
+														<p className="text-[#262466] text-center">
+															{moment(newout?.created_at).format("DD/MM/YYYY")}
+														</p>
+													</div>
+												</div>
+											);
+										})}
+									</div>
+								)}
+							</div>
+						)}
+
+						{active === "cancelled" && (
+							<div>
+								{cancelData?.length === 0 ? (
+									<div>
+										<img
+											className="w-[283px] h-[223px] object-contain"
+											src={notrans}
+											alt="info"
+										/>
+									</div>
+								) : (
+									<div>
+										{cancelData?.map((newcancel) => {
+											return (
+												<div
+													onClick={() => {
+														setView(newcancel?.transaction_id);
+														getTransaction();
+														showCancelHandler();
+														window?.localStorage?.setItem(
+															"idCancelled",
+															newcancel?.transaction_id
+														);
+													}}
+													key={newcancel?.id}
+													className="tab-pane border  my-6 fade show active"
+													id="tabs-home"
+													role="tabpanel"
+													aria-labelledby="tabs-home-tab"
+												>
+													<div className="flex items-center px-1.5 mb-4 justify-between  rounded-md md:px-4">
+														<div className="flex items-center justify-center">
+															<img
+																className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
+																src={newcancel?.customer?.image_url}
+																alt="Awaiting icon"
+															/>
+															<div className="pl-1.5 pt-2">
+																<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+																	{newcancel?.product_name}
+																</p>
+																<small className="block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]">
+																	Cancelled
+																</small>
+															</div>
+														</div>
+														<p className="text-[#262466] text-center">
+															{newcancel?.vendor?.location?.toUpperCase()}
+														</p>
+														<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+															{newcancel?.amount}
+														</p>
+														<p className="text-[#262466] text-center">
+															{moment(newcancel?.created_at).format(
+																"DD/MM/YYYY"
+															)}
+														</p>
+													</div>
+												</div>
+											);
+										})}
+									</div>
+								)}
+							</div>
+						)}
+
+						{active === "completed" && (
+							<div>
+								{completeData?.length === 0 ? (
+									<div>
+										<img
+											className="w-[283px] h-[223px] object-contain"
+											src={notrans}
+											alt="info"
+										/>
+									</div>
+								) : (
+									<div>
+										{completeData?.map((completeS) => {
+											{
+												console.log(completeS, "hi");
+											}
+											return (
+												<div
+													onClick={() => {
+														setView(completeS?.transaction_id);
+														getTransaction();
+														showCompletedHandler(completeS?.transaction_id);
+														window?.localStorage?.setItem(
+															"idCompleted",
+															completeS?.transaction_id
+														);
+													}}
+													key={completeS.id}
+													className="tab-pane fade show active border  my-6"
+													id="tabs-home"
+													role="tabpanel"
+													aria-labelledby="tabs-home-tab"
+												>
+													<div className="flex items-center px-1.5 mb-4 justify-between  rounded-md  md:px-4">
+														<div className="flex items-center justify-center">
+															<img
+																className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
+																src={completeS?.customer?.image_url}
+																alt="Awaiting icon"
+															/>
+															<div className="pl-1.5 pt-2">
+																<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+																	{completeS?.product_name}
+																</p>
+																<small className="block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]">
+																	Completed
+																</small>
+															</div>
+														</div>
+														<p className="text-[#262466] text-center">
+															{completeS?.customer?.name ||
+																completeS?.customer?.username}
+														</p>
+														<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+															{completeS?.amount}
+														</p>
+														<p className="text-[#262466] text-center">
+															{moment(completeS?.created_at).format(
+																"DD/MM/YYYY"
+															)}
+														</p>
+													</div>
+												</div>
+											);
+										})}
+									</div>
+								)}
+							</div>
+						)}
 					</div>
 					{/* pagination */}
 				</div>
 			</div>
-	      {/* </div> */}
-        </Layout>
+			)}
+	
+		</Layout>
 	);
 };
 
