@@ -44,6 +44,7 @@ function DashBoardVendor() {
 	const [view, setView] = useState();
 	const [out, setOut] = useState();
 	const [done, setDone] = useState();
+	const [accepted, setAccepted] = useState();
 	const [cancels, setCancels] = useState();
 	const [showCanceled, setShowCanceled] = useState(false);
 	const [showCompleted, setShowCompleted] = useState(false);
@@ -231,9 +232,13 @@ function DashBoardVendor() {
 				const datacancelled = mappeddata?.filter(
 					(filtered) => filtered?.status === "CANCELLED BY VENDOR"
 				);
+				const dataaccepted = mappeddata?.filter(
+					(filtered) => filtered?.status === "ACCEPTED BY VENDOR"
+				);
 				setOut(datas);
 				setDone(datacompleted);
 				setCancels(datacancelled);
+				setAccepted(dataaccepted);
 			} catch (error) {
 				console.log(error, "error");
 			}
@@ -538,6 +543,42 @@ function DashBoardVendor() {
 									{active === "alltransaction" && (
 										<div>
 											{out?.map((item, index) => {
+												return (
+													<div className={select ? "Transaction" : "hide"}>
+														<div className="Transaction-body">
+															<div className="Transaction-body-profile">
+																<img
+																	className="TransactionStatusimg w-56 mt-3 md:mt-1 lg:w-60 lg:h-60"
+																	src={item?.customer?.image_url}
+																	alt="Scam Trust"
+																/>
+																<div>
+																	<h5 className="Transaction-details mt-[-4px]">
+																		{item?.product_name
+}
+																	</h5>
+																	<p className="Transaction-description">
+																		{item?.status}
+																	</p>
+																</div>
+															</div>
+														</div>
+														<div className="Transaction-details name">
+															<h5>
+																{item?.customer?.username ||
+																	item?.customer?.name}
+															</h5>
+														</div>
+														<div className="Transaction-details Amount">
+															<h5>{item?.amount}</h5>
+														</div>
+														<div className="Transaction-details date">
+															<h5>{item?.due_date}</h5>
+														</div>
+													</div>
+												);
+											})}
+												{accepted?.map((item, index) => {
 												return (
 													<div className={select ? "Transaction" : "hide"}>
 														<div className="Transaction-body">

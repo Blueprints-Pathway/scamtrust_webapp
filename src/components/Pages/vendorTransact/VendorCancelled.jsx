@@ -7,12 +7,12 @@ import { BsArrowLeft } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import moment from "moment";
-const Cancelled = ({showCancelHandler}) => {
+const VendorCancelled = ({showCancelHandler}) => {
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
 	const cancels = localStorage?.getItem("idCancelled");
    
 	const [cancelled, setCancelled] = useState();
-	
+	const navigate = useNavigate();
 const back=()=>{
     showCancelHandler()
 }
@@ -179,4 +179,4 @@ const back=()=>{
 	);
 };
 
-export default Cancelled;
+export default VendorCancelled;
