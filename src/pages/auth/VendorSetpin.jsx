@@ -1,8 +1,6 @@
 /** @format */
-
 import { useRef, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import SignupWrapper from "../../components/HOC/SignupWrapper";
 import Button from "../../components/UI/Button";
 import axios from "axios";
@@ -219,7 +217,6 @@ const VendorSetpin = () => {
 							/> */}
 							<div className="grid  p-3  justify-items-center">
 								<InputCode
-						
 									length={4}
 									code={code}
 									setCode={setCode}
