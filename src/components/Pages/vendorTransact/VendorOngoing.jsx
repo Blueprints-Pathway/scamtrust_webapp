@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 import axios from "axios";
 import moment from "moment";
-const Ongoing = ({showOngoingHandler}) => {
+const VendorOngoing = ({showOngoingHandler}) => {
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
 	const onGoing = localStorage?.getItem("idOngoing");
 	console.log(onGoing, "hello");
@@ -40,10 +40,10 @@ const Ongoing = ({showOngoingHandler}) => {
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-    const accepted = async () => {
-        showOngoingHandler()
+    const cancelled= async () => {
+		showOngoingHandler()
 		try {
-			const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/customer/approve/${id}`;
+			const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/vendor/cancel/${id}`;
 			const config = {
 				headers: {
 					"Content-Type": "application/json",
@@ -206,19 +206,19 @@ const Ongoing = ({showOngoingHandler}) => {
 						</div>
 					</div>
 
-					<div className="flex items-center justify-between mt-10 mx-5 md:mx-36 lg:mx-56 md:mt-12 lg:mt-24">
+					<div className="flex items-center mt-10 mx-5 md:mx-36 lg:mx-56 md:mt-12 lg:mt-24">
 						<button
-							onClick={openModal}
+							onClick={cancelled}
 							className="text-black bg-[#EDEDED] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-10 lg:px-32 md:px-12"
 						>
 							Cancel
 						</button>
-						<button
+						{/* <button
 							onClick={() => accepted()}
 							className="text-[#ffff] bg-[#3AB75D] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-7 lg:px-28"
 						>
 							Complete
-						</button>
+						</button> */}
 
 						{/* CANCEL TRANSACTION MODAL  */}
 						<Modal
@@ -258,4 +258,4 @@ const Ongoing = ({showOngoingHandler}) => {
 	);
 };
 
-export default Ongoing;
+export default VendorOngoing;

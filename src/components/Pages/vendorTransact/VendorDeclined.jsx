@@ -4,13 +4,13 @@ import Logo from '../../../assets/images/logo.svg'
 import { BsArrowLeft } from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom'
 
-const AwaitingApproval = () => {
-    
+const VendorDeclined = () => {
+
     const navigate = useNavigate();
 
   return (
     <div>
-        <Layout>
+         <Layout>
             <div className='trans-container bg-[#fff] rounded-3xl w-[25rem] ml-[-41px] md:w-[53rem] md:mt-[-72px] lg:w-[90rem] lg:ml-[-16.8rem] lg:mt-[-40px] lg:pb-16 py-10 pt-12 lg:pt-12 md:pt-8 md:px-12 px-5'>
 
                 <h6 onClick={() => navigate(-1)}
@@ -21,13 +21,13 @@ const AwaitingApproval = () => {
                 <div className='flex flex-wrap items-center justify-between md:mx-5'>
                     <div>
                         <h1 className='font-bold text-sm lg:text-2xl lg:font-bold'>
-                        <span className="text-[#3AB75D] pr-1">ID:</span> 6057702
+                        <span className="text-[#3AB75D] pr-1">ID:</span> - 6057702
                         </h1>
                         <p className='text-sm lg:text-2xl font-bold text-[#262466] my-1 lg:my-4'>Ridic  Ventures </p>
                     </div>
-                    <div className='md:ml-[-30px] lg:ml-[-15rem]'>
+                    <div className='md:ml-[-80px] lg:ml-[-15rem]'>
                         <p className='text-sm lg:text-2xl font-bold'>Status:
-                        <span className='font-normal pl-1 text-[#95999D] text-sm lg:text-2xl lg:px-5'>Awaiting Approval</span> </p>
+                        <span className='font-normal pl-1 text-[#95999D] text-sm lg:text-2xl lg:px-5'>Cancelled</span> </p>
                         <p className='text-sm lg:text-2xl mt-1 lg:my-4 font-normal'>Today, 8:48 AM</p>
                     </div>
                      <div>
@@ -37,10 +37,10 @@ const AwaitingApproval = () => {
 
                         <div className='flex-column items-center justify-center'>
                                <div className='flex items-center justify-center'>
-                                   <div className='flex items-center justify-center border-[1px] border-[#95999D] rounded-[100%] bg-[#3AB75D] text-[#ffff] w-7 h-7 lg:w-12 lg:h-12'>
-                                       <h1 className='text-center text-sm lg:text-xl'>1</h1>
+                                   <div className='flex items-center justify-center border-[1px] border-[#95999D] rounded-[100%] bg-[#95999D] text-[#ffff] w-7 h-7 lg:w-12 lg:h-12'>
+                                       <h1 className='text-center text-sm lg:text-xl text-[#ffff]'>1</h1>
                                    </div>
-                                   <div className='w-16 lg:w-24 border-[#95999D] border-[1px]'></div>
+                                   <div className='w-16 lg:w-24 border-[#95999D] border-[2px]'></div>
                                </div>
                                <div className='items-center mb-5 mt-1 lg:mt-2 ml-[-30px] lg:ml-[-50px]'>
                                   <p className='items-center lg:text-xl lg:font-semibold'>Awaiting approval</p>
@@ -49,26 +49,26 @@ const AwaitingApproval = () => {
 
                         <div className='flex-column items-center justify-center'>
                                <div className='flex items-center justify-center'>
-                                   <div className='flex items-center justify-center border-[1px] border-[#95999D] rounded-[100%] w-7 h-7 lg:w-12 lg:h-12'>
-                                       <h1 className='text-center text-sm lg:text-xl text-[#95999D]'>2</h1>
+                                   <div className='flex items-center justify-center border-[1px] border-[#95999D] rounded-[100%] bg-[#95999D] text-[#ffff] w-7 h-7 lg:w-12 lg:h-12'>
+                                       <h1 className='text-center text-sm lg:text-xl text-[#ffff]'>2</h1>
                                    </div>
-                                   <div className='w-16 lg:w-24 border-[#95999D] border-[1px]'></div>
+                                   {/* <div className='w-16 lg:w-24 border-[#95999D] border-[2px]'></div> */}
                                </div>
                                <div className='items-center mb-5 mt-1 lg:mt-2 ml-[-8px] lg:ml-[-11px]'>
                                   <p className='items-center lg:text-xl lg:font-semibold'>On-going</p>
                                </div>
                         </div>
 
-                        <div className='flex-column items-center justify-center ml-[-13px] lg:ml-[-20px]'>
+                        {/* <div className='flex-column items-center justify-center ml-[-13px] lg:ml-[-20px]'>
                                <div className='flex items-center justify-center'>
-                                   <div className='flex items-center justify-center border-[1px] border-[#95999D] rounded-[100%] w-7 h-7 lg:w-12 lg:h-12'>
-                                       <h1 className='text-center text-sm lg:text-xl text-[#95999D]'>3</h1>
+                                   <div className='flex items-center justify-center border-[1px] border-[#95999D] rounded-[100%] bg-[#95999D] text-[#ffff] w-7 h-7 lg:w-12 lg:h-12'>
+                                       <h1 className='text-center text-sm lg:text-xl text-[#ffff]'>3</h1>
                                    </div>
                                </div>
                                <div className='items-center mb-5 mt-1 lg:mt-2'>
                                   <p className='lg:items-center lg:text-xl lg:font-semibold'> Completed</p>
                                </div>
-                        </div>
+                        </div> */}
                         
                         
                     </div> 
@@ -101,13 +101,16 @@ const AwaitingApproval = () => {
                             <p className='font-medium'>Due date</p>
                             <p className='text-[#8D9296]'>25 - 5 -2022</p>
                         </div>
-                        <div className='flex items-start justify-between text-base lg:text-2xl my-7 lg:mt-10'>
+                        <div className='flex items-start justify-between text-base lg:text-2xl mt-7 lg:my-10'>
                             <p className='font-medium'>Description</p>
                             <p className='text-[#8D9296] w-40 lg:w-[25rem] text-right'>One pair of black female corporate heel shoes and one pair of white unbranded sneakers</p>
                         </div>
+                        <div className='flex-column items-center justify-start text-base lg:text-2xl mt-3 mb-5 lg:mt-10'>
+                            <p className='font-medium pb-1 lg:pb-2'>Reason for cancellation </p>
+                            <p className='border-[1px] border-[#0E3D8E] text-[#0E3D8E] py-2 text-center md:text-left md:px-10 lg:px-16 md:py-3 lg:py-5'>Declined by vendor</p>
+                        </div>
                     </div>
                 </div>
-                
                 <div className='flex items-center justify-center mt-10 lg:mt-24 lg:mb-1'>
                     <h1 className='text-sm text-[#8D9296] mx-1'>Secured by</h1>
                     <img className='w-24 mx-1' src={Logo} alt="Scamtrust logo" />
@@ -118,4 +121,4 @@ const AwaitingApproval = () => {
   )
 }
 
-export default AwaitingApproval
+export default VendorDeclined

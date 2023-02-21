@@ -14,8 +14,7 @@ const Completed = ({showCompletedHandler}) => {
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
 	const complete = localStorage?.getItem("idCompleted");
 
-	console.log(complete, "complete");
-	const navigate = useNavigate();
+	
 
 const back=()=>{
 	showCompletedHandler()

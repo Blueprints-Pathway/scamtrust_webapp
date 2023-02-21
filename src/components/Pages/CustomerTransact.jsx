@@ -4,7 +4,6 @@ import React from "react";
 import add from "../../assets/create-icon.png";
 import cancel from "../../assets/cancelled-icon.png";
 import complete from "../../assets/completed-icon.png";
-
 import onGoing from "../../assets/on-going-icon.png";
 import cancelled from "../../assets/cancel-icon.png";
 import completed from "../../assets/complete-icon.png";
@@ -31,6 +30,7 @@ import moment from "moment";
 import Ongoing from "./custTransaction/Ongoing";
 import Completed from "./custTransaction/Completed";
 import Cancelled from "./custTransaction/Cancelled";
+
 const CustomerTransact = (props) => {
 	//	const { setShowInitiateTransaction } = props;
 
@@ -425,12 +425,15 @@ const CustomerTransact = (props) => {
 									aria-labelledby="tabs-home-tab"
 								>
 									{done?.length === 0 ? (
-									<div>
-									<img
-										className="w-[283px] h-[223px] object-contain"
-										src={notrans}
-										alt="info"
-									/>
+									<div className="flex items-center justify-center">
+										<div>
+									       <img
+									       	className="w-[150px] h-[220px]  object-contain"
+									       	src={notrans}
+									       	alt="info"
+									       />
+									    <div></div>
+									</div>
 								</div>
 									) : (
 										<div>
@@ -564,12 +567,15 @@ const CustomerTransact = (props) => {
 						{active === "ongoing" && (
 							<div>
 								{outgoing?.length === 0 ? (
+									<div className="flex items-center justify-center">
 									<div>
-										<img
-											className="w-[283px] h-[223px] object-contain"
-											src={notrans}
-											alt="info"
-										/>
+									   <img
+										   className="w-[150px] h-[220px]  object-contain"
+										   src={notrans}
+										   alt="info"
+									   />
+									<div></div>
+								</div>
 									</div>
 								) : (
 									<div>
@@ -630,12 +636,15 @@ const CustomerTransact = (props) => {
 						{active === "completed" && (
 							<div>
 								{completeData?.length === 0 ? (
+									<div className="flex items-center justify-center">
 									<div>
-										<img
-											className="w-[283px] h-[223px] object-contain"
-											src={notrans}
-											alt="info"
-										/>
+									   <img
+										   className="w-[150px] h-[220px]  object-contain"
+										   src={notrans}
+										   alt="info"
+									   />
+									<div></div>
+								</div>
 									</div>
 								) : (
 									<div>
@@ -696,12 +705,15 @@ const CustomerTransact = (props) => {
 						{active === "cancelled" && (
 							<div>
 								{cancelData?.length === 0 ? (
+									<div className="flex items-center justify-center">
 									<div>
-										<img
-											className="w-[283px] h-[223px] object-contain"
-											src={notrans}
-											alt="info"
-										/>
+									   <img
+										   className="w-[150px] h-[220px]  object-contain"
+										   src={notrans}
+										   alt="info"
+									   />
+									<div></div>
+								</div>
 									</div>
 								) : (
 									<div>

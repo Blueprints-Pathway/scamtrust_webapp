@@ -1,7 +1,35 @@
-.border{
-/* border-color:"#000000", */
-border-style: solid;
-border-width: 10px;
+/** @format */
 
+.border {
+	/* border-color:"#000000", */
+	border-style: solid;
+	border-width: 10px;
+}
 
+@media screen and (max-width: 480px) {
+	.faq {
+        width:35vh !important;
+		margin-top: -20vh;
+	padding: 30px;
+  
+	}
+    .faqs {
+        width:35vh !important;
+
+	padding: 30px;
+  
+	}
+	.faqmain {
+        margin-left: 20px;
+		/* height: 90px !important; */
+		/* display: flex; */
+	}
+    .faq> div {
+        width:60px;
+        margin: 10px;
+        height: 40px;
+        
+       
+        
+      }
 }

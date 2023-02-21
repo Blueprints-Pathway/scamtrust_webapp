@@ -138,7 +138,7 @@ const Wallet = () => {
 
 
 			<div className="w-full">
-				<div className="pl-5 mx-[-20px]">
+				<div className="pl-5 mx-[-10px]">
 					<div className="z-20 flex-column md:flex md:items-start md:justify-between items-center justify-center">
 						<div className="grid-cols-1 rounded-3xl bg-white w-full md:px-4 md:mr-5 lg:px-16 2xl:px-12 py-8 px-4 lg:py-16 hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
 							<div className="flex justify-between items-center pb-1 border-b-2 border-b-[#3AB75D] mb-4">
