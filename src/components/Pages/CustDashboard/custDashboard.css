@@ -1,4 +1,4 @@
-.location{
+.cust-location{
     white-space: nowrap; 
     color:"#ffffff";
     display: -webkit-box;
@@ -11,7 +11,7 @@
     width: 75px;
 }
 @media screen and (max-width: 768px) {
-    .location{
+    .cust-location{
         white-space: nowrap; 
         color:"#ffffff";
         display: -webkit-box;
@@ -25,7 +25,7 @@
     }
 }
 @media screen and (max-width: 450px) {
-    .location{
+    .cust-location{
         white-space: nowrap; 
         color:"#ffffff";
         display: -webkit-box;

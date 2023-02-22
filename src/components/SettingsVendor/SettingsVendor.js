@@ -4,8 +4,8 @@ import React, { useState, useEffect } from "react";
 import "./settingsVendor.css";
 import swal from "sweetalert";
 import shielgg from "../../images/shielgg.png";
-import Frame318 from "../../images/Frame318.png";
-import SideBar from "../SideBar/SideBar";
+// import Frame318 from "../../images/Frame318.png";
+// import SideBar from "../SideBar/SideBar";
 import PrivacySettings from "./PrivacySettings";
 import SecuritySettings from "./SecuritySettings";
 import GeneralSettings from "./GeneralSettings";
@@ -99,6 +99,7 @@ function SettingsVendor() {
 			swal({
 				icon: "success",
 				text: "Image uploaded successfully",
+				confirmButtonColor: "#0000"
 			});
 			console.log(data, "data");
 		} catch (error) {
@@ -118,7 +119,7 @@ upload()
 			<Layout className="containerSettings" name="Settings">
 				<div className="containerSettings2">
 					<div className={checked ? "Center active" : "Center"}>
-						<img className="CenterTopImg" src={shielgg} alt="Scam Trust" />
+						<img className="CenterTopImg object-cover" src={shielgg} alt="Scam Trust" />
 					</div>
 
 					<div className={checked ? "CenterBottom active" : "CenterBottom"}>

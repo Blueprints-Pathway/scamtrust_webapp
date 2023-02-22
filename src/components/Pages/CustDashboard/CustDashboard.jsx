@@ -21,6 +21,8 @@ import Ongoings from ".././custTransaction/Ongoing";
 import Completeds from ".././custTransaction/Completed";
 import Cancelleds from ".././custTransaction/Cancelled";
 import "./modal.css"
+import "./custDashboard.css"
+
 const CustomerDashboard = (props) => {
 	const { setShowInitiateTransaction, setIsWithdrawing, setIsFunding } = props;
 	const { isShowing, toggle } = useModal();
@@ -254,7 +256,7 @@ const CustomerDashboard = (props) => {
 	};
 
 	return (
-		<div className="flex-col w-full px-2 pb-10 md:flex-row gap-7">
+		<div className="flex-col w-[100%] px-0 pb-10 md:flex-row gap-7">
 			<FundWallet
 				setShowConfirmAccont={setShowConfirmAccont}
 				fundWalletHandler={fundWalletHandler}
@@ -266,9 +268,9 @@ const CustomerDashboard = (props) => {
 				setShowConfirmAccont={setShowConfirmAccont}
 			/>
 
-			<div className="flex w-full px-2 flex-col md:flex-row gap-7 justify-between">
-				<div className="min-w-[260px] mx-auto w-[70%] 2xl:w-[685px]">
-					<div className="w-full bg-[#FFFEFE] lg:rounded-[24px] rounded-lg lg:px-[37px] px-5 py-3 lg:py-[29px] mb-[13px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
+			<div className="flex w-full px-0 flex-col md:flex-row gap-7 justify-between">
+				<div className="min-w-[260px] mx-2 w-[100%] md:w-[70%] 2xl:w-[685px]">
+					<div className="w-full bg-[#FFFEFE] lg:rounded-[24px] rounded-3xl lg:px-[37px] px-5 py-3 lg:py-[29px] mb-[13px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
 						<p className="font-semibold text-lg 2xl:text-2xl text-colorPrimary">
 							{userFromBackend?.data.name}
 						</p>
@@ -316,7 +318,7 @@ const CustomerDashboard = (props) => {
 					</div>
 
 					{/* FEE CALCULATOR */}
-					<div className="w-full bg-[#FFFEFE] lg:rounded-[24px] rounded-lg lg:px-[37px] px-5 py-3 lg:py-[29px] mb-[13px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
+					<div className="w-full bg-[#FFFEFE] lg:rounded-[24px] rounded-3xl lg:px-[37px] px-5 py-3 lg:py-[29px] mb-[13px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
 						<p className="2xl:text-xl text-colorPrimary">Fee Calculator</p>
 
 						<div className="border-b-2 mb-5 2xl:mb-[53px] border-b-[#3AB75D] mt-[13px]" />
@@ -361,9 +363,9 @@ const CustomerDashboard = (props) => {
 				</div>
 
 				{/* TRANSACTIONS PAGE */}
-				<div className="w-full  h-[100%] overflow-y-scroll mt-[-20px] md:mt-0 mx-1 py-7 lg:py-8 px-7 lg:px-12 bg-white rounded-[24px]">
+				<div className="w-full  h-[100%] overflow-y-scroll mt-[-20px] md:mt-0 mx-2 py-7 lg:py-8 px-7 lg:px-12 bg-white rounded-[24px]">
 				<div
-						className="flex justify-end  mb-5"
+						className="flex justify-end mb-5"
 						onClick={onCreateTransactionClicked}
 					>
 						<button className="bg-[#3AB75D] text-xs lg:text-base flex text-white items-center rounded-md px-2 py-2 lg:py-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-700 pointer-events-auto">
@@ -482,12 +484,12 @@ const CustomerDashboard = (props) => {
 																	<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 																		{item?.product_name}
 																	</p>
-																	<small className=" w-[50px] overflow-hidden md:w-[65px]">
-																		Completed
+																	<small className="cust-location w-[50px] overflow-hidden md:w-[65px]">
+																	    {item?.status}
 																	</small>
 																</div>
 															</div>
-															<p className="text-[#262466] text-center">
+															<p className="cust-location text-[#262466] text-center">
 																{item?.vendor?.location?.toUpperCase()}
 															</p>
 															<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
@@ -524,12 +526,12 @@ const CustomerDashboard = (props) => {
 															<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 																{item?.product_name}
 															</p>
-															<small className=" w-[50px] overflow-hidden md:w-[65px]">
+															<small className="cust-location w-[50px] overflow-hidden md:w-[65px]">
 																{item?.status}
 															</small>
 														</div>
 													</div>
-													<p className="text-[#262466] text-center">
+													<p className="cust-location text-[#262466] text-center">
 														{item?.vendor?.location?.toUpperCase()}
 													</p>
 													<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
@@ -563,12 +565,12 @@ const CustomerDashboard = (props) => {
 															<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 																{item?.product_name}
 															</p>
-															<small className=" w-[50px] overflow-hidden md:w-[65px]">
+															<small className="cust-location w-[50px] overflow-hidden md:w-[65px]">
 																{item?.status}
 															</small>
 														</div>
 													</div>
-													<p className="text-[#262466] text-center">
+													<p className="cust-location text-[#262466] text-center">
 														{item?.vendor?.location?.toUpperCase()}
 													</p>
 													<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
@@ -625,8 +627,8 @@ const CustomerDashboard = (props) => {
 																		<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 																			{newout?.product_name}
 																		</p>
-																		<small className="block whitespace-nowrap w-[50px]   md:w-[65px]">
-																			On-going
+																		<small className="cust-location block whitespace-nowrap w-[50px]   md:w-[65px]">
+																			{newout?.status}
 																		</small>
 																	</div>
 																</div>
@@ -692,12 +694,12 @@ const CustomerDashboard = (props) => {
 																		<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 																			{completeS?.product_name}
 																		</p>
-																		<small className="block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]">
-																			Completed
+																		<small className="cust-location block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]">
+																			{completeS?.status}
 																		</small>
 																	</div>
 																</div>
-																<p className="text-[#262466] text-center">
+																<p className="cust-location text-[#262466] text-center">
 																	{completeS?.vendor?.location.toUpperCase()}
 																</p>
 																<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
@@ -758,12 +760,12 @@ const CustomerDashboard = (props) => {
 																		<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 																			{newcancel?.product_name}
 																		</p>
-																		<small className="block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]">
-																			Cancelled
+																		<small className="cust-location block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]">
+																			{newcancel?.status}
 																		</small>
 																	</div>
 																</div>
-																<p className="text-[#262466] text-center">
+																<p className="cust-location text-[#262466] text-center">
 																	{newcancel?.vendor?.location?.toUpperCase()}
 																</p>
 																<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
