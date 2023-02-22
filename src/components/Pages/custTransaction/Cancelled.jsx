@@ -4,9 +4,9 @@ import React, { useEffect, useState } from "react";
 import Layout from "../../Layout/Layout";
 import Logo from "../../../assets/images/logo.svg";
 import { BsArrowLeft } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import moment from "moment";
+
 const Cancelled = ({showCancelHandler}) => {
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
 	const cancels = localStorage?.getItem("idCancelled");
@@ -146,8 +146,7 @@ const back=()=>{
 							</div>
 							<div className="flex items-center justify-between text-base lg:text-2xl my-7 lg:my-10">
 								<p className="font-medium">Quantity</p>
-								<p className="text-[#8D9296]">{cancelled?.quantity
-}</p>
+								<p className="text-[#8D9296]">{cancelled?.quantity}</p>
 							</div>
 							<div className="flex items-center justify-between text-base lg:text-2xl my-7 lg:my-10">
 								<p className="font-medium">Due date</p>

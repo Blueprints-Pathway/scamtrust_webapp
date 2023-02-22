@@ -234,7 +234,7 @@ const CustomerTransact = (props) => {
 				</div>
 			) : (
 				<div className=" ml-5 bg-white rounded-[10px] h-full md:h-full lg:h-full py-7 px-3 md:mb-[30px] md:mt-[0px] md:mx[25px] lg:mt-[10px] lg:px-[50px] lg:mx-12">
-					<div className="f items-center my-5 mx-3 md:mx-12 lg:mx-[10px]">
+					<div className="items-center my-5 mx-3 md:mx-12 lg:mx-[10px]">
 						<h1 className="text-xl lg:text-3xl text-[#262466] font-semibold lg:font-bold md:text-2xl">
 							Transactions
 						</h1>
@@ -454,11 +454,11 @@ const CustomerTransact = (props) => {
 																{item?.product_name}
 															</p>
 															<small className="location w-[50px] overflow-hidden md:w-[65px]">
-																Completed
+															   {item?.status}
 															</small>
 														</div>
 													</div>
-													<p className="text-[#262466] text-center">
+													<p className="location text-[#262466] text-center">
 														{item?.vendor?.location?.toUpperCase()}
 													</p>
 													<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">

@@ -220,6 +220,9 @@
 	font-size: 14px;
 	/* identical to box height */
 }
+.swal-button--confirm {
+    background: #2b2970;
+}
 .EditDone-card-close {
 	position: relative;
 	left: 22vw;

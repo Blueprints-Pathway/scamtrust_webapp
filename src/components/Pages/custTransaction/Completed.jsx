@@ -43,7 +43,7 @@ const back=()=>{
 	return (
 		<div>
 			<Layout>
-				<div className="trans-container bg-[#fff] rounded-3xl w-[25rem] ml-[-41px] md:w-[53rem] md:mt-[-72px] lg:w-[90rem] lg:ml-[-16.8rem] lg:mt-[-40px] lg:pb-16 py-10 pt-12 lg:pt-12 md:pt-8 md:px-12 px-5">
+				<div className="trans-container bg-[#fff] rounded-3xl w-[25rem] mx-auto md:w-[53rem] mt-[-80px] md:mt-[-72px] lg:w-[90rem] lg:ml-[-16.8rem] lg:mt-[-40px] lg:pb-16 py-10 pt-12 lg:pt-12 md:pt-8 md:px-12 px-5">
 					<h6
 						onClick={back}
 						className="flex items-center text-[#262466] text-sm mb-4 md:mb-0 lg:mb-8 lg:ml-4"
