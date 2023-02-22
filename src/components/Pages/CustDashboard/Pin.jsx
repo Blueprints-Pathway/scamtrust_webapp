@@ -10,6 +10,7 @@ function Pin({
 	amount,
 	selectedBank,
 	accountNumber,
+	userName
 }) {
 	const [pin, setPin] = useState('');
 	const [pinError, setPinError] = useState();
@@ -19,6 +20,7 @@ function Pin({
 	const submitPinHandler = async () => {
 		if(+pin.length !==4 || pin === ''){
 			setPinError('Input a Valid Pin!')
+			return;
 		}
 		const response = await withdraw();
 		console.log(response)
@@ -109,7 +111,7 @@ function Pin({
 					</button>
 				</div>
 			</div>
-			{hide && <Success setDisplay={setHide} setShow={setShow} setIsWithdrawing={setIsWithdrawing} amount = {amount} selectedBank = {selectedBank}/>}
+			{hide && <Success setDisplay={setHide} setShow={setShow} setIsWithdrawing={setIsWithdrawing} amount = {amount} selectedBank = {selectedBank} userName = {userName}/>}
 		</div>
 	);
 }

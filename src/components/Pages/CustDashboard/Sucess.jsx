@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import SecuredBy from "../../../assets/images/svg/secured-by.svg";
 import Encrypted from "../../../assets/images/svg/encrypted.svg";
 
-function Success({ setDisplay, setShow, setIsWithdrawing,amount, selectedBank }) {
+function Success({ setDisplay, setShow, setIsWithdrawing,amount, selectedBank, userName }) {
 	const navigate = useNavigate();
 	const dashboard = () => {
 		navigate("/wallet");
@@ -14,7 +14,7 @@ function Success({ setDisplay, setShow, setIsWithdrawing,amount, selectedBank })
 			<div className="w-screen h-screen fixed z-40 top-0 left-0 bg-[rgba(23,23,23,0.54)]" />
 			<div className="fixed text-colorPrimary rounded-xl top-1/2 p-6 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 lg:max-w-[700px] xl:[1000px] md:p-10 w-[90%] mx-auto bg-white">
 				<div className="flex justify-between items-center md:mb-16 border-b pb-3 border-b-[#EAEAEA]">
-					<p className="font-semibold text-xl md:text-[30px]">
+					<p className="font-bold text-xl md:text-[30px]">
 						Withdrawal details
 					</p>
 					<p
@@ -29,7 +29,7 @@ function Success({ setDisplay, setShow, setIsWithdrawing,amount, selectedBank })
 					</p>
 				</div>
 
-				<p className="font-bold text-2xl">Hello Chukwudi 👋🏽</p>
+				<p className="font-bold text-2xl">Hello {userName} 👋🏽</p>
 
 				<p className="my-12 text-xl text-center">Withdrawal Successful</p>
 
@@ -48,7 +48,11 @@ function Success({ setDisplay, setShow, setIsWithdrawing,amount, selectedBank })
 				<div className="flex mt-16 justify-between items-center">
 					<img src={SecuredBy} alt="SecuredByScamTrust" />
 					<button
-						onClick={() => dashboard()}
+						onClick={() => {
+							setDisplay(false);
+							setShow(false);
+							setIsWithdrawing(setIsWithdrawing);
+						}}
 						// onClick={setDisplay(false)}
 						className="bg-colorPrimary text-white px-7 py-3 rounded-md"
 					>

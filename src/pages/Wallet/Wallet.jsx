@@ -28,8 +28,8 @@ const Wallet = () => {
 	const [outgoingBalanceInfo, setOutgoingBalanceInfo] = useState(false);
 	const [primaryAccountBalanceInfo, primaryABalanceInfo] = useState(false);
 	const [isFunding, setIsFunding] = useState(false);
-	const [userFromBackend, setUserFromBackend] = useState(null);
-	const [details, setDetails] = useState('Loading...');
+	const [userFromBackend, setUserFromBackend] = useState('');
+	const [details, setDetails] = useState('');
 	const { user } = useSelector((state) => state.auth);
 	const [modalOpen, setModalIsOpen] = useState(false);
 	const [isWithdrawing, setIsWithdrawing] = useState(false);
@@ -131,6 +131,7 @@ const Wallet = () => {
 		      	 <WithdrawFunds
 		      	   setIsWithdrawing={setIsWithdrawing}
 				   availableBalance = {userFromBackend?.walletBalance}
+				   userName = {userFromBackend?.data?.username}
 		      	//    startWithdrawFunds={isWithdrawing}
 		     	 />			
             ) : (
@@ -145,7 +146,7 @@ const Wallet = () => {
 							<div className="flex justify-between items-center pb-1 border-b-2 border-b-[#3AB75D] mb-4">
 								<p className="font-bold text-xl 2xl:text-2xl">Account</p>
 								<p className="font-medium text-xl 2xl:text-2xl text-colorPrimary">
-									{details.username}
+									{details?.username}
 								</p>
 							</div>
 
@@ -268,7 +269,7 @@ const Wallet = () => {
 											Withdrawn so far
 										</p>
 										<p className="font-medium">
-											{details.virtual_account.account_number} {userFromBackend?.name}
+											{details?.virtual_account?.account_number} {userFromBackend?.name}
 										</p>
 									</div>
 									<button

@@ -151,7 +151,8 @@ const CustomerDashboard = () => {
       <div className='h-[100vh]'>
       {isWithdrawing ? (
         <WithdrawFunds
-        availableBalance = {details.walletBalance}
+        userName = {details?.data?.username}
+        availableBalance = {details?.walletBalance}
           setIsWithdrawing={setIsWithdrawing}
           startWithdrawFunds={isWithdrawing}
           setConfirmTransactionPin={setConfirmTransactionPin}
