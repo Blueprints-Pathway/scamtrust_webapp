@@ -1,4 +1,5 @@
 import './customerDashboard.css'
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -38,6 +39,7 @@ const CustomerDashboard = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [showFundWallet, setShowFundWallet] = useState(false);
 	const [showConfirmAccount, setShowConfirmAccont] = useState(false);
+  const [details, setDetails] = useState();
 
   const setModalIsOpenToTrue = () => {
     setModalIsOpen(true);
@@ -56,7 +58,31 @@ const CustomerDashboard = () => {
   const handleConfirmAccount = () => {
     setShowConfirmAccont((prevState) => !prevState)
   }
+	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
+  useEffect(() => {
+		(async () => {
+			try {
+				const API_URL = `https://scamtrust.herokuapp.com/api/v1/user/getdetails`;
+				const config = {
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${user_details?.data?.access_token}`,
+					},
+				};
 
+				const data = await axios.get(API_URL, config);
+
+				console.log(data?.data, "user data customer dashboard");
+				setDetails(data?.data);
+				// console.log(values, "values");
+				// return response;
+			} catch (error) {
+				console.log(error, "error");
+			}
+		})();
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
   const customStyles = {
 		content: {
 			width: "50vh",
@@ -125,6 +151,7 @@ const CustomerDashboard = () => {
       <div className='h-[100vh]'>
       {isWithdrawing ? (
         <WithdrawFunds
+        availableBalance = {details.walletBalance}
           setIsWithdrawing={setIsWithdrawing}
           startWithdrawFunds={isWithdrawing}
           setConfirmTransactionPin={setConfirmTransactionPin}

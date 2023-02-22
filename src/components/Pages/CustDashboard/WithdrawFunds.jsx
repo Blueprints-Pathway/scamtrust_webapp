@@ -23,12 +23,15 @@ const withdrawSchema = yup.object().shape({
 });
 
 const WithdrawFunds = (props) => {
-	const [amount, setAmount] = useState();
-	const [accountNumber, setAccountNumber] = useState();
+	const [amount, setAmount] = useState('');
+	const [accountNumber, setAccountNumber] = useState('');
+	const [bankName, setBankName] = useState('');
 	const [bank, setBank] = useState();
+	const [amountError, setAmountError] = useState(false);
+	const [accountNumberError, setAccountNumberError] = useState(false);
 	const [selectedBank, setSelectedBank] = useState([]);
 	const [show, setShow] = useState(false);
-	const { startWithdrawFunds, setIsWithdrawing } = props;
+	const { startWithdrawFunds, setIsWithdrawing, availableBalance } = props;
 
 	const {
 		register,
@@ -43,7 +46,37 @@ const WithdrawFunds = (props) => {
 	const closeWithdraw = () => {
 		setIsWithdrawing(false);
 	};
+	const withDrawFunds = () => {
+		if(+amount === null || amount === ''){
+			setAmountError('Input a valid digit!')
+			console.log('valid digit 1')
+			return;
 
+		}
+		if (+amount <= 0) {
+			setAmountError('Amount must be greater than zero!');
+			console.log('valid digit 2')
+			return;
+		}
+		if (+amount > availableBalance) {
+			setAmountError('Amount Exceeded Your Wallet Balance');
+			console.log('valid digit 2')
+			return;
+		}
+		if(+accountNumber === null || accountNumber === ''){
+			setAccountNumberError('Input a valid digit!')
+			console.log('valid digit 2')
+			return;
+
+		}
+		if(+accountNumber.length !== 10){
+			setAccountNumberError('Input a valid Account Number!')
+			console.log('valid digit 2')
+			return;
+
+		}
+		setShow(true);
+	}
 
 	useEffect(() => {
 		const details = async () => {
@@ -94,16 +127,16 @@ const WithdrawFunds = (props) => {
 						<input
 							{...register("amount")}
 							value={amount}
-							onChange={(e) => setAmount(e.target.value)}
+							onChange={(e) =>{ setAmount(e.target.value); setAmountError(false)}}
 							name="amount"
 							type="number"
 							placeholder="Enter amount"
 							className={`block placeholder:text-[#E5E7E9] ${
-								errors.amount ? "border-b-red-600" : ""
+								amountError ? "border-b-red-600" : ""
 							} focus:outline-none w-full p-2 border-b border-b-[#C0C0C0]`}
 						/>
-						{errors.amount && (
-							<p className="text-red-600">{errors.amount.message}</p>
+						{amountError && (
+							<p className="text-red-600">{amountError}</p>
 						)}
 					</div>
 					<div className="mb-11 md:mb-16">
@@ -113,16 +146,16 @@ const WithdrawFunds = (props) => {
 						<input
 							{...register("accountNumber")}
 							value={accountNumber}
-							onChange={(e) => setAccountNumber(e.target.value)}
+							onChange={(e) => {setAccountNumber(e.target.value); setAccountNumberError(false) }}
 							name="amount"
 							type="number"
 							placeholder="Enter Account Number"
 							className={`block placeholder:text-[#E5E7E9] ${
-								errors.accountNumber ? "border-b-red-600" : ""
+								accountNumberError ? "border-b-red-600" : ""
 							} focus:outline-none w-full p-2 border-b border-b-[#C0C0C0]`}
 						/>
-						{errors.accountNumber && (
-							<p className="text-red-600">{errors.accountNumber.message}</p>
+						{accountNumberError && (
+							<p className="text-red-600">{accountNumberError}</p>
 						)}
 					</div>
 					<div className="mb-32 md:mb-40 relative">
@@ -130,21 +163,22 @@ const WithdrawFunds = (props) => {
 							Destinations account
 						</label>
 						<select
-							onChange={(e) => setSelectedBank(e.target.value)}
+							onChange={(e) =>{ setSelectedBank(e.target.value); }}
 							className={`block ${
 								errors.account ? "border-red-600" : ""
 							} focus:outline-none border border-colorPrimary rounded-md w-full px-3 py-1.5 text-gray-700`}
 						>
 							{bank?.map(
-								(allbannk) => (
-									console.log(selectedBank, "all bank"),
-									(
-										<option value={allbannk?.id} id={allbannk.id}>
+								(allbannk, index) => {
+									// console.log(selectedBank, "all bank");
+									// console.log(allbannk[index].name);
+									return (
+										<option value={allbannk?.name} id={allbannk.name} >
 											{allbannk?.name}
-										</option>
-									)
+										</option>)
+									}
 								)
-							)}
+								}
 						</select>
 
 						{errors.account && (
@@ -156,9 +190,9 @@ const WithdrawFunds = (props) => {
 						<img src={SecuredBy} alt="SecuredByScamTrust" />
 						<button
 							type="submit"
-							onClick={() => {
-								setShow(true);
-							}}
+							onClick={
+								withDrawFunds
+							}
 							className="bg-colorPrimary text-white px-7 py-3 rounded-md"
 						>
 							Continue

@@ -1,23 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+/** @format */
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
 
-.transactions-card{
-    background: #FFFFFF;
-    box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
-    border-radius: 15px;
-    min-height: 40rem;
-    /* max-height: 40rem;  */
-    padding: 0.5rem;
-    margin-top: 2rem;
-    min-width: 30rem;
-    width: 80vw;
-    position: fixed;
-    top: 50%;
-    left: 58%;
-    transform: translate(-50%, -50%);
-  }
+.transactions-card {
+	background: #ffffff;
+	box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
+	border-radius: 15px;
+	min-height: 40rem;
+	/* max-height: 40rem;  */
+	padding: 0.5rem;
+	margin-top: 2rem;
+	min-width: 30rem;
+	width: 80vw;
+	position: fixed;
+	top: 50%;
+	left: 58%;
+	transform: translate(-50%, -50%);
+}
 
 /* .Transactions {
     padding: 1rem;
@@ -27,258 +28,241 @@
     
   }
    */
-  .Transactions .heading {
-    display: flex;
-    align-items: left;
-    justify-content: space-between;
-    font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  cursor: pointer;
-  color: #232164;
-  }
-  
-  .Transactions .Category {
-    display: flex;
-    margin-bottom: 1.5rem;
-    cursor: pointer;
-    width: 75vw;
-    margin-left: 2vw;
-  }
-  
- 
-  
-  .Transactions .Category h6 {
-    text-align: left;
-    /* width: 100%; */
-  transform: rotate(0.08deg);
-    border-bottom: 2px solid #CFD8DC;
-    padding-bottom: 0.5rem;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    /* or 253% */
-    margin-top: 1rem;
-    margin-left: 0vw;
-    color: #A6A6A6;
-    
-  }
-  
-  
-  
-  .Transactions .Category .active {
-    border-color: #3AB75D;
-  
-    font-family: 'Lato';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  /* or 253% */
-  
-  
-  color: #023A81;
-  }
-  .Transactions .Transaction1 .Transaction-body{
-    width: 55vw;
-  }
-  .Transactions .Transaction1 {
-    display: flex;
-    gap: 3rem;
-    align-items: center;
-  
-    /* margin-top: 1rem; */
-  }
-  
-  .Transactions .Transaction1 p {
-    font-size: 14px;
-  }
-  
-  .Transactions .Transaction-body .Transaction-body-profile {
-    position: relative;
-    overflow: visible;
-    display: flex;
-  }
-  
-  .Transactions .Transaction-body .Transaction-body-profile img {
-    border-radius: 5px;
-    width: 2rem;
-    height: 1.6rem; 
-    padding-right: 0.5rem;
-  }
-  .border{
-    background: #FFFFFF;
-border: 1px solid #D9D8D8;
-border-radius: 15px;
-padding: 5px;
-  }
-  /* .pushDown{
+.Transactions .heading {
+	display: flex;
+	align-items: left;
+	justify-content: space-between;
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	cursor: pointer;
+	color: #232164;
+}
+
+.Transactions .Category {
+	display: flex;
+	margin-bottom: 1.5rem;
+	cursor: pointer;
+	width: 75vw;
+	margin-left: 2vw;
+}
+
+.Transactions .Category h6 {
+	text-align: left;
+	/* width: 100%; */
+	transform: rotate(0.08deg);
+	border-bottom: 2px solid #cfd8dc;
+	padding-bottom: 0.5rem;
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	/* or 253% */
+	margin-top: 1rem;
+	margin-left: 0vw;
+	color: #a6a6a6;
+}
+
+.Transactions .Category .active {
+	border-color: #3ab75d;
+
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	/* or 253% */
+
+	color: #023a81;
+}
+.Transactions .Transaction1 .Transaction-body {
+	width: 55vw;
+}
+.Transactions .Transaction1 {
+	display: flex;
+	gap: 3rem;
+	align-items: center;
+
+	/* margin-top: 1rem; */
+}
+
+.Transactions .Transaction1 p {
+	font-size: 14px;
+}
+
+.Transactions .Transaction-body .Transaction-body-profile {
+	position: relative;
+	overflow: visible;
+	display: flex;
+}
+
+.Transactions .Transaction-body .Transaction-body-profile img {
+	border-radius: 5px;
+	width: 2rem;
+	height: 1.6rem;
+	padding-right: 0.5rem;
+}
+.border {
+	background: #ffffff;
+	border: 1px solid #d9d8d8;
+	border-radius: 15px;
+	padding: 5px;
+}
+/* .pushDown{
     margin-top: 1rem;
   } */
-  .pushDown1{
-    margin-top: 0.7rem;
-  }
-  .Transaction-details1{
-    font-family: 'Lato';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
- text-align: center;
-  width: 100%;
- 
- align-self: center;
-  color: #232164;
-  }
-  .Transaction-details2{
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    /* or 284% */
-    width: 15%;
-    
-    color: #232164;
-    background: #EAEAEA;
-border-radius: 5px;
-cursor: pointer;
-  }
-  .Transaction-description{
-    font-family: 'Karla';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  /* or 325% */
-  
-  
-  color: #A6A6A6;
-  }
-  .Transactions .Transaction1 .Transaction-details{
-    width: 100%;
-    }
+.pushDown1 {
+	margin-top: 0.7rem;
+}
+.Transaction-details1 {
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	/* text-align: center; */
+	width: 100%;
 
-    @media screen and (max-width: 1240px) {
-    .transactions-card{
-      top: 50%;
-      left: 53%;
-      transform: translate(-50%, -50%);
-      
-    }
-  }
-  @media screen and (max-width: 860px) {
-   
-    .Transactions .Category{
-      width: 70vw;
-      margin-left: 3vw;
-    }
-    .Transactions .Category h6 {
-        text-align: left;
-        
-      transform: rotate(0.08deg);
-        border-bottom: 4px solid #CFD8DC;
-        padding-bottom: 0.5rem;
-        font-family: 'Lato';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 11px;
-        /* or 253% */
-        
-        
-        color: #A6A6A6;
-        
-      }
-      
-      
-      
-      .Transactions .Category .active {
-        border-color: #3AB75D;
-      
-        font-family: 'Lato';
-      font-style: normal;
-      font-weight: 700;
-      font-size: 11px;
-      /* or 253% */
-      
-      
-      color: #023A81;
-      }
-      .Transactions .Transaction1 .Transaction-body{
-        width: 100%;
-      }
-      .Transactions .Transaction1 {
-        display: flex;
-        gap: 0rem;
-        align-items: start;
-        margin-bottom: 0rem;
-        margin-top: 1rem;
-      }
-      
-      .Transactions .Transaction1 p {
-        font-size: 10px;
-      }
-      
-      .Transactions .Transaction-body .Transaction-body-profile {
-        position: relative;
-        overflow: visible;
-        display: flex;
-      }
-      
-      .Transactions .Transaction-body .Transaction-body-profile img {
-        border-radius: 5px;
-        width: 1.5rem;
-        height: 1.2rem; 
-        padding-right: 0.5rem;
-      }
-      .Transaction-details1{
-        font-family: 'Lato';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 11px;
-      /* or 284% */
-      
-      
-      color: #232164;
-      }
-      
-      .Transaction-description1{
-        font-family: 'Karla';
-      font-style: normal;
-      font-weight: 600;
-      font-size: 11px;
-      /* or 325% */
-      
-      
-      color: #A6A6A6;
-      }
-      .Transaction-details2{
-        width: 22%;
-      }
-      .Transactions .Transaction1 .Transaction-details{
-        width: 100%;
-        }
- .pushDown3{
-  margin-top: 1rem;
- }
-  }
-  @media screen and (max-width: 540px) {
-  .transactions-card{
-    margin-left: 3vw;
-      
-    }
-  }
-  @media screen and (max-width: 480px) {
- .transactions-card-cover{
-  position: fixed;
-  top: 50%;
-  left: 54%;
-  transform: translate(-50%, -50%);
-  transform: scale(0.8);
-  }
-  .Transactions .Category{
-    width: 80vw;
-    margin-left: 3vw;
-  }
+	align-self: center;
+	color: #232164;
+}
+.Transaction-details2 {
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	/* or 284% */
+	width: 15%;
+
+	color: #232164;
+	background: #eaeaea;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.Transaction-description {
+	font-family: "Karla";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	/* or 325% */
+
+	color: #a6a6a6;
+}
+.Transactions .Transaction1 .Transaction-details {
+	width: 100%;
+}
+
+@media screen and (max-width: 1240px) {
+	.transactions-card {
+		top: 50%;
+		left: 53%;
+		transform: translate(-50%, -50%);
+	}
+}
+@media screen and (max-width: 860px) {
+	.Transactions .Category {
+		width: 70vw;
+		margin-left: 3vw;
+	}
+	.Transactions .Category h6 {
+		text-align: left;
+
+		transform: rotate(0.08deg);
+		border-bottom: 4px solid #cfd8dc;
+		padding-bottom: 0.5rem;
+		font-family: "Lato";
+		font-style: normal;
+		font-weight: 700;
+		font-size: 11px;
+		/* or 253% */
+
+		color: #a6a6a6;
+	}
+
+	.Transactions .Category .active {
+		border-color: #3ab75d;
+
+		font-family: "Lato";
+		font-style: normal;
+		font-weight: 700;
+		font-size: 11px;
+		/* or 253% */
+
+		color: #023a81;
+	}
+	.Transactions .Transaction1 .Transaction-body {
+		width: 100%;
+	}
+	.Transactions .Transaction1 {
+		display: flex;
+		gap: 0rem;
+		align-items: start;
+		margin-bottom: 0rem;
+		margin-top: 1rem;
+	}
+
+	.Transactions .Transaction1 p {
+		font-size: 10px;
+	}
+
+	.Transactions .Transaction-body .Transaction-body-profile {
+		position: relative;
+		overflow: visible;
+		display: flex;
+	}
+
+	.Transactions .Transaction-body .Transaction-body-profile img {
+		border-radius: 5px;
+		width: 1.5rem;
+		height: 1.2rem;
+		padding-right: 0.5rem;
+	}
+	.Transaction-details1 {
+		font-family: "Lato";
+		font-style: normal;
+		font-weight: 500;
+		font-size: 11px;
+		/* or 284% */
+
+		color: #232164;
+	}
+
+	.Transaction-description1 {
+		font-family: "Karla";
+		font-style: normal;
+		font-weight: 600;
+		font-size: 11px;
+		/* or 325% */
+
+		color: #a6a6a6;
+	}
+	.Transaction-details2 {
+		width: 22%;
+	}
+	.Transactions .Transaction1 .Transaction-details {
+		width: 100%;
+	}
+	.pushDown3 {
+		margin-top: 1rem;
+	}
+}
+@media screen and (max-width: 540px) {
+	.transactions-card {
+		margin-left: 3vw;
+	}
+}
+@media screen and (max-width: 480px) {
+	.transactions-card-cover {
+		position: fixed;
+		top: 50%;
+		left: 54%;
+		transform: translate(-50%, -50%);
+		transform: scale(0.8);
+	}
+	.Transactions .Category {
+		width: 80vw;
+		margin-left: 3vw;
+	}
 }
 svg.star-svg {
-  display: inline;
+	display: inline;
 }
