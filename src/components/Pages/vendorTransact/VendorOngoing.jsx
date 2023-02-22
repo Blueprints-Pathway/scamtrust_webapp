@@ -206,7 +206,7 @@ const VendorOngoing = ({showOngoingHandler}) => {
 						</div>
 					</div>
 
-					<div className="flex items-center mt-10 mx-5 md:mx-36 lg:mx-56 md:mt-12 lg:mt-24">
+					<div className="flex justify-center mt-10 mx-5 md:mx-36 lg:mx-56 md:mt-12 lg:mt-24">
 						<button
 							onClick={cancelled}
 							className="text-black bg-[#EDEDED] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-10 lg:px-32 md:px-12"

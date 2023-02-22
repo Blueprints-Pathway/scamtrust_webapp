@@ -631,7 +631,7 @@ const VendorTransaction = (props) => {
 											/>
 										</div>
 									) : (
-										<div>
+										<div className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center">
 											{outgoing?.map((newout) => {
 												return (
 													<div

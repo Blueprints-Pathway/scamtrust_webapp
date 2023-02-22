@@ -13,12 +13,12 @@ import Eye from "../../assets/images/svg/eye.svg";
 import payment from "../../assets/payment-img.png";
 import faq from "../../assets/conversation-img.png";
 import chat from "../../assets/chat-img.png";
-import moment from "moment";
+
 import trophy2 from "../../images/trophy2 (3).png";
 import trophy from "../../images/trophy2 (1).png";
 import scamTrustLogo from "../../images/Group114(1).png";
 import Chart from "react-apexcharts";
-import { TransactionItems } from "./transactionItems";
+
 import SideBar from "../SideBar/SideBar";
 import Layout from "../../components/Layout/Layout";
 import axios from "axios";
@@ -36,7 +36,7 @@ function DashBoardVendor() {
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 	const [copy, setCopy] = useState(false);
 	const [isWithdrawing, setIsWithdrawing] = useState(false);
-	const [wallet, setWallet] = useState();
+	const [allData, setAllData] = useState();
 	const [outgoing, setOutGoing] = useState();
 	const [completeData, setCompleteData] = useState();
 	const [cancelData, setCancelData] = useState();
@@ -223,7 +223,8 @@ function DashBoardVendor() {
 				};
 
 				const data = await axios.get(API_URL, config);
-				console.log(data?.data?.data, "data");
+				setAllData(data?.data?.data)
+				console.log(data?.data?.data, "all data");
 				const mappeddata = data?.data?.data?.map((data) => data);
 				const datas = mappeddata?.filter(
 					(filtered) => filtered?.status === "PENDING VENDOR ACCEPTANCE"
@@ -376,7 +377,7 @@ function DashBoardVendor() {
 										</h1>
 										<div className="card1-title">
 											<p className="progress-text-left">Ratings</p>
-											<p className="progress-text-right">200 transactions</p>
+											<p className="progress-text-right">{allData?.length} transactions</p>
 										</div>
 										<div className="progress-bar">
 											<div className="progress"></div>
@@ -389,7 +390,7 @@ function DashBoardVendor() {
 										/>
 										<div className="left-top-card2">
 											<FontAwesomeIcon icon={faBook} className="book" />
-											10 done
+											{done?.length} done
 										</div>
 									</div>
 								</div>
@@ -701,7 +702,7 @@ function DashBoardVendor() {
 													/>
 												</div>
 											) : (
-												<div>
+												<div className="Transaction-body">
 													{outgoing?.map((newout) => {
 			
 														return (
@@ -744,9 +745,7 @@ function DashBoardVendor() {
 																		{newout?.amount}
 																	</p>
 																	<p className="text-[#262466] text-center">
-																		{moment(newout?.created_at).format(
-																			"DD/MM/YYYY"
-																		)}
+																	{newout?.due_date}
 																	</p>
 																</div>
 															</div>
@@ -804,15 +803,13 @@ function DashBoardVendor() {
 																	</div>
 																</div>
 																<p className="text-[#262466] text-center">
-																	{newcancel?.vendor?.location?.toUpperCase()}
+																{newcancel?.customer?.name || newcancel?.customer?.username}
 																</p>
 																<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
 																	{newcancel?.amount}
 																</p>
 																<p className="text-[#262466] text-center">
-																	{moment(newcancel?.created_at).format(
-																		"DD/MM/YYYY"
-																	)}
+																{newcancel?.due_date}
 																</p>
 															</div>
 														</div>
@@ -837,7 +834,7 @@ function DashBoardVendor() {
 										) : (
 											<div>
 												{completeData?.map((completeS) => {
-													{console.log(completeS,"hi")}
+													
 													return (
 														<div
 															onClick={() => {
@@ -878,9 +875,7 @@ function DashBoardVendor() {
 																	{completeS?.amount}
 																</p>
 																<p className="text-[#262466] text-center">
-																	{moment(completeS?.created_at).format(
-																		"DD/MM/YYYY"
-																	)}
+																	{completeS?.due_date}
 																</p>
 															</div>
 														</div>
