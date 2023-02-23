@@ -348,6 +348,7 @@ function DashBoardVendor() {
 		<Layout>
 			{isWithdrawing ? (
 				<WithdrawFunds setIsWithdrawing={setIsWithdrawing}
+				userName =  {walletInfo?.data?.username}
 				availableBalance  = {walletInfo['walletBalance']} />
 			) : (
 				<></>
