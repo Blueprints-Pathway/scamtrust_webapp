@@ -9,6 +9,7 @@ import axios from "axios";
 import SecuredBy from "../../../assets/images/svg/secured-by.svg";
 import Pin from "./Pin";
 import { useNavigate } from "react-router-dom";
+import BankSelect from "./BankSelect";
 
 const withdrawSchema = yup.object().shape({
 	amount: yup
@@ -159,7 +160,7 @@ const WithdrawFunds = (props) => {
 							<p className="text-red-600">{accountNumberError}</p>
 						)}
 					</div>
-					<div className="mb-32 md:mb-40 relative">
+					{/* <div className="mb-32 md:mb-40 relative">
 						<label className="text-xl mb-2 md:text-3xl block" htmlFor="amount">
 							Destinations account
 						</label>
@@ -185,7 +186,7 @@ const WithdrawFunds = (props) => {
 						{errors.account && (
 							<p className="text-red-600 mt-2">{errors.account.message}</p>
 						)}
-					</div>
+					</div> */}
 
 					<div className="flex justify-between items-center">
 						<img src={SecuredBy} alt="SecuredByScamTrust" />
@@ -202,7 +203,7 @@ const WithdrawFunds = (props) => {
 				</div>
 			)}
 			{show && (
-				<Pin
+				<BankSelect
 					selectedBank={selectedBank}
 					setShow={setShow}
 					setIsWithdrawing={setIsWithdrawing}
