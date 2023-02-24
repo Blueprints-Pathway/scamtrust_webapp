@@ -801,7 +801,7 @@ const CustomerDashboard = (props) => {
 
 			                        {/* FAQ AND CHAT BUTTON */}
 
-					<div className="flex justify-center items-center bg-white mt-7 py-14 flex-col md:float-left md:mt-[-46rem] lg:mt-[-33rem] md:mx-0 px-[45px] md:px-11 lg:px-[20px] lg:ml-1 lg:flex-row rounded-3xl text-colorPrimary">
+					<div className="flex justify-center items-center bg-white mt-7 py-14 flex-col md:float-left md:mt-[-25rem] lg:mt-[-27rem] md:mx-0 ml-4 px-[40px] md:px-11 lg:px-[20px] lg:ml-1 lg:flex-row rounded-3xl text-colorPrimary">
 							<div 
 							onClick={() => navigate('/faq')}
 							className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5">

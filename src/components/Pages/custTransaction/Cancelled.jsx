@@ -6,12 +6,15 @@ import Logo from "../../../assets/images/logo.svg";
 import { BsArrowLeft } from "react-icons/bs";
 import axios from "axios";
 import moment from "moment";
+import { useNavigate } from "react-router-dom";
 
 const Cancelled = ({showCancelHandler}) => {
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
 	const cancels = localStorage?.getItem("idCancelled");
    
 	const [cancelled, setCancelled] = useState();
+
+	const navigate = useNavigate();
 	
 const back=()=>{
     showCancelHandler()
@@ -42,7 +45,9 @@ const back=()=>{
 	return (
 		<div>
 			<Layout>
-				<div className="trans-container bg-[#fff] rounded-3xl w-[25rem] ml-[-41px] md:w-[53rem] md:mt-[-72px] lg:w-[90rem] lg:ml-[-16.8rem] lg:mt-[-40px] lg:pb-16 py-10 pt-12 lg:pt-12 md:pt-8 md:px-12 px-5">
+					<div className="flex justify-center mx-[-50px] items-start">
+				<div className="bg-[#fff] rounded-3xl md:w-[53rem] w-[22rem] ml-4 lg:ml-[-185px] mt-[-20px] md:mt-[-72px] lg:w-[90rem] lg:mt-[-75px] lg:pb-16 py-10 pt-12 lg:pt-12 md:pt-8 md:px-12 px-5">
+					
 					<h6
 						onClick={back}
 						className="flex items-center text-[#262466] text-sm mb-4 md:mb-0 lg:mb-8 lg:ml-4"
@@ -172,6 +177,8 @@ const back=()=>{
 						<h1 className="text-sm text-[#8D9296] mx-1">Secured by</h1>
 						<img className="w-24 mx-1" src={Logo} alt="Scamtrust logo" />
 					</div>
+				</div>
+
 				</div>
 			</Layout>
 		</div>

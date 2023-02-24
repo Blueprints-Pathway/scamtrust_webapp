@@ -11,8 +11,8 @@ const AwaitingApproval = () => {
   return (
     <div>
         <Layout>
-            <div className='trans-container bg-[#fff] rounded-3xl w-[25rem] ml-[-41px] md:w-[53rem] md:mt-[-72px] lg:w-[90rem] lg:ml-[-16.8rem] lg:mt-[-40px] lg:pb-16 py-10 pt-12 lg:pt-12 md:pt-8 md:px-12 px-5'>
-
+        <div className="flex justify-center mx-[-120px] items-start">
+				<div className="bg-[#fff] rounded-3xl md:w-[53rem] w-[22rem] mr-9 lg:ml-[-185px] mt-[-80px] md:mt-[-72px] lg:w-[90rem] lg:mt-[-75px] lg:pb-16 py-10 pt-12 lg:pt-12 md:pt-8 md:px-12 px-5">
                 <h6 onClick={() => navigate(-1)}
                 className='flex items-center text-[#262466] text-sm mb-4 md:mb-0 lg:mb-8 lg:ml-4'>
                     <BsArrowLeft className='text-lg lg:text-4xl' /><span className='mx-1 lg:text-2xl lg:mb-1 lg:font-semibold'>Back</span>
@@ -112,6 +112,8 @@ const AwaitingApproval = () => {
                     <h1 className='text-sm text-[#8D9296] mx-1'>Secured by</h1>
                     <img className='w-24 mx-1' src={Logo} alt="Scamtrust logo" />
                 </div>
+            </div>
+
             </div>
         </Layout>
     </div>

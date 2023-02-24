@@ -44,6 +44,7 @@ const back=()=>{
 			<Layout>
 				<div className="flex justify-center mx-[-120px] items-start">
 				<div className="bg-[#fff] rounded-3xl md:w-[53rem] w-[22rem] mr-9 lg:ml-[-185px] mt-[-80px] md:mt-[-72px] lg:w-[90rem] lg:mt-[-75px] lg:pb-16 py-10 pt-12 lg:pt-12 md:pt-8 md:px-12 px-5">
+					
 					<h6
 						onClick={back}
 						className="flex items-center text-[#262466] text-sm mb-4 md:mb-0 lg:mb-8 lg:ml-4"

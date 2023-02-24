@@ -46,7 +46,7 @@ const CancellationReason = () => {
   return (
     <div>
         <Layout>
-            <div className='border-[1px] bg-white rounded-xl lg:rounded-3xl mt-40 ml-4 pt-5 lg:pt-12 pb-7 lg:pb-20 px-8 lg:mx-12 lg:px-28'>
+            <div className='border-[1px] bg-white rounded-xl lg:rounded-3xl mt-16 ml-4 pt-5 lg:pt-12 pb-7 lg:pb-20 px-8 lg:mx-12 lg:px-28'>
                 <p onClick={() => navigate(-1)}
                 className='flex items-center justify-start text-[#002257] text-sm lg:text-xl font-semibold'>
                     <BsArrowLeft className='text-xl lg:text-2xl mr-1'/>Back
