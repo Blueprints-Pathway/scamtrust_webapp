@@ -61,6 +61,27 @@ const VendorOngoing = ({showOngoingHandler}) => {
 			console.log(error, "errorss");
 		}
 	};
+	const Accepted = async () => {
+		showOngoingHandler()
+		try {
+			const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/vendor/approve/${id}`;
+			const config = {
+				headers: {
+					"Content-Type": "application/json",
+					Authorization: `Bearer ${user_details?.data?.access_token}`,
+				},
+			};
+
+			const data = await axios.get(API_URL, config);
+
+			console.log(data, "trans done");
+
+			// console.log(values, "values");
+			// return response;
+		} catch (error) {
+			console.log(error, "errorss");
+		}
+	};
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 
 	function openModal() {
@@ -213,12 +234,12 @@ const VendorOngoing = ({showOngoingHandler}) => {
 						>
 							Cancel
 						</button>
-						{/* <button
-							onClick={() => accepted()}
+						<button
+							onClick={Accepted}
 							className="text-[#ffff] bg-[#3AB75D] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-7 lg:px-28"
 						>
 							Complete
-						</button> */}
+						</button>
 
 						{/* CANCEL TRANSACTION MODAL  */}
 						<Modal
