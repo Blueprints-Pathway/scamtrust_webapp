@@ -347,7 +347,7 @@ const VendorTransaction = (props) => {
 											console.log(active, "active");
 										}}
 									>
-										Out-going
+										On-going
 									</h6>
 								)}
 								{select3 ? (
