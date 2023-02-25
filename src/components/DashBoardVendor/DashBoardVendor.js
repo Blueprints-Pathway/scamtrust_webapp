@@ -13,12 +13,10 @@ import Eye from "../../assets/images/svg/eye.svg";
 import payment from "../../assets/payment-img.png";
 import faq from "../../assets/conversation-img.png";
 import chat from "../../assets/chat-img.png";
-
 import trophy2 from "../../images/trophy2 (3).png";
 import trophy from "../../images/trophy2 (1).png";
 import scamTrustLogo from "../../images/Group114(1).png";
 import Chart from "react-apexcharts";
-
 import SideBar from "../SideBar/SideBar";
 import Layout from "../../components/Layout/Layout";
 import axios from "axios";
@@ -32,6 +30,7 @@ import WithdrawFunds from "../Pages/CustDashboard/WithdrawFunds";
 import Ongoings from "../Pages/custTransaction/Ongoing";
 import Completeds from "../Pages/custTransaction/Completed";
 import Cancelleds from "../Pages/custTransaction/Cancelled";
+
 function DashBoardVendor() {
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 	const [copy, setCopy] = useState(false);
@@ -551,7 +550,7 @@ function DashBoardVendor() {
 														<div className="Transaction-body">
 															<div className="Transaction-body-profile">
 																<img
-																	className="TransactionStatusimg w-56 mt-3 md:mt-1 lg:w-60 lg:h-60"
+																	className="TransactionStatusimg w-56 md:mt-1 lg:w-60 lg:h-60"
 																	src={item?.customer?.image_url}
 																	alt="Scam Trust"
 																/>
@@ -560,7 +559,7 @@ function DashBoardVendor() {
 																		{item?.product_name
 }
 																	</h5>
-																	<p className="Transaction-description">
+																	<p className="Transaction-description text-xs font-thin leading-3">
 																		{item?.status}
 																	</p>
 																</div>

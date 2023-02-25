@@ -483,11 +483,9 @@
 }
 
 .Transaction-description {
-	font-family: "Karla";
-	font-style: normal;
-	font-weight: 500;
+	/* font-family: "Karla"; */
+	font-weight: 100;
 	font-size: 12px;
-	/* or 325% */
 	color: #a6a6a6;
 }
 .transactions .Transaction .Transaction-details {

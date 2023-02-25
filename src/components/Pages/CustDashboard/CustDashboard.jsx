@@ -267,6 +267,7 @@ const CustomerDashboard = (props) => {
 				showConfirmAccount={showConfirmAccount}
 				setShowConfirmAccont={setShowConfirmAccont}
 			/>
+			
 
 			<div className="flex w-full px-0 flex-col md:flex-row gap-7 justify-between">
 				<div className="min-w-[260px] mx-2 w-[100%] md:w-[70%] 2xl:w-[685px]">
@@ -363,7 +364,7 @@ const CustomerDashboard = (props) => {
 				</div>
 
 				{/* TRANSACTIONS PAGE */}
-				<div className="w-full  h-[100%] overflow-y-scroll mt-[-20px] md:mt-0 mx-2 py-7 lg:py-8 px-7 lg:px-12 bg-white rounded-[24px]">
+				<div className="w-full overflow-y-scroll overflow-x-scroll  h-[90vh] mt-[-20px] md:mt-0 mx-2 py-7 lg:py-8 px-7 lg:px-12 bg-white rounded-[24px]">
 				<div
 						className="flex justify-end mb-5"
 						onClick={onCreateTransactionClicked}
@@ -414,7 +415,7 @@ const CustomerDashboard = (props) => {
 					
 					<div />
 
-					<div className=" overflow-x-auto mx-auto h-[57rem]">
+					<div className="mx-0 h-[57rem]">
 						<table className="w-full  justify-between text-left">
 							
 
@@ -800,7 +801,7 @@ const CustomerDashboard = (props) => {
 
 			                        {/* FAQ AND CHAT BUTTON */}
 
-					<div className="flex justify-center items-center bg-white mt-7 py-14 flex-col md:float-left md:mt-[-46rem] lg:mt-[-33rem] md:mx-0 px-[45px] md:px-11 lg:px-[20px] lg:ml-1 lg:flex-row rounded-3xl text-colorPrimary">
+					<div className="flex justify-center items-center bg-white mt-7 py-14 flex-col md:float-left md:mt-[-25rem] lg:mt-[-28rem] md:mx-0 ml-4 px-[40px] md:px-11 lg:px-[20px] lg:ml-1 lg:flex-row rounded-3xl text-colorPrimary">
 							<div 
 							onClick={() => navigate('/faq')}
 							className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5">
