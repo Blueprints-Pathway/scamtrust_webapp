@@ -336,7 +336,7 @@ const VendorTransaction = (props) => {
 										}}
 										className="Selection active"
 									>
-										Out-going
+										On-going
 									</h6>
 								) : (
 									<h6
@@ -347,7 +347,7 @@ const VendorTransaction = (props) => {
 											console.log(active, "active");
 										}}
 									>
-										Out-going
+										On-going
 									</h6>
 								)}
 								{select3 ? (
@@ -662,7 +662,7 @@ const VendorTransaction = (props) => {
 																		{newout?.product_name}
 																	</p>
 																	<small className="block whitespace-nowrap w-[50px]   md:w-[65px]">
-																		On-going
+																	{newout?.status}
 																	</small>
 																</div>
 															</div>

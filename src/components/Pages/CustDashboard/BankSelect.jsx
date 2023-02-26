@@ -2,6 +2,7 @@ import React from 'react';
 import Pin from './Pin';
 import { useEffect, useState } from 'react';
 import axios from "axios";
+import { FcSearch } from 'react-icons/fc'
 
 const BankSelect = (props) => {
     const [pin, setPin] = useState('');
@@ -15,6 +16,7 @@ const BankSelect = (props) => {
     const [bankList, setBankList] = useState([]);
     const {setIsWithdrawing,amount,selectedBank,accountNumber,userName} = props;
     
+
     useEffect(() => {
             const details = async () => {
                 try {
@@ -75,23 +77,25 @@ const BankSelect = (props) => {
 				</div>
 
 				<div className="mb-11 md:mb-16">
-					<label className="text-xl md:text-3xl block" htmlFor="amount">
+					<label className="text-xl text-center mt-[-20px] mb-4 font-semibold md:text-3xl block" htmlFor="amount">
 						Select A Bank From the Dropdown
 					</label>
 					<div className="mb-32 md:mb-40 relative">
                     <div class="flex justify-center">
   <div class="mb-3 xl:w-96">
-    <div class="relative mb-4 flex w-full flex-wrap items-stretch">
+    <div class="mb-4 flex items-center justify-center ml-5">
       <input
         onChange={searchHandler}
         type="search"
-        class="relative m-0 block w-[1%] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
-        placeholder="Search"
+        class="relative m-0 block w-80 min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
+        placeholder="search"
         aria-label="Search"
-        aria-describedby="button-addon2" />
+        aria-describedby="button-addon2">
+		</input>
       <span
         class="input-group-text flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal text-neutral-700 dark:text-neutral-200"
-        id="basic-addon2">
+        id="basic-addon2"> 
+
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
@@ -102,14 +106,15 @@ const BankSelect = (props) => {
             d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
             clip-rule="evenodd" />
         </svg>
+
       </span>
     </div>
   </div>
 </div>
 
-<div class="flex-column justify-center overflow-y-scroll scroll w-156 h-[300px] ">
+<div class="flex-column justify-center items-center overflow-y-scroll scroll w-156 h-[300px] ">
   {/* <div class="w-96 "> */}
-   { bankList.length === 0 ? <p>BANK NOT LISTED!</p> : 	bankList?.map(
+   { bankList.length === 0 ? <p class="flex-column justify-center items-center" >WAIT A MOMENT</p> : 	bankList?.map(
 	  (allbannk, index) => {
 		  // console.log(selectedBank, "all bank");
 		  // console.log(allbannk[index].name);
@@ -117,7 +122,7 @@ const BankSelect = (props) => {
 			  <div
 			  onClick={(e) => {setSelectedBank(e.currentTarget.innerText); setSelectedBankId(e.target.id)}}
 			  aria-current="true"
-			  class="block w-full my-2 cursor-pointer rounded-lg bg-primary-100 p-4 text-primary-600  focus:outline-none border border-colorPrimary rounded-md w-full px-3 py-1.5 text-gray-700"
+			  class="block w-full my-2 cursor-pointer rounded-lg bg-primary-100 p-4 text-primary-600  focus:outline-none border border-colorPrimary rounded-md w-full px-3 py-1.5 text-gray-700 active:bg-blue-600"
 			  value={allbannk?.name} id={allbannk.id} >
 	{allbannk?.name}
     </div>)

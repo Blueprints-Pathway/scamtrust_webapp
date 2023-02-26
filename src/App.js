@@ -48,6 +48,7 @@ import Ongoing from "./components/Pages/custTransaction/Ongoing";
 import Completed from "./components/Pages/custTransaction/Completed";
 import Cancelled from "./components/Pages/custTransaction/Cancelled";
 import CancellationReason from "./components/Pages/custTransaction/CancellationReason";
+import VendorCancellationReason from "./components/Pages/vendorTransact/VendorCancellationReason";
 
 function App() {
 	return (
@@ -110,6 +111,7 @@ function App() {
 			<Route path="/completed" element={<Completed />} />
 			<Route path="/pending-cancelled" element={<Cancelled />} />
 			<Route path="/cancellation-reason" element={<CancellationReason />} />
+			<Route path="/vendorCancellation-reason" element={<VendorCancellationReason />} />
 
 		</Routes>
 	);

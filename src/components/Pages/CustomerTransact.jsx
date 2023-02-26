@@ -602,7 +602,7 @@ const CustomerTransact = (props) => {
 																	{newout?.product_name}
 																</p>
 																<small className="block whitespace-nowrap w-[50px]   md:w-[65px]">
-																	On-going
+																	{newout?.status}
 																</small>
 															</div>
 														</div>

@@ -47,11 +47,12 @@ function Pin({
 			};
 
 			const data = await axios.post(API_URL, JSON.stringify(payload), config);
-		
 			console.log(data.status + 'axios')
 			setWithdraws(data?.status);
 		} catch (error) {
+			swal("Unsuccessful", "An Error Took Place!")
 			// Alert.alert("failed login details");
+			
 			console.log(error, "errrors");
 		}
 	};

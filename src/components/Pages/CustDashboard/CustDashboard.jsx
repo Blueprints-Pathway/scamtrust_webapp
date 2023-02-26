@@ -8,6 +8,7 @@ import SecuredBy from "../../../assets/images/svg/secured-by.svg";
 import Add from "../../../assets/images/svg/add.svg";
 import EmptyTxn from "../../../assets/images/svg/EmptyTxn.svg";
 import { fetchUser } from "../../../services/auth";
+import refresh from "../../../assets/refresh-icon.png";
 import axios from "axios";
 import onGoing from "../../../assets/on-going-icon.png";
 import cancelled from "../../../assets/cancel-icon.png";
@@ -275,12 +276,17 @@ const CustomerDashboard = (props) => {
 						<p className="font-semibold text-lg 2xl:text-2xl text-colorPrimary">
 							{userFromBackend?.data.name}
 						</p>
+						<div className = "flex justify-between">
 						<p className="font-semibold text-lg 2xl:text-2xl text-[#7D8287]">
-							ID - {userFromBackend?.data.id}
+							ID - {userFromBackend?.data.id} 
 						</p>
+						<img src={refresh} onClick = {() => {window.location.reload(false);}} alt="" />
+						
+						</div>
 
+							
 						<div className="border-b-2 mb-5 2xl:mb-[53px] border-b-[#3AB75D] mt-[13px]" />
-
+						
 						<div className="flex justify-between">
 							<div className="flex flex-col text-left">
 								<h4 className="text-[#7d8287] font-normal 2xl:font-semibold text-sm 2xl:text-lg">
@@ -801,7 +807,7 @@ const CustomerDashboard = (props) => {
 
 			                        {/* FAQ AND CHAT BUTTON */}
 
-					<div className="flex justify-center items-center bg-white mt-7 py-14 flex-col md:float-left md:mt-[-25rem] lg:mt-[-27rem] md:mx-0 ml-4 px-[40px] md:px-11 lg:px-[20px] lg:ml-1 lg:flex-row rounded-3xl text-colorPrimary">
+					<div className="flex justify-center items-center bg-white mt-7 py-14 flex-col md:float-left md:mt-[-25rem] lg:mt-[-28rem] md:mx-0 ml-4 px-[40px] md:px-11 lg:px-[20px] lg:ml-1 lg:flex-row rounded-3xl text-colorPrimary">
 							<div 
 							onClick={() => navigate('/faq')}
 							className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5">
