@@ -7,6 +7,7 @@ import Success from "./Sucess";
 function Pin({
 	setShow,
 	setIsWithdrawing,
+	bankSelectedId,
 	amount,
 	selectedBank,
 	accountNumber,
@@ -40,7 +41,7 @@ function Pin({
 			};
 			const payload = {
 				amount: amount,
-				bank_id: selectedBank,
+				bank_id: bankSelectedId,
 				account_number: accountNumber,
 				pin: pin,
 			};

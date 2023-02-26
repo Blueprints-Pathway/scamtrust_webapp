@@ -35,7 +35,7 @@ const CustomerDashboard = () => {
   const [confirmWithdraw, setConfirmWithdraw] = useState(false);
   const [withdrawSuccessful, setWithdrawSuccessful] = useState(false);
   const [isFunding, setIsFunding] = useState(false);
-  const [close, setClose] = useState(false);
+  const [close, setClose] = useState(true);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [showFundWallet, setShowFundWallet] = useState(false);
 	const [showConfirmAccount, setShowConfirmAccont] = useState(false);
@@ -59,7 +59,12 @@ const CustomerDashboard = () => {
     setShowConfirmAccont((prevState) => !prevState)
   }
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
+  let closeFlag = true;
   useEffect(() => {
+    if(closeFlag){
+      setClose(false)
+      closeFlag = false;
+    }
 		(async () => {
 			try {
 				const API_URL = `https://scamtrust.herokuapp.com/api/v1/user/getdetails`;
@@ -99,7 +104,7 @@ const CustomerDashboard = () => {
 
 
   const handleClose = () => {
-    setClose(!close);
+    setClose(true);
   }
 
   const dispatch = useDispatch();
@@ -216,7 +221,7 @@ const CustomerDashboard = () => {
       />
       </div>
 
-      <div className={close ? "cust-active hidden" : "cust-welcome"}>
+     { close && <div className={close ? "cust-active hidden" : "cust-welcome"}>
         <div className={close ? "cust-active hidden" : "welcome-cust-card h-[49rem] lg:h-[42rem]"}>
           <div className='lg:m-28 lg:ml-[12.1rem] md:mt-16 xl:ml-[9.5rem]'>
             <h1 className='cust-message text-2xl text-center font-extrabold
@@ -285,7 +290,7 @@ const CustomerDashboard = () => {
            <button className='cust-close-btn' onClick={handleClose}>Close x</button>
           </div>
       </div>        
-      </div>             
+      </div> }            
     </Layout>
   );
 };

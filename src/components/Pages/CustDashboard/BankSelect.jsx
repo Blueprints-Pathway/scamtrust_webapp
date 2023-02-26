@@ -10,6 +10,7 @@ const BankSelect = (props) => {
     const [show, setShow] = useState(false);
     const [hide, setHide] = useState(false);
     const [bankSelected, setSelectedBank] = useState('');
+    const [bankSelectedId, setSelectedBankId] = useState('');
     const [bank, setBank] = useState([]);
     const [bankList, setBankList] = useState([]);
     const {setIsWithdrawing,amount,selectedBank,accountNumber,userName} = props;
@@ -113,13 +114,13 @@ const BankSelect = (props) => {
 		  // console.log(selectedBank, "all bank");
 		  // console.log(allbannk[index].name);
 		  return (
-			  <a
-			  onClick={(e) => setSelectedBank(e.target.id)}
+			  <div
+			  onClick={(e) => {setSelectedBank(e.currentTarget.innerText); setSelectedBankId(e.target.id)}}
 			  aria-current="true"
-			  class="block w-full cursor-pointer rounded-lg bg-primary-100 p-4 text-primary-600  focus:outline-none border border-colorPrimary rounded-md w-full px-3 py-1.5 text-gray-700"
-			  value={allbannk?.name} id={allbannk.name} >
+			  class="block w-full my-2 cursor-pointer rounded-lg bg-primary-100 p-4 text-primary-600  focus:outline-none border border-colorPrimary rounded-md w-full px-3 py-1.5 text-gray-700"
+			  value={allbannk?.name} id={allbannk.id} >
 	{allbannk?.name}
-    </a>)
+    </div>)
 	    }
 	    )
 	}
@@ -173,6 +174,7 @@ const BankSelect = (props) => {
 				<Pin
 				selectedBank={bankSelected}
 				setShow={setShow}
+				bankSelectedId = {bankSelectedId}
 				setIsWithdrawing={setIsWithdrawing}
 				amount={amount}
 				accountNumber={accountNumber}
