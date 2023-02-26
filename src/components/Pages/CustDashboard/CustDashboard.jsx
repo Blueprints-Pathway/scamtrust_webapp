@@ -270,7 +270,7 @@ const CustomerDashboard = (props) => {
 			/>
 			
 
-			<div className="flex w-full px-0 flex-col md:flex-row gap-7 justify-between">
+			<div className="flex w-full px-0 flex-col md:flex-row gap-7 justify-between md:mb-[-32.7rem]">
 				<div className="min-w-[260px] mx-2 w-[100%] md:w-[70%] 2xl:w-[685px]">
 					<div className="w-full bg-[#FFFEFE] lg:rounded-[24px] rounded-3xl lg:px-[37px] px-5 py-3 lg:py-[29px] mb-[13px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
 						<p className="font-semibold text-lg 2xl:text-2xl text-colorPrimary">
@@ -370,7 +370,7 @@ const CustomerDashboard = (props) => {
 				</div>
 
 				{/* TRANSACTIONS PAGE */}
-				<div className="w-full overflow-y-scroll overflow-x-scroll  h-[90vh] mt-[-20px] md:mt-0 mx-2 py-7 lg:py-8 px-7 lg:px-12 bg-white rounded-[24px]">
+				<div className="w-full overflow-y-scroll overflow-x-scroll  h-[90vh] md:h-[120vh] lg:h-[100vh] mt-[-20px] md:mt-0 mx-2 py-7 lg:py-8 px-7 lg:px-12 bg-white rounded-[24px]">
 				<div
 						className="flex justify-end mb-5"
 						onClick={onCreateTransactionClicked}
@@ -800,14 +800,13 @@ const CustomerDashboard = (props) => {
 				</div>
 			</div>
 
-			<div className="hidden md:flex md:justify-center md:items-center md:ml-96 md:mt-16 md:mb-5 lg:hidden">
+			<div className="hidden md:hidden md:justify-center md:items-end md:mt-96 lg:hidden">
 				<img src={SecuredBy} alt="secured by scam trust" />
 			</div>
 
 
 			                        {/* FAQ AND CHAT BUTTON */}
-
-					<div className="flex justify-center items-center bg-white mt-7 py-14 flex-col md:float-left md:mt-[-25rem] lg:mt-[-28rem] md:mx-0 ml-4 px-[40px] md:px-11 lg:px-[20px] lg:ml-1 lg:flex-row rounded-3xl text-colorPrimary">
+					<div className="flex justify-center items-center lg:items-end bg-white mt-7 py-14 md:py-8 lg:py-14 flex-col md:float-left lg:mt-32 lg:mx-[-10px] md:mx-3 ml-4 px-[40px] md:px-9 lg:px-[21px] lg:ml-1 lg:flex-row rounded-3xl text-colorPrimary">
 							<div 
 							onClick={() => navigate('/faq')}
 							className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[280px] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5">
@@ -845,9 +844,10 @@ const CustomerDashboard = (props) => {
 							</div>
 						</div>
 
-			<div className="lg:flex lg:mt-[-5rem] lg:mb-0 lg:mx-40 md:hidden mt-16 flex items-center justify-center lg:justify-start">
+			<div className="flex lg:flex lg:mt-[30rem] lg:mb-0 lg:mx-40 md:hidden mt-16 items-center justify-center lg:justify-start lg:items-end">
 				<img src={SecuredBy} className="ml-5 lg:w-60" alt="secured by scam trust" />
-			</div>
+			 </div>
+
 		</div>
 	);
 };

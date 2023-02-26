@@ -54,6 +54,31 @@ const BankSelect = (props) => {
 
 			setHide(true);
 		}
+		let SearchList = <p class="flex-column justify-center items-center" >LOADING....</p>;;
+		if(bank.length === 0) {
+			SearchList = <p class="flex-column justify-center items-center" >LOADING....</p>;
+		}else if(bankList.length === 0) {
+			SearchList = <p class="flex-column justify-center items-center" >BANK IS NOT AVAILABLE!</p>;
+		}else {
+			SearchList = bankList?.map(
+				(allbannk, index) => {
+					// console.log(selectedBank, "all bank");
+					// console.log(allbannk[index].name);
+					return (
+						<div
+						onClick={(e) => {setSelectedBank(e.currentTarget.innerText); setSelectedBankId(e.target.id)}}
+						aria-current="true"
+					  //   focus:border-colorPrimary block w-full text-left cursor-pointer p-4 my-2 text-primary-600  focus:outline-none border-2 rounded-md px-3 py-1.5 text-gray-700" 
+						class="block w-full my-2 cursor-pointer border-2  bg-primary-100 p-4 text-primary-600  focus:outline-none border border-colorPrimary rounded-md w-full px-3 py-1.5 text-gray-700 active:bg-blue-600"
+						value={allbannk?.name} id={allbannk.id} >
+			  {allbannk?.name}
+			  </div>)
+				  }
+				  )
+			  
+		}
+		
+		
     return (
 		<React.Fragment>
 
@@ -77,36 +102,29 @@ const BankSelect = (props) => {
 				</div>
 
 				<div className="mb-11 md:mb-16">
-					<label className="text-xl text-center mt-[-20px] mb-4 font-semibold md:text-3xl block" htmlFor="amount">
+					<label className="text-xl text-center mt-[-10px] mb-4 font-semibold md:text-3xl block">
 						Select A Bank From the Dropdown
 					</label>
 					<div className="mb-32 md:mb-40 relative">
                     <div class="flex justify-center">
   <div class="mb-3 xl:w-96">
-    <div class="mb-4 flex items-center justify-center ml-5">
+    <div class="mb-4 flex items-center justify-center">
       <input
         onChange={searchHandler}
         type="search"
-        class="relative m-0 block w-80 min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
-        placeholder="search"
+        className="relative m-0 block w-80 min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding
+		 px-6 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600
+		  focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200
+		   dark:placeholder:text-neutral-200  placeholder:pl-5"
+        placeholder="Search Bank"
         aria-label="Search"
+
         aria-describedby="button-addon2">
 		</input>
       <span
-        class="input-group-text flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal text-neutral-700 dark:text-neutral-200"
+        class="absolute ml-64 input-group-text flex items-center whitespace-nowrap rounded py-1.5 text-right text-base font-normal text-neutral-700 dark:text-neutral-200"
         id="basic-addon2"> 
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="h-5 w-5">
-          <path
-            fill-rule="evenodd"
-            d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
-            clip-rule="evenodd" />
-        </svg>
-
+		<FcSearch className='text-xl' />
       </span>
     </div>
   </div>
@@ -114,21 +132,7 @@ const BankSelect = (props) => {
 
 <div class="flex-column justify-center items-center overflow-y-scroll scroll w-156 h-[300px] ">
   {/* <div class="w-96 "> */}
-   { bankList.length === 0 ? <p class="flex-column justify-center items-center" >WAIT A MOMENT</p> : 	bankList?.map(
-	  (allbannk, index) => {
-		  // console.log(selectedBank, "all bank");
-		  // console.log(allbannk[index].name);
-		  return (
-			  <div
-			  onClick={(e) => {setSelectedBank(e.currentTarget.innerText); setSelectedBankId(e.target.id)}}
-			  aria-current="true"
-			  class="block w-full my-2 cursor-pointer rounded-lg bg-primary-100 p-4 text-primary-600  focus:outline-none border border-colorPrimary rounded-md w-full px-3 py-1.5 text-gray-700 active:bg-blue-600"
-			  value={allbannk?.name} id={allbannk.id} >
-	{allbannk?.name}
-    </div>)
-	    }
-	    )
-	}
+  {SearchList}
     
     
   {/* </div> */}
@@ -163,7 +167,7 @@ const BankSelect = (props) => {
 
 				</div>
 
-				<div className="flex justify-between items-center">
+				<div className="flex justify-between items-start mt-[-70px]">
 					{/* <img src={SecuredBy} alt="SecuredByScamTrust" /> */}
 					<button
 						type="submit"
