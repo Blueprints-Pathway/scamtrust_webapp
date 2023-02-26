@@ -227,7 +227,7 @@ const VendorAwaitingApproval = ({ showAcceptedHandler }) => {
 								</h1>
 								<div className="flex items-center justify-between mx-12 mt-10 mb-10 lg:mt-28 lg:mb-28">
 									<button
-										onClick={() => navigate("/cancellation-reason")}
+									onClick={() => navigate("/vendorCancellation-reason")}
 										className="border-[1px] py-1 px-10 text-sm lg:text-xl lg:py-4 lg:px-28 hover:bg-[#fff] hover:text-[#002257]"
 									>
 										Yes

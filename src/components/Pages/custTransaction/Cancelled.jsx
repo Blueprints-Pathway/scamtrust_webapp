@@ -14,7 +14,7 @@ const Cancelled = ({showCancelHandler}) => {
    
 	const [cancelled, setCancelled] = useState();
 
-	const navigate = useNavigate();
+
 	
 const back=()=>{
     showCancelHandler()

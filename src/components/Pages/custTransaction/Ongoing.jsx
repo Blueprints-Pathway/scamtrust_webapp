@@ -207,13 +207,13 @@ const Ongoing = ({showOngoingHandler}) => {
 						</div>
 					</div>
 
-					<div className="flex items-center justify-between mt-10 mx-5 md:mx-36 lg:mx-56 md:mt-12 lg:mt-24">
-						<button
+					<div className="flex justify-center mt-10 mx-5 md:mx-36 lg:mx-56 md:mt-12 lg:mt-24">
+						{/* <button
 							onClick={openModal}
 							className="text-black bg-[#EDEDED] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-10 lg:px-32 md:px-12"
 						>
 							Cancel
-						</button>
+						</button> */}
 						<button
 							onClick={() => accepted()}
 							className="text-[#ffff] bg-[#3AB75D] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-7 lg:px-28"
