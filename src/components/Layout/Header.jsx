@@ -227,14 +227,14 @@ const Header = (props) => {
 
 	return (
 		<div
-			className={`${headerItemClassName} flex justify-between items-center w-full h-full shadow-md z-50`}
+			className={`${headerItemClassName} flex justify-center lg:justify-between items-center w-full h-full shadow-md z-50`}
 		>
-			<h3 className="hidden md:flex font-medium lg:font-semibold text-xl lg:text-3xl text-colorPrimary">
+			<h3 className="hidden md:flex md:mr-12 font-medium lg:font-semibold text-xl lg:text-3xl text-colorPrimary">
 				{heading}
 			</h3>
 			
-			<div className="flex items-center pointer-events-none" >
-				<div className="2xl:w-[541px] mr-2 lg:mr-[56px] relative lg:w-[400px] h-[47px] md:w-[300px] w-[201px] pointer-events-auto">
+			<div className="flex items-center justify-center lg:mx-40 pointer-events-none" >
+				<div className="2xl:w-[541px] lg:mr-[56px] relative lg:w-[400px] h-[47px] md:w-[300px] w-[201px] pointer-events-auto">
 					{details?.usertype === "CUSTOMER" ? (
 						<input
 							onInput={getSearch}
@@ -338,16 +338,16 @@ const Header = (props) => {
 						</div>
 					</div>
 				</div>
-				<div className="flex-column items-end justify-center">
-					<div className="flex-auto flex mt-[250px] mx-7" onClick={check}>
+				<div className="flex-column items-end mt-[-10px] justify-center">
+					<div className="pointer-events-auto flex-auto flex mx-11 mt-[250px]" onClick={check}>
 						<p className="text-rose-600">{filtredSearch?.length}</p>
 						<img
 							src={BellNotification}
 							alt="notification"
-							className="w-[22px] h-[24px] mr-5 mb-[19.5rem] lg:mr-[56px]"
+							className="w-[22px] h-[24px] mb-[1.3rem] lg:mr-[50px]"
 						/>
 					</div>
-					<div className=" overflow-y-scroll h-[18rem] ml-[-130px]">
+					<div className="overflow-y-scroll pointer-events-auto h-[18rem] ml-[-130px]">
 						{notification?.map((newNotice) => {
 							return (
 								<div className="h-[8.5rem]">
@@ -355,7 +355,7 @@ const Header = (props) => {
 										<div className=" " key={newNotice?.id}>
 											<div
 												key={newNotice?.id}
-												class="block notice2 py-4 px-6 rounded-lg shadow-lg bg-white max-w-sm bg-[#cdcbf6]"
+												class="overflow-y-scroll block notice2 py-4 px-6 rounded-lg shadow-lg bg-white max-w-sm bg-[#cdcbf6]"
 											>
 												{" "}
 												<button
@@ -381,11 +381,11 @@ const Header = (props) => {
 														}}
 													>
 														{showMore ? (
-															<p className="font-bold text-[11px] pb-1">
+															<p className="pointer-events-auto font-bold text-[11px] pb-1">
 																show less
 															</p>
 														) : (
-															<p className="font-bold text-[11px] pb-1">
+															<p className="pointer-events-auto font-bold text-[11px] pb-1">
 																show more
 															</p>
 														)}
@@ -406,14 +406,16 @@ const Header = (props) => {
 							);
 						})}
 					</div>
+				
 				</div>
 
-				<div className="fixed left-[27.5rem] md:relative md:left-0">
-					<span className="flex lg:w-[46px] w-[30px] h-[30px] lg:h-[46px] font-bold text-base lg:text-[21px] text-white bg-[#E36969] grid place-content-center overflow-hidden rounded-full">
+				<div className="lg:mr-[-90px]">
+					<span className="flex items-center justify-center lg:w-[46px] w-[30px] h-[30px] lg:h-[46px] font-bold text-sm lg:text-[21px] text-white bg-[#E36969] rounded-full">
 						{first}
 						{last}
 					</span>
 				</div>
+
 			</div>
 		</div>
 	);
