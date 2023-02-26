@@ -103,14 +103,14 @@ const Header = (props) => {
 	}, []);
 	// console.log("details", details);
 
-	// notification?.data?.map((newLngth)=>{
-	// const get=newLngth?.status===
-	// "UNREAD"
-	// console.log(get,"get");
-	// 	return(
-	// 		<div></div>
-	// 	)
-	// })
+	notification?.data?.map((newLngth)=>{
+	const get=newLngth?.status===
+	"UNREAD"
+	console.log(get,"get");
+		return(
+			<div></div>
+		)
+	})
 	const getSearch = async () => {
 		try {
 			const API_URL = `https://scamtrust.herokuapp.com/api/v1/misc/vendor/search`;
@@ -252,7 +252,7 @@ const Header = (props) => {
 							className="absolute h-[18px] right-[15px] -translate-x-0px] md:right-[20px] top-1/2 -translate-y-1/2"
 						/>
 					) : null}
-					<div className="overflow-y-scroll flex-column items-center justify-center h-62">
+					<div className="overflow-y-scroll flex-column items-center justify-center h-42">
 						{searchInput.length > 0
 							? items?.map((item, id) => {
 									console.log(item, "new data");
@@ -292,14 +292,8 @@ const Header = (props) => {
 										</div>
 									);
 							  })
-							: filteredResults?.map((item) => {
-									console.log(item, "data to set");
-									return (
-										<div>
-											<span>{item?.user?.name}</span>
-										</div>
-									);
-							  })}
+							: null
+						}
 					</div>
 					<div className="absolute hidden py-3 px-7 left-1/2 z-30 -translate-x-1/2 w-[380px] max-h-[150px] overflow-y-scroll bg-white">
 						<div className="flex justify-between mb-4">
@@ -346,6 +340,7 @@ const Header = (props) => {
 							alt="notification"
 							className="w-[22px] h-[24px] mr-5 mb-[19.5rem] lg:mr-[56px]"
 						/>
+						<p>hello</p>
 					</div>
 					<div className=" overflow-y-scroll h-[18rem] ml-[-130px]">
 						{notification?.map((newNotice) => {
