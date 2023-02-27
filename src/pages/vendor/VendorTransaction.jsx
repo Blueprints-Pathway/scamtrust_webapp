@@ -366,43 +366,50 @@ const VendorTransaction = (props) => {
 													}}
 													className="  py-2 grid-rows-5 grid-flow-col  justify-items-center"
 												>
-													<div
-														className={select ? "Transaction1 border" : "hide"}
-														key={item.id}
+														<div
+														onClick={() => {
+															setView(item?.transaction_id);
+															getTransaction();
+															window?.localStorage?.setItem(
+																"idCompleted",
+																item?.transaction_id
+															);
+															showOngoingHandler(item?.transaction_id);
+														}}
+														key={item?.id}
+														className="tab-pane border  my-6 fade show active"
+														id="tabs-home"
+														role="tabpanel"
+														aria-labelledby="tabs-home-tab"
 													>
-														<div className="Transaction-body">
-															<div className="Transaction-body-profile pushDown3 ">
+														<div className="flex items-center px-1.5 mb-4 justify-between rounded-md md:px-4">
+															<div className="flex items-center Transaction-body-profile pushDown3 justify-center">
 																<img
-																	className="TransactionStatusimg pushDown1 inline-block h-8 w-8 rounded-full ring-2 ring-white"
+																	className=" inline-block h-8 w-8 rounded-full ring-2 ring-white "
 																	src={item?.customer?.image_url}
-																	alt="Scam Trust"
+																	alt="Awaiting icon"
 																/>
-																<div>
-																	<h5 className="Transaction-details1">
+																<div className="pl-1.5 pt-2">
+																	<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 																		{item?.product_name}
-																	</h5>
-																	<p className="Transaction-description">
-																		{item.status}
 																	</p>
+																	<small className="block whitespace-nowrap w-[50px]   md:w-[65px]">
+																		{item?.status}
+																	</small>
 																</div>
 															</div>
-														</div>
-														<div className="Transaction-details1 ">
-															<h5>
-																{item.customer?.name ||
+															<p className="text-[#262466] text-center ">
+																{item?.customer?.name ||
 																	item?.customer?.username}
-															</h5>
-														</div>
-														<div className="Transaction-details1 pushDown">
-															<h5>{item.amount}</h5>
-														</div>
-														<div className="Transaction-details1 pushDown">
-															<h5>{item.due_date}</h5>
-														</div>
-														<div className="Transaction-details2 pushDown">
-															<h5>
-																<FontAwesomeIcon icon={faEllipsis} />
-															</h5>
+															</p>
+															<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+																{item?.amount}
+															</p>
+															<p className="text-[#262466] text-center">
+																{moment(item?.created_at).format(
+																	"DD/MM/YYYY"
+																)}
+															</p>
 														</div>
 													</div>
 												</div>
@@ -421,47 +428,37 @@ const VendorTransaction = (props) => {
 															item?.transaction_id
 														);
 													}}
-													className="  py-2 grid-rows-5 grid-flow-col  justify-items-center"
+													className="tab-pane border  my-6 fade show active"
 												>
-													<div
-														className={select ? "Transaction1 border" : "hide"}
-														key={item?.id}
-													>
-														<div className="Transaction-body">
-															<div className="Transaction-body-profile pushDown3">
+													<div className="flex items-center px-1.5 mb-4 justify-between rounded-md md:px-4">
+															<div className="flex items-center Transaction-body-profile pushDown3 justify-center">
 																<img
-																	className="TransactionStatusimg pushDown1 inline-block h-8 w-8 rounded-full ring-2 ring-white"
+																	className=" inline-block h-8 w-8 rounded-full ring-2 ring-white "
 																	src={item?.customer?.image_url}
-																	alt="Scam Trust"
+																	alt="Awaiting icon"
 																/>
-																<div>
-																	<h5 className="Transaction-details1">
+																<div className="pl-1.5 pt-2">
+																	<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 																		{item?.product_name}
-																	</h5>
-																	<p className="Transaction-description">
-																		{item.status}
 																	</p>
+																	<small className="block whitespace-nowrap  w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+																		{item?.status}
+																	</small>
 																</div>
 															</div>
-														</div>
-														<div className="Transaction-details1 ">
-															<h5>
+															<p className="text-[#262466] text-center ">
 																{item?.customer?.name ||
 																	item?.customer?.username}
-															</h5>
+															</p>
+															<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+																{item?.amount}
+															</p>
+															<p className="text-[#262466] text-center">
+																{moment(item?.created_at).format(
+																	"DD/MM/YYYY"
+																)}
+															</p>
 														</div>
-														<div className="Transaction-details1 pushDown">
-															<h5>{item?.amount}</h5>
-														</div>
-														<div className="Transaction-details1 pushDown">
-															<h5>{item?.due_date}</h5>
-														</div>
-														<div className="Transaction-details2 pushDown">
-															<h5>
-																<FontAwesomeIcon icon={faEllipsis} />
-															</h5>
-														</div>
-													</div>
 												</div>
 											);
 										})}
@@ -478,46 +475,37 @@ const VendorTransaction = (props) => {
 														);
 														showOngoingHandler(item?.transaction_id);
 													}}
-													className="  py-2 grid-rows-5 grid-flow-col  justify-items-center"
+													className="tab-pane border  my-6 fade show active"
 												>
-													<div
-														className={select ? "Transaction1 border" : "hide"}
-													>
-														<div className="Transaction-body">
-															<div className="Transaction-body-profile pushDown3">
+														<div className=" Transaction-body flex items-center px-1.5 mb-4 justify-between rounded-md md:px-4">
+															<div className="flex items-center Transaction-body-profile pushDown3 justify-center">
 																<img
-																	className="TransactionStatusimg pushDown1 inline-block h-8 w-8 rounded-full ring-2 ring-white "
+																	className=" inline-block h-8 w-8 rounded-full ring-2 ring-white "
 																	src={item?.customer?.image_url}
-																	alt="Scam Trust"
+																	alt="Awaiting icon"
 																/>
-																<div>
-																	<h5 className="Transaction-details1">
+																<div className="pl-1.5 pt-2 ">
+																	<p className="Transaction-details1 text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 																		{item?.product_name}
-																	</h5>
-																	<p className="Transaction-description">
-																		{item.status}
 																	</p>
+																	<small className="Transaction-description block whitespace-nowrap  w-[45px] overflow-hidden text-ellipsis md:w-[65px] ">
+																		{item?.status}
+																	</small>
 																</div>
 															</div>
-														</div>
-														<div className="Transaction-details1 ">
-															<h5>
-																{item.customer?.name ||
+															<p className="text-[#262466] text-center ">
+																{item?.customer?.name ||
 																	item?.customer?.username}
-															</h5>
+															</p>
+															<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+																{item?.amount}
+															</p>
+															<p className="text-[#262466] text-center">
+																{moment(item?.created_at).format(
+																	"DD/MM/YYYY"
+																)}
+															</p>
 														</div>
-														<div className="Transaction-details1 pushDown">
-															<h5>{item.amount}</h5>
-														</div>
-														<div className="Transaction-details1 pushDown">
-															<h5>{item?.due_date}</h5>
-														</div>
-														<div className="Transaction-details2 pushDown">
-															<h5>
-																<FontAwesomeIcon icon={faEllipsis} />
-															</h5>
-														</div>
-													</div>
 												</div>
 											);
 										})}
@@ -704,7 +692,7 @@ const VendorTransaction = (props) => {
 																	</small>
 																</div>
 															</div>
-															<p className="text-[#262466] text-center">
+															<p className="text-[#262466] text-center ">
 																{newout?.customer?.name ||
 																	newout?.customer?.username}
 															</p>

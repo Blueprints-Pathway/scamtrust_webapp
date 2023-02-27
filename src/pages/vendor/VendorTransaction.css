@@ -196,8 +196,8 @@
 	}
 	.Transactions .Transaction1 {
 		display: flex;
-		gap: 0rem;
-		align-items: start;
+		gap: 3rem;
+		/* align-items: start; */
 		margin-bottom: 0rem;
 		margin-top: 1rem;
 	}
@@ -267,6 +267,21 @@
  
 	
 		color: #a6a6a6;
+	}
+	.Transaction-details1 {
+		font-family: "Lato";
+		font-style: normal;
+		font-weight: 500;
+		font-size: 12px;
+		/* text-align: center; */
+		/* width: 0%; */
+	
+		align-self: center;
+		color: #232164;
+	}
+	.break{
+		max-width:10px;
+		word-wrap:break-word;
 	}
 }
 svg.star-svg {
