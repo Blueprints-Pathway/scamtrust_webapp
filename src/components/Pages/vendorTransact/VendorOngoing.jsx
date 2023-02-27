@@ -235,90 +235,92 @@ const VendorOngoing = ({ showOngoingHandler }) => {
 						</div>
 					</div>
 
-				{going?.status==="ON-GOING"?	<div className="flex justify-center mt-10 mx-5 md:mx-36 lg:mx-56 md:mt-12 lg:mt-24">
-						
+					{going?.status === "ON-GOING" ? (
+						<div className="flex justify-center mt-10 mx-5 md:mx-36 lg:mx-56 md:mt-12 lg:mt-24">
 							<button
 								onClick={openModal}
 								className="text-black bg-[#EDEDED] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-10 lg:px-32 md:px-12"
 							>
 								Cancel
 							</button>
-					
-						{/* <button
+
+							{/* <button
 							onClick={Accepted}
 							className="text-[#ffff] bg-[#3AB75D] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-7 lg:px-28"
 						>
 							Complete
 						</button> */}
 
-						{/* CANCEL TRANSACTION MODAL  */}
-						<Modal
-							isOpen={modalIsOpen}
-							onRequestClose={closeModal}
-							style={customStyles}
-						>
-							<div className="text-[#ffff]">
-								<h1 className="text-base pt-12 lg:text-3xl lg:w-[45rem] lg:mt-20 lg:text-center">
-									Are you sure you want to cancel this transaction?
-								</h1>
-								<div className="flex items-center justify-between mx-12 mt-10 mb-10 lg:mt-28 lg:mb-28">
-									<button
-										onClick={() => navigate("/vendorCancellation-reason")}
-										className="border-[1px] py-1 px-10 text-sm lg:text-xl lg:py-4 lg:px-28 hover:bg-[#fff] hover:text-[#002257]"
-									>
-										Yes
-									</button>
-									<button
-										onClick={closeModal}
-										className="border-[1px] py-1 px-10 text-sm lg:text-xl lg:py-4 lg:px-28 hover:bg-[#fff] hover:text-[#002257]"
-									>
-										No
-									</button>
-								</div>
-							</div>
-						</Modal>
-					</div>:<div  className="flex items-center justify-between mt-10 mx-5 md:mx-36 lg:mx-56 md:mt-12 lg:mt-24">
-								<button
-									onClick={openModal}
-									className="text-black bg-[#EDEDED] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-10 lg:px-32 md:px-12 hover:bg-[#2b2970] hover-[#ffff] "
-								>
-									Cancel
-								</button>
-								<button
-									onClick={Accepted}
-									className="hover:bg-[#2b2970] text-[#ffff] bg-[#3AB75D] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-7 lg:px-28"
-								>
-									Complete
-								</button>
-
-								{/* CANCEL TRANSACTION MODAL  */}
-								<Modal
-									isOpen={modalIsOpen}
-									onRequestClose={closeModal}
-									style={customStyles}
-								>
-									<div className="text-[#ffff]">
-										<h1 className="text-base pt-12 lg:text-3xl lg:w-[45rem] lg:mt-20 lg:text-center">
-											Are you sure you want to cancel this transaction?
-										</h1>
-										<div className="flex items-center justify-between mx-12 mt-10 mb-10 lg:mt-28 lg:mb-28">
-											<button
-												onClick={() => navigate("/vendorCancellation-reason")}
-												className="border-[1px] py-1 px-10 text-sm lg:text-xl lg:py-4 lg:px-28 hover:bg-[#fff] hover:text-[#002257]"
-											>
-												Yes
-											</button>
-											<button
-												onClick={closeModal}
-												className="border-[1px] py-1 px-10 text-sm lg:text-xl lg:py-4 lg:px-28 hover:bg-[#fff] hover:text-[#002257]"
-											>
-												No
-											</button>
-										</div>
+							{/* CANCEL TRANSACTION MODAL  */}
+							<Modal
+								isOpen={modalIsOpen}
+								onRequestClose={closeModal}
+								style={customStyles}
+							>
+								<div className="text-[#ffff]">
+									<h1 className="text-base pt-12 lg:text-3xl lg:w-[45rem] lg:mt-20 lg:text-center">
+										Are you sure you want to cancel this transaction?
+									</h1>
+									<div className="flex items-center justify-between mx-12 mt-10 mb-10 lg:mt-28 lg:mb-28">
+										<button
+											onClick={() => navigate("/vendorCancellation-reason")}
+											className="border-[1px] py-1 px-10 text-sm lg:text-xl lg:py-4 lg:px-28 hover:bg-[#fff] hover:text-[#002257]"
+										>
+											Yes
+										</button>
+										<button
+											onClick={closeModal}
+											className="border-[1px] py-1 px-10 text-sm lg:text-xl lg:py-4 lg:px-28 hover:bg-[#fff] hover:text-[#002257]"
+										>
+											No
+										</button>
 									</div>
-								</Modal>
-							</div>}
+								</div>
+							</Modal>
+						</div>
+					) : (
+						<div className="flex items-center justify-between mt-10 mx-5 md:mx-36 lg:mx-26 md:mt-12 lg:mt-24">
+							<button
+								onClick={openModal}
+								className="text-black bg-[#EDEDED] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-10 lg:px-32 md:px-12 hover:bg-[#2b2970] hover-[#ffff] "
+							>
+								Cancel
+							</button>
+							<button
+								onClick={Accepted}
+								className="hover:bg-[#2b2970] text-[#ffff] bg-[#3AB75D] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-7 lg:px-28"
+							>
+								Complete
+							</button>
 
+							{/* CANCEL TRANSACTION MODAL  */}
+							<Modal
+								isOpen={modalIsOpen}
+								onRequestClose={closeModal}
+								style={customStyles}
+							>
+								<div className="text-[#ffff]">
+									<h1 className="text-base pt-12 lg:text-3xl lg:w-[45rem] lg:mt-20 lg:text-center">
+										Are you sure you want to cancel this transaction?
+									</h1>
+									<div className="flex items-center justify-between mx-12 mt-10 mb-10 lg:mt-28 lg:mb-28">
+										<button
+											onClick={() => navigate("/vendorCancellation-reason")}
+											className="border-[1px] py-1 px-10 text-sm lg:text-xl lg:py-4 lg:px-28 hover:bg-[#fff] hover:text-[#002257]"
+										>
+											Yes
+										</button>
+										<button
+											onClick={closeModal}
+											className="border-[1px] py-1 px-10 text-sm lg:text-xl lg:py-4 lg:px-28 hover:bg-[#fff] hover:text-[#002257]"
+										>
+											No
+										</button>
+									</div>
+								</div>
+							</Modal>
+						</div>
+					)}
 
 					<div className="flex items-center justify-center mt-10 lg:mt-24 lg:mb-1">
 						<h1 className="text-sm text-[#8D9296] mx-1">Secured by</h1>
