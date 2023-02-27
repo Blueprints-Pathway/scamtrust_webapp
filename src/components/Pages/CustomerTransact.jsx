@@ -603,7 +603,7 @@ const CustomerTransact = (props) => {
 																<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 																	{newout?.product_name}
 																</p>
-																<small className="block whitespace-nowrap w-[50px]   md:w-[65px]">
+																<small className="w-[50px] location overflow-hidden md:w-[65px]">
 																	{newout?.status}
 																</small>
 															</div>

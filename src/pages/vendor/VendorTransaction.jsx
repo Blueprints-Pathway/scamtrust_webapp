@@ -565,7 +565,7 @@ const VendorTransaction = (props) => {
 																	<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 																		{newout?.product_name}
 																	</p>
-																	<small className=" Transaction-description  ">
+																	<small className=" Transaction-description w-[50px] location overflow-hidden md:w-[65px] ">
 																		{newout?.status}
 																	</small>
 																</div>

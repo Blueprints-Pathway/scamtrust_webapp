@@ -52,7 +52,7 @@
 
 .Transactions .Category h6 {
 	text-align: left;
-	/* width: 100%; */
+	
 	transform: rotate(0.08deg);
 	border-bottom: 2px solid #cfd8dc;
 	padding-bottom: 0.5rem;
@@ -60,7 +60,7 @@
 	font-style: normal;
 	font-weight: 700;
 	font-size: 14px;
-	/* or 253% */
+	
 	margin-top: 1rem;
 	margin-left: 0vw;
 	color: #a6a6a6;
@@ -253,13 +253,7 @@
 	}
 }
 @media screen and (max-width: 480px) {
-	.transactions-card-cover {
-		position: fixed;
-		top: 50%;
-		left: 54%;
-		transform: translate(-50%, -50%);
-		transform: scale(0.8);
-	}
+	
 	.Transactions .Category {
 		width: 80vw;
 		margin-left: 3vw;
