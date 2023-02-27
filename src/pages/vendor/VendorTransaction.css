@@ -264,6 +264,16 @@
 		width: 80vw;
 		margin-left: 3vw;
 	}
+	.Transaction-description {
+		font-family: "Karla";
+		font-style: normal;
+		font-weight: 600;
+		font-size: 8px;
+		 
+ 
+	
+		color: #a6a6a6;
+	}
 }
 svg.star-svg {
 	display: inline;

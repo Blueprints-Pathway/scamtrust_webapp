@@ -333,7 +333,7 @@ const Header = (props) => {
 					</div>
 				</div>
 				<div className="flex-column items-end mt-[-10px] justify-center">
-					<div className="pointer-events-auto flex-auto flex mx-11 mt-[250px]" onClick={check}>
+					{/* <div className="pointer-events-auto flex-auto flex mx-11 mt-[250px]" onClick={check}>
 						<p className="text-rose-600">{filtredSearch?.length}</p>
 						<img
 							src={BellNotification}
@@ -341,7 +341,7 @@ const Header = (props) => {
 							className="w-[22px] h-[24px] mb-[1.3rem] lg:mr-[50px]"
 						/>
 						
-					</div>
+					</div> */}
 					<div className="overflow-y-scroll pointer-events-auto h-[18rem] ml-[-130px]">
 						{notification?.map((newNotice) => {
 							return (

@@ -307,91 +307,42 @@ const VendorTransaction = (props) => {
 							<div className="heading px-9 py-9">
 								<h4>Transaction</h4>
 							</div>
-							<div className="Category flex gap-6 ">
-								{select ? (
-									<h6
-										onClick={() => {
-											setActive("alltransaction");
-										}}
-										className="Selection active"
-									>
-										All Transaction
-									</h6>
-								) : (
-									<h6
-										className="Selection"
-										onClick={() => {
-											setActive("alltransaction");
-											handleSelect();
-										}}
-									>
-										All Transaction
-									</h6>
-								)}
-								{select2 ? (
-									<h6
-										onClick={() => {
-											setActive("ongoing");
-											console.log(active, "active");
-										}}
-										className="Selection active"
-									>
-										On-going
-									</h6>
-								) : (
-									<h6
-										className="Selection"
-										onClick={() => {
-											setActive("ongoing");
-											handleSelect2();
-										}}
-									>
-										On-going
-									</h6>
-								)}
-								{select3 ? (
-									<h6
-										onClick={() => {
-											setActive("cancelled");
-										}}
-										className="Selection active"
-									>
-										Cancelled
-									</h6>
-								) : (
-									<h6
-										className="Selection"
-										onClick={() => {
-											setActive("cancelled");
-											console.log(active, "active");
-											handleSelect3();
-										}}
-									>
-										Cancelled
-									</h6>
-								)}
-								{select4 ? (
-									<h6
-										onClick={() => {
-											setActive("completed");
-											console.log(active, "active");
-										}}
-										className="Selection active"
-									>
-										Completed
-									</h6>
-								) : (
-									<h6
-										className="Selection"
-										onClick={() => {
-											setActive("completed");
-											console.log(active, "active");
-											handleSelect4();
-										}}
-									>
-										Completed
-									</h6>
-								)}
+							<div className="flex justify-between  mb-3 font-medium 2xl:font-bold text-xs lg:text-base 2xl:text-lg text-colorPrimary items-start border-b border-b-[#CFD8DC]">
+								<span
+									onClick={() => {
+										setActive("alltransaction");
+									}}
+									className="border-b-[3px] border-b-[#3AB75D] pb-5 cursor-pointer hover:opacity-70"
+								>
+									All
+								</span>
+								<span
+									onClick={() => {
+										setActive("ongoing");
+										console.log(active, "active");
+									}}
+									className="cursor-pointer hover:opacity-70 hover:border-b-[3px] hover:border-b-colorSecondary transition-all duration-300 "
+								>
+									On-going
+								</span>
+								<span
+									onClick={() => {
+										setActive("cancelled");
+										console.log(active, "active");
+									}}
+									className="cursor-pointer hover:opacity-70 hover:border-b-[3px] hover:border-b-colorSecondary transition-all duration-300"
+								>
+									Cancelled
+								</span>
+								<span
+									onClick={() => {
+										setActive("completed");
+										console.log(active, "active");
+									}}
+									className="cursor-pointer hover:opacity-70 hover:border-b-[3px] hover:border-b-colorSecondary transition-all duration-300"
+								>
+									Completed
+								</span>
 							</div>
 							<div class="tab-content" id="tabs-tabContent">
 								{active === "alltransaction" && (
@@ -413,7 +364,7 @@ const VendorTransaction = (props) => {
 															item?.transaction_id
 														);
 													}}
-													className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center"
+													className="  py-2 grid-rows-5 grid-flow-col  justify-items-center"
 												>
 													<div
 														className={select ? "Transaction1 border" : "hide"}
@@ -470,7 +421,7 @@ const VendorTransaction = (props) => {
 															item?.transaction_id
 														);
 													}}
-													className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center"
+													className="  py-2 grid-rows-5 grid-flow-col  justify-items-center"
 												>
 													<div
 														className={select ? "Transaction1 border" : "hide"}
@@ -527,7 +478,7 @@ const VendorTransaction = (props) => {
 														);
 														showOngoingHandler(item?.transaction_id);
 													}}
-													className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center"
+													className="  py-2 grid-rows-5 grid-flow-col  justify-items-center"
 												>
 													<div
 														className={select ? "Transaction1 border" : "hide"}
@@ -584,7 +535,7 @@ const VendorTransaction = (props) => {
 											/>
 										</div>
 									) : (
-										<div className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center">
+										<div className="  py-2 grid-rows-4 grid-flow-col  justify-items-center">
 											{outgoing?.map((newout) => {
 												return (
 													<div
@@ -614,7 +565,7 @@ const VendorTransaction = (props) => {
 																	<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 																		{newout?.product_name}
 																	</p>
-																	<small className="block whitespace-nowrap w-[50px]   md:w-[65px]">
+																	<small className=" Transaction-description  ">
 																		{newout?.status}
 																	</small>
 																</div>
@@ -651,7 +602,7 @@ const VendorTransaction = (props) => {
 											/>
 										</div>
 									) : (
-										<div className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center">
+										<div className=" py-2 grid-rows-5 grid-flow-col  justify-items-center">
 											{cancelData?.map((newout) => {
 												return (
 													<div
@@ -681,7 +632,7 @@ const VendorTransaction = (props) => {
 																	<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 																		{newout?.product_name}
 																	</p>
-																	<small className="block whitespace-nowrap w-[50px]   md:w-[65px]">
+																	<small className="Transaction-description">
 																		{newout?.status}
 																	</small>
 																</div>
@@ -718,7 +669,7 @@ const VendorTransaction = (props) => {
 											/>
 										</div>
 									) : (
-										<div className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center">
+										<div className="  py-2 grid-rows-5 grid-flow-col  justify-items-center">
 											{completeData?.map((newout) => {
 												return (
 													<div
