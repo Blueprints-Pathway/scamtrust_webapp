@@ -340,7 +340,7 @@ const Header = (props) => {
 							alt="notification"
 							className="w-[22px] h-[24px] mb-[1.3rem] lg:mr-[50px]"
 						/>
-						<p>hello</p>
+						
 					</div>
 					<div className="overflow-y-scroll pointer-events-auto h-[18rem] ml-[-130px]">
 						{notification?.map((newNotice) => {

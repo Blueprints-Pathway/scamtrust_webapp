@@ -394,193 +394,184 @@ const VendorTransaction = (props) => {
 								)}
 							</div>
 							<div class="tab-content" id="tabs-tabContent">
-								
-							
-								
-								
-
-{active === "alltransaction" && (
-							<div>
-								<div
-									className="tab-pane fade show active"
-									id="tabs-home"
-									role="tabpanel"
-									aria-labelledby="tabs-home-tab"
-								>
-								{done?.map((item) => {
-									return (
-										<div
-											onClick={() => {
-												setView(item?.transaction_id);
-												getTransaction();
-												showCompletedHandler(item?.transaction_id);
-												window?.localStorage?.setItem(
-													"idCompleted",
-													item?.transaction_id
-												);
-											}}
-											className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center"
-										>
-											<div
-												className={select ? "Transaction1 border" : "hide"}
-												key={item.id}
-											>
-												<div className="Transaction-body">
-													<div className="Transaction-body-profile pushDown3 ">
-														<img
-															className="TransactionStatusimg pushDown1 inline-block h-8 w-8 rounded-full ring-2 ring-white"
-															src={item?.customer?.image_url}
-															alt="Scam Trust"
-														/>
-														<div>
-															<h5 className="Transaction-details1">
-																{item?.product_name}
+								{active === "alltransaction" && (
+									<div
+										className="tab-pane fade show active"
+										id="tabs-home"
+										role="tabpanel"
+										aria-labelledby="tabs-home-tab"
+									>
+										{done?.map((item) => {
+											return (
+												<div
+													onClick={() => {
+														setView(item?.transaction_id);
+														getTransaction();
+														showCompletedHandler(item?.transaction_id);
+														window?.localStorage?.setItem(
+															"idCompleted",
+															item?.transaction_id
+														);
+													}}
+													className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center"
+												>
+													<div
+														className={select ? "Transaction1 border" : "hide"}
+														key={item.id}
+													>
+														<div className="Transaction-body">
+															<div className="Transaction-body-profile pushDown3 ">
+																<img
+																	className="TransactionStatusimg pushDown1 inline-block h-8 w-8 rounded-full ring-2 ring-white"
+																	src={item?.customer?.image_url}
+																	alt="Scam Trust"
+																/>
+																<div>
+																	<h5 className="Transaction-details1">
+																		{item?.product_name}
+																	</h5>
+																	<p className="Transaction-description">
+																		{item.status}
+																	</p>
+																</div>
+															</div>
+														</div>
+														<div className="Transaction-details1 ">
+															<h5>
+																{item.customer?.name ||
+																	item?.customer?.username}
 															</h5>
-															<p className="Transaction-description">
-																{item.status}
-															</p>
+														</div>
+														<div className="Transaction-details1 pushDown">
+															<h5>{item.amount}</h5>
+														</div>
+														<div className="Transaction-details1 pushDown">
+															<h5>{item.due_date}</h5>
+														</div>
+														<div className="Transaction-details2 pushDown">
+															<h5>
+																<FontAwesomeIcon icon={faEllipsis} />
+															</h5>
 														</div>
 													</div>
 												</div>
-												<div className="Transaction-details1 ">
-													<h5>
-														{item.customer?.name || item?.customer?.username}
-													</h5>
-												</div>
-												<div className="Transaction-details1 pushDown">
-													<h5>{item.amount}</h5>
-												</div>
-												<div className="Transaction-details1 pushDown">
-													<h5>{item.due_date}</h5>
-												</div>
-												<div className="Transaction-details2 pushDown">
-													<h5>
-														<FontAwesomeIcon icon={faEllipsis} />
-													</h5>
-												</div>
-											</div>
-										</div>
-									);
-								})}
+											);
+										})}
 
-{cancels?.map((item, index, id) => {
-		
-									return (
-										<div
-											onClick={() => {
-												setView(item?.transaction_id);
-												getTransaction();
-												showCancelHandler();
-												window?.localStorage?.setItem(
-													"idCancelled",
-													item?.transaction_id
-												);
-											}}
-											className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center"
-										>
-											<div
-												className={select ? "Transaction1 border" : "hide"}
-												key={item?.id}
-											>
-												<div className="Transaction-body">
-													<div className="Transaction-body-profile pushDown3">
-														<img
-															className="TransactionStatusimg pushDown1 inline-block h-8 w-8 rounded-full ring-2 ring-white"
-															src={item?.customer?.image_url}
-															alt="Scam Trust"
-														/>
-														<div>
-															<h5 className="Transaction-details1">
-																{item?.product_name}
+										{cancels?.map((item, index, id) => {
+											return (
+												<div
+													onClick={() => {
+														setView(item?.transaction_id);
+														getTransaction();
+														showCancelHandler();
+														window?.localStorage?.setItem(
+															"idCancelled",
+															item?.transaction_id
+														);
+													}}
+													className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center"
+												>
+													<div
+														className={select ? "Transaction1 border" : "hide"}
+														key={item?.id}
+													>
+														<div className="Transaction-body">
+															<div className="Transaction-body-profile pushDown3">
+																<img
+																	className="TransactionStatusimg pushDown1 inline-block h-8 w-8 rounded-full ring-2 ring-white"
+																	src={item?.customer?.image_url}
+																	alt="Scam Trust"
+																/>
+																<div>
+																	<h5 className="Transaction-details1">
+																		{item?.product_name}
+																	</h5>
+																	<p className="Transaction-description">
+																		{item.status}
+																	</p>
+																</div>
+															</div>
+														</div>
+														<div className="Transaction-details1 ">
+															<h5>
+																{item?.customer?.name ||
+																	item?.customer?.username}
 															</h5>
-															<p className="Transaction-description">
-																{item.status}
-															</p>
+														</div>
+														<div className="Transaction-details1 pushDown">
+															<h5>{item?.amount}</h5>
+														</div>
+														<div className="Transaction-details1 pushDown">
+															<h5>{item?.due_date}</h5>
+														</div>
+														<div className="Transaction-details2 pushDown">
+															<h5>
+																<FontAwesomeIcon icon={faEllipsis} />
+															</h5>
 														</div>
 													</div>
 												</div>
-												<div className="Transaction-details1 ">
-													<h5>
-														{item?.customer?.name || item?.customer?.username}
-													</h5>
-												</div>
-												<div className="Transaction-details1 pushDown">
-													<h5>{item?.amount}</h5>
-												</div>
-												<div className="Transaction-details1 pushDown">
-													<h5>{item?.due_date}</h5>
-												</div>
-												<div className="Transaction-details2 pushDown">
-													<h5>
-														<FontAwesomeIcon icon={faEllipsis} />
-													</h5>
-												</div>
-											</div>
-										</div>
-									);
-								})}
-									{out?.map((item) => {
-									return (
-										<div
-											key={item.id}
-											onClick={() => {
-												setView(item?.transaction_id);
-												getTransaction();
-												window?.localStorage?.setItem(
-													"idOngoing",
-													item?.transaction_id
-												);
-												showOngoingHandler(item?.transaction_id);
-											}}
-											className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center"
-										>
-											<div className={select ? "Transaction1 border" : "hide"}>
-												<div className="Transaction-body">
-													<div className="Transaction-body-profile pushDown3">
-														<img
-															className="TransactionStatusimg pushDown1 inline-block h-8 w-8 rounded-full ring-2 ring-white "
-															src={item?.customer?.image_url}
-															alt="Scam Trust"
-														/>
-														<div>
-															<h5 className="Transaction-details1">
-																{item?.product_name}
+											);
+										})}
+										{out?.map((item) => {
+											return (
+												<div
+													key={item.id}
+													onClick={() => {
+														setView(item?.transaction_id);
+														getTransaction();
+														window?.localStorage?.setItem(
+															"idOngoing",
+															item?.transaction_id
+														);
+														showOngoingHandler(item?.transaction_id);
+													}}
+													className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center"
+												>
+													<div
+														className={select ? "Transaction1 border" : "hide"}
+													>
+														<div className="Transaction-body">
+															<div className="Transaction-body-profile pushDown3">
+																<img
+																	className="TransactionStatusimg pushDown1 inline-block h-8 w-8 rounded-full ring-2 ring-white "
+																	src={item?.customer?.image_url}
+																	alt="Scam Trust"
+																/>
+																<div>
+																	<h5 className="Transaction-details1">
+																		{item?.product_name}
+																	</h5>
+																	<p className="Transaction-description">
+																		{item.status}
+																	</p>
+																</div>
+															</div>
+														</div>
+														<div className="Transaction-details1 ">
+															<h5>
+																{item.customer?.name ||
+																	item?.customer?.username}
 															</h5>
-															<p className="Transaction-description">
-																{item.status}
-															</p>
+														</div>
+														<div className="Transaction-details1 pushDown">
+															<h5>{item.amount}</h5>
+														</div>
+														<div className="Transaction-details1 pushDown">
+															<h5>{item?.due_date}</h5>
+														</div>
+														<div className="Transaction-details2 pushDown">
+															<h5>
+																<FontAwesomeIcon icon={faEllipsis} />
+															</h5>
 														</div>
 													</div>
 												</div>
-												<div className="Transaction-details1 ">
-													<h5>
-														{item.customer?.name || item?.customer?.username}
-													</h5>
-												</div>
-												<div className="Transaction-details1 pushDown">
-													<h5>{item.amount}</h5>
-												</div>
-												<div className="Transaction-details1 pushDown">
-													<h5>{item?.due_date}</h5>
-												</div>
-												<div className="Transaction-details2 pushDown">
-													<h5>
-														<FontAwesomeIcon icon={faEllipsis} />
-													</h5>
-												</div>
-											</div>
-										</div>
-									);
-								})}
-								</div>
-							</div>
-						)}
-
-
-
-						
-
-
+											);
+										})}
+									</div>
+								)}
 							</div>
 							{active === "ongoing" && (
 								<div>
@@ -660,50 +651,50 @@ const VendorTransaction = (props) => {
 											/>
 										</div>
 									) : (
-										<div>
-											{cancelData?.map((newcancel) => {
+										<div className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center">
+											{cancelData?.map((newout) => {
 												return (
 													<div
 														onClick={() => {
-															setView(newcancel?.transaction_id);
+															setView(newout?.transaction_id);
 															getTransaction();
-															showCancelHandler();
 															window?.localStorage?.setItem(
 																"idCancelled",
-																newcancel?.transaction_id
+																newout?.transaction_id
 															);
+															showOngoingHandler(newout?.transaction_id);
 														}}
-														key={newcancel?.id}
+														key={newout?.id}
 														className="tab-pane border  my-6 fade show active"
 														id="tabs-home"
 														role="tabpanel"
 														aria-labelledby="tabs-home-tab"
 													>
-														<div className="flex items-center px-1.5 mb-4 justify-between  rounded-md md:px-4">
-															<div className="flex items-center justify-center">
+														<div className="flex items-center px-1.5 mb-4 justify-between rounded-md md:px-4">
+															<div className="flex items-center Transaction-body-profile pushDown3 justify-center">
 																<img
-																	className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
-																	src={newcancel?.customer?.image_url}
+																	className=" inline-block h-8 w-8 rounded-full ring-2 ring-white "
+																	src={newout?.customer?.image_url}
 																	alt="Awaiting icon"
 																/>
 																<div className="pl-1.5 pt-2">
 																	<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
-																		{newcancel?.product_name}
+																		{newout?.product_name}
 																	</p>
-																	<small className="block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]">
-																		Cancelled
+																	<small className="block whitespace-nowrap w-[50px]   md:w-[65px]">
+																		{newout?.status}
 																	</small>
 																</div>
 															</div>
 															<p className="text-[#262466] text-center">
-																{newcancel?.customer?.username ||
-																	newcancel?.customer?.name}
+																{newout?.customer?.name ||
+																	newout?.customer?.username}
 															</p>
 															<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
-																{newcancel?.amount}
+																{newout?.amount}
 															</p>
 															<p className="text-[#262466] text-center">
-																{moment(newcancel?.created_at).format(
+																{moment(newout?.created_at).format(
 																	"DD/MM/YYYY"
 																)}
 															</p>
@@ -727,53 +718,50 @@ const VendorTransaction = (props) => {
 											/>
 										</div>
 									) : (
-										<div>
-											{completeData?.map((completeS) => {
-												{
-													console.log(completeS, "hi");
-												}
+										<div className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center">
+											{completeData?.map((newout) => {
 												return (
 													<div
 														onClick={() => {
-															setView(completeS?.transaction_id);
+															setView(newout?.transaction_id);
 															getTransaction();
-															showCompletedHandler(completeS?.transaction_id);
 															window?.localStorage?.setItem(
 																"idCompleted",
-																completeS?.transaction_id
+																newout?.transaction_id
 															);
+															showOngoingHandler(newout?.transaction_id);
 														}}
-														key={completeS.id}
-														className="tab-pane fade show active border  my-6"
+														key={newout?.id}
+														className="tab-pane border  my-6 fade show active"
 														id="tabs-home"
 														role="tabpanel"
 														aria-labelledby="tabs-home-tab"
 													>
-														<div className="flex items-center px-1.5 mb-4 justify-between  rounded-md  md:px-4">
-															<div className="flex items-center justify-center">
+														<div className="flex items-center px-1.5 mb-4 justify-between rounded-md md:px-4">
+															<div className="flex items-center Transaction-body-profile pushDown3 justify-center">
 																<img
-																	className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
-																	src={completeS?.customer?.image_url}
+																	className=" inline-block h-8 w-8 rounded-full ring-2 ring-white "
+																	src={newout?.customer?.image_url}
 																	alt="Awaiting icon"
 																/>
 																<div className="pl-1.5 pt-2">
 																	<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
-																		{completeS?.product_name}
+																		{newout?.product_name}
 																	</p>
-																	<small className="block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]">
-																		Completed
+																	<small className="block whitespace-nowrap w-[50px]   md:w-[65px]">
+																		{newout?.status}
 																	</small>
 																</div>
 															</div>
 															<p className="text-[#262466] text-center">
-																{completeS?.customer?.name ||
-																	completeS?.customer?.username}
+																{newout?.customer?.name ||
+																	newout?.customer?.username}
 															</p>
 															<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
-																{completeS?.amount}
+																{newout?.amount}
 															</p>
 															<p className="text-[#262466] text-center">
-																{moment(completeS?.created_at).format(
+																{moment(newout?.created_at).format(
 																	"DD/MM/YYYY"
 																)}
 															</p>

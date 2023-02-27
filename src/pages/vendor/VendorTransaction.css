@@ -16,20 +16,20 @@
 	min-width: 30rem;
 	width: 80vw;
 	position: fixed;
-	top: 50%;
+	/* top: 50%;
 	left: 58%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%); */
 	
 }
 
-/* .Transactions {
+.Transactions {
     padding: 1rem;
     overflow: scroll;
     overflow-x: hidden;
-    height: 36rem;
+    height: 66rem;
     
   }
-   */
+  
 .Transactions .heading {
 	display: flex;
 	align-items: left;

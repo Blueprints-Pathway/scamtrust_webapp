@@ -14,7 +14,7 @@ import InitiationSuccessful from "../InitiateTransaction/InitiationSuccessful";
 import TransactionPreview from "../InitiateTransaction/TransactionPreview";
 import InitiateTransaction from "../../components/InitiateTransaction/InitiateTransaction";
 import { useNavigate } from "react-router-dom";
-import "./customerTransact.css"
+import "./customerTransact.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import moment from "moment";
@@ -168,7 +168,6 @@ const CustomerTransact = (props) => {
 			};
 
 			const data = await axios.get(API_URL, config);
-
 
 			// console.log(values, "values");
 			// return response;
@@ -417,21 +416,21 @@ const CustomerTransact = (props) => {
 									aria-labelledby="tabs-home-tab"
 								>
 									{done?.length === 0 ? (
-									<div className="flex items-center justify-center">
-										<div>
-									       <img
-									       	className="w-[150px] h-[220px]  object-contain"
-									       	src={notrans}
-									       	alt="info"
-									       />
-									    <div></div>
-									</div>
-								</div>
+										<div className="flex items-center justify-center">
+											<div>
+												<img
+													className="w-[150px] h-[220px]  object-contain"
+													src={notrans}
+													alt="info"
+												/>
+												<div></div>
+											</div>
+										</div>
 									) : (
 										<div>
-										
 											{done?.map((item) => (
 												<div
+													key={item?.id}
 													onClick={() => {
 														setView(item?.transaction_id);
 														getTransaction();
@@ -454,7 +453,7 @@ const CustomerTransact = (props) => {
 																{item?.product_name}
 															</p>
 															<small className="location w-[50px] overflow-hidden md:w-[65px]">
-															   {item?.status}
+																{item?.status}
 															</small>
 														</div>
 													</div>
@@ -474,6 +473,7 @@ const CustomerTransact = (props) => {
 
 									{cancels?.map((item) => (
 										<div
+											key={item?.id}
 											onClick={() => {
 												setView(item?.transaction_id);
 												getTransaction();
@@ -513,6 +513,7 @@ const CustomerTransact = (props) => {
 									))}
 									{out?.map((item) => (
 										<div
+											key={item?.id}
 											onClick={() => {
 												setView(item?.transaction_id);
 												getTransaction();
@@ -560,14 +561,14 @@ const CustomerTransact = (props) => {
 							<div>
 								{outgoing?.length === 0 ? (
 									<div className="flex items-center justify-center">
-									<div>
-									   <img
-										   className="w-[150px] h-[220px]  object-contain"
-										   src={notrans}
-										   alt="info"
-									   />
-									<div></div>
-								</div>
+										<div>
+											<img
+												className="w-[150px] h-[220px]  object-contain"
+												src={notrans}
+												alt="info"
+											/>
+											<div></div>
+										</div>
 									</div>
 								) : (
 									<div>
@@ -575,6 +576,7 @@ const CustomerTransact = (props) => {
 											console.log(newout, "new out");
 											return (
 												<div
+													key={newout?.id}
 													onClick={() => {
 														setView(newout?.transaction_id);
 														getTransaction();
@@ -629,20 +631,21 @@ const CustomerTransact = (props) => {
 							<div>
 								{completeData?.length === 0 ? (
 									<div className="flex items-center justify-center">
-									<div>
-									   <img
-										   className="w-[150px] h-[220px]  object-contain"
-										   src={notrans}
-										   alt="info"
-									   />
-									<div></div>
-								</div>
+										<div>
+											<img
+												className="w-[150px] h-[220px]  object-contain"
+												src={notrans}
+												alt="info"
+											/>
+											<div></div>
+										</div>
 									</div>
 								) : (
 									<div>
 										{completeData?.map((completeS) => {
 											return (
 												<div
+													key={completeS.id}
 													onClick={() => {
 														setView(completeS?.transaction_id);
 														getTransaction();
@@ -698,14 +701,14 @@ const CustomerTransact = (props) => {
 							<div>
 								{cancelData?.length === 0 ? (
 									<div className="flex items-center justify-center">
-									<div>
-									   <img
-										   className="w-[150px] h-[220px]  object-contain"
-										   src={notrans}
-										   alt="info"
-									   />
-									<div></div>
-								</div>
+										<div>
+											<img
+												className="w-[150px] h-[220px]  object-contain"
+												src={notrans}
+												alt="info"
+											/>
+											<div></div>
+										</div>
 									</div>
 								) : (
 									<div>
