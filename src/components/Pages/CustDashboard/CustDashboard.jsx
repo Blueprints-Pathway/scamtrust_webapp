@@ -301,7 +301,7 @@ const CustomerDashboard = (props) => {
 							</div>
 						</div>
 
-						<div className="flex justify-between mt-[20px] 2xl:mt-[53px]">
+						<div className="flex justify-between mt-[20px] 2xl:mt-[53px] z-50">
 							<button
 								onClick={() => setIsWithdrawing(true)}
 								className="bg-[#E9303B] text-xs lg:text-base w-[100px] hover:shadow-xl transition-all duration-300 2xl:w-[143px] text-center text-white py-[9px] rounded-lg"

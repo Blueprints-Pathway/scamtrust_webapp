@@ -347,7 +347,7 @@ const Header = (props) => {
 							className="w-[22px] h-[24px] mb-[1.3rem] lg:mr-[50px]"
 						/>
 					</div>
-					<div className="overflow-y-scroll pointer-events-auto h-[18rem] ml-[-130px]">
+					<div className="overflow-y-scroll pointer-events-none h-[18rem] ml-[-130px]">
 						{notification?.map((newNotice) => {
 							return (
 								<div className="h-[8.5rem]">
@@ -355,7 +355,7 @@ const Header = (props) => {
 										<div className=" " key={newNotice?.id}>
 											<div
 												key={newNotice?.id}
-												class="overflow-y-scroll block notice2 py-4 px-6 rounded-lg shadow-lg bg-white max-w-sm bg-[#cdcbf6]"
+												class="overflow-y-scroll pointer-events-auto block notice2 py-4 px-6 rounded-lg shadow-lg bg-white max-w-sm bg-[#cdcbf6]"
 											>
 												{" "}
 												<button

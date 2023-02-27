@@ -301,8 +301,8 @@ const VendorTransaction = (props) => {
 					)}
 				</div>
 			) : (
-				<div className="transactions-card-cover ">
-					<div className="transactions-card">
+				<div className="transactions-card-cover">
+					<div className="transactions-card h-[55rem] overflow-y-scroll">
 						<div className="Transactions">
 							<div className="heading px-9 py-9">
 								<h4>Transaction</h4>
