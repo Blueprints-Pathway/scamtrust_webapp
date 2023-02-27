@@ -59,7 +59,9 @@ const CustomerDashboard = () => {
     setShowConfirmAccont((prevState) => !prevState)
   }
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
+  
   useEffect(() => {
+   
 		(async () => {
 			try {
 				const API_URL = `https://scamtrust.herokuapp.com/api/v1/user/getdetails`;
@@ -99,7 +101,7 @@ const CustomerDashboard = () => {
 
 
   const handleClose = () => {
-    setClose(!close);
+    setClose(true);
   }
 
   const dispatch = useDispatch();
@@ -228,22 +230,22 @@ const CustomerDashboard = () => {
           </div>
 
           <div className='card-wrapper lg:mt-[-60px] md:mt-8 lg:mr-5'>
-          <h3 className='cust-group text-xl font-extrabold mr-32 mb-[-2px] lg:mr-[35.5rem]
+          <h3 className='cust-group text-xl font-extrabold mr-32 mb-1 lg:mr-[35.5rem]
           md:ml-[-17rem] md:text-lg
           '>Get Started</h3>
           <div className="card-con lg:mt-[-9px]">
-            <div 		onClick={onCreateTransactionClicked} className='cust-card my-4 lg:mx-14 md:mx-5'>
+            <div 		onClick={onCreateTransactionClicked} className='cust-card my-2 lg:mx-14 md:mx-5'>
               <img className='w-8' src={create} alt="create transaction" /> 
               <p className='pl-2'>Create New Transaction</p>
               </div>
             <div 
             // onClick={() => setIsFunding(true)}
             onClick={handleConfirmAccount}
-            className="cust-card my-4 lg:mx-14 md:mx-5">
+            className="cust-card my-2 lg:mx-14 md:mx-5">
               <img className='w-8' src={wallet} alt="fund wallet" />
               <p className='mr-12 pl-2'>Fund your wallet</p>
               </div>
-            <div className="cust-card my-4 lg:mx-14 md:mt-4 md:mr-[17.6rem] lg:mt-5">
+            <div className="cust-card my-2 lg:mx-14 md:mt-4 md:mr-[17.6rem] lg:mt-5">
               <img className='w-8' src={KYC} alt="complete KYC" />
               <p className='mr-12 pl-2'>Complete KYC</p>
               </div>
@@ -251,19 +253,19 @@ const CustomerDashboard = () => {
           </div>
 
           <div className='cust-group2 card-wrapper lg:mt-[-5px] md:mt-3'>
-          <h3 className='text-xl font-extrabold mr-32 mt-6 lg:mr-[35.5rem]
+          <h3 className='text-xl font-extrabold mr-32 mt-5 mb-1 lg:mr-[35.5rem]
           md:ml-[-17rem] md:text-lg
           '>Need help?</h3>
           <div className="card-con lg:mr-[22.8rem]">
             <div 
             onClick={openFaq}
-            className='cust-card my-4 lg:mx-14 md:mx-5'>
+            className='cust-card my-2 lg:mx-14 md:mx-5'>
               <img className='w-8' src={faq} alt="faq" /> 
               <p className='mr-28 pl-3'>FAQs</p>
               </div>
             <div 
             onClick={setModalIsOpenToTrue}
-            className="cust-card my-4 lg:mx-14 md:mx-5">
+            className="cust-card my-2 lg:mx-14 md:mx-5">
               <img className='w-8' src={chat} alt="chat" />
               <p className='mr-16 pl-3'>Chat with us</p>
               </div>
@@ -279,13 +281,14 @@ const CustomerDashboard = () => {
 
           </div>
           </div>
-          <div className='cust-close text-lg font-semibold text-right mr-4 mt-3
+          <div className='cust-close text-lg font-semibold text-right mt-2 mr-7
           lg:mr-48 lg:text-xl md:mr-20 md:mt-7
           '>
            <button className='cust-close-btn' onClick={handleClose}>Close x</button>
           </div>
+      </div>
       </div>        
-      </div>             
+                 
     </Layout>
   );
 };

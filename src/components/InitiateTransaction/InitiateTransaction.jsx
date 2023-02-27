@@ -16,7 +16,7 @@ const InitiateTransaction = (props) => {
     : null;
 
   const defaultValues = {
-    vendor_id: items?.vendor_id,
+    vendor_id: transactionDetails?.vendor_id,
     product_name: transactionDetails?.product_name,
     phone: transactionDetails?.phone,
     due_date: transactionDetails?.due_date,
@@ -123,6 +123,7 @@ const InitiateTransaction = (props) => {
             </div>
             <div className="relative">
               <input
+              id="Product name"
                 type="text"
                 name="product_name"
                 placeholder="Product name"

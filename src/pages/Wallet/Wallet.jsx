@@ -264,7 +264,7 @@ const Wallet = () => {
 									<div className="text-sm 2xl:text-xl">
 										<p>
 											<span className="text-colorSecondary">
-												&#8358; 1,100,000.00
+												&#8358; {userFromBackend?.withdrawnAmount}
 											</span>{" "}
 											Withdrawn so far
 										</p>

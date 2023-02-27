@@ -7,6 +7,7 @@ import Success from "./Sucess";
 function Pin({
 	setShow,
 	setIsWithdrawing,
+	bankSelectedId,
 	amount,
 	selectedBank,
 	accountNumber,
@@ -40,17 +41,18 @@ function Pin({
 			};
 			const payload = {
 				amount: amount,
-				bank_id: selectedBank,
+				bank_id: bankSelectedId,
 				account_number: accountNumber,
 				pin: pin,
 			};
 
 			const data = await axios.post(API_URL, JSON.stringify(payload), config);
-		
 			console.log(data.status + 'axios')
 			setWithdraws(data?.status);
 		} catch (error) {
+			swal("Unsuccessful", "An Error Took Place!")
 			// Alert.alert("failed login details");
+			
 			console.log(error, "errrors");
 		}
 	};

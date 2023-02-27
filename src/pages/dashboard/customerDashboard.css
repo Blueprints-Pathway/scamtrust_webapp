@@ -119,14 +119,14 @@
         height: 60rem;
         border-radius: 15px;
         box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
-        padding: 20px 10px 0px 10px;
+        padding: 13px 10px 0px 10px;
       }
       .cust-card{
         background: #FFFFFF;
         box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
         border-radius: 5px;
         width: 15rem;
-        height: 5.2rem;
+        height: 4rem;
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -148,7 +148,7 @@
         background: #EAEAEA;
         color: #262466;
         width: 72%;
-        height: 46rem;
+        height: 40rem;
         border-radius: 15px;
         box-shadow: 0px 3px 6px rgba(0, 0, 41, 0.25);
         padding: 20px 10px 0px 10px;
@@ -161,7 +161,7 @@
         box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
         border-radius: 5px;
         width: 15rem;
-        height: 5.2rem;
+        height: 4.5rem;
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -173,11 +173,10 @@
         margin-bottom: -8px;
     }
     .cust-group2{
-        margin-top: -20px;
-        margin-bottom: 0px;
+        margin-top: -8px;
     }
     .cust-group{
-        margin-top: -10px;
+        margin-top: -8px;
         margin-bottom: 0px;
     }
   }
@@ -185,8 +184,8 @@
   @media screen and (max-width: 360px) {
     .cust-close-btn{
       position: absolute;
-      margin-top: -20px;
-      margin-left: -60px;
+      margin-top: -2px;
+      margin-left: -30px;
     }
   }
   
