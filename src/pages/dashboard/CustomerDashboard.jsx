@@ -16,6 +16,7 @@ import ConfirmTransactionPin from "../../components/Pages/CustDashboard/ConfirmT
 // import SuccessfulWithdrawal from "../../components/Pages/CustDashboard/SuccessfulWithdrawal";
 import DepositFunds from "../../components/Pages/CustDashboard/DepositFunds";
 import chat from '../../assets/chat-img.png'
+import logo from '../../assets/loader-img.png'
 import faq from '../../assets/conversation-img.png'
 import wallet from '../../assets/payment-img.png'
 import create from '../../assets/create.png'
@@ -40,6 +41,7 @@ const CustomerDashboard = () => {
   const [showFundWallet, setShowFundWallet] = useState(false);
 	const [showConfirmAccount, setShowConfirmAccont] = useState(false);
   const [details, setDetails] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
   const setModalIsOpenToTrue = () => {
     setModalIsOpen(true);
@@ -72,15 +74,23 @@ const CustomerDashboard = () => {
 					},
 				};
 
-				const data = await axios.get(API_URL, config);
+				const data = await axios.get(API_URL, config).finally(()=>{
+          setIsLoading(false);
+
+        });
 
 				console.log(data?.data, "user data customer dashboard");
 				setDetails(data?.data);
+        // setIsLoading(false);
 				// console.log(values, "values");
 				// return response;
 			} catch (error) {
 				console.log(error, "error");
+        // setIsLoading(false);
 			}
+      
+      
+    
 		})();
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -140,6 +150,12 @@ const CustomerDashboard = () => {
 
   return (
     <Layout heading="Dashboard">
+      { isLoading ?
+         <img src={logo} className= "fixed top-1/2 left-1/2  m-auto transition-timing-function: cubic-bezier(0.4, 0, 1, 1) animate-bounce" alt="" /> 
+      
+      : <div>
+
+      
       <FundWallet
 				setShowConfirmAccont={setShowConfirmAccont}
 				fundWalletHandler={fundWalletHandler}
@@ -287,7 +303,8 @@ const CustomerDashboard = () => {
            <button className='cust-close-btn' onClick={handleClose}>Close x</button>
           </div>
       </div>
-      </div>        
+      </div>  
+      </div>}      
                  
     </Layout>
   );

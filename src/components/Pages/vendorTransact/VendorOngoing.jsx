@@ -282,15 +282,15 @@ const VendorOngoing = ({ showOngoingHandler }) => {
 						<div className="flex items-center justify-between mt-10 mx-5 md:mx-36 lg:mx-26 md:mt-12 lg:mt-24">
 							<button
 								onClick={openModal}
-								className="text-black bg-[#EDEDED] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-10 lg:px-32 md:px-12 hover:bg-[#2b2970] hover-[#ffff] "
+								className="text-[#ffffff] bg-[#FF0000] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-10 lg:px-32 md:px-12 hover:bg-[#2b2970] hover-[#ffff] "
 							>
-								Cancel
+								Decline
 							</button>
 							<button
 								onClick={Accepted}
 								className="hover:bg-[#2b2970] text-[#ffff] bg-[#3AB75D] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-7 lg:px-28"
 							>
-								Complete
+								Accept
 							</button>
 
 							{/* CANCEL TRANSACTION MODAL  */}

@@ -16,20 +16,20 @@
 	min-width: 30rem;
 	width: 50vw;
 	position: fixed;
-	top: 50%;
+	/* top: 50%;
 	left: 58%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%); */
 	
 }
 
-/* .Transactions {
+.Transactions {
     padding: 1rem;
     overflow: scroll;
     overflow-x: hidden;
-    height: 36rem;
+    height: 66rem;
     
   }
-   */
+  
 .Transactions .heading {
 	display: flex;
 	align-items: left;
@@ -52,7 +52,7 @@
 
 .Transactions .Category h6 {
 	text-align: left;
-	/* width: 100%; */
+	
 	transform: rotate(0.08deg);
 	border-bottom: 2px solid #cfd8dc;
 	padding-bottom: 0.5rem;
@@ -60,7 +60,7 @@
 	font-style: normal;
 	font-weight: 700;
 	font-size: 14px;
-	/* or 253% */
+	
 	margin-top: 1rem;
 	margin-left: 0vw;
 	color: #a6a6a6;
@@ -196,8 +196,8 @@
 	}
 	.Transactions .Transaction1 {
 		display: flex;
-		gap: 0rem;
-		align-items: start;
+		gap: 3rem;
+		/* align-items: start; */
 		margin-bottom: 0rem;
 		margin-top: 1rem;
 	}
@@ -253,16 +253,35 @@
 	}
 }
 @media screen and (max-width: 480px) {
-	.transactions-card-cover {
-		position: fixed;
-		top: 50%;
-		left: 54%;
-		transform: translate(-50%, -50%);
-		transform: scale(0.8);
-	}
+	
 	.Transactions .Category {
 		width: 80vw;
 		margin-left: 3vw;
+	}
+	.Transaction-description {
+		font-family: "Karla";
+		font-style: normal;
+		font-weight: 600;
+		font-size: 8px;
+		 
+ 
+	
+		color: #a6a6a6;
+	}
+	.Transaction-details1 {
+		font-family: "Lato";
+		font-style: normal;
+		font-weight: 500;
+		font-size: 12px;
+		/* text-align: center; */
+		/* width: 0%; */
+	
+		align-self: center;
+		color: #232164;
+	}
+	.break{
+		max-width:10px;
+		word-wrap:break-word;
 	}
 }
 svg.star-svg {

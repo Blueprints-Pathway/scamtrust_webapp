@@ -44,6 +44,7 @@ const CustomerDashboard = (props) => {
 	const [showCanceled, setShowCanceled] = useState(false);
 	const [showCompleted, setShowCompleted] = useState(false);
 	const [showOngoing, setShowOngoing] = useState(false);
+	
 	const customStyles = {
 		content: {
 			width: "50vh",
@@ -293,7 +294,7 @@ const CustomerDashboard = (props) => {
 									Total Balance
 								</h4>
 								<h2 className="text-colorPrimary font-semibold text-sm 2xl:font-bold lg:text-lg 2xl:text-3xl">
-									&#8358; {balance}
+									&#8358; {balance.toFixed(2)}
 								</h2>
 							</div>
 
@@ -302,7 +303,7 @@ const CustomerDashboard = (props) => {
 									Outgoing Balance
 								</h4>
 								<h2 className="text-[#7d8287] font-semibold text-sm 2xl:font-bold lg:text-lg 2xl:text-3xl">
-									&#8358; {userFromBackend?.outgoingWalletBalance}
+									&#8358; {userFromBackend?.outgoingWalletBalance?.toFixed(2)}
 								</h2>
 							</div>
 						</div>
@@ -370,7 +371,7 @@ const CustomerDashboard = (props) => {
 				</div>
 
 				{/* TRANSACTIONS PAGE */}
-				<div className="w-full overflow-y-scroll overflow-x-scroll  h-[90vh] md:h-[120vh] lg:h-[135vh] xl:h-[87vh] 2xl:h-[75vh] mt-[-20px] md:mt-0 mx-2 py-7 lg:py-8 px-7 lg:px-12 bg-white rounded-[24px]">
+				<div className="w-full overflow-y-scroll overflow-x-scroll  h-[90vh] md:h-[120vh] lg:h-[102vh] xl:h-[80vh] 2xl:h-[75vh] mt-[-20px] md:mt-0 mx-2 py-7 lg:py-8 px-7 lg:px-12 bg-white rounded-[24px]">
 				<div
 						className="flex justify-end mb-5"
 						onClick={onCreateTransactionClicked}
@@ -807,7 +808,7 @@ const CustomerDashboard = (props) => {
 
 			                        {/* FAQ AND CHAT BUTTON */}
 					<div className="flex justify-center items-center lg:items-end bg-white mt-7 py-14 md:py-8 flex-col md:float-left lg:mt-[2.5rem] md:mx-3 ml-4 px-[40px] md:px-9  lg:flex-col rounded-3xl text-colorPrimary
-					xl:flex-row xl:px-2 xl:mt-[15rem] 2xl:mt-[5rem] 2xl:py-16">
+					xl:flex-row xl:px-2 xl:py-16 xl:mt-[8.5rem] xl:mb-[-500px] 2xl:mt-[5rem] 2xl:py-16">
 							<div 
 							onClick={() => navigate('/faq')}
 							className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[] py-[31px] px-[35px] bg-[#FFEFD9] my-2 rounded-3xl lg:mx-[48px] xl:mx-3 2xl:mx-8">

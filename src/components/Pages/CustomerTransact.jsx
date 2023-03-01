@@ -14,7 +14,7 @@ import InitiationSuccessful from "../InitiateTransaction/InitiationSuccessful";
 import TransactionPreview from "../InitiateTransaction/TransactionPreview";
 import InitiateTransaction from "../../components/InitiateTransaction/InitiateTransaction";
 import { useNavigate } from "react-router-dom";
-import "./customerTransact.css"
+import "./customerTransact.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import moment from "moment";
@@ -22,7 +22,7 @@ import moment from "moment";
 import Ongoing from "./custTransaction/Ongoing";
 import Completed from "./custTransaction/Completed";
 import Cancelled from "./custTransaction/Cancelled";
-
+import logo from '../../assets/loader-img.png'
 const CustomerTransact = (props) => {
 	//	const { setShowInitiateTransaction } = props;
 
@@ -33,7 +33,7 @@ const CustomerTransact = (props) => {
 	const [outgoing, setOutGoing] = useState();
 	const [completeData, setCompleteData] = useState();
 	const [cancelData, setCancelData] = useState();
-
+	const [isLoading, setIsLoading] = useState(true);
 	const [view, setView] = useState();
 	const [out, setOut] = useState();
 	const [done, setDone] = useState();
@@ -84,6 +84,7 @@ const CustomerTransact = (props) => {
 			} catch (error) {
 				console.log(error, "error");
 			}
+			setIsLoading(false)
 		})();
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -169,7 +170,6 @@ const CustomerTransact = (props) => {
 
 			const data = await axios.get(API_URL, config);
 
-
 			// console.log(values, "values");
 			// return response;
 		} catch (error) {
@@ -181,6 +181,10 @@ const CustomerTransact = (props) => {
 
 	return (
 		<Layout>
+			 { isLoading ?
+         <img src={logo} className= "fixed top-1/2 left-1/2  m-auto transition-timing-function: cubic-bezier(0.4, 0, 1, 1) animate-bounce" alt="" /> 
+      
+      : <div>
 			{showInitiateTransaction ? (
 				<Backdrop showInitiateTransaction={showInitiateTransaction}>
 					<InitiateTransaction
@@ -417,21 +421,21 @@ const CustomerTransact = (props) => {
 									aria-labelledby="tabs-home-tab"
 								>
 									{done?.length === 0 ? (
-									<div className="flex items-center justify-center">
-										<div>
-									       <img
-									       	className="w-[150px] h-[220px]  object-contain"
-									       	src={notrans}
-									       	alt="info"
-									       />
-									    <div></div>
-									</div>
-								</div>
+										<div className="flex items-center justify-center">
+											<div>
+												<img
+													className="w-[150px] h-[220px]  object-contain"
+													src={notrans}
+													alt="info"
+												/>
+												<div></div>
+											</div>
+										</div>
 									) : (
 										<div>
-										
 											{done?.map((item) => (
 												<div
+													key={item?.id}
 													onClick={() => {
 														setView(item?.transaction_id);
 														getTransaction();
@@ -454,7 +458,7 @@ const CustomerTransact = (props) => {
 																{item?.product_name}
 															</p>
 															<small className="location w-[50px] overflow-hidden md:w-[65px]">
-															   {item?.status}
+																{item?.status}
 															</small>
 														</div>
 													</div>
@@ -474,6 +478,7 @@ const CustomerTransact = (props) => {
 
 									{cancels?.map((item) => (
 										<div
+											key={item?.id}
 											onClick={() => {
 												setView(item?.transaction_id);
 												getTransaction();
@@ -513,6 +518,7 @@ const CustomerTransact = (props) => {
 									))}
 									{out?.map((item) => (
 										<div
+											key={item?.id}
 											onClick={() => {
 												setView(item?.transaction_id);
 												getTransaction();
@@ -560,14 +566,14 @@ const CustomerTransact = (props) => {
 							<div>
 								{outgoing?.length === 0 ? (
 									<div className="flex items-center justify-center">
-									<div>
-									   <img
-										   className="w-[150px] h-[220px]  object-contain"
-										   src={notrans}
-										   alt="info"
-									   />
-									<div></div>
-								</div>
+										<div>
+											<img
+												className="w-[150px] h-[220px]  object-contain"
+												src={notrans}
+												alt="info"
+											/>
+											<div></div>
+										</div>
 									</div>
 								) : (
 									<div>
@@ -575,6 +581,7 @@ const CustomerTransact = (props) => {
 											console.log(newout, "new out");
 											return (
 												<div
+													key={newout?.id}
 													onClick={() => {
 														setView(newout?.transaction_id);
 														getTransaction();
@@ -584,7 +591,7 @@ const CustomerTransact = (props) => {
 														);
 														showOngoingHandler(newout?.transaction_id);
 													}}
-													key={newout?.id}
+													// key={newout?.id}
 													className="tab-pane fade show active"
 													id="tabs-home"
 													role="tabpanel"
@@ -601,7 +608,7 @@ const CustomerTransact = (props) => {
 																<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 																	{newout?.product_name}
 																</p>
-																<small className="block whitespace-nowrap w-[50px]   md:w-[65px]">
+																<small className="w-[50px] location overflow-hidden md:w-[65px]">
 																	{newout?.status}
 																</small>
 															</div>
@@ -629,20 +636,21 @@ const CustomerTransact = (props) => {
 							<div>
 								{completeData?.length === 0 ? (
 									<div className="flex items-center justify-center">
-									<div>
-									   <img
-										   className="w-[150px] h-[220px]  object-contain"
-										   src={notrans}
-										   alt="info"
-									   />
-									<div></div>
-								</div>
+										<div>
+											<img
+												className="w-[150px] h-[220px]  object-contain"
+												src={notrans}
+												alt="info"
+											/>
+											<div></div>
+										</div>
 									</div>
 								) : (
 									<div>
 										{completeData?.map((completeS) => {
 											return (
 												<div
+													key={completeS.id}
 													onClick={() => {
 														setView(completeS?.transaction_id);
 														getTransaction();
@@ -652,7 +660,7 @@ const CustomerTransact = (props) => {
 															completeS?.transaction_id
 														);
 													}}
-													key={completeS.id}
+													// key={completeS.id}
 													className="tab-pane fade show active"
 													id="tabs-home"
 													role="tabpanel"
@@ -698,14 +706,14 @@ const CustomerTransact = (props) => {
 							<div>
 								{cancelData?.length === 0 ? (
 									<div className="flex items-center justify-center">
-									<div>
-									   <img
-										   className="w-[150px] h-[220px]  object-contain"
-										   src={notrans}
-										   alt="info"
-									   />
-									<div></div>
-								</div>
+										<div>
+											<img
+												className="w-[150px] h-[220px]  object-contain"
+												src={notrans}
+												alt="info"
+											/>
+											<div></div>
+										</div>
 									</div>
 								) : (
 									<div>
@@ -814,7 +822,7 @@ const CustomerTransact = (props) => {
 						</nav>
 					</div>
 				</div>
-			)}
+			)}</div>}
 		</Layout>
 	);
 };
