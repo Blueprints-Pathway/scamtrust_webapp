@@ -1014,7 +1014,7 @@ function DashBoardVendor() {
 									)}
 								</div> 
 							)} 
-						</div> */}
+						</div> 
 					  </div>  
 
 							<div className="right-bottom-card">

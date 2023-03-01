@@ -752,25 +752,29 @@ const changePhone = async (e) => {
 					closed1 ? "EditDone active" : Edit1 ? "EditDone" : "EditDone active"
 				}
 			>
-				<div className="EditDone-card">
-					<div className="EditDone-message">Edit Business name</div>
-					<div className="EditDone-card-close">
+				{/* EditDone-card 
+				EditDone-message
+				EditDone-card-close
+				EditDone-card-title */}
+				<div className="h-[35rem] mt-28 ml-5 flex-col items-center justify-center">
+					<div className="">Edit{details.usertype === "CUSTOMER" ? " Username" : " Business Name"}</div>
+					<div className="">
 						<h1 onClick={handleClosed1}>Close X </h1>
 					</div>
 					<div className="EditDone-Line"></div>
 
-					<div className="EditDone-card-title">
+					<div className="">
 						<h5>
 							Hello {details?.email}, we see that you are trying to change your
-							business name. Please reach out to our Admin on 0700-8000-5000 or
+							{details.usertype === "CUSTOMER" ? " Username" : " Business Name"}. Please reach out to our Admin on 0700-8000-5000 or
 							send an email to ScamTrustadmin@gmail.com
 						</h5>
-					</div>
-
-					<button onClick={handleClosed1} className="Edit-button yes">
+					<button onClick={handleClosed1} className="text-white bg-[#023b83] py-0 px-12 mt-8 rounded-md">
 						{" "}
 						Okay{" "}
 					</button>
+					</div>
+
 				</div>
 			</div>
 

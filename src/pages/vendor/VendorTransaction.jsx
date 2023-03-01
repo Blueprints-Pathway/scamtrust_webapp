@@ -301,325 +301,217 @@ const VendorTransaction = (props) => {
 					)}
 				</div>
 			) : (
-				<div className="transactions-card-cover">
-					<div className="transactions-card h-[55rem] overflow-y-scroll">
-						<div className="Transactions">
+				<div className="transactions-card-cover  ">
+					<div className="transactions-card">
+						<div className="Transactions ">
 							<div className="heading px-9 py-9">
 								<h4>Transaction</h4>
 							</div>
-							<div className="Category flex gap-6">
-								{select ? (
-									<h6
-										onClick={() => {
-											setActive("alltransaction");
-										}}
-										className="Selection active"
+							<div className="flex justify-between  mb-3 font-medium 2xl:font-bold text-xs lg:text-base 2xl:text-lg text-colorPrimary items-start border-b border-b-[#CFD8DC]">
+								<span
+									onClick={() => {
+										setActive("alltransaction");
+									}}
+									className="border-b-[3px] border-b-[#3AB75D] pb-5 cursor-pointer hover:opacity-70"
+								>
+									All
+								</span>
+								<span
+									onClick={() => {
+										setActive("ongoing");
+										console.log(active, "active");
+									}}
+									className="cursor-pointer hover:opacity-70 hover:border-b-[3px] hover:border-b-colorSecondary transition-all duration-300 "
+								>
+									On-going
+								</span>
+								<span
+									onClick={() => {
+										setActive("cancelled");
+										console.log(active, "active");
+									}}
+									className="cursor-pointer hover:opacity-70 hover:border-b-[3px] hover:border-b-colorSecondary transition-all duration-300"
+								>
+									Cancelled
+								</span>
+								<span
+									onClick={() => {
+										setActive("completed");
+										console.log(active, "active");
+									}}
+									className="cursor-pointer hover:opacity-70 hover:border-b-[3px] hover:border-b-colorSecondary transition-all duration-300"
+								>
+									Completed
+								</span>
+							</div>
+							<div class="tab-content" id="tabs-tabContent">
+								{active === "alltransaction" && (
+									<div
+										className="tab-pane fade show active"
+										id="tabs-home"
+										role="tabpanel"
+										aria-labelledby="tabs-home-tab"
 									>
-										All Transaction
-									</h6>
-								) : (
-									<h6
-										className="Selection"
-										onClick={() => {
-											setActive("alltransaction");
-											handleSelect();
-										}}
-									>
-										All Transaction
-									</h6>
-								)}
-								{select2 ? (
-									<h6
-										onClick={() => {
-											setActive("ongoing");
-											console.log(active, "active");
-										}}
-										className="Selection active"
-									>
-										On-going
-									</h6>
-								) : (
-									<h6
-										className="Selection"
-										onClick={() => {
-											setActive("ongoing");
-											handleSelect2();
-											console.log(active, "active");
-										}}
-									>
-										On-going
-									</h6>
-								)}
-								{select3 ? (
-									<h6
-										onClick={() => {
-											setActive("cancelled");
-											console.log(active, "active");
-										}}
-										className="Selection active"
-									>
-										Cancelled
-									</h6>
-								) : (
-									<h6
-										className="Selection"
-										onClick={() => {
-											setActive("cancelled");
-											console.log(active, "active");
-											handleSelect3();
-										}}
-									>
-										Cancelled
-									</h6>
-								)}
-								{select4 ? (
-									<h6
-										onClick={() => {
-											setActive("completed");
-											console.log(active, "active");
-										}}
-										className="Selection active"
-									>
-										Completed
-									</h6>
-								) : (
-									<h6
-										className="Selection"
-										onClick={() => {
-											setActive("completed");
-											console.log(active, "active");
-											handleSelect4();
-										}}
-									>
-										Completed
-									</h6>
+										{done?.map((item) => {
+											return (
+												<div
+													onClick={() => {
+														setView(item?.transaction_id);
+														getTransaction();
+														showCompletedHandler(item?.transaction_id);
+														window?.localStorage?.setItem(
+															"idCompleted",
+															item?.transaction_id
+														);
+													}}
+													className="  py-2 grid-rows-5 grid-flow-col  justify-items-center"
+												>
+														<div
+														onClick={() => {
+															setView(item?.transaction_id);
+															getTransaction();
+															window?.localStorage?.setItem(
+																"idCompleted",
+																item?.transaction_id
+															);
+															showOngoingHandler(item?.transaction_id);
+														}}
+														key={item?.id}
+														className="tab-pane border  my-6 fade show active"
+														id="tabs-home"
+														role="tabpanel"
+														aria-labelledby="tabs-home-tab"
+													>
+														<div className="flex items-center px-1.5 mb-4 justify-between rounded-md md:px-4">
+															<div className="flex items-center Transaction-body-profile pushDown3 justify-center">
+																<img
+																	className=" inline-block h-8 w-8 rounded-full ring-2 ring-white "
+																	src={item?.customer?.image_url}
+																	alt="Awaiting icon"
+																/>
+																<div className="pl-1.5 pt-2">
+																	<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+																		{item?.product_name}
+																	</p>
+																	<small className="block whitespace-nowrap w-[50px]   md:w-[65px]">
+																		{item?.status}
+																	</small>
+																</div>
+															</div>
+															<p className="text-[#262466] text-center ">
+																{item?.customer?.name ||
+																	item?.customer?.username}
+															</p>
+															<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+																{item?.amount}
+															</p>
+															<p className="text-[#262466] text-center">
+																{moment(item?.created_at).format(
+																	"DD/MM/YYYY"
+																)}
+															</p>
+														</div>
+													</div>
+												</div>
+											);
+										})}
+
+										{cancels?.map((item, index, id) => {
+											return (
+												<div
+													onClick={() => {
+														setView(item?.transaction_id);
+														getTransaction();
+														showCancelHandler();
+														window?.localStorage?.setItem(
+															"idCancelled",
+															item?.transaction_id
+														);
+													}}
+													className="tab-pane border  my-6 fade show active"
+												>
+													<div className="flex items-center px-1.5 mb-4 justify-between rounded-md md:px-4">
+															<div className="flex items-center Transaction-body-profile pushDown3 justify-center">
+																<img
+																	className=" inline-block h-8 w-8 rounded-full ring-2 ring-white "
+																	src={item?.customer?.image_url}
+																	alt="Awaiting icon"
+																/>
+																<div className="pl-1.5 pt-2">
+																	<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+																		{item?.product_name}
+																	</p>
+																	<small className="block whitespace-nowrap  w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+																		{item?.status}
+																	</small>
+																</div>
+															</div>
+															<p className="text-[#262466] text-center ">
+																{item?.customer?.name ||
+																	item?.customer?.username}
+															</p>
+															<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+																{item?.amount}
+															</p>
+															<p className="text-[#262466] text-center">
+																{moment(item?.created_at).format(
+																	"DD/MM/YYYY"
+																)}
+															</p>
+														</div>
+												</div>
+											);
+										})}
+										{out?.map((item) => {
+											return (
+												<div
+													key={item.id}
+													onClick={() => {
+														setView(item?.transaction_id);
+														getTransaction();
+														window?.localStorage?.setItem(
+															"idOngoing",
+															item?.transaction_id
+														);
+														showOngoingHandler(item?.transaction_id);
+													}}
+													className="tab-pane border  my-6 fade show active"
+												>
+														<div className=" Transaction-body flex items-center px-1.5 mb-4 justify-between rounded-md md:px-4">
+															<div className="flex items-center Transaction-body-profile pushDown3 justify-center">
+																<img
+																	className=" inline-block h-8 w-8 rounded-full ring-2 ring-white "
+																	src={item?.customer?.image_url}
+																	alt="Awaiting icon"
+																/>
+																<div className="pl-1.5 pt-2 ">
+																	<p className="Transaction-details1 text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+																		{item?.product_name}
+																	</p>
+																	<small className="Transaction-description block whitespace-nowrap  w-[45px] overflow-hidden text-ellipsis md:w-[65px] ">
+																		{item?.status}
+																	</small>
+																</div>
+															</div>
+															<p className="text-[#262466] text-center ">
+																{item?.customer?.name ||
+																	item?.customer?.username}
+															</p>
+															<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+																{item?.amount}
+															</p>
+															<p className="text-[#262466] text-center">
+																{moment(item?.created_at).format(
+																	"DD/MM/YYYY"
+																)}
+															</p>
+														</div>
+												</div>
+											);
+										})}
+									</div>
 								)}
 							</div>
-
-							{out?.map((item, index, id) => {
-								console.log(item, "out vendor");
-								return (
-									<div
-										onClick={() => {
-											setView(item?.transaction_id);
-											getTransaction();
-											window?.localStorage?.setItem(
-												"idOngoing",
-												item?.transaction_id
-											);
-											showOngoingHandler(item?.transaction_id);
-										}}
-										className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center"
-									>
-										<div
-											className={select ? "Transaction1 border" : "hide"}
-											key={item.id}
-										>
-											<div className="Transaction-body">
-												<div className="Transaction-body-profile pushDown3">
-													<img
-														className="TransactionStatusimg pushDown1 inline-block h-8 w-8 rounded-full ring-2 ring-white "
-														src={item?.customer?.image_url}
-														alt="Scam Trust"
-													/>
-													<div>
-														<h5 className="Transaction-details1">
-															{item?.product_name}
-														</h5>
-														<p className="Transaction-description">
-															{item.status}
-														</p>
-													</div>
-												</div>
-											</div>
-											<div className="Transaction-details1 ">
-												<h5>
-													{item.customer?.name || item?.customer?.username}
-												</h5>
-											</div>
-											<div className="Transaction-details1 pushDown">
-												<h5>{item.amount}</h5>
-											</div>
-											<div className="Transaction-details1 pushDown">
-												<h5>{item?.due_date}</h5>
-											</div>
-											<div className="Transaction-details2 pushDown">
-												<h5>
-													<FontAwesomeIcon icon={faEllipsis} />
-												</h5>
-											</div>
-										</div>
-									</div>
-								);
-							})}
-							{accepted?.map((item, index, id) => {
-								console.log(item, "out vendor");
-								return (
-									<div
-										onClick={() => {
-											setView(item?.transaction_id);
-											getTransaction();
-											window?.localStorage?.setItem(
-												"idAwaiting",
-												item?.transaction_id
-											);
-											showAcceptedHandler(item?.transaction_id);
-										}}
-										className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center"
-									>
-										<div
-											className={select ? "Transaction1 border" : "hide"}
-											key={item.id}
-										>
-											<div className="Transaction-body">
-												<div className="Transaction-body-profile pushDown3">
-													<img
-														className="TransactionStatusimg pushDown1 inline-block h-8 w-8 rounded-full ring-2 ring-white "
-														src={item?.customer?.image_url}
-														alt="Scam Trust"
-													/>
-													<div>
-														<h5 className="Transaction-details1">
-															{item?.product_name}
-														</h5>
-														<p className="Transaction-description">
-															{item.status}
-														</p>
-													</div>
-												</div>
-											</div>
-											<div className="Transaction-details1 ">
-												<h5>
-													{item.customer?.name || item?.customer?.username}
-												</h5>
-											</div>
-											<div className="Transaction-details1 pushDown">
-												<h5>{item.amount}</h5>
-											</div>
-											<div className="Transaction-details1 pushDown">
-												<h5>{item?.due_date}</h5>
-											</div>
-											<div className="Transaction-details2 pushDown">
-												<h5>
-													<FontAwesomeIcon icon={faEllipsis} />
-												</h5>
-											</div>
-										</div>
-									</div>
-								);
-							})}
-							{done?.map((item, index, id) => {
-								return (
-									<div
-										onClick={() => {
-											setView(item?.transaction_id);
-											getTransaction();
-											showCompletedHandler(item?.transaction_id);
-											window?.localStorage?.setItem(
-												"idCompleted",
-												item?.transaction_id
-											);
-										}}
-										className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center"
-									>
-										<div
-											className={select ? "Transaction1 border" : "hide"}
-											key={item.id}
-										>
-											<div className="Transaction-body">
-												<div className="Transaction-body-profile pushDown3 ">
-													<img
-														className="TransactionStatusimg pushDown1 inline-block h-8 w-8 rounded-full ring-2 ring-white"
-														src={item?.customer?.image_url}
-														alt="Scam Trust"
-													/>
-													<div>
-														<h5 className="Transaction-details1">
-															{item?.product_name}
-														</h5>
-														<p className="Transaction-description">
-															{item.status}
-														</p>
-													</div>
-												</div>
-											</div>
-											<div className="Transaction-details1 ">
-												<h5>
-													{item.customer?.name || item?.customer?.username}
-												</h5>
-											</div>
-											<div className="Transaction-details1 pushDown">
-												<h5>{item.amount}</h5>
-											</div>
-											<div className="Transaction-details1 pushDown">
-												<h5>{item.due_date}</h5>
-											</div>
-											<div className="Transaction-details2 pushDown">
-												<h5>
-													<FontAwesomeIcon icon={faEllipsis} />
-												</h5>
-											</div>
-										</div>
-									</div>
-								);
-							})}
-							{cancels?.map((item, index, id) => {
-								console.log(item,"item cancelled")
-								return (
-									<div
-										onClick={() => {
-											setView(item?.transaction_id);
-											getTransaction();
-											showCancelHandler();
-											window?.localStorage?.setItem(
-												"idCancelled",
-												item?.transaction_id
-											);
-										}}
-										className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center"
-									>
-										<div
-											className={select ? "Transaction1 border" : "hide"}
-											key={item?.id}
-										>
-											<div className="Transaction-body">
-												<div className="Transaction-body-profile pushDown3">
-													<img
-														className="TransactionStatusimg pushDown1 inline-block h-8 w-8 rounded-full ring-2 ring-white"
-														src={item?.customer?.image_url}
-														alt="Scam Trust"
-													/>
-													<div>
-														<h5 className="Transaction-details1">
-															{item?.product_name}
-														</h5>
-														<p className="Transaction-description">
-															{item.status}
-														</p>
-													</div>
-												</div>
-											</div>
-											<div className="Transaction-details1 ">
-												<h5>
-													{item?.customer?.name || item?.customer?.username}
-												</h5>
-											</div>
-											<div className="Transaction-details1 pushDown">
-												<h5>{item?.amount}</h5>
-											</div>
-											<div className="Transaction-details1 pushDown">
-												<h5>{item?.due_date}</h5>
-											</div>
-											<div className="Transaction-details2 pushDown">
-												<h5>
-													<FontAwesomeIcon icon={faEllipsis} />
-												</h5>
-											</div>
-										</div>
-									</div>
-								);
-							})}
-
 							{active === "ongoing" && (
 								<div>
 									{outgoing?.length === 0 ? (
@@ -631,7 +523,7 @@ const VendorTransaction = (props) => {
 											/>
 										</div>
 									) : (
-										<div className=" px-9 py-2 grid-rows-5 grid-flow-col  justify-items-center">
+										<div className="  py-2 grid-rows-4 grid-flow-col  justify-items-center">
 											{outgoing?.map((newout) => {
 												return (
 													<div
@@ -661,8 +553,8 @@ const VendorTransaction = (props) => {
 																	<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 																		{newout?.product_name}
 																	</p>
-																	<small className="block whitespace-nowrap w-[50px]   md:w-[65px]">
-																	{newout?.status}
+																	<small className=" Transaction-description w-[50px] location overflow-hidden md:w-[65px] ">
+																		{newout?.status}
 																	</small>
 																</div>
 															</div>
@@ -698,49 +590,50 @@ const VendorTransaction = (props) => {
 											/>
 										</div>
 									) : (
-										<div>
-											{cancelData?.map((newcancel) => {
+										<div className=" py-2 grid-rows-5 grid-flow-col  justify-items-center">
+											{cancelData?.map((newout) => {
 												return (
 													<div
 														onClick={() => {
-															setView(newcancel?.transaction_id);
+															setView(newout?.transaction_id);
 															getTransaction();
-															showCancelHandler();
 															window?.localStorage?.setItem(
 																"idCancelled",
-																newcancel?.transaction_id
+																newout?.transaction_id
 															);
+															showOngoingHandler(newout?.transaction_id);
 														}}
-														key={newcancel?.id}
+														key={newout?.id}
 														className="tab-pane border  my-6 fade show active"
 														id="tabs-home"
 														role="tabpanel"
 														aria-labelledby="tabs-home-tab"
 													>
-														<div className="flex items-center px-1.5 mb-4 justify-between  rounded-md md:px-4">
-															<div className="flex items-center justify-center">
+														<div className="flex items-center px-1.5 mb-4 justify-between rounded-md md:px-4">
+															<div className="flex items-center Transaction-body-profile pushDown3 justify-center">
 																<img
-																	className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
-																	src={newcancel?.customer?.image_url}
+																	className=" inline-block h-8 w-8 rounded-full ring-2 ring-white "
+																	src={newout?.customer?.image_url}
 																	alt="Awaiting icon"
 																/>
 																<div className="pl-1.5 pt-2">
 																	<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
-																		{newcancel?.product_name}
+																		{newout?.product_name}
 																	</p>
-																	<small className="block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]">
-																		Cancelled
+																	<small className="Transaction-description">
+																		{newout?.status}
 																	</small>
 																</div>
 															</div>
 															<p className="text-[#262466] text-center">
-																{newcancel?.customer?.username ||newcancel?.customer?.name }
+																{newout?.customer?.name ||
+																	newout?.customer?.username}
 															</p>
 															<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
-																{newcancel?.amount}
+																{newout?.amount}
 															</p>
 															<p className="text-[#262466] text-center">
-																{moment(newcancel?.created_at).format(
+																{moment(newout?.created_at).format(
 																	"DD/MM/YYYY"
 																)}
 															</p>
@@ -764,53 +657,50 @@ const VendorTransaction = (props) => {
 											/>
 										</div>
 									) : (
-										<div>
-											{completeData?.map((completeS) => {
-												{
-													console.log(completeS, "hi");
-												}
+										<div className="  py-2 grid-rows-5 grid-flow-col  justify-items-center">
+											{completeData?.map((newout) => {
 												return (
 													<div
 														onClick={() => {
-															setView(completeS?.transaction_id);
+															setView(newout?.transaction_id);
 															getTransaction();
-															showCompletedHandler(completeS?.transaction_id);
 															window?.localStorage?.setItem(
 																"idCompleted",
-																completeS?.transaction_id
+																newout?.transaction_id
 															);
+															showOngoingHandler(newout?.transaction_id);
 														}}
-														key={completeS.id}
-														className="tab-pane fade show active border  my-6"
+														key={newout?.id}
+														className="tab-pane border  my-6 fade show active"
 														id="tabs-home"
 														role="tabpanel"
 														aria-labelledby="tabs-home-tab"
 													>
-														<div className="flex items-center px-1.5 mb-4 justify-between  rounded-md  md:px-4">
-															<div className="flex items-center justify-center">
+														<div className="flex items-center px-1.5 mb-4 justify-between rounded-md md:px-4">
+															<div className="flex items-center Transaction-body-profile pushDown3 justify-center">
 																<img
-																	className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
-																	src={completeS?.customer?.image_url}
+																	className=" inline-block h-8 w-8 rounded-full ring-2 ring-white "
+																	src={newout?.customer?.image_url}
 																	alt="Awaiting icon"
 																/>
 																<div className="pl-1.5 pt-2">
 																	<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
-																		{completeS?.product_name}
+																		{newout?.product_name}
 																	</p>
-																	<small className="block whitespace-nowrap w-[50px]  text-ellipsis md:w-[65px]">
-																		Completed
+																	<small className="block whitespace-nowrap w-[50px]   md:w-[65px]">
+																		{newout?.status}
 																	</small>
 																</div>
 															</div>
-															<p className="text-[#262466] text-center">
-																{completeS?.customer?.name ||
-																	completeS?.customer?.username}
+															<p className="text-[#262466] text-center ">
+																{newout?.customer?.name ||
+																	newout?.customer?.username}
 															</p>
 															<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
-																{completeS?.amount}
+																{newout?.amount}
 															</p>
 															<p className="text-[#262466] text-center">
-																{moment(completeS?.created_at).format(
+																{moment(newout?.created_at).format(
 																	"DD/MM/YYYY"
 																)}
 															</p>

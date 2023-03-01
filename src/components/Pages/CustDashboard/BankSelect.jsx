@@ -10,7 +10,8 @@ const BankSelect = (props) => {
 	const [withdraws, setWithdraws] = useState();
     const [show, setShow] = useState(false);
     const [hide, setHide] = useState(false);
-    const [bankSelected, setSelectedBank] = useState(false);
+    const [bankSelected, setSelectedBank] = useState('');
+    const [bankSelectedId, setSelectedBankId] = useState('');
     const [bank, setBank] = useState([]);
     const [bankList, setBankList] = useState([]);
     const {setIsWithdrawing,amount,selectedBank,accountNumber,userName} = props;
@@ -53,6 +54,31 @@ const BankSelect = (props) => {
 
 			setHide(true);
 		}
+		let SearchList = <p class="flex-column justify-center items-center" >LOADING....</p>;;
+		if(bank.length === 0) {
+			SearchList = <p class="flex-column justify-center items-center" >LOADING....</p>;
+		}else if(bankList.length === 0) {
+			SearchList = <p class="flex-column justify-center items-center" >BANK IS NOT AVAILABLE!</p>;
+		}else {
+			SearchList = bankList?.map(
+				(allbannk, index) => {
+					// console.log(selectedBank, "all bank");
+					// console.log(allbannk[index].name);
+					return (
+						<div
+						onClick={(e) => {setSelectedBank(e.currentTarget.innerText); setSelectedBankId(e.target.id)}}
+						aria-current="true"
+					  //   focus:border-colorPrimary block w-full text-left cursor-pointer p-4 my-2 text-primary-600  focus:outline-none border-2 rounded-md px-3 py-1.5 text-gray-700" 
+						class="block w-full my-2 cursor-pointer border-2  bg-primary-100 p-4 text-primary-600  focus:outline-none border border-colorPrimary rounded-md w-full px-3 py-1.5 text-gray-700 active:bg-blue-600"
+						value={allbannk?.name} id={allbannk.id} >
+			  {allbannk?.name}
+			  </div>)
+				  }
+				  )
+			  
+		}
+		
+		
     return (
 		<React.Fragment>
 
@@ -87,7 +113,7 @@ const BankSelect = (props) => {
         onChange={searchHandler}
         type="search"
         className="relative m-0 block w-80 min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding
-		 px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600
+		 px-6 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600
 		  focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200
 		   dark:placeholder:text-neutral-200  placeholder:pl-5"
         placeholder="Search Bank"
@@ -106,22 +132,7 @@ const BankSelect = (props) => {
 
 <div class="flex-column justify-center items-center overflow-y-scroll scroll w-156 h-[300px] ">
   {/* <div class="w-96 "> */}
-   { bankList.length === 0 ? <p>BANK NOT LISTED!</p> : 	bankList?.map(
-	  (allbannk, index) => {
-		  // console.log(selectedBank, "all bank");
-		  // console.log(allbannk[index].name);
-		  return (
-			  <button
-			  onClick={(e)=>setSelectedBank(e.target.id)}
-			  className="focus:border-colorPrimary block w-full text-left cursor-pointer p-4 my-2 text-primary-600  focus:outline-none border-2 rounded-md px-3 py-1.5 text-gray-700" 
-			  value={allbannk?.name} id={allbannk.name} >
-
-	          {allbannk?.name}
-
-              </button>)
-	    }
-	    )
-	}
+  {SearchList}
     
     
   {/* </div> */}
@@ -172,6 +183,7 @@ const BankSelect = (props) => {
 				<Pin
 				selectedBank={bankSelected}
 				setShow={setShow}
+				bankSelectedId = {bankSelectedId}
 				setIsWithdrawing={setIsWithdrawing}
 				amount={amount}
 				accountNumber={accountNumber}

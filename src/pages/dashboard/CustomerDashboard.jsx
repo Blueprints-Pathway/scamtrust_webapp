@@ -59,7 +59,9 @@ const CustomerDashboard = () => {
     setShowConfirmAccont((prevState) => !prevState)
   }
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
+  
   useEffect(() => {
+   
 		(async () => {
 			try {
 				const API_URL = `https://scamtrust.herokuapp.com/api/v1/user/getdetails`;
@@ -99,7 +101,7 @@ const CustomerDashboard = () => {
 
 
   const handleClose = () => {
-    setClose(!close);
+    setClose(true);
   }
 
   const dispatch = useDispatch();
@@ -217,7 +219,7 @@ const CustomerDashboard = () => {
       </div>
 
       <div className={close ? "cust-active hidden" : "cust-welcome"}>
-        <div className={close ? "cust-active hidden" : "welcome-cust-card h-[41.5rem] lg:h-[42rem]"}>
+        <div className={close ? "cust-active hidden" : "welcome-cust-card h-[42rem] mt-2 md:ml-[-40px] lg:h-[42rem] lg:w-[85%] lg:ml-[-4rem] xl:w-[72%] xl:ml-[-5px]"}>
           <div className='lg:m-28 lg:ml-[12.1rem] md:mt-16 xl:ml-[9.5rem]'>
             <h1 className='cust-message text-2xl text-center font-extrabold
             lg:text-4xl lg:text-left md:text-1xl
@@ -284,8 +286,9 @@ const CustomerDashboard = () => {
           '>
            <button className='cust-close-btn' onClick={handleClose}>Close x</button>
           </div>
+      </div>
       </div>        
-      </div>             
+                 
     </Layout>
   );
 };

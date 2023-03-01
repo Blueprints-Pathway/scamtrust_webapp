@@ -247,7 +247,7 @@
 .EditDone-card-title {
 	position: absolute;
 	left: 10vw;
-	top: 15rem;
+	top: -28rem;
 	font-family: "Poppins";
 	font-style: normal;
 	font-weight: 400;
@@ -260,7 +260,7 @@
 }
 .EditDone-card-title1 {
 	position: relative;
-	left: -18.5vw;
+	left: -15vw;
 	top: 10rem;
 	font-family: "Poppins";
 	font-style: normal;
@@ -286,7 +286,7 @@
 	line-height: 30px;
 	color: #01316c;
 }
-.Edit-button {
+/* .Edit-button {
 	position: absolute;
 	bottom: 10rem;
 	width: 11rem;
@@ -295,7 +295,7 @@
 	color: #ffffff;
 	background: #023b83;
 	border-radius: 6.12667px;
-}
+} */
 .Edit-button1 {
 	position: absolute;
 	bottom: 10rem;
@@ -1325,11 +1325,12 @@
 		font-size: 10px;
 	}
 	.EditDone-card-title {
-		top: 12rem;
+		top: 7rem;
 		font-size: 11px;
 	}
 	.Edit-button {
-		right: 19vw;
+		right: 14vw;
+		top: 2rem;
 	}
 	.EditDone-card-title2 {
 		font-size: 12px;
@@ -1496,4 +1497,8 @@
 		right: -5vw;
 		top: 23rem;
 	}
+	/* .Edit-button{
+		top: 30rem;
+		margin-left: 20px;
+	} */
 }
