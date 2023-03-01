@@ -11,6 +11,7 @@ import CopyBlack from "../../assets/images/svg/copy-black.svg";
 import FundWallet from "../../components/Pages/Wallet/FundWallet";
 import ConfirmAccount from "../../components/Pages/Wallet/ConfirmAccount";
 import EmptyTxn from "../../assets/images/svg/EmptyTxn.svg";
+import logo from '../../assets/loader-img.png'
 import { fetchUser } from "../../services/auth";
 import NotAvailable from "../../components/Pages/Wallet/NotAvailable";
 import axios from "axios";
@@ -34,7 +35,8 @@ const Wallet = () => {
 	const [modalOpen, setModalIsOpen] = useState(false);
 	const [isWithdrawing, setIsWithdrawing] = useState(false);
 	const [showBalance, setShowBalance] = useState(false);
-	
+	const [isLoading, setIsLoading] = useState(true);
+
 	const customStyles = {
 		content: {
 			width: "50vh",
@@ -60,6 +62,7 @@ const Wallet = () => {
 	const balance= Math.round((amount + Number.EPSILON) * 100) / 100;  
 	useEffect(() => {
 		(async () => setUserFromBackend(await fetchUser(user.data.access_token)))();
+
 	}, []);
 
 	console.log(userFromBackend);
@@ -101,6 +104,7 @@ const Wallet = () => {
 			} catch (error) {
 				console.log(error, "error");
 			}
+			setIsLoading(false)
 		})();
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -117,6 +121,10 @@ const Wallet = () => {
 
 	return (
 		<Layout>
+			{ isLoading ?
+         <img src={logo} className= "fixed top-1/2 left-1/2  m-auto transition-timing-function: cubic-bezier(0.4, 0, 1, 1) animate-bounce" alt="" /> 
+      
+      : <div>
 			<FundWallet
 				setShowConfirmAccont={setShowConfirmAccont}
 				fundWalletHandler={fundWalletHandler}
@@ -146,7 +154,7 @@ const Wallet = () => {
 							<div className="flex justify-between items-center pb-1 border-b-2 border-b-[#3AB75D] mb-4">
 								<p className="font-bold text-xl 2xl:text-2xl">Account</p>
 								<p className="font-medium text-xl 2xl:text-2xl text-colorPrimary">
-									{details?.username}
+									{ details?.username === null ?details?.name : details?.username}
 								</p>
 							</div>
 
@@ -160,7 +168,7 @@ const Wallet = () => {
 							<div className="flex justify-between ">
 								<div>
 									 <p className="font-medium text-xl md:text-xl lg:text-2xl 2xl:text-3xl text-colorSecondary mb-2">
-										{showBalance ? "₦*****" : <span>&#8358; {balance}</span>}
+										{showBalance ? "₦*****" : <span>&#8358; {balance.toFixed(2)}</span>}
 									</p>
 									<p className="font-medium flex mb-8 2xl:mb-12 md:text-lg text-sm 2xl:text-xl text-colorPrimary">
 										<span>Available Balance</span>
@@ -192,7 +200,7 @@ const Wallet = () => {
 								<div>
 
 									<p className="font-medium text-xl md:text-xl lg:text-2xl 2xl:text-3xl text-colorSecondary mb-2">
-										{showBalance ? "₦*****" : <span>&#8358; {userFromBackend?.outgoingWalletBalance}</span>}
+										{showBalance ? "₦*****" : <span>&#8358; {userFromBackend?.outgoingWalletBalance == null ? userFromBackend?.incomingWalletBalance.toFixed(2) : userFromBackend?.outgoingWalletBalance?.toFixed(2)}</span>}
 									</p>
 
 									<p className="font-medium mb-8 flex md:text-lg text-sm 2xl:text-xl text-colorPrimary">
@@ -391,7 +399,7 @@ const Wallet = () => {
 							</div>
 						</div>
 				</div>
-			</div>
+			</div></div>}
 		</Layout>
 	);
 };

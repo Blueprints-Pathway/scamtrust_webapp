@@ -22,7 +22,7 @@ import moment from "moment";
 import Ongoing from "./custTransaction/Ongoing";
 import Completed from "./custTransaction/Completed";
 import Cancelled from "./custTransaction/Cancelled";
-
+import logo from '../../assets/loader-img.png'
 const CustomerTransact = (props) => {
 	//	const { setShowInitiateTransaction } = props;
 
@@ -33,7 +33,7 @@ const CustomerTransact = (props) => {
 	const [outgoing, setOutGoing] = useState();
 	const [completeData, setCompleteData] = useState();
 	const [cancelData, setCancelData] = useState();
-
+	const [isLoading, setIsLoading] = useState(true);
 	const [view, setView] = useState();
 	const [out, setOut] = useState();
 	const [done, setDone] = useState();
@@ -84,6 +84,7 @@ const CustomerTransact = (props) => {
 			} catch (error) {
 				console.log(error, "error");
 			}
+			setIsLoading(false)
 		})();
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -180,6 +181,10 @@ const CustomerTransact = (props) => {
 
 	return (
 		<Layout>
+			 { isLoading ?
+         <img src={logo} className= "fixed top-1/2 left-1/2  m-auto transition-timing-function: cubic-bezier(0.4, 0, 1, 1) animate-bounce" alt="" /> 
+      
+      : <div>
 			{showInitiateTransaction ? (
 				<Backdrop showInitiateTransaction={showInitiateTransaction}>
 					<InitiateTransaction
@@ -586,7 +591,7 @@ const CustomerTransact = (props) => {
 														);
 														showOngoingHandler(newout?.transaction_id);
 													}}
-													key={newout?.id}
+													// key={newout?.id}
 													className="tab-pane fade show active"
 													id="tabs-home"
 													role="tabpanel"
@@ -655,7 +660,7 @@ const CustomerTransact = (props) => {
 															completeS?.transaction_id
 														);
 													}}
-													key={completeS.id}
+													// key={completeS.id}
 													className="tab-pane fade show active"
 													id="tabs-home"
 													role="tabpanel"
@@ -817,7 +822,7 @@ const CustomerTransact = (props) => {
 						</nav>
 					</div>
 				</div>
-			)}
+			)}</div>}
 		</Layout>
 	);
 };

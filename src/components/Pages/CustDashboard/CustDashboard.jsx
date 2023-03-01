@@ -44,6 +44,7 @@ const CustomerDashboard = (props) => {
 	const [showCanceled, setShowCanceled] = useState(false);
 	const [showCompleted, setShowCompleted] = useState(false);
 	const [showOngoing, setShowOngoing] = useState(false);
+	
 	const customStyles = {
 		content: {
 			width: "50vh",
@@ -293,7 +294,7 @@ const CustomerDashboard = (props) => {
 									Total Balance
 								</h4>
 								<h2 className="text-colorPrimary font-semibold text-sm 2xl:font-bold lg:text-lg 2xl:text-3xl">
-									&#8358; {balance}
+									&#8358; {balance.toFixed(2)}
 								</h2>
 							</div>
 
@@ -302,7 +303,7 @@ const CustomerDashboard = (props) => {
 									Outgoing Balance
 								</h4>
 								<h2 className="text-[#7d8287] font-semibold text-sm 2xl:font-bold lg:text-lg 2xl:text-3xl">
-									&#8358; {userFromBackend?.outgoingWalletBalance}
+									&#8358; {userFromBackend?.outgoingWalletBalance?.toFixed(2)}
 								</h2>
 							</div>
 						</div>
