@@ -40,6 +40,35 @@ const Ongoing = ({ showOngoingHandler }) => {
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
+
+	useEffect(() => {
+		(async () => {
+			try {
+				const API_URL = `https://scamtrust.herokuapp.com/api/v1/rating/store`;
+				const config = {
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${user_details?.data?.access_token}`,
+					},
+				};
+				const payload = {
+					transaction_id: "SCT-TRA-63FCE5632C034",
+					quality_rating: 1,
+					delivery_rating: 1,
+					support_rating: 1,
+					price_rating: 1,
+				};
+				const data = await axios.post(API_URL, payload, config);
+				setGoing(data);
+				console.log(data?.data.data, "ratting");
+			} catch (error) {
+				console.log(error, "error");
+			}
+		})();
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+
 	const accepted = async () => {
 		showOngoingHandler();
 		try {
@@ -215,12 +244,14 @@ const Ongoing = ({ showOngoingHandler }) => {
 						>
 							Cancel
 						</button> */}
-					{going?.status==="ACCEPTED BY VENDOR" ?		<button
-								onClick={() => accepted()}
-								className="text-[#ffff] bg-[#3AB75D] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-7 lg:px-28"
-							>
-								Complete
-							</button>: null}
+							{going?.status === "ACCEPTED BY VENDOR" ? (
+								<button
+									onClick={() => accepted()}
+									className="text-[#ffff] bg-[#3AB75D] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-7 lg:px-28"
+								>
+									Complete
+								</button>
+							) : null}
 
 							{/* CANCEL TRANSACTION MODAL  */}
 							<Modal
