@@ -493,6 +493,9 @@ function DashBoardVendor() {
 								</div>
 							</div>
 						</div>					
+
+						    {/* TRANSACTION */}
+							
 						<div className="right ">
 							<div className="left-bottom-card">
 							<div className="Transactions">

@@ -24,6 +24,7 @@ import Completeds from "../../components/Pages/vendorTransact/VendorCompleted";
 import Cancelleds from "../../components/Pages/vendorTransact/VendorCancelled";
 import Accepteds from "../../components/Pages/vendorTransact/VendorAwaitingApproval";
 import moment from "moment";
+
 const VendorTransaction = (props) => {
 	const { data } = props;
 	const [modalIsOpen, setModalIsOpen] = useState(false);
