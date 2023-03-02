@@ -30,7 +30,8 @@ function VendorRating() {
 		delivery: 0,
 		support: 0,
 	});
-
+	const onGoing = localStorage?.getItem("idOngoing");
+	console.log(onGoing, "hellosssss");
 	let Service = ratting.support;
 	let Price = ratting.price;
 	let Quality = ratting?.quality;

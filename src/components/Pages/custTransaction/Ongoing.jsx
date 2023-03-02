@@ -11,10 +11,10 @@ import moment from "moment";
 const Ongoing = ({ showOngoingHandler }) => {
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
 	const onGoing = localStorage?.getItem("idOngoing");
-	console.log(onGoing, "hello");
+	// console.log(onGoing, "hello");
 
 	const [going, setGoing] = useState();
-	console.log(going, "ongoing");
+	// console.log(going, "ongoing");
 	const id = going?.transaction_id;
 	const back = () => {
 		showOngoingHandler();
@@ -40,6 +40,7 @@ const Ongoing = ({ showOngoingHandler }) => {
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
+
 	const accepted = async () => {
 		showOngoingHandler();
 		try {
@@ -52,11 +53,9 @@ const Ongoing = ({ showOngoingHandler }) => {
 			};
 
 			const data = await axios.get(API_URL, config);
-
+			navigate("/customer-ratting")
 			console.log(data, "trans done");
 
-			// console.log(values, "values");
-			// return response;
 		} catch (error) {
 			console.log(error, "errorss");
 		}
@@ -215,12 +214,16 @@ const Ongoing = ({ showOngoingHandler }) => {
 						>
 							Cancel
 						</button> */}
-					{going?.status==="ACCEPTED BY VENDOR" ?		<button
-								onClick={() => accepted()}
-								className="text-[#ffff] bg-[#3AB75D] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-7 lg:px-28"
-							>
-								Complete
-							</button>: null}
+							{going?.status === "ACCEPTED BY VENDOR" ? (
+								<button
+									onClick={() => {
+										accepted();
+									}}
+									className="text-[#ffff] bg-[#3AB75D] text-base rounded lg:rounded-md lg:text-2xl py-2 lg:py-6 px-7 lg:px-28"
+								>
+									Complete
+								</button>
+							) : null}
 
 							{/* CANCEL TRANSACTION MODAL  */}
 							<Modal
