@@ -5,17 +5,20 @@ import "./password.css";
 import Logo from "../images/ScanTrust logo.svg";
 import Mail from "../images/mail.svg";
 import InputCode from "./Token";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 function TokenEmail() {
 	const [loading, setLoading] = useState(false);
 	const [code, setCode] = useState([...Array(6)].map(() => ""));
 	const navigate = useNavigate();
+	const location = useLocation();
+	const email = location?.state;
+	console.log(email, "email");
 
 	const token = () => {
 		navigate("/confirmPassword", { state: getData });
 	};
 	const newData = code.toString();
- 
+
 	const getData = parseFloat(newData.replace(/,/g, ""));
 	console.log(getData, "number");
 	return (
@@ -30,7 +33,7 @@ function TokenEmail() {
 
 				<div className="text-center ">
 					<span className="font-popins password-recovery-top ">
-						Please enter the 6 digit code sent to folaade@gmail
+						Please enter the 6 digit code sent to {email}
 					</span>
 				</div>
 				<div className="grid grid-cols-6   gap-4 p-3  ">

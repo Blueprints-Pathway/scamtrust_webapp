@@ -26,7 +26,7 @@ function PasswordEmail() {
 			};
 
 			const data = await axios.post(API_URL, payload, config);
-      navigate("/tokenEmail");
+      navigate("/tokenEmail" ,{ state: email });
 			console.log(data?.data?.data, "user data");
 
 			// console.log(values, "values");
