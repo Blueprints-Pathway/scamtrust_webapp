@@ -235,7 +235,7 @@ const CustomerDashboard = () => {
       </div>
 
       <div className={close ? "cust-active hidden" : "cust-welcome"}>
-        <div className={close ? "cust-active hidden" : "welcome-cust-card h-[49rem] lg:h-[42rem]"}>
+        <div className={close ? "cust-active hidden" : "welcome-cust-card h-[42rem] mt-2 md:ml-[-40px] lg:h-[42rem] lg:w-[85%] lg:ml-[-4rem] xl:w-[72%] xl:ml-[-5px]"}>
           <div className='lg:m-28 lg:ml-[12.1rem] md:mt-16 xl:ml-[9.5rem]'>
             <h1 className='cust-message text-2xl text-center font-extrabold
             lg:text-4xl lg:text-left md:text-1xl

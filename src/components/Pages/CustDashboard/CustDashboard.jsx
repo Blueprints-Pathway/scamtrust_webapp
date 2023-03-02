@@ -371,7 +371,7 @@ const CustomerDashboard = (props) => {
 				</div>
 
 				{/* TRANSACTIONS PAGE */}
-				<div className="w-full overflow-y-scroll overflow-x-scroll  h-[90vh] md:h-[120vh] lg:h-[100vh] mt-[-20px] md:mt-0 mx-2 py-7 lg:py-8 px-7 lg:px-12 bg-white rounded-[24px]">
+				<div className="w-full overflow-y-scroll overflow-x-scroll  h-[90vh] md:h-[120vh] lg:h-[102vh] xl:h-[80vh] 2xl:h-[75vh] mt-[-20px] md:mt-0 mx-2 py-7 lg:py-8 px-7 lg:px-12 bg-white rounded-[24px]">
 				<div
 						className="flex justify-end mb-5"
 						onClick={onCreateTransactionClicked}
@@ -807,10 +807,11 @@ const CustomerDashboard = (props) => {
 
 
 			                        {/* FAQ AND CHAT BUTTON */}
-					<div className="flex justify-center items-center lg:items-end bg-white mt-7 py-14 md:py-8 lg:py-14 flex-col md:float-left lg:mt-32 lg:mx-[-10px] md:mx-3 ml-4 px-[40px] md:px-9 lg:px-[21px] lg:ml-1 lg:flex-row rounded-3xl text-colorPrimary">
+					<div className="flex justify-center items-center lg:items-end bg-white mt-7 py-14 md:py-8 flex-col md:float-left lg:mt-[2.5rem] md:mx-3 ml-4 px-[40px] md:px-9  lg:flex-col rounded-3xl text-colorPrimary
+					xl:flex-row xl:px-2 xl:py-16 xl:mt-[8.5rem] xl:mb-[-500px] 2xl:mt-[5rem] 2xl:py-16">
 							<div 
 							onClick={() => navigate('/faq')}
-							className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[] py-[31px] px-[35px] bg-[#FFEFD9] rounded-3xl mb-3 lg:mb-0 lg:mr-5">
+							className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[] py-[31px] px-[35px] bg-[#FFEFD9] my-2 rounded-3xl lg:mx-[48px] xl:mx-3 2xl:mx-8">
 								<div className="bg-[#ff9300] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
 									<img
 										className="w-[23px] h-[23px] object-contain"
@@ -824,7 +825,7 @@ const CustomerDashboard = (props) => {
 
 							<div 
 							onClick={setModalIsOpenToTrue}
-							className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[] py-[31px] px-[35px] bg-[#E2D8F1] rounded-3xl">
+							className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[] py-[31px] px-[35px] bg-[#E2D8F1] my-2 rounded-3xl xl:mx-3 2xl:mx-8">
 								<div className="bg-[#5F0AC3] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
 									<img
 										className="w-[23px] h-[23px] object-contain"
@@ -845,7 +846,8 @@ const CustomerDashboard = (props) => {
 							</div>
 						</div>
 
-			<div className="flex lg:flex lg:mt-[30rem] lg:mb-0 lg:mx-40 md:hidden mt-16 items-center justify-center lg:justify-start lg:items-end">
+			<div className="flex lg:flex lg:mt-[35rem] md:hidden mt-16 items-center justify-center lg:justify-center lg:items-end
+			xl:justify-center xl:items-end 2xl:mt-[38rem]">
 				<img src={SecuredBy} className="ml-5 lg:w-60" alt="secured by scam trust" />
 			 </div>
 

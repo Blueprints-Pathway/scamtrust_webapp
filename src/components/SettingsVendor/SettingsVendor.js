@@ -4,8 +4,6 @@ import React, { useState, useEffect } from "react";
 import "./settingsVendor.css";
 import swal from "sweetalert";
 import shielgg from "../../images/shielgg.png";
-// import Frame318 from "../../images/Frame318.png";
-// import SideBar from "../SideBar/SideBar";
 import PrivacySettings from "./PrivacySettings";
 import SecuritySettings from "./SecuritySettings";
 import GeneralSettings from "./GeneralSettings";
