@@ -723,9 +723,3 @@ const VendorTransaction = (props) => {
 
 export default VendorTransaction;
 
-const transactionTypes = [
-	{ name: "All Transactions" },
-	{ name: "Out-going" },
-	{ name: "Completed", icon: CompletedTab },
-	{ name: "Cancelled", icon: CancelledTab },
-];

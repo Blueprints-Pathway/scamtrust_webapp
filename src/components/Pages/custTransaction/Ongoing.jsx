@@ -8,12 +8,14 @@ import { useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 import axios from "axios";
 import moment from "moment";
+import logo from '../../../assets/loader-img.png'
 const Ongoing = ({ showOngoingHandler }) => {
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
 	const onGoing = localStorage?.getItem("idOngoing");
 	// console.log(onGoing, "hello");
 
 	const [going, setGoing] = useState();
+	const [isLoading, setIsLoading] = useState(true);
 	// console.log(going, "ongoing");
 	const id = going?.transaction_id;
 	const back = () => {
@@ -30,7 +32,9 @@ const Ongoing = ({ showOngoingHandler }) => {
 					},
 				};
 
-				const data = await axios.get(API_URL, config);
+				const data = await axios.get(API_URL, config).finally(() => {
+					setIsLoading(false);
+				});
 				setGoing(data?.data?.data);
 				console.log(data?.data.data, "cancelled");
 			} catch (error) {
@@ -53,9 +57,8 @@ const Ongoing = ({ showOngoingHandler }) => {
 			};
 
 			const data = await axios.get(API_URL, config);
-			navigate("/customer-ratting")
+			navigate("/customer-ratting");
 			console.log(data, "trans done");
-
 		} catch (error) {
 			console.log(error, "errorss");
 		}
@@ -89,6 +92,10 @@ const Ongoing = ({ showOngoingHandler }) => {
 	return (
 		<div>
 			<Layout>
+			{ isLoading ?
+         <img src={logo} className= "flex   m-auto transition-timing-function: cubic-bezier(0.4, 0, 1, 1) animate-bounce" alt="" /> 
+      
+      :
 				<div className="flex justify-center mx-[-120px] items-start">
 					<div className="bg-[#fff] rounded-3xl md:w-[53rem] w-[22rem] mr-9 lg:ml-[-185px] mt-[-80px] md:mt-[-72px] lg:w-[90rem] lg:mt-[-75px] lg:pb-16 py-10 pt-12 lg:pt-12 md:pt-8 md:px-12 px-5">
 						<h6
@@ -258,7 +265,7 @@ const Ongoing = ({ showOngoingHandler }) => {
 							<img className="w-24 mx-1" src={Logo} alt="Scamtrust logo" />
 						</div>
 					</div>
-				</div>
+				</div>}
 			</Layout>
 		</div>
 	);

@@ -6,16 +6,15 @@ const Star = ({ selected = false, onClick = (f) => f }) => (
 	<div className={selected ? "star selected" : "star"} onClick={onClick} />
 );
 
-const Delivers = ({ totalStars }) => {
-	const [deliverySelected, selectStar] = useState(0);
-	console.log(deliverySelected, "hello");
+const Delivers = ({ totalStars,deliverySelected, deliveryStar }) => {
+	
 	return (
 		<div className="star-rating">
 			{[...Array(totalStars)].map((n, i) => (
 				<Star
 					key={i}
 					selected={i < deliverySelected}
-					onClick={() => selectStar(i + 1)}
+					onClick={() => deliveryStar(i + 1)}
 				/>
 			))}
 			<p>

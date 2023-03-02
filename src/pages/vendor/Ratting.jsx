@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -11,45 +11,22 @@ import Delivers from "./Delivey";
 import Serviceses from "./Serviceses";
 import Qualities from "./Qualities";
 
-function Ratting({ totalStars,qualitySelected }) {
-	// const [services, setServices] = useState({
-	// 	service: 0,
-	// });
-	// const [prices, setPrices] = useState();
-	// const [qualitys, setQualitys] = useState();
-	// const [Deliverys, setDeliverys] = useState({});
+const Ratting = React.memo(({ totalStars }) => {
 	const navigate = useNavigate();
-	// const Delivery = {
-	// 	size: 30,
-	// 	value: setDeliverys,
-	// 	activeColor: "#FFAA00",
-	// 	edit: true,
-	// };
-	// const Price = {
-	// 	size: 30,
-	// 	// count:5,
-	// 	value: setPrices,
-	// 	activeColor: "#FFAA00",
-	// 	edit: true,
-	// };
-	// const Service = {
-	// 	size: 30,
-	// 	// count:5,
-	// 	value: setServices,
-	// 	activeColor: "#FFAA00",
-	// 	edit: true,
-	// };
-	// const Quality = {
-	// 	size: 30,
-	// 	value: setQualitys,
-	// 	activeColor: "#FFAA00",
-	// 	edit: true,
-	// };
+
+	const [servicesSelected, serviceStar] = useState(0);
+	const [priceSelected, priceStar] = useState(0);
+	const [deliverySelected, deliveryStar] = useState(0);
+	const [qualitySelected, qualityStar] = useState(0);
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
 	console.log("user details", user_details?.data?.access_token);
 	const onGoing = localStorage?.getItem("idOngoing");
+	console.log("helo boss");
 
-	console.log(Prices, "prices");
+	const newQuality = qualitySelected;
+	const newPrice = priceSelected;
+	const newDeliver = deliverySelected;
+	const newServices = servicesSelected;
 	const rate = async (e) => {
 		e.preventDefault();
 		try {
@@ -62,22 +39,25 @@ function Ratting({ totalStars,qualitySelected }) {
 			};
 			const payload = {
 				transaction_id: onGoing,
-				quality_rating: 3,
-				delivery_rating: 4,
-				support_rating: 5,
-				price_rating: 2,
+				quality_rating: newQuality,
+				delivery_rating: newDeliver,
+				support_rating: newServices,
+				price_rating: newPrice,
 			};
 			const data = await axios.post(API_URL, payload, config);
-			navigate("/customer-ratting");
+			navigate("/");
 			// setRatting(data?.data?.data);
 			// const response = data?.data
-			console.log(data, "response data");
+			// console.log(data, "response data");
 
 			// return response;
 		} catch (error) {
-			console.log(error, "error");
+			// console.log(error, "error");
 		}
 	};
+
+	console.log(servicesSelected, "service");
+
 	return (
 		<Layout>
 			<div className="container-fluid grid justify-items-center ">
@@ -99,19 +79,35 @@ function Ratting({ totalStars,qualitySelected }) {
 							<div className="grid grid-cols-2  ">
 								<div className="pt-9 text-lg grid justify-items-center ">
 									<h4 className="text-lg ">Delivery</h4>
-									<Delivers totalStars={5} />
+									<Delivers
+										totalStars={5}
+										deliverySelected={deliverySelected}
+										deliveryStar={deliveryStar}
+									/>
 								</div>
 								<div className="pt-9 text-lg grid justify-items-center ">
 									<h4 className="text-lg">Price</h4>
-									<Prices totalStars={5} />
+									<Prices
+										totalStars={5}
+										priceSelected={priceSelected}
+										priceStar={priceStar}
+									/>
 								</div>
 								<div className="py-16  text-lg grid justify-items-center ">
 									<h4 className="text-lg">Service</h4>
-									<Serviceses totalStars={5} />
+									<Serviceses
+										servicesSelected={servicesSelected}
+										serviceStar={serviceStar}
+										totalStars={5}
+									/>
 								</div>
 								<div className="py-16 text-lg grid justify-items-center ">
 									<h4 className="text-lg">Quality</h4>
-									<Qualities totalStars={5} />
+									<Qualities
+										totalStars={5}
+										qualitySelected={qualitySelected}
+										qualityStar={qualityStar}
+									/>
 								</div>
 							</div>
 
@@ -130,6 +126,6 @@ function Ratting({ totalStars,qualitySelected }) {
 			</div>
 		</Layout>
 	);
-}
+});
 
 export default Ratting;
