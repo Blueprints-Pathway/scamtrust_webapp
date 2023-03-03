@@ -59,7 +59,7 @@ function Signup() {
 				DOB: "",
 				// bvn: "",
 				phone: "",
-				type: "customer",
+				type: "CUSTOMER",
 			}}
 			validationSchema={schema}
 			onSubmit={(values) => {
