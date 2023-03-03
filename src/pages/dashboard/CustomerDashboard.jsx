@@ -151,7 +151,8 @@ const CustomerDashboard = () => {
   return (
     <Layout heading="Dashboard">
       { isLoading ?
-         <img src={logo} className= "fixed top-1/2 left-1/2  m-auto transition-timing-function: cubic-bezier(0.4, 0, 1, 1) animate-bounce" alt="" /> 
+      // fixed top-1/2 left-1/2  m-auto 
+         <img src={logo} className= "fixed top-[25rem] left-[12.5rem] md:left-[28rem] lg:left-[38rem] lg:top-[32rem] xl:top-[34rem] xl:left-[60rem] 2xl:top-1/2 2xl:left-1/2 transition-timing-function: cubic-bezier(0.4, 0, 1, 1) animate-bounce" alt="" /> 
       
       : <div>
 
@@ -251,18 +252,18 @@ const CustomerDashboard = () => {
           '>Get Started</h3>
           <div className="card-con lg:mt-[-9px]">
             <div 		onClick={onCreateTransactionClicked} className='cust-card my-2 lg:mx-14 md:mx-5'>
-              <img className='w-8' src={create} alt="create transaction" /> 
+              <img className='w-8 ml-3' src={create} alt="create transaction" /> 
               <p className='pl-2'>Create New Transaction</p>
               </div>
             <div 
             // onClick={() => setIsFunding(true)}
             onClick={handleConfirmAccount}
             className="cust-card my-2 lg:mx-14 md:mx-5">
-              <img className='w-8' src={wallet} alt="fund wallet" />
+              <img className='w-8 ml-3' src={wallet} alt="fund wallet" />
               <p className='mr-12 pl-2'>Fund your wallet</p>
               </div>
             <div className="cust-card my-2 lg:mx-14 md:mt-4 md:mr-[17.6rem] lg:mt-5">
-              <img className='w-8' src={KYC} alt="complete KYC" />
+              <img className='w-8 ml-3' src={KYC} alt="complete KYC" />
               <p className='mr-12 pl-2'>Complete KYC</p>
               </div>
           </div>
@@ -276,13 +277,13 @@ const CustomerDashboard = () => {
             <div 
             onClick={openFaq}
             className='cust-card my-2 lg:mx-14 md:mx-5'>
-              <img className='w-8' src={faq} alt="faq" /> 
+              <img className='w-8 ml-3' src={faq} alt="faq" /> 
               <p className='mr-28 pl-3'>FAQs</p>
               </div>
             <div 
             onClick={setModalIsOpenToTrue}
             className="cust-card my-2 lg:mx-14 md:mx-5">
-              <img className='w-8' src={chat} alt="chat" />
+              <img className='w-8 ml-3' src={chat} alt="chat" />
               <p className='mr-16 pl-3'>Chat with us</p>
               </div>
 

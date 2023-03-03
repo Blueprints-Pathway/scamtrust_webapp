@@ -8,7 +8,7 @@ import SecuredBy from "../../../assets/images/svg/secured-by.svg";
 import Add from "../../../assets/images/svg/add.svg";
 import EmptyTxn from "../../../assets/images/svg/EmptyTxn.svg";
 import { fetchUser } from "../../../services/auth";
-import refresh from "../../../assets/refresh-icon.png";
+// import refresh from "../../../assets/refresh-icon.png";
 import axios from "axios";
 import onGoing from "../../../assets/on-going-icon.png";
 import cancelled from "../../../assets/cancel-icon.png";
@@ -23,6 +23,7 @@ import Completeds from ".././custTransaction/Completed";
 import Cancelleds from ".././custTransaction/Cancelled";
 import "./modal.css"
 import "./custDashboard.css"
+import { IoRefreshSharp } from 'react-icons/io5'
 
 const CustomerDashboard = (props) => {
 	const { setShowInitiateTransaction, setIsWithdrawing, setIsFunding } = props;
@@ -273,19 +274,20 @@ const CustomerDashboard = (props) => {
 
 			<div className="flex w-full px-0 flex-col md:flex-row gap-7 justify-between md:mb-[-32.7rem]">
 				<div className="min-w-[260px] mx-2 w-[100%] md:w-[70%] 2xl:w-[685px]">
-					<div className="w-full bg-[#FFFEFE] lg:rounded-[24px] rounded-3xl lg:px-[37px] px-5 py-3 lg:py-[29px] mb-[13px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
-						<p className="font-semibold text-lg 2xl:text-2xl text-colorPrimary">
-							{userFromBackend?.data.name}
-						</p>
-						<div className = "flex justify-between">
-						<p className="font-semibold text-lg 2xl:text-2xl text-[#7D8287]">
-							ID - {userFromBackend?.data.id} 
-						</p>
-						<img src={refresh} onClick = {() => {window.location.reload(false);}} alt="" />
-						
+					<div className="w-full bg-[#FFFEFE] lg:rounded-[24px] rounded-3xl lg:px-[37px] px-5 py-3 pb-8 xl:pb-8 lg:py-[20px] mb-[25px] xl:mb-[35px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
+						  <div className="flex items-center justify-end mt-[-3px] lg:mt-[-10px] mb-2 xl:mb-4">
+							<IoRefreshSharp  onClick = {() => {window.location.reload(false);}}
+							className="text-[#3AB75D] text-3xl xl:text-4xl" />
+						  </div>
+						<div className="flex items-end justify-between mb-[-10px]">
+						   <p className="font-semibold text-lg 2xl:text-2xl text-colorPrimary">
+						   	{userFromBackend?.data.name}Ridic ventures
+						   </p>
+						   <p className="font-semibold text-lg 2xl:text-2xl text-[#7D8287]">
+						   	ID - {userFromBackend?.data.id} 
+						   </p>
 						</div>
 
-							
 						<div className="border-b-2 mb-5 2xl:mb-[53px] border-b-[#3AB75D] mt-[13px]" />
 						
 						<div className="flex justify-between">
@@ -371,7 +373,7 @@ const CustomerDashboard = (props) => {
 				</div>
 
 				{/* TRANSACTIONS PAGE */}
-				<div className="w-full overflow-y-scroll overflow-x-scroll  h-[90vh] md:h-[120vh] lg:h-[102vh] xl:h-[80vh] 2xl:h-[75vh] mt-[-20px] md:mt-0 mx-2 py-7 lg:py-8 px-7 lg:px-12 bg-white rounded-[24px]">
+				<div className="w-full overflow-y-scroll overflow-x-scroll  h-[90vh] md:h-[125vh] lg:h-[123vh] xl:h-[92vh] 2xl:h-[75vh] mt-[-20px] md:mt-0 mx-2 py-7 lg:py-8 px-7 lg:px-12 bg-white rounded-[24px]">
 				<div
 						className="flex justify-end mb-5"
 						onClick={onCreateTransactionClicked}
@@ -807,11 +809,11 @@ const CustomerDashboard = (props) => {
 
 
 			                        {/* FAQ AND CHAT BUTTON */}
-					<div className="flex justify-center items-center lg:items-end bg-white mt-7 py-14 md:py-8 flex-col md:float-left lg:mt-[2.5rem] md:mx-3 ml-4 px-[40px] md:px-9  lg:flex-col rounded-3xl text-colorPrimary
-					xl:flex-row xl:px-2 xl:py-16 xl:mt-[8.5rem] xl:mb-[-500px] 2xl:mt-[5rem] 2xl:py-16">
+					<div className="flex justify-center items-center lg:items-end bg-white mt-7 md:mt-9 py-14 md:py-8 flex-col md:float-left lg:mt-[9rem] md:mx-3 ml-4 px-[40px] lg:px-[45px] md:px-9 lg:flex-col rounded-3xl text-colorPrimary
+					xl:flex-row xl:px-2 xl:py-16 xl:mt-[11.5rem] xl:mb-[-500px] 2xl:mt-[0rem] 2xl:py-16">
 							<div 
 							onClick={() => navigate('/faq')}
-							className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[] py-[31px] px-[35px] bg-[#FFEFD9] my-2 rounded-3xl lg:mx-[48px] xl:mx-3 2xl:mx-8">
+							className="w-[200px] mx-auto hover:scale-105 transition-all duration-500 2xl:w-[] py-[31px] px-[35px] bg-[#FFEFD9] my-2 rounded-3xl lg:mx-[30px] xl:mx-3 2xl:mx-8">
 								<div className="bg-[#ff9300] mb-4 grid place-content-center h-[46px] w-[46px] rounded-full">
 									<img
 										className="w-[23px] h-[23px] object-contain"
