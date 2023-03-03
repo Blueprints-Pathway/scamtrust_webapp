@@ -24,6 +24,7 @@ import Completeds from "../../components/Pages/vendorTransact/VendorCompleted";
 import Cancelleds from "../../components/Pages/vendorTransact/VendorCancelled";
 import Accepteds from "../../components/Pages/vendorTransact/VendorAwaitingApproval";
 import moment from "moment";
+import logo from '../../assets/loader-img.png'
 const VendorTransaction = (props) => {
 	const { data } = props;
 	const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -44,6 +45,7 @@ const VendorTransaction = (props) => {
 	const [cancels, setCancels] = useState();
 	const [active, setActive] = useState("alltransaction");
 	const [accepted, setAccepted] = useState();
+	const [isLoading, setIsLoading] = useState(true);
 	const showOngoingHandler = () => {
 		setShowOngoing((prevState) => !prevState);
 	};
@@ -139,7 +141,9 @@ const VendorTransaction = (props) => {
 					},
 				};
 
-				const data = await axios.get(API_URL, config);
+				const data = await axios.get(API_URL, config).finally(() => {
+					setIsLoading(false);
+				});;
 				console.log(data?.data?.data, "datas");
 				const mappeddata = data?.data?.data?.map((data) => data);
 				const datas = mappeddata?.filter(
@@ -273,6 +277,14 @@ const VendorTransaction = (props) => {
 	};
 	return (
 		<Layout heading="Transaction">
+				{isLoading ? (
+				<img
+					src={logo}
+					className="flex mt-90 m-auto transition-timing-function: cubic-bezier(0.4, 0, 1, 1) animate-bounce"
+					alt=""
+				/>
+			) : (
+				<div>
 			{showOngoing || showCanceled || showAccepted || showCompleted ? (
 				<div>
 					{showOngoing && (
@@ -690,7 +702,9 @@ const VendorTransaction = (props) => {
 						{/* pagination */}
 					</div>
 				</div>
+				
 			)}
+			</div>)}
 		</Layout>
 	);
 };
