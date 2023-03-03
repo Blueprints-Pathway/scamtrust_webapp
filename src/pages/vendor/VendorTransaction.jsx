@@ -1,10 +1,7 @@
-/** @format */
-
 import { useState, useEffect } from "react";
 import Layout from "../../components/Layout/Layout";
 import ReactPaginate from "react-paginate";
 import axios from "axios";
-
 import AwaitingApproval from "../../assets/images/svg/awaiting-approval.svg";
 import Completed from "../../assets/images/svg/completed.svg";
 import Cancelled from "../../assets/images/svg/cancelled.svg";
@@ -359,7 +356,7 @@ const VendorTransaction = (props) => {
 													onClick={() => {
 														setView(item?.transaction_id);
 														getTransaction();
-														showCompletedHandler();
+														showCompletedHandler(item?.transaction_id);
 														window?.localStorage?.setItem(
 															"idCompleted",
 															item?.transaction_id
@@ -412,15 +409,6 @@ const VendorTransaction = (props) => {
 																)}
 															</p>
 														</div>
-														<p className="text-[#262466] text-center ">
-															{item?.customer?.name || item?.customer?.username}
-														</p>
-														<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
-															{item?.amount}
-														</p>
-														<p className="text-[#262466] text-center">
-															{moment(item?.created_at).format("DD/MM/YYYY")}
-														</p>
 													</div>
 												</div>
 											);
@@ -438,7 +426,8 @@ const VendorTransaction = (props) => {
 															item?.transaction_id
 														);
 													}}
-													className="tab-pane border rounded-lg mt-4 lg:py-3 fade show active">
+													className="tab-pane border rounded-lg mt-4 lg:py-3 fade show active"
+												>
 													<div className="flex items-center px-1.5 mb-0 justify-between md:px-4">
 															<div className="flex items-center Transaction-body-profile pushDown3 justify-center">
 																<img
@@ -468,16 +457,6 @@ const VendorTransaction = (props) => {
 																)}
 															</p>
 														</div>
-														<p className="text-[#262466] text-center ">
-															{item?.customer?.name || item?.customer?.username}
-														</p>
-														<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
-															{item?.amount}
-														</p>
-														<p className="text-[#262466] text-center">
-															{moment(item?.created_at).format("DD/MM/YYYY")}
-														</p>
-													</div>
 												</div>
 											);
 										})}
@@ -525,16 +504,6 @@ const VendorTransaction = (props) => {
 																)}
 															</p>
 														</div>
-														<p className="text-[#262466] text-center ">
-															{item?.customer?.name || item?.customer?.username}
-														</p>
-														<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
-															{item?.amount}
-														</p>
-														<p className="text-[#262466] text-center">
-															{moment(item?.created_at).format("DD/MM/YYYY")}
-														</p>
-													</div>
 												</div>
 											);
 										})}
@@ -697,7 +666,7 @@ const VendorTransaction = (props) => {
 																"idCompleted",
 																newout?.transaction_id
 															);
-															showCompletedHandler(newout?.transaction_id);
+															showOngoingHandler(newout?.transaction_id);
 														}}
 														key={newout?.id}
 														className="tab-pane border rounded-lg mt-4 lg:py-3 fade show active"
@@ -751,3 +720,10 @@ const VendorTransaction = (props) => {
 };
 
 export default VendorTransaction;
+
+const transactionTypes = [
+	{ name: "All Transactions" },
+	{ name: "Out-going" },
+	{ name: "Completed", icon: CompletedTab },
+	{ name: "Cancelled", icon: CancelledTab },
+];
