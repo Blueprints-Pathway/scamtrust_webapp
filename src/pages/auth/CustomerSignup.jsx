@@ -35,7 +35,7 @@ const CustomerSignup = () => {
   const navigate = useNavigate();
 
   const customerSignupHandler = (data) => {
-    const type = "customer";
+    const type = "CUSTOMER";
     localStorage.setItem("customer-signup", JSON.stringify({ ...data, type }));
     navigate("/customer-signup-setpassword");
   };
