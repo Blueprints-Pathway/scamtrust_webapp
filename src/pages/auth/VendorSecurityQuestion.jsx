@@ -42,7 +42,7 @@ const VendorSecurityQuestion = (props) => {
 			};
 			const data = await axios.post(API_URL, payload, config);
 			console.log(data, "data");
-			navigate("/");
+			// navigate("/");
 			console.log(data, "data");
 		} catch (error) {
 			console.log(error, "errror");

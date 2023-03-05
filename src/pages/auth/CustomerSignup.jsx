@@ -36,7 +36,9 @@ const CustomerSignup = () => {
 
   const customerSignupHandler = (data) => {
     const type = "customer";
+    console.log(data);
     localStorage.setItem("customer-signup", JSON.stringify({ ...data, type }));
+    localStorage.setItem("user-email", data.email.toString())
     navigate("/customer-signup-setpassword");
   };
 

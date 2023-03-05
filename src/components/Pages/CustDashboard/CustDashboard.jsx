@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useReducer } from "react";
 import Modal from "react-modal";
 import AnimeList from "./AnimeList";
 import Info from "../../../assets/images/svg/info.svg";
@@ -250,7 +250,7 @@ const CustomerDashboard = (props) => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	console.log("details", userFromBackend);
-
+	const[ignored, forcedUpdate] = useReducer(x => x+1, 0)
 	const navigate = useNavigate();
 
 	const handleFaq = () => {
@@ -281,7 +281,7 @@ const CustomerDashboard = (props) => {
 						<p className="font-semibold text-lg 2xl:text-2xl text-[#7D8287]">
 							ID - {userFromBackend?.data.id} 
 						</p>
-						<img src={refresh} onClick = {() => {window.location.reload(false);}} alt="" />
+						<img src={refresh} onClick = {() => {forcedUpdate()} } alt="" />
 						
 						</div>
 

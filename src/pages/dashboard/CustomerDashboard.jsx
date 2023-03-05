@@ -41,7 +41,7 @@ const CustomerDashboard = () => {
   const [showFundWallet, setShowFundWallet] = useState(false);
 	const [showConfirmAccount, setShowConfirmAccont] = useState(false);
   const [details, setDetails] = useState();
-  const [isLoading, setIsLoading] = useState(true);
+ 
 
   const setModalIsOpenToTrue = () => {
     setModalIsOpen(true);
@@ -74,20 +74,20 @@ const CustomerDashboard = () => {
 					},
 				};
 
-				const data = await axios.get(API_URL, config).finally(()=>{
-          setIsLoading(false);
-
-        });
-
+				const data = await axios.get(API_URL, config)
+        
+        
+        
 				console.log(data?.data, "user data customer dashboard");
 				setDetails(data?.data);
-        // setIsLoading(false);
+     
 				// console.log(values, "values");
 				// return response;
 			} catch (error) {
-				console.log(error, "error");
-        // setIsLoading(false);
+        console.log(error, "error");
+  
 			}
+    
       
       
     
@@ -150,10 +150,7 @@ const CustomerDashboard = () => {
 
   return (
     <Layout heading="Dashboard">
-      { isLoading ?
-         <img src={logo} className= "fixed top-1/2 left-1/2  m-auto transition-timing-function: cubic-bezier(0.4, 0, 1, 1) animate-bounce" alt="" /> 
-      
-      : <div>
+     
 
       
       <FundWallet
@@ -173,6 +170,7 @@ const CustomerDashboard = () => {
         availableBalance = {details?.walletBalance}
           setIsWithdrawing={setIsWithdrawing}
           startWithdrawFunds={isWithdrawing}
+          bankAccounts = {details?.bankAccounts}
           setConfirmTransactionPin={setConfirmTransactionPin}
         />
       ) : (
@@ -303,8 +301,8 @@ const CustomerDashboard = () => {
            <button className='cust-close-btn' onClick={handleClose}>Close x</button>
           </div>
       </div>
-      </div>  
-      </div>}      
+      
+      </div>   
                  
     </Layout>
   );
