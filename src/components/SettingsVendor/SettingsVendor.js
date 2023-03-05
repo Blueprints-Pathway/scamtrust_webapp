@@ -16,7 +16,7 @@ function SettingsVendor() {
 	const [details, setDetails] = useState();
 	const [image, setImage] = useState();
 	const [preview, setPreview] = useState();
-	const [isLoading, setIsLoading] = useState(true);
+	
 	const handleSelect = () => {
 		setSelect(!select);
 		setSelect2(false);
@@ -71,7 +71,7 @@ function SettingsVendor() {
 			} catch (error) {
 				console.log(error, "error");
 			}
-			setIsLoading(false)
+			
 		})
 		();
 
@@ -120,10 +120,7 @@ upload()
 		<div>
 			
 			<Layout className="containerSettings" name="Settings">
-					{ isLoading ?
-         <img src={logo} className= "fixed top-1/2 left-1/2  m-auto transition-timing-function: cubic-bezier(0.4, 0, 1, 1) animate-bounce" alt="" /> 
-      
-      : <div className="containerSettings2">
+			<div className="containerSettings2">
 					<div className={checked ? "Center active" : "Center"}>
 						<img className="CenterTopImg object-cover" src={shielgg} alt="Scam Trust" />
 					</div>
@@ -211,7 +208,7 @@ upload()
 							</div>
 						{/* </div> */}
 					</div>
-				</div>}
+				</div>
 				{/* <SideBar /> */}
 			</Layout>
 		</div>

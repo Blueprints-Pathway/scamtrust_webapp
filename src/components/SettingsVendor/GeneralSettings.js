@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./settingsVendor.css";
 import axios from "axios";
 import swal from "sweetalert";
+import BankSelect from "../Pages/CustDashboard/BankSelect";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -25,6 +26,12 @@ function GeneralSettings() {
 	const [details, setDetails] = useState({});
 	const [newEmail, setNewEmail] = useState();
 	const [newPhone, setNewPhone]=useState()
+	const [amount, setAmount] = useState('');
+	const [show, setShow] = useState(false);
+	const [bankName, setBankName] = useState('');
+	const [bank, setBank] = useState();
+	const [amountError, setAmountError] = useState(false);
+	const [selectedBank, setSelectedBank] = useState('9 PAYMENT SOLUTIONS BANK');
 
 	const previewURL =
 		"https://ichef.bbci.co.uk/news/976/cpsprodpb/D8B9/production/_121018455_gettyimages-577003673.jpg";
@@ -124,7 +131,7 @@ function GeneralSettings() {
 	const [pinCheck12Ref, setPinCheck12Ref] = useState(useRef(null));
 
 	const [Errors, setErrors] = useState(true);
-
+	
 	// useEffect(() => {
 	// 	pin1Ref.current.focus();
 	// }, []);
@@ -280,12 +287,39 @@ const changePhone = async (e) => {
 		});
 	}
 };
+const [accountNumber, setAccountNumber] = useState('');
+	const [accountNumberError, setAccountNumberError] = useState(false);
+	const [accountName, setAccountName] = useState('');
+	const [accountNameError, setAccountNameError] = useState(false);
 ///phone number end///
 	const handleChange = (event) => {
 		const { name, value } = event.target;
 		setValues({ ...values, [name]: value });
 		setSubmit(true);
 	};
+	const continueHandler = () => {
+		if(accountName === null || accountName === ''){
+			setAccountNameError('Input a valid Accout Name')
+			console.log('valid digit 1')
+			return;
+
+		}
+		if(+accountNumber === null || accountNumber === ''){
+			setAccountNumberError('Input a valid digit!')
+			console.log('valid digit 2')
+			return;
+
+		}
+		if(+accountNumber.length !== 10){
+			setAccountNumberError('Input a valid Account Number!')
+			console.log('valid digit 2')
+			return;
+
+		}
+		console.log('done')
+		handleClosed12();
+		 setShow(true);
+	}
 	const [submit, setSubmit] = useState(false);
 
 	const validate = (values) => {
@@ -604,6 +638,7 @@ const changePhone = async (e) => {
 		setError(validate(values));
 		setErrors(error.All === true ? true : false);
 	};
+	
 	
 	return (
 		<div>
@@ -937,12 +972,12 @@ const changePhone = async (e) => {
 								<h5 className="addAccount">Add Bank Account</h5>
 							</div>
 
-							<div className="account-card">
+							{/* <div className="account-card">
 								<div className="account-card-title" onClick={handleEdit12}>
 									<FontAwesomeIcon className="plus" icon={faPlus} />
 								</div>{" "}
 								<h5 className="addAccount">Add Bank Account</h5>
-							</div>
+							</div> */}
 
 							<div className="Wallet-card-left-bottom-left">
 								<div className="Secured editSetting2 addBottom">
@@ -966,7 +1001,8 @@ const changePhone = async (e) => {
 					closed12 ? "EditDone active" : Edit10 ? "EditDone" : "EditDone active"
 				}
 			>
-				<div className="EditDone-card">
+				
+				{/* <div className="EditDone-card">
 					<div className="EditDone-message">Add Cashout Account</div>
 					<div className="EditDone-card-close">
 						<h1 onClick={handleClosed12}>Close X </h1>
@@ -974,7 +1010,7 @@ const changePhone = async (e) => {
 					<div className="EditDone-Line"></div>
 					<form className="AccountForm" onSubmit={handleSubmit}>
 						<div className="input-field-EditSettings">
-							<div className="input-field-addAccount">
+							{/* <div className="input-field-addAccount">
 								<label className="form-text-addAccount">Bank</label>
 								<img className="bankImg" src={bank} alt="Scam Trust" />
 								<input
@@ -995,37 +1031,38 @@ const changePhone = async (e) => {
 									/>
 									{error.bank}
 								</div>
-							)}
+							)} 
 
 							<div className="input-field-addAccount">
 								<label className="form-text-addAccount2">Account number</label>
 								<img className="bankNumImg" src={bank123} alt="Scam Trust" />
 								<input
-									onChange={handleChange}
-									value={values.bankNumber}
+									onChange={(e) => {setAccountNumber(e.target.value); setAccountNameError(false);}}
+									value={accountNumber}
 									className="inputBox-addAccount2"
 									name="bankNumber"
 									placeholder="Enter your business account number"
-									type="text"
+									type="number"
 									autoComplete="off"
 								/>
 							</div>
 
-							{submitted && error.bankNumber && (
+							{accountNumberError && (
 								<div className="error shift editSetting31">
 									<FontAwesomeIcon
 										className="exIconTrans"
 										icon={faCircleExclamation}
 									/>
-									{error.bankNumber}
+									{accountNumberError}
 								</div>
 							)}
+							
 
 							<div className="input-field-addAccount">
 								<label className="form-text-addAccount3">Account name</label>
 								<input
-									onChange={handleChange}
-									value={values.bankName}
+									onChange={(e) => {setAccountName(e.target.value); setAccountNameError(false)}}
+									value={accountName}
 									className="inputBox-addAccount3"
 									name="bankName"
 									type="text"
@@ -1033,16 +1070,24 @@ const changePhone = async (e) => {
 									autoComplete="off"
 								/>
 							</div>
-							{submitted && error.bankName && (
+							{accountNameError && (
 								<div className="error shift editSetting32">
 									<FontAwesomeIcon
 										className="exIconTrans"
 										icon={faCircleExclamation}
 									/>
-									{error.bankName}
+									{accountNameError}
 								</div>
 							)}
+							
 						</div>
+						<button
+							type="submit"
+							onClick={continueHandler}
+							className="bg-colorPrimary text-white px-7 py-3 rounded-md"
+						>
+							Continue
+						</button>
 
 						{submitted &&
 						!error.bankName &&
@@ -1076,8 +1121,111 @@ const changePhone = async (e) => {
 							/>{" "}
 						</div>
 					</div>
+				</div> */}
+				<div
+					// onSubmit={handleSubmit(onContinueClicked)}
+					className="fixed text-colorPrimary rounded-xl top-1/2 p-6 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 lg:max-w-[700px] xl:[1000px] md:p-10 w-[90%] mx-auto bg-white"
+				>
+					<div className="flex border-b pb-3 border-b-[#EAEAEA] justify-between items-center mb-11 md:mb-16">
+						<p className="font-semibold text-xl md:text-[30px]">Add Account</p>
+						<p
+							onClick={handleClosed12}
+							className="font-extrabold cursor-pointer text-lg md:text-[25px]"
+						>
+							Close x
+						</p>
+					</div>
+
+					<div className="mb-11 md:mb-16">
+						<label className="text-xl md:text-3xl block" for="amount">
+							Account Name
+						</label>
+						<input
+							// {...register("amount")}
+							value={accountName}
+							onChange={(e) =>{ setAccountName(e.target.value); setAccountNameError(false)}}
+							name="name"
+							type="text"
+							placeholder="Enter account name"
+							className={`block placeholder:text-[#E5E7E9] ${
+								accountNameError ? "border-b-red-600" : ""
+							} focus:outline-none w-full p-2 border-b border-b-[#C0C0C0]`}
+						/>
+						{accountNameError && (
+							<p className="text-red-600">{accountNameError}</p>
+						)}
+					</div>
+					<div className="mb-11 md:mb-16">
+						<label className="text-xl md:text-3xl block" htmlFor="amount">
+							Account Number
+						</label>
+						<input
+							// {...register("accountNumber")}
+							value={accountNumber}
+							onChange={(e) => {setAccountNumber(e.target.value); setAccountNumberError(false) }}
+							name="amount"
+							type="number"
+							placeholder="Enter Account Number"
+							className={`block placeholder:text-[#E5E7E9] ${
+								accountNumberError ? "border-b-red-600" : ""
+							} focus:outline-none w-full p-2 border-b border-b-[#C0C0C0]`}
+						/>
+						{accountNumberError && (
+							<p className="text-red-600">{accountNumberError}</p>
+						)}
+					</div>
+					{/* <div className="mb-32 md:mb-40 relative">
+						<label className="text-xl mb-2 md:text-3xl block" htmlFor="amount">
+							Destinations account
+						</label>
+						<select
+							onChange={(e) =>{ setSelectedBank(e.target.value); }}
+							className={`block ${
+								errors.account ? "border-red-600" : ""
+							} focus:outline-none border border-colorPrimary rounded-md w-full px-3 py-1.5 text-gray-700`}
+						>
+							{bank?.map(
+								(allbannk, index) => {
+									// console.log(selectedBank, "all bank");
+									// console.log(allbannk[index].name);
+									return (
+										<option value={allbannk?.name} id={allbannk.name} >
+											{allbannk?.name}
+										</option>)
+									}
+								)
+								}
+						</select>
+
+						{errors.account && (
+							<p className="text-red-600 mt-2">{errors.account.message}</p>
+						)}
+					</div> */}
+
+					<div className="flex justify-between items-center">
+						<img src={scamTrustLogo} alt="SecuredByScamTrust" />
+						<button
+							type="submit"
+							onClick={
+								continueHandler
+							}
+							className="bg-colorPrimary text-white px-7 py-3 rounded-md"
+						>
+							Continue
+						</button>
+					</div>
 				</div>
 			</div>
+			{show && (
+				<BankSelect
+					selectedBank={selectedBank}
+					setShow={setShow}
+					// setIsWithdrawing={setIsWithdrawing}
+					// amount={amount}
+					accountNumber={accountNumber}
+					// userName = {userName}
+				/>
+			)}
 
 			{/* First Cashout Account Added */}
 			<div
@@ -1180,7 +1328,7 @@ const changePhone = async (e) => {
 					<div className="EditDone-Line"></div>
 					<form className="AccountForm" onSubmit={handleSubmit}>
 						<div className="input-field-EditSettings">
-							<div className="input-field-addAccount">
+							{/* <div className="input-field-addAccount">
 								<label className="form-text-addAccount">Bank</label>
 								<img className="bankImg" src={bank} alt="Scam Trust" />
 								<input
@@ -1201,7 +1349,7 @@ const changePhone = async (e) => {
 									/>
 									{error.bank2}
 								</div>
-							)}
+							)} */}
 
 							<div className="input-field-addAccount">
 								<label className="form-text-addAccount2">Account number</label>

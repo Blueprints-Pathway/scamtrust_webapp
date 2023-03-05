@@ -17,7 +17,7 @@ function Pin({
 	const [pinError, setPinError] = useState();
 	const [withdraws, setWithdraws] = useState();
 	const [hide, setHide] = useState(false);
-
+	console.log(accountNumber)
 	const submitPinHandler = async () => {
 		if(+pin.length !==4 || pin === ''){
 			setPinError('Input a Valid Pin!')
@@ -25,7 +25,7 @@ function Pin({
 		}
 		const response = await withdraw();
 		console.log(response)
-		setHide(true);
+		
 	}
 	
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
@@ -40,17 +40,35 @@ function Pin({
 				},
 			};
 			const payload = {
-				amount: amount,
-				bank_id: bankSelectedId,
-				account_number: accountNumber,
-				pin: pin,
+				amount: +amount,
+				bank_id: +bankSelectedId,
+				account_number: +accountNumber,
+				pin: +pin,
 			};
 
 			const data = await axios.post(API_URL, JSON.stringify(payload), config);
-			console.log(data.status + 'axios')
+			
+			console.log(data.data.message , 'axios')
+			if (data.data.status === false) {
+				swal({
+					icon: "error",
+					text: data.data.message
+		 
+				})
+				
+				setHide(false);
+				return;
+				
+			}
+			setHide(true);
 			setWithdraws(data?.status);
 		} catch (error) {
-			swal("Unsuccessful", "An Error Took Place!")
+			swal({
+				icon: "error",
+				text: error.response.data.message
+	 
+			})
+			setHide(false);
 			// Alert.alert("failed login details");
 			
 			console.log(error, "errrors");
@@ -90,6 +108,7 @@ function Pin({
 						value={pin}
 						onChange={(e) => {setPin(e.target.value); setPinError(false);}}
 						name="pin"
+						type='number'
 						placeholder="Enter transaction pin
 						"
 						className={`block placeholder:text-[#E5E7E9]${

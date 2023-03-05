@@ -50,6 +50,7 @@ const VendorSignup = () => {
   const VendorSignupHandler = async (data) => {
     const type = "vendor";
     localStorage.setItem("vendor-signup", JSON.stringify({ ...data, type }));
+    localStorage.setItem("user-email", data.email.toString())
     navigate("/vendor-signup-rc");
   };
 

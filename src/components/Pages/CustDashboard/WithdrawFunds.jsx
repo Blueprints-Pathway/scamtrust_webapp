@@ -10,6 +10,7 @@ import SecuredBy from "../../../assets/images/svg/secured-by.svg";
 import Pin from "./Pin";
 import { useNavigate } from "react-router-dom";
 import BankSelect from "./BankSelect";
+import BeneficiarySelect from "./BeneficiarySelect";
 
 const withdrawSchema = yup.object().shape({
 	amount: yup
@@ -26,13 +27,13 @@ const withdrawSchema = yup.object().shape({
 const WithdrawFunds = (props) => {
 	const [amount, setAmount] = useState('');
 	const [accountNumber, setAccountNumber] = useState('');
+	const [accountNumberError, setAccountNumberError] = useState(false);
 	const [bankName, setBankName] = useState('');
 	const [bank, setBank] = useState();
 	const [amountError, setAmountError] = useState(false);
-	const [accountNumberError, setAccountNumberError] = useState(false);
 	const [selectedBank, setSelectedBank] = useState('9 PAYMENT SOLUTIONS BANK');
 	const [show, setShow] = useState(false);
-	const { startWithdrawFunds, setIsWithdrawing, availableBalance, userName } = props;
+	const { startWithdrawFunds, setIsWithdrawing, availableBalance, userName , bankAccounts} = props;
 
 	const {
 		register,
@@ -64,43 +65,24 @@ const WithdrawFunds = (props) => {
 			console.log('valid digit 2')
 			return;
 		}
-		if(+accountNumber === null || accountNumber === ''){
-			setAccountNumberError('Input a valid digit!')
-			console.log('valid digit 2')
-			return;
+		// if(+accountNumber === null || accountNumber === ''){
+		// 	setAccountNumberError('Input a valid digit!')
+		// 	console.log('valid digit 2')
+		// 	return;
 
-		}
-		if(+accountNumber.length !== 10){
-			setAccountNumberError('Input a valid Account Number!')
-			console.log('valid digit 2')
-			return;
+		// }
+		// if(+accountNumber.length !== 10){
+		// 	setAccountNumberError('Input a valid Account Number!')
+		// 	console.log('valid digit 2')
+		// 	return;
 
-		}
+		// }
 		
 		setShow(true);
 	}
 
-	useEffect(() => {
-		const details = async () => {
-			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/misc/get/banks`;
-				const config = {
-					headers: {
-						"Content-Type": "application/json",
-					},
-				};
-				const data = await axios.get(API_URL, config);
 
-				setBank(data?.data?.data);
-			} catch (error) {
-				// Alert.alert("failed login details");
-				console.log(error, "errors");
-			}
-		};
-		details();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
-	// console.log(bank, "banks");
+
 	
 	return (
 		<div>
@@ -141,7 +123,7 @@ const WithdrawFunds = (props) => {
 							<p className="text-red-600">{amountError}</p>
 						)}
 					</div>
-					<div className="mb-11 md:mb-16">
+					{/* <div className="mb-11 md:mb-16">
 						<label className="text-xl md:text-3xl block" htmlFor="amount">
 							Account Number
 						</label>
@@ -159,7 +141,7 @@ const WithdrawFunds = (props) => {
 						{accountNumberError && (
 							<p className="text-red-600">{accountNumberError}</p>
 						)}
-					</div>
+					</div> */}
 					{/* <div className="mb-32 md:mb-40 relative">
 						<label className="text-xl mb-2 md:text-3xl block" htmlFor="amount">
 							Destinations account
@@ -203,12 +185,12 @@ const WithdrawFunds = (props) => {
 				</div>
 			)}
 			{show && (
-				<BankSelect
-					selectedBank={selectedBank}
+				<BeneficiarySelect
+					bankAccounts = {bankAccounts}
 					setShow={setShow}
 					setIsWithdrawing={setIsWithdrawing}
 					amount={amount}
-					accountNumber={accountNumber}
+					
 					userName = {userName}
 				/>
 			)}

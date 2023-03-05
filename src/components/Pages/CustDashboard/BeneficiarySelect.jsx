@@ -5,113 +5,63 @@ import { ThreeDots } from 'react-loader-spinner';
 import axios from "axios";
 import { FcSearch } from 'react-icons/fc'
 import swal from 'sweetalert';
-const BankSelect = (props) => {
+const BeneficiarySelect = (props) => {
     const [pin, setPin] = useState('');
 	const [error, setError] = useState();
 	const [withdraws, setWithdraws] = useState();
    
     const [hide, setHide] = useState(false);
-    const [bankSelected, setSelectedBank] = useState('');
+    const [accountSelected, setSelectedAccount] = useState('');
     const [bankSelectedId, setSelectedBankId] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
     const [bank, setBank] = useState([]);
-    const [bankList, setBankList] = useState([]);
-    const {setIsWithdrawing,amount,selectedBank,accountNumber,setShow, userName} = props;
-    
+    const [bankAccountList, setBankAccountList] = useState([]);
+    const {setIsWithdrawing,amount,selectedBank,accountNumber,setShow, userName, bankAccounts} = props;
 
-    useEffect(() => {
-            const details = async () => {
-                try {
-                    const API_URL = `https://scamtrust.herokuapp.com/api/v1/misc/get/banks`;
-                    const config = {
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                    };
-                    const data = await axios.get(API_URL, config);
+    useEffect(()=>{
+        setBankAccountList(bankAccounts);
+
+    },[])
+
+ 
     
-                    setBank(data?.data?.data);
-                    setBankList(data?.data?.data)
-                } catch (error) {
-                    // Alert.alert("failed login details");
-                    console.log(error, "errors");
-                }
-            };
-            details();
-            // eslint-disable-next-line react-hooks/exhaustive-deps
-        }, []);
+    console.log(bankAccounts);
 
         const searchHandler = (event) => {
-            setBankList(bank.filter(bank => bank.name.trim().toLowerCase().includes(event.target.value.trim().toLowerCase())))
+            setBankAccountList(bankAccounts.filter(bankAccount => bankAccount.account_name.trim().toLowerCase().includes(event.target.value.trim().toLowerCase())))
             
         }
-		const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
-		const addAccount = async (e) => {
-			setIsLoading(true)
-			e.preventDefault();
-			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/settings/change/bank/account`;
-				const config = {
-					headers: {
-						"Content-Type": "application/json",
-						Authorization: `Bearer ${user_details?.data?.access_token}`,
-					},
-				};
-				const payload = {
-					account_number: accountNumber,
-					bank: bankSelectedId,
-				};
-				const data = await axios.post(API_URL, payload, config);
-				console.log(data.data, 'data') // status message
-				setIsLoading(false)
-				setShow(false);
-				swal({
-					icon: "success",
-					text: data.data.message
 		
-				});
-				// setEmail(data?.data?.data);
-			} catch (error) {//data.status
-				
-				console.log(error.response.data.message.responseMessage, "error");
-				setIsLoading(false)
-				setShow(false);
-				swal({
-					icon: "error",
-					text: error.response.data.message.responseMessage
-		 
-				})
-			}
-		};
-
-		const bankSelectHandler = () => {
-			if (bankSelected.length < 1 ) {
-				setError('Please Select A Bank From the Dropdown Menu!')
+		const continueHandler = () => {
+			if (accountSelected.length < 1 ) {
+				setError('Please Select A Benficiary Account From the Dropdown Menu!')
 				return;
 			}
-			setShow(false);
+			// setShow(false);
 			//  setIsWithdrawing(false);
 
 			setHide(true);
 		}
 		let SearchList = <p class="flex-column justify-center items-center" >LOADING....</p>;
-		if(bank.length === 0) {
-			SearchList = <p class="flex-column justify-center items-center" >LOADING....</p>;
-		}else if(bankList.length === 0) {
-			SearchList = <p class="flex-column justify-center items-center" >BANK IS NOT AVAILABLE!</p>;
+		if(bankAccounts.length === 0) {
+			SearchList = <p class="flex-column justify-center items-center" >GO TO SETTINGS AND ADD AN ACCOUNT</p>;
+		}else if(bankAccountList.length === 0 && bankAccounts.length !== 0) {
+			SearchList = <p class="flex-column justify-center items-center" >BENEFIARY ACCOUNT IS NOT AVAILABLE!</p>;
 		}else {
-			SearchList = bankList?.map(
-				(allbannk, index) => {
+			SearchList = bankAccounts?.map(
+				(account, index) => {
 					// console.log(selectedBank, "all bank");
 					// console.log(allbannk[index].name);
 					return (
 						<div
-						onClick={(e) => {setSelectedBank(e.currentTarget.innerText); setSelectedBankId(e.target.id); console.log(e.target.id)}}
+						onClick={(e) => { setSelectedBankId(e.target.id); setSelectedAccount(account.account_number)}}
 						aria-current="true"
 					  //   focus:border-colorPrimary block w-full text-left cursor-pointer p-4 my-2 text-primary-600  focus:outline-none border-2 rounded-md px-3 py-1.5 text-gray-700" 
 						class="block w-full my-2 cursor-pointer border-2  bg-primary-100 p-4 text-primary-600  focus:outline-none border border-colorPrimary rounded-md w-full px-3 py-1.5 text-gray-700 active:bg-blue-600"
-						value={allbannk?.name} id={allbannk.id} >
-			  {allbannk?.name}
+
+						value={account.account_number} id={account.bank_code} >
+			 name: {account.account_name}    {'                    '}                
+            ACCOUNT NUMBER: {account.account_number}
 			  </div>)
 				  }
 				  )
@@ -129,7 +79,7 @@ const BankSelect = (props) => {
 				className="fixed text-colorPrimary rounded-xl top-1/2 p-6 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 lg:max-w-[700px] xl:[1000px] md:p-10 w-[90%] mx-auto bg-white"
 			>
 				<div className="flex border-b pb-3 border-b-[#EAEAEA] justify-between items-center mb-11 md:mb-16">
-					<p className="font-semibold text-xl md:text-[30px]">Select Bank</p>
+					<p className="font-semibold text-xl md:text-[30px]">Select Beneficiary Account</p>
 					<p
 						onClick={() => {
 							setShow(false);
@@ -143,7 +93,7 @@ const BankSelect = (props) => {
 
 				<div className="mb-11 md:mb-16">
 					<label className="text-xl text-center mt-[-10px] mb-4 font-semibold md:text-3xl block">
-						Select A Bank From the Dropdown
+						Select A Baneficiary From the Dropdown
 					</label>
 					<div className="mb-32 md:mb-40 relative">
                     <div class="flex justify-center">
@@ -156,7 +106,7 @@ const BankSelect = (props) => {
 		 px-6 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600
 		  focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200
 		   dark:placeholder:text-neutral-200  placeholder:pl-5"
-        placeholder="Search Bank"
+        placeholder="Search Beneficiaries"
         aria-label="Search"
 
         aria-describedby="button-addon2">
@@ -196,7 +146,7 @@ visible={true}
 					{/* <img src={SecuredBy} alt="SecuredByScamTrust" /> */}
 					<button
 						type="submit"
-						onClick={addAccount}
+						onClick={continueHandler}
 						className="bg-colorPrimary text-white px-7 py-3 rounded-md"
 						>
 						Continue
@@ -206,12 +156,12 @@ visible={true}
 		</div>}
 			{hide && (
 				<Pin
-				selectedBank={bankSelected}
+				// selectedBank={bankSelected}
 				setShow={setShow}
 				bankSelectedId = {bankSelectedId}
 				setIsWithdrawing={setIsWithdrawing}
 				amount={amount}
-				accountNumber={accountNumber}
+				accountNumber={accountSelected}
 				userName = {userName}
 				/>
 				)}
@@ -219,4 +169,4 @@ visible={true}
     );
 };
 
-export default BankSelect;
+export default BeneficiarySelect;

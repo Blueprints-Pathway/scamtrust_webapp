@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useReducer } from "react";
 import Modal from "react-modal";
 import AnimeList from "./AnimeList";
 import Info from "../../../assets/images/svg/info.svg";
@@ -252,7 +252,7 @@ const CustomerDashboard = (props) => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	console.log("details", userFromBackend);
-
+	const[ignored, forcedUpdate] = useReducer(x => x+1, 0)
 	const navigate = useNavigate();
 
 	const handleFaq = () => {
@@ -275,6 +275,7 @@ const CustomerDashboard = (props) => {
 
 			<div className="flex mx-9 w-full px-0 flex-col md:flex-row gap-7 justify-between md:mb-[-52vh] md:mt-[5vh]">
 				<div className="min-w-[260px] mx-2 w-[100%] md:w-[70%] 2xl:w-[685px]">
+<<<<<<< HEAD
 					<div className="w-full bg-[#FFFEFE] lg:rounded-[24px] rounded-3xl lg:px-[37px] px-5 py-3 pb-8 xl:pb-8 lg:py-[20px] mb-[25px] xl:mb-[35px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
 						  <div className="flex items-center justify-end mt-[-3px] lg:mt-[-10px] mb-2 xl:mb-4">
 							<IoRefreshSharp  onClick = {() => {window.location.reload(false);}}
@@ -287,6 +288,18 @@ const CustomerDashboard = (props) => {
 						   <p className="font-semibold text-lg 2xl:text-2xl text-[#7D8287]">
 						   	ID - {userFromBackend?.data.id} 
 						   </p>
+=======
+					<div className="w-full bg-[#FFFEFE] lg:rounded-[24px] rounded-3xl lg:px-[37px] px-5 py-3 lg:py-[29px] mb-[13px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
+						<p className="font-semibold text-lg 2xl:text-2xl text-colorPrimary">
+							{userFromBackend?.data.name}
+						</p>
+						<div className = "flex justify-between">
+						<p className="font-semibold text-lg 2xl:text-2xl text-[#7D8287]">
+							ID - {userFromBackend?.data.id} 
+						</p>
+						<img src={refresh} onClick = {() => {forcedUpdate()} } alt="" />
+						
+>>>>>>> origin/COLLINS_SUPER_ADMIN_DELETE_FEATURE
 						</div>
 
 						<div className="border-b-2 mb-5 2xl:mb-[53px] border-b-[#3AB75D] mt-[13px]" />

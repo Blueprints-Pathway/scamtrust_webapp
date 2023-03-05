@@ -51,6 +51,8 @@ const Signin = () => {
         navigate("/vendor-dashboard");
       } else if (user.data.usertype === "CUSTOMER") {
         navigate("/customer-dashboard");
+      } else if (user.data.usertype === "ADMIN") {
+        navigate("/admin-panel");
       }
       dispatch(reset());
     }
