@@ -83,7 +83,7 @@ const BankSelect = (props) => {
 				setShow(false);
 				swal({
 					icon: "error",
-					text: error.response.data.message.responseMessage
+					text: error.response.data.message.responseMessage || 'An Unexpected Error Occured'
 		 
 				})
 			}

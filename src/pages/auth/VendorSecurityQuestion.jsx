@@ -45,7 +45,12 @@ const VendorSecurityQuestion = (props) => {
 			// navigate("/");
 			console.log(data, "data");
 		} catch (error) {
-			console.log(error, "errror");
+			console.log(
+				error?.response?.data?.message?.question_id[0],
+
+				"errrors"
+			);
+			setErrorMessage(error?.response?.data?.message?.question_id[0]);
 		}
 	};
 
@@ -67,7 +72,7 @@ const VendorSecurityQuestion = (props) => {
 
 	const submitHandler = async () => {
 		if (loading) return;
-		setErrorMessage("");
+		// setErrorMessage("");
 		const data = localStorage.getItem("vendor-signup");
 
 		setLoading(true);
@@ -76,11 +81,10 @@ const VendorSecurityQuestion = (props) => {
 			if (response.status === false) {
 				setLoading(false);
 				const errorMessage = Object.values(response.message)[0];
-				setErrorMessage(errorMessage[0]);
+				// setErrorMessage(errorMessage[0]);
 				return;
 			}
 			setLoading(false);
-		
 		} catch (error) {
 			setLoading(false);
 			// const message =
@@ -125,7 +129,7 @@ const VendorSecurityQuestion = (props) => {
 							className="text-[13px] 2xl:text-lg text-[#232164] 2xl:mb-[15px] mb-[10px]"
 							htmlFor={label}
 						>
-					Your Answer
+							Your Answer
 						</label>
 						<input
 							value={choice}

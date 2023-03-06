@@ -41,7 +41,7 @@ const CustomerDashboard = () => {
   const [showFundWallet, setShowFundWallet] = useState(false);
 	const [showConfirmAccount, setShowConfirmAccont] = useState(false);
   const [details, setDetails] = useState();
- 
+
 
   const setModalIsOpenToTrue = () => {
     setModalIsOpen(true);
@@ -74,20 +74,17 @@ const CustomerDashboard = () => {
 					},
 				};
 
-				const data = await axios.get(API_URL, config)
-        
-        
-        
+				const data = await axios.get(API_URL, config);
+
 				console.log(data?.data, "user data customer dashboard");
 				setDetails(data?.data);
-     
+      
 				// console.log(values, "values");
 				// return response;
 			} catch (error) {
-        console.log(error, "error");
-  
+				console.log(error, "error");
+     
 			}
-    
       
       
     
@@ -170,7 +167,6 @@ const CustomerDashboard = () => {
         availableBalance = {details?.walletBalance}
           setIsWithdrawing={setIsWithdrawing}
           startWithdrawFunds={isWithdrawing}
-          bankAccounts = {details?.bankAccounts}
           setConfirmTransactionPin={setConfirmTransactionPin}
         />
       ) : (
@@ -233,7 +229,7 @@ const CustomerDashboard = () => {
       </div>
 
       <div className={close ? "cust-active hidden" : "cust-welcome"}>
-        <div className={close ? "cust-active hidden" : "welcome-cust-card h-[49rem] lg:h-[42rem]"}>
+        <div className={close ? "cust-active hidden" : "welcome-cust-card h-[42rem] mt-2 md:ml-[-40px] lg:h-[42rem] lg:w-[85%] lg:ml-[-4rem] xl:w-[72%] xl:ml-[-5px]"}>
           <div className='lg:m-28 lg:ml-[12.1rem] md:mt-16 xl:ml-[9.5rem]'>
             <h1 className='cust-message text-2xl text-center font-extrabold
             lg:text-4xl lg:text-left md:text-1xl
@@ -249,18 +245,18 @@ const CustomerDashboard = () => {
           '>Get Started</h3>
           <div className="card-con lg:mt-[-9px]">
             <div 		onClick={onCreateTransactionClicked} className='cust-card my-2 lg:mx-14 md:mx-5'>
-              <img className='w-8' src={create} alt="create transaction" /> 
+              <img className='w-8 ml-3' src={create} alt="create transaction" /> 
               <p className='pl-2'>Create New Transaction</p>
               </div>
             <div 
             // onClick={() => setIsFunding(true)}
             onClick={handleConfirmAccount}
             className="cust-card my-2 lg:mx-14 md:mx-5">
-              <img className='w-8' src={wallet} alt="fund wallet" />
+              <img className='w-8 ml-3' src={wallet} alt="fund wallet" />
               <p className='mr-12 pl-2'>Fund your wallet</p>
               </div>
             <div className="cust-card my-2 lg:mx-14 md:mt-4 md:mr-[17.6rem] lg:mt-5">
-              <img className='w-8' src={KYC} alt="complete KYC" />
+              <img className='w-8 ml-3' src={KYC} alt="complete KYC" />
               <p className='mr-12 pl-2'>Complete KYC</p>
               </div>
           </div>
@@ -274,13 +270,13 @@ const CustomerDashboard = () => {
             <div 
             onClick={openFaq}
             className='cust-card my-2 lg:mx-14 md:mx-5'>
-              <img className='w-8' src={faq} alt="faq" /> 
+              <img className='w-8 ml-3' src={faq} alt="faq" /> 
               <p className='mr-28 pl-3'>FAQs</p>
               </div>
             <div 
             onClick={setModalIsOpenToTrue}
             className="cust-card my-2 lg:mx-14 md:mx-5">
-              <img className='w-8' src={chat} alt="chat" />
+              <img className='w-8 ml-3' src={chat} alt="chat" />
               <p className='mr-16 pl-3'>Chat with us</p>
               </div>
 
@@ -301,8 +297,8 @@ const CustomerDashboard = () => {
            <button className='cust-close-btn' onClick={handleClose}>Close x</button>
           </div>
       </div>
-      
-      </div>   
+      </div>  
+        
                  
     </Layout>
   );

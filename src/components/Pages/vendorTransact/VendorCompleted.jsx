@@ -15,7 +15,7 @@ const Completed = ({showCompletedHandler}) => {
 	const complete = localStorage?.getItem("idCompleted");
 
 	console.log(complete, "complete");
-	const navigate = useNavigate();
+	
 
 const back=()=>{
 	showCompletedHandler()
@@ -33,7 +33,7 @@ const back=()=>{
 
 				const data = await axios.get(API_URL, config);
 				setCompleted(data?.data.data);
-				console.log(data?.data.data, "completed");
+				console.log(data?.data.data, "completed data");
 			} catch (error) {
 				console.log(error, "error");
 			}

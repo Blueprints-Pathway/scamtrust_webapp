@@ -223,6 +223,7 @@ const Header = (props) => {
 	};
 	const close = () => {
 		setToggle(false);
+		console.log('close clicked')
 	};
 
 	return (
@@ -332,17 +333,17 @@ const Header = (props) => {
 						</div>
 					</div>
 				</div>
-				<div className="flex-column items-end mt-[-10px] justify-center">
-					{/* <div className="pointer-events-auto flex-auto flex mx-11 mt-[250px]" onClick={check}>
+				<div className="flex-column items-end ml-[-0px] justify-center">
+					<div className="pointer-events-auto flex-auto flex mx-11 mt-[250px]" onClick={check}>
 						<p className="text-rose-600">{filtredSearch?.length}</p>
 						<img
 							src={BellNotification}
 							alt="notification"
 							className="w-[22px] h-[24px] mb-[1.3rem] lg:mr-[50px]"
 						/>
-						
-					</div> */}
-					<div className="overflow-y-scroll pointer-events-auto h-[18rem] ml-[-130px]">
+						{/* <p>hello</p> */}
+					</div>
+					<div className="overflow-y-scroll pointer-events-none h-[18rem] ml-[-130px]">
 						{notification?.map((newNotice) => {
 							return (
 								<div className="h-[8.5rem]">
@@ -350,7 +351,7 @@ const Header = (props) => {
 										<div className=" " key={newNotice?.id}>
 											<div
 												key={newNotice?.id}
-												class="overflow-y-scroll block notice2 py-4 px-6 rounded-lg shadow-lg bg-white max-w-sm bg-[#cdcbf6]"
+												class="overflow-y-scroll pointer-events-auto block notice2 py-4 px-6 rounded-lg shadow-lg bg-white max-w-sm bg-[#cdcbf6]"
 											>
 												{" "}
 												<button

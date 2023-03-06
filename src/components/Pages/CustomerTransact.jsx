@@ -575,7 +575,7 @@ const CustomerTransact = (props) => {
 								) : (
 									<div>
 										{outgoing?.map((newout) => {
-											console.log(newout, "new out");
+											
 											return (
 												<div
 													key={newout?.id}

@@ -59,7 +59,7 @@ function Signup() {
 				DOB: "",
 				// bvn: "",
 				phone: "",
-				type: "customer",
+				type: "CUSTOMER",
 			}}
 			validationSchema={schema}
 			onSubmit={(values) => {
@@ -175,7 +175,7 @@ function UserDetails({ level, setLevel, formikProps }) {
 											name="business_type"
 										>
 											<option>Select Business Type</option>
-											<option value="customer">Customer</option>
+											<option value="CUSTOMER">Customer</option>
 										</select>
 									</div>
 									<div className="radio-button-container">
