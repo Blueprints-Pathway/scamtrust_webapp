@@ -1,10 +1,7 @@
-/** @format */
-
 import { useState, useEffect } from "react";
 import Layout from "../../components/Layout/Layout";
 import ReactPaginate from "react-paginate";
 import axios from "axios";
-
 import AwaitingApproval from "../../assets/images/svg/awaiting-approval.svg";
 import Completed from "../../assets/images/svg/completed.svg";
 import Cancelled from "../../assets/images/svg/cancelled.svg";
@@ -313,18 +310,18 @@ const VendorTransaction = (props) => {
 					)}
 				</div>
 			) : (
-				<div className="transactions-card-cover  ">
-					<div className="transactions-card">
-						<div className="Transactions ">
-							<div className="heading px-9 py-9">
-								<h4>Transaction</h4>
+				<div className="transactions-card-cover flex items-center justify-center mt-2">
+					<div className="transactions-card h-[40rem] md:h-[41rem] lg:h-[57rem] xl:h-[65rem] 2xl:h-[100rem] 2xl:mt-20 overflow-y-scroll">
+						<div className="Transactions">
+							<div className="heading py-5 md:pl-8 lg:py-12 2xl:py-20">
+								<h4 className="2xl:text-5xl">Transaction</h4>
 							</div>
-							<div className="flex justify-between  mb-3 font-medium 2xl:font-bold text-xs lg:text-base 2xl:text-lg text-colorPrimary items-start border-b border-b-[#CFD8DC]">
+							<div className="flex items-center justify-between lg:justify-start 2xl:mb-7 pb-1 md:mx-20 lg:mx-0 lg:ml-10 font-medium 2xl:font-bold text-xs lg:text-lg 2xl:text-lg text-colorPrimary lg:border-none border-b  border-b-[#CFD8DC]">
 								<span
 									onClick={() => {
 										setActive("alltransaction");
 									}}
-									className="border-b-[3px] border-b-[#3AB75D] pb-5 cursor-pointer hover:opacity-70"
+									className="lg:mr-5 xl:mr-7 xl:text-xl 2xl:text-3xl border-b-[3px] border-b-[#3AB75D] cursor-pointer hover:opacity-70"
 								>
 									All
 								</span>
@@ -333,7 +330,7 @@ const VendorTransaction = (props) => {
 										setActive("ongoing");
 										console.log(active, "active");
 									}}
-									className="cursor-pointer hover:opacity-70 hover:border-b-[3px] hover:border-b-colorSecondary transition-all duration-300 "
+									className="lg:mx-5 xl:mx-7 xl:text-xl 2xl:text-3xl cursor-pointer hover:opacity-70 hover:border-b-[3px] hover:border-b-colorSecondary transition-all duration-300 "
 								>
 									On-going
 								</span>
@@ -342,7 +339,7 @@ const VendorTransaction = (props) => {
 										setActive("cancelled");
 										console.log(active, "active");
 									}}
-									className="cursor-pointer hover:opacity-70 hover:border-b-[3px] hover:border-b-colorSecondary transition-all duration-300"
+									className="lg:mx-5 xl:mx-7 xl:text-xl 2xl:text-3xl cursor-pointer hover:opacity-70 hover:border-b-[3px] hover:border-b-colorSecondary transition-all duration-300"
 								>
 									Cancelled
 								</span>
@@ -351,7 +348,7 @@ const VendorTransaction = (props) => {
 										setActive("completed");
 										console.log(active, "active");
 									}}
-									className="cursor-pointer hover:opacity-70 hover:border-b-[3px] hover:border-b-colorSecondary transition-all duration-300"
+									className="lg:mx-5 xl:mx-7 xl:text-xl 2xl:text-3xl cursor-pointer hover:opacity-70 hover:border-b-[3px] hover:border-b-colorSecondary transition-all duration-300"
 								>
 									Completed
 								</span>
@@ -359,7 +356,7 @@ const VendorTransaction = (props) => {
 							<div class="tab-content" id="tabs-tabContent">
 								{active === "alltransaction" && (
 									<div
-										className="tab-pane fade show active"
+										className="tab-pane fade show active mt-8"
 										id="tabs-home"
 										role="tabpanel"
 										aria-labelledby="tabs-home-tab"
@@ -370,39 +367,59 @@ const VendorTransaction = (props) => {
 													onClick={() => {
 														setView(item?.transaction_id);
 														getTransaction();
-														showCompletedHandler();
+														showCompletedHandler(item?.transaction_id);
 														window?.localStorage?.setItem(
 															"idCompleted",
 															item?.transaction_id
 														);
 													}}
-													className="tab-pane border  my-6 fade show active"
+													className="grid-rows-5 grid-flow-col justify-center"
 												>
-													<div className="flex items-center px-1.5 mb-4 justify-between rounded-md md:px-4">
-														<div className="flex items-center Transaction-body-profile pushDown3 justify-center">
-															<img
-																className=" inline-block h-8 w-8 rounded-full ring-2 ring-white "
-																src={item?.customer?.image_url}
-																alt="Awaiting icon"
-															/>
-															<div className="pl-1.5 pt-2">
-																<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
-																	{item?.product_name}
-																</p>
-																<small className="block whitespace-nowrap  w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
-																	{item?.status}
-																</small>
+														<div
+														onClick={() => {
+															setView(item?.transaction_id);
+															getTransaction();
+															window?.localStorage?.setItem(
+																"idCompleted",
+																item?.transaction_id
+															);
+															showOngoingHandler(item?.transaction_id);
+														}}
+														key={item?.id}
+														className="tab-pane border rounded-lg mt-4 lg:py-3 fade show active"
+														id="tabs-home"
+														role="tabpanel"
+														aria-labelledby="tabs-home-tab"
+													>
+														<div className="flex items-center px-1.5 mb-0 justify-between md:px-4">
+															<div className="flex items-center Transaction-body-profile pushDown3 justify-center">
+																<img
+																	className="lg:w-16 lg:h-16 xl:w-20 xl:h-20 xl:mr-5 lg:mr-4 object-cover inline-block h-8 w-8 rounded-full ring-2 ring-white"
+																	src={item?.customer?.image_url}
+																	alt="Awaiting icon"
+																/>
+																<div className="pl-1.5">
+																	<p className="lg:pb-3 lg:text-base xl:text-xl text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+																		{item?.product_name}
+																	</p>
+																	<small className="lg:text-xs xl:text-sm block whitespace-nowrap w-[50px] md:w-[65px]">
+																		{item?.status}
+																	</small>
+																</div>
 															</div>
+															<p className="lg:text-base xl:text-xl text-[#262466] text-center">
+																{item?.customer?.name ||
+																	item?.customer?.username}
+															</p>
+															<p className="lg:text-base xl:text-xl text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+																{item?.amount}
+															</p>
+															<p className="lg:text-base xl:text-xl text-[#262466] text-center">
+																{moment(item?.created_at).format(
+																	"DD/MM/YYYY"
+																)}
+															</p>
 														</div>
-														<p className="text-[#262466] text-center ">
-															{item?.customer?.name || item?.customer?.username}
-														</p>
-														<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
-															{item?.amount}
-														</p>
-														<p className="text-[#262466] text-center">
-															{moment(item?.created_at).format("DD/MM/YYYY")}
-														</p>
 													</div>
 												</div>
 											);
@@ -420,34 +437,37 @@ const VendorTransaction = (props) => {
 															item?.transaction_id
 														);
 													}}
-													className="tab-pane border  my-6 fade show active"
+													className="tab-pane border rounded-lg mt-4 lg:py-3 fade show active"
 												>
-													<div className="flex items-center px-1.5 mb-4 justify-between rounded-md md:px-4">
-														<div className="flex items-center Transaction-body-profile pushDown3 justify-center">
-															<img
-																className=" inline-block h-8 w-8 rounded-full ring-2 ring-white "
-																src={item?.customer?.image_url}
-																alt="Awaiting icon"
-															/>
-															<div className="pl-1.5 pt-2">
-																<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
-																	{item?.product_name}
-																</p>
-																<small className="block whitespace-nowrap  w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
-																	{item?.status}
-																</small>
+													<div className="flex items-center px-1.5 mb-0 justify-between md:px-4">
+															<div className="flex items-center Transaction-body-profile pushDown3 justify-center">
+																<img
+																	className="inline-block h-8 w-8 lg:w-16 lg:h-16 xl:w-20 xl:h-20 xl:mr-5 lg:mr-4 object-cover rounded-full ring-2 ring-white"
+																	src={item?.customer?.image_url}
+																	alt="Awaiting icon"
+																/>
+																<div className="pl-1.5">
+																	<p className="text-[#262466] lg:pb-3 lg:text-base xl:text-xl mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+																		{item?.product_name}
+																	</p>
+																	<small className="lg:text-xs xl:text-sm block whitespace-nowrap w-[50px] md:w-[65px]">
+																		{item?.status}
+																	</small>
+																</div>
 															</div>
+															<p className="lg:text-base xl:text-xl text-[#262466] text-center ">
+																{item?.customer?.name ||
+																	item?.customer?.username}
+															</p>
+															<p className="lg:text-base xl:text-xl text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+																{item?.amount}
+															</p>
+															<p className="lg:text-base xl:text-xl text-[#262466] text-center">
+																{moment(item?.created_at).format(
+																	"DD/MM/YYYY"
+																)}
+															</p>
 														</div>
-														<p className="text-[#262466] text-center ">
-															{item?.customer?.name || item?.customer?.username}
-														</p>
-														<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
-															{item?.amount}
-														</p>
-														<p className="text-[#262466] text-center">
-															{moment(item?.created_at).format("DD/MM/YYYY")}
-														</p>
-													</div>
 												</div>
 											);
 										})}
@@ -464,34 +484,37 @@ const VendorTransaction = (props) => {
 														);
 														showOngoingHandler(item?.transaction_id);
 													}}
-													className="tab-pane border  my-6 fade show active"
+													className="tab-pane border rounded-lg mt-4 lg:py-3 fade show active"
 												>
-													<div className=" Transaction-body flex items-center px-1.5 mb-4 justify-between rounded-md md:px-4">
-														<div className="flex items-center Transaction-body-profile pushDown3 justify-center">
-															<img
-																className=" inline-block h-8 w-8 rounded-full ring-2 ring-white "
-																src={item?.customer?.image_url}
-																alt="Awaiting icon"
-															/>
-															<div className="pl-1.5 pt-2 ">
-																<p className="Transaction-details1 text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
-																	{item?.product_name}
-																</p>
-																<small className="Transaction-description block whitespace-nowrap  w-[45px] overflow-hidden text-ellipsis md:w-[65px] ">
-																	{item?.status}
-																</small>
+														<div className="flex items-center px-1.5 mb-0 justify-between md:px-4">
+															<div className="flex items-center Transaction-body-profile pushDown3 justify-center">
+																<img
+																	className="lg:w-16 lg:h-16 xl:w-20 xl:h-20 xl:mr-5 lg:mr-4 object-cover inline-block h-8 w-8 rounded-full ring-2 ring-white "
+																	src={item?.customer?.image_url}
+																	alt="Awaiting icon"
+																/>
+																<div className="pl-1.5">
+																	<p className="lg:pb-3 lg:text-base xl:text-xl Transaction-details1 text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+																		{item?.product_name}
+																	</p>
+																	<small className="lg:text-xs xl:text-sm Transaction-description block whitespace-nowrap  w-[45px] overflow-hidden text-ellipsis md:w-[65px] ">
+																		{item?.status}
+																	</small>
+																</div>
 															</div>
+															<p className="lg:text-base xl:text-xl text-[#262466] text-center ">
+																{item?.customer?.name ||
+																	item?.customer?.username}
+															</p>
+															<p className="lg:text-base xl:text-xl text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+																{item?.amount}
+															</p>
+															<p className="lg:text-base xl:text-xl text-[#262466] text-center">
+																{moment(item?.created_at).format(
+																	"DD/MM/YYYY"
+																)}
+															</p>
 														</div>
-														<p className="text-[#262466] text-center ">
-															{item?.customer?.name || item?.customer?.username}
-														</p>
-														<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
-															{item?.amount}
-														</p>
-														<p className="text-[#262466] text-center">
-															{moment(item?.created_at).format("DD/MM/YYYY")}
-														</p>
-													</div>
 												</div>
 											);
 										})}
@@ -523,35 +546,35 @@ const VendorTransaction = (props) => {
 															showOngoingHandler(newout?.transaction_id);
 														}}
 														key={newout?.id}
-														className="tab-pane border  my-6 fade show active"
+														className="tab-pane border rounded-lg mt-4 lg:py-3 fade show active"
 														id="tabs-home"
 														role="tabpanel"
 														aria-labelledby="tabs-home-tab"
 													>
-														<div className="flex items-center px-1.5 mb-4 justify-between rounded-md md:px-4">
+														<div className="flex items-center px-1.5 mb-0 justify-between md:px-4">
 															<div className="flex items-center Transaction-body-profile pushDown3 justify-center">
 																<img
-																	className=" inline-block h-8 w-8 rounded-full ring-2 ring-white "
+																	className="lg:w-16 lg:h-16 xl:w-20 xl:h-20 xl:mr-5 lg:mr-4 inline-block h-8 w-8 rounded-full ring-2 ring-white "
 																	src={newout?.customer?.image_url}
 																	alt="Awaiting icon"
 																/>
-																<div className="pl-1.5 pt-2">
-																	<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+																<div className="pl-1.5">
+																	<p className="lg:pb-3 lg:text-base xl:text-xl text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 																		{newout?.product_name}
 																	</p>
-																	<small className=" Transaction-description w-[50px] location overflow-hidden md:w-[65px] ">
+																	<small className="lg:text-xs xl:text-sm block whitespace-nowrap overflow-hidden text-ellipsis w-[50px] md:w-[65px]">
 																		{newout?.status}
 																	</small>
 																</div>
 															</div>
-															<p className="text-[#262466] text-center">
+															<p className="lg:text-base xl:text-xl text-[#262466] text-center">
 																{newout?.customer?.name ||
 																	newout?.customer?.username}
 															</p>
-															<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+															<p className="lg:text-base xl:text-xl text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
 																{newout?.amount}
 															</p>
-															<p className="text-[#262466] text-center">
+															<p className="lg:text-base xl:text-xl text-[#262466] text-center">
 																{moment(newout?.created_at).format(
 																	"DD/MM/YYYY"
 																)}
@@ -590,35 +613,35 @@ const VendorTransaction = (props) => {
 															showOngoingHandler(newout?.transaction_id);
 														}}
 														key={newout?.id}
-														className="tab-pane border  my-6 fade show active"
+														className="tab-pane border rounded-lg mt-4 lg:py-3 fade show active"
 														id="tabs-home"
 														role="tabpanel"
 														aria-labelledby="tabs-home-tab"
 													>
-														<div className="flex items-center px-1.5 mb-4 justify-between rounded-md md:px-4">
+														<div className="flex items-center px-1.5 mb-0 justify-between md:px-4">
 															<div className="flex items-center Transaction-body-profile pushDown3 justify-center">
 																<img
-																	className=" inline-block h-8 w-8 rounded-full ring-2 ring-white "
+																	className="lg:w-16 lg:h-16 xl:w-20 xl:h-20 xl:mr-5 lg:mr-4 object-cover inline-block h-8 w-8 rounded-full ring-2 ring-white "
 																	src={newout?.customer?.image_url}
 																	alt="Awaiting icon"
 																/>
-																<div className="pl-1.5 pt-2">
-																	<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+																<div className="pl-1.5">
+																	<p className="lg:pb-3 lg:text-base xl:text-xl text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 																		{newout?.product_name}
 																	</p>
-																	<small className="Transaction-description">
+																	<small className="lg:text-xs xl:text-sm block whitespace-nowrap overflow-hidden text-ellipsis w-[50px] md:w-[65px]">
 																		{newout?.status}
 																	</small>
 																</div>
 															</div>
-															<p className="text-[#262466] text-center">
+															<p className="lg:text-base xl:text-xl text-[#262466] text-center">
 																{newout?.customer?.name ||
 																	newout?.customer?.username}
 															</p>
-															<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+															<p className="lg:text-base xl:text-xl text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
 																{newout?.amount}
 															</p>
-															<p className="text-[#262466] text-center">
+															<p className="lg:text-base xl:text-xl text-[#262466] text-center">
 																{moment(newout?.created_at).format(
 																	"DD/MM/YYYY"
 																)}
@@ -643,7 +666,7 @@ const VendorTransaction = (props) => {
 											/>
 										</div>
 									) : (
-										<div className="  py-2 grid-rows-5 grid-flow-col  justify-items-center">
+										<div className="py-2 grid-rows-5 grid-flow-col  justify-items-center">
 											{completeData?.map((newout) => {
 												return (
 													<div
@@ -654,38 +677,38 @@ const VendorTransaction = (props) => {
 																"idCompleted",
 																newout?.transaction_id
 															);
-															showCompletedHandler(newout?.transaction_id);
+															showOngoingHandler(newout?.transaction_id);
 														}}
 														key={newout?.id}
-														className="tab-pane border  my-6 fade show active"
+														className="tab-pane border rounded-lg mt-4 lg:py-3 fade show active"
 														id="tabs-home"
 														role="tabpanel"
 														aria-labelledby="tabs-home-tab"
 													>
-														<div className="flex items-center px-1.5 mb-4 justify-between rounded-md md:px-4">
+														<div className="flex items-center px-1.5 mb-0 justify-between md:px-4">
 															<div className="flex items-center Transaction-body-profile pushDown3 justify-center">
 																<img
-																	className=" inline-block h-8 w-8 rounded-full ring-2 ring-white "
+																	className="lg:w-16 lg:h-16 xl:w-20 xl:h-20 xl:mr-5 lg:mr-4 object-cover inline-block h-8 w-8 rounded-full ring-2 ring-white "
 																	src={newout?.customer?.image_url}
 																	alt="Awaiting icon"
 																/>
-																<div className="pl-1.5 pt-2">
-																	<p className="text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
+																<div className="pl-1.5">
+																	<p className="lg:pb-3 lg:text-base xl:text-xl text-[#262466] mb-[-8px] block whitespace-nowrap w-[45px] overflow-hidden text-ellipsis md:w-[65px]">
 																		{newout?.product_name}
 																	</p>
-																	<small className="block whitespace-nowrap w-[50px]   md:w-[65px]">
+																	<small className="lg:text-xs xl:text-sm block whitespace-nowrap overflow-hidden text-ellipsis w-[50px] md:w-[65px]">
 																		{newout?.status}
 																	</small>
 																</div>
 															</div>
-															<p className="text-[#262466] text-center ">
+															<p className="lg:text-base xl:text-xl text-[#262466] text-center ">
 																{newout?.customer?.name ||
 																	newout?.customer?.username}
 															</p>
-															<p className="text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
+															<p className="lg:text-base xl:text-xl text-[#262466] block whitespace-nowrap w-[60px] text-center overflow-hidden text-ellipsis md:w-[60px]">
 																{newout?.amount}
 															</p>
-															<p className="text-[#262466] text-center">
+															<p className="lg:text-base xl:text-xl text-[#262466] text-center">
 																{moment(newout?.created_at).format(
 																	"DD/MM/YYYY"
 																)}
@@ -710,3 +733,10 @@ const VendorTransaction = (props) => {
 };
 
 export default VendorTransaction;
+
+const transactionTypes = [
+	{ name: "All Transactions" },
+	{ name: "Out-going" },
+	{ name: "Completed", icon: CompletedTab },
+	{ name: "Cancelled", icon: CancelledTab },
+];

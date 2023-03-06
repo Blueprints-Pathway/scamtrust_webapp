@@ -3,7 +3,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
-
 import Signin from "./pages/auth/Signin";
 import CustomerDashboard from "./pages/dashboard/CustomerDashboard";
 import CustomerSignup from "./pages/auth/CustomerSignup";

@@ -216,7 +216,7 @@ function UserDetails({ level, setLevel, formikProps }) {
 
 									<FontAwesomeIcon
 										className="arrowIconSignup"
-										icon={faCaretRight}
+										icon={"faCaretRight"}
 									/>
 								</>
 							</div>
