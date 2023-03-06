@@ -44,7 +44,7 @@ const CustomerDashboard = (props) => {
 	const [showCanceled, setShowCanceled] = useState(false);
 	const [showCompleted, setShowCompleted] = useState(false);
 	const [showOngoing, setShowOngoing] = useState(false);
-	
+	const[reducerValue, forcedUpdate] = useReducer(x => x+1, 0)
 	const customStyles = {
 		content: {
 			width: "50vh",
@@ -223,7 +223,7 @@ const CustomerDashboard = (props) => {
 
 	useEffect(() => {
 		(async () => setUserFromBackend(await fetchUser(user.data.access_token)))();
-	}, []);
+	}, [reducerValue]);
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
 	useEffect(() => {
 		(async () => {
@@ -250,7 +250,7 @@ const CustomerDashboard = (props) => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	console.log("details", userFromBackend);
-	const[ignored, forcedUpdate] = useReducer(x => x+1, 0)
+	
 	const navigate = useNavigate();
 
 	const handleFaq = () => {
