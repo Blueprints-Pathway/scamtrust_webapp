@@ -48,12 +48,16 @@ import Completed from "./components/Pages/custTransaction/Completed";
 import Cancelled from "./components/Pages/custTransaction/Cancelled";
 import CancellationReason from "./components/Pages/custTransaction/CancellationReason";
 import VendorCancellationReason from "./components/Pages/vendorTransact/VendorCancellationReason";
+import AdminDashboard from "./pages/dashboard/AdminDashboard";
+import UsersListPage from "./pages/admin/UsersListPage";
 
 function App() {
 	return (
 		<Routes>
 			<Route path="/" element={<Signin />} />
 			<Route element={<ProtectedRoutes />}>
+				<Route path="/admin-panel" element={<AdminDashboard />} />
+				<Route path="/users-list" element={<UsersListPage />} />
 				<Route path="/customer-dashboard" element={<CustomerDashboard />} />
 				<Route path="/vendor-transaction" element={<VendorTransaction />} />
 				<Route path="/vendor/:slug" element={<VendorDetails />} />

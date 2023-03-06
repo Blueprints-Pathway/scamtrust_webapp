@@ -3,9 +3,14 @@ import { useNavigate } from "react-router-dom";
 import Logo from "../../components/branding/Logo/Logo";
 import CustomerTestimony from "../../components/CustomerTestimony/CustomerTestimony";
 import Tick from "../../assets/images/tick.svg";
+import { useEffect } from "react";
 
 const ActivateAccount = () => {
   const navigate = useNavigate();
+ 
+
+   const email = localStorage.getItem("user-email");
+  
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen font-secondary">
@@ -20,7 +25,7 @@ const ActivateAccount = () => {
         <div className="2xl:max-w-[564px] max-w-[450px] mx-auto">
           <p className="font-medium text-base lg:text-lg 2xl:text-2xl text-colorPrimary mb-[42px]">
             Congrats! We have sent a confirmation link to{" "}
-            <span className="text-colorSecondary">Isaac.orija@gmail.com.</span>{" "}
+            <span className="text-colorSecondary">{email}</span>{" "}
             Kindly click to activate Your ScamTrust account
           </p>
 

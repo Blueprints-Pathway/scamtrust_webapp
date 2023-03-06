@@ -1,7 +1,10 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./settingsVendor.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Eye from "../../assets/images/svg/eye.svg";
 import {
 	faCircleExclamation,
 	faEyeSlash,
@@ -18,6 +21,9 @@ function SecuritySettings() {
 		passwordCheck: "",
 	});
 	const [failed, setFailed] = useState();
+	const [passwordVisibility, setPasswordVisibility] = useState(false);
+	const [passwordVisibility1, setPasswordVisibility1] = useState(false);
+	const [passwordVisibility2, setPasswordVisibility2] = useState(false);
 	const [password, setPassword] = useState();
 	const [error, setError] = useState({
 		phoneNumber3: "",
@@ -28,7 +34,15 @@ function SecuritySettings() {
 	const [pins, setPins] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
 	const [Errors, setErrors] = useState(true);
-
+	const togglePasswordVisibility = () => {
+		setPasswordVisibility((prevState) => !prevState);
+	};
+	const togglePasswordVisibility1 = () => {
+		setPasswordVisibility1((prevState) => !prevState);
+	};
+	const togglePasswordVisibility2 = () => {
+		setPasswordVisibility2((prevState) => !prevState);
+	};
 	const handleChange = (event) => {
 		const { name, value } = event.target;
 		setValues({ ...values, [name]: value });
@@ -166,13 +180,13 @@ function SecuritySettings() {
 			};
 
 			const payload = {
-				currentPassword: values.previousPassword,
-				password: values.password,
-				password_confirmation: values.passwordCheck,
+				current_password: values?.previousPassword,
+				password: values?.password,
+				password_confirmation: values?.passwordCheck,
 			};
 
 			const data = await axios.post(API_URL, payload, config);
-
+			handleClosed6();
 			console.log(data?.data.data, "user data");
 			setPassword(data?.data?.data);
 			swal({
@@ -181,14 +195,15 @@ function SecuritySettings() {
 			});
 		} catch (error) {
 			// setFailed(error?.response?.data?.status);
-			setErrorMessage(error?.response?.data?.message);
+			setErrorMessage(error);
 			console.log(errorMessage, "error");
 			swal({
 				icon: "error",
-				text: errorMessage || "your inputs field are empty",
+				text: errorMessage || error?.message?.password[0],
 			});
 		}
 	};
+	console.log(values?.previousPassword, "hello current");
 	const PinChange = async (e) => {
 		e.preventDefault();
 		try {
@@ -206,7 +221,7 @@ function SecuritySettings() {
 
 			const data = await axios.post(API_URL, payload, config);
 
-			console.log(data?.data.data, "user data");
+			console.log(data?.data?.data, "user data");
 			setPassword(data?.data?.data);
 			swal({
 				icon: "success",
@@ -215,10 +230,10 @@ function SecuritySettings() {
 		} catch (error) {
 			// setFailed(error?.response?.data?.status);
 			setErrorMessage(error?.response?.data?.message);
-			console.log(errorMessage, "error");
+			console.log(errorMessage.current_password[0], "error");
 			swal({
 				icon: "error",
-				text: errorMessage,
+				text: errorMessage.current_password[0],
 			});
 		}
 	};
@@ -310,6 +325,13 @@ function SecuritySettings() {
 									className="questionIcon no"
 									icon={faCircleQuestion}
 								/>
+								<span className="show mx-4" onClick={togglePasswordVisibility1}>
+									<img
+										src={Eye}
+										alt="view"
+										className="inline right-[147px] cursor-pointer "
+									/>
+								</span>
 							</label>
 
 							{checked2 ? (
@@ -319,8 +341,9 @@ function SecuritySettings() {
 									value={values.previousPassword}
 									className="inputBox-EditSettings2"
 									name="previousPassword"
+									id="myInput"
 									placeholder=""
-									type="password"
+									type={!passwordVisibility1 ? "password" : "text"}
 									autoComplete="off"
 								/>
 							) : (
@@ -331,7 +354,8 @@ function SecuritySettings() {
 									className="inputBox-EditSettings2"
 									name="previousPassword"
 									placeholder=""
-									type="password"
+									id="myInput"
+									type={!passwordVisibility1 ? "password" : "text"}
 									autoComplete="off"
 								/>
 							)}
@@ -352,6 +376,13 @@ function SecuritySettings() {
 									className="questionIcon no"
 									icon={faCircleQuestion}
 								/>
+								<span className="show mx-3" onClick={togglePasswordVisibility}>
+									<img
+										src={Eye}
+										alt="view"
+										className="inline right-[147px] cursor-pointer "
+									/>
+								</span>
 							</label>
 
 							{checked2 ? (
@@ -362,18 +393,18 @@ function SecuritySettings() {
 									className="inputBox-EditSettings2"
 									name="password"
 									placeholder=""
-									type="password"
+									type={!passwordVisibility ? "password" : "text"}
 									autoComplete="off"
 								/>
 							) : (
 								<input
 									onChange={handleChange}
 									onClick={handleInput}
-									value={values.password}
+									value={values?.password}
 									className="inputBox-EditSettings2"
 									name="password"
 									placeholder=""
-									type="password"
+									type={!passwordVisibility ? "password" : "text"}
 									autoComplete="off"
 								/>
 							)}
@@ -388,7 +419,16 @@ function SecuritySettings() {
 							</span>
 						)}
 						<div className="input-field">
-							<label className="form-text EditPass">Confirm password</label>
+							<label className="form-text EditPass">
+								Confirm password
+								<span className="show mx-4" onClick={togglePasswordVisibility2}>
+									<img
+										src={Eye}
+										alt="view"
+										className="inline right-[147px] cursor-pointer "
+									/>
+								</span>
+							</label>
 
 							{checked3 ? (
 								<input
@@ -397,7 +437,7 @@ function SecuritySettings() {
 									className="inputBox-EditSettings2"
 									name="passwordCheck"
 									placeholder=""
-									type="password"
+									type={!passwordVisibility2 ? "password" : "text"}
 									autoComplete="off"
 								/>
 							) : (
@@ -407,18 +447,16 @@ function SecuritySettings() {
 									className="inputBox-EditSettings2"
 									name="passwordCheck"
 									placeholder=""
-									type="password"
+									// type="password"
 									autoComplete="off"
+									type={!passwordVisibility2 ? "password" : "text"}
 								/>
 							)}
 
-							<div className="passwordSee passView" onClick={handleCheck3}>
-								{checked3 ? (
-									<FontAwesomeIcon className="eyeIcon no" icon={faEye} />
-								) : (
-									<FontAwesomeIcon className="eyeIcon yes" icon={faEyeSlash} />
-								)}
-							</div>
+							<div
+								className="passwordSee passView"
+								onClick={handleCheck3}
+							></div>
 						</div>
 
 						{submitted && error.passwordCheck && (

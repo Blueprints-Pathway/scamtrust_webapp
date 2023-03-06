@@ -29,13 +29,13 @@ const Wallet = () => {
 	const [outgoingBalanceInfo, setOutgoingBalanceInfo] = useState(false);
 	const [primaryAccountBalanceInfo, primaryABalanceInfo] = useState(false);
 	const [isFunding, setIsFunding] = useState(false);
-	const [userFromBackend, setUserFromBackend] = useState('');
+	const [userFromBackend, setUserFromBackend] = useState();
 	const [details, setDetails] = useState('');
 	const { user } = useSelector((state) => state.auth);
 	const [modalOpen, setModalIsOpen] = useState(false);
 	const [isWithdrawing, setIsWithdrawing] = useState(false);
 	const [showBalance, setShowBalance] = useState(false);
-	const [isLoading, setIsLoading] = useState(true);
+
 
 	const customStyles = {
 		content: {
@@ -65,7 +65,7 @@ const Wallet = () => {
 
 	}, []);
 
-	console.log(userFromBackend);
+	console.log(userFromBackend, 'eeeee');
 
 	const toggleAvailableBalanceInfo = () =>
 		setAvailableBalanceInfo((prevState) => !prevState);
@@ -104,7 +104,7 @@ const Wallet = () => {
 			} catch (error) {
 				console.log(error, "error");
 			}
-			setIsLoading(false)
+		
 		})();
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -121,10 +121,7 @@ const Wallet = () => {
 
 	return (
 		<Layout>
-			{ isLoading ?
-         <img src={logo} className= "fixed top-1/2 left-1/2  m-auto transition-timing-function: cubic-bezier(0.4, 0, 1, 1) animate-bounce" alt="" /> 
-      
-      : <div>
+		<div>
 			<FundWallet
 				setShowConfirmAccont={setShowConfirmAccont}
 				fundWalletHandler={fundWalletHandler}
@@ -139,6 +136,7 @@ const Wallet = () => {
 		      	 <WithdrawFunds
 		      	   setIsWithdrawing={setIsWithdrawing}
 				   availableBalance = {userFromBackend?.walletBalance}
+				   bankAccounts = {userFromBackend?.data?.bank_accounts}
 				   userName = {userFromBackend?.data?.username}
 		      	//    startWithdrawFunds={isWithdrawing}
 		     	 />			
@@ -399,7 +397,7 @@ const Wallet = () => {
 							</div>
 						</div>
 				</div>
-			</div></div>}
+			</div></div>
 		</Layout>
 	);
 };
