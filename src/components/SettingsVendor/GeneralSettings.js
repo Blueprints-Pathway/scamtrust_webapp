@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect, useRef } from "react";
 import "./settingsVendor.css";
 import axios from "axios";
@@ -21,17 +23,17 @@ import otp from "../../images/otp.png";
 import TokenEmail from "./TokenEmail";
 import TokenPhone from "./TokenPhone";
 function GeneralSettings() {
-	const [images,setImages] = useState("");
+	const [images, setImages] = useState("");
 	// const [email, setEmail] = useState();
 	const [details, setDetails] = useState({});
 	const [newEmail, setNewEmail] = useState();
-	const [newPhone, setNewPhone]=useState()
-	const [amount, setAmount] = useState('');
+	const [newPhone, setNewPhone] = useState();
+	const [amount, setAmount] = useState("");
 	const [show, setShow] = useState(false);
-	const [bankName, setBankName] = useState('');
+	const [bankName, setBankName] = useState("");
 	const [bank, setBank] = useState();
 	const [amountError, setAmountError] = useState(false);
-	const [selectedBank, setSelectedBank] = useState('9 PAYMENT SOLUTIONS BANK');
+	const [selectedBank, setSelectedBank] = useState("9 PAYMENT SOLUTIONS BANK");
 
 	const previewURL =
 		"https://ichef.bbci.co.uk/news/976/cpsprodpb/D8B9/production/_121018455_gettyimages-577003673.jpg";
@@ -131,7 +133,7 @@ function GeneralSettings() {
 	const [pinCheck12Ref, setPinCheck12Ref] = useState(useRef(null));
 
 	const [Errors, setErrors] = useState(true);
-	
+
 	// useEffect(() => {
 	// 	pin1Ref.current.focus();
 	// }, []);
@@ -210,7 +212,6 @@ function GeneralSettings() {
 
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
 	useEffect(() => {
-			
 		(async () => {
 			try {
 				const API_URL = `https://scamtrust.herokuapp.com/api/v1/user/getdetails`;
@@ -234,7 +235,7 @@ function GeneralSettings() {
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-	console.log(details, "details");
+	// console.log(details, "details");
 	//chnage email start///
 	const changeEmail = async (e) => {
 		e.preventDefault();
@@ -247,8 +248,9 @@ function GeneralSettings() {
 				},
 			};
 			const payload = {
-				email: newPhone,
+				email: newEmail,
 			};
+			handleClosed19();
 			const data = await axios.post(API_URL, payload, config);
 			// setEmail(data?.data?.data);
 		} catch (error) {
@@ -256,70 +258,65 @@ function GeneralSettings() {
 		}
 	};
 
-	// email end;
-///phone number start///
-const changePhone = async (e) => {
-	e.preventDefault();
-	try {
-		const API_URL = `https://scamtrust.herokuapp.com/api/v1/settings/change/phone
+	const changePhone = async (e) => {
+		e.preventDefault();
+		try {
+			const API_URL = `https://scamtrust.herokuapp.com/api/v1/settings/change/phone
 		`;
-		const config = {
-			headers: {
-				"Content-Type": "application/json",
-				Authorization: `Bearer ${user_details?.data?.access_token}`,
-			},
-		};
-		const payload = {
-			phone: "+2348163358499"
-		};
-		swal({
-			icon: "success",
-			text: "An OTP has been sent to your phone number. Check your sms to continue."
-
-		});
-		const data = await axios.post(API_URL, payload, config);
-		// setEmail(data?.data?.data);
-	} catch (error) {
-		console.log(error, "error");
-		swal({
-			icon: "error",
-			text: "errorMessage",
-		});
-	}
-};
-const [accountNumber, setAccountNumber] = useState('');
+			const config = {
+				headers: {
+					"Content-Type": "application/json",
+					Authorization: `Bearer ${user_details?.data?.access_token}`,
+				},
+			};
+			const payload = {
+				phone: newPhone,
+			};
+			swal({
+				icon: "success",
+				text: "An OTP has been sent to your phone number. Check your sms to continue.",
+			});
+			handleClosed18();
+			const data = await axios.post(API_URL, payload, config);
+			// setEmail(data?.data?.data);
+		} catch (error) {
+			console.log(error, "error");
+			swal({
+				icon: "error",
+				text: "errorMessage",
+			});
+		}
+	};
+	const [accountNumber, setAccountNumber] = useState("");
 	const [accountNumberError, setAccountNumberError] = useState(false);
-	const [accountName, setAccountName] = useState('');
+	const [accountName, setAccountName] = useState("");
 	const [accountNameError, setAccountNameError] = useState(false);
-///phone number end///
+	///phone number end///
 	const handleChange = (event) => {
 		const { name, value } = event.target;
 		setValues({ ...values, [name]: value });
 		setSubmit(true);
 	};
 	const continueHandler = () => {
-		if(accountName === null || accountName === ''){
-			setAccountNameError('Input a valid Accout Name')
-			console.log('valid digit 1')
+		if (accountName === null || accountName === "") {
+			setAccountNameError("Input a valid Accout Name");
+			console.log("valid digit 1");
 			return;
-
 		}
-		if(+accountNumber === null || accountNumber === ''){
-			setAccountNumberError('Input a valid digit!')
-			console.log('valid digit 2')
+		if (+accountNumber === null || accountNumber === "") {
+			setAccountNumberError("Input a valid digit!");
+			console.log("valid digit 2");
 			return;
-
 		}
-		if(+accountNumber.length !== 10){
-			setAccountNumberError('Input a valid Account Number!')
-			console.log('valid digit 2')
+		if (+accountNumber.length !== 10) {
+			setAccountNumberError("Input a valid Account Number!");
+			console.log("valid digit 2");
 			return;
-
 		}
-		console.log('done')
+		console.log("done");
 		handleClosed12();
-		 setShow(true);
-	}
+		setShow(true);
+	};
 	const [submit, setSubmit] = useState(false);
 
 	const validate = (values) => {
@@ -638,8 +635,7 @@ const [accountNumber, setAccountNumber] = useState('');
 		setError(validate(values));
 		setErrors(error.All === true ? true : false);
 	};
-	
-	
+
 	return (
 		<div>
 			{/*  General Settings Static field */}
@@ -655,15 +651,13 @@ const [accountNumber, setAccountNumber] = useState('');
 				</div>
 
 				<div className="input-field-GeneralSettings">
-						
 					<label className="form-text-GeneralSettings">
 						{details.usertype === "CUSTOMER" ? "UserName" : "Business names"}
 					</label>
 
 					<input
 						onChange={handleChange}
-						value={details?.name || details?.username
-						}
+						value={details?.name || details?.username}
 						className="inputBox-GeneralSettings"
 						name="businessName"
 						type="text"
@@ -673,9 +667,9 @@ const [accountNumber, setAccountNumber] = useState('');
 					/>
 					{Edit ? (
 						<span>
-						<span onClick={handleEdit1} className="edit1">
-							Edit
-						</span>
+							<span onClick={handleEdit1} className="edit1">
+								Edit
+							</span>
 						</span>
 					) : (
 						""
@@ -708,7 +702,6 @@ const [accountNumber, setAccountNumber] = useState('');
 
 				<div className="input-field-GeneralSettings">
 					<label className="form-text-GeneralSettings">Email address</label>
-
 
 					<input
 						onChange={handleChange}
@@ -777,7 +770,6 @@ const [accountNumber, setAccountNumber] = useState('');
 					) : (
 						""
 					)}
-
 				</div>
 			</form>
 
@@ -792,7 +784,10 @@ const [accountNumber, setAccountNumber] = useState('');
 				EditDone-card-close
 				EditDone-card-title */}
 				<div className="h-[35rem] mt-28 ml-5 flex-col items-center justify-center">
-					<div className="">Edit{details.usertype === "CUSTOMER" ? " Username" : " Business Name"}</div>
+					<div className="">
+						Edit
+						{details.usertype === "CUSTOMER" ? " Username" : " Business Name"}
+					</div>
 					<div className="">
 						<h1 onClick={handleClosed1}>Close X </h1>
 					</div>
@@ -801,15 +796,18 @@ const [accountNumber, setAccountNumber] = useState('');
 					<div className="">
 						<h5>
 							Hello {details?.email}, we see that you are trying to change your
-							{details.usertype === "CUSTOMER" ? " Username" : " Business Name"}. Please reach out to our Admin on 0700-8000-5000 or
-							send an email to ScamTrustadmin@gmail.com
+							{details.usertype === "CUSTOMER" ? " Username" : " Business Name"}
+							. Please reach out to our Admin on 0700-8000-5000 or send an email
+							to ScamTrustadmin@gmail.com
 						</h5>
-					<button onClick={handleClosed1} className="text-white bg-[#023b83] py-0 px-12 mt-8 rounded-md">
-						{" "}
-						Okay{" "}
-					</button>
+						<button
+							onClick={handleClosed1}
+							className="text-white bg-[#023b83] py-0 px-12 mt-8 rounded-md"
+						>
+							{" "}
+							Okay{" "}
+						</button>
 					</div>
-
 				</div>
 			</div>
 
@@ -856,11 +854,10 @@ const [accountNumber, setAccountNumber] = useState('');
 
 						{submitted && !error.phoneNumber2 ? (
 							<button onClick={handleEdit17} className="Next-button yes">
-								{" "}
-								Next{" "}
+								Next
 							</button>
 						) : submitted && error.phoneNumber2 ? (
-							<button className="Next-button yes"> Next </button>
+							<button className="Next-button yes"> Next</button>
 						) : (
 							<button className="Next-button yes"> Next </button>
 						)}
@@ -1001,7 +998,6 @@ const [accountNumber, setAccountNumber] = useState('');
 					closed12 ? "EditDone active" : Edit10 ? "EditDone" : "EditDone active"
 				}
 			>
-				
 				{/* <div className="EditDone-card">
 					<div className="EditDone-message">Add Cashout Account</div>
 					<div className="EditDone-card-close">
@@ -1143,7 +1139,10 @@ const [accountNumber, setAccountNumber] = useState('');
 						<input
 							// {...register("amount")}
 							value={accountName}
-							onChange={(e) =>{ setAccountName(e.target.value); setAccountNameError(false)}}
+							onChange={(e) => {
+								setAccountName(e.target.value);
+								setAccountNameError(false);
+							}}
 							name="name"
 							type="text"
 							placeholder="Enter account name"
@@ -1162,7 +1161,10 @@ const [accountNumber, setAccountNumber] = useState('');
 						<input
 							// {...register("accountNumber")}
 							value={accountNumber}
-							onChange={(e) => {setAccountNumber(e.target.value); setAccountNumberError(false) }}
+							onChange={(e) => {
+								setAccountNumber(e.target.value);
+								setAccountNumberError(false);
+							}}
 							name="amount"
 							type="number"
 							placeholder="Enter Account Number"
@@ -1206,9 +1208,7 @@ const [accountNumber, setAccountNumber] = useState('');
 						<img src={scamTrustLogo} alt="SecuredByScamTrust" />
 						<button
 							type="submit"
-							onClick={
-								continueHandler
-							}
+							onClick={continueHandler}
 							className="bg-colorPrimary text-white px-7 py-3 rounded-md"
 						>
 							Continue
@@ -1627,7 +1627,7 @@ const [accountNumber, setAccountNumber] = useState('');
 						</div>
 						<div className="input-field-EditSettings">
 							<input
-								onChange={(e)=>setNewPhone(e.target.value)}
+								onChange={(e) => setNewPhone(e.target.value)}
 								value={newPhone}
 								className="inputBox-EditSettings"
 								name="phoneNumber4"
@@ -1638,14 +1638,11 @@ const [accountNumber, setAccountNumber] = useState('');
 								autoComplete="off"
 							/>
 						</div>
-					
 
-						
-							<button onClick={handleEdit20} className="Next-button yes">
-								{" "}
-								Submit{" "}
-							</button>
-						
+						<button onClick={handleEdit20} className="Next-button yes">
+							{" "}
+							Submit{" "}
+						</button>
 					</form>
 				</div>
 			</div>
@@ -1665,14 +1662,14 @@ const [accountNumber, setAccountNumber] = useState('');
 					<div className="EditDone-OTP">
 						<img className="otpImg" src={otp} alt="Scam Trust" />
 						<div className="EditDone-OTPForm">
-						<TokenPhone />
-						<button
-										onClick={handleEdit13}
-										className="Next-button button-OTP yes"
-									>
-										{" "}
-										Done{" "}
-									</button>
+							<TokenPhone />
+							<button
+								onClick={handleEdit13}
+								className="Next-button button-OTP yes"
+							>
+								{" "}
+								Done{" "}
+							</button>
 							<div className="successEditLong-otp">
 								<div className="otpMessage">Didn’t receive OTP?</div>
 								<div className="otpResend">Resend OTP</div>
