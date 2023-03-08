@@ -166,6 +166,7 @@ const CustomerDashboard = () => {
         userName = {details?.data?.username}
         availableBalance = {details?.walletBalance}
           setIsWithdrawing={setIsWithdrawing}
+          bankAccounts = {details?.data?.bank_accounts}
           startWithdrawFunds={isWithdrawing}
           setConfirmTransactionPin={setConfirmTransactionPin}
         />
