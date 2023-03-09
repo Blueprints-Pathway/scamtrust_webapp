@@ -199,10 +199,7 @@ function SecuritySettings() {
 			console.log(errorMessage, "error");
 			swal({
 				icon: "error",
-				text:
-					errorMessage ||
-					error?.message?.password[0] ||
-					"check your inputs field to be sure",
+				text: errorMessage || error?.message?.password[0] || "check your inputs field to be sure",
 			});
 		}
 	};

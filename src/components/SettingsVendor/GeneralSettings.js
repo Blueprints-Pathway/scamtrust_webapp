@@ -22,6 +22,7 @@ import encrypted from "../../images/encrypted.png";
 import otp from "../../images/otp.png";
 import TokenEmail from "./TokenEmail";
 import TokenPhone from "./TokenPhone";
+import logo from '../../assets/loader-img.png'
 function GeneralSettings() {
 	const [images, setImages] = useState("");
 	// const [email, setEmail] = useState();
@@ -32,6 +33,7 @@ function GeneralSettings() {
 	const [show, setShow] = useState(false);
 	const [bankName, setBankName] = useState("");
 	const [bank, setBank] = useState();
+	const [isLoading, setIsLoading] = useState(true);
 	const [amountError, setAmountError] = useState(false);
 	const [selectedBank, setSelectedBank] = useState("9 PAYMENT SOLUTIONS BANK");
 

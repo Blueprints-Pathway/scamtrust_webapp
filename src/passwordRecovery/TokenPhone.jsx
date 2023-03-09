@@ -5,22 +5,24 @@ import "./password.css";
 import Logo from "../images/ScanTrust logo.svg";
 import Mail from "../images/mail.svg";
 import InputCode from "./Token";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 function TokenPhone({ num }) {
 	const [loading, setLoading] = useState(false);
 	const [code, setCode] = useState([...Array(6)].map(() => ""));
 	const navigate = useNavigate();
 	// console.log(num,"number");
+	const location = useLocation();
+	const phone = location?.state;
 
 	const newData = code.toString();
 	const getData = parseFloat(newData.replace(/,/g, ""));
-	console.log(getData, "number");
+
 	const token = () => {
 		navigate("/confirmPassword", {
 			getDatas: getData,
 		});
 	};
-	
+
 	return (
 		<div className="container-fluid ">
 			<div className="m-5">
@@ -33,7 +35,7 @@ function TokenPhone({ num }) {
 
 				<div className="text-center ">
 					<span className="font-popins password-recovery-top ">
-						Please enter the 6 digit code sent to 08143055*****
+						Please enter the 6 digit code sent to {phone}
 					</span>
 				</div>
 				<div className="grid grid-cols-6   gap-4 p-3  ">

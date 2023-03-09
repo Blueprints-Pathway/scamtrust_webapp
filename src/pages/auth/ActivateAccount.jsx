@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 import Logo from "../../components/branding/Logo/Logo";
 import CustomerTestimony from "../../components/CustomerTestimony/CustomerTestimony";
 import Tick from "../../assets/images/tick.svg";
@@ -8,10 +8,26 @@ import { useEffect } from "react";
 const ActivateAccount = () => {
   const navigate = useNavigate();
  
+  const vendorSignupDetails = JSON.parse(
+    localStorage.getItem("vendor-signup")
+  );
 
+  console.log(vendorSignupDetails, "vendor details");
    const email = localStorage.getItem("user-email");
   
-
+   const mail = ({ mailto, label }) => {
+    return (
+        <Link
+            to='#'
+            onClick={(e) => {
+                window.location.href = mailto;
+                e.preventDefault();
+            }}
+        >
+            {label}
+        </Link>
+    );
+};
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen font-secondary">
       {/* Left Grid Content */}

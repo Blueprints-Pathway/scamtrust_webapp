@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState } from "react";
 import "./password.css";
 import Logo from "../images/ScanTrust logo.svg";
@@ -7,7 +9,7 @@ function PasswordPhoneNumber() {
 	const navigate = useNavigate();
 	const [phoneNumber, setPhoneNumber] = useState();
 	const confirm = () => {
-		navigate("/tokenPhone");
+		navigate("/tokenPhone", { state: phoneNumber });
 	};
 	return (
 		<div className="container-fluid ">

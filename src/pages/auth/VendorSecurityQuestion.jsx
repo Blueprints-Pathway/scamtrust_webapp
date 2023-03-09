@@ -11,7 +11,7 @@ import SelectGroup from "../../components/UI/SelectGroup";
 import { registerUser } from "../../services/auth";
 import axios from "axios";
 import "./rcSettings.css";
-
+import swal from "sweetalert";
 const VendorSecurityQuestion = (props) => {
 	const { label, option } = props;
 	const [errorMessage, setErrorMessage] = useState("");
@@ -42,15 +42,21 @@ const VendorSecurityQuestion = (props) => {
 			};
 			const data = await axios.post(API_URL, payload, config);
 			console.log(data, "data");
-			// navigate("/");
+			navigate("/activate-account");
 			console.log(data, "data");
 		} catch (error) {
 			console.log(
-				error?.response?.data?.message?.question_id[0],
+				error,
 
 				"errrors"
 			);
-			setErrorMessage(error?.response?.data?.message?.question_id[0]);
+			setErrorMessage(
+				error?.response?.data?.message || "the question field is required"
+			);
+			swal({
+				icon: "error",
+				text: errorMessage,
+			});
 		}
 	};
 

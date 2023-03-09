@@ -12,7 +12,6 @@ function TokenEmail() {
 	const navigate = useNavigate();
 	const location = useLocation();
 	const email = location?.state;
-	console.log(email, "email");
 
 	const token = () => {
 		navigate("/confirmPassword", { state: getData });
@@ -20,7 +19,7 @@ function TokenEmail() {
 	const newData = code.toString();
 
 	const getData = parseFloat(newData.replace(/,/g, ""));
-	console.log(getData, "number");
+	
 	return (
 		<div className="container-fluid ">
 			<div className="m-5">
