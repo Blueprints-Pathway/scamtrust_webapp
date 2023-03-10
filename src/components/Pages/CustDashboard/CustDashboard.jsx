@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useReducer } from "react";
 import Modal from "react-modal";
 import AnimeList from "./AnimeList";
 import Info from "../../../assets/images/svg/info.svg";
@@ -45,7 +45,7 @@ const CustomerDashboard = (props) => {
 	const [showCanceled, setShowCanceled] = useState(false);
 	const [showCompleted, setShowCompleted] = useState(false);
 	const [showOngoing, setShowOngoing] = useState(false);
-	
+	const[reducerValue, forcedUpdate] = useReducer(x => x+1, 0)
 	const customStyles = {
 		content: {
 			width: "50vh",
@@ -224,7 +224,7 @@ const CustomerDashboard = (props) => {
 
 	useEffect(() => {
 		(async () => setUserFromBackend(await fetchUser(user.data.access_token)))();
-	}, []);
+	}, [reducerValue]);
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
 	useEffect(() => {
 		(async () => {
@@ -276,7 +276,7 @@ const CustomerDashboard = (props) => {
 				<div className="min-w-[260px] mx-2 w-[100%] md:w-[70%] 2xl:w-[685px]">
 					<div className="w-full bg-[#FFFEFE] lg:rounded-[24px] rounded-3xl lg:px-[37px] px-5 py-3 pb-8 xl:pb-8 lg:py-[20px] mb-[25px] xl:mb-[35px] hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
 						  <div className="flex items-center justify-end mt-[-3px] lg:mt-[-10px] mb-2 xl:mb-4">
-							<IoRefreshSharp  onClick = {() => {window.location.reload(false);}}
+							<IoRefreshSharp  onClick = {() => {forcedUpdate();}}
 							className="text-[#3AB75D] text-3xl xl:text-4xl" />
 						  </div>
 						<div className="flex items-end justify-between mb-[-10px]">

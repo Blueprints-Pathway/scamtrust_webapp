@@ -223,6 +223,7 @@ const Header = (props) => {
 	};
 	const close = () => {
 		setToggle(false);
+		console.log('close clicked')
 	};
 
 	return (

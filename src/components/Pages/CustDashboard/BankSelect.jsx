@@ -47,6 +47,11 @@ const BankSelect = (props) => {
         }
 		const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
 		const addAccount = async (e) => {
+			if (bankSelected.length < 1 ) {
+				setError('Please Select A Bank From the Dropdown Menu!')
+				return;
+			}
+			
 			setIsLoading(true)
 			e.preventDefault();
 			try {
@@ -78,7 +83,7 @@ const BankSelect = (props) => {
 				setShow(false);
 				swal({
 					icon: "error",
-					text: error.response.data.message.responseMessage
+					text: error.response.data.message.responseMessage || 'An Unexpected Error Occured'
 		 
 				})
 			}
@@ -110,7 +115,7 @@ const BankSelect = (props) => {
 						aria-current="true"
 					  //   focus:border-colorPrimary block w-full text-left cursor-pointer p-4 my-2 text-primary-600  focus:outline-none border-2 rounded-md px-3 py-1.5 text-gray-700" 
 						class="block w-full my-2 cursor-pointer border-2  bg-primary-100 p-4 text-primary-600  focus:outline-none border border-colorPrimary rounded-md w-full px-3 py-1.5 text-gray-700 active:bg-blue-600"
-						value={allbannk?.name} id={allbannk.id} >
+						value={allbannk?.name} id={allbannk.code} >
 			  {allbannk?.name}
 			  </div>)
 				  }

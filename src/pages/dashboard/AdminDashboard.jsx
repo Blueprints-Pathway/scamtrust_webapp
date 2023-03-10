@@ -6,6 +6,7 @@ import { logoutUser, reset } from "../../features/auth/authSlice";
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 import swal from 'sweetalert';
+import classes from '../admin/UsersListPage.module.css'
 
 
 const AdminDashboard = () => {
@@ -88,6 +89,7 @@ const AdminDashboard = () => {
  
      data = withdrawals?.map((data) => {
     return(
+    
     <tr>
       <td>
         {data.id}
@@ -143,15 +145,19 @@ const AdminDashboard = () => {
       </td>
       <td><button onClick={() => approveWithdrawal(data.id)}>
         APPROVE</button></td>
-        <td><button onClick={() => console.log('delete')}>
-        DELETE</button></td>
-    </tr>)}
+        {/* <td><button onClick={() => console.log('delete')}>
+        DELETE</button></td> */}
+    </tr>
+   
+    
+    )}
  ) ;}
     return (
-        <div>
-          { isLaoding ? <FidgetSpinner/> :
-                <table>
-          <thead>
+      <section className={classes.userListSection}>
+      { isLaoding ? <FidgetSpinner/> :
+            <table className={classes.table}>
+              <thead>
+      
             <tr>
               <th>ID</th>
               <th>WALLET_ID</th>
@@ -171,7 +177,7 @@ const AdminDashboard = () => {
               <th>CREATED AT</th>
               <th>UPDATED AT</th>
               <th><button>APPROVE WITHDRAWAL</button></th>
-              <th><button>DELETE ACCOUNT</button></th>
+              {/* <th><button>DELETE ACCOUNT</button></th> */}
 
             </tr>
           </thead>
@@ -191,7 +197,7 @@ const AdminDashboard = () => {
         }}>
           USERS LIST
         </button>
-        </div>
+       </section>
     );
 };
 

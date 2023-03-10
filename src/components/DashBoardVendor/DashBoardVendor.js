@@ -91,6 +91,9 @@ function DashBoardVendor() {
 	const openFaq = () => {
 		navigate("/faq");
 	};
+	const openSettings = () => {
+		navigate('/settings')
+	}
 
 	const handleSelect = () => {
 		setSelect(!select);
@@ -1062,7 +1065,7 @@ function DashBoardVendor() {
 						<div className=" flex flex-col items-center justify-center mx-0 mt-[-30px]">
 							<div className="action-card-title text-sm ">
 								<h5 className="ml-1 md:ml-[10px] smallsize">Get Started</h5>
-								<div className="welcome-cards1">
+								<div className="welcome-cards1" onClick={openSettings}>
 									<img className="w-8" src={payment} alt="payment icon" />
 									<p className="px-2">Add withdrawal account</p>
 								</div>
