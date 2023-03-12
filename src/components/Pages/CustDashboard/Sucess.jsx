@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import SecuredBy from "../../../assets/images/svg/secured-by.svg";
 import Encrypted from "../../../assets/images/svg/encrypted.svg";
 
-function Success({ setDisplay, setShow, setIsWithdrawing,amount, selectedBank, userName }) {
+function Success({ setDisplay, forcedUpdate, setShow, setIsWithdrawing,amount, selectedBank, userName }) {
 	const navigate = useNavigate();
 	const dashboard = () => {
 		navigate("/wallet");
@@ -52,6 +52,7 @@ function Success({ setDisplay, setShow, setIsWithdrawing,amount, selectedBank, u
 							setDisplay(false);
 							setShow(false);
 							setIsWithdrawing(setIsWithdrawing);
+							forcedUpdate();
 						}}
 						// onClick={setDisplay(false)}
 						className="bg-colorPrimary text-white px-7 py-3 rounded-md"

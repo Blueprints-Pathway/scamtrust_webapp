@@ -16,7 +16,7 @@ const BeneficiarySelect = (props) => {
 	const [isLoading, setIsLoading] = useState(false);
     const [bank, setBank] = useState([]);
     const [bankAccountList, setBankAccountList] = useState([]);
-    const {setIsWithdrawing,amount,selectedBank,accountNumber,setShow, userName, bankAccounts} = props;
+    const {setIsWithdrawing,amount,forcedUpdate,accountNumber,setShow, userName, bankAccounts} = props;
 
     useEffect(()=>{
         setBankAccountList(bankAccounts);
@@ -161,6 +161,7 @@ visible={true}
 				bankSelectedId = {bankSelectedId}
 				setIsWithdrawing={setIsWithdrawing}
 				amount={amount}
+				forcedUpdate = {forcedUpdate}
 				accountNumber={accountSelected}
 				userName = {userName}
 				/>
