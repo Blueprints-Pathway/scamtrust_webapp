@@ -22,19 +22,19 @@ import encrypted from "../../images/encrypted.png";
 import otp from "../../images/otp.png";
 import TokenEmail from "./TokenEmail";
 import TokenPhone from "./TokenPhone";
-import logo from '../../assets/loader-img.png'
+import logo from "../../assets/loader-img.png";
 function GeneralSettings() {
-	const [images, setImages] = useState("");
+	// const [images, setImages] = useState("");
 	// const [email, setEmail] = useState();
 	const [details, setDetails] = useState({});
 	const [newEmail, setNewEmail] = useState();
 	const [newPhone, setNewPhone] = useState();
-	const [amount, setAmount] = useState("");
+	// const [amount, setAmount] = useState("");
 	const [show, setShow] = useState(false);
-	const [bankName, setBankName] = useState("");
-	const [bank, setBank] = useState();
-	const [isLoading, setIsLoading] = useState(true);
-	const [amountError, setAmountError] = useState(false);
+	// const [bankName, setBankName] = useState("");
+	// const [bank, setBank] = useState();
+	// const [isLoading, setIsLoading] = useState(true);
+	// const [amountError, setAmountError] = useState(false);
 	const [selectedBank, setSelectedBank] = useState("9 PAYMENT SOLUTIONS BANK");
 
 	const previewURL =
@@ -798,7 +798,9 @@ function GeneralSettings() {
 					<div className="">
 						<h5>
 							Hello {details?.email}, we see that you are trying to change your
-							{details.usertype === "CUSTOMER" ? " Username" : " Business Name"}
+							{details?.usertype === "CUSTOMER"
+								? " Username"
+								: " Business Name"}
 							. Please reach out to our Admin on 0700-8000-5000 or send an email
 							to ScamTrustadmin@gmail.com
 						</h5>
@@ -806,8 +808,7 @@ function GeneralSettings() {
 							onClick={handleClosed1}
 							className="text-white bg-[#023b83] py-0 px-12 mt-8 rounded-md"
 						>
-							{" "}
-							Okay{" "}
+							Okay
 						</button>
 					</div>
 				</div>
