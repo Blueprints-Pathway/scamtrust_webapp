@@ -41,10 +41,9 @@ function Pin({
 			};
 			const payload = {
 				amount: +amount,
-				bank_id: +bankSelectedId,
-				account_number: +accountNumber,
+				bank_account_id: +bankSelectedId,
 				pin: +pin,
-			};
+			};	
 
 			const data = await axios.post(API_URL, JSON.stringify(payload), config);
 			

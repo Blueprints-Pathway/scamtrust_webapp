@@ -41,7 +41,7 @@ const CustomerDashboard = () => {
   const [showFundWallet, setShowFundWallet] = useState(false);
 	const [showConfirmAccount, setShowConfirmAccont] = useState(false);
   const [details, setDetails] = useState();
-  const [isLoading, setIsLoading] = useState(true);
+
 
   const setModalIsOpenToTrue = () => {
     setModalIsOpen(true);
@@ -74,19 +74,16 @@ const CustomerDashboard = () => {
 					},
 				};
 
-				const data = await axios.get(API_URL, config).finally(()=>{
-          setIsLoading(false);
-
-        });
+				const data = await axios.get(API_URL, config);
 
 				console.log(data?.data, "user data customer dashboard");
 				setDetails(data?.data);
-        // setIsLoading(false);
+      
 				// console.log(values, "values");
 				// return response;
 			} catch (error) {
 				console.log(error, "error");
-        // setIsLoading(false);
+     
 			}
       
       
@@ -150,11 +147,7 @@ const CustomerDashboard = () => {
 
   return (
     <Layout heading="Dashboard">
-      { isLoading ?
-      // fixed top-1/2 left-1/2  m-auto 
-         <img src={logo} className= "fixed top-[25rem] left-[12.5rem] md:left-[28rem] lg:left-[38rem] lg:top-[32rem] xl:top-[34rem] xl:left-[60rem] 2xl:top-1/2 2xl:left-1/2 transition-timing-function: cubic-bezier(0.4, 0, 1, 1) animate-bounce" alt="" /> 
-      
-      : <div>
+     
 
       
       <FundWallet
@@ -173,6 +166,7 @@ const CustomerDashboard = () => {
         userName = {details?.data?.username}
         availableBalance = {details?.walletBalance}
           setIsWithdrawing={setIsWithdrawing}
+          bankAccounts = {details?.data?.bank_accounts}
           startWithdrawFunds={isWithdrawing}
           setConfirmTransactionPin={setConfirmTransactionPin}
         />
@@ -305,7 +299,7 @@ const CustomerDashboard = () => {
           </div>
       </div>
       </div>  
-      </div>}      
+        
                  
     </Layout>
   );

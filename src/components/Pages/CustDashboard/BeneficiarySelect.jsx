@@ -59,7 +59,7 @@ const BeneficiarySelect = (props) => {
 					  //   focus:border-colorPrimary block w-full text-left cursor-pointer p-4 my-2 text-primary-600  focus:outline-none border-2 rounded-md px-3 py-1.5 text-gray-700" 
 						class="block w-full my-2 cursor-pointer border-2  bg-primary-100 p-4 text-primary-600  focus:outline-none border border-colorPrimary rounded-md w-full px-3 py-1.5 text-gray-700 active:bg-blue-600"
 
-						value={account.account_number} id={account.bank_code} >
+						value={account.account_number} id={account.id} >
 			 name: {account.account_name}    {'                    '}                
             ACCOUNT NUMBER: {account.account_number}
 			  </div>)
