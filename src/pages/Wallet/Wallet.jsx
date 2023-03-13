@@ -1,5 +1,5 @@
 /** @format */
-import { useEffect, useState } from "react";
+import { useEffect, useState, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Layout from "../../components/Layout/Layout";
@@ -35,7 +35,7 @@ const Wallet = () => {
 	const [modalOpen, setModalIsOpen] = useState(false);
 	const [isWithdrawing, setIsWithdrawing] = useState(false);
 	const [showBalance, setShowBalance] = useState(false);
-
+	const[reducerValue, forcedUpdate] = useReducer(x => x+1, 0)
 
 	const customStyles = {
 		content: {
@@ -63,7 +63,7 @@ const Wallet = () => {
 	useEffect(() => {
 		(async () => setUserFromBackend(await fetchUser(user.data.access_token)))();
 
-	}, []);
+	}, [reducerValue]);
 
 	console.log(userFromBackend, 'eeeee');
 
@@ -108,7 +108,7 @@ const Wallet = () => {
 		})();
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	}, [reducerValue]);
 	console.log(details, "wallet details");
 	
 	const handleWithdraw = () => {
@@ -137,6 +137,7 @@ const Wallet = () => {
 		      	   setIsWithdrawing={setIsWithdrawing}
 				   availableBalance = {userFromBackend?.walletBalance}
 				   bankAccounts = {userFromBackend?.data?.bank_accounts}
+				   forcedUpdate = {forcedUpdate}
 				   userName = {userFromBackend?.data?.username}
 		      	//    startWithdrawFunds={isWithdrawing}
 		     	 />			

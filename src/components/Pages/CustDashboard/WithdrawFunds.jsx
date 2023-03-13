@@ -33,7 +33,7 @@ const WithdrawFunds = (props) => {
 	const [amountError, setAmountError] = useState(false);
 	const [selectedBank, setSelectedBank] = useState('9 PAYMENT SOLUTIONS BANK');
 	const [show, setShow] = useState(false);
-	const { startWithdrawFunds, setIsWithdrawing, availableBalance, userName , bankAccounts} = props;
+	const { startWithdrawFunds, forcedUpdate, setIsWithdrawing, availableBalance, userName , bankAccounts} = props;
 
 	const {
 		register,
@@ -190,7 +190,7 @@ const WithdrawFunds = (props) => {
 					setShow={setShow}
 					setIsWithdrawing={setIsWithdrawing}
 					amount={amount}
-					
+					forcedUpdate = {forcedUpdate}
 					userName = {userName}
 				/>
 			)}

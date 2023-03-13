@@ -26,3 +26,9 @@
     background-color: #04AA6D;
     color: white;
   }
+  .button{
+    border-radius: 12px;
+    padding: 10px;
+    background-color: cadetblue;
+    margin: 10px 20px;
+  }
