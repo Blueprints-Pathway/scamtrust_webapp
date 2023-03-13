@@ -73,7 +73,7 @@ const BankSelect = (props) => {
 				// setEmail(data?.data?.data);
 			} catch (error) {//data.status
 				
-				console.log(error.response.data.message.responseMessage, "error");
+				console.log(error, "error");
 				setIsLoading(false)
 				setShow(false);
 				swal({

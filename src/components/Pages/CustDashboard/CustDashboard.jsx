@@ -88,7 +88,7 @@ const CustomerDashboard = (props) => {
 	};
 	const { user } = useSelector((state) => state.auth);
 
-	console.log(userFromBackend);
+	console.log(userFromBackend, "backend");
 
 	const onCreateTransactionClicked = () => {
 		setShowInitiateTransaction((prevState) => !prevState);
@@ -239,7 +239,7 @@ const CustomerDashboard = (props) => {
 
 				const data = await axios.get(API_URL, config);
 
-				// console.log(data?.data.data, "user data");
+				console.log(data?.data.data, "user data");
 				setDetails(data?.data?.data);
 				// console.log(values, "values");
 				// return response;

@@ -153,7 +153,7 @@ const Header = (props) => {
 
 			const data = await axios.post(API_URL, payload, config);
 
-			console.log(data, "id");
+			// console.log(data, "notif");
 			setIsLoaded(true);
 
 			// console.log(values, "values");
@@ -184,7 +184,7 @@ const Header = (props) => {
 				const datas = mappeddata?.filter(
 					(filtered) => filtered?.status === "UNREAD"
 				);
-			console.log(datas,"filterd")
+			// console.log(datas,"filterd")
 			setFilteredSearch(datas)
 			} catch (error) {
 				console.log(error, "error");
