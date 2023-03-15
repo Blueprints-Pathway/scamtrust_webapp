@@ -30,7 +30,7 @@ const Ratting = React.memo(({ totalStars }) => {
 	const rate = async (e) => {
 		e.preventDefault();
 		try {
-			const API_URL = `https://scamtrust.herokuapp.com/api/v1/rating/store`;
+			const API_URL = `${process.env.REACT_APP_BASE_URL}/rating/store`;
 			const config = {
 				headers: {
 					"Content-Type": "application/json",

@@ -197,7 +197,7 @@ function DashBoardVendor() {
 	useEffect(() => {
 		(async () => {
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/user/getdetails`;
+				const API_URL = `${process.env.REACT_APP_BASE_URL}/user/getdetails`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",
@@ -223,7 +223,7 @@ function DashBoardVendor() {
 	useEffect(() => {
 		(async () => {
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/lists/vendor`;
+				const API_URL = `${process.env.REACT_APP_BASE_URL}/transaction/lists/vendor`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",
@@ -262,7 +262,7 @@ function DashBoardVendor() {
 	useEffect(() => {
 		(async () => {
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/lists/vendor/ongoing`;
+				const API_URL = `${process.env.REACT_APP_BASE_URL}/transaction/lists/vendor/ongoing`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",
@@ -285,7 +285,7 @@ function DashBoardVendor() {
 	useEffect(() => {
 		(async () => {
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/lists/vendor/cancelled`;
+				const API_URL = `${process.env.REACT_APP_BASE_URL}/transaction/lists/vendor/cancelled`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",
@@ -308,7 +308,7 @@ function DashBoardVendor() {
 	useEffect(() => {
 		(async () => {
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/lists/vendor/completed`;
+				const API_URL = `${process.env.REACT_APP_BASE_URL}/transaction/lists/vendor/completed`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",
@@ -332,7 +332,7 @@ function DashBoardVendor() {
 	};
 	const getTransaction = async () => {
 		try {
-			const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/view/${view}`;
+			const API_URL = `${process.env.REACT_APP_BASE_URL}/transaction/view/${view}`;
 			const config = {
 				headers: {
 					"Content-Type": "application/json",

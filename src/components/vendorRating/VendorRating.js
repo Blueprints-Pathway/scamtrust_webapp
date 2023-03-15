@@ -50,7 +50,7 @@ function VendorRating() {
 	useEffect(() => {
 		(async () => {
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/rating/list`;
+				const API_URL = `${process.env.REACT_APP_BASE_URL}/rating/list`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",

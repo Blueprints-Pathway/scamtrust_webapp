@@ -34,7 +34,7 @@ const CustomerSecurityQuestion = () => {
   useEffect(() => {
     const fetchSecurityQuestions = async () => {
       const result = await fetch(
-        "https://scamtrust.herokuapp.com/api/v1/misc/list/questions"
+        `${process.env.REACT_APP_BASE_URL}/misc/list/questions`
       );
       const data = await result.json();
       setSecurityQuestion(data.data);

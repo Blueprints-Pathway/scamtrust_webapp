@@ -44,7 +44,7 @@ const VendorDetails = () => {
 	useEffect(() => {
 		(async () => {
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/misc/get/vendor/${id}`;
+				const API_URL = `${process.env.REACT_APP_BASE_URL}/misc/get/vendor/${id}`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",

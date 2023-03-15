@@ -9,7 +9,7 @@ import SecuritySettings from "./SecuritySettings";
 import GeneralSettings from "./GeneralSettings";
 import Layout from "../../components/Layout/Layout";
 import axios from "axios";
-import logo from "../../assets/loader-img.png";
+
 import "../../index.css";
 
 function SettingsVendor() {
@@ -53,7 +53,7 @@ function SettingsVendor() {
 	useEffect(() => {
 		(async () => {
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/user/getdetails`;
+				const API_URL = `${process.env.REACT_APP_BASE_URL}/user/getdetails`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",
@@ -83,7 +83,7 @@ function SettingsVendor() {
 		}
 
 		try {
-			const API_URL = `https://scamtrust.herokuapp.com/api/v1/settings/upload/picture`;
+			const API_URL = `${process.env.REACT_APP_BASE_URL}/settings/upload/picture`;
 			const config = {
 				headers: {
 					"Content-Type": "multipart/form-data",

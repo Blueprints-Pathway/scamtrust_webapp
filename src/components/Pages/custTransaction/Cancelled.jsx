@@ -22,7 +22,7 @@ const Cancelled = ({ showCancelHandler }) => {
 	useEffect(() => {
 		(async () => {
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/view/${cancels}`;
+				const API_URL = `${process.env.REACT_APP_BASE_URL}/transaction/view/${cancels}`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",

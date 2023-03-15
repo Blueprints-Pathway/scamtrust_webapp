@@ -14,7 +14,7 @@ function PasswordEmail() {
 	const getEmail = async (e) => {
     e.preventDefault()
 		try {
-			const API_URL = `https://scamtrust.herokuapp.com/api/v1/auth/send/resetlink`;
+			const API_URL = `${process.env.REACT_APP_BASE_URL}/auth/send/resetlink`;
 			const config = {
 				headers: {
 					"Content-Type": "application/json",

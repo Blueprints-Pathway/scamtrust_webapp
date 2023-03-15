@@ -21,7 +21,7 @@ const Completed = ({ showCompletedHandler }) => {
 	useEffect(() => {
 		(async () => {
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/view/${complete}`;
+				const API_URL = `${process.env.REACT_APP_BASE_URL}/transaction/view/${complete}`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",

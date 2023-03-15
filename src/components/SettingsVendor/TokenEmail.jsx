@@ -21,7 +21,7 @@ function TokenEmail(onComplete, length) {
 	const changeToken = async (e) => {
 		e.preventDefault();
 		try {
-			const API_URL = `https://scamtrust.herokuapp.com/api/v1/settings/verify/change/email/token
+			const API_URL = `${process.env.REACT_APP_BASE_URL}/settings/verify/change/email/token
 			`;
 			const config = {
 				headers: {

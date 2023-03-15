@@ -23,7 +23,7 @@ const VendorOngoing = ({ showOngoingHandler }) => {
 	useEffect(() => {
 		(async () => {
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/view/${onGoing}`;
+				const API_URL = `${process.env.REACT_APP_BASE_URL}/transaction/view/${onGoing}`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",
@@ -68,7 +68,7 @@ const VendorOngoing = ({ showOngoingHandler }) => {
 	const Accepted = async () => {
 		showOngoingHandler();
 		try {
-			const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/vendor/approve/${id}`;
+			const API_URL = `${process.env.REACT_APP_BASE_URL}/transaction/vendor/approve/${id}`;
 			const config = {
 				headers: {
 					"Content-Type": "application/json",

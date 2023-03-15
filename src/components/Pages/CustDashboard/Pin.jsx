@@ -32,7 +32,7 @@ function Pin({
 	console.log("user amount", selectedBank);
 	const withdraw = async () => {
 		try {
-			const API_URL = `https://scamtrust.herokuapp.com/api/v1/wallet/withdrawal`;
+			const API_URL = `${process.env.REACT_APP_BASE_URL}/wallet/withdrawal`;
 			const config = {
 				headers: {
 					"Content-Type": "application/json",

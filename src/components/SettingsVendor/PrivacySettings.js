@@ -10,7 +10,7 @@ function PrivacySettings() {
 	useEffect(() => {
 		(async () => {
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/user/getdetails`;
+				const API_URL = `${process.env.REACT_APP_BASE_URL}/user/getdetails`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",

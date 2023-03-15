@@ -22,7 +22,7 @@ const BankSelect = (props) => {
     useEffect(() => {
             const details = async () => {
                 try {
-                    const API_URL = `https://scamtrust.herokuapp.com/api/v1/misc/get/banks`;
+                    const API_URL = `${process.env.REACT_APP_BASE_URL}/misc/get/banks`;
                     const config = {
                         headers: {
                             "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const BankSelect = (props) => {
 			setIsLoading(true)
 			e.preventDefault();
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/settings/change/bank/account`;
+				const API_URL = `${process.env.REACT_APP_BASE_URL}/settings/change/bank/account`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",

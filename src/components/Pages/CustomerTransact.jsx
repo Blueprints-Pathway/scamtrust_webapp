@@ -58,7 +58,7 @@ const CustomerTransact = (props) => {
 	useEffect(() => {
 		(async () => {
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/lists/customer`;
+				const API_URL = `${process.env.REACT_APP_BASE_URL}/transaction/lists/customer`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",
@@ -93,7 +93,7 @@ const CustomerTransact = (props) => {
 	useEffect(() => {
 		(async () => {
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/lists/customer/ongoing`;
+				const API_URL = `${process.env.REACT_APP_BASE_URL}/transaction/lists/customer/ongoing`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",
@@ -116,7 +116,7 @@ const CustomerTransact = (props) => {
 	useEffect(() => {
 		(async () => {
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/lists/customer/cancelled`;
+				const API_URL = `${process.env.REACT_APP_BASE_URL}/transaction/lists/customer/cancelled`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",
@@ -139,7 +139,7 @@ const CustomerTransact = (props) => {
 	useEffect(() => {
 		(async () => {
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/lists/customer/completed`;
+				const API_URL = `${process.env.REACT_APP_BASE_URL}/transaction/lists/customer/completed`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",
@@ -160,7 +160,7 @@ const CustomerTransact = (props) => {
 	}, []);
 	const getTransaction = async () => {
 		try {
-			const API_URL = `https://scamtrust.herokuapp.com/api/v1/transaction/view/${view}`;
+			const API_URL = `${process.env.REACT_APP_BASE_URL}/transaction/view/${view}`;
 			const config = {
 				headers: {
 					"Content-Type": "application/json",

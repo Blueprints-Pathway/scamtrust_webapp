@@ -80,7 +80,7 @@ const Header = (props) => {
 	useEffect(() => {
 		(async () => {
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/user/getdetails`;
+				const API_URL = `${process.env.REACT_APP_BASE_URL}/user/getdetails`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",
@@ -113,7 +113,7 @@ const Header = (props) => {
 	})
 	const getSearch = async () => {
 		try {
-			const API_URL = `https://scamtrust.herokuapp.com/api/v1/misc/vendor/search`;
+			const API_URL = `${process.env.REACT_APP_BASE_URL}/misc/vendor/search`;
 			const config = {
 				headers: {
 					"Content-Type": "application/json",
@@ -140,7 +140,7 @@ const Header = (props) => {
 
 	const getNotification = async () => {
 		try {
-			const API_URL = `https://scamtrust.herokuapp.com/api/v1/misc/toggle/notification`;
+			const API_URL = `${process.env.REACT_APP_BASE_URL}/misc/toggle/notification`;
 			const config = {
 				headers: {
 					"Content-Type": "application/json",
@@ -168,7 +168,7 @@ const Header = (props) => {
 	useEffect(() => {
 		(async () => {
 			try {
-				const API_URL = `https://scamtrust.herokuapp.com/api/v1/misc/list/notifications?page=1`;
+				const API_URL = `${process.env.REACT_APP_BASE_URL}/misc/list/notifications?page=1`;
 				const config = {
 					headers: {
 						"Content-Type": "application/json",

@@ -171,7 +171,7 @@ function SecuritySettings() {
 	const PasswordChange = async (e) => {
 		e.preventDefault();
 		try {
-			const API_URL = `https://scamtrust.herokuapp.com/api/v1/settings/change-password`;
+			const API_URL = `${process.env.REACT_APP_BASE_URL}/settings/change-password`;
 			const config = {
 				headers: {
 					"Content-Type": "application/json",
@@ -207,7 +207,7 @@ function SecuritySettings() {
 	const PinChange = async (e) => {
 		e.preventDefault();
 		try {
-			const API_URL = `https://scamtrust.herokuapp.com/api/v1/settings/change-pin`;
+			const API_URL = `${process.env.REACT_APP_BASE_URL}/settings/change-pin`;
 			const config = {
 				headers: {
 					"Content-Type": "application/json",
