@@ -38,11 +38,7 @@ const AdminDashboard = () => {
    
 		(async () => {
 			try {
-<<<<<<< HEAD
-				const API_URL = `${process.env.REACT_APP_BASE_URL}/admin/withdrawals`;
-=======
 				const API_URL = `https://scamtrust.herokuapp.com/api/v1/admin/withdrawals?page=${currentPageNumber}`;
->>>>>>> 1466f6675943dd15d31050efe9eaca58eb320347
 				const config = {
 					headers: {
 						"Content-Type": "application/json",
