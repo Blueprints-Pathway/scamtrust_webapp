@@ -162,12 +162,12 @@ const UsersListPage = () => {
           </tbody>
         </table>}
 
-        <button onClick={() => {
+        <button className={classes.button}  onClick={() => {
             dispatch(logoutUser());
         }}>
           LOGOUT
         </button>
-        <button onClick={() => {
+        <button className={classes.button}  onClick={() => {
           navigate('/admin-panel')
         }}>
           ADMIN PANEL

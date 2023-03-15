@@ -16,12 +16,33 @@ const AdminDashboard = () => {
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
     const[withdrawals, setWithdrawals] = useState([]);
     const[isLaoding, setIsLoading] = useState(true);
+    const[currentPageNumber, setCurrentPageNumber] = useState(1);
+    const[lastPageNumber, setLastPageNumber] = useState()
   
+   const previousBtnHandler = () => {
+    if (+currentPageNumber <= 1 ) {
+      return;
+    }
+    setCurrentPageNumber((currentNumber) => currentNumber - 1 )
+    console.log('previous', currentPageNumber, lastPageNumber)
+    }
+   const nextBtnHandler = () => {
+    if (+currentPageNumber >= lastPageNumber) {
+      return;
+      
+    }
+    setCurrentPageNumber((currentNumber) => currentNumber+ 1 )
+    console.log('next', currentPageNumber, lastPageNumber)
+    }
   useEffect(() => {
    
 		(async () => {
 			try {
+<<<<<<< HEAD
 				const API_URL = `${process.env.REACT_APP_BASE_URL}/admin/withdrawals`;
+=======
+				const API_URL = `https://scamtrust.herokuapp.com/api/v1/admin/withdrawals?page=${currentPageNumber}`;
+>>>>>>> 1466f6675943dd15d31050efe9eaca58eb320347
 				const config = {
 					headers: {
 						"Content-Type": "application/json",
@@ -35,6 +56,7 @@ const AdminDashboard = () => {
         
 				console.log(data?.data?.data.data, "user data customer dashboard");
 				setWithdrawals(data?.data.data.data);
+        setLastPageNumber(data?.data.data.last_page);
         // setIsLoading(false);
 				console.log(withdrawals, "values");
 				// return response;
@@ -49,7 +71,7 @@ const AdminDashboard = () => {
       
       setIsLoading(false);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	}, [currentPageNumber]);
 
   const approveWithdrawal = async (walletId) => {
     setIsLoading(true);
@@ -187,15 +209,21 @@ const AdminDashboard = () => {
           </tbody>
         </table>}
 
-        <button onClick={() => {
+        <button className={classes.button}  onClick={() => {
             dispatch(logoutUser());
         }}>
           LOGOUT
         </button>
-        <button onClick={() => {
+        <button className={classes.button}  onClick={() => {
           navigate('/users-list')
         }}>
           USERS LIST
+        </button>
+        <button className={classes.button} onClick={previousBtnHandler}>
+          PREVIOUS
+        </button>
+        <button className={classes.button}  onClick={nextBtnHandler}>
+          NEXT
         </button>
        </section>
     );

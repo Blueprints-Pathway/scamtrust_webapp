@@ -1,6 +1,6 @@
 import './customerDashboard.css'
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useReducer } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import InitiateTransaction from "../../components/InitiateTransaction/InitiateTransaction";
@@ -40,8 +40,9 @@ const CustomerDashboard = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [showFundWallet, setShowFundWallet] = useState(false);
 	const [showConfirmAccount, setShowConfirmAccont] = useState(false);
+  const [userFromBackend, setUserFromBackend] = useState(null);
   const [details, setDetails] = useState();
-
+  const[reducerValue, forcedUpdate] = useReducer(x => x+1, 0)
 
   const setModalIsOpenToTrue = () => {
     setModalIsOpen(true);
@@ -92,6 +93,11 @@ const CustomerDashboard = () => {
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
+  const { user } = useSelector((state) => state.auth);
+  useEffect(() => {
+		(async () => setUserFromBackend(await fetchUser(user.data.access_token)))();
+		console.log('forced update')
+	}, [reducerValue]);
   const customStyles = {
 		content: {
 			width: "50vh",
@@ -143,6 +149,7 @@ const CustomerDashboard = () => {
   // const onCreateTransactionClicked = () => {
 	// 	setShowInitiateTransaction((prevState) => !prevState);
 	// };
+
  
 
   return (
@@ -166,6 +173,7 @@ const CustomerDashboard = () => {
         userName = {details?.data?.username}
         availableBalance = {details?.walletBalance}
           setIsWithdrawing={setIsWithdrawing}
+          forcedUpdate = {forcedUpdate}
           bankAccounts = {details?.data?.bank_accounts}
           startWithdrawFunds={isWithdrawing}
           setConfirmTransactionPin={setConfirmTransactionPin}
@@ -223,7 +231,10 @@ const CustomerDashboard = () => {
         <></>
       )}
       <CustDashboard
+
         setIsFunding={setIsFunding}
+        forcedUpdate = {forcedUpdate}
+        userFromBackend = {userFromBackend}
         setIsWithdrawing={setIsWithdrawing}
         setShowInitiateTransaction={setShowInitiateTransaction}
       />

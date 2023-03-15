@@ -26,11 +26,11 @@ import "./custDashboard.css"
 import { IoRefreshSharp } from 'react-icons/io5'
 
 const CustomerDashboard = (props) => {
-	const { setShowInitiateTransaction, setIsWithdrawing, setIsFunding } = props;
+	const { setShowInitiateTransaction, setIsWithdrawing, userFromBackend, forcedUpdate, setIsFunding } = props;
 	const { isShowing, toggle } = useModal();
 	const [transactionAmount, setTransactionAmount] = useState("");
 	const [details, setDetails] = useState();
-	const [userFromBackend, setUserFromBackend] = useState(null);
+	
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 	const [showConfirmAccount, setShowConfirmAccont] = useState(false);
 	const [showFundWallet, setShowFundWallet] = useState(false);
@@ -45,7 +45,7 @@ const CustomerDashboard = (props) => {
 	const [showCanceled, setShowCanceled] = useState(false);
 	const [showCompleted, setShowCompleted] = useState(false);
 	const [showOngoing, setShowOngoing] = useState(false);
-	const[reducerValue, forcedUpdate] = useReducer(x => x+1, 0)
+	// const[reducerValue, forcedUpdate] = useReducer(x => x+1, 0)
 	const customStyles = {
 		content: {
 			width: "50vh",
@@ -69,6 +69,7 @@ const CustomerDashboard = (props) => {
 		e.stopPropagation();
 		setModalIsOpen(false);
 	};
+	
 
 	const handleConfirmAccount = () => {
 		setShowConfirmAccont((prevState) => !prevState);
@@ -86,9 +87,10 @@ const CustomerDashboard = (props) => {
 	const showCompletedHandler = () => {
 		setShowCompleted((prevState) => !prevState);
 	};
-	const { user } = useSelector((state) => state.auth);
+	
 
-	console.log(userFromBackend, "backend");
+	// console.log(userFromBackend);
+
 
 	const onCreateTransactionClicked = () => {
 		setShowInitiateTransaction((prevState) => !prevState);
@@ -221,10 +223,9 @@ const CustomerDashboard = (props) => {
 		}
 	};
 	/////transaction data end////
+	// props.forceUpdate(forcedUpdate);
 
-	useEffect(() => {
-		(async () => setUserFromBackend(await fetchUser(user.data.access_token)))();
-	}, [reducerValue]);
+	
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
 	useEffect(() => {
 		(async () => {
@@ -312,7 +313,12 @@ const CustomerDashboard = (props) => {
 
 						<div className="flex justify-between mt-[20px] 2xl:mt-[53px]">
 							<button
-								onClick={() => setIsWithdrawing(true)}
+								onClick={() => 
+									{setIsWithdrawing(true);
+									
+								}
+								
+								}
 								className="bg-[#E9303B] text-xs lg:text-base w-[100px] hover:shadow-xl transition-all duration-300 2xl:w-[143px] text-center text-white py-[9px] rounded-lg"
 							>
 								WITHDRAW

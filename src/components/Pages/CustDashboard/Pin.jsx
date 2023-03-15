@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import axios from "axios";
@@ -11,12 +11,14 @@ function Pin({
 	amount,
 	selectedBank,
 	accountNumber,
+	forcedUpdate,
 	userName
 }) {
 	const [pin, setPin] = useState('');
 	const [pinError, setPinError] = useState();
 	const [withdraws, setWithdraws] = useState();
 	const [hide, setHide] = useState(false);
+	
 	console.log(accountNumber)
 	const submitPinHandler = async () => {
 		if(+pin.length !==4 || pin === ''){
@@ -61,6 +63,7 @@ function Pin({
 			}
 			setHide(true);
 			setWithdraws(data?.status);
+			
 		} catch (error) {
 			swal({
 				icon: "error",
@@ -131,7 +134,7 @@ function Pin({
 					</button>
 				</div>
 			</div>
-			{hide && <Success setDisplay={setHide} setShow={setShow} setIsWithdrawing={setIsWithdrawing} amount = {amount} selectedBank = {selectedBank} userName = {userName}/>}
+			{hide && <Success setDisplay={setHide} forcedUpdate = {forcedUpdate} setShow={setShow} setIsWithdrawing={setIsWithdrawing} amount = {amount} selectedBank = {selectedBank} userName = {userName}/>}
 		</div>
 	);
 }

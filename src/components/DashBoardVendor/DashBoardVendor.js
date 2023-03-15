@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import "./DashBoardVendor.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -52,6 +52,7 @@ function DashBoardVendor() {
 	const [showCompleted, setShowCompleted] = useState(false);
 	const [showOngoing, setShowOngoing] = useState(false);
 	const [showAccepted, setShowAccepted] = useState(false);
+	const[reducerValue, forcedUpdate] = useReducer(x => x+1, 0)
 	const handleCopy = () => {
 		setCopy(true);
 		setTimeout(() => setCopy(false), 1500);
@@ -218,7 +219,7 @@ function DashBoardVendor() {
 		})();
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	}, [reducerValue]);
 
 	useEffect(() => {
 		(async () => {
@@ -358,6 +359,7 @@ function DashBoardVendor() {
 			{isWithdrawing ? (
 				<WithdrawFunds setIsWithdrawing={setIsWithdrawing}
 				userName =  {walletInfo?.data?.username}
+				forcedUpdate = {forcedUpdate}
 				bankAccounts = {walletInfo?.data?.bank_accounts}
 				availableBalance  = {walletInfo['walletBalance']} />
 			) : (
