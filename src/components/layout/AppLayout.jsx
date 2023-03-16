@@ -1,29 +1,27 @@
-import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
-import { Layout, Menu, theme } from 'antd';
+import { Form, Layout, Menu, theme, Badge, Avatar} from 'antd';
 import React from 'react';
 import './AppLayout.css'
-// import { HomeOutlined, SettingOutlined, WalletOutlined } from '@ant-design/icons'
-// import { GrTransaction } from 'react-icons/gr'
-// import { IoLogOutOutline } from 'react-icons/io5'
+import { VscArrowSwap } from 'react-icons/vsc'
+import { SlSettings } from 'react-icons/sl'
+import { CiWallet } from 'react-icons/ci'
+import { VscHome} from 'react-icons/vsc'
+import { BiSupport} from 'react-icons/bi'
+import { IoLogOutOutline } from 'react-icons/io5'
+import { MdNotificationsNone } from 'react-icons/md'
+import search from '../../assets/images/search.png'
 import scamTrustLogo from '../../assets/images/scamTrustLogo.png'
-import support from '../../assets/images/support.png'
-import dashboard from '../../assets/images/home.png'
-import transactions from '../../assets/images/transfer.png'
-import wallet from '../../assets/images/Wallet.png'
-import settings from '../../assets/images/settings.png'
-import logout from '../../assets/images/logout.png'
+import CustomerDashboard from '../../pages/dashboard/CustomerDashboard/CustomerDashboard';
 
-
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 
 const AppLayout = () => {
-  const {
-    token: { colorBgContainer },
-  } = theme.useToken();
+  // const {
+  //   token: { colorBgContainer },
+  // } = theme.useToken();
   return (
     <Layout className='wrapper'>
       <Sider
-      style={{backgroundColor: "red"}}
+      style={{backgroundColor: "#232164", height: '100vh'}}
         breakpoint="lg"
         collapsedWidth="0"
         onBreakpoint={(broken) => {
@@ -53,28 +51,28 @@ const AppLayout = () => {
 
           <div className='side-tab-wrapper'>
                <div className='side-tab-con'>
-                <img src={dashboard} alt="" /><span className='side-tabs'>DASHBOARD</span>
+                <VscHome /><span className='side-tabs'>DASHBOARD</span>
                </div>
      
                <div className='side-tab-con'>
-                <img src={transactions} alt="" /><span className='side-tabs'>TRANSACTIONS</span>
+                <VscArrowSwap /><span className='side-tabs'>TRANSACTIONS</span>
                </div>
 
                <div className='side-tab-con'>
-               <img src={wallet} alt="" /><span className='side-tabs'>WALLET</span>
+               <CiWallet /><span className='side-tabs'>WALLET</span>
                </div>
 
                <div className='side-tab-con'>
-                <img src={settings} alt="" /><span className='side-tabs'>SETTINGS</span>
+                <SlSettings /><span className='side-tabs'>SETTINGS</span>
                </div>
           </div>
 
           <div className='side-bottom-tab'>
             <div className='side-tab-con'>
-              <img src={support} alt="" /><span className='side-tabs'>SUPPORT</span>
+              <BiSupport /><span className='side-tabs'>SUPPORT</span>
             </div>
             <div className='side-tab-con'>
-              <img src={logout} alt="" /><span className='side-tabs'>LOGOUT</span>
+              <IoLogOutOutline /><span className='side-tabs'>LOGOUT</span>
             </div>
           </div>
 
@@ -82,24 +80,42 @@ const AppLayout = () => {
       </Sider>
 
       <Layout className='content-con'>
-        <Header className='header' />
-        <Content
-          style={{
-            margin: '20px 16px 0'
-          }}
-        >
-          <div className='content'>
-            content
+        <Header className='header'>
+          <div className='header-div1'>
+            <p className='header-dash'>Dashboard</p>
           </div>
+
+        <div className='header-right-div'>
+              {/* SEARCH INPUT  */}
+          <div className='header-div-2'>
+            <div className='header-input-icon'> <img className='input-icon-img' src={search} alt="..." /> </div>
+            <input className='header-input' type="text" placeholder='Search vendor’s name' />
+          </div>
+
+                  {/* NOTIFICATION */}
+          <div className='header-div-3'>
+              <Badge count={7} overflowCount={99}>
+                    <div>
+                     <MdNotificationsNone className='header-notification-icon' style={{ fill: '#232164' }} />
+                    </div>
+             </Badge>
+          </div>
+
+                     {/* INITIALS */}
+           <div>
+             <Avatar className='header-avatar'>
+              <p className='header-initials'>CO</p>
+             </Avatar>
+          </div>        
+       </div>
+        </Header>
+
+                     {/* INNER CONTENT */}
+        <Content style={{margin: '0px 10px', color: 'black'}}>
+             <CustomerDashboard />
         </Content>
 
-        {/* <Footer
-          style={{
-            textAlign: 'center',
-          }}
-        >
-          Ant Design ©2023 Created by Ant UED
-        </Footer> */}
+        
       </Layout>
     </Layout>
   );

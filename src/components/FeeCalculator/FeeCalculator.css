@@ -1,0 +1,291 @@
+.fee-Calc-wrapper{
+    color: black;
+    background-color: #ffff;
+    margin: 30px;
+    padding: 25px;
+    border-radius: 18px;
+    width: 35vw;
+}
+.fee-calc-top{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.fee-calc-title{
+    color: #232164;
+    font-size: 16px;
+}
+.fee-calc-line{
+    border: 1px solid #86D19B;
+    margin-top: 5px;
+}
+.fee-calc-bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.fee-calc-first{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.fee-calc-first-label{
+    color: #232164;
+    font-weight: 500;
+}
+.fee-calc-first-input{
+    border: 1px solid #E6E7E8;
+    border-radius: 5px;
+    padding: 2px 0px;
+    width: 110px;
+}
+.fee-calc-first-input::placeholder{
+    color: #7D8287AB;
+    font-size: 10px;
+    padding: 0px 10px;
+}
+.fee-calc-second{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0px;
+}
+.fee-calc-first-input2{
+    border: none;
+    background-color: #E6E7E8;
+    border-radius: 5px;
+    padding: 2px 0px;
+    width: 110px;
+}
+.fee-calc-first-input2::placeholder{
+    color: #232164;
+    font-size: 14px;
+    padding: 0px 9px;
+    font-weight: lighter;
+    font-family: verdana;
+}
+@media screen and (max-width: 1200px) {
+    .fee-Calc-wrapper{
+        color: black;
+        background-color: #ffff;
+        margin: 30px;
+        padding: 25px;
+        border-radius: 18px;
+        width: 35vw;
+    }
+    .fee-calc-top{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .fee-calc-title{
+        color: #232164;
+        font-size: 14px;
+    }
+    .fee-calc-line{
+        border: 1px solid #86D19B;
+        margin-top: 5px;
+    }
+    .fee-calc-bottom{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+    .fee-calc-first{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .fee-calc-first-label{
+        color: #232164;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .fee-calc-first-input{
+        border: 1px solid #E6E7E8;
+        border-radius: 5px;
+        padding: 2px 0px;
+        width: 110px;
+    }
+    .fee-calc-first-input::placeholder{
+        color: #7D8287AB;
+        font-size: 9px;
+        padding: 0px 10px;
+    }
+    .fee-calc-second{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 15px 0px;
+    }
+    .fee-calc-first-input2{
+        border: none;
+        background-color: #E6E7E8;
+        border-radius: 5px;
+        padding: 2px 0px;
+        width: 110px;
+    }
+    .fee-calc-first-input2::placeholder{
+        color: #232164;
+        font-size: 12px;
+        padding: 0px 9px;
+        font-weight: lighter;
+        font-family: verdana;
+    }
+
+}
+@media screen and (max-width: 768px) {
+    .fee-Calc-wrapper{
+        color: black;
+        background-color: #ffff;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 18px;
+        width: 45vw;
+    }
+    .fee-calc-top{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .fee-calc-title{
+        color: #232164;
+        font-size: 14px;
+    }
+    .fee-calc-line{
+        border: 1px solid #86D19B;
+        margin-top: 5px;
+    }
+    .fee-calc-bottom{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+    .fee-calc-first{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .fee-calc-first-label{
+        color: #232164;
+        font-size: 11px;
+        font-weight: 500;
+    }
+    .fee-calc-first-input{
+        border: 1px solid #E6E7E8;
+        border-radius: 5px;
+        padding: 0px 0px;
+        width: 100px;
+    }
+    .fee-calc-first-input::placeholder{
+        color: #7D8287AB;
+        font-size: 9px;
+        padding: 0px 10px;
+    }
+    .fee-calc-second{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 15px 0px;
+    }
+    .fee-calc-first-input2{
+        border: none;
+        background-color: #E6E7E8;
+        border-radius: 5px;
+        padding: 0px 0px;
+        width: 100px;
+    }
+    .fee-calc-first-input2::placeholder{
+        color: #232164;
+        font-size: 12px;
+        padding: 0px 9px;
+        font-weight: lighter;
+        font-family: verdana;
+    }
+
+}
+@media screen and (max-width: 480px) {
+    .fee-calc-con{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .fee-Calc-wrapper{
+        color: black;
+        background-color: #ffff;
+        margin: 0px;
+        margin-bottom: 15px;
+        padding: 20px;
+        border-radius: 18px;
+        width: 90vw;
+    }
+    .fee-calc-top{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .fee-calc-title{
+        color: #232164;
+        font-size: 12px;
+    }
+    .fee-calc-line{
+        border: 1px solid #86D19B;
+        margin-top: 5px;
+    }
+    .fee-calc-bottom{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+    .fee-calc-first{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .fee-calc-first-label{
+        color: #232164;
+        font-size: 10px;
+        font-weight: 500;
+    }
+    .fee-calc-first-input{
+        border: 1px solid #E6E7E8;
+        border-radius: 5px;
+        padding: 0px 0px;
+        width: 100px;
+    }
+    .fee-calc-first-input::placeholder{
+        color: #7D8287AB;
+        font-size: 9px;
+        padding: 0px 10px;
+    }
+    .fee-calc-second{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 15px 0px;
+    }
+    .fee-calc-first-input2{
+        border: none;
+        background-color: #E6E7E8;
+        border-radius: 5px;
+        padding: 0px 0px;
+        width: 100px;
+    }
+    .fee-calc-first-input2::placeholder{
+        color: #232164;
+        font-size: 12px;
+        padding: 0px 9px;
+        font-weight: lighter;
+        font-family: verdana;
+    }
+
+}
