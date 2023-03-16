@@ -21,7 +21,7 @@ const AppLayout = () => {
   return (
     <Layout className='wrapper'>
       <Sider
-      style={{backgroundColor: "#232164", height: '100vh'}}
+      style={{backgroundColor: "#232164", zIndex: '30'}}
         breakpoint="lg"
         collapsedWidth="0"
         onBreakpoint={(broken) => {
@@ -111,7 +111,7 @@ const AppLayout = () => {
         </Header>
 
                      {/* INNER CONTENT */}
-        <Content style={{margin: '0px 10px', color: 'black'}}>
+        <Content style={{margin: '0px 10px', color: 'black', overflowY: 'scroll'}}>
              <CustomerDashboard />
         </Content>
 
