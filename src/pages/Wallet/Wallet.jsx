@@ -119,8 +119,8 @@ const Wallet = () => {
 
 				const data = await axios.get(API_URL, config);
 
-				console.log(data?.data.data, "wallet histroy");
-				setWalletHistroy(data?.data.data);
+				
+				setWalletHistroy(data?.data?.data);
 				// console.log(values, "values");
 				// return response;
 			} catch (error) {
@@ -342,9 +342,7 @@ const Wallet = () => {
 									<table className="w-full text-center">
 										<tbody className="text-colorPrimary font-medium text-xs">
 											{wallethistroy?.map((history, id) => {
-												{
-													console.log(history, "histroy");
-												}
+												
 												return (
 													<tr
 														key={id}
@@ -400,7 +398,7 @@ const Wallet = () => {
 									</table>
 								</div>
 
-								{wallethistroy.length < 1?<div className="min-h-[60vh] min-w-full mx-auto w-full grid place-content-center">
+								{wallethistroy?.length < 1?<div className="min-h-[60vh] min-w-full mx-auto w-full grid place-content-center">
 									<img
 										src={EmptyTxn}
 										className="w-[149.6px] mb-4 mx-auto h-[149.6px]"
