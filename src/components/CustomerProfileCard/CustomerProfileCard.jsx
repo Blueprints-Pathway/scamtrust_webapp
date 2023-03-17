@@ -14,7 +14,7 @@ const CustomerProfileCard = () => {
           <hr className='profile-card-line' />
           <div className='profile-card-middle'>
             <div className='profile-card-icon-con'>
-                <RxEyeClosed className='profile-card-icon' style={{ fill: '#232164' }} />
+                <RxEyeClosed className='profile-card-icon' style={{ fill: 'black' }} />
             </div>
             <div className='profile-card-amount'>
                 <div className='profile-card-total-con'>

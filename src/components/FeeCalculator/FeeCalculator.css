@@ -1,7 +1,7 @@
 .fee-Calc-wrapper{
     color: black;
     background-color: #ffff;
-    margin: 30px;
+    margin: 30px 0px;
     padding: 25px;
     border-radius: 18px;
     width: 35vw;
@@ -70,7 +70,7 @@
     .fee-Calc-wrapper{
         color: black;
         background-color: #ffff;
-        margin: 30px;
+        margin: 30px 0px;
         padding: 25px;
         border-radius: 18px;
         width: 35vw;
@@ -142,10 +142,10 @@
     .fee-Calc-wrapper{
         color: black;
         background-color: #ffff;
-        margin: 20px;
+        margin: 20px 0px;
         padding: 20px;
         border-radius: 18px;
-        width: 45vw;
+        width: 40vw;
     }
     .fee-calc-top{
         display: flex;

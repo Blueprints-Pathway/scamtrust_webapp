@@ -1,7 +1,7 @@
 .profile-card-wrapper{
     color: black;
     background-color: #ffff;
-    margin: 30px;
+    margin: 10px 0px 0px 0px;
     padding: 25px;
     border-radius: 18px;
     width: 35vw;
@@ -96,7 +96,7 @@
     .profile-card-wrapper{
         color: black;
         background-color: #ffff;
-        margin: 30px;
+        margin: 0px 0px;
         padding: 20px;
         border-radius: 18px;
         width: 35vw;
@@ -193,10 +193,10 @@
     .profile-card-wrapper{
         color: black;
         background-color: #ffff;
-        margin: 20px;
+        margin: 5px 0px;
         padding: 20px;
         border-radius: 18px;
-        width: 45vw;
+        width: 40vw;
     }
     .profile-card-top{
         display: flex;
@@ -297,7 +297,7 @@
     .profile-card-wrapper{
         color: black;
         background-color: #ffff;
-        margin: 15px 0px;
+        margin: 0px 0px 15px 0px;
         padding: 20px;
         border-radius: 18px;
         width: 90vw;

@@ -111,7 +111,7 @@ const AppLayout = () => {
         </Header>
 
                      {/* INNER CONTENT */}
-        <Content style={{margin: '0px 10px', color: 'black', overflowY: 'scroll'}}>
+        <Content className='layout-content' style={{margin: '24px 16px 0', color: 'black'}}>
              <CustomerDashboard />
         </Content>
 

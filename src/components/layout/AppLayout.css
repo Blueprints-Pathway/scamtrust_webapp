@@ -118,6 +118,12 @@
 .side-bottom-tab{
     margin-top: 150px;
 }
+.layout-content{
+    overflow-y: scroll;
+}
+.layout-content::-webkit-scrollbar {
+    display: none;
+  }
 
 @media screen and (max-width: 1200px) {
     .wrapper{
@@ -238,6 +244,12 @@
     .side-bottom-tab{
         margin-top: 30px;
     }
+    .layout-content{
+        overflow-y: scroll;
+    }
+    .layout-content::-webkit-scrollbar {
+        display: none;
+      }
 }
 @media screen and (max-width: 768px) {
     .wrapper{
@@ -358,6 +370,12 @@
     .side-bottom-tab{
         margin-top: 30px;
     }
+    .layout-content{
+        overflow-y: scroll;
+    }
+    .layout-content::-webkit-scrollbar {
+        display: none;
+      }
 }
 @media screen and (max-width: 480px) {
     .wrapper{
@@ -483,4 +501,10 @@
     .side-bottom-tab{
         margin-top: 30px;
     }
+    .layout-content{
+        overflow-y: scroll;
+    }
+    .layout-content::-webkit-scrollbar {
+        display: none;
+      }
 }
