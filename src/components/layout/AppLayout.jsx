@@ -10,7 +10,7 @@ import { IoLogOutOutline } from 'react-icons/io5'
 import { MdNotificationsNone } from 'react-icons/md'
 import search from '../../assets/images/search.png'
 import scamTrustLogo from '../../assets/images/scamTrustLogo.png'
-import CustomerDashboard from '../../pages/dashboard/CustomerDashboard/CustomerDashboard';
+import CustomerDashboard from '../../pages/dashboards/CustomerDashboard/CustomerDashboard';
 
 const { Header, Content, Sider } = Layout;
 
@@ -51,28 +51,28 @@ const AppLayout = () => {
 
           <div className='side-tab-wrapper'>
                <div className='side-tab-con'>
-                <VscHome /><span className='side-tabs'>DASHBOARD</span>
+                <VscHome style={{color: '#ffff'}} /><span className='side-tabs'>DASHBOARD</span>
                </div>
      
                <div className='side-tab-con'>
-                <VscArrowSwap /><span className='side-tabs'>TRANSACTIONS</span>
+                <VscArrowSwap style={{color: '#ffff'}} /><span className='side-tabs'>TRANSACTIONS</span>
                </div>
 
                <div className='side-tab-con'>
-               <CiWallet /><span className='side-tabs'>WALLET</span>
+               <CiWallet style={{color: '#ffff'}} /><span className='side-tabs'>WALLET</span>
                </div>
 
                <div className='side-tab-con'>
-                <SlSettings /><span className='side-tabs'>SETTINGS</span>
+                <SlSettings style={{color: '#ffff'}} /><span className='side-tabs'>SETTINGS</span>
                </div>
           </div>
 
           <div className='side-bottom-tab'>
             <div className='side-tab-con'>
-              <BiSupport /><span className='side-tabs'>SUPPORT</span>
+              <BiSupport style={{color: '#ffff'}} /><span className='side-tabs'>SUPPORT</span>
             </div>
             <div className='side-tab-con'>
-              <IoLogOutOutline /><span className='side-tabs'>LOGOUT</span>
+              <IoLogOutOutline style={{color: '#ffff'}} /><span className='side-tabs'>LOGOUT</span>
             </div>
           </div>
 
@@ -111,7 +111,7 @@ const AppLayout = () => {
         </Header>
 
                      {/* INNER CONTENT */}
-        <Content className='layout-content' style={{margin: '24px 16px 0', color: 'black'}}>
+        <Content className='layout-content' style={{margin: '0px 16px', color: 'black'}}>
              <CustomerDashboard />
         </Content>
 

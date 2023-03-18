@@ -1,0 +1,201 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav-con{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px 80px;
+}
+.nav-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-logo{
+    margin-top: 10px;
+}
+.btn{
+    color: #ffff;
+    padding: 23px 47px;
+    border-radius: 5px;
+    border: none;
+    margin: 0px 5px;
+    background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.btn-link{
+    text-decoration: none;
+    color: #fff;
+}
+.reg-btn:hover{
+    border-radius: 15px;
+    background: #0357BF;
+}
+.log-btn{
+    background: none;
+    border: none;
+    outline: none;
+    margin: 0px -20px;
+}
+.log-btn:hover{
+    color: green;
+}
+.log-btn-1{
+    margin: 0px 50px;
+}
+/* .ab-btn{
+    margin: 0px -90px;
+} */
+.sign-btn{
+    background-color: #0357BF;
+    color: #ffff;
+    padding: 23px 47px;
+    border-radius: 5px;
+    border: none;
+    margin: 0px 5px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.sign-btn:hover{
+    border-radius: 15px;
+    background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
+}
+
+@media (max-width: 768px) {
+    .nav-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 50px 50px;
+    }
+    .nav-right{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .nav-logo{
+        margin-top: 10px;
+        height: 50px;
+        width: 100px;
+    }
+    .btn{
+        color: #ffff;
+        padding: 15px 30px;
+        border-radius: 5px;
+        border: none;
+        margin: 0px 5px;
+        background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
+        font-size: 17px;
+        font-weight: 600;
+    }
+    .reg-btn:hover{
+        border-radius: 15px;
+        background: #0357BF;
+    }
+    .log-btn{
+        background: none;
+        border: none;
+        outline: none;
+        margin: 0px -10px;
+    }
+    .log-btn:hover{
+        color: green;
+    }
+    .log-btn-1{
+        margin: 0px 25px;
+    }
+    /* .ab-btn{
+        margin: 0px -60px;
+    } */
+    .sign-btn{
+        background-color: #0357BF;
+        color: #ffff;
+        padding: 15px 30px;
+        border-radius: 5px;
+        border: none;
+        margin: 0px 5px;
+        font-size: 18px;
+        font-weight: 700;
+        text-decoration: none;
+    }
+    .sign-btn:hover{
+        border-radius: 15px;
+        background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
+    }
+}
+
+
+@media (max-width: 480px) {
+    .nav-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 40px 20px 0px 20px;
+    }
+    .nav-right{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .nav-logo{
+        margin-top: 0px;
+        height: 35px;
+        width: 70px;
+    }
+    .btn{
+        color: #ffff;
+        padding: 12px 15px;
+        border-radius: 5px;
+        border: none;
+        margin: 0px 3px;
+        background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
+        font-size: 13px;
+        font-weight: 500;
+    }
+    .reg-btn:hover{
+        border-radius: 15px;
+        background: #0357BF;
+    }
+    .log-btn{
+        background: none;
+        border: none;
+        outline: none;
+        margin: 0px -12px;
+        color: #ffff;
+        padding: 12px 15px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+    .log-btn:hover{
+        color: green;
+    }
+    .log-btn-1{
+        margin: 0px 8px;
+    }
+    /* .ab-btn{
+        margin: 0px -20px;
+        color: #ffff;
+        padding: 12px 15px;
+        font-size: 8px;
+        font-weight: 500;
+    } */
+    .sign-btn{
+        background-color: #0357BF;
+        padding: 12px 7px;
+        border-radius: 5px;
+        border: none;
+        margin: 0px 3px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+    .sign-btn:hover{
+        border-radius: 15px;
+        background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
+    }
+}

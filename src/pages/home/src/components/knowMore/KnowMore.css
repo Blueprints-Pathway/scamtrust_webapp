@@ -1,0 +1,299 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.info-wrapper{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-family: poppins;
+    background: #353935;
+    /* background: #ffff; */
+    color: #ffff;
+}
+.know-wrapper{
+    margin-bottom: -20px;
+}
+.info-con{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 0px 0px 0px;
+}
+.info-top{
+    padding: 0px 40px;
+}
+.info-btn-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.info-btn{
+    background: none;
+    border: none;
+    outline: none;
+    padding: 25px 50px 20px 50px;
+    font-size: 30px;
+    font-weight: 400;
+    color: #fff;
+}
+.info-btn:focus{
+    text-decoration: underline;
+    color: #448feb;
+}
+.info-intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+}
+.info-intro-title{
+    color: #f6d645;
+    font-size: 28px;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 10px;
+}
+.info-intro-words{
+    text-align: center;
+    font-weight: 200;
+    font-size: 20px;
+    padding: 10px 0px;
+}
+.customer-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 100px;
+}
+.cus-img{
+    height: 450px;
+    width: 450px;
+    border-radius: 10px;
+}
+.customer-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cus-content{
+    padding: 15px 0px;
+}
+.title-con{
+    display: flex;
+    align-items: center;
+}
+.cus-title{
+    color: #f6d645;
+    font-size: 28px;
+    font-weight: 500;
+}
+.know-icon{
+    font-size: 30px;
+    padding: 10px;
+    margin: 2px 0px 0px 25px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 15px;
+    object-fit: cover;
+}
+.cus-words{
+    font-size: 22px;
+    font-weight: 200;
+    padding: 5px 0px;
+}
+.info-hr{
+    margin: 120px 0px -30px 0px;
+}
+
+@media (max-width: 768px) {
+    .info-con{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0px 0px;
+    }
+    .info-top{
+        padding: 0px 20px;
+    }
+    .info-btn-div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .info-btn{
+        background: none;
+        border: none;
+        outline: none;
+        padding: 50px 50px 5px 50px;
+        font-size: 23px;
+        font-weight: 200;
+        color: #fff;
+    }
+    .info-btn:focus{
+        text-decoration: underline;
+        color: #448feb;
+    }
+    .info-intro{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 10px;
+    }
+    .info-intro-title{
+        color: #f6d645;
+        font-size: 23px;
+        font-weight: 400;
+        text-align: center;
+        padding-top: 10px;
+    }
+    .info-intro-words{
+        text-align: center;
+        font-weight: 200;
+        font-size: 16px;
+        padding: 10px 0px;
+    }
+    .customer-info{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 90px;
+    }
+    .cus-img{
+        height: 300px;
+        width: 300px;
+        border-radius: 10px;
+    }
+    .customer-left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .cus-content{
+        padding: 12px 0px;
+    }
+    .title-con{
+        display: flex;
+        align-items: center;
+    }
+    .cus-title{
+        color: #f6d645;
+        font-size: 23px;
+        font-weight: 400;
+    }
+    .know-icon{
+        font-size: 23px;
+        padding: 8px;
+        margin: 2px 0px 0px 15px;
+        color: #000;
+        background-color: #fff;
+        border-radius: 15px;
+        object-fit: cover;
+    }
+    .cus-words{
+        font-size: 16px;
+        font-weight: 200;
+        padding: 0px 0px;
+    }
+    .info-hr{
+        margin: 75px 7px -30px 7px;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-con{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0px 0px;
+    }
+    .info-top{
+        padding: 0px 10px;
+    }
+    .info-btn-div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .info-btn{
+        background: none;
+        border: none;
+        outline: none;
+        padding: 50px 20px 5px 20px;
+        font-size: 21px;
+        font-weight: 100;
+        color: #fff;
+    }
+    .info-btn:focus{
+        text-decoration: underline;
+        color: #448feb;
+    }
+    .info-intro{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 10px;
+    }
+    .info-intro-title{
+        color: #f6d645;
+        font-size: 19px;
+        font-weight: 400;
+        text-align: center;
+        padding-top: 10px;
+    }
+    .info-intro-words{
+        text-align: center;
+        font-weight: 200;
+        font-size: 15px;
+        padding: 10px 0px;
+    }
+    .customer-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 50px;
+    }
+    .cus-img{
+        margin-top: 50px;
+        height: 250px;
+        width: 300px;
+        border-radius: 10px;
+    }
+    .customer-left{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .cus-content{
+        padding: 15px 0px;
+    }
+    .title-con{
+        display: flex;
+    }
+    .cus-title{
+        color: #f6d645;
+        font-size: 19px;
+        font-weight: 300;
+    }
+    .know-icon{
+        font-size: 19px;
+        padding: 8px;
+        margin: 2px 0px 0px 15px;
+        color: #000;
+        background-color: #fff;
+        border-radius: 15px;
+        object-fit: cover;
+    }
+    .cus-words{
+        font-size: 16px;
+        font-weight: 200;
+        padding: 0px 0px;
+    }
+    .info-hr{
+        margin: 75px 0px 0px 0px;
+    }
+}
+

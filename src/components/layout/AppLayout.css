@@ -83,7 +83,7 @@
     display: flex;
     flex-direction: column;
     width: 210px;
-    height: 100vh;
+    height: 105vh;
     background: linear-gradient(#0A439A, #1A1E51);
 }
 .sider-logo-con{
@@ -120,6 +120,7 @@
 }
 .layout-content{
     overflow-y: scroll;
+    /* height: 100vh; */
 }
 .layout-content::-webkit-scrollbar {
     display: none;
