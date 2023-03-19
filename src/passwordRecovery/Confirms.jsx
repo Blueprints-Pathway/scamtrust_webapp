@@ -6,15 +6,23 @@ import Logo from "../images/ScanTrust logo.svg";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Formik } from "formik";
 import axios from "axios";
+import ErrorInfo from "../assets/images/svg/error-info.svg";
 function Confirms({ route }) {
-	const [passwords, setPasswords] = useState();
-	const [confirmPassword, setConfirmPassword] = useState();
+	const [input, setInput] = useState({
+		password: "",
+		confirmPassword: "",
+	});
+	const [errorMessage, setErrorMessage] = useState();
+	const [error, setError] = useState({
+		password: "",
+		confirmPassword: "",
+	});
 	const navigate = useNavigate();
 	const location = useLocation();
 	const token = location?.state;
 
-const newToken=JSON.stringify(token)
-console.log(newToken, "get");
+	const newToken = JSON.stringify(token);
+	console.log(newToken, "get");
 	const password = () => {
 		var x = document.getElementById("myInput");
 		if (x.type === "password") {
@@ -36,8 +44,8 @@ console.log(newToken, "get");
 			};
 			const payload = {
 				token: newToken,
-				password: passwords,
-				password_confirmation: confirmPassword,
+				password: input.password,
+				password_confirmation: input.confirmPassword,
 			};
 
 			const data = await axios.post(API_URL, payload, config);
@@ -48,7 +56,50 @@ console.log(newToken, "get");
 			// return response;
 		} catch (error) {
 			console.log(error, "errorss");
+			setErrorMessage(error?.response?.data?.message?.password[0]);
 		}
+	};
+	const onInputChange = (e) => {
+		const { name, value } = e.target;
+		setInput((prev) => ({
+			...prev,
+			[name]: value,
+		}));
+		validateInput(e);
+	};
+	const validateInput = (e) => {
+		let { name, value } = e.target;
+		setError((prev) => {
+			const stateObj = { ...prev, [name]: "" };
+
+			switch (name) {
+				case "password":
+					if (!value) {
+						stateObj[name] = "Please enter Password.";
+					} else if (input.confirmPassword && value !== input.confirmPassword) {
+						stateObj["confirmPassword"] =
+							"Password and Confirm Password does not match.";
+					} else {
+						stateObj["confirmPassword"] = input.confirmPassword
+							? ""
+							: error.confirmPassword;
+					}
+					break;
+
+				case "confirmPassword":
+					if (!value) {
+						stateObj[name] = "Please enter Confirm Password.";
+					} else if (input.password && value !== input.password) {
+						stateObj[name] = "Password and Confirm Password does not match.";
+					}
+					break;
+
+				default:
+					break;
+			}
+
+			return stateObj;
+		});
 	};
 	return (
 		<div className="container-fluid ">
@@ -111,14 +162,26 @@ console.log(newToken, "get");
 
 											<input
 												id="myInput"
-												onChange={(e) => setPasswords(e.target.value)}
-												onBlur={handleBlur}
-												value={passwords}
+												onChange={onInputChange}
+												onBlur={validateInput}
+												value={input.password}
 												type="password"
-												name="email"
+												name="password"
 												className="mt-5 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
 												placeholder="password"
 											/>
+											{error.password && (
+												<span className="flex items-center mt-2">
+													<img
+														src={ErrorInfo}
+														className="mr-2"
+														alt="error_info"
+													/>
+													<span className="text-[#FC0D1B]">
+														{error.password}
+													</span>
+												</span>
+											)}
 											<div className="show-hide">
 												<span className="show" onClick={password}>
 													{" "}
@@ -133,14 +196,22 @@ console.log(newToken, "get");
 									</span> */}
 									<input
 										id="myInput"
-										onChange={(e) => setConfirmPassword(e.target.value)}
-										onBlur={handleBlur}
-										value={confirmPassword}
+										onChange={onInputChange}
+										onBlur={validateInput}
+										value={input.confirmPassword}
 										type="password"
-										name="email"
+										name="confirmPassword"
 										className="mt-5 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
 										placeholder="confirm password"
 									/>
+									{error.confirmPassword && (
+										<span className="flex items-center mt-2">
+											<img src={ErrorInfo} className="mr-2" alt="error_info" />
+											<span className="text-[#FC0D1B]">
+												{error.confirmPassword}
+											</span>
+										</span>
+									)}
 									<div className="show-hide">
 										<span className="show" onClick={password}>
 											{" "}
