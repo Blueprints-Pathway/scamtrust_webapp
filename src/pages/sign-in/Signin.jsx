@@ -4,8 +4,15 @@ import './Signin.css'
 import { Button, Checkbox, Form, Input } from 'antd';
 import { Link } from 'react-router-dom';
 import scamtrust from '../../assets/images/Logo.png'
+import { useDispatch } from 'react-redux';
 
 const Signin = () => {
+
+  const dispatch = useDispatch();
+
+  const loginHandler = (e) => {
+    console.log(e);
+  }
   return (
     <div className='sign-in-con'>
       <div className='sign-in-left'>
@@ -24,6 +31,7 @@ const Signin = () => {
           <p>Welcome Back </p>
         </div>
         <Form 
+        onFinish={loginHandler}
              name="basic"
              labelCol={{
                span: 8,
@@ -40,11 +48,11 @@ const Signin = () => {
         >
 
                      {/* USERNAME */}
-          <Form.Item name="username" required
+          <Form.Item name="email" required
            rules={[
             {
               required: true,
-              message: 'Please input your username!',
+              message: 'Please input your email!',
             },
           ]}
           >
@@ -57,6 +65,7 @@ const Signin = () => {
              rules={[
                {
                  required: true,
+                 validator:(e) =>{console.log(e)},
                  message: 'Please input your password!',
                },
              ]}
