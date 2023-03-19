@@ -5,6 +5,8 @@ import About from './pages/home/src/components/About/About'
 import Faq from './pages/home/src/components/Faq/Faq'
 import KnowMore from './pages/home/src/components/knowMore/KnowMore'
 import HomePage from './pages/home/src/HomePage'
+import Signin from './pages/sign-in/Signin'
+import Vendorsignup from './pages/sign-up/vendor-sign-up/Vendorsignup'
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
 
 		           {/* SCAMTRUST WEBAPP */}
 		<Route path='/layout' element={<AppLayout />} />
+		<Route path='/vendor-sign-up' element={<Vendorsignup />} />
+		<Route path='/sign-in' element={<Signin />} />
 	</Routes>
   )
 }
