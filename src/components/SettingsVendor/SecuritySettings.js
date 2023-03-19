@@ -5,6 +5,7 @@ import axios from "axios";
 import "./settingsVendor.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Eye from "../../assets/images/svg/eye.svg";
+import ErrorInfo from "../../assets/images/svg/error-info.svg";
 import {
 	faCircleExclamation,
 	faEyeSlash,
@@ -15,10 +16,9 @@ import encrypted from "../../images/encrypted.png";
 import swal from "sweetalert";
 function SecuritySettings() {
 	const [values, setValues] = useState({
-		// phoneNumber3: "",
 		previousPassword: "",
 		password: "",
-		passwordCheck: "",
+		confirmPassword: "",
 	});
 	const [failed, setFailed] = useState();
 	const [passwordVisibility, setPasswordVisibility] = useState(false);
@@ -29,7 +29,7 @@ function SecuritySettings() {
 		phoneNumber3: "",
 		email3: "",
 		password: "",
-		passwordCheck: "",
+		confirmPassword: "",
 	});
 	const [pins, setPins] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
@@ -62,10 +62,10 @@ function SecuritySettings() {
 			error.password =
 				" Must contain a Minimum 8 characters, 1 uppercase, 1 lowercase, 1 number, 1 special character";
 		}
-		if (!values.passwordCheck) {
-			error.passwordCheck = "Confirm password is required";
-		} else if (values.passwordCheck !== values.password) {
-			error.passwordCheck = "Password must match";
+		if (!values.confirmPassword) {
+			error.confirmPassword = "Confirm password is required";
+		} else if (values.confirmPassword !== values.password) {
+			error.confirmPassword = "Password must match";
 		}
 		if (!values.phoneNumber3) {
 			error.phoneNumber3 = "Please enter a transaction pin";
@@ -182,7 +182,7 @@ function SecuritySettings() {
 			const payload = {
 				current_password: values?.previousPassword,
 				password: values?.password,
-				password_confirmation: values?.passwordCheck,
+				password_confirmation: values?.confirmPassword,
 			};
 
 			const data = await axios.post(API_URL, payload, config);
@@ -199,7 +199,10 @@ function SecuritySettings() {
 			console.log(errorMessage, "error");
 			swal({
 				icon: "error",
-				text: errorMessage || error?.message?.password[0] || "check your inputs field to be sure",
+				text:
+					errorMessage ||
+					error?.message?.password[0] ||
+					"check your inputs field to be sure",
 			});
 		}
 	};
@@ -236,6 +239,52 @@ function SecuritySettings() {
 				text: errorMessage.current_password[0],
 			});
 		}
+	};
+
+	const validateInput = (e) => {
+		let { name, value } = e.target;
+		setError((prev) => {
+			const stateObj = { ...prev, [name]: "" };
+
+			switch (name) {
+				case "password":
+					if (!value) {
+						stateObj[name] = "Please enter Password.";
+					} else if (
+						values.confirmPassword &&
+						value !== values.confirmPassword
+					) {
+						stateObj["confirmPassword"] =
+							"Password and Confirm Password does not match.";
+					} else {
+						stateObj["confirmPassword"] = values.confirmPassword
+							? ""
+							: error.confirmPassword;
+					}
+					break;
+
+				case "confirmPassword":
+					if (!value) {
+						stateObj[name] = "Please enter Confirm Password.";
+					} else if (values.password && value !== values.password) {
+						stateObj[name] = "Password and Confirm Password does not match.";
+					}
+					break;
+
+				default:
+					break;
+			}
+
+			return stateObj;
+		});
+	};
+	const onInputChange = (e) => {
+		const { name, value } = e.target;
+		setInput((prev) => ({
+			...prev,
+			[name]: value,
+		}));
+		validateInput(e);
 	};
 	return (
 		<div>
@@ -337,7 +386,6 @@ function SecuritySettings() {
 							{checked2 ? (
 								<input
 									onChange={handleChange}
-									onInput={handleInput}
 									value={values.previousPassword}
 									className="inputBox-EditSettings2"
 									name="previousPassword"
@@ -353,7 +401,7 @@ function SecuritySettings() {
 									value={values.previousPassword}
 									className="inputBox-EditSettings2"
 									name="previousPassword"
-									placeholder=""
+									placeholder="current password"
 									id="myInput"
 									type={!passwordVisibility1 ? "password" : "text"}
 									autoComplete="off"
@@ -389,7 +437,7 @@ function SecuritySettings() {
 								<input
 									onChange={handleChange}
 									onInput={handleInput}
-									value={values.passwordCheck}
+									value={values.confirmPassword}
 									className="inputBox-EditSettings2"
 									name="password"
 									placeholder=""
@@ -402,22 +450,26 @@ function SecuritySettings() {
 									onClick={handleInput}
 									value={values?.password}
 									className="inputBox-EditSettings2"
+									onBlur={validateInput}
 									name="password"
-									placeholder=""
+									placeholder="password must be at least 7 characters"
 									type={!passwordVisibility ? "password" : "text"}
 									autoComplete="off"
 								/>
 							)}
 						</div>
-						{submitted && error.password && (
-							<span className="error passShift editSettingError">
-								<FontAwesomeIcon
-									className="exIconTrans"
-									icon={faCircleExclamation}
-								/>
-								{error.password}
-							</span>
-						)}
+						{error.password && (
+												<span className="flex items-center mt-2">
+													<img
+														src={ErrorInfo}
+														className="mr-2"
+														alt="error_info"
+													/>
+													<span className="text-[#FC0D1B]">
+														{error.password}
+													</span>
+												</span>
+											)}
 						<div className="input-field">
 							<label className="form-text EditPass">
 								Confirm password
@@ -433,9 +485,9 @@ function SecuritySettings() {
 							{checked3 ? (
 								<input
 									onChange={handleChange}
-									value={values.passwordCheck}
+									value={values.confirmPassword}
 									className="inputBox-EditSettings2"
-									name="passwordCheck"
+									name="confirmPassword"
 									placeholder=""
 									type={!passwordVisibility2 ? "password" : "text"}
 									autoComplete="off"
@@ -443,10 +495,11 @@ function SecuritySettings() {
 							) : (
 								<input
 									onChange={handleChange}
-									value={values.passwordCheck}
+									value={values.confirmPassword}
 									className="inputBox-EditSettings2"
-									name="passwordCheck"
-									placeholder=""
+									onBlur={validateInput}
+									name="confirmPassword"
+									placeholder="confirm password must be exact with password"
 									// type="password"
 									autoComplete="off"
 									type={!passwordVisibility2 ? "password" : "text"}
@@ -459,18 +512,17 @@ function SecuritySettings() {
 							></div>
 						</div>
 
-						{submitted && error.passwordCheck && (
-							<span className="error passShift3 editSettingError">
-								<FontAwesomeIcon
-									className="exIconTrans"
-									icon={faCircleExclamation}
-								/>
-								{error.passwordCheck}
-							</span>
-						)}
+						{error.confirmPassword && (
+										<span className="flex items-center mt-2">
+											<img src={ErrorInfo} className="mr-2" alt="error_info" />
+											<span className="text-[#FC0D1B]">
+												{error.confirmPassword}
+											</span>
+										</span>
+									)}
 
 						{submitted &&
-						!error.passwordCheck &&
+						!error.confirmPassword &&
 						submitted &&
 						!error.password ? (
 							<button
