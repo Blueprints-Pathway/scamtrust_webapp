@@ -1,0 +1,39 @@
+.fund-btn{
+    background-color: #3AB75D;
+    color: #ffff;
+    border-radius: 5px;
+    padding: 10px 44px;
+    border: none;
+    font-size: 11px;
+    text-align: center;
+}
+@media screen and (max-width: 1200px) {
+    .fund-btn{
+        background-color: #3AB75D;
+        border-radius: 5px;
+        padding: 8px 40px;
+        border: none;
+        font-size: 9px;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 768px) {
+    .fund-btn{
+        background-color: #3AB75D;
+        border-radius: 5px;
+        padding: 8px 31px;
+        border: none;
+        font-size: 9px;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 480px) {
+    .fund-btn{
+        background-color: #3AB75D;
+        border-radius: 5px;
+        padding: 8px 31px;
+        border: none;
+        font-size: 9px;
+        text-align: center;
+    }
+}

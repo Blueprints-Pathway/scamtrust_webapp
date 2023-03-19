@@ -1,0 +1,402 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.land-con{
+    background-image: url("../../Assets/about-spiral.png");
+    background-repeat: no-repeat;
+    background-position: 0px -70px;
+    background-size: cover;
+    padding: 0px 0px 200px 0px;
+}           
+  
+.land{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffff;
+    padding: 0px 80px 0px 80px;
+}    
+
+.land-left{
+    width: 40vw;
+}
+
+.land-title {
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 75px;
+    margin-top: 60px;
+}
+
+.mid-h1{
+    color: #448feb;
+}
+.land-words{
+    margin-top: 20px;
+    line-height: 35px;
+    font-weight: 400;
+    font-size: 19px;
+}
+
+.land-right{
+    width: 60vw;
+   margin: 20px 0px 0px 0px;
+}
+
+.circle{
+    border: 2px solid white;
+    border-radius: 50%;
+    height: 437px;
+    width: 437px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px 0px 0px 130px;
+}
+
+.land-img{
+   align-items: center;
+   margin-top: 50px;
+}
+
+.btm-div{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0px 80px;
+}
+
+.dwn-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 110px 0px 0px 0px;
+}
+.download-btn{
+    width: 210px;
+    height: 80px;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 20px;
+}
+.btn-word{
+    font-weight: 700;
+    font-size: 16px;
+    text-align: left;
+}
+.btn-words{
+    font-weight: 700;
+    font-size: 23px;
+}
+
+.scan{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 70px 0px 0px 0px;
+    padding: 4px;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    width: 300px;
+    background: none;
+}
+.scan:hover{
+    background: #fff;
+}
+
+.scan-words{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    width: 200px;
+    padding: 0px 20px;
+    color: #f6d645;
+}
+.arrow-ico{
+    color: #fff;
+    font-size: 45px;
+}
+.scan-img{
+    background-color: #fff;
+    padding: 12px 10px 10px 10px;
+    border-radius: 10px;
+    margin-bottom: 0px;
+    height: 85px;
+    width: 85px;
+}
+
+@media (max-width: 768px) {
+
+.land-con{
+    background-image: url("../../Assets/spiral.png");
+    background-repeat: no-repeat;
+    background-position: 0px -110px;
+}           
+  
+.land{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffff;
+    padding: 50px 35px 0px 35px;
+}    
+
+.land-left{
+    width: 60vw;
+}
+
+.land-title {
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 45px;
+    margin-top: 60px;
+}
+
+.mid-h1{
+    color: #448feb;
+}
+.land-words{
+    margin-top: 20px;
+    line-height: 35px;
+    font-weight: 400;
+}
+
+.land-right{
+    width: 40vw;
+    margin: 20px 0px 0px 0px;
+}
+
+.circle{
+    border: 2px solid white;
+    border-radius: 50%;
+    height: 275px;
+    width: 275px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px 0px 0px 0px;
+}
+
+.land-img{
+   align-items: center;
+   margin: 50px 0px 0px 0px;
+   height: 375px;
+   width: 375px;
+}
+
+.btm-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 20px;
+}
+
+.dwn-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 110px 0px 0px 0px;
+}
+.download-btn{
+    width: 175px;
+    height: 60px;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px;
+}
+.btn-word{
+    font-weight: 600;
+    font-size: 14px;
+    text-align: left;
+}
+.btn-words{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.scan{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 70px 50px 0px 0px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    width: 225px;
+    background: none;
+}
+.scan:hover{
+    background: #fff;
+}
+
+.scan-words{
+    font-size: 17px;
+    font-weight: 600;
+    color: #f6d645;
+    width: 100px;
+    margin-left: 0px;
+}
+.arrow-ico{
+    color: #fff;
+    font-size: 45px;
+}
+.scan-img{
+    background-color: #fff;
+    padding: 8px 6px 6px 6px;
+    border-radius: 10px;
+    margin-bottom: 0px;
+    height: 75px;
+    width: 75px;
+}
+
+}
+
+
+@media (max-width: 480px) {
+
+.land-con{
+  background-image: url("../../Assets/spiral.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1500px;
+}           
+
+.land{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffff;
+  padding: 50px 25px 0px 25px;
+}    
+
+.land-left{
+  width: 100%;
+}
+
+.land-title {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 40px;
+  margin-top: 60px;
+}
+
+.mid-h1{
+  color: #448feb;
+}
+.land-words{
+  margin-top: 20px;
+  line-height: 30px;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.land-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 10px 0px 10px;
+}
+
+.circle{
+  border: 2px solid white;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px 0px 0px 0px;
+}
+
+.land-img{
+ align-items: center;
+ margin: 50px 0px 0px 0px;
+ padding: 0px 50px;
+ height: 375px;
+ width: 450px;
+ width: auto;
+}
+
+.btm-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 50px;
+}
+
+.dwn-div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 0px 0px 0px;
+}
+.download-btn{
+  width: 160px;
+  height: 50px;
+  border-radius: 15px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 10px;
+  padding-right: 5px;
+}
+.btn-word{
+  font-weight: 400;
+  font-size: 12px;
+  text-align: left;
+}
+.btn-words{
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.scan{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0px 0px 0px;
+  padding: 5px 10px;
+  background: none;
+}
+.scan:hover{
+    background: #fff;
+}
+
+.scan-words{
+  font-size: 18px;
+  font-weight: 600;
+  color: #f6d645;
+  width: 150px;
+  margin-left: 5px;
+  text-align: left;
+}
+.arrow-ico{
+  color: #fff;
+  font-size: 45px;
+}
+.scan-img{
+  background-color: #fff;
+  padding: 8px 8px 6px 8px;
+  border-radius: 10px;
+  margin: 0px 21px 0px 0px;
+}
+    
+}
