@@ -35,7 +35,7 @@ const AppLayout = () => {
   //   token: { colorBgContainer },
   // } = theme.useToken();
   console.log(data);
-  const nameOf = data?.data.name || data?.data.username;
+  const nameOf = loading ? 'hi' : data?.data.name || data?.data.username;
 	const first = nameOf?.at(0);
 	const last = nameOf?.match(/\b(\w)/g).at(1);
 

@@ -8,7 +8,7 @@ export const getLoggedInUserDetails = () => async (dispatch) => {
     try{
         dispatch(userActions.getDetailsRequest());
         
-        const config = {
+        const config = {    
             headers: {
               "Content-Type": "application/json",
               Authorization: `Bearer ${token}`,
@@ -17,7 +17,7 @@ export const getLoggedInUserDetails = () => async (dispatch) => {
         
         const response = await axios.get(`${baseUrl}/user/getdetails`,config);
         console.log(response);
-        if(response.data.status){
+        if(response.data.status){   
             dispatch(userActions.getDetailsSuccess(
                response.data,
             ));
