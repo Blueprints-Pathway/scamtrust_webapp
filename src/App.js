@@ -1,12 +1,17 @@
 import React from 'react'
 import { Routes,Route } from 'react-router-dom'
 import AppLayout from './components/layout/AppLayout'
+// import SignupLayout from './components/signuplayout/SignupLayout'
 import About from './pages/home/src/components/About/About'
 import Faq from './pages/home/src/components/Faq/Faq'
 import KnowMore from './pages/home/src/components/knowMore/KnowMore'
 import HomePage from './pages/home/src/HomePage'
 import Signin from './pages/sign-in/Signin'
-import Vendorsignup from './pages/sign-up/vendor-sign-up/Vendorsignup'
+import VendorSetPassword from './pages/sign-up/vendor-sign-up/vendor-set-password/VendorSetPassword'
+import VendorRegistration from './pages/sign-up/vendor-sign-up/vendor-registration/VendorRegistration'
+// import Vendorsignup from './pages/sign-up/vendor-sign-up/Vendorsignup'
+import VendorBvn from './pages/sign-up/vendor-sign-up/VendorBvn/VendorBvn'
+import VendorTransactionPin from './pages/sign-up/vendor-sign-up/vendor-transaction-pin/VendorTransactionPin'
 
 const App = () => {
   return (
@@ -19,8 +24,12 @@ const App = () => {
 
 		           {/* SCAMTRUST WEBAPP */}
 		<Route path='/layout' element={<AppLayout />} />
-		<Route path='/vendor-sign-up' element={<Vendorsignup />} />
 		<Route path='/sign-in' element={<Signin />} />
+		{/* <Route path='vendor-sign-up' element={<Vendorsignup  />} /> */}
+		<Route path='vendor-registration' element={<VendorRegistration  />} />
+		<Route path='/vendor-verify-bvn' element={<VendorBvn />} />
+		<Route path='/vendor-set-password' element={<VendorSetPassword />} />
+		<Route path='/vendor-transaction-pin' element={<VendorTransactionPin />} />
 	</Routes>
   )
 }

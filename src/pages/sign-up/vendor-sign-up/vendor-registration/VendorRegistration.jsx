@@ -1,10 +1,14 @@
 import React from 'react'
-import './Vendorsignup.css'
-import scamtrust from '../../../../src/assets/images/Logo.png'
+import './VendorRegistration.css'
+import scamtrust from '../../../../assets/images/Logo.png'
 import { Button, Checkbox, Form, Input, Select} from 'antd';
-import Vendormessage from '../../../components/vendormessage/VendorMessage';
+import Vendormessage from '../../../../components/vendormessage/VendorMessage';
+import { useNavigate } from 'react-router-dom';
 
-const Vendorsignup = () => {
+const VendorRegistration = () => {
+
+  const navigate = useNavigate();
+
     const { Option } = Select;
 
   return (
@@ -90,7 +94,8 @@ const Vendorsignup = () => {
                         I agree to <span style={{color: '#01306B'}}>ScamTrust’s</span> Terms of Service and Privacy Policy
                      </Checkbox>
 
-                     <Button className='ven-signup-btn' htmlType="submit">Proceed to set Password</Button>
+                     <Button onClick={()=>{navigate('/vendor-verify-bvn')}}
+                     className='ven-signup-btn' htmlType="submit">Proceed to verify BVN</Button>
 
                </div>
         </div>
@@ -103,4 +108,4 @@ const Vendorsignup = () => {
   )
 }
 
-export default Vendorsignup
+export default VendorRegistration
