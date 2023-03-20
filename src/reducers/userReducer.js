@@ -13,13 +13,13 @@ const userReducer = createSlice({
     getDetailsRequest(state) {
       state.loading = true;
     },
-    getDetailsSuccess(state, payload) {
+    getDetailsSuccess(state, action) {
       state.loading = false;
-      state.data = payload;
+      state.data = action.payload;
     },
-    getDetailsFailure(state, payload) {
+    getDetailsFailure(state, action) {
       state.loading = false;
-      state.error = payload;
+      state.error = action.payload;
     },
   },
 });

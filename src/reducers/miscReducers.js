@@ -19,7 +19,7 @@ const miscReducer = createSlice({
           },
           createSecurityQuestionFailure(state, payload) {
             state.loading = false;
-            createSecurityQuestionstate.error = payload;
+            state.error = payload;
           },
           createBusinessTypeRequest(state) {
             state.loading = true;
@@ -41,7 +41,7 @@ const miscReducer = createSlice({
           },
           createIndustryFailure(state, payload) {
             state.loading = false;
-            createSecurityQuestionstate.error = payload;
+            state.error = payload;
           },
           createFAQRequest(state) {
             state.loading = true;
@@ -52,7 +52,7 @@ const miscReducer = createSlice({
           },
           createFAQFailure(state, payload) {
             state.loading = false;
-            createSecurityQuestionstate.error = payload;
+            state.error = payload;
           },
           listFAQRequest(state) {
             state.loading = true;
@@ -63,7 +63,7 @@ const miscReducer = createSlice({
           },
           listFAQFailure(state, payload) {
             state.loading = false;
-            createSecurityQuestionstate.error = payload;
+            state.error = payload;
           },
           listSecurityQuestionRequest(state) {
             state.loading = true;
@@ -74,7 +74,7 @@ const miscReducer = createSlice({
           },
           listSecurityQuestionFailure(state, payload) {
             state.loading = false;
-            createSecurityQuestionstate.error = payload;
+            state.error = payload;
           },
           listIndustriesRequest(state) {
             state.loading = true;
@@ -85,7 +85,7 @@ const miscReducer = createSlice({
           },
           listIndustriesFailure(state, payload) {
             state.loading = false;
-            createSecurityQuestionstate.error = payload;
+            state.error = payload;
           },
           listBusinessTypeRequest(state) {
             state.loading = true;
@@ -96,7 +96,7 @@ const miscReducer = createSlice({
           },
           listBusinessTypeFailure(state, payload) {
             state.loading = false;
-            createSecurityQuestionstate.error = payload;
+            state.error = payload;
           },
           getBanksRequest(state) {
             state.loading = true;
@@ -107,7 +107,7 @@ const miscReducer = createSlice({
           },
           getBanksFailure(state, payload) {
             state.loading = false;
-            createSecurityQuestionstate.error = payload;
+            state.error = payload;
           },
           authenticateMonifyRequest(state) {
             state.loading = true;
@@ -118,7 +118,7 @@ const miscReducer = createSlice({
           },
           authenticateMonifyFailure(state, payload) {
             state.loading = false;
-            createSecurityQuestionstate.error = payload;
+            state.error = payload;
           },
           feeCalculatorRequest(state) {
             state.loading = true;
@@ -129,7 +129,7 @@ const miscReducer = createSlice({
           },
           feeCalculatorFailure(state, payload) {
             state.loading = false;
-            createSecurityQuestionstate.error = payload;
+            state.error = payload;
           },
           verifyVendorExistRequest(state) {
             state.loading = true;
@@ -140,7 +140,7 @@ const miscReducer = createSlice({
           },
           verifyVendorExistFailure(state, payload) {
             state.loading = false;
-            createSecurityQuestionstate.error = payload;
+            state.error = payload;
           },
           vendorSearchRequest(state) {
             state.loading = true;
@@ -151,7 +151,7 @@ const miscReducer = createSlice({
           },
           vendorSearchFailure(state, payload) {
             state.loading = false;
-            createSecurityQuestionstate.error = payload;
+            state.error = payload;
           },
           getVendorRequest(state) {
             state.loading = true;
@@ -162,7 +162,7 @@ const miscReducer = createSlice({
           },
           getVendorFailure(state, payload) {
             state.loading = false;
-            createSecurityQuestionstate.error = payload;
+            state.error = payload;
           },
 
     }

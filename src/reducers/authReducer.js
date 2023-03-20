@@ -3,8 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   loading: false,
   isAuthenticated: false,
-  data: {},
-  error: null,
+  data: null,
+  error: false,
 };
 const authReducer = createSlice({
   name: "auth",
@@ -13,128 +13,135 @@ const authReducer = createSlice({
     userRegistrationRequest(state) {
       state.loading = true;
     },
-    userRegistrationSuccess(state, payload) {
+    userRegistrationSuccess(state, action) {
       state.loading = false;
       state.isAuthenticated = true;
-      state.data = payload;
+      state.data = action;
     },
-    userRegistrationFailure(state, payload) {
+    userRegistrationFailure(state, action) {
       state.loading = false;
       state.isAuthenticated = false;
-      state.error = payload;
+      state.error = action;
     },
     vendorRegistrationRequest(state) {
       state.loading = true;
     },
-    vendorRegistrationSuccess(state, payload) {
+    vendorRegistrationSuccess(state, action) {
       state.loading = false;
       state.isAuthenticated = true;
-      state.data = payload;
+      state.data = action;
     },
-    vendorRegistrationFailure(state, payload) {
+    vendorRegistrationFailure(state, action) {
       state.loading = false;
       state.isAuthenticated = false;
-      state.error = payload;
+      state.error = action;
     },
     verifyEmailTokenRequest(state) {
       state.loading = true;
     },
-    verifyEmailTokenSuccess(state, payload) {
+    verifyEmailTokenSuccess(state, action) {
       state.loading = false;
-      state.data = payload;
+      state.data = action;
     },
-    verifyEmailTokenFailure(state, payload) {
+    verifyEmailTokenFailure(state, action) {
       state.loading = false;
-      state.error = payload;
+      state.error = action;
     },
     verifyEmailExistRequest(state) {
       state.loading = true;
     },
-    verifyEmailExistSuccess(state, payload) {
+    verifyEmailExistSuccess(state, action) {
       state.loading = false;
-      state.data = payload;
+      state.data = action;
     },
-    verifyEmailExistFailure(state, payload) {
+    verifyEmailExistFailure(state, action) {
       state.loading = false;
-      state.error = payload;
+      state.error = action;
     },
     verifyPhoneExistRequest(state) {
       state.loading = true;
     },
-    verifyPhoneExistSuccess(state, payload) {
+    verifyPhoneExistSuccess(state, action) {
       state.loading = false;
-      state.data = payload;
+      state.data = action;
     },
-    verifyPhoneExistFailure(state, payload) {
+    verifyPhoneExistFailure(state, action) {
       state.loading = false;
-      state.error = payload;
+      state.error = action;
     },
     resetPasswordLinkRequest(state) {
       state.loading = true;
     },
-    resetPasswordLinkSuccess(state, payload) {
+    resetPasswordLinkSuccess(state, action) {
       state.loading = false;
-      state.data = payload;
+      state.data = action;
     },
-    resetPasswordLinkFailure(state, payload) {
+    resetPasswordLinkFailure(state, action) {
       state.loading = false;
-      state.error = payload;
+      state.error = action;
     },
     resetPasswordRequest(state) {
       state.loading = true;
     },
-    resetPasswordSuccess(state, payload) {
+    resetPasswordSuccess(state, action) {
       state.loading = false;
-      state.data = payload;
+      state.data = action;
     },
-    resetPasswordFailure(state, payload) {
+    resetPasswordFailure(state, action) {
       state.loading = false;
-      state.error = payload;
+      state.error = action;
     },
     setPinRequest(state) {
       state.loading = true;
     },
-    setPinSuccess(state, payload) {
+    setPinSuccess(state, action) {
       state.loading = false;
-      state.data = payload;
+      state.data = action;
     },
-    setPinFailure(state, payload) {
+    setPinFailure(state, action) {
       state.loading = false;
-      state.error = payload;
+      state.error = action;
     },
     verifyPinRequest(state) {
       state.loading = true;
     },
-    verifyPinSuccess(state, payload) {
+    verifyPinSuccess(state, action) {
       state.loading = false;
-      state.data = payload;
+      state.data = action;
     },
-    verifyPinFailure(state, payload) {
+    verifyPinFailure(state, action) {
       state.loading = false;
-      state.error = payload;
+      state.error = action;
     },
     setSecurityQuestionRequest(state) {
       state.loading = true;
     },
-    setSecurityQuestionSuccess(state, payload) {
+    setSecurityQuestionSuccess(state, action) {
       state.loading = false;
-      state.data = payload;
+      state.data = action;
     },
-    setSecurityQuestionFailure(state, payload) {
+    setSecurityQuestionFailure(state, action) {
       state.loading = false;
-      state.error = payload;
+      state.error = action;
     },
     loginRequest(state) {
       state.loading = true;
+      console.log('login request')
     },
-    loginSuccess(state, payload) {
+    loginSuccess(state, action) {
       state.loading = false;
-      state.data = payload;
+      state.error = false;
+      state.data = action.payload;
+      state.isAuthenticated = true;
+      console.log(state.data);
     },
-    loginFailure(state, payload) {
+    loginFailure(state, action) {
       state.loading = false;
-      state.error = payload;
+      state.error = action.payload;
     },
+    logoutUser(state){
+      state.isAuthenticated = false;
+    }
   },
 });
 

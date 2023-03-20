@@ -135,4 +135,4 @@ const settingsReducer = createSlice({
 });
 
 export default settingsReducer;
-export const userActions = settingsReducer.actions;
+export const settingsActions = settingsReducer.actions;

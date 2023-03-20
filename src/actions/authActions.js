@@ -293,7 +293,8 @@ export const setSecurityQuestion = (data) => async (dispatch) => {
 
 export const login = (data) => async (dispatch) => {
     try{
-        dispatch(authActions.loginRequest );
+        dispatch(authActions.loginRequest());
+        
         const config = {
             headers: {
               "Content-Type": "application/json",
@@ -301,21 +302,26 @@ export const login = (data) => async (dispatch) => {
           };
         
         const response = await axios.post(`${baseUrl}/auth/login`, data, config);
-        if(response.status){
-            dispatch(authActions.loginSuccess({
-               data: response.data,
-            }));
-            localStorage.setItem('USER_TOKEN', response.data.access_token);
+        if(response.data.status){
+            dispatch(authActions.loginSuccess(
+               response.data.data,
+            ));
+            console.log(response.data);
+            localStorage.setItem('USER_TOKEN', response.data.data.access_token);
         }else{
             dispatch(authActions.loginFailure( 
-                response.message
+                response.data.message
             ));
         }
 
       
         }catch(error){
         dispatch(authActions.loginFailure(
-            error
+            error.response.data.message
         ));
     }
+}
+
+export const  logoutUser = ()  =>  (dispatch) =>  {
+dispatch(authActions.logoutUser())
 }
