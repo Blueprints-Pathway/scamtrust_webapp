@@ -317,7 +317,7 @@ export const login = (data) => async (dispatch) => {
       
         }catch(error){
         dispatch(authActions.loginFailure(
-            error.response.data.message
+            error.response.data.message || 'Login Unsuccessful'
         ));
     }
 }

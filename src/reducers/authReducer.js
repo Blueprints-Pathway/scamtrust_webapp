@@ -133,11 +133,14 @@ const authReducer = createSlice({
       state.error = false;
       state.data = action.payload;
       state.isAuthenticated = true;
-      console.log(state.data);
+      console.log('login success')
     },
     loginFailure(state, action) {
       state.loading = false;
       state.error = action.payload;
+      console.log(state.error);
+      console.log('login failed')
+
     },
     logoutUser(state){
       state.isAuthenticated = false;

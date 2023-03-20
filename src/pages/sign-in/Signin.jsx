@@ -22,7 +22,11 @@ const Signin = () => {
   }
   useEffect(() => {
     if(isAuthenticated){
-      navigate('/layout');
+        console.log(data);
+      if(data.usertype === 'CUSTOMER'){
+        navigate('/layout');
+
+      }
 
     }
   }, [isAuthenticated])

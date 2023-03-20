@@ -27,12 +27,14 @@ const AppLayout = () => {
   const {loading, error, data} = useSelector(state => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  console.log('get user details' + loading + data + error)
   useEffect(()=>{
     dispatch(getLoggedInUserDetails());
   },[dispatch])
   // const {
   //   token: { colorBgContainer },
   // } = theme.useToken();
+  console.log(data);
   const nameOf = data?.data.name || data?.data.username;
 	const first = nameOf?.at(0);
 	const last = nameOf?.match(/\b(\w)/g).at(1);
