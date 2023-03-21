@@ -1,0 +1,136 @@
+.sign-layout-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.sign-layout-img-con{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 50px;
+    margin-left: 175px;
+    width: 100%;
+}
+.sign-layout-img{
+    width: 120px;
+}
+.sign-layout-conainer{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: #ffff;
+    height: 38rem;
+    width: 35vw;
+    margin-top: 10px;
+    margin-bottom: 55px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px 5px #efecec;
+}
+.sign-layout-footer-con{
+    margin-bottom: -15px;
+}
+
+@media screen and (max-width: 1024px) {
+    .sign-layout-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .sign-layout-img-con{
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        margin-top: 10px;
+        margin-left: 150px;
+        width: 100%;
+    }
+    .sign-layout-img{
+        width: 120px;
+    }
+    .sign-layout-conainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffff;
+        height: 37rem;
+        width: 40vw;
+        margin-top: 30px;
+        margin-bottom: 40px;
+        border-radius: 12px;
+        box-shadow: 0px 0px 15px 5px #efecec;
+    }
+    .sign-layout-footer-con{
+        margin-bottom: -33rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    .sign-layout-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .sign-layout-img-con{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 20px;
+        margin-left: 150px;
+        width: 100%;
+    }
+    .sign-layout-img{
+        width: 120px;
+    }
+    .sign-layout-conainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffff;
+        height: 35rem;
+        width: 50vw;
+        margin-top: 25px;
+        margin-bottom: 40px;
+        border-radius: 12px;
+        box-shadow: 0px 0px 15px 5px #efecec;
+    }
+    .sign-layout-footer-con{
+        margin-bottom: -30rem;
+    }
+}
+@media screen and (max-width: 480px) {
+    .sign-layout-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .sign-layout-img-con{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 20px;
+        margin-left: 30px;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .sign-layout-img{
+        width: 90px;
+    }
+    .sign-layout-conainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffff;
+        height: 33rem;
+        width: 80vw;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        border-radius: 12px;
+        box-shadow: 0px 0px 15px 5px #efecec;
+    }
+    .sign-layout-footer-con{
+        margin-bottom: -30rem;
+    }
+}

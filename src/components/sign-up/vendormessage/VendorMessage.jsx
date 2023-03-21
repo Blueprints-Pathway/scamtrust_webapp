@@ -1,6 +1,6 @@
 import React from 'react'
 import './VendorMessage.css'
-import fade  from '../../assets/images/Fade.jpg'
+import fade  from '../../../assets/images/Fade.jpg'
 import { GoQuote } from 'react-icons/go'
 
 const Vendormessage = () => {

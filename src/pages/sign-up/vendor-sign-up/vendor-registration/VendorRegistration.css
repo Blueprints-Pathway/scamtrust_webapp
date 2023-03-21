@@ -31,7 +31,7 @@
 .ven-signup-form{
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     margin-top: 50px;
 }
 .vendor-form-left{
@@ -54,7 +54,7 @@
     color: #ffff;
     text-align: center;
     padding: 5px 150px;
-    margin-top: 25px;
+    margin-top: 0px;
 }
 .ven-signup-btn:focus{
     color: white;
@@ -62,6 +62,9 @@
 .ven-signup-right{
     width: 50vw;
     background-color: red;
+}
+.ven-signup-select{
+    width: 200px;
 }
 
 @media screen and (max-width: 1200px) {

@@ -1,0 +1,204 @@
+.activate-con{
+
+}
+.activate-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.activate-header{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 65px;
+    margin-bottom: 130px;
+}
+.activate-logo{
+    height: 50px;
+    width: 110px;
+}
+.activate-img-con{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.activate-img{
+    height: 15rem;
+    width: 14rem;
+}
+.activate-content-con{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+.activate-content-words{
+    width: 30vw;
+    font-size: 17px;
+    font-weight: 500;
+    margin-left: 30px;
+}
+.activate-content-btn{
+    width: 30vw;
+    height: 55px;
+    color: #ffff;
+    background-color: #232164;
+    font-size: 15px;
+    margin-top: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+    .activate-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .activate-header{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-left: 65px;
+        margin-bottom: 100px;
+    }
+    .activate-logo{
+        height: 45px;
+        width: 100px;
+    }
+    .activate-img-con{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .activate-img{
+        height: 12rem;
+        width: 11rem;
+    }
+    .activate-content-con{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 70px;
+    }
+    .activate-content-words{
+        width: 30vw;
+        font-size: 14px;
+        font-weight: 500;
+        margin-left: 0px;
+    }
+    .activate-content-btn{
+        width: 33vw;
+        height: 45px;
+        color: #ffff;
+        background-color: #232164;
+        font-size: 15px;
+        margin-top: 30px;
+    }
+
+}
+@media screen and (max-width: 768px) {
+    .activate-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .activate-header{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-left: -8rem;
+        margin-top: 30px;
+        margin-bottom: 80px;
+        width: 100vw;
+    }
+    .activate-logo{
+        height: 50px;
+        width: 110px;
+    }
+    .activate-img-con{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .activate-img{
+        height: 14rem;
+        width: 13rem;
+    }
+    .activate-content-con{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 60px;
+    }
+    .activate-content-words{
+        width: 50vw;
+        font-size: 14px;
+        font-weight: 500;
+        margin-left: 0px;
+        text-align: center;
+    }
+    .activate-content-btn{
+        width: 50vw;
+        height: 45px;
+        color: #ffff;
+        background-color: #232164;
+        font-size: 15px;
+        margin-top: 25px;
+    }
+
+}
+@media screen and (max-width: 480px) {
+    .activate-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .activate-header{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-left: -70px;
+        margin-top: 30px;
+        margin-bottom: 130px;
+    }
+    .activate-logo{
+        height: 50px;
+        width: 110px;
+    }
+    .activate-img-con{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .activate-img{
+        height: 10rem;
+        width: 9rem;
+    }
+    .activate-content-con{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    .activate-content-words{
+        width: 70vw;
+        font-size: 14px;
+        font-weight: 500;
+        margin-left: 0px;
+        text-align: center;
+    }
+    .activate-content-btn{
+        width: 75vw;
+        height: 40px;
+        color: #ffff;
+        background-color: #232164;
+        font-size: 15px;
+        margin-top: 25px;
+    }
+
+}

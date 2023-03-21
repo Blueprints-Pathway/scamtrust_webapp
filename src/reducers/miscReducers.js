@@ -13,156 +13,167 @@ const miscReducer = createSlice({
         createSecurityQuestionRequest(state) {
             state.loading = true;
           },
-          createSecurityQuestionSuccess(state, payload) {
+          createSecurityQuestionSuccess(state, action) {
             state.loading = false;
-            state.data = payload;
+            state.data = action.payload;
           },
-          createSecurityQuestionFailure(state, payload) {
+          createSecurityQuestionFailure(state, action) {
             state.loading = false;
-            state.error = payload;
+            state.error = action.payload;
           },
           createBusinessTypeRequest(state) {
             state.loading = true;
           },
-          createBusinessTypeSuccess(state, payload) {
+          createBusinessTypeSuccess(state, action) {
             state.loading = false;
-            state.data = payload;
+            state.data = action.payload;
           },
-          createBusinessTypeFailure(state, payload) {
+          createBusinessTypeFailure(state, action) {
             state.loading = false;
-            state.error = payload;
+            state.error = action.payload;
           },
           createIndustryRequest(state) {
             state.loading = true;
           },
-          createIndustrySuccess(state, payload) {
+          createIndustrySuccess(state, action) {
             state.loading = false;
-            state.data = payload;
+            state.data = action.payload;
           },
-          createIndustryFailure(state, payload) {
+          createIndustryFailure(state, action) {
             state.loading = false;
-            state.error = payload;
+            state.error = action.payload;
           },
           createFAQRequest(state) {
             state.loading = true;
           },
-          createFAQSuccess(state, payload) {
+          createFAQSuccess(state, action) {
             state.loading = false;
-            state.data = payload;
+            state.data = action.payload;
           },
-          createFAQFailure(state, payload) {
+          createFAQFailure(state, action) {
             state.loading = false;
-            state.error = payload;
+            state.error = action.payload;
           },
           listFAQRequest(state) {
             state.loading = true;
           },
-          listFAQSuccess(state, payload) {
+          listFAQSuccess(state, action) {
             state.loading = false;
-            state.data = payload;
+            state.data = action.payload;
           },
-          listFAQFailure(state, payload) {
+          listFAQFailure(state, action) {
             state.loading = false;
-            state.error = payload;
+            state.error = action.payload;
           },
           listSecurityQuestionRequest(state) {
             state.loading = true;
           },
-          listSecurityQuestionSuccess(state, payload) {
+          listSecurityQuestionSuccess(state, action) {
             state.loading = false;
-            state.data = payload;
+            state.data = action.payload;
           },
-          listSecurityQuestionFailure(state, payload) {
+          listSecurityQuestionFailure(state, action) {
             state.loading = false;
-            state.error = payload;
+            state.error = action.payload;
           },
           listIndustriesRequest(state) {
             state.loading = true;
           },
-          listIndustriesSuccess(state, payload) {
+          listIndustriesSuccess(state, action) {
             state.loading = false;
-            state.data = payload;
+            state.data = action.payload;
           },
-          listIndustriesFailure(state, payload) {
+          listIndustriesFailure(state, action) {
             state.loading = false;
-            state.error = payload;
+            state.error = action.payload;
           },
           listBusinessTypeRequest(state) {
             state.loading = true;
           },
-          listBusinessTypeSuccess(state, payload) {
+          listBusinessTypeSuccess(state, action) {
             state.loading = false;
-            state.data = payload;
+            state.data = action.payload;
           },
-          listBusinessTypeFailure(state, payload) {
+          listBusinessTypeFailure(state, action) {
             state.loading = false;
-            state.error = payload;
+            state.error = action.payload;
           },
           getBanksRequest(state) {
             state.loading = true;
           },
-          getBanksSuccess(state, payload) {
+          getBanksSuccess(state, action) {
             state.loading = false;
-            state.data = payload;
+            state.data = action.payload;
           },
-          getBanksFailure(state, payload) {
+          getBanksFailure(state, action) {
             state.loading = false;
-            state.error = payload;
+            state.error = action.payload;
           },
           authenticateMonifyRequest(state) {
             state.loading = true;
           },
-          authenticateMonifySuccess(state, payload) {
+          authenticateMonifySuccess(state, action) {
             state.loading = false;
-            state.data = payload;
+            state.data = action.payload;
           },
-          authenticateMonifyFailure(state, payload) {
+          authenticateMonifyFailure(state, action) {
             state.loading = false;
-            state.error = payload;
+            state.error = action.payload;
           },
           feeCalculatorRequest(state) {
             state.loading = true;
           },
-          feeCalculatorSuccess(state, payload) {
+          feeCalculatorSuccess(state, action) {
             state.loading = false;
-            state.data = payload;
+            state.data = action.payload;
           },
-          feeCalculatorFailure(state, payload) {
+          feeCalculatorFailure(state, action) {
             state.loading = false;
-            state.error = payload;
+            state.error = action.payload;
           },
           verifyVendorExistRequest(state) {
             state.loading = true;
           },
-          verifyVendorExistSuccess(state, payload) {
+          verifyVendorExistSuccess(state, action) {
             state.loading = false;
-            state.data = payload;
+            state.data = action.payload;
           },
-          verifyVendorExistFailure(state, payload) {
+          verifyVendorExistFailure(state, action) {
             state.loading = false;
-            state.error = payload;
+            state.error = action.payload;
           },
           vendorSearchRequest(state) {
             state.loading = true;
           },
-          vendorSearchSuccess(state, payload) {
+          vendorSearchSuccess(state, action) {
             state.loading = false;
-            state.data = payload;
+            state.data = action.payload;
           },
-          vendorSearchFailure(state, payload) {
+          vendorSearchFailure(state, action) {
             state.loading = false;
-            state.error = payload;
+            state.error = action.payload;
           },
           getVendorRequest(state) {
             state.loading = true;
           },
-          getVendorSuccess(state, payload) {
+          getVendorSuccess(state, action) {
             state.loading = false;
-            state.data = payload;
+            state.data = action.payload;
           },
-          getVendorFailure(state, payload) {
+          getVendorFailure(state, action) {
             state.loading = false;
-            state.error = payload;
+            state.error = action.payload;
+          },
+          getSecurityQuestionRequest(state) {
+            state.loading = true;
+          },
+          getSecurityQuestionSuccess(state, action) {
+            state.loading = false;
+            state.data = action.payload;
+          },
+          getSecurityQuestionFailure(state, action) {
+            state.loading = false;
+            state.error = action.payload;
           },
 
     }

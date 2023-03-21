@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import Vendormessage from '../../components/vendormessage/VendorMessage'
+import Vendormessage from '../../components/sign-up/vendormessage/VendorMessage'
 import './Signin.css'
 import { Button, Checkbox, Form, Input } from 'antd';
 import { Link } from 'react-router-dom';
@@ -20,6 +20,8 @@ const Signin = () => {
 
 
   }
+
+
   useEffect(() => {
     if(isAuthenticated){
         console.log(data);
@@ -113,7 +115,7 @@ const Signin = () => {
                    {/* CREATE ACCOUNT */}
         <div className='sign-create-account'>
           <i>Don’t have an account? 
-            <Link  className='sign-in-link'> Create</Link>
+            <Link  className='sign-in-link' to={'/vendor-registration'} > Create</Link>
             </i>
         </div>
       </div>

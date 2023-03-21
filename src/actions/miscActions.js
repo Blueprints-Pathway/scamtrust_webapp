@@ -1,8 +1,6 @@
 import axios from "axios";
 import { miscActions } from "../reducers/miscReducers";
-
-
-const baseUrl = "https://scamtrust.herokuapp.com/api/v1";
+import { BASE_URL, USER_TOKEN } from "../constants/constants";
 
 export const createSecurityQuestion = (data) => async (dispatch) => {
     try{
@@ -10,10 +8,11 @@ export const createSecurityQuestion = (data) => async (dispatch) => {
         const config = {
             headers: {
               "Content-Type": "application/json",
+              Authorization: `Bearer ${USER_TOKEN}`
             },
           };
         
-        const response = await axios.post(`${baseUrl}/misc/create/question`, data, config);
+        const response = await axios.post(`${BASE_URL}/misc/create/question`, data, config);
         if(response.status){
             dispatch(miscActions.createSecurityQuestionSuccess({
                 message: response.message,
@@ -316,6 +315,36 @@ export const login = (data) => async (dispatch) => {
       
         }catch(error){
         dispatch(miscActions.loginFailure(
+            error
+        ));
+    }
+}
+
+export const listSecurityQuestion = () => async (dispatch) => {
+    try{
+        dispatch(miscActions.listSecurityQuestionRequest);
+        const config = {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${USER_TOKEN}`
+            },
+          };
+        
+        const response = await axios.post(`${BASE_URL}/misc/create/question`, data, config);
+        if(response.status){
+            dispatch(miscActions.listBusinessTypeSuccess({
+                message: response.message,
+                data: response.data,
+            }));
+        }else{
+            dispatch(miscActions.listSecurityQuestionFailure( 
+                response.message
+            ));
+        }
+
+      
+    }catch(error){
+        dispatch(miscActions.listSecurityQuestionFailure(
             error
         ));
     }

@@ -1,11 +1,23 @@
 import React from 'react'
-import './Vendorsignup.css'
-import scamtrust from '../../../../src/assets/images/Logo.png'
+import './VendorRegistration.css'
+import scamtrust from '../../../../assets/images/Logo.png'
 import { Button, Checkbox, Form, Input, Select} from 'antd';
-import Vendormessage from '../../../components/vendormessage/VendorMessage';
+import Vendormessage from '../../../../components/sign-up/vendormessage/VendorMessage';
+import { useNavigate } from 'react-router-dom';
 
-const Vendorsignup = () => {
+const VendorRegistration = () => {
+
+  const navigate = useNavigate();
+
     const { Option } = Select;
+
+    const submitFormHandler = (e) => {
+      console.log(e + 'hi');
+       navigate('/vendor-verify-bvn')
+    }
+    const onFinishFailed = (errorInfo) => {
+      console.log(errorInfo);
+    }
 
   return (
 
@@ -20,39 +32,49 @@ const Vendorsignup = () => {
                <div className='ven-signup-title'>
                Let’s get you started with your <span style={{color: '#3AB75D'}}> ScamTrust </span> <br /> Vendor account
                </div>
+               <Form onFinish={submitFormHandler}  onFinishFailed = {onFinishFailed}  layout="vertical" autoComplete="off">
 
                <div className='ven-signup-form'>
                 <div className='vendor-form-left'>
-                  <Form layout="vertical" autoComplete="off">
+                 
                       <Form.Item name="Business Name" label="Business Name" rules={[
                          {
-                        //    required: true,
+                           required: true,
                            message: 'Please input your Business Name!',
-                         },  ]}>
+                         }, 
+
+                         
+                         ]}>
                        <Input className='ven-signup-input' />
                       </Form.Item>
                       <Form.Item name="Phone Number" label="Phone Number"   rules={[
                          {
-                        //    required: true,
+                            required: true,
                            message: 'Please Phone Number!',
-                         },  ]}>
+                         }, 
+                         {
+                          len :11,
+                          message: 'Please input a valid phone number'
+                         } ]}>
                         <Input className='ven-signup-input' />
                       </Form.Item>
                       <Form.Item name="Business Address" label="Business Address"   rules={[
                          {
-                        //    required: true,
+                           required: true,
                            message: 'Business Address!',
-                         },  ]}>
+                         }, 
+                        
+                         ]}>
                         <Input className='ven-signup-input' />
                       </Form.Item>
-                  </Form>
+                 
                   </div>
 
                 <div className='vendor-form-right'>
-                  <Form layout="vertical" autoComplete="off">
+                  
                       <Form.Item name="Email Address " label="Email Address"  rules={[
                          {
-                        //    required: true,
+                           required: true,
                            message: 'Email Address!',
                          },  ]}>
                        <Input className='ven-signup-input' />
@@ -60,7 +82,7 @@ const Vendorsignup = () => {
                       <Form.Item name="Business Industry" label="Business Industry"  hasFeedback
                              rules={[
                                {
-                               //   required: true,
+                                  required: true,
                                  message: 'Please select your Business Industry!',
                                },
                              ]}
@@ -73,7 +95,7 @@ const Vendorsignup = () => {
                       <Form.Item name="Business Type" label="Business Type"  hasFeedback
                              rules={[
                                {
-                               //   required: true,
+                                  required: true,
                                  message: 'Please select your Select Business Type!',
                                },
                              ]}
@@ -83,15 +105,20 @@ const Vendorsignup = () => {
                              <Option value="Restaurant">Restaurant</Option>
                            </Select>
                       </Form.Item>
-                  </Form>
+                 
                   </div>
                </div>
-                     <Checkbox value="A" className="ven-signup-checkbox">
+                     
+                     <Form.Item name="check" valuePropName="checked">
+                     <Checkbox  className="ven-signup-checkbox" >
                         I agree to <span style={{color: '#01306B'}}>ScamTrust’s</span> Terms of Service and Privacy Policy
                      </Checkbox>
+        </Form.Item>
 
-                     <Button className='ven-signup-btn' htmlType="submit">Proceed to set Password</Button>
+                     <Button
+                     className='ven-signup-btn'  htmlType="submit">Proceed to verify BVN</Button>
 
+               </Form>
                </div>
         </div>
 
@@ -103,4 +130,4 @@ const Vendorsignup = () => {
   )
 }
 
-export default Vendorsignup
+export default VendorRegistration
