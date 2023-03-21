@@ -6,6 +6,7 @@ import FeeCalculator from "../../../components/vendordashboard/FeeCalculator/Fee
 import FooterLogo from "../../../components/FooterLogo/FooterLogo"
 import "./VendorDashboard.css"
 import VendorStatus from "../../../components/vendordashboard/VendorStatus.css/VendorStatus"
+import Ratings from "../../../components/vendordashboard/Ratings/Ratings"
 
 const VendorDashboard = () => {
   return (
@@ -13,13 +14,11 @@ const VendorDashboard = () => {
       <div className='cust-dash-right'>
         <VendorStatus/>
         <VendDashTransaction />
-        <div className='cust-dash-smallScreen'>
-          <FaqandChat />
-          <FooterLogo />
-        </div>
+        
       </div>
       <div className='cust-dash-left'>
         <VendorProfileCard />
+        <Ratings/>
        
       </div>
 

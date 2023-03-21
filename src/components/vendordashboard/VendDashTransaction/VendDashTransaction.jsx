@@ -9,10 +9,10 @@ const VendDashTransaction = () => {
   const TabPanel = Tabs
 
   return (
-    <div className='cust-dash-tab-wrapper'>
+    <div className='vendor-dash-tab-wrapper'>
       {/* TRANSACTION */}
       <h2 className="vendor-transcation">Transcation</h2>
-      <div className='cust-dash-transaction-tab'>
+      <div className='vendor-dash-transaction-tab'>
         
             <table style={{ width: "", }}>
               <tr style={{ borderBottom: "1px solid #3C3E4D" }}>

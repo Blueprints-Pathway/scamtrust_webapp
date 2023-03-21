@@ -1,10 +1,12 @@
-.cust-dash-tab-wrapper{
+.vendor-dash-tab-wrapper{
     color: black;
     background-color: #ffff;
     margin: 10px 0px;
     padding: 30px 10px;
+    height: 450px;
     border-radius: 18px;
     width: 43vw;
+    margin-top: 48px;
 }
 .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
     color: #023A81 !important; 

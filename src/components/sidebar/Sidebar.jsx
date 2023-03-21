@@ -8,7 +8,7 @@ import { VscHome } from "react-icons/vsc"
 import { BiSupport } from "react-icons/bi"
 import { IoLogOutOutline } from "react-icons/io5"
 import { MdNotificationsNone } from "react-icons/md"
-import search from "../../assets/images/search.png"
+import trust from "../../assets/images/trust.png"
 import scamTrustLogo from "../../assets/images/scamTrustLogo.png"
 import CustomerDashboard from "../../pages/dashboards/CustomerDashboard/CustomerDashboard"
 import {Link} from "react-router-dom"
@@ -83,9 +83,14 @@ const Sidebar = () => {
             <div className='side-tab-con'>
               <IoLogOutOutline style={{ color: "#ffff" }} />
               <span className='side-tabs'>LOGOUT</span>
-            </div>
+              </div>
+        
           </div>
+        
         </Menu>
+      
+
+    
       </Sider>
     </div>
   )
