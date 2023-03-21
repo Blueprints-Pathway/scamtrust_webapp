@@ -16,6 +16,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import { useNavigate } from 'react-router-dom';
+import { getCustomerTransactions } from '../../actions/customerTransactionActions';
 const { Header, Content, Sider } = Layout;
 
 
@@ -30,6 +31,7 @@ const AppLayout = () => {
   console.log('get user details' + loading + data + error)
   useEffect(()=>{
     dispatch(getLoggedInUserDetails());
+    dispatch(getCustomerTransactions());
   },[dispatch])
   // const {
   //   token: { colorBgContainer },
