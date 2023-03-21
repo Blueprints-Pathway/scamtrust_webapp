@@ -1,7 +1,6 @@
 import React from 'react'
 import { Routes,Route } from 'react-router-dom'
-import AppLayout from './components/layout/AppLayout'
-// import SignupLayout from './components/signuplayout/SignupLayout'
+import AppLayout from './components/Layout/AppLayout'
 import About from './pages/home/src/components/About/About'
 import Faq from './pages/home/src/components/Faq/Faq'
 import KnowMore from './pages/home/src/components/knowMore/KnowMore'
@@ -12,6 +11,8 @@ import VendorRegistration from './pages/sign-up/vendor-sign-up/vendor-registrati
 // import Vendorsignup from './pages/sign-up/vendor-sign-up/Vendorsignup'
 import VendorBvn from './pages/sign-up/vendor-sign-up/VendorBvn/VendorBvn'
 import VendorTransactionPin from './pages/sign-up/vendor-sign-up/vendor-transaction-pin/VendorTransactionPin'
+import VendorSecurity from './pages/sign-up/vendor-sign-up/Vendor-security-question/VendorSecurity'
+import VendorActivate from './pages/sign-up/vendor-sign-up/vendor-activate-account/VendorActivate'
 
 const App = () => {
   return (
@@ -30,6 +31,8 @@ const App = () => {
 		<Route path='/vendor-verify-bvn' element={<VendorBvn />} />
 		<Route path='/vendor-set-password' element={<VendorSetPassword />} />
 		<Route path='/vendor-transaction-pin' element={<VendorTransactionPin />} />
+		<Route path='/vendor-security-question' element={<VendorSecurity />} />
+		<Route path='/vendor-activate-account' element={<VendorActivate />} />
 	</Routes>
   )
 }

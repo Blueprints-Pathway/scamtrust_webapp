@@ -1,5 +1,5 @@
 import React from 'react'
-import SignupLayout from '../../../../components/signuplayout/SignupLayout'
+import SignupLayout from '../../../../components/sign-up/signuplayout/SignupLayout'
 import './VendorSetPassword.css'
 import { Button, Form, Input,} from 'antd';
 import { AiFillQuestionCircle } from 'react-icons/ai'
@@ -35,7 +35,8 @@ const VendorSetPassword = () => {
               </Form.Item>
               <Button onClick={()=>{navigate('/vendor-transaction-pin')}}
               className='ven-set-pass-btn'>Proceed to set a transaction pin
-               <CaretRightOutlined className='ven-set-pass-btn-icon' /></Button>
+               <CaretRightOutlined className='ven-set-pass-btn-icon' />
+               </Button>
           </Form>
         </div>
       </div>

@@ -1,11 +1,37 @@
-import React from 'react'
-import Vendormessage from '../../components/vendormessage/VendorMessage'
+import React, { useEffect } from 'react'
+import Vendormessage from '../../components/sign-up/vendormessage/VendorMessage'
 import './Signin.css'
 import { Button, Checkbox, Form, Input } from 'antd';
 import { Link } from 'react-router-dom';
 import scamtrust from '../../assets/images/Logo.png'
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { login } from '../../actions/authActions';
 
 const Signin = () => {
+  const {loading, isAuthenticated, data, error} = useSelector(state => state.auth)
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const loginHandler = (e)  =>  {
+    dispatch(login(JSON.stringify(e)));
+  
+
+
+  }
+  useEffect(() => {
+    if(isAuthenticated){
+        console.log(data);
+      if(data.usertype === 'CUSTOMER'){
+        navigate('/layout');
+
+      }
+
+    }
+  }, [isAuthenticated])
+  let errorText  = error && <p style={{color:'red'}}>{error+ '!'}</p>
+ 
   return (
     <div className='sign-in-con'>
       <div className='sign-in-left'>
@@ -24,6 +50,7 @@ const Signin = () => {
           <p>Welcome Back </p>
         </div>
         <Form 
+        onFinish={loginHandler}
              name="basic"
              labelCol={{
                span: 8,
@@ -40,11 +67,11 @@ const Signin = () => {
         >
 
                      {/* USERNAME */}
-          <Form.Item name="username" required
+          <Form.Item name="email" required
            rules={[
             {
               required: true,
-              message: 'Please input your username!',
+              message: 'Please input your email!',
             },
           ]}
           >
@@ -55,8 +82,12 @@ const Signin = () => {
           <Form.Item
              name="password"
              rules={[
+              {
+                  min: 8,
+                  message: 'Password must be at least 8 characters'
+              },
                {
-                 required: true,
+                 required: true,                
                  message: 'Please input your password!',
                },
              ]}
@@ -72,10 +103,12 @@ const Signin = () => {
 
                 {/* SUBMIT BUTTON */}
          <div className='sign-btn-con'>
-         <Button className='sign-in-btn' htmlType="submit">
+         <Button loading = {loading} className='sign-in-btn' htmlType="submit">
               Continue
          </Button>
          </div>
+        {errorText}
+        
         </Form>
                    {/* CREATE ACCOUNT */}
         <div className='sign-create-account'>

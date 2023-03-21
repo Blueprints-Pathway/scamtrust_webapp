@@ -1,5 +1,5 @@
 import React from 'react'
-import SignupLayout from '../../../../components/signuplayout/SignupLayout'
+import SignupLayout from '../../../../components/sign-up/signuplayout/SignupLayout'
 import './VendorBvn.css'
 import { Button, Form, Input,} from 'antd';
 import { Link } from 'react-router-dom';
@@ -58,7 +58,8 @@ const VendorBvn = () => {
                        <Input type="number" className='vendorbvn-input' />
                       </Form.Item>
                       <div className='vendorbvn-skip-con'>
-                        <Link className='vendorbvn-skip'>Skip</Link>
+                        <p onClick={()=>{navigate('/vendor-set-password')}}
+                        className='vendorbvn-skip'>Skip</p>
                       </div>
                       <Button onClick={()=>{navigate('/vendor-set-password')}}
                       className='vendorbvn-btn' htmlType="submit">Verify</Button>
