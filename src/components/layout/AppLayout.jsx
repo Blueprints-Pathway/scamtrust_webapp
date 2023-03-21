@@ -16,7 +16,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import { useNavigate } from 'react-router-dom';
-import { getCustomerTransactions } from '../../actions/customerTransactionActions';
+import { getCustomerCancelledTransactions, getCustomerCompletedTransactions, getCustomerOngoingTransactions, getCustomerTransactions } from '../../actions/customerTransactionActions';
 const { Header, Content, Sider } = Layout;
 
 
@@ -26,12 +26,21 @@ const { Header, Content, Sider } = Layout;
 const AppLayout = () => {
 
   const {loading, error, data} = useSelector(state => state.user);
+  const auth = useSelector(state => state.auth)
   const dispatch = useDispatch();
   const navigate = useNavigate();
   console.log('get user details' + loading + data + error)
   useEffect(()=>{
+    if(!auth.isAuthenticated){
+      navigate('/')
+      return;
+    }
     dispatch(getLoggedInUserDetails());
     dispatch(getCustomerTransactions());
+    dispatch(getCustomerOngoingTransactions());
+    dispatch(getCustomerCancelledTransactions());
+    dispatch(getCustomerCompletedTransactions());
+    
   },[dispatch])
   // const {
   //   token: { colorBgContainer },
