@@ -1,0 +1,107 @@
+.vendor-status-wrapper {
+  color: black;
+  background-color: #ffff;
+  margin: 10px 0px;
+  padding: 30px 60px;
+  border-radius: 25px;
+  width: 43vw;
+  height: 300px;
+  position: relative;
+}
+.vendor-progress-wrapper {
+  width: 100%;
+  background-color: #e9e7fd;
+  padding: 10px 20px;
+  border-radius: 15px;
+  display: flex;
+  gap:10px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-left: 10px;
+}
+.vendor-name{
+    color: #232164;
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 30px;
+}
+.vendor-desc{
+    font-family: 'Karla';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+color: #707070;
+margin-bottom: 20px;
+
+}
+.vendor-progress-pin {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
+.vendor-badge {
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+.vendor-progress-title {
+  width: 50px;
+}
+
+.progress {
+  width: 250px;
+  height: 6px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  display: flex;
+  justify-self: center;
+  box-shadow: 0 2px 2px #4f4c4c;
+  margin-bottom: 40px;
+  overflow: hidden;
+  position: relative;
+}
+.progress-text {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 5px;
+
+  color: #232164;
+}
+.progress-transaction-wrapper {
+  margin-top: 30px;
+}
+.vendor-progress-title{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+
+
+color: #232164;
+}
+.progress .progress-bar {
+  border-radius: 15px;
+  width: 50%;
+  background-color: #4e3ff0;
+  height: 100%;
+  animation: animate-positive 2s;
+}
+.progress-transaction {
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@-webkit-keyframes animate-positive {
+  0% {
+    width: 0;
+  }
+}
+@keyframes animate-positive {
+  0% {
+    width: 0;
+  }
+}
