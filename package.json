@@ -31,7 +31,6 @@
     "date-fns": "^2.29.3",
     "formik": "^2.2.9",
     "moment": "^2.29.4",
-    "radium": "^0.26.2",
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.0",
     "react-bootstrap": "^2.7.0",
