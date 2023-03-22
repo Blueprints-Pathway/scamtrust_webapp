@@ -1,13 +1,21 @@
 import React, { useState } from 'react'
-import SignupLayout from '../../../../components/sign-up/signuplayout/SignupLayout'
-import classes from './VendorTransactionPin.module.css'
+import SignupLayout from '../../../components/sign-up/signuplayout/SignupLayout'
+import classes from './TransactionPin.module.css'
 import { Form, Button } from 'antd';
 import { BsQuestionCircleFill } from 'react-icons/bs'
 import { CaretRightOutlined } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom';
 import { PinInput } from 'react-input-pin-code'
+import FormItem from 'antd/es/form/FormItem';
 
 const VendorTransactionPin = () => {
+
+   // const onFinish = (values) => {
+   //    console.log('Success:', values);
+   //  };
+   //  const onFinishFailed = (errorInfo) => {
+   //    console.log('Failed:', errorInfo);
+   //  };
 
    const navigate = useNavigate();
 
@@ -21,7 +29,8 @@ const VendorTransactionPin = () => {
       width: '40px',
    };
 
-   const [values, setValues] = React.useState(['', '', '', '']);
+   const [values1, setValues1] = useState(['', '', '', '']);
+   const [values2, setValues2] = useState(['', '', '', '']);
 
   return (
     <SignupLayout>
@@ -36,30 +45,39 @@ const VendorTransactionPin = () => {
             </div>
 
             <div className={classes['ven-trans-bottom']}>
-               <Form layout="vertical" autoComplete="off">
-                  <div name="number" className={classes['ven-trans-pin-div']}>
+               <Form layout="vertical"
+               //  autoComplete="off"
+               //  initialValues={{
+               //    remember: true,
+               //  }}
+               //  onFinish={onFinish}
+               //  onFinishFailed={onFinishFailed}
+               >
+                                  {/* TRANSACTION PIN */}
+                  <div className={classes['ven-trans-pin-div']}>
                      <p className={classes['ven-trans-pin-label']}>Transaction pin <BsQuestionCircleFill className='ven-trans-icon' /></p>
                        <div className={classes['ven-trans-input-con1']}>
                           <PinInput
                             inputStyle={inputStyle}
-                            values={values}
-                            onChange={(value, index, values) => setValues(values)}
+                            values={values1}
+                            onChange={(value, index, values1) => setValues1(values1)}
                           />
                        </div>
                   </div>
                               
                                {/* CONFIRM TRANSACTION PIN */}
-                  <div name="number" className={classes['ven-trans-pin-div']}>
+                  <div className={classes['ven-trans-pin-div']}>
                      <p className={classes['ven-trans-pin-label']}>Confirm transaction pin</p>
                      <div className={classes['ven-trans-input-con1']}>
                           <PinInput
                             inputStyle={inputStyle}
-                            values={values}
-                            onChange={(value, index, values) => setValues(values)}
+                            values={values2}
+                            onChange={(value, index, values2) => setValues2(values2)}
                           />
                        </div>
                   </div>
-                  <Button onClick={()=>{navigate('/vendor-security-question')}}
+                  <Button  htmlType="submit"
+                  onClick={()=>{navigate('/vendor-security-question')}}
                     className={classes['ven-trans-btn']}>Set security question
                     <CaretRightOutlined className={classes['ven-trans-btn-icon2']} />
                   </Button>

@@ -1,6 +1,6 @@
 import React from 'react'
-import SignupLayout from '../../../../components/sign-up/signuplayout/SignupLayout'
-import './VendorSecurity.css'
+import SignupLayout from '../../../components/sign-up/signuplayout/SignupLayout'
+import './SecurityQuestion.css'
 import { Form, Button, Input, Select} from 'antd';
 import { HiCreditCard } from 'react-icons/hi'
 import { useNavigate } from 'react-router-dom';

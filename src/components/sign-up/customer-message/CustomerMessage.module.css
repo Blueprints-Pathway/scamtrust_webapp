@@ -1,0 +1,125 @@
+.wrapper{
+    background-color: #f9f9f9; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    height: 100vh; 
+}
+.message-con{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.message-quote{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    border: 1.8px solid #CFD7DE;
+    padding: 7px;
+    border-radius: 30px;
+    margin: -15px 3px 0px 0px;
+}
+.message{
+    color: #252525;
+    text-align: left;
+    font-size: 21px;
+    font-weight: 700;
+    width: 70%;
+}
+.message-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 63%;
+    margin-top: 38px;
+}
+.message-img-con{
+    margin: 0px 0px 0px 0px;
+}
+.message-img{
+    height: 65px;
+    width: 65px;
+    border: 2px solid #232164;
+    border-radius: 50px;
+}
+.message-details{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0px 30px;
+}
+.message-name{
+    color: #252525;
+    font-weight: 500;
+}
+.message-status{
+    color: #8D8D8D;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 1200px) {
+    .wrapper{
+        background-color: #f9f9f9; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
+        height: 100vh; 
+    }
+    .message-con{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .message-quote{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        border: 1.8px solid #CFD7DE;
+        padding: 5px;
+        border-radius: 30px;
+        margin: -15px 3px 0px 0px;
+    }
+    .message{
+        color: #252525;
+        text-align: left;
+        font-size: 16px;
+        font-weight: 600;
+        width: 70%;
+    }
+    .message-bottom{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 63%;
+        margin-top: 35px;
+    }
+    .message-img-con{
+        margin: 0px 0px 0px 0px;
+    }
+    .message-img{
+        height: 60px;
+        width: 60px;
+        border: 2px solid #232164;
+        border-radius: 50px;
+    }
+    .message-details{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin: 0px 30px;
+    }
+    .message-name{
+        color: #252525;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    .message-status{
+        color: #8D8D8D;
+        font-size: 12px;
+    }
+
+}

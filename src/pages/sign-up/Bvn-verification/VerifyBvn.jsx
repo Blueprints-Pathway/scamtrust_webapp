@@ -1,12 +1,20 @@
 import React from 'react'
-import SignupLayout from '../../../../components/sign-up/signuplayout/SignupLayout'
-import './VendorBvn.css'
-import { Button, Form, Input,} from 'antd';
+import SignupLayout from '../../../components/sign-up/signuplayout/SignupLayout'
+import './VerifyBvn.css'
+import { Button, Form, Input,  DatePicker} from 'antd';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 
 const VendorBvn = () => {
+
+  
+  const onFinish = (values) => {
+    console.log('Success:', values);
+  };
+  const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo);
+  };
 
   const navigate = useNavigate();
   
@@ -20,12 +28,20 @@ const VendorBvn = () => {
                 </p>
             </div>
             <div className='vendorbvn-form'>
-                <Form layout="vertical" autoComplete="off">
+                <Form layout="vertical" 
+                autoComplete="off"
+                initialValues={{
+                  remember: true,
+                }}
+                onFinish={onFinish}
+                onFinishFailed={onFinishFailed}
+                >
 
                       <Form.Item className='form-item' name="Full name" 
                       label={<label className='form-label'>Full name</label>}
                       rules={[
                          {
+                          required: true,
                            message: 'Please input your Full name!',
                          },  ]}>
                        <Input className='vendorbvn-input' />
@@ -35,15 +51,18 @@ const VendorBvn = () => {
                       label={<label className='form-label'>Date of birth</label>}
                       rules={[
                          {
+                          required: true,
                            message: 'Please input your Date of birth!',
                          },  ]}>
-                       <Input type="number" className='vendorbvn-input' />
+                       {/* <Input type="number" className='vendorbvn-input' /> */}
+                       <DatePicker style={{ width: '100%' }} />
                       </Form.Item>
 
                       <Form.Item className='form-item' name="phone" 
                         label={<label className='form-label'>Phone number</label>}
                         rules={[
                          {
+                          required: true,
                            message: 'Please input your Phone number!',
                          },  ]}>
                        <Input type="number" className='vendorbvn-input' />
@@ -53,6 +72,7 @@ const VendorBvn = () => {
                        label={<label className='form-label'>Enter your Bank Verification Number</label>}
                        rules={[
                          {
+                           required: true,
                            message: 'Please input your Bank Verification Number!',
                          },  ]}>
                        <Input type="number" className='vendorbvn-input' />
@@ -61,7 +81,8 @@ const VendorBvn = () => {
                         <p onClick={()=>{navigate('/vendor-set-password')}}
                         className='vendorbvn-skip'>Skip</p>
                       </div>
-                      <Button onClick={()=>{navigate('/vendor-set-password')}}
+                      <Button 
+                      onClick={()=>{navigate('/vendor-set-password')}}
                       className='vendorbvn-btn' htmlType="submit">Verify</Button>
                 </Form>
             </div>

@@ -13,6 +13,10 @@ import wave from '../../assets/images/wave.png'
 import frame from '../../assets/images/frame.png'
 
 const customStyles = {
+  // overlay: {
+  //   backgroundColor: "black",
+  //   opacity: '0.8'
+  // },
   content: {
     top: '50%',
     left: '50%',
@@ -21,6 +25,10 @@ const customStyles = {
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
     border: 'none',
+    backgroundColor: 'white',
+    // backgroundColor: "black",
+    // opacity: '0.8',
+    padding: '0px',
   },
 };
 
@@ -34,6 +42,7 @@ const Signin = () => {
   function closeModal() {
     setIsOpen(false);
   }
+
 
 
   const {loading, isAuthenticated, data, error} = useSelector(state => state.auth)
@@ -163,14 +172,16 @@ const Signin = () => {
           <span><img className='modal-wave' src={wave} alt="" /></span></p>
           <div className='modal-frame-con'>
              <div className='modal-div-1'>
-               <img className='modal-img-1' src={frame} alt="" />
+               <img onClick={()=>{navigate('/vendor-registration')}}
+               className='modal-img-1' src={frame} alt="" />
                <div className='modal-words-con-1'>
                  <p className='modal-word-1'>Vendor</p>
                  <p className='modal-word-2'>Get a risk-free payment for almost any product or service.</p>
                </div>
              </div>
              <div className='modal-div-2'>
-               <img className='modal-img-2' src={frame} alt="" />
+               <img  onClick={()=>{navigate('/customer-registration')}}
+               className='modal-img-2' src={frame} alt="" />
                <div className='modal-words-con-2'>
                  <p className='modal-word-1'>Customer</p>
                  <p className='modal-word-2'>Verify and enjoy transaction transparency before product delivery.</p>
