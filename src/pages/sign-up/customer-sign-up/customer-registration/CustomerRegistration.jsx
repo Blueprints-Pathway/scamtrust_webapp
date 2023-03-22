@@ -98,7 +98,7 @@ const CustomerRegistration = () => {
                         I agree to <span style={{color: '#01306B'}}>ScamTrust’s</span> Terms of Service and Privacy Policy
                      </Checkbox>
                    </Form.Item>
-                     <Button  onClick={()=>{navigate('/vendor-verify-bvn')}}
+                     <Button  onClick={()=>{navigate('/verify-bvn')}}
                      className={classes['form-btn']} htmlType="submit">Proceed to verify BVN
                      <CaretRightOutlined className={classes['btn-icon']} />
                      </Button>

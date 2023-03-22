@@ -73,7 +73,7 @@ const VendorSetPassword = () => {
                  <Input.Password className='ven-set-pass-input' placeholder="Input password" />
               </Form.Item>
               <Button
-               onClick={()=>{navigate('/vendor-transaction-pin')}}
+               onClick={()=>{navigate('/transaction-pin')}}
               className='ven-set-pass-btn' htmlType="submit">Proceed to set a transaction pin
                <CaretRightOutlined className='ven-set-pass-btn-icon' />
                </Button>

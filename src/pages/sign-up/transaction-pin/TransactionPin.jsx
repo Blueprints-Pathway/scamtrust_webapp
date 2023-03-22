@@ -77,7 +77,7 @@ const VendorTransactionPin = () => {
                        </div>
                   </div>
                   <Button  htmlType="submit"
-                  onClick={()=>{navigate('/vendor-security-question')}}
+                  onClick={()=>{navigate('/security-question')}}
                     className={classes['ven-trans-btn']}>Set security question
                     <CaretRightOutlined className={classes['ven-trans-btn-icon2']} />
                   </Button>

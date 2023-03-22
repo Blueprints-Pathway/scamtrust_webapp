@@ -32,11 +32,11 @@ const App = () => {
 		<Route path='/sign-in' element={<Signin />} />
 		<Route path='/sign-up-modal' element={<SignupModal  />} />
 		<Route path='vendor-registration' element={<VendorRegistration  />} />
-		<Route path='/vendor-verify-bvn' element={<VendorBvn />} />
-		<Route path='/vendor-set-password' element={<VendorSetPassword />} />
-		<Route path='/vendor-transaction-pin' element={<VendorTransactionPin />} />
-		<Route path='/vendor-security-question' element={<VendorSecurity />} />
 		<Route path='/vendor-activate-account' element={<VendorActivate />} />
+		<Route path='/verify-bvn' element={<VendorBvn />} />
+		<Route path='/set-password' element={<VendorSetPassword />} />
+		<Route path='/transaction-pin' element={<VendorTransactionPin />} />
+		<Route path='/security-question' element={<VendorSecurity />} />
 		<Route path='/customer-registration' element={<CustomerRegistration />} />
 		<Route path='/customer-activate-account' element={<CustomerActivate />} />
 	</Routes>

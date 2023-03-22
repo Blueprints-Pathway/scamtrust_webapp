@@ -78,11 +78,11 @@ const VendorBvn = () => {
                        <Input type="number" className='vendorbvn-input' />
                       </Form.Item>
                       <div className='vendorbvn-skip-con'>
-                        <p onClick={()=>{navigate('/vendor-set-password')}}
+                        <p onClick={()=>{navigate('/set-password')}}
                         className='vendorbvn-skip'>Skip</p>
                       </div>
                       <Button 
-                      onClick={()=>{navigate('/vendor-set-password')}}
+                      onClick={()=>{navigate('/set-password')}}
                       className='vendorbvn-btn' htmlType="submit">Verify</Button>
                 </Form>
             </div>

@@ -52,6 +52,14 @@
 .ven-sec-input{
     height: 38px;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+  }
 .ven-sec-btn{
     width: 25vw;
     height: 45px;

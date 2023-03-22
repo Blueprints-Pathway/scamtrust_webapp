@@ -136,7 +136,7 @@ const VendorRegistration = () => {
                      </Checkbox>
                    </Form.Item>
                      <Button  
-                     onClick={()=>{navigate('/vendor-verify-bvn')}}
+                     onClick={()=>{navigate('/verify-bvn')}}
                      className='ven-signup-btn' htmlType="submit">Proceed to verify BVN
                      </Button>
 
