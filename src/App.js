@@ -7,7 +7,7 @@ import KnowMore from "./pages/home/src/components/knowMore/KnowMore"
 import HomePage from "./pages/home/src/HomePage"
 import VendorDashboard from "./pages/dashboards/VendorDashboard/VendorDashboard"
 import Sidebar from "./components/sidebar/Sidebar"
-import Vendordashboard from "./components/vendordashboard/Vendordashboard"
+
 
 const App = () => {
   return (
