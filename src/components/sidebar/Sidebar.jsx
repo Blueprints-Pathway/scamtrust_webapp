@@ -1,6 +1,6 @@
 import { Form, Layout, Menu, theme, Badge, Avatar } from "antd"
 import React from "react"
-import "./AppLayout.css"
+import "./Sidebar.css"
 import { VscArrowSwap } from "react-icons/vsc"
 import { SlSettings } from "react-icons/sl"
 import { CiWallet } from "react-icons/ci"
@@ -11,11 +11,9 @@ import { MdNotificationsNone } from "react-icons/md"
 import search from "../../assets/images/search.png"
 import scamTrustLogo from "../../assets/images/scamTrustLogo.png"
 import CustomerDashboard from "../../pages/dashboards/CustomerDashboard/CustomerDashboard"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 const { Header, Content, Sider } = Layout
-
-const AppLayout = () => {
+const Sidebar = () => {
   // const {
   //   token: { colorBgContainer },
   // } = theme.useToken();
@@ -84,57 +82,8 @@ const AppLayout = () => {
           </div>
         </Menu>
       </Sider>
-
-      <Layout className='content-con'>
-        <Header className='header'>
-          <div className='header-div1'>
-            <p className='header-dash'>Dashboard</p>
-          </div>
-
-          <div className='header-right-div'>
-            {/* SEARCH INPUT  */}
-            <div className='header-div-2'>
-              <div className='header-input-icon'>
-                {" "}
-                <img className='input-icon-img' src={search} alt='...' />{" "}
-              </div>
-              <input
-                className='header-input'
-                type='text'
-                placeholder='Search vendor’s name'
-              />
-            </div>
-
-            {/* NOTIFICATION */}
-            <div className='header-div-3'>
-              <Badge count={7} overflowCount={99}>
-                <div>
-                  <MdNotificationsNone
-                    className='header-notification-icon'
-                    style={{ fill: "#232164" }}
-                  />
-                </div>
-              </Badge>
-            </div>
-
-            {/* INITIALS */}
-            <div>
-              <Avatar className='header-avatar'>
-                <p className='header-initials'>CO</p>
-              </Avatar>
-            </div>
-          </div>
-        </Header>
-
-        {/* INNER CONTENT */}
-        <Content
-          className='layout-content'
-          style={{ margin: "0px 16px", color: "black" }}
-        >
-          <CustomerDashboard />
-        </Content>
-      </Layout>
     </Layout>
   )
 }
-export default AppLayout
+
+export default Sidebar

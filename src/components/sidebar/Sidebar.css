@@ -1,0 +1,127 @@
+.wrapper{
+    height: 100vh;
+}
+.content-con{
+    background-color: #F2F2F2;
+}
+.header{
+    background-color: #ffff;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 1px #d9d9d9;
+    z-index: 20;
+}
+.header-div1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header-dash{
+    color: #232164;
+    font-size: 23px;
+    font-weight: 600;
+}
+.header-right-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-div-2{
+    position:relative;
+}
+.header-input-icon{ 
+  padding: 2px;
+  position: absolute;
+  box-sizing:border-box;
+  top: 65%;
+  left:2px;
+  transform: translateY(-50%);
+}
+.input-icon-img{
+    width: 27px;
+}
+.header-input{
+    background-color: #F2F2F2;
+  height: 50px;
+  box-sizing:border-box;
+  border-radius: 30px;
+  border: none;
+  padding: 10px 220px 10px 35px;
+  margin-left: -22rem;
+}
+
+.header-input::placeholder {
+    color: #d7d1d1;
+    font-size: 12px;
+    font-weight: 300;
+  }
+.header-div-3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 35px;
+  }
+  .header-notification-icon{
+    font-size: 32px;
+  }
+  .header-avatar{
+    background-color: #E36969;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header-initials{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+  }
+.sider{
+    display: flex;
+    flex-direction: column;
+    width: 210px;
+    height: 105vh;
+    background: linear-gradient(#0A439A, #1A1E51);
+}
+.sider-logo-con{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+.sider-logo{
+    width: 110px;
+}
+.sideIcon{
+    color: #ffff;
+    margin: 0px 5px;
+}
+.side-tab-wrapper{
+    margin-top: 120px;
+}
+.side-tab-con{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 40px 0px 40px 45px;
+}
+.side-tabs{
+    font-size: 12px;
+    color: #ffff;
+    margin: 0px 10px;
+    font-weight: 200;
+    letter-spacing: 0.5px;
+}
+.side-bottom-tab{
+    margin-top: 150px;
+}
+.layout-content{
+    overflow-y: scroll;
+    /* height: 100vh; */
+}
+.layout-content::-webkit-scrollbar {
+    display: none;
+  }
