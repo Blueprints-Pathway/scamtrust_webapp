@@ -4,7 +4,9 @@ const initialState = {
   loading: false,
   error: null,
   data: {},
-  notifications: []
+  notifications: [],
+  currentPage: 1,
+  unreadNotifications: []
 };
 
 const notificationReducer = createSlice({
@@ -14,24 +16,28 @@ const notificationReducer = createSlice({
     toggleNotificationRequest(state) {
       state.loading = true;
     },
-   toggleNotificationSuccess(state, payload) {
+   toggleNotificationSuccess(state, action) {
       state.loading = false;
-      state.data = payload;
+      state.data = action;
     },
-    toggleNotificationFailure(state, payload) {
+    toggleNotificationFailure(state, action) {
       state.loading = false;
-      state.error = payload;
+      state.error = action;
     },
-        listNotificationRequest(state) {
+    listNotificationRequest(state) {
         state.loading = true;
       },
-     listNotificationSuccess(state, payload) {
+     listNotificationSuccess(state, action) {
         state.loading = false;
-        state.notifications = payload;
+        state.currentPage = action.payload.currentPage;
+        state.unreadNotifications = action.payload.unreadNotifications;
+        state.data = action.payload.data;
+        state.notifications = action.payload.data;
+       console.log(action.payload.notifications + 'suces')
       },
-      listNotificationFailure(state, payload) {
+      listNotificationFailure(state, action) {
         state.loading = false;
-        state.error = payload;
+        state.error = action;
       },
   },
 });

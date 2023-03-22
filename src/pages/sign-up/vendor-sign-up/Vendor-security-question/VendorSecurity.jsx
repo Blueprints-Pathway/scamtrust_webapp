@@ -1,15 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import SignupLayout from '../../../../components/sign-up/signuplayout/SignupLayout'
 import './VendorSecurity.css'
 import { Form, Button, Input, Select} from 'antd';
 import { HiCreditCard } from 'react-icons/hi'
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { listSecurityQuestion } from '../../../../actions/miscActions';
+import miscReducer, { miscActions } from '../../../../reducers/miscReducers';
 
 const VendorSecurity = () => {
 
     const { Option } = Select;
-
+    const {loading, error, data} = useSelector(state => state.misc)
+    let questions = [];
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+      dispatch(listSecurityQuestion());
+    },[dispatch])
+    if (!loading) {
+      console.log(data.data.data); 
+     questions = data.data.data; 
+    }
 
   return (
     <SignupLayout>
@@ -37,10 +50,14 @@ const VendorSecurity = () => {
                             },
                        ]}
                      >
-                       <Select className='ven-sec-input' placeholder="Choose a security question">
-                         <Option value="male">when didbvctvhbjnkjbhvg</Option>
-                         <Option value="female">what is mfghjkjhgfdfgh</Option>
-                         <Option value="other">Others</Option>
+                       <Select loading = {loading} className='ven-sec-input' placeholder="Choose a security question">
+
+                        {
+                          questions.map((e, index) => {
+                            return  <Option key={e.id} value={`${e.question}`}>{e.question}</Option>
+                          })
+                        }
+                       
                        </Select>
                   </Form.Item>
 

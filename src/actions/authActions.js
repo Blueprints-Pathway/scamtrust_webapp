@@ -307,7 +307,7 @@ export const login = (data) => async (dispatch) => {
                response.data.data,
             ));
             console.log(response.data);
-            localStorage.setItem('USER_TOKEN', response.data.data.access_token);
+           localStorage.setItem('USER_TOKEN', response.data.data.access_token);
         }else{
             dispatch(authActions.loginFailure( 
                 response.data.message

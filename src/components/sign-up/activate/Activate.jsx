@@ -3,8 +3,11 @@ import './Activate.css'
 import logo from '../../../assets/images/Logo.png'
 import congrats from '../../../assets/images/congrats.png'
 import { Button } from 'antd'
+import { useNavigate } from 'react-router-dom'
 
 const Activate = () => {
+
+    const navigate = useNavigate();
   return (
     <div className='activate-con'>
         <div className='activate-header'>
@@ -19,7 +22,7 @@ const Activate = () => {
                Congrats! We have sent a confirmation link to 
             <span style={{color: '#3AB75D', textDecoration: 'underline'}}> Isaac.orija@gmail.com</span>. Kindly click to activate Your ScamTrust account
             </p>
-            <Button className='activate-content-btn'>Check Mail</Button>
+            <Button onClick={() => {navigate('/sign-in')}} className='activate-content-btn'>Check Mail</Button>
         </div>
     </div>
     </div>

@@ -17,6 +17,8 @@ import { useSelector } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import { useNavigate } from 'react-router-dom';
 import { getCustomerCancelledTransactions, getCustomerCompletedTransactions, getCustomerOngoingTransactions, getCustomerTransactions } from '../../actions/customerTransactionActions';
+import { listNotifications } from '../../actions/notificationActions';
+import { vendorSearch } from '../../actions/miscActions';
 const { Header, Content, Sider } = Layout;
 
 
@@ -26,20 +28,23 @@ const { Header, Content, Sider } = Layout;
 const AppLayout = () => {
 
   const {loading, error, data} = useSelector(state => state.user);
+  const notification = useSelector(state => state.notification);
+
   const auth = useSelector(state => state.auth)
   const dispatch = useDispatch();
   const navigate = useNavigate();
   console.log('get user details' + loading + data + error)
   useEffect(()=>{
-    if(!auth.isAuthenticated){
-      navigate('/')
-      return;
-    }
+    // if(!auth.isAuthenticated){
+    //   navigate('/')
+    //   return;
+    // }
     dispatch(getLoggedInUserDetails());
     dispatch(getCustomerTransactions());
     dispatch(getCustomerOngoingTransactions());
     dispatch(getCustomerCancelledTransactions());
     dispatch(getCustomerCompletedTransactions());
+    dispatch(listNotifications());
     
   },[dispatch])
   // const {
@@ -54,6 +59,13 @@ const AppLayout = () => {
     dispatch(logoutUser());
     console.log('logout')
     navigate('/sign-in')
+  }
+
+  const searchInputChangeHandler = (e) => {
+    console.log(e.target.value)
+    dispatch(vendorSearch({
+      search: e.target.value
+    }))
   }
   return (
     <Layout  className='wrapper'>
@@ -134,12 +146,12 @@ const AppLayout = () => {
               {/* SEARCH INPUT  */}
           <div className='header-div-2'>
             <div className='header-input-icon'> <img className='input-icon-img' src={search} alt="..." /> </div>
-            <input className='header-input' type="text" placeholder='Search vendor’s name' />
+            <input onChange={searchInputChangeHandler} className='header-input' type="text" placeholder='Search vendor’s name' />
           </div>
 
                   {/* NOTIFICATION */}
           <div className='header-div-3'>
-              <Badge count={7} overflowCount={99}>
+              <Badge count={notification.unreadNotifications.length} overflowCount={99}>
                     <div>
                      <MdNotificationsNone className='header-notification-icon' style={{ fill: '#232164' }} />
                     </div>

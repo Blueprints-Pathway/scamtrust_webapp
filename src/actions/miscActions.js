@@ -41,7 +41,7 @@ export const createIndustry = (data) => async (dispatch) => {
             },
           };
         
-        const response = await axios.post(`${baseUrl}/misc/create/industry`, data, config);
+        const response = await axios.post(`${BASE_URL}/misc/create/industry`, data, config);
         if(response.status){
             dispatch(miscActions.createIndustrySuccess({
                 message: response.message,
@@ -69,7 +69,7 @@ export const createFAQ = (data) => async (dispatch) => {
             },
           };
         
-        const response = await axios.get(`${baseUrl}/misc/create/faq`, config);
+        const response = await axios.get(`${BASE_URL}/misc/create/faq`, config);
         if(response.status){
             dispatch(miscActions.createFAQSuccess({
                 message: response.message,
@@ -97,7 +97,7 @@ export const listFAQs = () => async (dispatch) => {
             },
           };
         
-        const response = await axios.get(`${baseUrl}/misc/list/faqs`,config);
+        const response = await axios.get(`${BASE_URL}/misc/list/faqs`,config);
         if(response.status){
             dispatch(miscActions.listFAQSuccess({
                 message: response.message,
@@ -126,7 +126,7 @@ export const verifyPhoneExist = (phone) => async (dispatch) => {
             },
           };
         
-        const response = await axios.post(`${baseUrl}/auth/verify/phone`, {phone}, config);
+        const response = await axios.post(`${BASE_URL}/auth/verify/phone`, {phone}, config);
         if(response.status){
             dispatch(miscActions.verifyPhoneExistSuccess({
                 message: response.message,
@@ -155,7 +155,7 @@ export const sendResetPasswordLink = (email) => async (dispatch) => {
             },
           };
         
-        const response = await axios.post(`${baseUrl}/auth/send/resetlink`, {email}, config);
+        const response = await axios.post(`${BASE_URL}/auth/send/resetlink`, {email}, config);
         if(response.status){
             dispatch(miscActions.resetPasswordLinkSuccess({
                 message: response.message,
@@ -184,7 +184,7 @@ export const resetPassword = (data) => async (dispatch) => {
             },
           };
         
-        const response = await axios.post(`${baseUrl}/auth/reset/password`, data, config);
+        const response = await axios.post(`${BASE_URL}/auth/reset/password`, data, config);
         if(response.status){
             dispatch(miscActions.resetPasswordSuccess({
                 message: response.message,
@@ -213,7 +213,7 @@ export const setPin = (pin) => async (dispatch) => {
             },
           };
         
-        const response = await axios.post(`${baseUrl}/auth/set-pin`, {pin}, config);
+        const response = await axios.post(`${BASE_URL}/auth/set-pin`, {pin}, config);
         if(response.status){
             dispatch(miscActions.setPinSuccess({
                 message: response.message,
@@ -242,7 +242,7 @@ export const verifyPin = (pin) => async (dispatch) => {
             },
           };
         
-        const response = await axios.post(`${baseUrl}/auth/verify/pin`, {pin}, config);
+        const response = await axios.post(`${BASE_URL}/auth/verify/pin`, {pin}, config);
         if(response.status){
             dispatch(miscActions.verifyPinSuccess({
                 message: response.message,
@@ -271,7 +271,7 @@ export const setSecurityQuestion = (data) => async (dispatch) => {
             },
           };
         
-        const response = await axios.post(`${baseUrl}/auth/set-security-question`, data, config);
+        const response = await axios.post(`${BASE_URL}/auth/set-security-question`, data, config);
         if(response.status){
             dispatch(miscActions.setSecurityQuestionSuccess({
                 message: response.message,
@@ -300,7 +300,7 @@ export const login = (data) => async (dispatch) => {
             },
           };
         
-        const response = await axios.post(`${baseUrl}/auth/login`, data, config);
+        const response = await axios.post(`${BASE_URL}/auth/login`, data, config);
         if(response.status){
             dispatch(miscActions.loginSuccess({
                data: response.data,
@@ -322,7 +322,7 @@ export const login = (data) => async (dispatch) => {
 
 export const listSecurityQuestion = () => async (dispatch) => {
     try{
-        dispatch(miscActions.listSecurityQuestionRequest);
+        dispatch(miscActions.listSecurityQuestionRequest());
         const config = {
             headers: {
               "Content-Type": "application/json",
@@ -330,9 +330,9 @@ export const listSecurityQuestion = () => async (dispatch) => {
             },
           };
         
-        const response = await axios.post(`${BASE_URL}/misc/create/question`, data, config);
+        const response = await axios.get(`${BASE_URL}/misc/list/questions`, config);
         if(response.status){
-            dispatch(miscActions.listBusinessTypeSuccess({
+            dispatch(miscActions.listSecurityQuestionSuccess({
                 message: response.message,
                 data: response.data,
             }));
@@ -345,6 +345,36 @@ export const listSecurityQuestion = () => async (dispatch) => {
       
     }catch(error){
         dispatch(miscActions.listSecurityQuestionFailure(
+            error
+        ));
+    }
+}
+export const vendorSearch = (data) => async (dispatch) => {
+    try{
+        dispatch(miscActions.vendorSearchRequest() );
+        const config = {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          };
+        
+        const response = await axios.post(`${BASE_URL}/misc/vendor/search`, data, config);
+        if(response.data.status){
+            dispatch(miscActions.vendorSearchSuccess({
+               data: response.data.data,
+            }));
+
+         console.log(response.data.data)
+         console.log(response)
+        }else{
+            dispatch(miscActions.vendorSearchFailure( 
+                response.data.message
+            ));
+        }
+
+      
+        }catch(error){
+        dispatch(miscActions.vendorSearchFailure(
             error
         ));
     }
