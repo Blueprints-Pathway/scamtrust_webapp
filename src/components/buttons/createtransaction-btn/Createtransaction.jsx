@@ -4,9 +4,10 @@ import { MdAddCircle } from 'react-icons/md'
 import { useNavigate } from 'react-router'
 import { Button, Modal } from 'antd';
 import { useState } from 'react';
-import FaqandChat from '../../customerdashboard/Faq&Chat/FaqandChat';
 import CustomerProfileCard from '../../customerdashboard/CustomerProfileCard/CustomerProfileCard';
 import Modal1 from './Modal1';
+import Modal2 from './Modal2';
+import Modal3 from './Modal3';
 
 const Createtransaction = () => {
 
@@ -22,6 +23,11 @@ const Createtransaction = () => {
   const proceed = () => {
       setModal2Open(false);
       setModal3Open(true);
+  }
+
+  const edit = () => {
+    setModal2Open(false);
+    setModal1Open(true);
   }
 
 
@@ -41,54 +47,57 @@ const Createtransaction = () => {
 
                        {/* MODAL 1 */}
       <Modal
-        title={<p>Initiate transaction</p>}
+        title={<p className='trans-modal-title'>Initiate transaction<hr className='trans-modal-line' /></p>}
         centered
-        style={{
-          left: 120,
-        }}
-        width={'60vw'}
         open={modal1Open}
         onCancel={() => setModal1Open(false)}
         okButtonProps={{ style: { display: 'none' } }}
         cancelButtonProps={{ style: { display: 'none' } }}
       >
 
-        <Modal1 />
+        <Modal1 confirm={confirm} />
 
-        <Button onClick={confirm}
-        >Confirm</Button>
       </Modal>
 
 
                {/* MODAL 2 */}
       <Modal
-         title="Vertically centered modal dialog"
+         title={<div><div className='trans-modal2'>
+          <p className='modal2-title'>Transaction summary</p>
+          </div>
+          <div className='edit-con'>
+          <button onClick={edit}
+          className='modal2-edit-btn'>Edit form</button>
+          </div>
+          </div>}
          centered
          open={modal2Open}
          onCancel={() => setModal2Open(false)}
          okButtonProps={{ style: { display: 'none' } }}
          cancelButtonProps={{ style: { display: 'none' } }}
       >
-        <FaqandChat />
 
-        <Button onClick={proceed}
-        >proceed</Button>
+        <hr />
+        <Modal2 proceed={proceed} />
+
       </Modal>
 
 
                 {/* MODAL 3 */}
       <Modal
-         title="Vertically centered modal dialog"
+         title={<p className='trans-modal-title'>Withdrawal details<hr className='trans-modal-line' /></p>}
          centered
          open={modal3Open}
          onCancel={() => setModal3Open(false)}
          okButtonProps={{ style: { display: 'none' } }}
          cancelButtonProps={{ style: { display: 'none' } }}
       >
-        <CustomerProfileCard />
 
-        <Button onClick={()=>{setModal3Open(false)}}
-        >Done</Button>
+        <Modal3 setModal3Open={setModal3Open} />
+
+        {/* <Button onClick={()=>{setModal3Open(false)}}
+        >Done</Button> */}
+
       </Modal>
 
     </div>

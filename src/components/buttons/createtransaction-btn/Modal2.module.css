@@ -1,0 +1,342 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #F8F8FA;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.column{
+    margin-top: 20px;
+}
+.name{
+    color: #023B83;
+    margin-bottom: 10px;
+}
+.content{
+    color: #7D8287;
+    margin-bottom: 10px;
+}
+.name2{
+    color: #023B83;
+    margin-bottom: 5px;
+}
+.content2{
+    color: #7D8287;
+    margin-bottom: 10px;
+}
+.total-con{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.total-name{
+    color: #023B83;
+    font-size: 18px;
+}
+.price{
+    font-size: 18px;
+    color: #232164;
+}
+.right{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-top: 20px;
+   margin-bottom: -10px;
+}
+.words{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7D8287;
+}
+.modal2-input{
+    margin: 0px 7px;
+}
+.modal2-link{
+    margin: 0px 7px;
+}
+.modal2-btn{
+    color: #232164;
+    background-color: #2321644F;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #F8F8FA;
+        padding: 10px 20px;
+        margin-top: 10px;
+    }
+    .row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .column{
+        margin-top: 20px;
+    }
+    .name{
+        color: #023B83;
+        margin-bottom: 10px;
+    }
+    .content{
+        color: #7D8287;
+        margin-bottom: 10px;
+    }
+    .name2{
+        color: #023B83;
+        margin-bottom: 5px;
+    }
+    .content2{
+        color: #7D8287;
+        margin-bottom: 10px;
+    }
+    .total-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .total-name{
+        color: #023B83;
+        font-size: 18px;
+    }
+    .price{
+        font-size: 18px;
+        color: #232164;
+    }
+    .right{
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       margin-top: 20px;
+       margin-bottom: -10px;
+    }
+    .words{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #7D8287;
+    }
+    .modal2-input{
+        margin: 0px 7px;
+    }
+    .modal2-link{
+        margin: 0px 7px;
+    }
+    .modal2-btn{
+        color: #232164;
+        background-color: #2321644F;
+        font-size: 18px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #F8F8FA;
+        padding: 10px 20px;
+        margin-top: 5px;
+    }
+    .row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+    .column{
+        margin-top: 10px;
+    }
+    .name{
+        font-size: 11px;
+        color: #023B83;
+        margin-bottom: 10px;
+    }
+    .content{
+        font-size: 11px;
+        color: #7D8287;
+        margin-bottom: 10px;
+    }
+    .name2{
+        font-size: 11px;
+        color: #023B83;
+        margin-bottom: 5px;
+    }
+    .content2{
+        font-size: 11px;
+        color: #7D8287;
+        margin-bottom: 5px;
+    }
+    .total-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+    .total-name{
+        color: #023B83;
+        font-size: 15px;
+    }
+    .price{
+        font-size: 15px;
+        color: #232164;
+    }
+    .right{
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       margin-top: 10px;
+       margin-bottom: -15px;
+    }
+    .words{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #7D8287;
+        font-size: 9px;
+    }
+    .modal2-input{
+        margin: 0px 5px;
+    }
+    .modal2-link{
+        margin: 0px 5px;
+    }
+    .modal2-btn{
+        color: #232164;
+        background-color: #2321644F;
+        font-size: 13px;
+        padding: 5px 15px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+    }
+
+}
+@media screen and (max-width: 480px) {
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #F8F8FA;
+        padding: 10px 20px;
+        margin-top: 5px;
+    }
+    .row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .column{
+        margin-top: 20px;
+    }
+    .name{
+        font-size: 9px;
+        color: #023B83;
+        margin-bottom: 0px;
+    }
+    .content{
+        font-size: 9px;
+        color: #7D8287;
+        margin-bottom: 0px;
+    }
+    .name2{
+        font-size: 9px;
+        color: #023B83;
+        margin-bottom: 0px;
+    }
+    .content2{
+        font-size: 9px;
+        color: #7D8287;
+        margin-bottom: 0px;
+    }
+    .total-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+    .total-name{
+        color: #023B83;
+        font-size: 13px;
+    }
+    .price{
+        font-size: 13px;
+        color: #232164;
+    }
+    .right{
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       margin-top: 20px;
+       margin-bottom: -15px;
+    }
+    .words{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #7D8287;
+        font-size: 8px;
+    }
+    .modal2-input{
+        margin: 0px 5px;
+    }
+    .modal2-link{
+        margin: 0px 5px;
+    }
+    .modal2-btn{
+        color: #232164;
+        background-color: #2321644F;
+        font-size: 11px;
+        font-weight: 500;
+        padding: 7px 20px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+    }
+
+}
