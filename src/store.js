@@ -5,6 +5,7 @@ import customerTransactionReducer from "./reducers/customerTransactionsReducer";
 import miscReducer from "./reducers/miscReducers";
 import notificationReducer from "./reducers/notificationReducer";
 import ratingReducer from "./reducers/ratingReducer";
+import registerReducer from "./reducers/registerReducer";
 import settingsReducer from "./reducers/settingsReducer";
 import userReducer from "./reducers/userReducer";
 import vendorTransactionReducer from "./reducers/vendorTransactionReducer";
@@ -23,6 +24,7 @@ const store = configureStore({
         admin: adminReducer.reducer,
         rating: ratingReducer.reducer,
         notification: notificationReducer.reducer,
+        register: registerReducer.reducer,
 }
 });
 

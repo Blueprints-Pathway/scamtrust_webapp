@@ -1,6 +1,6 @@
 import React from 'react'
 import Activate from '../../../../components/sign-up/activate/Activate'
-import SignupLayout from '../../../../components/sign-up/signuplayout/SignupLayout'
+// import SignupLayout from '../../../../components/sign-up/signuplayout/SignupLayout'
 import Vendormessage from '../../../../components/sign-up/vendormessage/VendorMessage'
 import './VendorActivate.css'
 

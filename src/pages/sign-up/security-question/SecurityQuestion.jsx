@@ -1,21 +1,24 @@
-import React, { useEffect } from 'react'
-import SignupLayout from '../../../../components/sign-up/signuplayout/SignupLayout'
-import './VendorSecurity.css'
+import React from 'react'
+import SignupLayout from '../../../components/sign-up/signuplayout/SignupLayout'
+import './SecurityQuestion.css'
 import { Form, Button, Input, Select} from 'antd';
 import { HiCreditCard } from 'react-icons/hi'
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { listSecurityQuestion } from '../../../../actions/miscActions';
-import miscReducer, { miscActions } from '../../../../reducers/miscReducers';
+import { listSecurityQuestion } from '../../../actions/miscActions';
+
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { setSecurityQuestion } from '../../../actions/authActions';
 
 const VendorSecurity = () => {
 
     const { Option } = Select;
     const {loading, error, data} = useSelector(state => state.misc)
+    const auth = useSelector(state => state.auth)
     let questions = [];
     const navigate = useNavigate();
     const dispatch = useDispatch();
-
     useEffect(() => {
       dispatch(listSecurityQuestion());
     },[dispatch])
@@ -24,6 +27,17 @@ const VendorSecurity = () => {
      questions = data.data.data; 
     }
 
+    const finish = (e) => {
+      console.log(e);
+    //  let i =  questions.findIndex(element => element.question == e.question);
+     
+    //   dispatch(setSecurityQuestion({
+    //     question_id: i,
+    //     answer: e.answer
+    //   }));
+    navigate('/vendor-activate-account')
+    }
+    
   return (
     <SignupLayout>
         <div className='ven-security-wrapper'>
@@ -37,15 +51,17 @@ const VendorSecurity = () => {
                 </p>
             </div>
             <div className='ven-security-bottom'>
-                <Form layout="vertical" autoComplete="off">
+                <Form onFinish={finish} layout="vertical" autoComplete="off">
+
 
                   <Form.Item
                        className='ven-sec-input-con'
-                       name="gender"
+                       required
+                       name="question"
                        label={<label className='ven-sec-label'>Security Question</label>}
                        rules={[
                          {
-                             //    required: true,
+                                 required: true,
                              message: 'Choose a security question',
                             },
                        ]}
@@ -62,13 +78,13 @@ const VendorSecurity = () => {
                   </Form.Item>
 
                   <Form.Item  className='ven-sec-input-con'
-                        name="name"
+                        name="answer"
                          label={<label className='ven-sec-label'>Your Answer</label>}>
-                      <Input className='ven-sec-input' />
+                      <Input required className='ven-sec-input' />
                   </Form.Item>
 
-                  <Button onClick={()=>{navigate('/vendor-activate-account')}}
-                    className='ven-sec-btn'>Continue
+                  <Button
+                    className='ven-sec-btn' htmlType='submit'>Continue
                   </Button>
 
                 </Form>

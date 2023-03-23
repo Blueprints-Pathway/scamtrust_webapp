@@ -34,9 +34,25 @@ const VendorRegistration = () => {
                </div>
                <Form onFinish={submitFormHandler}  onFinishFailed = {onFinishFailed}  layout="vertical" autoComplete="off">
 
+                <Form className='ven-sign-up-form-wrapper' 
+                layout="vertical" 
+                initialValues={{
+                  remember: true,
+                }}
+                onFinish={submitFormHandler}
+                onFinishFailed={onFinishFailed}
+                autoComplete="off"
+                >
                <div className='ven-signup-form'>
                 <div className='vendor-form-left'>
-                 
+                  <div layout="vertical" 
+                  autoComplete="off"
+                  initialValues={{
+                    remember: true,
+                  }}
+                  onFinish={submitFormHandler}
+                  onFinishFailed={onFinishFailed}
+                  >
                       <Form.Item name="Business Name" label="Business Name" rules={[
                          {
                            required: true,
@@ -49,7 +65,7 @@ const VendorRegistration = () => {
                       </Form.Item>
                       <Form.Item name="Phone Number" label="Phone Number"   rules={[
                          {
-                            required: true,
+                           required: true,
                            message: 'Please Phone Number!',
                          }, 
                          {
@@ -67,11 +83,19 @@ const VendorRegistration = () => {
                          ]}>
                         <Input className='ven-signup-input' />
                       </Form.Item>
-                 
+                  </div>
                   </div>
 
                 <div className='vendor-form-right'>
-                  
+                  <div layout="vertical"
+                  name="basic" 
+                  autoComplete="off"
+                  initialValues={{
+                    remember: true,
+                  }}
+                  onFinish={submitFormHandler}
+                  onFinishFailed={onFinishFailed}
+                  >
                       <Form.Item name="Email Address " label="Email Address"  rules={[
                          {
                            required: true,
@@ -82,7 +106,7 @@ const VendorRegistration = () => {
                       <Form.Item name="Business Industry" label="Business Industry"  hasFeedback
                              rules={[
                                {
-                                  required: true,
+                                 required: true,
                                  message: 'Please select your Business Industry!',
                                },
                              ]}
@@ -95,7 +119,7 @@ const VendorRegistration = () => {
                       <Form.Item name="Business Type" label="Business Type"  hasFeedback
                              rules={[
                                {
-                                  required: true,
+                                 required: true,
                                  message: 'Please select your Select Business Type!',
                                },
                              ]}
@@ -105,18 +129,30 @@ const VendorRegistration = () => {
                              <Option value="Restaurant">Restaurant</Option>
                            </Select>
                       </Form.Item>
-                 
+                  </div>
                   </div>
                </div>
-                     
-                     <Form.Item name="check" valuePropName="checked">
-                     <Checkbox  className="ven-signup-checkbox" >
+                   <Form.Item
+                   name="remember"
+                   valuePropName="checked"
+                   rules={[
+                    {
+                      required: true,
+                      message: 'Please check the box!',
+                    },
+                  ]}
+                   >
+                     <Checkbox value="A" className="ven-signup-checkbox">
                         I agree to <span style={{color: '#01306B'}}>ScamTrust’s</span> Terms of Service and Privacy Policy
                      </Checkbox>
-        </Form.Item>
+                   </Form.Item>
+                     <Button  
+                     onClick={()=>{navigate('/verify-bvn')}}
+                     className='ven-signup-btn' htmlType="submit">Proceed to verify BVN
+                     </Button>
 
-                     <Button
-                     className='ven-signup-btn'  htmlType="submit">Proceed to verify BVN</Button>
+               </Form>
+
 
                </Form>
                </div>
