@@ -1,4 +1,4 @@
-jlimport { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Layout from "../../components/Layout/Layout";
 import ReactPaginate from "react-paginate";
 import axios from "axios";
