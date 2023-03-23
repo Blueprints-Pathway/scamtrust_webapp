@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import "./password.css";
-import Logo from "../images/ScanTrust logo.svg";
+// import Logo from "../../assets/images/ScanTrust logo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import axios from "axios";
@@ -38,7 +38,7 @@ function PasswordEmail() {
 	return (
 		<div className="container-fluid ">
 			<div className="m-5">
-				<img className="px-5" alt="logo" src={Logo} />
+				<img className="px-5" alt="logo" src={"Logo"} />
 			</div>
 			<div
 				className="mx-auto box-border  top-10 md:top-40 lg:top-40 sm:w-full lg:w-5/12   md:6/12  card p-4 border-2 mt-5 left-30 

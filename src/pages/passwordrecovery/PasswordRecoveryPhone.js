@@ -1,7 +1,12 @@
 import React, { useState } from "react"
 import mail from "../../assets/images/mail.png"
 import footer from "../../assets/images/footerLogo.png"
-function PasswordRecovery() {
+import { useNavigate } from "react-router-dom"
+function PasswordRecoveryPhone() {
+  const navigate = useNavigate()
+  const handleClick=()=>{
+    navigate("/passwordrecovery")
+  }
   const [isLogin, setIsLogin] = useState(true)
   const [otp, setOtp] = useState({
     digitOne: "",
@@ -42,11 +47,11 @@ function PasswordRecovery() {
                 Password Recovery
               </h2>
               <p className='font-normal text-[12px] text-black font-poppins mb-5 text-center px-3 sm:px-0'>
-                Please enter your Email Address to receive verification code
+              Please enter your Phone number to receive verification code
               </p>
               <div>
                 <h5 className='text-black text-[12px] font-poppins mb-1'>
-                  Email Address{" "}
+                Phone Number 
                 </h5>
                 <div className='w-[300px] h-[36px] border-[1px] p-1 border-[#D5D8DA] rounded-[5px]'>
                   <input
@@ -57,6 +62,7 @@ function PasswordRecovery() {
 
                 <div>
                   <button
+                  onClick={handleClick}
                     className='mb-3'
                     style={{
                       border: "none",
@@ -66,7 +72,7 @@ function PasswordRecovery() {
                       fontSize: "10px",
                     }}
                   >
-                    Use Phone number
+                    Use email address
                   </button>
                 </div>
 
@@ -93,17 +99,17 @@ function PasswordRecovery() {
                 Password Recovery
               </h2>
               <div>
-                <img className='w-[100px]' src={mail} alt='' />
+              <img className="sm:w-[100px] w-[50px]" src={mail} alt="" />
               </div>
-              <p className='font-semibold text-[12px] text-black font-poppins mb-5'>
-                Please enter the 6 digit code sent to folaade@gmail
+              <p className='font-semibold text-[12px] text-black font-poppins mb-2'>
+              Please enter the 6 d9igit code sent to 081xxxxxx
               </p>
               <div>
                 <h5 className='text-black text-[12px] font-poppins mb-1'>
                   Enter code
                 </h5>
                 <form>
-                  <div className='flex justify-between w-[220px] mb-4'>
+                  <div className='flex justify-between w-[220px] mb-2'>
                     {Object.keys(otp).map((keys, index) => {
                       return renderInput(keys)
                     })}
@@ -117,9 +123,10 @@ function PasswordRecovery() {
                   Continue
                 </button>
 
-                <div className="flex items-center gap-1 pb-10 sm:pb-0">
+                <div className="flex justify-center items-center w-[220px] mt-4 gap-1 pb-8 sm:pb-0">
                   <h6 className="text-primary text-[12px]">Secured byy </h6>
-                  <img src={footer} alt="" />
+                  <img className="w-[60px]" src={footer} alt="" />
+             
                 </div>
               </div>
             </div>
@@ -130,4 +137,4 @@ function PasswordRecovery() {
   )
 }
 
-export default PasswordRecovery
+export default PasswordRecoveryPhone

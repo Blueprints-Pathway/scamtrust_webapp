@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react"
 import { Routes, Route } from "react-router-dom"
 import AppLayout from "./components/layout/AppLayout"
@@ -20,8 +21,26 @@ import PasswordRecovery from './pages/password-recovery/PasswordRecovery'
 import SignupModal from './components/sign-up-modal/SignupModal'
 import CustomerRegistration from './pages/sign-up/customer-sign-up/customer-registration/CustomerRegistration'
 import CustomerActivate from './pages/sign-up/customer-sign-up/customer-activate-account/CustomerActivate'
+=======
+/** @format */
+>>>>>>> origin/password_recovery_updated
 
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import AppLayout from "./components/layout/AppLayout";
+import About from "./pages/home/src/components/About/About";
+import Faq from "./pages/home/src/components/Faq/Faq";
+import KnowMore from "./pages/home/src/components/knowMore/KnowMore";
+import HomePage from "./pages/home/src/HomePage";
+import VendorDashboard from "./pages/dashboards/VendorDashboard/VendorDashboard";
+import Sidebar from "./components/sidebar/Sidebar";
+import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmail";
+import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone";
+import EmailToken from "./pages/passwordrecovery/EmailToken";
+import Confirms from "./pages/passwordrecovery/Confirms";
+import Sucess from "./pages/passwordrecovery/Sucess";
 const App = () => {
+<<<<<<< HEAD
   return (
 			
 <Routes>
@@ -48,5 +67,27 @@ const App = () => {
 	</Routes>
   )
 }
+=======
+	return (
+		<Routes>
+			{/* SCAMTRUST LANDING PAGE ROUTE */}
+			<Route path="/" element={<HomePage />} />
+			<Route path="/faq" element={<Faq />} />
+			<Route path="/about" element={<About />} />
+			<Route path="/know-more" element={<KnowMore />} />
 
-export default App
+			{/* SCAMTRUST WEBAPP */}
+
+			<Route path="/layout" element={<AppLayout />} />
+			<Route path="passwordrecovery" element={<PasswordRecoveryEmail />} />
+			<Route path="tokenemail" element={<EmailToken />} />
+			<Route path="passwordrecoveryphone" element={<PasswordRecoveryPhone />} />
+			<Route path="/vendordashboard" element={<VendorDashboard />} />
+			<Route path="/passwordsucess" element={<Sucess />} />
+			<Route path="/confirmpassword" element={<Confirms />} />
+		</Routes>
+	);
+};
+>>>>>>> origin/password_recovery_updated
+
+export default App;
