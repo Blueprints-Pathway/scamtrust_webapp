@@ -19,6 +19,7 @@ import { useNavigate } from 'react-router-dom';
 import { getCustomerCancelledTransactions, getCustomerCompletedTransactions, getCustomerOngoingTransactions, getCustomerTransactions } from '../../actions/customerTransactionActions';
 import { listNotifications } from '../../actions/notificationActions';
 import { vendorSearch } from '../../actions/miscActions';
+import Notification from './notification/Notification';
 const { Header, Content, Sider } = Layout;
 
 
@@ -91,16 +92,6 @@ const AppLayout = () => {
         <div className="logo" />
         <Menu
         className='sider'
-          // theme="dark"
-          // mode="inline"
-          // defaultSelectedKeys={['4']}
-          //   items={[UserOutlined, VideoCameraOutlined, UploadOutlined, UserOutlined].map(
-          //     (icon, index) => ({
-            //       key: String(index + 1),
-            //       icon: React.createElement(icon),
-            //       label: `nav ${index + 1}`,
-            //     }),
-            //   )}
         >
           <div className='sider-logo-con'>
             <img className='sider-logo' src={scamTrustLogo} alt="" />
@@ -151,11 +142,12 @@ const AppLayout = () => {
 
                   {/* NOTIFICATION */}
           <div className='header-div-3'>
-              <Badge count={notification.unreadNotifications.length} overflowCount={99}>
+              {/* <Badge count={notification.unreadNotifications.length} overflowCount={99}>
                     <div>
                      <MdNotificationsNone className='header-notification-icon' style={{ fill: '#232164' }} />
                     </div>
-             </Badge>
+             </Badge> */}
+             <Notification />
           </div>
 
                      {/* INITIALS */}
