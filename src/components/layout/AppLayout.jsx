@@ -1,5 +1,5 @@
-import { Form, Layout, Menu, theme, Badge, Avatar} from 'antd';
-import React from 'react';
+import { Form, Layout, Menu, theme, Badge, Avatar, Spin} from 'antd';
+import React, { useEffect } from 'react';
 import './AppLayout.css'
 import { VscArrowSwap } from 'react-icons/vsc'
 import { SlSettings } from 'react-icons/sl'
@@ -11,18 +11,75 @@ import { MdNotificationsNone } from 'react-icons/md'
 import search from '../../assets/images/search.png'
 import scamTrustLogo from '../../assets/images/scamTrustLogo.png'
 import CustomerDashboard from '../../pages/dashboards/CustomerDashboard/CustomerDashboard';
-
+import { getLoggedInUserDetails } from '../../actions/userActions';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { logoutUser } from '../../actions/authActions';
+import { useNavigate } from 'react-router-dom';
+import { getCustomerCancelledTransactions, getCustomerCompletedTransactions, getCustomerOngoingTransactions, getCustomerTransactions } from '../../actions/customerTransactionActions';
+import { listNotifications } from '../../actions/notificationActions';
+import { vendorSearch } from '../../actions/miscActions';
 const { Header, Content, Sider } = Layout;
 
+
+
+
+
 const AppLayout = () => {
+
+  const {loading, error, data} = useSelector(state => state.user);
+  const notification = useSelector(state => state.notification);
+
+  const auth = useSelector(state => state.auth)
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  console.log('get user details' + loading + data + error)
+  useEffect(()=>{
+    // if(!auth.isAuthenticated){
+    //   navigate('/')
+    //   return;
+    // }
+    dispatch(getLoggedInUserDetails());
+    dispatch(getCustomerTransactions());
+    dispatch(getCustomerOngoingTransactions());
+    dispatch(getCustomerCancelledTransactions());
+    dispatch(getCustomerCompletedTransactions());
+    dispatch(listNotifications());
+    
+  },[dispatch])
   // const {
   //   token: { colorBgContainer },
   // } = theme.useToken();
+  console.log(data);
+  const nameOf = loading ? 'hi' : data?.data.name || data?.data.username;
+	const first = nameOf?.at(0);
+	const last = nameOf?.match(/\b(\w)/g).at(1);
+
+  const logoutUserHandler = () => {
+    dispatch(logoutUser());
+    console.log('logout')
+    navigate('/sign-in')
+  }
+
+  const searchInputChangeHandler = (e) => {
+    console.log(e.target.value)
+    dispatch(vendorSearch({
+      search: e.target.value
+    }))
+  }
   return (
-    <Layout className='wrapper'>
+    <Layout  className='wrapper'>
+      { loading ? 
+      <Spin
+       spinning
+       size='large'
+
+      />:
+        <React.Fragment>
+
       <Sider
       style={{backgroundColor: "#232164", zIndex: '30'}}
-        breakpoint="lg"
+      breakpoint="lg"
         collapsedWidth="0"
         onBreakpoint={(broken) => {
           console.log(broken);
@@ -39,11 +96,11 @@ const AppLayout = () => {
           // defaultSelectedKeys={['4']}
           //   items={[UserOutlined, VideoCameraOutlined, UploadOutlined, UserOutlined].map(
           //     (icon, index) => ({
-          //       key: String(index + 1),
-          //       icon: React.createElement(icon),
-          //       label: `nav ${index + 1}`,
-          //     }),
-          //   )}
+            //       key: String(index + 1),
+            //       icon: React.createElement(icon),
+            //       label: `nav ${index + 1}`,
+            //     }),
+            //   )}
         >
           <div className='sider-logo-con'>
             <img className='sider-logo' src={scamTrustLogo} alt="" />
@@ -71,8 +128,8 @@ const AppLayout = () => {
             <div className='side-tab-con'>
               <BiSupport style={{color: '#ffff'}} /><span className='side-tabs'>SUPPORT</span>
             </div>
-            <div className='side-tab-con'>
-              <IoLogOutOutline style={{color: '#ffff'}} /><span className='side-tabs'>LOGOUT</span>
+            <div className='side-tab-con' onClick={logoutUserHandler}>
+              <IoLogOutOutline  style={{color: '#ffff'}} /><span className='side-tabs'>LOGOUT</span>
             </div>
           </div>
 
@@ -89,12 +146,12 @@ const AppLayout = () => {
               {/* SEARCH INPUT  */}
           <div className='header-div-2'>
             <div className='header-input-icon'> <img className='input-icon-img' src={search} alt="..." /> </div>
-            <input className='header-input' type="text" placeholder='Search vendor’s name' />
+            <input onChange={searchInputChangeHandler} className='header-input' type="text" placeholder='Search vendor’s name' />
           </div>
 
                   {/* NOTIFICATION */}
           <div className='header-div-3'>
-              <Badge count={7} overflowCount={99}>
+              <Badge count={notification.unreadNotifications.length} overflowCount={99}>
                     <div>
                      <MdNotificationsNone className='header-notification-icon' style={{ fill: '#232164' }} />
                     </div>
@@ -104,7 +161,7 @@ const AppLayout = () => {
                      {/* INITIALS */}
            <div>
              <Avatar className='header-avatar'>
-              <p className='header-initials'>CO</p>
+              <p className='header-initials'>{first} {last}</p>
              </Avatar>
           </div>        
        </div>
@@ -117,6 +174,7 @@ const AppLayout = () => {
 
         
       </Layout>
+            </React.Fragment>}
     </Layout>
   );
 };

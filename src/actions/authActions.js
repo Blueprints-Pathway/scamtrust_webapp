@@ -5,7 +5,7 @@ const baseUrl = "https://scamtrust.herokuapp.com/api/v1";
 
 export const registerUser = (data) => async (dispatch) => {
     try{
-        dispatch(authActions.userRegistrationRequest);
+        dispatch(authActions.userRegistrationRequest());
         const config = {
             headers: {
               "Content-Type": "application/json",
@@ -13,21 +13,22 @@ export const registerUser = (data) => async (dispatch) => {
           };
         
         const response = await axios.post(`${baseUrl}/auth/register`, data, config);
+        console.log(response)
         if(response.status){
-            dispatch(authActions.userRegistrationSuccess({
-                message: response.message,
-                data: response.data,
-            }));
+            dispatch(authActions.userRegistrationSuccess(
+                response.data.data
+            ));
+            localStorage.setItem('USER_TOKEN', response.data.data.access_token);
         }else{
             dispatch(authActions.userRegistrationFailure( 
-                response.message
+                response.data.message
             ));
         }
 
       
     }catch(error){
         dispatch(authActions.userRegistrationFailure(
-            error
+            error.response.data.message || 'Login Unsuccessful'
         ));
     }
 }
@@ -204,31 +205,33 @@ export const resetPassword = (data) => async (dispatch) => {
     }
 }
 
-export const setPin = (pin) => async (dispatch) => {
+export const setPin = (data) => async (dispatch) => {
     try{
-        dispatch(authActions.setPinRequest);
+        dispatch(authActions.setPinRequest());
+ const USER_TOKEN = localStorage.getItem('USER_TOKEN');
         const config = {
             headers: {
               "Content-Type": "application/json",
+              Authorization: `Bearer ${USER_TOKEN}`
             },
           };
         
-        const response = await axios.post(`${baseUrl}/auth/set-pin`, {pin}, config);
+        const response = await axios.post(`${baseUrl}/auth/set-pin`, data, config);
+        console.log(response)
         if(response.status){
-            dispatch(authActions.setPinSuccess({
-                message: response.message,
-                data: response.data,
-            }));
+            dispatch(authActions.setPinSuccess(response.data.message));
         }else{
             dispatch(authActions.setPinFailure( 
-                response.message
+                // response.message
+                'Could not Set Pin!'
             ));
         }
 
       
         }catch(error){
         dispatch(authActions.setPinFailure(
-            error
+            // error.response.data.message
+            'Could not Set Pin!'
         ));
     }
 }
@@ -264,10 +267,12 @@ export const verifyPin = (pin) => async (dispatch) => {
 
 export const setSecurityQuestion = (data) => async (dispatch) => {
     try{
-        dispatch(authActions.setSecurityQuestionRequest );
+        dispatch(authActions.setSecurityQuestionRequest() );
+        const USER_TOKEN = localStorage.getItem('USER_TOKEN');
         const config = {
             headers: {
               "Content-Type": "application/json",
+              Authorization: `Bearer ${USER_TOKEN}`
             },
           };
         
@@ -293,7 +298,8 @@ export const setSecurityQuestion = (data) => async (dispatch) => {
 
 export const login = (data) => async (dispatch) => {
     try{
-        dispatch(authActions.loginRequest );
+        dispatch(authActions.loginRequest());
+        
         const config = {
             headers: {
               "Content-Type": "application/json",
@@ -301,21 +307,26 @@ export const login = (data) => async (dispatch) => {
           };
         
         const response = await axios.post(`${baseUrl}/auth/login`, data, config);
-        if(response.status){
-            dispatch(authActions.loginSuccess({
-               data: response.data,
-            }));
-            localStorage.setItem('USER_TOKEN', response.data.access_token);
+        if(response.data.status){
+            dispatch(authActions.loginSuccess(
+               response.data.data,
+            ));
+            console.log(response.data);
+           localStorage.setItem('USER_TOKEN', response.data.data.access_token);
         }else{
             dispatch(authActions.loginFailure( 
-                response.message
+                response.data.message
             ));
         }
 
       
         }catch(error){
         dispatch(authActions.loginFailure(
-            error
+            error.response.data.message || 'Login Unsuccessful'
         ));
     }
+}
+
+export const  logoutUser = ()  =>  (dispatch) =>  {
+dispatch(authActions.logoutUser())
 }

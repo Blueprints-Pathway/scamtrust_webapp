@@ -4,6 +4,7 @@ import CustomerProfileCard from '../../../components/customerdashboard/CustomerP
 import FaqandChat from '../../../components/customerdashboard/Faq&Chat/FaqandChat'
 import FeeCalculator from '../../../components/customerdashboard/FeeCalculator/FeeCalculator'
 import FooterLogo from '../../../components/FooterLogo/FooterLogo'
+// import FooterLogo from '../../../components/logo/FooterLogo/FooterLogo'
 import './CustomerDashboard.css'
 
 const CustomerDashboard = () => {

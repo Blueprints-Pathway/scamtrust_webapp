@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  loading: false,
+  loading: true,
   error: null,
   completedTransactions: [],
   ongoingTransactions: [],
@@ -18,79 +18,79 @@ const customerTransactionReducer = createSlice({
     createTransactionRequest(state) {
       state.loading = true;
     },
-    createTransactionSuccess(state, payload) {
+    createTransactionSuccess(state, action) {
       state.loading = false;
-      state.data = payload;
+      state.data = action.payload;
     },
-    createTransactionFailure(state, payload) {
+    createTransactionFailure(state, action) {
       state.loading = false;
-      state.error = payload;
+      state.error = action.payload;
     },
     viewTransactionRequest(state) {
         state.loading = true;
       },
-      viewTransactionSuccess(state, payload) {
+      viewTransactionSuccess(state, action) {
         state.loading = false;
-        state.transactionDetail = payload;
+        state.transactionDetail = action.payload;
       },
-      viewTransactionFailure(state, payload) {
+      viewTransactionFailure(state, action) {
         state.loading = false;
-        state.error = payload;
+        state.error = action.payload;
       },
       customerTransactionsRequest(state) {
         state.loading = true;
       },
-      customerTransactionsSuccess(state, payload) {
+      customerTransactionsSuccess(state, action) {
         state.loading = false;
-        state.allTransactions = payload;
+        state.allTransactions = action.payload;
       },
-      customerTransactionsFailure(state, payload) {
+      customerTransactionsFailure(state, action) {
         state.loading = false;
-        state.error = payload;
+        state.error = action.payload;
       },
       customerOngoingTransactionsRequest(state) {
         state.loading = true;
       },
-      customerOngoingTransactionsSuccess(state, payload) {
+      customerOngoingTransactionsSuccess(state, action) {
         state.loading = false;
-        state.ongoingTransactions = payload;
+        state.ongoingTransactions = action.payload;
       },
-      customerOngoingTransactionsFailure(state, payload) {
+      customerOngoingTransactionsFailure(state, action) {
         state.loading = false;
-        state.error = payload;
+        state.error = action.payload;
       },
       customerCompletedTransactionsRequest(state) {
         state.loading = true;
       },
-      customerCompletedTransactionsSuccess(state, payload) {
+      customerCompletedTransactionsSuccess(state, action) {
         state.loading = false;
-        state.completedTransactions = payload;
+        state.completedTransactions = action.payload;
       },
-      customerCompletedTransactionsFailure(state, payload) {
+      customerCompletedTransactionsFailure(state, action) {
         state.loading = false;
-        state.error = payload;
+        state.error = action.payload;
       },
       customerCancelledTransactionRequest(state) {
         state.loading = true;
       },
-      customerCancelledTransactionSuccess(state, payload) {
+      customerCancelledTransactionSuccess(state, action) {
         state.loading = false;
-        state.cancelledTransactions = payload;
+        state.cancelledTransactions = action.payload;
       },
-      customerCancelledTransactionFailure(state, payload) {
+      customerCancelledTransactionFailure(state, action) {
         state.loading = false;
-        state.error = payload;
+        state.error = action.payload;
       },
       customerAcceptTransactionRequest(state) {
         state.loading = true;
       },
-      customerAcceptTransactionSuccess(state, payload) {
+      customerAcceptTransactionSuccess(state, action) {
         state.loading = false;
-        state.data = payload;
+        state.data = action.payload;
       },
-      customerAcceptTransactionFailure(state, payload) {
+      customerAcceptTransactionFailure(state, action) {
         state.loading = false;
-        state.error = payload;
+        state.error = action.payload;
       },
   },
 });
