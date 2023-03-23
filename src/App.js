@@ -1,6 +1,6 @@
 import React from "react"
 import { Routes, Route } from "react-router-dom"
-import AppLayout from "./components/layout/AppLayout"
+import AppLayout from "./components/Layout/AppLayout"
 import About from "./pages/home/src/components/About/About"
 import Faq from "./pages/home/src/components/Faq/Faq"
 import KnowMore from "./pages/home/src/components/knowMore/KnowMore"
@@ -39,6 +39,7 @@ const App = () => {
 		<Route path='/vendor-transaction-pin' element={<VendorTransactionPin />} />
 		<Route path='/vendor-security-question' element={<VendorSecurity />} />
 		<Route path='/vendor-activate-account' element={<VendorActivate />} />
+
 	</Routes>
   )
 }
