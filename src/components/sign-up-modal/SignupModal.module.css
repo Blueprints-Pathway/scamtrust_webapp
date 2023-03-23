@@ -1,0 +1,13 @@
+.modal-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 5px solid #0000;
+    width: 50vw;
+}
+.modal-div1{
+    border: 2px solid red;
+}
+.modal-div2{
+    border: 2px solid blue;
+}

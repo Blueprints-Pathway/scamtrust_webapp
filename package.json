@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/colors": "^7.0.0",
     "@ant-design/cssinjs": "^1.6.1",
     "@ant-design/icons": "^5.0.1",
     "@emotion/react": "^11.10.6",
@@ -38,9 +39,11 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.34.0",
     "react-icons": "^4.8.0",
+    "react-input-pin-code": "^1.2.0",
     "react-loader-spinner": "^5.3.4",
     "react-modal": "^3.16.1",
     "react-paginate": "^8.1.3",
+    "react-pin-input": "^1.3.1",
     "react-rating-stars-component": "^2.2.0",
     "react-redux": "^8.0.2",
     "react-responsive": "^9.0.0-beta.10",
@@ -48,7 +51,7 @@
     "react-simple-star-rating": "^4.1.1",
     "react-tabs": "^6.0.0",
     "react-use-clipboard": "^1.0.9",
-    "styled-components": "^5.3.6",
+    "styled-components": "^5.3.9",
     "sweetalert": "^2.1.2",
     "tw-elements": "^1.0.0-alpha13",
     "web-vitals": "^2.1.4"
