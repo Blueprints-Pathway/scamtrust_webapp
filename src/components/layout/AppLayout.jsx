@@ -1,4 +1,4 @@
-import { Form, Layout, Menu, theme, Badge, Avatar, Spin} from 'antd';
+import { Layout, Menu, Avatar, Spin} from 'antd';
 import React, { useEffect } from 'react';
 import './AppLayout.css'
 import { VscArrowSwap } from 'react-icons/vsc'
@@ -7,7 +7,6 @@ import { CiWallet } from 'react-icons/ci'
 import { VscHome} from 'react-icons/vsc'
 import { BiSupport} from 'react-icons/bi'
 import { IoLogOutOutline } from 'react-icons/io5'
-import { MdNotificationsNone } from 'react-icons/md'
 import search from '../../assets/images/search.png'
 import scamTrustLogo from '../../assets/images/scamTrustLogo.png'
 import CustomerDashboard from '../../pages/dashboards/CustomerDashboard/CustomerDashboard';
@@ -142,11 +141,6 @@ const AppLayout = () => {
 
                   {/* NOTIFICATION */}
           <div className='header-div-3'>
-              {/* <Badge count={notification.unreadNotifications.length} overflowCount={99}>
-                    <div>
-                     <MdNotificationsNone className='header-notification-icon' style={{ fill: '#232164' }} />
-                    </div>
-             </Badge> */}
              <Notification />
           </div>
 

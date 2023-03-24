@@ -2,7 +2,7 @@ import React from 'react'
 import classes from './Notification.module.css'
 import { MdNotificationsNone } from 'react-icons/md'
 import { Badge } from 'antd';
-import { Dropdown, Space } from 'antd';
+import { Dropdown } from 'antd';
 import { GoPrimitiveDot } from 'react-icons/go'
 import { IoCheckmarkCircleSharp } from 'react-icons/io5'
 import { CiMail, CiLock } from 'react-icons/ci'

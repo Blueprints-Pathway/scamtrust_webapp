@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Vendormessage from '../../components/sign-up/vendormessage/VendorMessage'
 import './Signin.css'
 import { Button, Checkbox, Form, Input } from 'antd';
@@ -8,9 +8,45 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../actions/authActions';
+import Modal from 'react-modal';
+import wave from '../../assets/images/wave.png'
+import frame from '../../assets/images/frame.png'
+
+const customStyles = {
+  // overlay: {
+  //   backgroundColor: "black",
+  //   opacity: '0.8'
+  // },
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    border: 'none',
+    backgroundColor: 'white',
+    // backgroundColor: "black",
+    // opacity: '0.8',
+    padding: '0px',
+  },
+};
 
 const Signin = () => {
+  const [modalIsOpen, setIsOpen] = useState(false);
+  
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+
+
   const {loading, isAuthenticated, data, error} = useSelector(state => state.auth)
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -100,7 +136,8 @@ const Signin = () => {
                  {/* CHECKBOX */}
          <div className='sign-in-check-div'>
            <Checkbox className='sign-check-words'>Remember me</Checkbox>
-           <Link className='sign-check-words'>Forgot Password? </Link>
+           <p onClick={()=>{navigate('/password-recovery')}}
+            className='sign-check-words'>Forgot Password? </p>
          </div>
 
                 {/* SUBMIT BUTTON */}
@@ -115,10 +152,47 @@ const Signin = () => {
                    {/* CREATE ACCOUNT */}
         <div className='sign-create-account'>
           <i>Don’t have an account? 
-            <Link  className='sign-in-link' to={'/vendor-registration'} > Create</Link>
+            <i onClick={openModal}
+            className='sign-in-link'> Create</i>
             </i>
         </div>
       </div>
+      </div>
+                   {/* SIGN UP MODAL */}
+      <div>
+      <Modal
+        isOpen={modalIsOpen}
+        // onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+        overlay= "customOverlay"
+        modal= "customModal"
+      >
+        <div className='modal-div'>
+          <p className='modal-title'>Welcome to ScamTrust
+          <span><img className='modal-wave' src={wave} alt="" /></span></p>
+          <div className='modal-frame-con'>
+             <div className='modal-div-1'>
+               <img onClick={()=>{navigate('/vendor-registration')}}
+               className='modal-img-1' src={frame} alt="" />
+               <div className='modal-words-con-1'>
+                 <p className='modal-word-1'>Vendor</p>
+                 <p className='modal-word-2'>Get a risk-free payment for almost any product or service.</p>
+               </div>
+             </div>
+             <div className='modal-div-2'>
+               <img  onClick={()=>{navigate('/customer-registration')}}
+               className='modal-img-2' src={frame} alt="" />
+               <div className='modal-words-con-2'>
+                 <p className='modal-word-1'>Customer</p>
+                 <p className='modal-word-2'>Verify and enjoy transaction transparency before product delivery.</p>
+               </div>
+             </div>
+             </div>
+        </div>
+        
+      </Modal>
       </div>
     </div>
   )
