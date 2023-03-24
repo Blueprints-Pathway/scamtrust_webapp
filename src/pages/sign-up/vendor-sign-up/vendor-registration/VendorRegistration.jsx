@@ -4,20 +4,76 @@ import scamtrust from '../../../../assets/images/Logo.png'
 import { Button, Checkbox, Form, Input, Select} from 'antd';
 import Vendormessage from '../../../../components/sign-up/vendormessage/VendorMessage';
 import { useNavigate } from 'react-router-dom';
-
+import { listBusinessIndustry, listBusinessTypes } from '../../../../actions/miscActions';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { verifyEmailExist, verifyPhoneExist } from '../../../../actions/authActions';
+import { registerActions } from '../../../../reducers/registerReducer';
 const VendorRegistration = () => {
+  let businessTypes = [];
+  let businessIndustries = [];
 
+let errorText = null;
+let error = <p></p>;
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const misc = useSelector(state => state.misc)
+  const auth = useSelector(state => state.auth)
+
+  const [industryId, setIndustryId] = useState('');
+  const [businessTypeId, setBusinessTypeId] = useState('');
+  useEffect(() => {
+    dispatch(listBusinessIndustry());
+    dispatch(listBusinessTypes());
+  },[dispatch])
+  useEffect(() => {
+    if(auth.isEmailValid && auth.isPhoneValid){
+      navigate('/verify-bvn')
+    }
+  }, [auth.isEmailValid, auth.isPhoneValid])
+  if (!misc.businessIndustriesLoading && !misc.businessTypesLoading) {
+    console.log(misc.businessTypes.data); 
+    console.log(misc.businessIndustries.data)
+    businessTypes = misc.businessTypes.data;
+    businessIndustries = misc.businessIndustries.data;
+  //  questions = data.data.data; 
+  }
+
+
 
     const { Option } = Select;
 
     const submitFormHandler = (e) => {
-      console.log(e + 'hi');
-       navigate('/vendor-verify-bvn')
+      console.log(e.BusinessName, e.EmailAddress, e.PhoneNumber, e.BusinessIndustry, e.BusinessAddress, e.BusinessType  + 'hi');
+
+      dispatch(verifyEmailExist({email: e.EmailAddress}));
+      dispatch(verifyPhoneExist({phone: e.PhoneNumber}));
+
+      dispatch(registerActions.setName(e.BusinessName))
+      dispatch(registerActions.setEmail(e.EmailAddress))
+      dispatch(registerActions.setLocation('Lagos, Nigeria'))
+      dispatch(registerActions.setPhone(e.PhoneNumber))
+      dispatch(registerActions.setBusinessTypeId(businessTypeId))
+      dispatch(registerActions.setIndustry(industryId))
+     
+      dispatch(registerActions.setType('VENDOR'))
+      //  navigate('/vendor-verify-bvn')
     }
     const onFinishFailed = (errorInfo) => {
       console.log(errorInfo);
     }
+    if(!misc.phoneExistData && !misc.emailExistData){
+    console.log(auth.emailExistData, auth.phoneExistData)
+     errorText =  auth.emailExistData.message || auth.phoneExistData.message
+    
+    error = errorText && <p>{errorText}</p>
+    }
+     
+    
+
+
 
   return (
 
@@ -32,16 +88,15 @@ const VendorRegistration = () => {
                <div className='ven-signup-title'>
                Let’s get you started with your <span style={{color: '#3AB75D'}}> ScamTrust </span> <br /> Vendor account
                </div>
-               <Form onFinish={submitFormHandler}  onFinishFailed = {onFinishFailed}  layout="vertical" autoComplete="off">
+               
 
                 <Form className='ven-sign-up-form-wrapper' 
+                onFinish={submitFormHandler}  onFinishFailed = {onFinishFailed}
                 layout="vertical" 
                 initialValues={{
                   remember: true,
                 }}
-                onFinish={submitFormHandler}
-                onFinishFailed={onFinishFailed}
-                autoComplete="off"
+               
                 >
                <div className='ven-signup-form'>
                 <div className='vendor-form-left'>
@@ -53,7 +108,7 @@ const VendorRegistration = () => {
                   onFinish={submitFormHandler}
                   onFinishFailed={onFinishFailed}
                   >
-                      <Form.Item name="Business Name" label="Business Name" rules={[
+                      <Form.Item name="BusinessName" label="Business Name" rules={[
                          {
                            required: true,
                            message: 'Please input your Business Name!',
@@ -63,7 +118,7 @@ const VendorRegistration = () => {
                          ]}>
                        <Input className='ven-signup-input' />
                       </Form.Item>
-                      <Form.Item name="Phone Number" label="Phone Number"   rules={[
+                      <Form.Item name="PhoneNumber" label="Phone Number"   rules={[
                          {
                            required: true,
                            message: 'Please Phone Number!',
@@ -72,9 +127,9 @@ const VendorRegistration = () => {
                           len :11,
                           message: 'Please input a valid phone number'
                          } ]}>
-                        <Input className='ven-signup-input' />
+                        <Input className='ven-signup-input'  />
                       </Form.Item>
-                      <Form.Item name="Business Address" label="Business Address"   rules={[
+                      <Form.Item name="BusinessAddress" label="Business Address"   rules={[
                          {
                            required: true,
                            message: 'Business Address!',
@@ -96,14 +151,14 @@ const VendorRegistration = () => {
                   onFinish={submitFormHandler}
                   onFinishFailed={onFinishFailed}
                   >
-                      <Form.Item name="Email Address " label="Email Address"  rules={[
+                      <Form.Item name="EmailAddress" label="Email Address"  rules={[
                          {
                            required: true,
                            message: 'Email Address!',
                          },  ]}>
-                       <Input className='ven-signup-input' />
+                       <Input className='ven-signup-input'  />
                       </Form.Item>
-                      <Form.Item name="Business Industry" label="Business Industry"  hasFeedback
+                      <Form.Item name="BusinessIndustry" label="Business Industry"  hasFeedback
                              rules={[
                                {
                                  required: true,
@@ -111,12 +166,16 @@ const VendorRegistration = () => {
                                },
                              ]}
                            >
-                           <Select placeholder="Select Business Industry">
-                             <Option value="Fashion">Fashion</Option>
-                             <Option value="Restaurant">Restaurant</Option>
+                           <Select onSelect={(id) => setIndustryId(id)} placeholder="Select Business Industry">
+                           {
+                          businessIndustries.map((e, index) => {
+                            return  <Option key={e.id} value={`${e.id}`}>{e.name}</Option>
+                          })
+                        }
+                       
                            </Select>
                       </Form.Item>
-                      <Form.Item name="Business Type" label="Business Type"  hasFeedback
+                      <Form.Item name="BusinessType" label="Business Type"  hasFeedback
                              rules={[
                                {
                                  required: true,
@@ -124,9 +183,13 @@ const VendorRegistration = () => {
                                },
                              ]}
                            >
-                           <Select placeholder="Select Business Type">
-                             <Option value="Fashion">Fashion</Option>
-                             <Option value="Restaurant">Restaurant</Option>
+                           <Select onSelect={(id) => setBusinessTypeId(id)} placeholder="Select Business Type">
+                           {
+                          businessTypes.map((e, index) => {
+                            return  <Option  key={e.id}  value={`${e.id}`}>{e.name}</Option>
+                          })
+                        }
+                       
                            </Select>
                       </Form.Item>
                   </div>
@@ -134,6 +197,7 @@ const VendorRegistration = () => {
                </div>
                    <Form.Item
                    name="remember"
+                   required
                    valuePropName="checked"
                    rules={[
                     {
@@ -142,19 +206,20 @@ const VendorRegistration = () => {
                     },
                   ]}
                    >
-                     <Checkbox value="A" className="ven-signup-checkbox">
+                     <Checkbox  value="A" className="ven-signup-checkbox">
                         I agree to <span style={{color: '#01306B'}}>ScamTrust’s</span> Terms of Service and Privacy Policy
                      </Checkbox>
+                     {error}
                    </Form.Item>
                      <Button  
-                     onClick={()=>{navigate('/verify-bvn')}}
+                     loading = {auth.loading}
                      className='ven-signup-btn' htmlType="submit">Proceed to verify BVN
                      </Button>
 
                </Form>
 
 
-               </Form>
+            
                </div>
         </div>
 

@@ -379,3 +379,60 @@ export const vendorSearch = (data) => async (dispatch) => {
         ));
     }
 }
+
+export const listBusinessTypes= () => async (dispatch) => {
+    try{
+        dispatch(miscActions.listBusinessTypeRequest());
+        const config = {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${USER_TOKEN}`
+            },
+          };
+        
+        const response = await axios.get(`${BASE_URL}/misc/list/businesstypes`, config);
+        if(response.status){
+            dispatch(miscActions.listBusinessTypeSuccess(
+                response.data
+            ));
+        }else{
+            dispatch(miscActions.listBusinessTypeFailure( 
+                response.message
+            ));
+        }
+
+      
+    }catch(error){
+        dispatch(miscActions.listBusinessTypeFailure(
+            error
+        ));
+    }
+}
+export const listBusinessIndustry = () => async (dispatch) => {
+    try{
+        dispatch(miscActions.listIndustriesRequest());
+        const config = {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${USER_TOKEN}`
+            },
+          };
+        
+        const response = await axios.get(`${BASE_URL}/misc/list/industries`, config);
+        if(response.status){
+            dispatch(miscActions.listIndustriesSuccess(
+                response.data
+            ));
+        }else{
+            dispatch(miscActions.listIndustriesFailure( 
+                response.message
+            ));
+        }
+
+      
+    }catch(error){
+        dispatch(miscActions.listIndustriesFailure(
+            error
+        ));
+    }
+}

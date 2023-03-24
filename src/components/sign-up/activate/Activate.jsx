@@ -4,9 +4,11 @@ import logo from '../../../assets/images/Logo.png'
 import congrats from '../../../assets/images/congrats.png'
 import { Button } from 'antd'
 import { useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { logoutUser } from '../../../actions/authActions'
 
 const Activate = () => {
+    const dispatch = useDispatch();
     const userInfo = useSelector(state => state.register)
     const navigate = useNavigate();
     console.log(userInfo)
@@ -24,7 +26,9 @@ const Activate = () => {
                Congrats! We have sent a confirmation link to 
             <span style={{color: '#3AB75D', textDecoration: 'underline'}}> {userInfo.email}</span>. Kindly click to activate Your ScamTrust account
             </p>
-            <Button onClick={() => {navigate('/sign-in')}} className='activate-content-btn'>Check Mail</Button>
+            <Button onClick={() => {
+                dispatch(logoutUser())
+                navigate('/sign-in')}} className='activate-content-btn'>Check Mail</Button>
         </div>
     </div>
     </div>

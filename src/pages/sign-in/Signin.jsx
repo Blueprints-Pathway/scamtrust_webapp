@@ -11,6 +11,7 @@ import { login } from '../../actions/authActions';
 import Modal from 'react-modal';
 import wave from '../../assets/images/wave.png'
 import frame from '../../assets/images/frame.png'
+import { Analytics } from '@mui/icons-material';
 
 const customStyles = {
   // overlay: {
@@ -199,3 +200,4 @@ const Signin = () => {
 }
 
 export default Signin
+

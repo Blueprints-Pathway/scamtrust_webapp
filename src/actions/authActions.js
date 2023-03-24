@@ -89,25 +89,25 @@ export const verifyEmailToken = (token) => async (dispatch) => {
         ));
     }
 }
-export const verifyEmailExist = (email) => async (dispatch) => {
+export const verifyEmailExist = (data) => async (dispatch) => {
     try{
-        dispatch(authActions.verifyEmailExistRequest );
+        dispatch(authActions.verifyEmailExistRequest() );
         const config = {
             headers: {
               "Content-Type": "application/json",
             },
           };
         
-        const response = await axios.post(`${baseUrl}/auth/verify/email`, {email}, config);
-        if(response.status){
-            dispatch(authActions.verifyEmailExistSuccess({
-                message: response.message,
-                data: response.data,
-            }));
+        const response = await axios.post(`${baseUrl}/auth/verify/email`, data, config);
+        console.log(response);
+        console.log(response.data.status);
+        if(response.data.status){
+            dispatch(authActions.verifyEmailExistSuccess(response.data));
         }else{
             dispatch(authActions.verifyEmailExistFailure( 
-                response.message
+                response.data
             ));
+            console.log(response.data);
         }
 
       
@@ -118,24 +118,21 @@ export const verifyEmailExist = (email) => async (dispatch) => {
     }
 }
 
-export const verifyPhoneExist = (phone) => async (dispatch) => {
+export const verifyPhoneExist = (data) => async (dispatch) => {
     try{
-        dispatch(authActions.verifyPhoneExistRequest );
+        dispatch(authActions.verifyPhoneExistRequest ());
         const config = {
             headers: {
               "Content-Type": "application/json",
             },
           };
         
-        const response = await axios.post(`${baseUrl}/auth/verify/phone`, {phone}, config);
-        if(response.status){
-            dispatch(authActions.verifyPhoneExistSuccess({
-                message: response.message,
-                data: response.data,
-            }));
+        const response = await axios.post(`${baseUrl}/auth/verify/phone`, data, config);
+        if(response.data.status){
+            dispatch(authActions.verifyPhoneExistSuccess(response.data));
         }else{
             dispatch(authActions.verifyPhoneExistFailure( 
-                response.message
+                response.data
             ));
         }
 

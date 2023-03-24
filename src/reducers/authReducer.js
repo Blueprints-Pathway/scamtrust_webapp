@@ -7,6 +7,12 @@ const initialState = {
   error: false,
   isPinSet: false,
   isSecurityQuestionSet: false,
+  emailExistDataLoading: true,
+  phoneExistDataLoading: true,
+  emailExistData: false,
+  phoneExistData: false,
+  isEmailValid: false,
+  isPhoneValid: false,
 };
 const authReducer = createSlice({
   name: "auth",
@@ -51,26 +57,28 @@ const authReducer = createSlice({
        state.error = action.payload;
     },
     verifyEmailExistRequest(state) {
-      state.loading = true;
+      state.emailExistDataLoading = true;
     },
     verifyEmailExistSuccess(state, action) {
-      state.loading = false;
-      state.data = action.payload;
+      state.emailExistDataLoading = false;
+      state.emailExistData = false;
+      state.isEmailValid = true;
     },
     verifyEmailExistFailure(state, action) {
-      state.loading = false;
-       state.error = action.payload;
+      state.emailExistDataLoading = false;
+       state.emailExistData = action.payload;
     },
     verifyPhoneExistRequest(state) {
-      state.loading = true;
+      state.phoneExistDataLoading = true;
     },
     verifyPhoneExistSuccess(state, action) {
-      state.loading = false;
-      state.data = action.payload;
+      state.phoneExistDataLoading = false;
+      state.phoneExistData = false;
+      state.isPhoneValid = true;
     },
     verifyPhoneExistFailure(state, action) {
-      state.loading = false;
-       state.error = action.payload;
+      state.phoneExistDataLoading = false;
+       state.phoneExistData = action.payload;
     },
     resetPasswordLinkRequest(state) {
       state.loading = true;
@@ -149,6 +157,9 @@ const authReducer = createSlice({
     },
     logoutUser(state){
       state.isAuthenticated = false;
+      state.isEmailValid = false;
+      state.isPhoneValid = false;
+      console.log('logout')
     }
   },
 });

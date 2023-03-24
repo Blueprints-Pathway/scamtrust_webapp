@@ -4,6 +4,10 @@ const initialState = {
     loading: true,
     error: null,
     data: {}, 
+    businessTypesLoading: true,
+    businessIndustriesLoading: true,
+    businessTypes: [],
+    businessIndustries: [],
 }
 
 const miscReducer = createSlice({
@@ -77,25 +81,26 @@ const miscReducer = createSlice({
             state.error = action.payload;
           },
           listIndustriesRequest(state) {
-            state.loading = true;
+            state.businessIndustriesLoading = true;
           },
           listIndustriesSuccess(state, action) {
-            state.loading = false;
-            state.data = action.payload;
+            state.businessIndustriesLoading = false;
+            state.businessIndustries = action.payload;
           },
           listIndustriesFailure(state, action) {
-            state.loading = false;
+            state.businessIndustriesLoading = false;
             state.error = action.payload;
           },
           listBusinessTypeRequest(state) {
-            state.loading = true;
+            state.businessTypesLoading = true;
           },
           listBusinessTypeSuccess(state, action) {
-            state.loading = false;
-            state.data = action.payload;
+            state.businessTypesLoading = false;
+            state.businessTypes = action.payload;
+            console.log(state.businessTypes.data);
           },
           listBusinessTypeFailure(state, action) {
-            state.loading = false;
+            state.businessTypesLoading = false;
             state.error = action.payload;
           },
           getBanksRequest(state) {

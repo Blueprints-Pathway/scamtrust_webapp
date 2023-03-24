@@ -27,7 +27,7 @@ const VendorSetPassword = () => {
   
   console.log(loading, isAuthenticated, data, error)
   if(error){
-    errorT = error.email[0] || error.location[0] ||error.phone[0]|| error.type[0] || error.username[0] || '';
+    errorT = error.email[0] || error.location[0] ||error.phone[0]|| error.type[0] || error.username[0] || error.name[0] || '';
 
   }
   
@@ -37,14 +37,16 @@ const VendorSetPassword = () => {
     console.log('Success:', values);
     dispatch(registerActions.setPassword(values.password));
     dispatch(registerActions.setPasswordConfirmation(values.confirm_password));
-
-
-    dispatch(registerUser({
-      ...userInfo,
+   
       
-      password: values.password,
-      password_confirmation: values.confirm_password,
-    }))
+          dispatch(registerUser({
+            ...userInfo,
+            name: userInfo.username,
+            password: values.password,
+            password_confirmation: values.confirm_password,
+          }))
+
+    
    
     
 
