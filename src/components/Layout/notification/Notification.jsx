@@ -9,6 +9,7 @@ import { CiMail, CiLock } from 'react-icons/ci'
 
 
 const Notification = () => {
+
     const items = [
         {
           label: (
@@ -68,14 +69,12 @@ const Notification = () => {
 
   return (
     <div className={classes['wrapper']}>
-        {/* <div className={classes['dropdown']}> */}
         <Dropdown
           menu={{
             items,
           }}
           placement="topRight"
           trigger={['click']}
-        //   style={{width: "100px"}}
         >
         <div onClick={(e) => e.preventDefault()}
         className={classes['notifocatiion-con']}>
@@ -86,7 +85,6 @@ const Notification = () => {
            </Badge>
         </div>
         </Dropdown>
-        {/* </div> */}
     </div>
   )
 }
