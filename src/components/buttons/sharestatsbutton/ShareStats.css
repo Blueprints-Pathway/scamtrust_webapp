@@ -1,6 +1,6 @@
-.withdraw-btn{
+.share-btn{
     background-color: 
-    #3AB75D;
+    #FF9300;
     color: #ffff;
     border-radius: 5px;
     padding: 10px 25px;
@@ -12,7 +12,7 @@
 @media screen and (max-width: 1200px) {
     .withdraw-btn{
         background-color:
-        #3AB75D;
+        #FF9300;
         border-radius: 5px;
         padding: 8px 22px;
         border: none;
@@ -21,9 +21,9 @@
     }    
 }
 @media screen and (max-width: 768px) {
-    .withdraw-btn{
+    .share-btn{
         background-color: 
-        #3AB75D;
+        #FF9300;
         border-radius: 5px;
         padding: 8px 15px;
         border: none;
@@ -32,9 +32,9 @@
     }
 }
 @media screen and (max-width: 480px) {
-    .withdraw-btn{
+    .share-btn{
         background-color: 
-        #3AB75D;
+        #FF9300;
         border-radius: 5px;
         padding: 8px 15px;
         border: none;
