@@ -60,6 +60,7 @@ const AppLayout = () => {
     console.log('logout')
     navigate('/sign-in')
   }
+  console.log(notification.unreadNotifications)
 
   const searchInputChangeHandler = (e) => {
     console.log(e.target.value)
