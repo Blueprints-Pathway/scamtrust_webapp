@@ -1,4 +1,4 @@
-import { Form, Layout, Menu, theme, Badge, Avatar, Spin} from 'antd';
+import { Layout, Menu, Avatar, Spin} from 'antd';
 import React, { useEffect } from 'react';
 import './AppLayout.css'
 import { VscArrowSwap } from 'react-icons/vsc'
@@ -7,7 +7,6 @@ import { CiWallet } from 'react-icons/ci'
 import { VscHome} from 'react-icons/vsc'
 import { BiSupport} from 'react-icons/bi'
 import { IoLogOutOutline } from 'react-icons/io5'
-import { MdNotificationsNone } from 'react-icons/md'
 import search from '../../assets/images/search.png'
 import scamTrustLogo from '../../assets/images/scamTrustLogo.png'
 import CustomerDashboard from '../../pages/dashboards/CustomerDashboard/CustomerDashboard';
@@ -19,6 +18,7 @@ import { useNavigate } from 'react-router-dom';
 import { getCustomerCancelledTransactions, getCustomerCompletedTransactions, getCustomerOngoingTransactions, getCustomerTransactions } from '../../actions/customerTransactionActions';
 import { listNotifications } from '../../actions/notificationActions';
 import { vendorSearch } from '../../actions/miscActions';
+import Notification from './notification/Notification';
 const { Header, Content, Sider } = Layout;
 
 
@@ -91,16 +91,6 @@ const AppLayout = () => {
         <div className="logo" />
         <Menu
         className='sider'
-          // theme="dark"
-          // mode="inline"
-          // defaultSelectedKeys={['4']}
-          //   items={[UserOutlined, VideoCameraOutlined, UploadOutlined, UserOutlined].map(
-          //     (icon, index) => ({
-            //       key: String(index + 1),
-            //       icon: React.createElement(icon),
-            //       label: `nav ${index + 1}`,
-            //     }),
-            //   )}
         >
           <div className='sider-logo-con'>
             <img className='sider-logo' src={scamTrustLogo} alt="" />
@@ -151,11 +141,7 @@ const AppLayout = () => {
 
                   {/* NOTIFICATION */}
           <div className='header-div-3'>
-              <Badge count={notification.unreadNotifications.length} overflowCount={99}>
-                    <div>
-                     <MdNotificationsNone className='header-notification-icon' style={{ fill: '#232164' }} />
-                    </div>
-             </Badge>
+             <Notification />
           </div>
 
                      {/* INITIALS */}
