@@ -8,7 +8,7 @@ import Faq from "./pages/home/src/components/Faq/Faq";
 import KnowMore from "./pages/home/src/components/knowMore/KnowMore";
 import HomePage from "./pages/home/src/HomePage";
 import VendorDashboard from "./pages/dashboards/VendorDashboard/VendorDashboard";
-import Sidebar from "./components/sidebar/Sidebar";
+// import Sidebar from "./components/sidebar/Sidebar";
 import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmail";
 import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone";
 import EmailToken from "./pages/passwordrecovery/EmailToken";

@@ -20,7 +20,7 @@ const Sidebar = () => {
   //   token: { colorBgContainer },
   // } = theme.useToken();
   return (
-    <div>
+    <Layout className='wrapper'>
       <Sider
         style={{ backgroundColor: "#232164", zIndex: "30" }}
         breakpoint='lg'
@@ -83,16 +83,12 @@ const Sidebar = () => {
             <div className='side-tab-con'>
               <IoLogOutOutline style={{ color: "#ffff" }} />
               <span className='side-tabs'>LOGOUT</span>
-              </div>
-        
+            </div>
           </div>
-        
         </Menu>
-      
-
-    
       </Sider>
-    </div>
+    </Layout>
   )
 }
+
 export default Sidebar

@@ -78,9 +78,9 @@ const AppLayout = () => {
         <React.Fragment>
 
       <Sider
-      style={{backgroundColor: "#232164", zIndex: '30'}}
-      breakpoint="lg"
-        collapsedWidth="0"
+        style={{ backgroundColor: "#232164", zIndex: "30" }}
+        breakpoint='lg'
+        collapsedWidth='0'
         onBreakpoint={(broken) => {
           console.log(broken)
         }}

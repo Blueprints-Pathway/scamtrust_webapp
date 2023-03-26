@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 function PasswordRecoveryPhone() {
   const navigate = useNavigate()
   const handleClick=()=>{
-    navigate("/passwordrecovery")
+    navigate("/passwordrecoveryemail")
   }
   const [isLogin, setIsLogin] = useState(true)
   const [otp, setOtp] = useState({
