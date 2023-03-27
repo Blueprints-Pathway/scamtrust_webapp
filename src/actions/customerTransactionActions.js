@@ -5,13 +5,14 @@ import axios from "axios";
 
 
 export const getCustomerTransactions = () => async (dispatch) => {
+    const token = localStorage?.getItem("USER_TOKEN");
     try{
         dispatch(customerTransactionActions.customerTransactionsRequest());
         
         const config = {
             headers: {
               "Content-Type": "application/json",
-              Authorization: `Bearer ${USER_TOKEN}`,
+              Authorization: `Bearer ${token}`,
             },
           };
         
@@ -37,13 +38,14 @@ export const getCustomerTransactions = () => async (dispatch) => {
 }
 
 export const getCustomerOngoingTransactions = () => async (dispatch) => {
+    const token = localStorage?.getItem("USER_TOKEN");
     try{
         dispatch(customerTransactionActions.customerOngoingTransactionsRequest());
         
         const config = {
             headers: {
               "Content-Type": "application/json",
-              Authorization: `Bearer ${USER_TOKEN}`,
+              Authorization: `Bearer ${token}`,
             },
           };
         
@@ -70,13 +72,14 @@ export const getCustomerOngoingTransactions = () => async (dispatch) => {
 
 
 export const getCustomerCompletedTransactions = () => async (dispatch) => {
+    const token = localStorage?.getItem("USER_TOKEN");
     try{
         dispatch(customerTransactionActions.customerCompletedTransactionsRequest());
         
         const config = {
             headers: {
               "Content-Type": "application/json",
-              Authorization: `Bearer ${USER_TOKEN}`,
+              Authorization: `Bearer ${token}`,
             },
           };
         
@@ -102,13 +105,14 @@ export const getCustomerCompletedTransactions = () => async (dispatch) => {
 }
 
 export const getCustomerCancelledTransactions = () => async (dispatch) => {
+    const token = localStorage?.getItem("USER_TOKEN");
     try{
         dispatch(customerTransactionActions.customerCancelledTransactionRequest());
         
         const config = {
             headers: {
               "Content-Type": "application/json",
-              Authorization: `Bearer ${USER_TOKEN}`,
+              Authorization: `Bearer ${token}`,
             },
           };
         
@@ -128,6 +132,40 @@ export const getCustomerCancelledTransactions = () => async (dispatch) => {
       
         }catch(error){
         dispatch(customerTransactionActions.customerCancelledTransactionFailure(
+            error.response.data.message || 'Unsuccessful'
+        ));
+    }
+}
+
+export const createTransaction = (data) => async (dispatch) => {
+    const token = localStorage?.getItem("USER_TOKEN");
+    try{
+        dispatch(customerTransactionActions.createTransactionRequest());
+        
+        const config = {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          };
+        
+        const response = await axios.post(`${BASE_URL}/transaction/create`, data, config);
+        console.log(response)
+        if(response.data.status){
+            dispatch(customerTransactionActions.createTransactionSuccess(
+               response.data.data,
+            ));
+            console.log(response.data);
+            
+        }else{
+            dispatch(customerTransactionActions.createTransactionFailure( 
+                response.data.message
+            ));
+        }
+
+      
+        }catch(error){
+        dispatch(customerTransactionActions.createTransactionFailure(
             error.response.data.message || 'Unsuccessful'
         ));
     }

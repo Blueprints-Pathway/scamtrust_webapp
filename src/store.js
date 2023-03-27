@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import adminReducer from "./reducers/adminReducer";
 import authReducer from "./reducers/authReducer";
 import customerTransactionReducer from "./reducers/customerTransactionsReducer";
+import initiateTransactionReducer from "./reducers/initiateTransactionReducer";
 import miscReducer from "./reducers/miscReducers";
 import notificationReducer from "./reducers/notificationReducer";
 import ratingReducer from "./reducers/ratingReducer";
@@ -25,6 +26,7 @@ const store = configureStore({
         rating: ratingReducer.reducer,
         notification: notificationReducer.reducer,
         register: registerReducer.reducer,
+        initiateTransaction: initiateTransactionReducer.reducer,
 }
 });
 

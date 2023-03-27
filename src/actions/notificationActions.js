@@ -4,12 +4,13 @@ import { notificationActions } from '../reducers/notificationReducer';
 
 
 export const listNotifications = () => async (dispatch) => {
+    const token = localStorage?.getItem("USER_TOKEN");
     try{
         dispatch(notificationActions.listNotificationRequest());
         const config = {
             headers: {
               "Content-Type": "application/json",
-              Authorization: `Bearer ${USER_TOKEN}`
+              Authorization: `Bearer ${token}`
             },
           };
         

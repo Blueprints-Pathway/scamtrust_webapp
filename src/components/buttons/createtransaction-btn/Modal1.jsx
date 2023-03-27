@@ -2,13 +2,17 @@ import React from 'react'
 import classes from './Modal1.module.css'
 import { Button, Form, Input, InputNumber, DatePicker } from 'antd';
 import FooterLogo from '../../FooterLogo/FooterLogo';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { initiateTransactionActions } from '../../../reducers/initiateTransactionReducer';
 
 const Modal1 = ({confirm}) => {
+const dispatch =  useDispatch();
 
     // const layout = {
     //     labelCol: {
     //       span: 8,
-    //     },
+    //     },SCT-VEN-641D5A7B76E09
     //     wrapperCol: {
     //       span: 16,
     //     },
@@ -16,10 +20,21 @@ const Modal1 = ({confirm}) => {
 
       const onFinish = (values) => {
         console.log('Success:', values);
+        let date = new Date(values.datePicker['$d']).toLocaleDateString('zh-Hans-CN').replace(/\//g,'-');
+        dispatch(initiateTransactionActions.setVendorId(values.vendorID));
+        dispatch(initiateTransactionActions.setProductName(values.productName));
+        dispatch(initiateTransactionActions.setPhoneNumber(values.phoneNumber));
+        dispatch(initiateTransactionActions.setQuantity(values.quantity));
+        dispatch(initiateTransactionActions.setDueDate(date));
+        dispatch(initiateTransactionActions.setDescription(values.description));
+        dispatch(initiateTransactionActions.setProductAmount(values.productAmount));
+        
+      confirm()
       };
       const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
       };
+ 
 
   return (
     <div className={classes['wrapper']}>
@@ -31,7 +46,7 @@ const Modal1 = ({confirm}) => {
             <div>
             <div className={classes['row-con']}>
                 <Form.Item 
-                name="vendor ID" 
+                name="vendorID" 
                 rules={[
                     {
                       required: true,
@@ -42,7 +57,7 @@ const Modal1 = ({confirm}) => {
                   <Input className={classes['modal-input']} placeholder='Vendor ID' />
                 </Form.Item>
                 <Form.Item 
-                name="Product name" 
+                name="productName" 
                 label={<label className={classes['input-label']}>Product name</label>}
                 rules={[
                     {
@@ -57,7 +72,7 @@ const Modal1 = ({confirm}) => {
 
             <div className={classes['row-con']}>
                 <Form.Item 
-                name="Phone number" 
+                name="phoneNumber" 
                 label={<label className={classes['input-label']}>Phone number</label>}
                 rules={[
                     {
@@ -69,7 +84,7 @@ const Modal1 = ({confirm}) => {
                   <Input type='number' className={classes['modal-input']} placeholder='Phone number' />
                 </Form.Item>
                 <Form.Item 
-                name="date-picker"
+                name="datePicker"
                 hasFeedback validateStatus="success" 
                 label={<label className={classes['input-label']}>Due date</label>}
                 rules={[
@@ -85,7 +100,7 @@ const Modal1 = ({confirm}) => {
 
             <div className={classes['row-con']}>
                 <Form.Item 
-                name="Product amount" 
+                name="productAmount" 
                 label={<label className={classes['input-label']}>Product amount</label>}
                 rules={[
                     {
@@ -97,7 +112,7 @@ const Modal1 = ({confirm}) => {
                   <Input className={classes['modal-input']} placeholder='Product amount' />
                 </Form.Item>
                 <Form.Item 
-                name="Quantity" 
+                name="quantity" 
                 label={<label className={classes['input-label']}>Quantity</label>}
                 rules={[
                     {
@@ -111,15 +126,16 @@ const Modal1 = ({confirm}) => {
             </div>
 
             <div className={classes['text-area-con']}>
-            <Form.Item label={<label className={classes['text-area-label']}>Description (optional)</label>}
+            <Form.Item name= 'description' label={<label className={classes['text-area-label']}>Description (optional)</label>}
             >
                 <Input.TextArea className={classes['text-area']}  showCount placeholder='Describe the product' />
             </Form.Item>
             </div>
+        
 
             <div className={classes['form-bottom']}>
                 <FooterLogo />
-            <button className={classes['trans-continue-btn']} onClick={()=> confirm()}>Continue</button>
+            <Button  htmlType = 'submit' className={classes['trans-continue-btn']}>Continue</Button>
             </div>
 
             </div>

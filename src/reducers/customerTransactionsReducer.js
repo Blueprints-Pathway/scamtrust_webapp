@@ -8,6 +8,7 @@ const initialState = {
   cancelledTransactions: [],
   allTransactions: [], 
   transactionDetail: {},
+  isCreateTransactionSuccessful: false,
   data: {}
 };
 
@@ -16,15 +17,20 @@ const customerTransactionReducer = createSlice({
   name: "customerTransaction",
   reducers: {
     createTransactionRequest(state) {
+      state.error = null;
       state.loading = true;
+      state.isCreateTransactionSuccessful = false;
     },
     createTransactionSuccess(state, action) {
       state.loading = false;
+      state.error = null;
+      state.isCreateTransactionSuccessful = true;
       state.data = action.payload;
     },
     createTransactionFailure(state, action) {
       state.loading = false;
       state.error = action.payload;
+      state.isCreateTransactionSuccessful = false;
     },
     viewTransactionRequest(state) {
         state.loading = true;

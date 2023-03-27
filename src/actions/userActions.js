@@ -8,6 +8,7 @@ const baseUrl = "https://scamtrust.herokuapp.com/api/v1"
 const token = localStorage?.getItem("USER_TOKEN");
 
 export const getLoggedInUserDetails = () => async (dispatch) => {
+    const token = localStorage?.getItem("USER_TOKEN");
     try{
         dispatch(userActions.getDetailsRequest());
         

@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import classes from './Modal3.module.css'
 import success from '../../../assets/images/successful.png'
 import vendorImg from '../../../assets/images/vendorImg.png'
-
+import { getVendor } from '../../../actions/miscActions'
+import { useDispatch, useSelector } from 'react-redux'
 const Modal3 = ({setModal3Open}) => {
+  const {  vendorId,productName,phoneNumber,dueDate,productAmount,quantity,description,} = useSelector(state => state.initiateTransaction);
+  const vendorData = useSelector(state => state.misc);
+  const dispatch = useDispatch()
+useEffect(() => {
+ dispatch(getVendor(vendorId));
+  
+}, [])
+
+
   return (
     <div className={classes['wrapper']}>
         <div className={classes['top']}>

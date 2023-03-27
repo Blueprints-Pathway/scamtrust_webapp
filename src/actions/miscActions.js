@@ -436,3 +436,36 @@ export const listBusinessIndustry = () => async (dispatch) => {
         ));
     }
 }
+
+export const getVendor = (id) => async (dispatch) => {
+  let token =  localStorage.getItem('USER_TOKEN');
+    try{
+        dispatch(miscActions.getVendorRequest() );
+        const config = {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`
+            },
+          };
+        
+        const response = await axios.get(`${BASE_URL}/misc/get/vendor/:${id}`, config);
+        if(response.data.status){
+            dispatch(miscActions.getVendorSuccess({
+               data: response.data.data,
+            }));
+
+         console.log(response.data.data)
+         console.log(response)
+        }else{
+            dispatch(miscActions.getVendorFailure( 
+                response.data.message
+            ));
+        }
+
+      
+        }catch(error){
+        dispatch(miscActions.getVendorFailure(
+            error
+        ));
+    }
+}
