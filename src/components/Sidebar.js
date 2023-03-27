@@ -8,7 +8,7 @@ function Sidebar() {
     <div className=' bg  w-[250px]  hidden md:flex justify-between items-center flex-col  '>
       
       <div className="flex justify-center items-center">
-        <div className="flex justify-between items-center flex-col h-[100vh] ">
+        <div className="flex justify-between items-center flex-col h-[100vh] overflow-y-hidden ">
         <div className='flex justify-center items-center mt-8 mb-16'>
           <img className="w-[80%]" src={logo} alt='' />
         </div>
