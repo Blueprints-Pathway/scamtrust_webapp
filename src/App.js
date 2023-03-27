@@ -1,6 +1,8 @@
 import React from "react"
 import { Routes, Route } from "react-router-dom"
+import WithdrawPin from "./components/buttons/withdrawbutton/WithdrawPin"
 import AppLayout from "./components/layout/AppLayout"
+import Transaction from "./pages/dashboards/transactions/Transaction"
 import VendorDashboard from "./pages/dashboards/VendorDashboard/VendorDashboard"
 import About from "./pages/home/src/components/About/About"
 import Faq from "./pages/home/src/components/Faq/Faq"
@@ -32,6 +34,8 @@ const App = () => {
         path='/vendordashboard'
         element={<VendorDashboard/>}
       />
+      <Route path="/transaction" element={<Transaction/>}/>
+      <Route path="/withdrawpin" element={<WithdrawPin/>}/>
     </Routes>
   )
 }

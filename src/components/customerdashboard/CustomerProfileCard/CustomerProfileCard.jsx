@@ -4,6 +4,14 @@ import './CustomerProfileCard.css'
 import { RxEyeClosed } from 'react-icons/rx'
 import Withdrawbutton from '../../buttons/withdrawbutton/Withdrawbutton'
 import Fundbutton from '../../buttons/fundbutton/Fundbutton'
+import Backdrop from "@mui/material/Backdrop"
+import Box from "@mui/material/Box"
+import Modal from "@mui/material/Modal"
+import Fade from "@mui/material/Fade"
+import Button from "@mui/material/Button"
+import Typography from "@mui/material/Typography"
+
+
 
 const CustomerProfileCard = () => {
   return (

@@ -26,6 +26,7 @@ const CustomerDashboard = () => {
               <FooterLogo />
             </div>
           </div>
+         
 
         </div>
   )
