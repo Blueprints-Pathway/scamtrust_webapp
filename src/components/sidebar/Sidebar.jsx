@@ -8,7 +8,7 @@ import { VscHome } from "react-icons/vsc"
 import { BiSupport } from "react-icons/bi"
 import { IoLogOutOutline } from "react-icons/io5"
 import { MdNotificationsNone } from "react-icons/md"
-import trust from "../../assets/images/trust.png"
+
 import scamTrustLogo from "../../assets/images/scamTrustLogo.png"
 import CustomerDashboard from "../../pages/dashboards/CustomerDashboard/CustomerDashboard"
 import {Link} from "react-router-dom"
