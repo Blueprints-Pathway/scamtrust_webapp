@@ -35,6 +35,8 @@ const customStyles = {
 
 const Signin = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [isChecked, setCheck] = useState(false);
+  
   
   function openModal() {
     setIsOpen(true);
@@ -62,6 +64,7 @@ const Signin = () => {
   useEffect(() => {
     if(isAuthenticated){
         console.log(data);
+
       if(data.usertype === 'CUSTOMER'){
         navigate('/layout');
 
@@ -136,7 +139,10 @@ const Signin = () => {
 
                  {/* CHECKBOX */}
          <div className='sign-in-check-div'>
-           <Checkbox className='sign-check-words'>Remember me</Checkbox>
+           <Checkbox onChange={(e) => {
+            setCheck(e.target.checked);
+            
+           }}  className='sign-check-words'>Remember me</Checkbox>
            <p onClick={()=>{navigate('/password-recovery')}}
             className='sign-check-words'>Forgot Password? </p>
          </div>
