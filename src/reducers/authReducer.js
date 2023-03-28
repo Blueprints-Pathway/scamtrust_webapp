@@ -7,8 +7,8 @@ const initialState = {
   error: false,
   isPinSet: false,
   isSecurityQuestionSet: false,
-  emailExistDataLoading: true,
-  phoneExistDataLoading: true,
+  emailExistDataLoading: false,
+  phoneExistDataLoading: false,
   emailExistData: false,
   phoneExistData: false,
   isEmailValid: false,
@@ -21,11 +21,13 @@ const authReducer = createSlice({
     userRegistrationRequest(state) {
       state.loading = true;
       console.log('register request')
+      state.error = false;
     },
     userRegistrationSuccess(state, action) {
       state.loading = false;
       state.isAuthenticated = true;
       state.data = action.payload;
+      state.error = false;
     },
     userRegistrationFailure(state, action) {
       state.loading = false;
@@ -34,11 +36,13 @@ const authReducer = createSlice({
     },
     vendorRegistrationRequest(state) {
       state.loading = true;
+      state.error = false;
     },
     vendorRegistrationSuccess(state, action) {
       state.loading = false;
       state.isAuthenticated = true;
       state.data = action.payload;
+      state.error = false;
     },
     vendorRegistrationFailure(state, action) {
       state.loading = false;
@@ -160,6 +164,12 @@ const authReducer = createSlice({
       state.isEmailValid = false;
       state.isPhoneValid = false;
       console.log('logout')
+    },
+    vendorRegistrationComplete(state){
+     
+      state.isEmailValid = false;
+      state.isPhoneValid = false;
+    
     }
   },
 });

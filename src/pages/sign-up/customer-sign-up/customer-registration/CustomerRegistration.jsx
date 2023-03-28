@@ -7,11 +7,34 @@ import { CaretRightOutlined } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom';
 import { registerActions } from '../../../../reducers/registerReducer';
 import { useDispatch } from 'react-redux';
+import { verifyPhoneExist, verifyEmailExist } from '../../../../actions/authActions';
+import { authActions } from '../../../../reducers/authReducer';
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+
 const CustomerRegistration = () => {
+  const auth = useSelector(state => state.auth)
+  const misc = useSelector(state => state.misc)
+
+  useEffect(() => {
+    if(auth.isEmailValid && auth.isPhoneValid){
+      navigate('/verify-bvn')
+      dispatch(authActions.vendorRegistrationComplete())
+    }
+  }, [auth.isEmailValid, auth.isPhoneValid])
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
+
+    let errorText = null;
+    let error = <p></p>;
+
     const onFinish = (values) => {
+
+
+      dispatch(verifyEmailExist({email: values.Email}));
+      dispatch(verifyPhoneExist({phone: values.PhoneNumber}));
+
 
       dispatch(registerActions.setName(`${values.FirstName} ${values.LastName}`))
       dispatch(registerActions.setEmail(values.Email))
@@ -19,7 +42,7 @@ const CustomerRegistration = () => {
       dispatch(registerActions.setPhone(values.PhoneNumber))
       dispatch(registerActions.setType('CUSTOMER'))
 
-      navigate('/verify-bvn');
+     
 
         console.log('Success:', values);
       };
@@ -27,6 +50,13 @@ const CustomerRegistration = () => {
         console.log('Failed:', errorInfo);
       };
 
+      if(!misc.phoneExistData && !misc.emailExistData){
+        console.log(auth.emailExistData, auth.phoneExistData)
+         errorText =  auth.emailExistData.message || auth.phoneExistData.message
+        
+        error = errorText && <p style={{color:'red'}}>{errorText}!</p>
+        }
+console.log(auth.emailExistDataLoading || auth.phoneExistingDataLoading);
   return (
     <div className={classes['wrapper']}>
         <div className={classes['left']}>
@@ -107,8 +137,10 @@ const CustomerRegistration = () => {
                      <Checkbox value="A" className={classes['form-checkbox']}>
                         I agree to <span style={{color: '#01306B'}}>ScamTrust’s</span> Terms of Service and Privacy Policy
                      </Checkbox>
+                     {error}
                    </Form.Item>
                      <Button
+                     loading = {(auth.emailExistDataLoading || auth.phoneExistingDataLoading)}
                      className={classes['form-btn']} htmlType="submit">Proceed to verify BVN
                      <CaretRightOutlined className={classes['btn-icon']} />
                      </Button>

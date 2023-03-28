@@ -40,7 +40,7 @@ const VendorTransactionPin = () => {
       let pin2 = values2.join('')
       console.log(pin1)
       if(pin1 !== pin2){
-         setErrorText(error || 'Pins do not match!');
+         setErrorText('Pins do not match!');
          return;
       }
       
@@ -48,7 +48,7 @@ const VendorTransactionPin = () => {
          pin: pin1
       }));
       if(error){
-         setErrorText(error || 'Something went wrong');
+         setErrorText(error + '!' || 'Something went wrong');
       }
       // navigate('/security-question')
    }
@@ -113,7 +113,7 @@ const VendorTransactionPin = () => {
                           />
                        </div>
                   </div>
-                  <p>{errorText}</p>
+                  <p style={{color:'red'}}>{errorText}</p>
                   <Button  htmlType="submit"
                   loading = {loading}
                     className={classes['ven-trans-btn']}>Set Transaction Pin

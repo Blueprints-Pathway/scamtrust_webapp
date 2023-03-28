@@ -27,7 +27,14 @@ const VendorSetPassword = () => {
   
   console.log(loading, isAuthenticated, data, error)
   if(error){
-    errorT = error.email[0] || error.location[0] ||error.phone[0]|| error.type[0] || error.username[0] || error.name[0] || '';
+    if(userInfo.type === 'VENDOR'){
+
+      errorT = error.name[0] ||error.email[0] || error.location[0] ||error.phone[0]|| error.type[0] ||   '';
+    }else{
+      errorT = error.email[0] || error.location[0] ||error.phone[0]|| error.type[0] || error.username[0] ||  '';
+
+    }
+
 
   }
   

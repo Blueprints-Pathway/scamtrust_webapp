@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { verifyEmailExist, verifyPhoneExist } from '../../../../actions/authActions';
 import { registerActions } from '../../../../reducers/registerReducer';
+import { authActions } from '../../../../reducers/authReducer';
 const VendorRegistration = () => {
   let businessTypes = [];
   let businessIndustries = [];
@@ -31,6 +32,7 @@ let error = <p></p>;
   useEffect(() => {
     if(auth.isEmailValid && auth.isPhoneValid){
       navigate('/verify-bvn')
+      dispatch(authActions.vendorRegistrationComplete())
     }
   }, [auth.isEmailValid, auth.isPhoneValid])
   if (!misc.businessIndustriesLoading && !misc.businessTypesLoading) {
@@ -68,7 +70,7 @@ let error = <p></p>;
     console.log(auth.emailExistData, auth.phoneExistData)
      errorText =  auth.emailExistData.message || auth.phoneExistData.message
     
-    error = errorText && <p>{errorText}</p>
+    error = errorText && <p style={{color:'red'}}>{errorText}!</p>
     }
      
     
@@ -206,13 +208,13 @@ let error = <p></p>;
                     },
                   ]}
                    >
-                     <Checkbox  value="A" className="ven-signup-checkbox">
+                     <Checkbox   value="A" className="ven-signup-checkbox">
                         I agree to <span style={{color: '#01306B'}}>ScamTrust’s</span> Terms of Service and Privacy Policy
                      </Checkbox>
                      {error}
                    </Form.Item>
                      <Button  
-                     loading = {auth.loading}
+                     loading = {(auth.emailExistDataLoading || auth.phoneExistingDataLoading)}
                      className='ven-signup-btn' htmlType="submit">Proceed to verify BVN
                      </Button>
 

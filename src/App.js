@@ -38,6 +38,7 @@ const App = () => {
 		<Route path='/sign-in' element={<Signin />} />
 		<Route path='/sign-up-modal' element={<SignupModal  />} />
 		<Route path='vendor-registration' element={<VendorRegistration  />} />
+		<Route path='vendor-dashboard' element={<VendorDashboard  />} />
 		<Route path='/vendor-activate-account' element={<VendorActivate />} />
 		<Route path='/verify-bvn' element={<VendorBvn />} />
 		<Route path='/set-password' element={<VendorSetPassword />} />
