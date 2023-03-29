@@ -29,6 +29,7 @@ const Cancelled = () => {
     <AppLayout>
     <div className={classes['wrapper']}>
         <Card className={classes['card-wrapper']}>
+            
          <div onClick={()=>navigate(-1)}
          className={classes['button-con']}>
              <HiArrowNarrowLeft className={classes['arrow']} />

@@ -22,6 +22,7 @@ import Ongoing from "./pages/transactions/ongoing/Ongoing"
 import Completed from "./pages/transactions/completed/Completed"
 import Cancelled from "./pages/transactions/cancelled/Cancelled"
 import Declined from "./pages/transactions/declined/Declined"
+import CancelReason from "./pages/transactions/cancel-reason/CancelReason"
 
 
 const App = () => {
@@ -57,6 +58,7 @@ const App = () => {
 		<Route path='/completed-transaction' element={<Completed />} />
 		<Route path='/cancelled-transaction' element={<Cancelled />} />
 		<Route path='/declined-transaction' element={<Declined />} />
+		<Route path='/cancel-reason' element={<CancelReason />} />
 	</Routes>
   )
 }

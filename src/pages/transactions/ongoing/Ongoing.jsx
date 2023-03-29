@@ -98,8 +98,10 @@ const Ongoing = () => {
 
                       {/* BUTTONS */}
                <div className={classes['btn-con']}>
-                <button className={classes['bottom-btn1']}>Cancel</button>
-                <button className={classes['bottom-btn2']}> Complete</button>
+                <button onClick={()=>navigate('/cancel-reason')}
+                className={classes['bottom-btn1']}>Cancel</button>
+                <button onClick={()=>navigate('/completed-transaction')}
+                className={classes['bottom-btn2']}> Complete</button>
                </div>
 
           <div className={classes['footer']}>
