@@ -4,6 +4,8 @@ import classes from './Modal2.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { Button } from 'antd'
 import { createTransaction } from '../../../actions/customerTransactionActions';
+import { customerTransactionActions } from '../../../reducers/customerTransactionsReducer'
+import { getLoggedInUserDetails } from '../../../actions/userActions'
 const Modal2 = ({proceed}) => {
     const {  vendorId,productName,phoneNumber,dueDate,productAmount,quantity,description,} = useSelector(state => state.initiateTransaction);
     const transaction = useSelector(state => state.customerTransaction);
@@ -11,8 +13,10 @@ const Modal2 = ({proceed}) => {
 
     useEffect(()=>{
         if(transaction.isCreateTransactionSuccessful){
-
+            dispatch(customerTransactionActions.resetTransaction());
+           
             proceed();
+
         }
     },[transaction.isCreateTransactionSuccessful])
 

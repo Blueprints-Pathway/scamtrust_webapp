@@ -44,6 +44,7 @@ const App = () => {
 		<Route path='/set-password' element={<VendorSetPassword />} />
 		<Route path='/transaction-pin' element={<VendorTransactionPin />} />
 		<Route path='/security-question' element={<VendorSecurity />} />
+		<Route path='/password-recovery' element={<PasswordRecovery />} />
 		<Route path='/customer-registration' element={<CustomerRegistration />} />
 		<Route path='/customer-activate-account' element={<CustomerActivate />} />
 	</Routes>

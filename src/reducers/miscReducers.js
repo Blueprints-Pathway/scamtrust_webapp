@@ -6,6 +6,7 @@ const initialState = {
     data: {}, 
     businessTypesLoading: true,
     businessIndustriesLoading: true,
+    getVendorLoading: true,
     businessTypes: [],
     businessIndustries: [],
 }
@@ -105,6 +106,7 @@ const miscReducer = createSlice({
           },
           getBanksRequest(state) {
             state.loading = true;
+            console.log(state.loading);
           },
           getBanksSuccess(state, action) {
             state.loading = false;
@@ -159,14 +161,14 @@ const miscReducer = createSlice({
             state.error = action.payload;
           },
           getVendorRequest(state) {
-            state.loading = true;
+            state.getVendorLoading = true;
           },
           getVendorSuccess(state, action) {
-            state.loading = false;
+            state.getVendorLoading = false;
             state.data = action.payload;
           },
           getVendorFailure(state, action) {
-            state.loading = false;
+            state.getVendorLoading = false;
             state.error = action.payload;
           },
           getSecurityQuestionRequest(state) {

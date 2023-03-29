@@ -32,6 +32,10 @@ const customerTransactionReducer = createSlice({
       state.error = action.payload;
       state.isCreateTransactionSuccessful = false;
     },
+    resetTransaction(state){
+      state.loading = true;
+      state.isCreateTransactionSuccessful = false;
+    },
     viewTransactionRequest(state) {
         state.loading = true;
       },

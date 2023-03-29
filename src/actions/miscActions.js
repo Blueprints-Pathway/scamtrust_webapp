@@ -448,7 +448,7 @@ export const getVendor = (id) => async (dispatch) => {
             },
           };
         
-        const response = await axios.get(`${BASE_URL}/misc/get/vendor/:${id}`, config);
+        const response = await axios.get(`${BASE_URL}/misc/get/vendor/${id}`, config);
         if(response.data.status){
             dispatch(miscActions.getVendorSuccess({
                data: response.data.data,

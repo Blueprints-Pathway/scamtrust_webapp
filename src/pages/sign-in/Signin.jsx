@@ -69,6 +69,10 @@ const Signin = () => {
         navigate('/layout');
 
       }
+      if(data.usertype === 'VENDOR'){
+        navigate('/vendor-dashboard');
+
+      }
 
     }
   }, [isAuthenticated])
