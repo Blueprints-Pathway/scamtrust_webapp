@@ -25,7 +25,7 @@ const { Header, Content, Sider } = Layout;
 
 
 
-const AppLayout = () => {
+const AppLayout = ({children}) => {
 
   const {loading, error, data} = useSelector(state => state.user);
   const notification = useSelector(state => state.notification);
@@ -99,11 +99,13 @@ const AppLayout = () => {
 
           <div className='side-tab-wrapper'>
                <div className='side-tab-con'>
-                <VscHome style={{color: '#ffff'}} /><span className='side-tabs'>DASHBOARD</span>
+                <VscHome style={{color: '#ffff'}} /><span onClick={()=>navigate('/customer-dashboard')}
+                className='side-tabs'>DASHBOARD</span>
                </div>
      
                <div className='side-tab-con'>
-                <VscArrowSwap style={{color: '#ffff'}} /><span className='side-tabs'>TRANSACTIONS</span>
+                <VscArrowSwap style={{color: '#ffff'}} /><span onClick={()=>navigate('/transactions')}
+                className='side-tabs'>TRANSACTIONS</span>
                </div>
 
                <div className='side-tab-con'>
@@ -156,7 +158,7 @@ const AppLayout = () => {
 
                      {/* INNER CONTENT */}
         <Content className='layout-content' style={{margin: '0px 16px', color: 'black'}}>
-             <CustomerDashboard />
+              {children}
         </Content>
 
         

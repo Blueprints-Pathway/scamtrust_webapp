@@ -66,7 +66,7 @@ const Signin = () => {
         console.log(data);
 
       if(data.usertype === 'CUSTOMER'){
-        navigate('/layout');
+        navigate('/customer-dashboard');
 
       }
       if(data.usertype === 'VENDOR'){
@@ -75,7 +75,7 @@ const Signin = () => {
       }
 
     }
-  }, [isAuthenticated])
+  }, [isAuthenticated, data, navigate])
   let errorText  = error && <p style={{color:'red'}}>{error+ '!'}</p>
  
   return (

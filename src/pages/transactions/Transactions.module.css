@@ -1,0 +1,268 @@
+.wrapper{
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+.card-wrapper{
+    width: 70vw;
+    height: 31rem;
+    padding: 20px;
+}
+.transaction-heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.transactions{
+    font-size: 23px;
+    font-weight: 600;
+    color: #232164;
+}
+.transaction-btn{
+}
+.tabs-container{
+    margin-top: 20px;
+    width: 70vw;
+}
+.tab-1{
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0px -25px -10px -25px;
+}
+.tab-2{
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    margin: 0px -25px -10px -25px;
+}
+.tab-4{
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    margin: 0px -25px -10px -25px;
+}
+.tab-icon{
+    font-size: 18px;
+    margin: 0px 8px 0px 0px;
+}
+.tab-icon2{
+    font-size: 20px;
+    margin: 0px 8px 0px 0px;
+}
+.pagination{
+    float: right;
+    margin-right: 25px;
+}
+.page-index{
+    font-size: 14px;
+}
+
+@media screen and (max-width: 1200px) {
+    .wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .card-wrapper{
+        width: 65vw;
+        height: 27.5rem;
+        padding: 20px;
+    }
+    .transaction-heading{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .transactions{
+        font-size: 20px;
+        font-weight: 600;
+        color: #232164;
+    }
+    .tabs-container{
+        margin-top: 10px;
+        width: 65vw;
+    }
+    .tab-1{
+        font-size: 12px;
+        font-weight: 500;
+        margin: 0px -35px -10px -20px;
+    }
+    .tab-2{
+        font-size: 12px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        margin: 0px -35px -10px -35px;
+    }
+    .tab-4{
+        font-size: 12px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        margin: 0px -35px -10px -35px;
+    }
+    .tab-icon{
+        font-size: 16px;
+        margin: 0px 5px 0px 0px;
+    }
+    .tab-icon2{
+        font-size: 18px;
+        margin: 0px 5px 0px 0px;
+    }
+    .pagination{
+        float: right;
+        margin-right: 25px;
+        font-size: 12px !important;
+    }
+    .page-index{
+        font-size: 11px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    .card-wrapper{
+        width: 80vw;
+        height: 27rem;
+        padding: 20px;
+    }
+    .transaction-heading{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .transactions{
+        font-size: 18px;
+        font-weight: 600;
+        color: #232164;
+    }
+    .tabs-container{
+        margin-top: 10px;
+        width: 65vw;
+    }
+    .tab-1{
+        font-size: 12px;
+        font-weight: 500;
+        margin: 0px -40px -10px -30px;
+    }
+    .tab-2{
+        font-size: 12px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        margin: 0px -40px -10px -40px;
+    }
+    .tab-4{
+        font-size: 12px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        margin: 0px -40px -10px -40px;
+    }
+    .tab-icon{
+        font-size: 16px;
+        margin: 0px 5px 0px 0px;
+    }
+    .tab-icon2{
+        font-size: 18px;
+        margin: 0px 5px 0px 0px;
+    }
+    .pagination{
+        float: right;
+        margin-right: 25px;
+        font-size: 12px !important;
+    }
+    .page-index{
+        font-size: 10px;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    .card-wrapper{
+        width: 80vw;
+        height: 24rem;
+        padding: 0px;
+    }
+    .transaction-heading{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .transactions{
+        font-size: 16px;
+        font-weight: 600;
+        color: #232164;
+    }
+    .tabs-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80vw;
+        margin: 10px 10px 0px 10px;
+    }
+    .tab-1{
+        font-size: 9px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0px -40px -10px -30px;
+    }
+    .tab-2{
+        font-size: 9px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0px -50px -10px -50px;
+    }
+    .tab-4{
+        font-size: 9px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0px -15px -10px -40px;
+    }
+    .content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .tab-icon{
+        font-size: 12px;
+        margin: 0px 2px 0px 0px;
+    }
+    .tab-icon2{
+        font-size: 14px;
+        margin: 0px 1px 0px 0px;
+    }
+    .pagination{
+        float: right;
+        margin-right: 25px;
+        font-size: 12px !important;
+    }
+    .page-index{
+        font-size: 9px;
+    }
+
+}

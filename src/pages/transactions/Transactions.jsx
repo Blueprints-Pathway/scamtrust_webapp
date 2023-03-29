@@ -1,0 +1,76 @@
+import React from 'react'
+import classes from './Transactions.module.css'
+import { Card, Tabs, Pagination } from 'antd';
+import Createtransaction from '../../components/buttons/createtransaction-btn/Createtransaction';
+import { BsFillArrowUpRightCircleFill } from 'react-icons/bs'
+import { AiFillCheckCircle } from 'react-icons/ai'
+import { MdCancel } from 'react-icons/md'
+import Outgoing from '../../components/transactions/outgoing/Outgoing';
+import Completed from '../../components/transactions/completed/Completed';
+import Cancelled from '../../components/transactions/cancelled/Cancelled';
+import AllTransaction from '../../components/transactions/all-transactions/AllTransaction';
+import AppLayout from '../../components/Layout/AppLayout';
+import Layout, { Content } from 'antd/es/layout/layout';
+
+const Transactions = () => {
+
+    const onChange = (key) => {
+        console.log(key);
+      };
+
+      const items = [
+        {
+          key: '1',
+          label:(<p className={classes['tab-1']}>All Transactions</p>),
+          children:(<AllTransaction />),
+        },
+        {
+          key: '2',
+          label: (<p className={classes['tab-2']}><BsFillArrowUpRightCircleFill className={classes['tab-icon']} />Out-going</p>),
+          children: (<div className={classes['content']}><Outgoing /></div>),
+        },
+        {
+          key: '3',
+          label: (<p className={classes['tab-2']}><AiFillCheckCircle className={classes['tab-icon2']} />Completed</p>),
+          children: (<div className={classes['content']}><Completed /></div>),
+        },
+        {
+          key: '4',
+          label: (<p className={classes['tab-4']}><MdCancel className={classes['tab-icon2']} />Cancelled</p>),
+          children: (<div className={classes['content']}><Cancelled /></div>),
+        },
+      ];
+
+  return (
+    <AppLayout>
+        <div className={classes['wrapper']}>
+              <Card
+                centered
+               >
+                <div className={classes['card-wrapper']}>
+                    <div className={classes['transaction-heading']}>
+                        <p className={classes['transactions']}>Transactions</p>
+                        <button className={classes['transaction-btn']}>
+                         <Createtransaction />
+                        </button>
+                    </div>
+                    <div className={classes['tabs-container']}>
+                    <Tabs
+                     defaultActiveKey="1"
+                     items={items}
+                     centered
+                      onChange={onChange} 
+                      />
+                    </div>
+                </div>
+                <div className={classes['pagination']}>
+                 <Pagination centered className={classes['page-index']}
+                  defaultCurrent={1} total={30} />
+                </div>
+              </Card>
+        </div>
+       </AppLayout>
+  )
+}
+
+export default Transactions
