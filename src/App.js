@@ -28,6 +28,7 @@ import WithdrawPin from "./components/buttons/withdrawbutton/WithdrawPin"
 // import Transaction from "./pages/dashboards/transactions/Transaction"
 import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmail"
 import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone"
+import UpdatedPassword from "./pages/passwordrecovery/UpdatedPassword"
 import Settings from "./pages/settings/Settings"
 
 const App = () => {
@@ -75,6 +76,7 @@ const App = () => {
 		<Route path='/cancel-reason' element={<CancelReason />} />
 		<Route path="/withdrawpin" element={<WithdrawPin/>}/>
       	<Route path="/settings" element={<Settings/>}/>
+		  <Route path="/updatedpassword" element={<UpdatedPassword/>}/>
 	</Routes>
   )
 }
