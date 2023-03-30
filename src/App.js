@@ -10,6 +10,7 @@ import KnowMore from "./pages/home/src/components/knowMore/KnowMore"
 import HomePage from "./pages/home/src/HomePage"
 import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmail"
 import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone"
+import UpdatedPassword from "./pages/passwordrecovery/UpdatedPassword"
 import Settings from "./pages/settings/Settings"
 
 const App = () => {
@@ -39,6 +40,7 @@ const App = () => {
       <Route path="/withdrawpin" element={<WithdrawPin/>}/>
       <Route path="/settings" element={<Settings/>}/>
       <Route path="/settings" element={<Settings/>}/>
+      <Route path="/updatedpassword" element={<UpdatedPassword/>}/>
     </Routes>
   )
 }
