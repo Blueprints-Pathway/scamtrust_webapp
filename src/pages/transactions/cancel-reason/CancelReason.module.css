@@ -1,0 +1,571 @@
+.card-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 65px 75px 0px 80px;
+}
+.back-btn-con{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #232164;
+    padding: 10px ;
+}
+.back-btn-icon{
+    margin: 0px 4px;
+}
+.back-btn{
+    font-size: 14px;
+    border: none;
+    outline: none;
+    background-color: #ffff;
+}
+.title{
+    font-size: 22px;
+    font-weight: 600;
+    color: #001649;
+    padding: 0px 0px;
+    margin: 30px 0px 10px 0px;
+}
+.content-con{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.radio-con{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.radio-item{
+    color: #1C2E7A;
+    border: 1px solid #1C2E7A;
+    width: 60vw;
+    padding: 15px 45px;
+    border-radius: 5px;
+    margin: 12px 0px;
+}
+.submit-con{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.submit-btn{
+    background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
+    color: #ffff;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    font-weight: 300;
+    height: 50px;
+    padding: 0px 50px;
+    border-radius: 4px;
+}
+
+.modal-div{
+    height: 25rem;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.modal-title{
+    font-size: 20px;
+    font-weight: 400;
+    color: #ffff;
+    margin-top: 45px;
+    text-align: center;
+}
+.modal-btn-con{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 70px 70px 0px 70px;
+}
+.confirm-btn1{
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid #ffff;
+    color: #ffff;
+    background-color: #002257;
+    padding: 10px 70px;
+    border-radius: 5px;
+}
+.confirm-btn2{
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid #ffff;
+    background-color: #ffff;
+    color: #002257;
+    padding: 10px 80px;
+    border-radius: 5px;
+}
+.modal-2-con{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 18rem;
+}
+
+.modal-2-name{
+    font-size: 25px;
+    font-weight: 600;
+    color: #1C2E7A;
+}
+.modal-2-message{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 200;
+    color: #7D8287;
+    width: 350px;
+    line-height: 30px;
+    margin: 15px 0px 25px 0px;
+}
+.trans-id{
+    color: #1C2E7A;
+}
+.modal-2-btn{
+    background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
+    color: #ffff;
+    border-radius: 5px;
+    padding: 20px 0px;
+    width: 15rem;
+    font-size: 14px;
+    border: none;
+    outline: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .card-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 55px 15px 0px 20px;
+    }
+    .back-btn-con{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        color: #232164;
+        padding: 10px ;
+    }
+    .back-btn-icon{
+        margin: 0px 4px;
+    }
+    .back-btn{
+        font-size: 12px;
+        border: none;
+        outline: none;
+        background-color: #ffff;
+    }
+    .title{
+        font-size: 18px;
+        font-weight: 600;
+        color: #001649;
+        padding: 0px 0px;
+        margin: 5px 0px 5px 0px;
+    }
+    .content-con{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .radio-con{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .radio-item{
+        color: #1C2E7A;
+        border: 1px solid #1C2E7A;
+        width: 60vw;
+        padding: 10px 35px;
+        border-radius: 5px;
+        margin: 10px 0px;
+        font-size: 13px !important;
+    }
+    .submit-con{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .submit-btn{
+        background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
+        color: #ffff;
+        border: none;
+        outline: none;
+        font-size: 11px;
+        font-weight: 300;
+        height: 45px;
+        padding: 0px 40px;
+        border-radius: 4px;
+    }
+    .modal-div{
+        height: 20rem;
+        border-radius: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .modal-title{
+        font-size: 18px;
+        font-weight: 400;
+        color: #ffff;
+        margin-top: 45px;
+        text-align: center;
+    }
+    .modal-btn-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 70px 70px 0px 70px;
+    }
+    .confirm-btn1{
+        font-size: 16px;
+        font-weight: 400;
+        border: 1px solid #ffff;
+        color: #ffff;
+        background-color: #002257;
+        padding: 10px 70px;
+        border-radius: 5px;
+    }
+    .confirm-btn2{
+        font-size: 16px;
+        font-weight: 400;
+        border: 1px solid #ffff;
+        background-color: #ffff;
+        color: #002257;
+        padding: 10px 80px;
+        border-radius: 5px;
+    }
+    .modal-2-con{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 16rem;
+    }
+    
+    .modal-2-name{
+        font-size: 22px;
+        font-weight: 600;
+        color: #1C2E7A;
+    }
+    .modal-2-message{
+        text-align: center;
+        font-size: 21px;
+        font-weight: 200;
+        color: #7D8287;
+        width: 350px;
+        line-height: 30px;
+        margin: 10px 0px 25px 0px;
+    }
+    .trans-id{
+        color: #1C2E7A;
+    }
+    .modal-2-btn{
+        background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
+        color: #ffff;
+        border-radius: 5px;
+        padding: 17px 0px;
+        width: 13rem;
+        font-size: 14px;
+        border: none;
+        outline: none;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .card-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 65px 15px 0px 20px;
+    }
+    .back-btn-con{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        color: #232164;
+        padding: 10px ;
+    }
+    .back-btn-icon{
+        margin: 0px 4px;
+    }
+    .back-btn{
+        font-size: 12px;
+        border: none;
+        outline: none;
+        background-color: #ffff;
+    }
+    .title{
+        font-size: 16px;
+        font-weight: 600;
+        color: #001649;
+        padding: 0px 0px;
+        margin: 5px 0px 5px 0px;
+    }
+    .content-con{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .radio-con{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .radio-item{
+        color: #1C2E7A;
+        border: 1px solid #1C2E7A;
+        width: 70vw;
+        padding: 10px 35px;
+        border-radius: 5px;
+        margin: 10px 0px;
+        font-size: 11px !important;
+    }
+    .submit-con{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .submit-btn{
+        background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
+        color: #ffff;
+        border: none;
+        outline: none;
+        font-size: 10px;
+        font-weight: 300;
+        height: 40px;
+        padding: 0px 35px;
+        border-radius: 4px;
+    }
+    .modal-div{
+        height: 20rem;
+        border-radius: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .modal-title{
+        font-size: 18px;
+        font-weight: 400;
+        color: #ffff;
+        margin-top: 45px;
+        text-align: center;
+    }
+    .modal-btn-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 70px 70px 0px 70px;
+    }
+    .confirm-btn1{
+        font-size: 16px;
+        font-weight: 400;
+        border: 1px solid #ffff;
+        color: #ffff;
+        background-color: #002257;
+        padding: 10px 70px;
+        border-radius: 5px;
+    }
+    .confirm-btn2{
+        font-size: 16px;
+        font-weight: 400;
+        border: 1px solid #ffff;
+        background-color: #ffff;
+        color: #002257;
+        padding: 10px 80px;
+        border-radius: 5px;
+    }
+    .modal-2-con{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 16rem;
+    }
+    
+    .modal-2-name{
+        font-size: 22px;
+        font-weight: 600;
+        color: #1C2E7A;
+    }
+    .modal-2-message{
+        text-align: center;
+        font-size: 21px;
+        font-weight: 200;
+        color: #7D8287;
+        width: 350px;
+        line-height: 30px;
+        margin: 15px 0px 25px 0px;
+    }
+    .trans-id{
+        color: #1C2E7A;
+    }
+    .modal-2-btn{
+        background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
+        color: #ffff;
+        border-radius: 5px;
+        padding: 17px 0px;
+        width: 13rem;
+        font-size: 14px;
+        border: none;
+        outline: none;
+    }
+
+}
+@media screen and (max-width: 480px) {
+    .card-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 65px 20px 0px 20px;
+        padding-top: 20px;
+    }
+    .back-btn-con{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        color: #232164;
+        padding: 0px ;
+        margin: 0px 0px 10px -15px;
+    }
+    .back-btn-icon{
+        margin: 0px 4px;
+    }
+    .back-btn{
+        font-size: 12px;
+        font-weight: 500;
+        border: none;
+        outline: none;
+        background-color: #ffff;
+    }
+    .title{
+        font-size: 15px;
+        font-weight: 500;
+        color: #001649;
+        padding: 0px 0px;
+        margin: 20px 0px 5px 0px;
+        text-align: center;
+    }
+    .content-con{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .radio-con{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .radio-item{
+        color: #1C2E7A;
+        border: 1px solid #1C2E7A;
+        width: 70vw;
+        padding: 10px 10px;
+        border-radius: 5px;
+        margin: 10px 0px 0px 0px;
+        font-size: 11px !important;
+    }
+    .submit-con{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .submit-btn{
+        background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
+        color: #ffff;
+        border: none;
+        outline: none;
+        font-size: 10px;
+        font-weight: 300;
+        height: 40px;
+        padding: 0px 25px;
+        border-radius: 4px;
+    }
+    .modal-div{
+        height: 20rem;
+        border-radius: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .modal-title{
+        font-size: 16px;
+        font-weight: 400;
+        color: #ffff;
+        margin: 0px 15px;
+        margin-top: 45px;
+        text-align: center;
+    }
+    .modal-btn-con{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 30px 70px 0px 70px;
+    }
+    .confirm-btn1{
+        font-size: 13px;
+        font-weight: 400;
+        border: 1px solid #ffff;
+        color: #ffff;
+        background-color: #002257;
+        padding: 7px 50px;
+        border-radius: 5px;
+        margin: 0px 10px;
+    }
+    .confirm-btn2{
+        font-size: 13px;
+        font-weight: 400;
+        border: 1px solid #ffff;
+        background-color: #ffff;
+        color: #002257;
+        padding: 7px 50px;
+        border-radius: 5px;
+        margin: 0px 10px;
+    }
+    .modal-2-con{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 14rem;
+    }
+    
+    .modal-2-name{
+        font-size: 18px;
+        font-weight: 600;
+        color: #1C2E7A;
+    }
+    .modal-2-message{
+        text-align: center;
+        font-size: 18px;
+        font-weight: 200;
+        color: #7D8287;
+        width: 250px;
+        line-height: 30px;
+        margin: 10px 0px 15px 0px;
+    }
+    .trans-id{
+        color: #1C2E7A;
+    }
+    .modal-2-btn{
+        background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
+        color: #ffff;
+        border-radius: 5px;
+        padding: 15px 0px;
+        width: 10rem;
+        font-size: 12px;
+        border: none;
+        outline: none;
+    }
+
+}

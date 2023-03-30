@@ -170,3 +170,38 @@ export const createTransaction = (data) => async (dispatch) => {
         ));
     }
 }
+
+export const customerAcceptTransaction = (id) => async (dispatch) => {
+    const token = localStorage?.getItem("USER_TOKEN");
+    try{
+        dispatch(customerTransactionActions.customerAcceptTransactionRequest());
+        
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+        };
+        
+        const response = await axios.get(`${BASE_URL}/transaction/customer/approve/${id}`, config);
+        console.log(response)
+        console.log('ACCEPT TRANSACTION', response);
+        if(response.data.status){
+            dispatch(customerTransactionActions.customerAcceptTransactionSuccess(
+               response.data.data,
+            ));
+            console.log(response.data);
+            
+        }else{
+            dispatch(customerTransactionActions.customerAcceptTransactionFailure( 
+                response.data.message
+            ));
+        }
+
+      
+        }catch(error){
+        dispatch(customerTransactionActions.customerAcceptTransactionFailure(
+            error.response.data.message || 'Unsuccessful'
+        ));
+    }
+}

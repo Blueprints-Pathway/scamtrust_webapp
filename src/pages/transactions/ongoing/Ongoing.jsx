@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import classes from './Ongoing.module.css'
 import AppLayout from '../../../components/Layout/AppLayout'
-import { Card } from 'antd';
+import { Card , Button} from 'antd';
 import { Steps } from 'antd';
 import { HiArrowNarrowLeft } from 'react-icons/hi'
 import FooterLogo from '../../../components/FooterLogo/FooterLogo';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { customerAcceptTransaction } from '../../../actions/customerTransactionActions';
+import { customerTransactionActions } from '../../../reducers/customerTransactionsReducer';
+import swal from 'sweetalert';
 
 
 const items = [
@@ -24,10 +27,38 @@ const items = [
 const Ongoing = () => {
     const transactions = useSelector(state => state.customerTransaction);
     const param =  useParams();
+    const dispatch = useDispatch();
    
     const transaction = transactions.ongoingTransactions.find(transaction => transaction.id == param.id);
     console.log(transaction)
     const navigate = useNavigate(); 
+
+    useEffect(()=>{
+        if(transactions.isAcceptTransactionSuccessful){
+            dispatch(customerTransactionActions.resetAcceptTransactionStatus())
+            navigate(`/completed-transaction/${param.id}`);
+
+        }
+
+
+    },[transactions.isAcceptTransactionSuccessful, dispatch])
+
+    const completeTransaction = () =>{
+        dispatch(customerAcceptTransaction(transaction.transaction_id))
+    }
+
+        if(transactions.error){
+            console.log();
+        swal({
+            icon: 'Cancel',
+            text: transactions.error,
+
+            
+        })
+        dispatch(customerTransactionActions.resetAcceptTransactionStatus())
+
+    }
+    
 
   return (
     <AppLayout>
@@ -51,7 +82,7 @@ const Ongoing = () => {
                  <div className={classes['top-middle']}>
                      <p className={classes['top-middle-status']}>
                          <b>Status:</b> 
-                         <span className={classes['top-middle-span']}>On-going</span>
+                         <span className={classes['top-middle-span']}>{transaction.status}</span>
                      </p>
                      <p className={classes['top-middle-date']}>{transaction.due_date}</p>
                  </div>
@@ -103,8 +134,10 @@ const Ongoing = () => {
 
                       {/* BUTTONS */}
                <div className={classes['btn-con']}>
-                <button className={classes['bottom-btn1']}>Cancel</button>
-                <button className={classes['bottom-btn2']}> Complete</button>
+                <Button onClick={()=>navigate('/cancel-reason')}
+                className={classes['bottom-btn1']}>Cancel</Button>
+                <Button loading = {transactions.loading} onClick={completeTransaction}
+                className={classes['bottom-btn2']}> Complete</Button>
                </div>
 
           <div className={classes['footer']}>
