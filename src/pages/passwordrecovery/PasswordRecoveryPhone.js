@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import mail from "../../assets/images/mail.png"
 import footer from "../../assets/images/footerLogo.png"
+import logo from "../../assets/images/logo.png"
 import { useNavigate } from "react-router-dom"
 function PasswordRecoveryPhone() {
   const navigate = useNavigate()
@@ -38,11 +39,15 @@ function PasswordRecoveryPhone() {
     )
   }
   return (
-    <div className=''>
+    <div className=' '>
       {isLogin ? (
         <div>
-          <div className='flex justify-center items-center h-[100vh] px-4  '>
-            <div className='sm:w-[480px] w-[100%] sm:h-[460px] box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
+          <div className='h-[100vh] px-4 overflow-y-hidden '>
+          <div className="px-6 mt-5 mb-20 md:mb-3 md:mt-10">
+         <img className="md:w-[164px] w-[100px]" src={logo} alt="" />
+         </div>
+         <div className="flex items-center justify-center ">
+         <div className='sm:w-[480px] w-[100%] sm:h-[460px] box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
               <h2 className='text-primary pt-10 sm:pt-0 font-semibold  text-[22px] mb-2'>
                 Password Recovery
               </h2>
@@ -83,7 +88,7 @@ function PasswordRecoveryPhone() {
                   Continue
                 </button>
 
-                <div className='flex items-center'>
+                <div className='flex  justify-center items-center'>
                     <h6 className='text-[12px] font-poppins text-[#8E8E8E] text-center pb-10 sm:pb-0'>
                       Remember your password ?
                     </h6>
@@ -91,6 +96,7 @@ function PasswordRecoveryPhone() {
                   </div>
               </div>
             </div>
+         </div>
           </div>
         </div>
       ) : (
