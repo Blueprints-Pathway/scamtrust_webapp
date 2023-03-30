@@ -103,8 +103,11 @@ function PasswordRecoveryEmail() {
         </div>
       ) : (
         <div>
-          <div></div>
-          <div className='flex justify-center items-center h-[100vh] px-4 '>
+       <div className="h-[100vh] overflow-y-hidden px-4">
+       <div className="px-6 mt-5 mb-20 md:mb-3 md:mt-10">
+          <img className='md:w-[164px] w-[100px]' src={logo} alt='' />
+          </div>
+          <div className='flex justify-center items-center  '>
             <div className='sm:w-[480px] w-[100%] sm:h-[460px] box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
               <h2 className='text-primary font-semibold  text-[22px] mb-2 pt-10 sm:pt-0 '>
                 Password Recovery
@@ -141,6 +144,7 @@ function PasswordRecoveryEmail() {
               </div>
             </div>
           </div>
+       </div>
         </div>
       )}
     </div>
