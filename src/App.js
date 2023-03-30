@@ -24,6 +24,11 @@ import Cancelled from "./pages/transactions/cancelled/Cancelled"
 import Declined from "./pages/transactions/declined/Declined"
 import CancelReason from "./pages/transactions/cancel-reason/CancelReason"
 import PasswordRecovery from "./pages/passwordrecoverey/PasswordRecovery"
+import WithdrawPin from "./components/buttons/withdrawbutton/WithdrawPin"
+// import Transaction from "./pages/dashboards/transactions/Transaction"
+import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmail"
+import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone"
+import Settings from "./pages/settings/Settings"
 
 const App = () => {
   return (
@@ -51,6 +56,14 @@ const App = () => {
 		<Route path='/password-recovery' element={<PasswordRecovery />} />
 		<Route path='/customer-registration' element={<CustomerRegistration />} />
 		<Route path='/customer-activate-account' element={<CustomerActivate />} />
+		<Route
+        path='/passwordrecoveryemail'
+        element={<PasswordRecoveryEmail />}
+      />
+      <Route
+        path='/passwordrecoveryphone'
+        element={<PasswordRecoveryPhone />}
+      />
 
 		                {/* TRANSACTIONS */}
 		<Route path='/transactions' element={<Transaction />} />
@@ -60,6 +73,8 @@ const App = () => {
 		<Route path='/cancelled-transaction/:id' element={<Cancelled />} />
 		<Route path='/declined-transaction' element={<Declined />} />
 		<Route path='/cancel-reason' element={<CancelReason />} />
+		<Route path="/withdrawpin" element={<WithdrawPin/>}/>
+      	<Route path="/settings" element={<Settings/>}/>
 	</Routes>
   )
 }

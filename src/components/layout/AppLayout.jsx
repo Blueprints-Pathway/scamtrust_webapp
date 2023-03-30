@@ -83,18 +83,18 @@ const AppLayout = ({children}) => {
       breakpoint="lg"
         collapsedWidth="0"
         onBreakpoint={(broken) => {
-          console.log(broken);
+          console.log(broken)
         }}
         onCollapse={(collapsed, type) => {
-          console.log(collapsed, type);
+          console.log(collapsed, type)
         }}
       >
-        <div className="logo" />
+        <div className='logo' />
         <Menu
         className='sider'
         >
           <div className='sider-logo-con'>
-            <img className='sider-logo' src={scamTrustLogo} alt="" />
+            <img className='sider-logo' src={scamTrustLogo} alt='' />
           </div>
 
           <div className='side-tab-wrapper'>
@@ -108,25 +108,29 @@ const AppLayout = ({children}) => {
                 className='side-tabs'>TRANSACTIONS</span>
                </div>
 
-               <div className='side-tab-con'>
-               <CiWallet style={{color: '#ffff'}} /><span className='side-tabs'>WALLET</span>
-               </div>
+           
 
-               <div className='side-tab-con'>
-                <SlSettings style={{color: '#ffff'}} /><span className='side-tabs'>SETTINGS</span>
-               </div>
+            <div className='side-tab-con'>
+              <CiWallet style={{ color: "#ffff" }} />
+              <span className='side-tabs'>WALLET</span>
+            </div>
+
+            <div className='side-tab-con'>
+              <SlSettings style={{ color: "#ffff" }} />
+              <span className='side-tabs'>SETTINGS</span>
+            </div>
           </div>
 
           <div className='side-bottom-tab'>
             <div className='side-tab-con'>
-              <BiSupport style={{color: '#ffff'}} /><span className='side-tabs'>SUPPORT</span>
+              <BiSupport style={{ color: "#ffff" }} />
+              <span className='side-tabs'>SUPPORT</span>
             </div>
             <div className='side-tab-con' onClick={logoutUserHandler}>
               <IoLogOutOutline  style={{color: '#ffff'}} /><span className='side-tabs'>LOGOUT</span>
             </div>
           </div>
-
-          </Menu>
+        </Menu>
       </Sider>
 
       <Layout className='content-con'>
@@ -160,11 +164,9 @@ const AppLayout = ({children}) => {
         <Content className='layout-content' style={{margin: '0px 16px', color: 'black'}}>
               {children}
         </Content>
-
-        
       </Layout>
             </React.Fragment>}
     </Layout>
-  );
-};
-export default AppLayout;
+  )
+}
+export default AppLayout
