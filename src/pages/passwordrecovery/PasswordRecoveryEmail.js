@@ -1,7 +1,9 @@
 import React, { useState } from "react"
 import mail from "../../assets/images/mail.png"
 import footer from "../../assets/images/footerLogo.png"
+import logo from "../../assets/images/scamTrustLogo.png"
 import { useNavigate } from "react-router-dom"
+
 function PasswordRecoveryEmail() {
   const navigate = useNavigate()
   const handleClick = () => {
@@ -42,6 +44,7 @@ function PasswordRecoveryEmail() {
       {isLogin ? (
         <div>
           <div className='flex justify-center items-center h-[100vh] px-4  '>
+            <img src={logo} alt="" />
             <div className='sm:w-[480px] w-[100%] sm:h-[460px] box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
               <h2 className='text-primary pt-10 sm:pt-0 font-semibold  text-[22px] mb-2'>
                 Password Recovery
