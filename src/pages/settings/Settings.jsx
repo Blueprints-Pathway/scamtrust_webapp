@@ -1,17 +1,11 @@
-import React from 'react'
-import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
-import Sidebar from "../../components/sidebar/Sidebar"
+import React from "react"
+import Sidebar from "../../components/Sidebar"
 const Settings = () => {
-  return (
-   <div>
-    <Router>
-<Routes>
-<Sidebar/>
-
-</Routes>
-    </Router>
-  
-   </div>
+  return(
+    <div>
+      <Sidebar/>
+    
+    </div>
   )
 }
 

@@ -42,7 +42,7 @@ function PasswordRecoveryPhone() {
       {isLogin ? (
         <div>
           <div className='flex justify-center items-center h-[100vh] px-4  '>
-            <div className='sm:w-[460px] w-[100%] sm:h-[420px] box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
+            <div className='sm:w-[480px] w-[100%] sm:h-[460px] box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
               <h2 className='text-primary pt-10 sm:pt-0 font-semibold  text-[22px] mb-2'>
                 Password Recovery
               </h2>
@@ -78,15 +78,17 @@ function PasswordRecoveryPhone() {
 
                 <button
                   onClick={() => setIsLogin(false)}
-                  className='w-[300px] h-[38px] bg-primary rounded-[5px] text-[12px] mb-[6px]'
+                  className='w-[300px] h-[38px] bg-primary rounded-[5px] text-[12px] mb-[6px] flex justify-center items-center'
                 >
                   Continue
                 </button>
 
-                <h6 className='text-[12px] font-poppins text-[#8E8E8E] text-center pb-10 sm:pb-0'>
-                  Remember your password ?
-                  <button className='text-primary'>Log in</button>
-                </h6>
+                <div className='flex items-center'>
+                    <h6 className='text-[12px] font-poppins text-[#8E8E8E] text-center pb-10 sm:pb-0'>
+                      Remember your password ?
+                    </h6>
+                    <button className='text-primary text-xs'>Log in</button>
+                  </div>
               </div>
             </div>
           </div>
@@ -94,7 +96,7 @@ function PasswordRecoveryPhone() {
       ) : (
         <div>
           <div className='flex justify-center items-center h-[100vh] px-4 '>
-            <div className='sm:w-[460px] w-[100%] sm:h-[420px] box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
+            <div className='sm:w-[480px] w-[100%] sm:h-[460px] box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
               <h2 className='text-primary font-semibold  text-[22px] mb-2 pt-10 sm:pt-0 '>
                 Password Recovery
               </h2>
@@ -118,7 +120,7 @@ function PasswordRecoveryPhone() {
 
                 <button
                   onClick={() => setIsLogin(false)}
-                  className='w-[220px] h-[38px] bg-primary rounded-[5px] text-[12px] mb-[6px]'
+                  className='w-[220px] h-[38px] bg-primary rounded-[5px] text-[12px] mb-[6px] flex justify-center items-center'
                 >
                   Continue
                 </button>
