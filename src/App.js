@@ -22,7 +22,7 @@ import Ongoing from "./pages/transactions/ongoing/Ongoing"
 import Completed from "./pages/transactions/completed/Completed"
 import Cancelled from "./pages/transactions/cancelled/Cancelled"
 import Declined from "./pages/transactions/declined/Declined"
-
+import PasswordRecovery from "./pages/passwordrecoverey/PasswordRecovery"
 
 const App = () => {
   return (
@@ -54,9 +54,9 @@ const App = () => {
 		                {/* TRANSACTIONS */}
 		<Route path='/transactions' element={<Transaction />} />
 		<Route path='/awaiting-approval' element={<Awaiting />} />
-		<Route path='/ongoing-transaction' element={<Ongoing />} />
-		<Route path='/completed-transaction' element={<Completed />} />
-		<Route path='/cancelled-transaction' element={<Cancelled />} />
+		<Route path='/ongoing-transaction/:id' element={<Ongoing />} />
+		<Route path='/completed-transaction/:id' element={<Completed />} />
+		<Route path='/cancelled-transaction/:id' element={<Cancelled />} />
 		<Route path='/declined-transaction' element={<Declined />} />
 	</Routes>
   )

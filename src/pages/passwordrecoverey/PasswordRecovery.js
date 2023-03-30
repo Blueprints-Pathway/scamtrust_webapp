@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import mail from "../../assets/images/mail.png"
+import transfer from "../../assets/images/transfer.png"
 import footer from "../../assets/images/footerLogo.png"
 function PasswordRecovery() {
   const [isLogin, setIsLogin] = useState(true)
@@ -93,7 +93,7 @@ function PasswordRecovery() {
                 Password Recovery
               </h2>
               <div>
-                <img className='w-[100px]' src={mail} alt='' />
+                <img className='w-[100px]' src={transfer} alt='' />
               </div>
               <p className='font-semibold text-[12px] text-black font-poppins mb-5'>
                 Please enter the 6 digit code sent to folaade@gmail

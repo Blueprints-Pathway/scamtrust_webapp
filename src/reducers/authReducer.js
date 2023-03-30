@@ -163,8 +163,10 @@ const authReducer = createSlice({
       state.isAuthenticated = false;
       state.isEmailValid = false;
       state.isPhoneValid = false;
+      localStorage.removeItem('USER_TOKEN');
       console.log('logout')
     },
+   
     vendorRegistrationComplete(state){
      
       state.isEmailValid = false;

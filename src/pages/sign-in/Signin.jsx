@@ -7,11 +7,11 @@ import scamtrust from '../../assets/images/Logo.png'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { login } from '../../actions/authActions';
+import { login, logoutUserTimer } from '../../actions/authActions';
 import Modal from 'react-modal';
 import wave from '../../assets/images/wave.png'
 import frame from '../../assets/images/frame.png'
-import { Analytics } from '@mui/icons-material';
+import { Analytics, LogoutTwoTone } from '@mui/icons-material';
 
 const customStyles = {
   // overlay: {
@@ -64,7 +64,7 @@ const Signin = () => {
   useEffect(() => {
     if(isAuthenticated){
         console.log(data);
-
+        dispatch(logoutUserTimer())
       if(data.usertype === 'CUSTOMER'){
         navigate('/customer-dashboard');
 

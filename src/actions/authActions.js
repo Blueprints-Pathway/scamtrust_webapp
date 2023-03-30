@@ -327,3 +327,12 @@ export const login = (data) => async (dispatch) => {
 export const  logoutUser = ()  =>  (dispatch) =>  {
 dispatch(authActions.logoutUser())
 }
+
+export const  logoutUserTimer = ()  =>  (dispatch) =>  {
+    setTimeout(() =>{
+        dispatch(authActions.logoutUser())
+      },216000)
+
+      console.log('logout timer');
+  
+}       

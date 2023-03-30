@@ -35,10 +35,10 @@ const AppLayout = ({children}) => {
   const navigate = useNavigate();
   console.log('get user details' + loading + data + error)
   useEffect(()=>{
-    // if(!auth.isAuthenticated){
-    //   navigate('/')
-    //   return;
-    // }
+    if(!auth.isAuthenticated){
+      navigate('/sign-in')
+      return;
+    }
     dispatch(getLoggedInUserDetails());
     dispatch(getCustomerTransactions());
     dispatch(getCustomerOngoingTransactions());
@@ -46,7 +46,7 @@ const AppLayout = ({children}) => {
     dispatch(getCustomerCompletedTransactions());
     dispatch(listNotifications());
     
-  },[dispatch])
+  },[dispatch, auth.isAuthenticated])
   // const {
   //   token: { colorBgContainer },
   // } = theme.useToken();

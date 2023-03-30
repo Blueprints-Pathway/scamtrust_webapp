@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import classes from './Transactions.module.css'
 import { Card, Tabs, Pagination } from 'antd';
 import Createtransaction from '../../components/buttons/createtransaction-btn/Createtransaction';
@@ -11,8 +11,21 @@ import Cancelled from '../../components/transactions/cancelled/Cancelled';
 import AllTransaction from '../../components/transactions/all-transactions/AllTransaction';
 import AppLayout from '../../components/Layout/AppLayout';
 import Layout, { Content } from 'antd/es/layout/layout';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCustomerCancelledTransactions, getCustomerCompletedTransactions, getCustomerOngoingTransactions, getCustomerTransactions } from '../../actions/customerTransactionActions';
 
 const Transactions = () => {
+
+  const dispatch  = useDispatch();
+  
+
+  useEffect(() => {
+    dispatch(getCustomerTransactions());
+    dispatch(getCustomerOngoingTransactions());
+    dispatch(getCustomerCancelledTransactions());
+    dispatch(getCustomerCompletedTransactions());
+
+  },[dispatch])
 
     const onChange = (key) => {
         console.log(key);
