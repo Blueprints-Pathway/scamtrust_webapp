@@ -13,6 +13,10 @@ const initialState = {
   phoneExistData: false,
   isEmailValid: false,
   isPhoneValid: false,
+  resetPasswordLinkSuccessful:false,
+  resetEmailToken: false,
+  isVerifyEmailTokenSuccessful: false,
+  isResetPasswordSuccessful: false,
 };
 const authReducer = createSlice({
   name: "auth",
@@ -55,10 +59,17 @@ const authReducer = createSlice({
     verifyEmailTokenSuccess(state, action) {
       state.loading = false;
       state.data = action.payload;
+      state.isVerifyEmailTokenSuccessful = true;
     },
     verifyEmailTokenFailure(state, action) {
       state.loading = false;
        state.error = action.payload;
+       state.isVerifyEmailTokenSuccessful = false;
+    },
+    resetEmailToken(state){
+      state.loading = false;
+      state.isVerifyEmailTokenSuccessful = false;
+      state.error = false;
     },
     verifyEmailExistRequest(state) {
       state.emailExistDataLoading = true;
@@ -90,10 +101,17 @@ const authReducer = createSlice({
     resetPasswordLinkSuccess(state, action) {
       state.loading = false;
       state.data = action.payload;
+      state.resetPasswordLinkSuccessful = true;
+      console.log(action.payload);
     },
     resetPasswordLinkFailure(state, action) {
       state.loading = false;
-       state.error = action.payload;
+      state.error = action.payload;
+    },
+    resetPasswordLink(state){
+      state.loading = false;
+      state.resetPasswordLinkSuccessful = false;
+      state.error = false;
     },
     resetPasswordRequest(state) {
       state.loading = true;
@@ -101,10 +119,16 @@ const authReducer = createSlice({
     resetPasswordSuccess(state, action) {
       state.loading = false;
       state.data = action.payload;
+      state.isResetPasswordSuccessful = true;
     },
     resetPasswordFailure(state, action) {
       state.loading = false;
        state.error = action.payload;
+    },
+    resetPasswordData(state){
+      state.error = false;
+      state.data = null;
+      state.isResetPasswordSuccessful = false;
     },
     setPinRequest(state) {
       state.loading = true;
@@ -163,8 +187,10 @@ const authReducer = createSlice({
       state.isAuthenticated = false;
       state.isEmailValid = false;
       state.isPhoneValid = false;
+      localStorage.removeItem('USER_TOKEN');
       console.log('logout')
     },
+   
     vendorRegistrationComplete(state){
      
       state.isEmailValid = false;

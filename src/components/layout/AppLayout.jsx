@@ -34,10 +34,10 @@ const AppLayout = ({children}) => {
   const navigate = useNavigate();
   console.log('get user details' + loading + data + error)
   useEffect(()=>{
-    // if(!auth.isAuthenticated){
-    //   navigate('/')
-    //   return;
-    // }
+    if(!auth.isAuthenticated){
+      navigate('/sign-in')
+      return;
+    }
     dispatch(getLoggedInUserDetails());
     dispatch(getCustomerTransactions());
     dispatch(getCustomerOngoingTransactions());
@@ -45,7 +45,7 @@ const AppLayout = ({children}) => {
     dispatch(getCustomerCompletedTransactions());
     dispatch(listNotifications());
     
-  },[dispatch])
+  },[dispatch, auth.isAuthenticated])
   // const {
   //   token: { colorBgContainer },
   // } = theme.useToken();
@@ -82,18 +82,18 @@ const AppLayout = ({children}) => {
       breakpoint="lg"
         collapsedWidth="0"
         onBreakpoint={(broken) => {
-          console.log(broken);
+          console.log(broken)
         }}
         onCollapse={(collapsed, type) => {
-          console.log(collapsed, type);
+          console.log(collapsed, type)
         }}
       >
-        <div className="logo" />
+        <div className='logo' />
         <Menu
         className='sider'
         >
           <div className='sider-logo-con'>
-            <img className='sider-logo' src={scamTrustLogo} alt="" />
+            <img className='sider-logo' src={scamTrustLogo} alt='' />
           </div>
 
           <div className='side-tab-wrapper'>
@@ -112,21 +112,27 @@ const AppLayout = ({children}) => {
                >WALLET</span>
                </div>
 
-               <div className='side-tab-con'>
-                <SlSettings style={{color: '#ffff'}} /><span className='side-tabs'>SETTINGS</span>
-               </div>
+            <div className='side-tab-con'>
+              <CiWallet style={{ color: "#ffff" }} />
+              <span className='side-tabs'>WALLET</span>
+            </div>
+
+            <div className='side-tab-con'>
+              <SlSettings style={{ color: "#ffff" }} />
+              <span className='side-tabs'>SETTINGS</span>
+            </div>
           </div>
 
           <div className='side-bottom-tab'>
             <div className='side-tab-con'>
-              <BiSupport style={{color: '#ffff'}} /><span className='side-tabs'>SUPPORT</span>
+              <BiSupport style={{ color: "#ffff" }} />
+              <span className='side-tabs'>SUPPORT</span>
             </div>
             <div className='side-tab-con' onClick={logoutUserHandler}>
               <IoLogOutOutline  style={{color: '#ffff'}} /><span className='side-tabs'>LOGOUT</span>
             </div>
           </div>
-
-          </Menu>
+        </Menu>
       </Sider>
 
       <Layout className='content-con'>
@@ -160,11 +166,9 @@ const AppLayout = ({children}) => {
         <Content className='layout-content' style={{margin: '0px 16px', color: 'black'}}>
               {children}
         </Content>
-
-        
       </Layout>
             </React.Fragment>}
     </Layout>
-  );
-};
-export default AppLayout;
+  )
+}
+export default AppLayout

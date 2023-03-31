@@ -1,6 +1,6 @@
 import React from 'react'
 import './SignupLayout.css'
-import scamtrust from '../../../assets/images/Logo.png'
+import scamtrust from '../../../assets/images/logo.png'
 import FooterLogo from '../../FooterLogo/FooterLogo'
 
 const SignupLayout = ({ children }) => {

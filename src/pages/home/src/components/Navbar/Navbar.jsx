@@ -20,7 +20,7 @@ const Navbar = () => {
               Login
             </button>
             
-           <button onClick={()=>{navigate('/layout')}}
+           <button onClick={()=>{navigate('/sign-in')}}
            className='sign-btn'>
             Sign up
            </button>

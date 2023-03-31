@@ -9,6 +9,7 @@ const initialState = {
   allTransactions: [], 
   transactionDetail: {},
   isCreateTransactionSuccessful: false,
+  isAcceptTransactionSuccessful: false,
   data: {}
 };
 
@@ -30,6 +31,10 @@ const customerTransactionReducer = createSlice({
     createTransactionFailure(state, action) {
       state.loading = false;
       state.error = action.payload;
+      state.isCreateTransactionSuccessful = false;
+    },
+    resetTransaction(state){
+      state.loading = true;
       state.isCreateTransactionSuccessful = false;
     },
     viewTransactionRequest(state) {
@@ -89,14 +94,22 @@ const customerTransactionReducer = createSlice({
       },
       customerAcceptTransactionRequest(state) {
         state.loading = true;
+        state.isAcceptTransactionSuccessful = false;
       },
       customerAcceptTransactionSuccess(state, action) {
         state.loading = false;
+        state.isAcceptTransactionSuccessful = true;
         state.data = action.payload;
       },
       customerAcceptTransactionFailure(state, action) {
         state.loading = false;
+        state.isAcceptTransactionSuccessful = false;
         state.error = action.payload;
+      },
+      resetAcceptTransactionStatus(state){
+        state.loading = true;
+        state.isAcceptTransactionSuccessful = false;
+        state.error = null;
       },
   },
 });

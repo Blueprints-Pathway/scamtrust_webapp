@@ -9,7 +9,7 @@ const PasswordRecovery = () => {
     <SignupLayout>
         <div className={classes['wrapper']}>
             <div className={classes['header-con']}>
-                <p className={classes['title-1']}>Password Recovery</p>
+                <p className={classes['title-1']}>Password rRecovery</p>
                 <p className={classes['title-2']}>Please enter your Email Address to receive verification code</p>
             </div>
             <div className={classes['form']}>

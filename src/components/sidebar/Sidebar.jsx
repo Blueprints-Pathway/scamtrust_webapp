@@ -8,19 +8,17 @@ import { VscHome } from "react-icons/vsc"
 import { BiSupport } from "react-icons/bi"
 import { IoLogOutOutline } from "react-icons/io5"
 import { MdNotificationsNone } from "react-icons/md"
-
+import search from "../../assets/images/search.png"
 import scamTrustLogo from "../../assets/images/scamTrustLogo.png"
 import CustomerDashboard from "../../pages/dashboards/CustomerDashboard/CustomerDashboard"
-import {Link} from "react-router-dom"
 
 const { Header, Content, Sider } = Layout
-
 const Sidebar = () => {
   // const {
   //   token: { colorBgContainer },
   // } = theme.useToken();
   return (
-    <div>
+    <Layout className='wrapper'>
       <Sider
         style={{ backgroundColor: "#232164", zIndex: "30" }}
         breakpoint='lg'
@@ -51,13 +49,10 @@ const Sidebar = () => {
           </div>
 
           <div className='side-tab-wrapper'>
-            <Link to='/vendordashboard'>
-            
-              <div className='side-tab-con'>
-                <VscHome style={{ color: "#ffff" }} />
-                <span className='side-tabs'>DASHBOARD</span>
-              </div>
-            </Link>
+            <div className='side-tab-con'>
+              <VscHome style={{ color: "#ffff" }} />
+              <span className='side-tabs'>DASHBOARD</span>
+            </div>
 
             <div className='side-tab-con'>
               <VscArrowSwap style={{ color: "#ffff" }} />
@@ -83,16 +78,12 @@ const Sidebar = () => {
             <div className='side-tab-con'>
               <IoLogOutOutline style={{ color: "#ffff" }} />
               <span className='side-tabs'>LOGOUT</span>
-              </div>
-        
+            </div>
           </div>
-        
         </Menu>
-      
-
-    
       </Sider>
-    </div>
+    </Layout>
   )
 }
+
 export default Sidebar

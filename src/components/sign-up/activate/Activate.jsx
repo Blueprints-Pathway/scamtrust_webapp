@@ -1,6 +1,6 @@
 import React from 'react'
 import './Activate.css'
-import logo from '../../../assets/images/Logo.png'
+import logo from '../../../assets/images/logo.png'
 import congrats from '../../../assets/images/congrats.png'
 import { Button } from 'antd'
 import { useNavigate } from 'react-router-dom'
