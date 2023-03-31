@@ -13,7 +13,7 @@ function UpdatedPassword() {
                 <img className='md:w-[164px] w-[100px]' src={logo} alt='' />
               </div>
               <div className='flex items-center justify-center '>
-                <div className='sm:w-[480px] w-[100%] sm:h-[460px] box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
+                <div className='sm:w-[480px] w-[100%] sm:h-[460px] h-[320px] box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
                   <h2 className='text-primary pt-10 sm:pt-0 font-semibold  text-[22px] mb-2'>
                     Password Recovery
                   </h2>
@@ -70,7 +70,7 @@ function UpdatedPassword() {
                 <img className='md:w-[164px] w-[100px]' src={logo} alt='' />
               </div>
               <div className='flex items-center justify-center '>
-                <div className='sm:w-[480px] w-[100%] sm:h-[460px] box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
+                <div className='sm:w-[480px] w-[100%] sm:h-[460px] h-[320px] box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
                   <h2 className='text-primary pt-10 sm:pt-0 font-semibold  text-[22px] mb-2'>
                     Password Recovery
                   </h2>

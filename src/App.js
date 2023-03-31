@@ -8,6 +8,7 @@ import About from "./pages/home/src/components/About/About"
 import Faq from "./pages/home/src/components/Faq/Faq"
 import KnowMore from "./pages/home/src/components/knowMore/KnowMore"
 import HomePage from "./pages/home/src/HomePage"
+import PasswordChanged from "./pages/passwordrecovery/PasswordChanged"
 import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmail"
 import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone"
 import UpdatedPassword from "./pages/passwordrecovery/UpdatedPassword"
@@ -41,6 +42,7 @@ const App = () => {
       <Route path="/settings" element={<Settings/>}/>
       <Route path="/settings" element={<Settings/>}/>
       <Route path="/updatedpassword" element={<UpdatedPassword/>}/>
+      <Route path="/passwordchanged" element={<PasswordChanged/>}/>
     </Routes>
   )
 }
