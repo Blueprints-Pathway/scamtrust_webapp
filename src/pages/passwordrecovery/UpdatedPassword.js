@@ -1,8 +1,14 @@
 import React from "react"
 import logo from "../../assets/images/logo.png"
 import { BiErrorCircle} from "react-icons/bi";
+import {useNavigate } from "react-router-dom"
+
 function UpdatedPassword() {
   const [isUpdated, setIsUpdated] = React.useState(true)
+  const navigate = useNavigate()
+  const handleClick = () => {
+    navigate("/passwordchanged")
+  }
   return (
     <div>
       {isUpdated ? (
@@ -108,7 +114,8 @@ function UpdatedPassword() {
                      <span><BiErrorCircle/></span> Passwords do not match
                     </h6>
                     <div className='mt-4'>
-                      <button className='w-[300px] h-[38px] bg-primary rounded-[5px] text-[12px] mb-[6px] flex justify-center items-center'>
+                      <button
+                      onClick={handleClick} className='w-[300px] h-[38px] bg-primary rounded-[5px] text-[12px] mb-[6px] flex justify-center items-center'>
                         Update password
                       </button>
                     </div>
