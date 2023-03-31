@@ -45,10 +45,10 @@ function PasswordRecoveryEmail() {
         <div>
           <div className=' h-[100vh] px-4 overflow-y-hidden  '>
             <div className='px-6 mt-5 mb-20 md:mb-3 md:mt-10'>
-              <img className='md:w-[164px] w-[100px]' src={logo} alt='' />
+              <img className='lg:w-[164px] md:w-[140px] w-[100px]' src={logo} alt='' />
             </div>
             <div className='flex items-center justify-center '>
-              <div className='sm:w-[480px] w-[100%] sm:h-[460px] h-[320px] box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
+              <div className='lg:w-[480px] sm:w-[460px] w-[100%] lg:h-[460px] sm:h-[420px] h-[320px]  box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
                 <h2 className='text-primary pt-10 sm:pt-0 font-semibold  text-[22px] mb-2'>
                   Password Recovery
                 </h2>
@@ -105,10 +105,10 @@ function PasswordRecoveryEmail() {
         <div>
        <div className="h-[100vh] overflow-y-hidden px-4">
        <div className="px-6 mt-5 mb-20 md:mb-3 md:mt-10">
-          <img className='md:w-[164px] w-[100px]' src={logo} alt='' />
+          <img className='lg:w-[164px] md:w-[140px]] w-[100px]' src={logo} alt='' />
           </div>
           <div className='flex justify-center items-center  '>
-            <div className='sm:w-[480px] w-[100%] sm:h-[460px] h-[320px] box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
+            <div className='lg:w-[480px] sm:w-[460px] w-[100%] lg:h-[460px] sm:h-[420px] h-[320px] box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
               <h2 className='text-primary font-semibold  text-[22px] mb-2 pt-10 sm:pt-0 '>
                 Password Recovery
               </h2>
