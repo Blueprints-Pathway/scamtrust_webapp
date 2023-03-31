@@ -1,0 +1,344 @@
+.fund-btn{
+    background-color: #3AB75D;
+    color: #ffff;
+    border-radius: 5px;
+    padding: 10px 44px;
+    border: none;
+    font-size: 11px;
+    text-align: center;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.title{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
+    color: #232164;
+    margin: 25px 0px 10px 0px;
+}
+.content{
+    text-align: center;
+    font-size: 15px;
+    width: 25rem;
+    margin-bottom: 20px;
+}
+.line{
+    border: 0.2px solid rgb(81, 81, 81);
+    width: 400px;
+}
+.btn-con{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: -15px;
+}
+.left-btn{
+    margin: 0px 90px;
+    font-size: 16px;
+}
+.right-btn{
+    margin: 0px 90px;
+    font-size: 16px;
+}
+.modal2-con{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.modal2-div-1{
+    margin-top: 15px;
+}
+.modal2-title{
+    font-size: 14px;
+    text-align: center;
+}
+.modal2-bank{
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 7px 0px;
+}
+.modal2-btn{
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    color: #ffff;
+    background-color: #0257C0;
+    padding: 10px 25px;
+    border-radius: 20px;
+}
+.modal2-icon{
+    font-size: 18px;
+    margin-right: 5px;
+}
+.modal2-content{
+    text-align: center;
+    font-size: 11px;
+    margin-top: 10px;
+}
+@media screen and (max-width: 1200px) {
+    .fund-btn{
+        background-color: #3AB75D;
+        border-radius: 5px;
+        padding: 8px 40px;
+        border: none;
+        font-size: 9px;
+        text-align: center;
+    }
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 10rem;
+    }
+    .title{
+        text-align: center;
+        font-size: 18px;
+        font-weight: 300;
+        color: #232164;
+        margin: 25px 0px 10px 0px;
+    }
+    .content{
+        text-align: center;
+        font-size: 15px;
+        width: 25rem;
+        margin-bottom: 20px;
+    }
+    .line{
+        border: 0.2px solid rgb(81, 81, 81);
+        width: 400px;
+    }
+    .btn-con{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 25px;
+    }
+    .left-btn{
+        margin: 0px 90px;
+        font-size: 16px;
+    }
+    .right-btn{
+        margin: 0px 90px;
+        font-size: 16px;
+    }
+    .modal2-con{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .modal2-div-1{
+        margin-top: 15px;
+    }
+    .modal2-title{
+        font-size: 14px;
+        text-align: center;
+    }
+    .modal2-bank{
+        text-align: center;
+        font-size: 13px;
+        font-weight: 600;
+        margin: 7px 0px;
+    }
+    .modal2-btn{
+        display: flex;
+        align-items: center;
+        border: none;
+        outline: none;
+        color: #ffff;
+        background-color: #0257C0;
+        padding: 10px 25px;
+        border-radius: 20px;
+    }
+    .modal2-icon{
+        font-size: 18px;
+        margin-right: 5px;
+    }
+    .modal2-content{
+        text-align: center;
+        font-size: 11px;
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .fund-btn{
+        background-color: #3AB75D;
+        border-radius: 5px;
+        padding: 8px 31px;
+        border: none;
+        font-size: 9px;
+        text-align: center;
+    }
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 10rem;
+    }
+    .title{
+        text-align: center;
+        font-size: 18px;
+        font-weight: 300;
+        color: #232164;
+        margin: 25px 0px 10px 0px;
+    }
+    .content{
+        text-align: center;
+        font-size: 15px;
+        width: 25rem;
+        margin-bottom: 20px;
+    }
+    .line{
+        border: 0.2px solid rgb(81, 81, 81);
+        width: 400px;
+    }
+    .btn-con{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 25px;
+    }
+    .left-btn{
+        margin: 0px 90px;
+        font-size: 16px;
+    }
+    .right-btn{
+        margin: 0px 90px;
+        font-size: 16px;
+    }
+    .modal2-con{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .modal2-div-1{
+        margin-top: 15px;
+    }
+    .modal2-title{
+        font-size: 14px;
+        text-align: center;
+    }
+    .modal2-bank{
+        text-align: center;
+        font-size: 13px;
+        font-weight: 600;
+        margin: 7px 0px;
+    }
+    .modal2-btn{
+        display: flex;
+        align-items: center;
+        border: none;
+        outline: none;
+        color: #ffff;
+        background-color: #0257C0;
+        padding: 10px 25px;
+        border-radius: 20px;
+    }
+    .modal2-icon{
+        font-size: 18px;
+        margin-right: 5px;
+    }
+    .modal2-content{
+        text-align: center;
+        font-size: 11px;
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .fund-btn{
+        background-color: #3AB75D;
+        border-radius: 5px;
+        padding: 8px 31px;
+        border: none;
+        font-size: 9px;
+        text-align: center;
+    }
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 10rem;
+    }
+    .title{
+        text-align: center;
+        font-size: 16px;
+        font-weight: 300;
+        color: #232164;
+        margin: 25px 0px 10px 0px;
+    }
+    .content{
+        text-align: center;
+        font-size: 13px;
+        width: 300px;
+        margin-bottom: 20px;
+    }
+    .line{
+        border: 0.2px solid rgb(81, 81, 81);
+        width: 115%;
+    }
+    .btn-con{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 13px;
+        margin-bottom: -10px;
+    }
+    .left-btn{
+        margin: 0px 80px;
+        font-size: 14px;
+    }
+    .right-btn{
+        margin: 0px 80px;
+        font-size: 14px;
+    }
+    .modal2-con{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .modal2-div-1{
+        margin-top: 15px;
+    }
+    .modal2-title{
+        font-size: 13px;
+        text-align: center;
+    }
+    .modal2-bank{
+        text-align: center;
+        font-size: 12px;
+        font-weight: 600;
+        margin: 7px 0px;
+    }
+    .modal2-btn{
+        display: flex;
+        align-items: center;
+        border: none;
+        outline: none;
+        color: #ffff;
+        background-color: #0257C0;
+        padding: 10px 25px;
+        border-radius: 20px;
+    }
+    .modal2-icon{
+        font-size: 17px;
+        margin-right: 5px;
+    }
+    .modal2-content{
+        text-align: center;
+        font-size: 10px;
+        margin-top: 10px;
+    }
+}
