@@ -23,6 +23,7 @@ import Completed from "./pages/transactions/completed/Completed"
 import Cancelled from "./pages/transactions/cancelled/Cancelled"
 import Declined from "./pages/transactions/declined/Declined"
 import CancelReason from "./pages/transactions/cancel-reason/CancelReason"
+import Wallet from "./pages/Wallet/Wallet"
 
 
 const App = () => {
@@ -59,6 +60,10 @@ const App = () => {
 		<Route path='/cancelled-transaction' element={<Cancelled />} />
 		<Route path='/declined-transaction' element={<Declined />} />
 		<Route path='/cancel-reason' element={<CancelReason />} />
+{/* 
+                              WALLET */}
+		<Route path='/wallet' element={<Wallet />} />
+
 	</Routes>
   )
 }

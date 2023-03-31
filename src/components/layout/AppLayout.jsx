@@ -9,7 +9,6 @@ import { BiSupport} from 'react-icons/bi'
 import { IoLogOutOutline } from 'react-icons/io5'
 import search from '../../assets/images/search.png'
 import scamTrustLogo from '../../assets/images/scamTrustLogo.png'
-import CustomerDashboard from '../../pages/dashboards/CustomerDashboard/CustomerDashboard';
 import { getLoggedInUserDetails } from '../../actions/userActions';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
@@ -109,7 +108,8 @@ const AppLayout = ({children}) => {
                </div>
 
                <div className='side-tab-con'>
-               <CiWallet style={{color: '#ffff'}} /><span className='side-tabs'>WALLET</span>
+               <CiWallet style={{color: '#ffff'}} /><span className='side-tabs' onClick={()=>navigate('/wallet')}
+               >WALLET</span>
                </div>
 
                <div className='side-tab-con'>

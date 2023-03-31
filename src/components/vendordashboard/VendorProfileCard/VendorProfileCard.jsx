@@ -2,9 +2,9 @@ import React from "react"
 // import { Card } from 'antd';
 import "./VendorProfileCard.css"
 import { AiFillEye } from "react-icons/ai"
-import Withdrawalbutton from "../../buttons/withdrawalbutton/Withdrawbutton"
 import Fundbutton from "../../buttons/fundbutton/Fundbutton"
 import FooterLogo from "../../../assets/images/footerLogo.png"
+import Withdrawbutton from "../../buttons/withdrawbutton/Withdrawbutton"
 
 const VendorProfileCard = () => {
   return (
@@ -46,7 +46,7 @@ const VendorProfileCard = () => {
             <h5 className='profile-card-text'>Secured by</h5>
             <img src={FooterLogo} alt='' />
           </div>
-          <Withdrawalbutton />
+          <Withdrawbutton />
         </div>
       </div>
     </div>

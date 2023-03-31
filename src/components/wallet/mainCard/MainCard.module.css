@@ -1,0 +1,776 @@
+.wrapper{
+    width: 40vw;
+}
+.main-con{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 17px;
+    width: 35vw;
+    height: 29rem;
+    padding-top: 7px;
+}
+.head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 2px;
+}
+.head-1{
+    font-size: 20px;
+    font-weight: 600;
+    color: #171717;
+}
+.head-name{
+    font-size: 17px;
+    font-weight: 500;
+    color: #232164;
+}
+.line{
+    border: 1px solid #86D19B;
+}
+.eye-con{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 5px 25px 0px 0px;
+}
+.eye-1{
+    font-size: 25px;
+}
+.balance-con{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 31.8vw;
+}
+.available-con{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.available-sup{
+    font-family: poppins;
+    font-size: 13px;
+}
+.available-digits{
+    font-size: 21px;
+    font-weight: 500;
+    color: #126A2B;
+}
+.available{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 3px;
+}
+.available-icon{
+    font-size: 14px;
+    margin: 0px 14px;
+}
+.pending-digits{
+    font-size: 21px;
+    font-weight: 500;
+    color: #333333;
+}
+.btn-con{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 27.9vw;
+    margin-top: 35px;
+}
+.primary-con{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 35px;
+    width: 26.6vw;
+}
+.primary{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+}
+.primary-copy{
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 500;
+    color: #707070;
+}
+.primary-copy-icon{
+    font-size: 18px;
+    margin: 0px 7px;
+}
+.add-account-con{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 6rem;
+    width: 31vw;
+    background-color: #EAEAEA;
+    border-radius: 10px;
+    padding: 0px 15px;
+    margin-top: 18px;
+}
+.add-account-content{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    line-height: 20px;
+}
+.add-acc-digits{
+    font-size: 16px;
+    font-weight: 500;
+    color: #126A2B;
+}
+.add-acc-mssg{
+    font-size: 13px;
+    font-weight: 500;
+    color: #171717;
+    margin: 0px 7px;
+}
+b{
+    font-weight: 600;
+}
+.add-acc-btn{
+    font-size: 12px;
+    font-weight: 500;
+    color: #ffff;
+    background-color: #232164;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    text-align: center;
+    width: 6.5rem;
+    padding: 8px 0px;
+}
+
+@media screen and (max-width: 1201px) {
+    .wrapper{
+        width: 40vw;
+    }
+    .main-con{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 17px;
+        width: 35vw;
+        height: 29rem;
+        padding-top: 7px;
+    }
+    .head{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 15px;
+        margin-bottom: 2px;
+    }
+    .head-1{
+        font-size: 20px;
+        font-weight: 600;
+        color: #171717;
+    }
+    .head-name{
+        font-size: 17px;
+        font-weight: 500;
+        color: #232164;
+    }
+    .line{
+        border: 1px solid #86D19B;
+    }
+    .eye-con{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 5px 25px 0px 0px;
+    }
+    .eye-1{
+        font-size: 25px;
+    }
+    .balance-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+        width: 31.8vw;
+    }
+    .available-con{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .available-sup{
+        font-family: poppins;
+        font-size: 13px;
+    }
+    .available-digits{
+        font-size: 21px;
+        font-weight: 500;
+        color: #126A2B;
+    }
+    .available{
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: 3px;
+    }
+    .available-icon{
+        font-size: 14px;
+        margin: 0px 5px;
+    }
+    .pending-digits{
+        font-size: 21px;
+        font-weight: 500;
+        color: #333333;
+    }
+    .btn-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 27.5vw;
+        margin-top: 35px;
+    }
+    .primary-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 35px;
+        width: 26.6vw;
+    }
+    .primary{
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .primary-copy{
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+        font-weight: 500;
+        color: #707070;
+    }
+    .primary-copy-icon{
+        font-size: 18px;
+        margin: 0px 7px;
+    }
+    .add-account-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 6rem;
+        width: 31vw;
+        background-color: #EAEAEA;
+        border-radius: 10px;
+        padding: 0px 15px;
+        margin-top: 18px;
+    }
+    .add-account-content{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        line-height: 20px;
+    }
+    .add-acc-digits{
+        font-size: 16px;
+        font-weight: 500;
+        color: #126A2B;
+    }
+    .add-acc-mssg{
+        font-size: 13px;
+        font-weight: 500;
+        color: #171717;
+        margin: 0px 7px;
+    }
+    b{
+        font-weight: 600;
+    }
+    .add-acc-btn{
+        font-size: 12px;
+        font-weight: 500;
+        color: #ffff;
+        background-color: #232164;
+        border: none;
+        outline: none;
+        border-radius: 3px;
+        text-align: center;
+        width: 6.5rem;
+        padding: 8px 0px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .wrapper{
+        width: 35vw;
+    }
+    .main-con{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 17px;
+        width: 35vw;
+        height: 22.5rem;
+        padding: 10px 0px 0px 0px;
+    }
+    .head{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 0px;
+        margin-bottom: 2px;
+    }
+    .head-1{
+        font-size: 18px;
+        font-weight: 500;
+        color: #171717;
+    }
+    .head-name{
+        font-size: 16px;
+        font-weight: 500;
+        color: #232164;
+    }
+    .line{
+        border: 1px solid #86D19B;
+    }
+    .eye-con{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 5px 10px 0px 0px;
+    }
+    .eye-1{
+        font-size: 18px;
+    }
+    .balance-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+        width: 31vw;
+    }
+    .available-con{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .available-sup{
+        font-family: poppins;
+        font-size: 11px;
+    }
+    .available-digits{
+        font-size: 17px;
+        font-weight: 500;
+        color: #126A2B;
+    }
+    .available{
+        display: flex;
+        align-items: center;
+        font-size: 11px;
+        font-weight: 500;
+        margin-top: 3px;
+    }
+    .available-icon{
+        font-size: 10px;
+        margin: 0px 2px;
+    }
+    .pending-digits{
+        font-size: 17px;
+        font-weight: 500;
+        color: #333333;
+    }
+    .btn-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 30vw;
+        margin-top: 25px;
+    }
+    .primary-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 25px;
+        width: 28.5vw;
+    }
+    .primary{
+        display: flex;
+        align-items: center;
+        font-size: 11px;
+        font-weight: 500;
+    }
+    .primary-copy{
+        display: flex;
+        align-items: center;
+        font-size: 11px;
+        font-weight: 500;
+        color: #707070;
+    }
+    .primary-copy-icon{
+        font-size: 18px;
+        margin: 0px 7px;
+    }
+    .add-account-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 4.5rem;
+        width: 31vw;
+        background-color: #EAEAEA;
+        border-radius: 10px;
+        padding: 0px 10px;
+        margin-top: 18px;
+    }
+    .add-account-content{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        line-height: 18px;
+    }
+    .add-acc-digits{
+        font-size: 13px;
+        font-weight: 500;
+        color: #126A2B;
+    }
+    .add-acc-mssg{
+        font-size: 10px;
+        font-weight: 500;
+        color: #171717;
+        margin: 0px 7px;
+    }
+    b{
+        font-weight: 600;
+    }
+    .add-acc-btn{
+        font-size: 9px;
+        font-weight: 500;
+        color: #ffff;
+        background-color: #232164;
+        border: none;
+        outline: none;
+        border-radius: 3px;
+        text-align: center;
+        width: 4rem;
+        padding: 5px 0px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .wrapper{
+        width: 40vw;
+    }
+    .main-con{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 17px;
+        width: 40vw;
+        height: 20.5rem;
+        padding: 7px 0px 0px 0px;
+    }
+    .head{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 0px;
+        margin-bottom: 2px;
+    }
+    .head-1{
+        font-size: 16px;
+        font-weight: 500;
+        color: #171717;
+    }
+    .head-name{
+        font-size: 13px;
+        font-weight: 500;
+        color: #232164;
+    }
+    .line{
+        border: 1px solid #86D19B;
+    }
+    .eye-con{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 5px 10px 0px 0px;
+    }
+    .eye-1{
+        font-size: 16px;
+    }
+    .balance-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+        width: 34vw;
+    }
+    .available-con{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .available-sup{
+        font-family: poppins;
+        font-size: 9px;
+    }
+    .available-digits{
+        font-size: 15px;
+        font-weight: 500;
+        color: #126A2B;
+    }
+    .available{
+        display: flex;
+        align-items: center;
+        font-size: 11px;
+        font-weight: 500;
+        margin-top: 3px;
+    }
+    .available-icon{
+        font-size: 10px;
+        margin: 0px 2px;
+    }
+    .pending-digits{
+        font-size: 15px;
+        font-weight: 500;
+        color: #333333;
+    }
+    .btn-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 30.7vw;
+        margin-top: 25px;
+    }
+    .primary-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 25px;
+        width: 30.3vw;
+    }
+    .primary{
+        display: flex;
+        align-items: center;
+        font-size: 11px;
+        font-weight: 500;
+    }
+    .primary-copy{
+        display: flex;
+        align-items: center;
+        font-size: 10px;
+        font-weight: 500;
+        color: #707070;
+    }
+    .primary-copy-icon{
+        font-size: 17px;
+        margin: 0px 5px;
+    }
+    .add-account-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 4rem;
+        width: 34vw;
+        background-color: #EAEAEA;
+        border-radius: 10px;
+        padding: 0px 10px;
+        margin-top: 10px;
+    }
+    .add-account-content{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        line-height: 18px;
+    }
+    .add-acc-digits{
+        font-size: 11px;
+        font-weight: 500;
+        color: #126A2B;
+    }
+    .add-acc-mssg{
+        font-size: 9px;
+        font-weight: 500;
+        color: #171717;
+        margin: 0px 7px;
+    }
+    b{
+        font-weight: 600;
+    }
+    .add-acc-btn{
+        font-size: 8px;
+        font-weight: 400;
+        color: #ffff;
+        background-color: #232164;
+        border: none;
+        outline: none;
+        border-radius: 3px;
+        text-align: center;
+        width: 3.7rem;
+        padding: 5px 0px;
+    }
+}
+@media screen and (max-width: 540px) {
+    .wrapper{
+        width: 80vw;
+    }
+    .main-con{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 17px;
+        width: 90vw;
+        height: 20.5rem;
+        padding: 7px 0px 0px 0px;
+    }
+    .head{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 0px;
+        margin-bottom: 2px;
+    }
+    .head-1{
+        font-size: 15px;
+        font-weight: 500;
+        color: #171717;
+    }
+    .head-name{
+        font-size: 13px;
+        font-weight: 500;
+        color: #232164;
+    }
+    .line{
+        border: 1px solid #86D19B;
+    }
+    .eye-con{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 5px 10px 0px 0px;
+    }
+    .eye-1{
+        font-size: 20px;
+    }
+    .balance-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+        width: 80vw;
+    }
+    .available-con{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .available-sup{
+        font-family: poppins;
+        font-size: 10px;
+    }
+    .available-digits{
+        font-size: 16px;
+        font-weight: 500;
+        color: #126A2B;
+    }
+    .available{
+        display: flex;
+        align-items: center;
+        font-size: 11px;
+        font-weight: 500;
+        margin-top: 3px;
+    }
+    .available-icon{
+        font-size: 10px;
+        margin: 0px 2px;
+    }
+    .pending-digits{
+        font-size: 16px;
+        font-weight: 500;
+        color: #333333;
+    }
+    .btn-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 72.5vw;
+        margin-top: 25px;
+    }
+    .primary-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 25px;
+        width: 71.5vw;
+    }
+    .primary{
+        display: flex;
+        align-items: center;
+        font-size: 11px;
+        font-weight: 500;
+    }
+    .primary-copy{
+        display: flex;
+        align-items: center;
+        font-size: 10px;
+        font-weight: 500;
+        color: #707070;
+    }
+    .primary-copy-icon{
+        font-size: 17px;
+        margin: 0px 5px;
+    }
+    .add-account-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 4rem;
+        width: 79vw;
+        background-color: #EAEAEA;
+        border-radius: 10px;
+        padding: 0px 15px;
+        margin-top: 10px;
+    }
+    .add-account-content{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        line-height: 15px;
+        margin: 0px 10px 0px 0px;
+    }
+    .add-acc-digits{
+        font-size: 12px;
+        font-weight: 500;
+        color: #126A2B;
+    }
+    .add-acc-mssg{
+        font-size: 11px;
+        font-weight: 500;
+        color: #171717;
+        margin: 0px 7px;
+    }
+    b{
+        font-weight: 600;
+    }
+    .add-acc-btn{
+        font-size: 9px;
+        font-weight: 400;
+        color: #ffff;
+        background-color: #232164;
+        border: none;
+        outline: none;
+        border-radius: 3px;
+        text-align: center;
+        width: 4.3rem;
+        padding: 5px 0px;
+    }
+}
