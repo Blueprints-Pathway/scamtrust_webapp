@@ -3,7 +3,7 @@ import Vendormessage from '../../components/sign-up/vendormessage/VendorMessage'
 import './Signin.css'
 import { Button, Checkbox, Form, Input } from 'antd';
 import { Link } from 'react-router-dom';
-import scamtrust from '../../assets/images/Logo.png'
+import scamtrust from '../../assets/images/logo.png'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -147,7 +147,7 @@ const Signin = () => {
             setCheck(e.target.checked);
             
            }}  className='sign-check-words'>Remember me</Checkbox>
-           <p onClick={()=>{navigate('/password-recovery')}}
+           <p onClick={()=>{navigate('/passwordrecoveryemail')}}
             className='sign-check-words'>Forgot Password? </p>
          </div>
 

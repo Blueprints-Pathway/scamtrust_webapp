@@ -146,28 +146,31 @@ export const verifyPhoneExist = (data) => async (dispatch) => {
 
 export const sendResetPasswordLink = (email) => async (dispatch) => {
     try{
-        dispatch(authActions.resetPasswordLinkRequest);
+        dispatch(authActions.resetPasswordLinkRequest());
         const config = {
             headers: {
               "Content-Type": "application/json",
             },
           };
         
-        const response = await axios.post(`${baseUrl}/auth/send/resetlink`, {email}, config);
-        if(response.status){
-            dispatch(authActions.resetPasswordLinkSuccess({
-                message: response.message,
-                data: response.data,
-            }));
+        const response = await axios.post(`${baseUrl}/auth/send/resetlink`, email, config);
+        console.log(response);
+        if(response.data.status){
+            dispatch(authActions.resetPasswordLinkSuccess(
+                 response.data.message,
+              
+            ));
+            console.log('sucessss');
         }else{
-            dispatch(authActions.resetPasswordLinkSuccess( 
-                response.message
+            console.log(response.data);
+            dispatch(authActions.resetPasswordLinkFailure( 
+                response.data.message
             ));
         }
 
       
         }catch(error){
-        dispatch(authActions.resetPasswordLinkSuccess(
+        dispatch(authActions.resetPasswordLinkFailure(
             error
         ));
     }
@@ -175,7 +178,7 @@ export const sendResetPasswordLink = (email) => async (dispatch) => {
 
 export const resetPassword = (data) => async (dispatch) => {
     try{
-        dispatch(authActions.resetPasswordRequest );
+        dispatch(authActions.resetPasswordRequest() );
         const config = {
             headers: {
               "Content-Type": "application/json",
@@ -183,14 +186,14 @@ export const resetPassword = (data) => async (dispatch) => {
           };
         
         const response = await axios.post(`${baseUrl}/auth/reset/password`, data, config);
-        if(response.status){
-            dispatch(authActions.resetPasswordSuccess({
-                message: response.message,
-                data: response.data,
-            }));
+        if(response.data.status){
+            dispatch(authActions.resetPasswordSuccess(
+                response.data.message
+               
+            ));
         }else{
             dispatch(authActions.resetPasswordFailure( 
-                response.message
+                response.data.message
             ));
         }
 

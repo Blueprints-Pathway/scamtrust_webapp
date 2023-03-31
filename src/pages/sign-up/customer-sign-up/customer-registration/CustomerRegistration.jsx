@@ -1,7 +1,7 @@
 import React from 'react'
 import CustomerMessage from '../../../../components/sign-up/customer-message/CustomerMessage'
 import classes from './CustomerRegistration.module.css'
-import logo from '../../../../assets/images/Logo.png'
+import logo from '../../../../assets/images/logo.png'
 import { Button, Checkbox, Form, Input, Select} from 'antd';
 import { CaretRightOutlined } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom';

@@ -1,8 +1,54 @@
 import React from "react"
 import logo from "../../assets/images/logo.png"
 import { BiErrorCircle} from "react-icons/bi";
+import { useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { resetPassword } from "../../actions/authActions";
+import { useNavigate, useParams } from "react-router-dom";
+import swal from "sweetalert";
+import { Button } from "antd";
+import { authActions } from "../../reducers/authReducer";
 function UpdatedPassword() {
   const [isUpdated, setIsUpdated] = React.useState(true)
+  const passwordRef = useRef();
+  const confirmPasswordRef = useRef();
+  const dispatch = useDispatch();
+  const param = useParams()
+  const navigate = useNavigate()
+  const auth = useSelector(state => state.auth)
+
+  const updatePassword = () => {
+    dispatch(resetPassword({
+      token: param.token,
+      password: passwordRef.current.value,
+      password_confirmation: confirmPasswordRef.current.value,
+    }));
+
+
+    console.log('update password');
+  }
+
+
+  if(auth.isVerifyEmailTokenSuccessful){
+    console.log(auth.data)
+    swal({
+      icon:'success',
+      text: auth.data,
+    })
+    dispatch(authActions.resetEmailToken())
+
+   navigate('/sign-in')
+  }
+// console.log(auth.error.response.data.status)
+  if(auth.error){
+    console.log(auth.error.response.data.message)
+    swal({
+      icon:'error',
+      text: auth.error.response.data.message.token[0] || auth.error.response.data.message.password[0] ||  auth.error.response.data.message || 'Unsuccessful',
+    })
+    dispatch(authActions.resetEmailToken())
+
+  }
   return (
     <div>
       {isUpdated ? (
@@ -89,6 +135,7 @@ function UpdatedPassword() {
                           <input
                             className='w-[100%] h-[100%] border-0 outline-none pl-3  text-[#D5D8DA]'
                             type='text'
+                            ref={passwordRef}
                           />
                         </div>
                       </div>
@@ -100,17 +147,17 @@ function UpdatedPassword() {
                           <input
                             className='w-[100%] h-[100%] border-0 outline-none pl-3  text-[#D5D8DA]'
                             type='text'
+                            ref={confirmPasswordRef}
                           />
                         </div>
                       </div>
                     </div>
                     <h6 className='text-[#FC0D1B] text-[10px] mt-1 flex items-center gap-2'>
-                     <span><BiErrorCircle/></span> Passwords do not match
                     </h6>
                     <div className='mt-4'>
-                      <button className='w-[300px] h-[38px] bg-primary rounded-[5px] text-[12px] mb-[6px] flex justify-center items-center'>
+                      <Button loading = {auth.loading} onClick={updatePassword} className='w-[300px] h-[38px] bg-primary rounded-[5px] text-[12px] mb-[6px] flex justify-center items-center'>
                         Update password
-                      </button>
+                      </Button>
                     </div>
                   </div>
                 </div>

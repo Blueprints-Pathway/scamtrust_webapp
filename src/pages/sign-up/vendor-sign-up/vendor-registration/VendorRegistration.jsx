@@ -1,6 +1,6 @@
 import React from 'react'
 import './VendorRegistration.css'
-import scamtrust from '../../../../assets/images/Logo.png'
+import scamtrust from '../../../../assets/images/logo.png'
 import { Button, Checkbox, Form, Input, Select} from 'antd';
 import Vendormessage from '../../../../components/sign-up/vendormessage/VendorMessage';
 import { useNavigate } from 'react-router-dom';

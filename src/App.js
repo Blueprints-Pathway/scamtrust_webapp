@@ -76,7 +76,7 @@ const App = () => {
 		<Route path='/cancel-reason' element={<CancelReason />} />
 		<Route path="/withdrawpin" element={<WithdrawPin/>}/>
       	<Route path="/settings" element={<Settings/>}/>
-		  <Route path="/updatedpassword" element={<UpdatedPassword/>}/>
+		  <Route path="/updatedpassword/:token" element={<UpdatedPassword/>}/>
 	</Routes>
   )
 }
