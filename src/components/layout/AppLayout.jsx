@@ -113,11 +113,6 @@ const AppLayout = ({children}) => {
                </div>
 
             <div className='side-tab-con'>
-              <CiWallet style={{ color: "#ffff" }} />
-              <span className='side-tabs'>WALLET</span>
-            </div>
-
-            <div className='side-tab-con'>
               <SlSettings style={{ color: "#ffff" }} />
               <span className='side-tabs'>SETTINGS</span>
             </div>

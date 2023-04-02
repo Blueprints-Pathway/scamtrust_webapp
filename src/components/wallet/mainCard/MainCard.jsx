@@ -5,9 +5,9 @@ import { RxEyeClosed } from 'react-icons/rx'
 import { FaEye } from 'react-icons/fa'
 import { AiOutlineExclamationCircle } from 'react-icons/ai'
 import Fundbutton from '../../buttons/fundbutton/Fundbutton'
-import Withdrawbutton from '../../buttons/withdrawbutton/Withdrawbutton'
 import { MdContentCopy } from 'react-icons/md'
 import { useState } from 'react'
+import Withdraw from '../../buttons/withdrawbutton/withdrawbutton'
 
 const MainCard = () => {
 
@@ -60,7 +60,7 @@ const MainCard = () => {
             </div>
                           {/* BUTTONS  */}
             <div className={classes['btn-con']}>
-                <Withdrawbutton />
+                <Withdraw />
                 <Fundbutton />
             </div>
                         {/* PRIMARY ACCOUNT */}

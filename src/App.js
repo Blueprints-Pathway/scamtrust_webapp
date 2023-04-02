@@ -26,7 +26,6 @@ import CancelReason from "./pages/transactions/cancel-reason/CancelReason"
 import Wallet from "./pages/Wallet/Wallet"
 
 import PasswordRecovery from "./pages/passwordrecoverey/PasswordRecovery"
-import WithdrawPin from "./components/buttons/withdrawbutton/WithdrawPin"
 // import Transaction from "./pages/dashboards/transactions/Transaction"
 import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmail"
 import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone"
