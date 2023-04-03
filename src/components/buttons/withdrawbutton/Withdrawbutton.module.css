@@ -1,0 +1,578 @@
+.withdraw-btn{
+    border: none;
+    outline: none;
+    font-size: 11px;
+    font-weight: 500;
+    color: #ffff;
+    background-color: #E9303B;
+    padding: 10px 27px;
+    text-align: center;
+    border-radius: 5px;
+}
+.withdraw-con{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}
+.withdraw-title-con{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-self: center;
+}
+.withdraw-title{
+    font-size: 28px;
+    font-weight: 600;
+    color: #232164;
+}
+.withdraw-hr{
+    width: 100%;
+    border: 1px solid rgb(180, 179, 179);
+}
+.withdraw-form{
+    margin-top: 60px;
+}
+.withdraw-label{
+    font-size: 25px !important;
+    font-weight: 400;
+    color: #013C86;
+    margin-bottom: -3px;
+}
+.withdraw-input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0px;
+    border-bottom: 1px solid rgb(169, 164, 164);
+}
+.withdraw-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -175px;
+    margin-bottom: -35px;
+
+}
+.modal-1-btn{
+    color: #ffff;
+    background-color: #232164;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+.add-btn{
+    color: #ffff;
+    background-color: #3AB75D;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+.beneficiary-con{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(149, 147, 147);
+    border-radius: 15px;
+    padding: 10px 0px 10px 10px;
+    margin-bottom: 15px;
+}
+.beneficiary-con:focus{
+    border: 5px solid #52508f;
+}
+.beneficiary-name{
+    font-size: 13px;
+    font-weight: 600;
+}
+.beneficiary-span{
+    font-size: 15px;
+    font-weight: 400;
+}
+.beneficiary-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 35px;
+}
+.hello{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 15px;
+    color: #1C2E7A;
+}
+.success-con{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.success-1{
+    font-size: 14px;
+    font-weight: 400;
+    color: #232164;
+}
+.success-2{
+    width: 75px;
+    margin-top: 15px;
+}
+.success-3{
+    font-size: 21px;
+    font-weight: 600;
+    color: #232164;
+    margin-top: 15px;
+}
+.success-4{
+    text-align: center;
+    width: 230px;
+    color: #444445;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 1200px) {
+    .withdraw-btn{
+        border: none;
+        outline: none;
+        font-size: 9px;
+        font-weight: 500;
+        color: #ffff;
+        background-color: #E9303B;
+        padding: 8px 25px;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .withdraw-con{
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: center;
+    }
+    .withdraw-title-con{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-self: center;
+    }
+    .withdraw-title{
+        font-size: 22px;
+        font-weight: 600;
+        color: #232164;
+    }
+    .withdraw-hr{
+        width: 100%;
+        border: 1px solid rgb(180, 179, 179);
+    }
+    .withdraw-form{
+        margin-top: 50px;
+    }
+    .withdraw-label{
+        font-size: 25px !important;
+        font-weight: 400;
+        color: #013C86;
+        margin-bottom: -3px;
+    }
+    .withdraw-input{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-radius: 0px;
+        border-bottom: 1px solid rgb(169, 164, 164);
+    }
+    .withdraw-footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: -175px;
+        margin-bottom: -35px;
+    
+    }
+    .modal-1-btn{
+        color: #ffff;
+        background-color: #232164;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 10px 30px;
+        border-radius: 5px;
+    }
+    .add-btn{
+        color: #ffff;
+        background-color: #3AB75D;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 10px 30px;
+        border-radius: 5px;
+    }
+    .hello{
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 15px;
+        color: #1C2E7A;
+    }
+    .success-con{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .success-1{
+        font-size: 14px;
+        font-weight: 400;
+        color: #232164;
+    }
+    .success-2{
+        width: 75px;
+        margin-top: 15px;
+    }
+    .success-3{
+        font-size: 21px;
+        font-weight: 600;
+        color: #232164;
+        margin-top: 15px;
+    }
+    .success-4{
+        text-align: center;
+        width: 230px;
+        color: #444445;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+}
+@media screen and (max-width: 1024px) {
+    .withdraw-btn{
+        border: none;
+        outline: none;
+        font-size: 9px;
+        font-weight: 500;
+        color: #ffff;
+        background-color: #E9303B;
+        padding: 8px 25px;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .withdraw-con{
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: center;
+    }
+    .withdraw-title-con{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-self: center;
+    }
+    .withdraw-title{
+        font-size: 21px;
+        font-weight: 600;
+        color: #232164;
+    }
+    .withdraw-hr{
+        width: 100%;
+        border: 1px solid rgb(180, 179, 179);
+    }
+    .withdraw-form{
+        margin-top: 40px;
+    }
+    .withdraw-label{
+        font-size: 20px !important;
+        font-weight: 400;
+        color: #013C86;
+        margin-bottom: -3px;
+    }
+    .withdraw-input{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-radius: 0px;
+        border-bottom: 1px solid rgb(169, 164, 164);
+    }
+    .withdraw-footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: -130px;
+        margin-bottom: -35px;
+    
+    }
+    .modal-1-btn{
+        color: #ffff;
+        background-color: #232164;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 9px 28px;
+        border-radius: 5px;
+        margin-left: 80px;
+    }
+    .add-btn{
+        color: #ffff;
+        background-color: #3AB75D;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 9px 28px;
+        border-radius: 5px;
+        margin-left: 80px;
+    }
+    .hello{
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 15px;
+        color: #1C2E7A;
+    }
+    .success-con{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .success-1{
+        font-size: 14px;
+        font-weight: 400;
+        color: #232164;
+    }
+    .success-2{
+        width: 75px;
+        margin-top: 15px;
+    }
+    .success-3{
+        font-size: 21px;
+        font-weight: 600;
+        color: #232164;
+        margin-top: 15px;
+    }
+    .success-4{
+        text-align: center;
+        width: 230px;
+        color: #444445;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+}
+@media screen and (max-width: 768px) {
+    .withdraw-btn{
+        border: none;
+        outline: none;
+        font-size: 9px;
+        font-weight: 500;
+        color: #ffff;
+        background-color: #E9303B;
+        padding: 8px 17px;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .withdraw-con{
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: center;
+    }
+    .withdraw-title-con{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-self: center;
+    }
+    .withdraw-title{
+        font-size: 21px;
+        font-weight: 600;
+        color: #232164;
+    }
+    .withdraw-hr{
+        width: 100%;
+        border: 1px solid rgb(180, 179, 179);
+    }
+    .withdraw-form{
+        margin-top: 40px;
+    }
+    .withdraw-label{
+        font-size: 20px !important;
+        font-weight: 400;
+        color: #013C86;
+        margin-bottom: -3px;
+    }
+    .withdraw-input{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-radius: 0px;
+        border-bottom: 1px solid rgb(169, 164, 164);
+    }
+    .withdraw-footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: -130px;
+        margin-bottom: -35px;
+    
+    }
+    .modal-1-btn{
+        color: #ffff;
+        background-color: #232164;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 9px 28px;
+        border-radius: 5px;
+        margin-left: 80px;
+    }
+    .add-btn{
+        color: #ffff;
+        background-color: #3AB75D;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 9px 28px;
+        border-radius: 5px;
+        margin-left: 80px;
+    }
+    .hello{
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 15px;
+        color: #1C2E7A;
+    }
+    .success-con{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .success-1{
+        font-size: 14px;
+        font-weight: 400;
+        color: #232164;
+    }
+    .success-2{
+        width: 75px;
+        margin-top: 15px;
+    }
+    .success-3{
+        font-size: 21px;
+        font-weight: 600;
+        color: #232164;
+        margin-top: 15px;
+    }
+    .success-4{
+        text-align: center;
+        width: 230px;
+        color: #444445;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+}
+@media screen and (max-width: 480px) {
+    .withdraw-btn{
+        border: none;
+        outline: none;
+        font-size: 9px;
+        font-weight: 500;
+        color: #ffff;
+        background-color: #E9303B;
+        padding: 8px 18px;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .withdraw-con{
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: center;
+    }
+    .withdraw-title-con{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-self: center;
+    }
+    .withdraw-title{
+        font-size: 21px;
+        font-weight: 600;
+        color: #232164;
+    }
+    .withdraw-hr{
+        width: 100%;
+        border: 1px solid rgb(180, 179, 179);
+    }
+    .withdraw-form{
+        margin-top: 40px;
+    }
+    .withdraw-label{
+        font-size: 20px !important;
+        font-weight: 400;
+        color: #013C86;
+        margin-bottom: -3px;
+    }
+    .withdraw-input{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-radius: 0px;
+        border-bottom: 1px solid rgb(169, 164, 164);
+    }
+    .withdraw-footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: -100px;
+        margin-bottom: -35px;
+    
+    }
+    .modal-1-btn{
+        color: #ffff;
+        background-color: #232164;
+        font-size: 10px;
+        font-weight: 500;
+        padding: 7px 20px;
+        border-radius: 5px;
+        margin-left: 0px;
+    }
+    .add-btn{
+        color: #ffff;
+        background-color: #3AB75D;
+        font-size: 10px;
+        font-weight: 500;
+        padding: 7px 20px;
+        border-radius: 5px;
+        margin-left: 0px;
+    }
+    .hello{
+        font-size: 15px;
+        font-weight: 600;
+        margin-top: 15px;
+        color: #1C2E7A;
+    }
+    .success-con{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .success-1{
+        font-size: 14px;
+        font-weight: 400;
+        color: #232164;
+    }
+    .success-2{
+        width: 60px;
+        margin-top: 15px;
+    }
+    .success-3{
+        font-size: 18px;
+        font-weight: 600;
+        color: #232164;
+        margin-top: 15px;
+    }
+    .success-4{
+        text-align: center;
+        width: 230px;
+        color: #444445;
+        font-size: 12px;
+        font-weight: 400;
+    }
+}

@@ -3,7 +3,8 @@ import footer from "../../assets/images/footerLogo.png"
 import { AiFillEye } from "react-icons/ai"
 import { TbCurrencyNaira } from "react-icons/tb"
 import { IconContext } from "react-icons/lib"
-import Withdrawbutton from "../buttons/withdrawbutton/Withdrawbutton"
+import  Withdrawbutton from '../buttons/withdrawbutton/Withdrawbtn'
+
 function VendorWallet() {
   return (
     <div className="flex">
@@ -56,7 +57,7 @@ function VendorWallet() {
               <img className='w-[50px]  md:w-[70px]' src={footer} alt='' />
             </div>
 
-            <Withdrawbutton />
+              <Withdrawbutton />
           </div>
         </div>
       </IconContext.Provider>

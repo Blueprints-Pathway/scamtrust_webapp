@@ -2,9 +2,9 @@ import React from 'react'
 // import { Card } from 'antd';
 import './CustomerProfileCard.css'
 import { RxEyeClosed } from 'react-icons/rx'
-import Withdrawbutton from '../../buttons/withdrawbutton/Withdrawbutton'
 import Fundbutton from '../../buttons/fundbutton/Fundbutton'
 import { useSelector } from 'react-redux'
+import Withdrawbutton from '../../buttons/withdrawbutton/Withdrawbtn'
 
 const CustomerProfileCard = () => {
   const {loading, error, data} = useSelector(state => state.user);

@@ -50,13 +50,13 @@ const AppLayout = ({children}) => {
   //   token: { colorBgContainer },
   // } = theme.useToken();
   console.log(data);
-  const nameOf = loading ? 'hi' : data?.data.name || data?.data.username;
+  const nameOf = loading ? 'hi' : data?.data?.name || data?.data?.username;
 	const first = nameOf?.at(0);
 	const last = nameOf?.match(/\b(\w)/g).at(1);
 
   const logoutUserHandler = () => {
     dispatch(logoutUser());
-    console.log('logout')
+    console.log('logout from app layout')
     navigate('/sign-in')
   }
   console.log(notification.unreadNotifications)
@@ -112,7 +112,6 @@ const AppLayout = ({children}) => {
                >WALLET</span>
                </div>
 
-          
             <div className='side-tab-con'>
               <SlSettings style={{ color: "#ffff" }} />
               <span className='side-tabs'>SETTINGS</span>

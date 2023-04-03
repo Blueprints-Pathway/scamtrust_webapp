@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   loading: false,
   error: null,
+  isWithdrawalSuccessful: false,
   data: {},
 };
 
@@ -13,24 +14,31 @@ const walletReducer = createSlice({
     withdrawalRequest(state) {
       state.loading = true;
     },
-   withdrawalSuccess(state, payload) {
+   withdrawalSuccess(state, action) {
       state.loading = false;
-      state.data = payload;
+      state.isWithdrawalSuccessful = true;
+      state.data = action.payload;
     },
-    withdrawalFailure(state, payload) {
+    withdrawalFailure(state, action) {
       state.loading = false;
-      state.error = payload;
+      state.error = action.payload;
+    },
+    resetWithrawalData(state){
+      state.loading = false;
+      state.isWithdrawalSuccessful = false;
+      state.data = {};
+      state.error = null
     },
    getWalletDetailsRequest(state) {
         state.loading = true;
       },
-     getWalletDetailsSuccess(state, payload) {
+     getWalletDetailsSuccess(state, action) {
         state.loading = false;
-        state.data = payload;
+        state.data = action.payload;
       },
-      getWalletDetailsFailure(state, payload) {
+      getWalletDetailsFailure(state, action) {
         state.loading = false;
-        state.error = payload;
+        state.error = action.payload;
       },
   },
 });
