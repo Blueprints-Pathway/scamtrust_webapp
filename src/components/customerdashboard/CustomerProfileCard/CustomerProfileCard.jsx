@@ -4,7 +4,7 @@ import './CustomerProfileCard.css'
 import { RxEyeClosed } from 'react-icons/rx'
 import Fundbutton from '../../buttons/fundbutton/Fundbutton'
 import { useSelector } from 'react-redux'
-import Withdraw from '../../buttons/withdrawbutton/withdrawbutton'
+import Withdrawbutton from '../../buttons/withdrawbutton/Withdrawbtn'
 
 const CustomerProfileCard = () => {
   const {loading, error, data} = useSelector(state => state.user);
@@ -33,7 +33,7 @@ const CustomerProfileCard = () => {
             </div>
           </div>
           <div className='profile-card-bottom'>
-            <Withdraw />
+            <Withdrawbutton />
             <Fundbutton />
           </div>
     </div>

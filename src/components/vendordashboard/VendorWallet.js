@@ -3,7 +3,7 @@ import footer from "../../assets/images/footerLogo.png"
 import { AiFillEye } from "react-icons/ai"
 import { TbCurrencyNaira } from "react-icons/tb"
 import { IconContext } from "react-icons/lib"
-import  Withdrawbutton from '../../components/buttons/withdrawbutton/withdrawbutton'
+import  Withdrawbutton from '../buttons/withdrawbutton/Withdrawbtn'
 
 function VendorWallet() {
   return (
