@@ -8,8 +8,11 @@ import Fundbutton from '../../buttons/fundbutton/Fundbutton'
 import Withdrawbutton from '../../buttons/withdrawbutton/Withdrawbutton'
 import { MdContentCopy } from 'react-icons/md'
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
 
 const MainCard = () => {
+
+    const {loading, error, data} = useSelector(state => state.user)
 
     const [eye, setEye] = useState(false)
 
@@ -23,7 +26,7 @@ const MainCard = () => {
                      {/* HEAD */}
             <div className={classes['head']}>
                 <p className={classes['head-1']}>Account</p>
-                <p className={classes['head-name']}>Ilerioluwa Brown</p>
+                <p className={classes['head-name']}>{data?.data.name || data?.data.username}</p>
             </div>
                 <hr className={classes['line']} />
                       {/* EYE */}
@@ -37,7 +40,7 @@ const MainCard = () => {
                 <div className={classes['available-con']}>
                     { eye ? 
                     <p className={classes['available-digits']}>
-                        <sup className={classes['available-sup']}>₦</sup>500,0000
+                        <sup className={classes['available-sup']}>₦</sup>{data.walletBalance}
                     </p>   :  
                     <p className={classes['available-digits']}>
                         <sup className={classes['available-sup']}>₦</sup>*******
@@ -49,7 +52,7 @@ const MainCard = () => {
                 <div className={classes['available-con']}>
                     { eye ? 
                     <p className={classes['pending-digits']}>
-                        <sup className={classes['available-sup']}>₦</sup>500,0000
+                        <sup className={classes['available-sup']}>₦</sup>{data.outgoingWalletBalance}
                     </p>   :
                     <p className={classes['pending-digits']}>
                         <sup className={classes['available-sup']}>₦</sup>*******
@@ -61,18 +64,18 @@ const MainCard = () => {
                           {/* BUTTONS  */}
             <div className={classes['btn-con']}>
                 <Withdrawbutton />
-                <Fundbutton />
+                <Fundbutton accountNumber = {data.virtualAccount.account_number} />
             </div>
                         {/* PRIMARY ACCOUNT */}
             <div className={classes['primary-con']}>
                 <p className={classes['primary']}>Primary Account <AiOutlineExclamationCircle className={classes['available-icon']} /></p>
-                <p className={classes['primary-copy']}><MdContentCopy className={classes['primary-copy-icon']} />7820857716</p>
+                <p className={classes['primary-copy']}><MdContentCopy className={classes['primary-copy-icon']} />{data.virtualAccount.account_number}</p>
             </div>
                          {/* ADD ACCOUNT */}
             <div className={classes['add-account-con']}>
                 <div className={classes['add-account-content']}>
-                    <p className={classes['add-acc-digits']}><sup className={classes['available-sup']}>₦</sup>1,100,000.00
-                      <span className={classes['add-acc-mssg']}>Withdrawn so far by <b>2009419261 Zenith Ilerioluwa Brown</b></span>
+                    <p className={classes['add-acc-digits']}><sup className={classes['available-sup']}>₦</sup>{data.withdrawnAmount}
+                      <span className={classes['add-acc-mssg']}>Withdrawn so far by <b>{data.virtualAccount.account_number}</b></span>
                     </p>
                 </div>
                 <div className={classes['add-acc-btn-con']}>

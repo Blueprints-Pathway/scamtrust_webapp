@@ -107,7 +107,7 @@ const customerTransactionReducer = createSlice({
         state.error = action.payload;
       },
       resetAcceptTransactionStatus(state){
-        state.loading = true;
+        state.loading = false;
         state.isAcceptTransactionSuccessful = false;
         state.error = null;
       },

@@ -32,7 +32,7 @@ const AppLayout = ({children}) => {
   const auth = useSelector(state => state.auth)
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log('get user details' + loading + data + error)
+  console.log('get user details' + loading + data + error + auth.isAuthenticated) 
   useEffect(()=>{
     if(!auth.isAuthenticated){
       navigate('/sign-in')
@@ -112,11 +112,7 @@ const AppLayout = ({children}) => {
                >WALLET</span>
                </div>
 
-            <div className='side-tab-con'>
-              <CiWallet style={{ color: "#ffff" }} />
-              <span className='side-tabs'>WALLET</span>
-            </div>
-
+          
             <div className='side-tab-con'>
               <SlSettings style={{ color: "#ffff" }} />
               <span className='side-tabs'>SETTINGS</span>

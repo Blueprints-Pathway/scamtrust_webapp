@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   loading: false,
-  isAuthenticated: false,
+  isAuthenticated: localStorage.getItem('LOGGED_IN'),
   data: null,
   error: false,
   isPinSet: false,
@@ -189,6 +189,8 @@ const authReducer = createSlice({
       state.isPhoneValid = false;
       localStorage.removeItem('USER_TOKEN');
       console.log('logout')
+      localStorage.removeItem('LOGGED_IN')
+
     },
    
     vendorRegistrationComplete(state){
