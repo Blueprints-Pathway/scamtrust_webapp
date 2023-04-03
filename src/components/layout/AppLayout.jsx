@@ -32,7 +32,7 @@ const AppLayout = ({children}) => {
   const auth = useSelector(state => state.auth)
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log('get user details' + loading + data + error)
+  console.log('get user details' + loading + data + error + auth.isAuthenticated) 
   useEffect(()=>{
     if(!auth.isAuthenticated){
       navigate('/sign-in')
@@ -50,13 +50,13 @@ const AppLayout = ({children}) => {
   //   token: { colorBgContainer },
   // } = theme.useToken();
   console.log(data);
-  const nameOf = loading ? 'hi' : data?.data.name || data?.data.username;
+  const nameOf = loading ? 'hi' : data?.data?.name || data?.data?.username;
 	const first = nameOf?.at(0);
 	const last = nameOf?.match(/\b(\w)/g).at(1);
 
   const logoutUserHandler = () => {
     dispatch(logoutUser());
-    console.log('logout')
+    console.log('logout from app layout')
     navigate('/sign-in')
   }
   console.log(notification.unreadNotifications)

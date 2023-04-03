@@ -5,7 +5,7 @@ import classes from './Fundbutton.module.css'
 import { MdContentCopy } from 'react-icons/md'
 
 
-const Fundbutton = () => {
+const Fundbutton = (props) => {
   const [isModalOpen1, setIsModalOpen1] = useState(false);
   const [isModalOpen2, setIsModalOpen2] = useState(false);
   const [copied, setCopied] = useState(false)
@@ -28,7 +28,7 @@ const Fundbutton = () => {
 
   const handleCopy = () => {
     setCopied(true)
-    navigator.clipboard.writeText(7820857716)
+    navigator.clipboard.writeText(props.accountNumber)
   }
 
   return (
@@ -52,7 +52,7 @@ const Fundbutton = () => {
               <div className={classes['top']}>
                 <p className={classes['title']}>Copy or Share Number</p>
                 <p className={classes['content']}>
-                  Copy or transfer or send to your account number (7820857716) to receive payment from anyone
+                  Copy or transfer or send to your account number {props.accountNumber} to receive payment from anyone
                 </p>
               </div>
               <hr className={classes['line']}/>
@@ -90,7 +90,7 @@ const Fundbutton = () => {
             </div>
             <div className={classes['modal2-div-3']}>
               <p className={classes['modal2-content']}>
-              This works like a regular bank account number. Transferfrom any source to 7820857716. Select WEMA BANK as the destination bank. Funds will be credited to your ScamTrust account immediately
+              This works like a regular bank account number. Transferfrom any source to {props.accountNumber}. Select WEMA BANK as the destination bank. Funds will be credited to your ScamTrust account immediately
               </p>
             </div>
            </div>

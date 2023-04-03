@@ -50,7 +50,7 @@ const Ongoing = () => {
         if(transactions.error){
             console.log();
         swal({
-            icon: 'Cancel',
+            icon: 'error',
             text: transactions.error,
 
             
