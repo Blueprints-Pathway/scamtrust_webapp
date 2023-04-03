@@ -149,7 +149,7 @@ b{
     border-radius: 3px;
     text-align: center;
     width: 6.5rem;
-    padding: 8px 0px;
+    padding: 8px 12px;
 }
 
 @media screen and (max-width: 1201px) {
@@ -304,7 +304,7 @@ b{
         border-radius: 3px;
         text-align: center;
         width: 6.5rem;
-        padding: 8px 0px;
+        padding: 8px 10px;
     }
 }
 
@@ -460,7 +460,7 @@ b{
         border-radius: 3px;
         text-align: center;
         width: 4rem;
-        padding: 5px 0px;
+        padding: 5px 5px;
     }
 }
 @media screen and (max-width: 768px) {
@@ -614,8 +614,8 @@ b{
         outline: none;
         border-radius: 3px;
         text-align: center;
-        width: 3.7rem;
-        padding: 5px 0px;
+        width: 3.8rem;
+        padding: 5px 5px;
     }
 }
 @media screen and (max-width: 540px) {
@@ -771,6 +771,6 @@ b{
         border-radius: 3px;
         text-align: center;
         width: 4.3rem;
-        padding: 5px 0px;
+        padding: 5px 5px;
     }
 }

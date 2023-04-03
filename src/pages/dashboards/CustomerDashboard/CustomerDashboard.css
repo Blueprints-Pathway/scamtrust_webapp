@@ -1,5 +1,4 @@
 .cust-dash-wrapper{
-    background-color: #F2F2F2;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -17,7 +16,6 @@
 }
 @media screen and (max-width: 1200px) {
     .cust-dash-wrapper{
-        background-color: #F2F2F2;
         display: flex;
         align-items: flex-start;
         justify-content: center;
@@ -36,7 +34,6 @@
 }
 @media screen and (max-width: 768px) {
     .cust-dash-wrapper{
-        background-color: #F2F2F2;
         display: flex;
         align-items: flex-start;
         justify-content: center;
@@ -59,7 +56,6 @@
 
 @media screen and (max-width: 480px) {
     .cust-dash-wrapper{
-        background-color: #F2F2F2;
         display: flex;
         flex-wrap: wrap;
         align-items: flex-start;

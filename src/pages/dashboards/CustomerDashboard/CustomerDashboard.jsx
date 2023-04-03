@@ -5,7 +5,6 @@ import FaqandChat from '../../../components/customerdashboard/Faq&Chat/FaqandCha
 import FeeCalculator from '../../../components/customerdashboard/FeeCalculator/FeeCalculator'
 import FooterLogo from '../../../components/FooterLogo/FooterLogo'
 import AppLayout from '../../../components/Layout/AppLayout'
-// import FooterLogo from '../../../components/logo/FooterLogo/FooterLogo'
 import './CustomerDashboard.css'
 
 const CustomerDashboard = () => {

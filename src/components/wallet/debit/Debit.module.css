@@ -1,0 +1,305 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.credit-con{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+.date{
+    font-size: 13px;
+    font-weight: 400;
+    color: #707070;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.name{
+    font-size: 14px;
+    font-weight: 500;
+    color: #232164;
+}
+.id{
+    font-size: 13px;
+    font-weight: 400;
+    color: #707070;
+}
+.amount{
+    font-size: 14px;
+    font-weight: 500;
+    color: #232164;
+}
+.status{
+    border: 1px solid #ffff;
+    background-color: #ffff;
+    border-radius: 5px;
+    padding: 4px 10px 4px 5px;
+}
+.status-name{
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 500;
+    color: #FF0000;
+}
+.status-dot{
+    font-size: 18px;
+    margin-right: 5px;
+}
+.status-hr{
+    margin: 0px 20px;
+    margin-top: 3px;
+}
+
+@media screen and (max-width: 1200px) {
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    .credit-con{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 0px 20px;
+    }
+    .date{
+        font-size: 12px;
+        font-weight: 400;
+        color: #707070;
+    }
+    .info{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .name{
+        font-size: 13px;
+        font-weight: 500;
+        color: #232164;
+    }
+    .id{
+        font-size: 12px;
+        font-weight: 400;
+        color: #707070;
+    }
+    .amount{
+        font-size: 13px;
+        font-weight: 500;
+        color: #232164;
+    }
+    .status{
+        background-color: #ffff;
+        border-radius: 5px;
+        padding: 4px 10px 4px 5px;
+    }
+    .status-name{
+        display: flex;
+        align-items: center;
+        font-size: 10px;
+        font-weight: 500;
+        color: #FF0000;
+    }
+    .status-dot{
+        font-size: 17px;
+        margin-right: 5px;
+    }
+    .status-hr{
+        margin: 0px 20px;
+        margin-top: 3px;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    .credit-con{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 0px 20px;
+    }
+    .date{
+        font-size: 10px;
+        font-weight: 400;
+        color: #707070;
+    }
+    .info{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .name{
+        font-size: 11px;
+        font-weight: 500;
+        color: #232164;
+    }
+    .id{
+        font-size: 10px;
+        font-weight: 400;
+        color: #707070;
+    }
+    .amount{
+        font-size: 11px;
+        font-weight: 500;
+        color: #232164;
+    }
+    .status{
+        background-color: #ffff;
+        border-radius: 5px;
+        padding: 4px 10px 4px 5px;
+    }
+    .status-name{
+        display: flex;
+        align-items: center;
+        font-size: 9px;
+        font-weight: 500;
+        color: #FF0000;
+    }
+    .status-dot{
+        font-size: 17px;
+        margin-right: 5px;
+    }
+    .status-hr{
+        margin: 0px 20px;
+        margin-top: 3px;
+    }
+
+}
+@media screen and (max-width: 768px) {
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    .credit-con{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 0px 20px;
+    }
+    .date{
+        font-size: 9px;
+        font-weight: 400;
+        color: #707070;
+    }
+    .info{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .name{
+        font-size: 10px;
+        font-weight: 500;
+        color: #232164;
+    }
+    .id{
+        font-size: 9px;
+        font-weight: 400;
+        color: #707070;
+    }
+    .amount{
+        font-size: 10px;
+        font-weight: 500;
+        color: #232164;
+    }
+    .status{
+        background-color: #ffff;
+        border-radius: 5px;
+        padding: 4px 10px 4px 5px;
+    }
+    .status-name{
+        display: flex;
+        align-items: center;
+        font-size: 9px;
+        font-weight: 500;
+        color: #FF0000;
+    }
+    .status-dot{
+        font-size: 16px;
+        margin-right: 5px;
+    }
+    .status-hr{
+        margin: 0px 20px;
+        margin-top: 3px;
+    }
+
+}
+@media screen and (max-width: 540px) {
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    .credit-con{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 0px 20px;
+    }
+    .date{
+        font-size: 8px;
+        font-weight: 400;
+        color: #707070;
+    }
+    .info{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .name{
+        font-size: 9px;
+        font-weight: 500;
+        color: #232164;
+    }
+    .id{
+        font-size: 8px;
+        font-weight: 400;
+        color: #707070;
+    }
+    .amount{
+        font-size: 9px;
+        font-weight: 500;
+        color: #232164;
+    }
+    .status{
+        background-color: #ffff;
+        border-radius: 5px;
+        padding: 2px 5px 2px 2px;
+    }
+    .status-name{
+        display: flex;
+        align-items: center;
+        font-size: 8px;
+        font-weight: 500;
+        color: #FF0000;
+    }
+    .status-dot{
+        font-size: 14px;
+        margin-right: 0px;
+    }
+    .status-hr{
+        margin: 0px 20px;
+        margin-top: 3px;
+    }
+
+}
