@@ -13,6 +13,7 @@ import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmai
 import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone"
 import UpdatedPassword from "./pages/passwordrecovery/UpdatedPassword"
 import Settings from "./pages/settings/Settings"
+import Support from "./pages/Support"
 
 const App = () => {
   return (
@@ -43,6 +44,7 @@ const App = () => {
       <Route path="/settings" element={<Settings/>}/>
       <Route path="/updatedpassword" element={<UpdatedPassword/>}/>
       <Route path="/passwordchanged" element={<PasswordChanged/>}/>
+      <Route path ="/support" element={<Support/>}/>
     </Routes>
   )
 }
