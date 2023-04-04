@@ -26,7 +26,7 @@ const walletReducer = createSlice({
     resetWithrawalData(state){
       state.loading = false;
       state.isWithdrawalSuccessful = false;
-      state.data = {};
+    
       state.error = null
     },
    getWalletDetailsRequest(state) {

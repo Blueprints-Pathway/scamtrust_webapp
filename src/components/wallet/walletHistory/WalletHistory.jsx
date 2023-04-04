@@ -3,8 +3,19 @@ import classes from './WalletHistory.module.css'
 import empty from '../../../assets/images/empty.png'
 import Credit from '../credit/Credit'
 import Debit from '../debit/Debit'
+import { useSelector } from 'react-redux'
 
 const WalletHistory = () => {
+    const walletTransactions = useSelector(state => state.wallet)
+    console.log(walletTransactions.data);
+    let content = walletTransactions?.data?.length === 0 ? <p>YOU HAVE NO TRANSACTIONS!</p> : walletTransactions?.data?.map((transaction) => {
+        if(transaction.type === "CREDIT"){
+            return <Credit date = {transaction.date}  refNo = {transaction.tracking_reference} purpose = {transaction.purpose} amount = {transaction.amount}  />
+        }else{
+            return <Debit date = {transaction.date}  refNo = {transaction.tracking_reference} purpose = {transaction.purpose} amount = {transaction.amount}  />
+
+        }
+    })
   return (
     <div className={classes['wrapper']}>
         <div className={classes['top']}>
@@ -23,8 +34,7 @@ const WalletHistory = () => {
         </div> */}
 
         <div className={classes['history-con']}>
-            <Credit />
-            <Debit />
+            {content}
         </div>
         
     </div>
