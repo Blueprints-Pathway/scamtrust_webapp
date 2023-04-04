@@ -1,8 +1,8 @@
 .create-transaction-btn{
-    font-size: 14px;
+    font-size: 13px;
     background-color: #3AB75D;
     color: #ffff;
-    padding: 10px 12px;
+    padding: 10px 10px;
     border-radius: 7px;
     border: none;
     display: flex;
@@ -11,7 +11,7 @@
 }
 .create-transaction-icon{
     color: #ffff;
-    font-size: 25px;
+    font-size: 22px;
     margin: 0px 0px 0px 5px;
 }
 .trans-modal-title{
@@ -64,10 +64,10 @@
 }
 @media screen and (max-width: 1024px) {
     .create-transaction-btn{
-        font-size: 14px;
+        font-size: 11px;
         background-color: #3AB75D;
         color: #ffff;
-        padding: 10px 12px;
+        padding: 7px;
         border-radius: 7px;
         border: none;
         display: flex;
@@ -76,7 +76,7 @@
     }
     .create-transaction-icon{
         color: #ffff;
-        font-size: 25px;
+        font-size: 20px;
         margin: 0px 0px 0px 5px;
     }
     .trans-modal-title{
@@ -123,10 +123,10 @@
 }
 @media screen and (max-width: 768px) {
     .create-transaction-btn{
-        font-size: 14px;
+        font-size: 10px;
         background-color: #3AB75D;
         color: #ffff;
-        padding: 10px 12px;
+        padding: 5px;
         border-radius: 7px;
         border: none;
         display: flex;
@@ -135,7 +135,7 @@
     }
     .create-transaction-icon{
         color: #ffff;
-        font-size: 25px;
+        font-size: 18px;
         margin: 0px 0px 0px 5px;
     }
     .trans-modal-title{
@@ -182,10 +182,10 @@
 }
 @media screen and (max-width: 480px) {
     .create-transaction-btn{
-        font-size: 14px;
+        font-size: 12px;
         background-color: #3AB75D;
         color: #ffff;
-        padding: 10px 12px;
+        padding: 8px 5px;
         border-radius: 7px;
         border: none;
         display: flex;
@@ -194,7 +194,7 @@
     }
     .create-transaction-icon{
         color: #ffff;
-        font-size: 25px;
+        font-size: 16px;
         margin: 0px 0px 0px 5px;
     }
     .trans-modal-title{
