@@ -1,0 +1,346 @@
+.wrapper{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 42vw;
+    margin-bottom: 25px;
+}
+.info-con{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.image{
+    width: 32px;
+    margin-right: 10px;
+}
+.item{
+    font-size: 13px;
+    font-weight: 500;
+    color: #232164;
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.status{
+    font-size: 13px;
+    font-weight: 400;
+    color: #A6A6A6;
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.vendor{
+    font-size: 13px;
+    font-weight: 500;
+    color: #232164;
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.amount{
+    font-size: 13px;
+    font-weight: 500;
+    color: #232164;
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.date{
+    font-size: 13px;
+    font-weight: 500;
+    color: #232164;
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 1200px) {
+    .wrapper{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 42vw;
+        margin-bottom: 23px;
+    }
+    .info-con{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .info{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .image{
+        width: 30px;
+        margin-right: 10px;
+    }
+    .item{
+        font-size: 12px;
+        font-weight: 500;
+        color: #232164;
+        width: 120px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .status{
+        font-size: 12px;
+        font-weight: 400;
+        color: #A6A6A6;
+        width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .vendor{
+        font-size: 12px;
+        font-weight: 500;
+        color: #232164;
+        width: 120px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .amount{
+        font-size: 12px;
+        font-weight: 500;
+        color: #232164;
+        width: 120px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .date{
+        font-size: 12px;
+        font-weight: 500;
+        color: #232164;
+        width: 120px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .wrapper{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 37vw;
+        margin-bottom: 17px;
+    }
+    .info-con{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* width: 150px; */
+    }
+    .info{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .image{
+        width: 20px;
+        margin-right: 2px;
+    }
+    .item{
+        font-size: 10px;
+        font-weight: 500;
+        color: #232164;
+        width: 70px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .status{
+        font-size: 10px;
+        font-weight: 400;
+        color: #A6A6A6;
+        width: 70px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .vendor{
+        font-size: 10px;
+        font-weight: 500;
+        color: #232164;
+        width: 70px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .amount{
+        font-size: 10px;
+        font-weight: 500;
+        color: #232164;
+        width: 70px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .date{
+        font-size: 10px;
+        font-weight: 500;
+        color: #232164;
+        width: 70px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+@media screen and (max-width: 768px) {
+    .wrapper{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 47vw;
+        margin-bottom: 15px;
+    }
+    .info-con{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .info{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .image{
+        width: 20px;
+        margin-right: 2px;
+    }
+    .item{
+        font-size: 10px;
+        font-weight: 500;
+        color: #232164;
+        width: 70px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .status{
+        font-size: 10px;
+        font-weight: 400;
+        color: #A6A6A6;
+        width: 70px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .vendor{
+        font-size: 10px;
+        font-weight: 500;
+        color: #232164;
+        width: 70px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .amount{
+        font-size: 10px;
+        font-weight: 500;
+        color: #232164;
+        width: 70px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .date{
+        font-size: 10px;
+        font-weight: 500;
+        color: #232164;
+        width: 70px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+@media screen and (max-width: 540px) {
+    .wrapper{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 82vw;
+        margin-bottom: 15px;
+    }
+    .info-con{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .info{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .image{
+        width: 25px;
+        margin-right: 2px;
+    }
+    .item{
+        font-size: 9px;
+        font-weight: 500;
+        color: #232164;
+        width: 55px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .status{
+        font-size: 8px;
+        font-weight: 400;
+        color: #A6A6A6;
+        width: 55px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .vendor{
+        font-size: 9px;
+        font-weight: 500;
+        color: #232164;
+        width: 55px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .amount{
+        font-size: 9px;
+        font-weight: 500;
+        color: #232164;
+        width: 55px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .date{
+        font-size: 9px;
+        font-weight: 500;
+        color: #232164;
+        width: 55px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
