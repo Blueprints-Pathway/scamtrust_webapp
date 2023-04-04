@@ -18,6 +18,7 @@ import { getCustomerCancelledTransactions, getCustomerCompletedTransactions, get
 import { listNotifications } from '../../actions/notificationActions';
 import { vendorSearch } from '../../actions/miscActions';
 import Notification from './notification/Notification';
+import { getWalletTransactionsDetails } from '../../actions/walletActions';
 const { Header, Content, Sider } = Layout;
 
 
@@ -41,6 +42,7 @@ const AppLayout = ({children}) => {
     dispatch(getLoggedInUserDetails());
     dispatch(getCustomerTransactions());
     dispatch(getCustomerOngoingTransactions());
+    dispatch(getWalletTransactionsDetails())
     dispatch(getCustomerCancelledTransactions());
     dispatch(getCustomerCompletedTransactions());
     dispatch(listNotifications());
@@ -72,6 +74,7 @@ const AppLayout = ({children}) => {
       { loading ? 
       <Spin
        spinning
+       style={{margin:'auto'}}
        size='large'
 
       />:

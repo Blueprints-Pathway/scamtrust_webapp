@@ -7,7 +7,7 @@ import scamtrust from '../../assets/images/logo.png'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { login, logoutUserTimer } from '../../actions/authActions';
+import { login, logoutUser, logoutUserTimer } from '../../actions/authActions';
 import Modal from 'react-modal';
 import wave from '../../assets/images/wave.png'
 import frame from '../../assets/images/frame.png'
@@ -65,14 +65,15 @@ const Signin = () => {
     if(isAuthenticated){
         console.log(data);
         dispatch(logoutUserTimer())
-      if(data.usertype === 'CUSTOMER'){
+      if(data?.usertype === 'CUSTOMER'){
         navigate('/customer-dashboard');
 
       }
-      if(data.usertype === 'VENDOR'){
+      if(data?.usertype === 'VENDOR'){
         navigate('/vendor-dashboard');
 
       }
+    
 
     }
   }, [isAuthenticated, data, navigate])

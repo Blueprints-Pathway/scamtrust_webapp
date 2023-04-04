@@ -5,7 +5,7 @@ import { useState } from 'react';
 import FooterLogo from '../../FooterLogo/FooterLogo';
 import success from '../../../assets/images/success.png'
 import { useDispatch, useSelector } from 'react-redux';
-import { withdraw } from '../../../actions/walletActions';
+import { getWalletTransactionsDetails, withdraw } from '../../../actions/walletActions';
 import { walletActions } from '../../../reducers/walletReducer';
 import swal from 'sweetalert';
 import { getLoggedInUserDetails } from '../../../actions/userActions';
@@ -66,6 +66,9 @@ const [beneficiaryError, setBeneficiaryError] = useState('');
   const completeTransactionHandler = () => {
 
     dispatch(getLoggedInUserDetails())
+    dispatch(getWalletTransactionsDetails())
+    dispatch(getWalletTransactionsDetails())
+
      handleCancel4();
   }
 
@@ -129,6 +132,7 @@ console.log(wallet.error)
       text: wallet.error,
     })
     dispatch(walletActions.resetWithrawalData())
+
 
   }
 
@@ -209,15 +213,18 @@ console.log(wallet.error)
               className={classes['modal-1-btn']}>
                  Continue
               </button>
-            </div>
-            </Form>
-          </div>
-          <div className={classes['withdraw-footer']}>
+              <div className={classes['withdraw-footer']}>
             <div className={classes['footer-logo']}>
               <FooterLogo />
             </div>
         
           </div>
+              
+            </div>
+            
+            </Form>
+          </div>
+         
         </div>
       </Modal>
 
