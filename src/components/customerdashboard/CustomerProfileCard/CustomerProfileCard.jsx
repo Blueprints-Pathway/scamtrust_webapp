@@ -14,7 +14,7 @@ const CustomerProfileCard = () => {
     <div className='profile-card-wrapper'>
           <div className='profile-card-top'>
            <p className='profile-card-top-name'>{data.data.username}</p>
-           <small className='profile-card-top-id'>ID - 6057702</small>
+           <small className='profile-card-top-id'>ID - {data.data.id}</small>
           </div>
           <hr className='profile-card-line' />
           <div className='profile-card-middle'>
