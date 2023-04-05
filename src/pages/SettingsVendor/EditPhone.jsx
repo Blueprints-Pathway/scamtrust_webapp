@@ -17,10 +17,6 @@ function EditPhone({ closeModal }) {
 
 	const [phonesMessage, setPhonesMessage] = useState();
 	const [errorPhoneMessage, setErrorPhoneMessage] = useState("");
-	const handleClosed2 = () => {
-		setClosed2(!closed2);
-	};
-	const [details, setDetails] = useState("CUSTOMER");
 	const [values, setValues] = useState({
 		phoneNumber: "",
 		phoneNumber2: "",
@@ -149,15 +145,10 @@ function EditPhone({ closeModal }) {
 	const [stageOne, setStageOne] = useState(false);
 	const [stageTwo, setStageTwo] = useState(false);
 	const [stageThree, setStageThree] = useState(false);
-	const [stageFour, setStageFour] = useState(false);
+	
 	const [newPhone, setNewPhone] = useState();
-	const [closed21, setClosed21] = useState(false);
-	const [Edit20, setEdit20] = useState(false);
-	const handleClosed21 = () => {
-		setClosed21(!closed21);
 
-		setClosed2(true);
-	};
+
 
 	const auth = useSelector((state) => state?.auth?.data?.access_token);
 
@@ -175,18 +166,20 @@ function EditPhone({ closeModal }) {
 			const payload = {
 				phone: newPhone,
 			};
+		
+			const data = await axios.post(API_URL, payload, config);
+			
+			handleEdit2();
 			swal({
 				icon: "success",
 				text: "An OTP has been sent to your phone number. Check your sms to continue.",
 			});
 
-			const data = await axios.post(API_URL, payload, config);
-			// setEmail(data?.data?.data);
 		} catch (error) {
 			console.log(error.data?.message?.phone[0], "error");
 			swal({
 				icon: "error",
-				text: "errorMessage",
+				text:   error.response?.status === 422 ? "input field is empty" : "check your neetwork",
 			});
 		}
 	};
@@ -233,7 +226,7 @@ function EditPhone({ closeModal }) {
 						<div className="EditDone-Line"></div>
 						<form onSubmit={handleSubmit}>
 							<div className="EditDone-card-title2 mb-10 flex ml-10 ">
-								{details.usertype === "CUSTOMER" ? (
+								{data?.data?.usertype === "CUSTOMER" ? (
 									<h5>What’s your mother’s name?</h5>
 								) : (
 									<h5>When was your business established?</h5>
@@ -293,7 +286,7 @@ function EditPhone({ closeModal }) {
 								</div>
 							</div>
 							<div className="EditDone-Line"></div>
-							<form onSubmit={changePhone}>
+							<form onSubmit={"changePhone"}>
 								<div className="EditDone-card-title2 mb-10 flex ml-10 ">
 									<h5>Enter new phone number</h5>
 								</div>
@@ -337,7 +330,7 @@ function EditPhone({ closeModal }) {
 
 								<div className="flex justify-end mt-20 ">
 									<button
-										onClick={handleEdit2}
+										onClick={changePhone}
 										className="px-10 py-2 mx-10 my-10 bg-[#232164] text-[#ffffff] rounded-lg"
 									>
 										Next
@@ -378,7 +371,7 @@ function EditPhone({ closeModal }) {
 									/>
 								</div>
 								<div className=" mt-1">
-									<TokenPhone  closeModal={handleEdit3} />
+									<TokenPhone closeModal={handleEdit3} />
 
 									<div className="successEditLong-otp"></div>
 								</div>
@@ -421,7 +414,7 @@ function EditPhone({ closeModal }) {
 									<br /> from
 									<div className="number1">
 										<div className="text-[#1C2E7A]">
-										{data?.data?.phone} <h2 className="text-slate-500">to</h2>{" "}
+											{data?.data?.phone} <h2 className="text-slate-500">to</h2>{" "}
 											{newPhone}
 										</div>
 									</div>

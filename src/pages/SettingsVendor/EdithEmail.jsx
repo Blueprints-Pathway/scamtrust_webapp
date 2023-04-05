@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
 import "./settingsVendor.css";
-import TokenPhone from "./TokenPhone";
+import swal from "sweetalert";
 import otp from "../../assets/images/otp.png";
 import encrypted from "../../assets/images/encrypted.png";
 
@@ -18,10 +18,7 @@ function EdithEmail({ closeModal }) {
 
 	const [emailMessage, setEmailMessage] = useState();
 	const [errorEmailMessage, setErrorEmailMessage] = useState("");
-	const handleClosed2 = () => {
-		setClosed2(!closed2);
-	};
-	const [details, setDetails] = useState("CUSTOMER");
+
 	const [values, setValues] = useState({
 		phoneNumber: "",
 		phoneNumber2: "",
@@ -49,21 +46,7 @@ function EdithEmail({ closeModal }) {
 		const error = {};
 
 		const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-		const regex2 = /^[0-9]{11}$/;
 
-		if (!values.phoneNumber) {
-			error.phoneNumber = "Phone Number is required";
-		} else if (!regex2.test(values.phoneNumber)) {
-			error.phoneNumber = "Invalid Phone Number";
-		}
-		if (!values.phoneNumber2) {
-			error.phoneNumber2 = "Please Answer security the question";
-		}
-		if (!values.phoneNumber4) {
-			error.phoneNumber4 = "Please enter new phone number";
-		} else if (!regex2.test(values.phoneNumber4)) {
-			error.phoneNumber4 = "Invalid Phone Number";
-		}
 		if (!values.email) {
 			error.email = "Email is required";
 		} else if (!regex.test(values.email)) {
@@ -76,62 +59,6 @@ function EdithEmail({ closeModal }) {
 			error.email4 = "Please enter new email";
 		} else if (!regex.test(values.email4)) {
 			error.email4 = "Invalid email";
-		}
-		if (!values.office) {
-			error.office = "office address is required";
-		}
-		if (!values.office2) {
-			error.office2 = "Please Answer security the question";
-		}
-		if (!values.account) {
-			error.account = "Active cashout account is required";
-		}
-		if (!values.account2) {
-			error.account2 = "Active cashout account is required";
-		}
-		if (!values.businessName) {
-			error.businessName = "Business name is required";
-		}
-		if (!values.businessName2) {
-			error.businessName2 = "Please Answer security the question";
-		}
-		if (!values.bank) {
-			error.bank = "Bank is required";
-		}
-		if (!values.bankNumber) {
-			error.bankNumber = "Bank number is required";
-		}
-		if (!values.bankName) {
-			error.bankName = "Bank name is required";
-		}
-		if (!values.bank2) {
-			error.bank2 = "Bank is required";
-		}
-		if (!values.bankNumber2) {
-			error.bankNumber2 = "Bank number is required";
-		}
-		if (!values.bankName2) {
-			error.bankName2 = "Bank name is required";
-		}
-		if (
-			!values.pin1 ||
-			!values.pin2 ||
-			!values.pin3 ||
-			!values.pin4 ||
-			!values.pin5 ||
-			!values.pin6
-		) {
-			error.pinCheckError1 = "All field must be filled";
-		}
-		if (
-			!values.pin7 ||
-			!values.pin8 ||
-			!values.pin9 ||
-			!values.pin10 ||
-			!values.pin11 ||
-			!values.pin12
-		) {
-			error.pinCheckError2 = "All field must be filled";
 		}
 
 		return error;
@@ -178,8 +105,18 @@ function EdithEmail({ closeModal }) {
 
 			const data = await axios.post(API_URL, payload, config);
 			// setEmail(data?.data?.data);
+			swal({
+				icon: "success",
+				text: "An OTP has been sent to your email please check.",
+			});
+			handleEdit2();
 		} catch (error) {
-			console.log(error, "error");
+			console.log(error.response?.status, "error");
+			swal({
+				icon: "error",
+				text:
+                error.response?.status === 422 ? "input field is empty" : "check your neetwork",
+			});
 		}
 	};
 	const validateEmail = async () => {
@@ -204,9 +141,6 @@ function EdithEmail({ closeModal }) {
 	return (
 		<>
 			<div
-				className={
-					closed2 ? "EditDone active" : Edit2 ? "EditDone" : "EditDone active"
-				}
 				// class="relative z-10"
 				aria-labelledby="modal-title"
 				role="dialog"
@@ -225,7 +159,7 @@ function EdithEmail({ closeModal }) {
 						<div className="EditDone-Line"></div>
 						<form onSubmit={handleSubmit}>
 							<div className="EditDone-card-title2 mb-10 flex ml-10 ">
-								{details.usertype === "CUSTOMER" ? (
+								{data?.data?.usertype === "CUSTOMER" ? (
 									<h5>What’s your mother’s name?</h5>
 								) : (
 									<h5>When was your business established?</h5>
@@ -285,7 +219,7 @@ function EdithEmail({ closeModal }) {
 								</div>
 							</div>
 							<div className="EditDone-Line"></div>
-							<form onSubmit={changeEmail}>
+							<form onSubmit={"changeEmail"}>
 								<div className="EditDone-card-title2 mb-10 flex ml-10 ">
 									<h5>Enter new Email Adress</h5>
 								</div>
@@ -327,7 +261,7 @@ function EdithEmail({ closeModal }) {
 
 								<div className="flex justify-end mt-20 ">
 									<button
-										onClick={handleEdit2}
+										onClick={changeEmail}
 										className="px-10 py-2 mx-10 my-10 bg-[#232164] text-[#ffffff] rounded-lg"
 									>
 										Next
@@ -411,7 +345,7 @@ function EdithEmail({ closeModal }) {
 									<br /> from
 									<div className="number1">
 										<div className="text-[#1C2E7A]">
-                                        {data?.data?.email}
+											{data?.data?.email}
 											<h2 className="text-slate-500">to</h2> {newEmail}
 										</div>
 									</div>

@@ -1,8 +1,7 @@
 /** @format */
 
 import React, { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+
 import "./settingsVendor.css";
 import shielgg from "../../assets/images/shielgg 4.svg";
 import cross from "../../assets/images/cross.svg";
@@ -22,18 +21,6 @@ function CashAccount({ closeModal }) {
 	const [bankSelectedId, setSelectedBankId] = useState("");
 	const [accountNameError, setAccountNameError] = useState(false);
 	const [accountNumber, setAccountNumber] = useState("");
-	
-
-	const [values, setValues] = useState({
-		phoneNumber: "",
-		phoneNumber2: "",
-		phoneNumber4: "",
-	});
-	const [error, setError] = useState({
-		phoneNumber: "",
-		phoneNumber2: "",
-		phoneNumber4: "",
-	});
 	const handleEdit = () => {
 		setStageOne(!stageOne);
 		console.log("add");
@@ -46,26 +33,12 @@ function CashAccount({ closeModal }) {
 		setStageThree(!stageThree);
 	};
 
-	const [submit, setSubmit] = useState(false);
-
-	const handleChange = (event) => {
-		const { name, value } = event.target;
-		setValues({ ...values, [name]: value });
-		setSubmit(true);
-	};
 	const [stageOne, setStageOne] = useState(false);
 	const [stageTwo, setStageTwo] = useState(false);
 	const [stageThree, setStageThree] = useState(false);
-	const [stageFour, setStageFour] = useState(false);
-	const [newEmail, setNewEmail] = useState();
-	const [closed21, setClosed21] = useState(false);
 	const [bank, setBank] = useState([]);
 	const [bankList, setBankList] = useState([]);
-	const handleClosed21 = () => {
-		setClosed21(!closed21);
 
-		setClosed2(true);
-	};
 	const { data } = useSelector((state) => state.user);
 
 	console.log(data, "hellos");
@@ -110,7 +83,6 @@ function CashAccount({ closeModal }) {
 	};
 	const addAccount = async (e) => {
 		if (bankSelected.length < 1) {
-			setError("Please Select A Bank From the Dropdown Menu!");
 			return;
 		}
 
@@ -132,8 +104,7 @@ function CashAccount({ closeModal }) {
 			console.log(data.data, "data"); // status message
 			setIsLoading(false);
 			handleEdit2();
-         
-     
+
 			swal({
 				icon: "success",
 				text: data.data.message,
@@ -168,8 +139,6 @@ function CashAccount({ closeModal }) {
 		);
 	} else {
 		SearchList = bankList?.map((allbannk, index) => {
-			// console.log(selectedBank, "all bank");
-			// console.log(allbannk[index].name);
 			return (
 				<div
 					onClick={(e) => {
@@ -179,7 +148,6 @@ function CashAccount({ closeModal }) {
 						console.log(bankSelected, "bank selcted");
 					}}
 					aria-current="true"
-					//   focus:border-colorPrimary block w-full text-left cursor-pointer p-4 my-2 text-primary-600  focus:outline-none border-2 rounded-md px-3 py-1.5 text-gray-700"
 					class="block w-full my-2 cursor-pointer border-2  bg-primary-100 p-4 text-primary-600  focus:outline-none border border-colorPrimary rounded-md w-full px-3 py-1.5 text-gray-700 active:bg-blue-600"
 					value={allbannk?.name}
 					id={allbannk.code}
@@ -189,20 +157,6 @@ function CashAccount({ closeModal }) {
 			);
 		});
 	}
-	const isPrime = (num) => {
-		for (let i = 0; i < num; i++) if (num % i === 0) return false;
-		return num > 1;
-	};
-	const isOdd = (num) => {
-		return num + 1;
-	};
-	const getBackGroundColor = (num) => {
-		let color = "red";
-		if (isOdd(num)) color = "red"; //even
-		else color = "#024CA9"; //odd
-		if (isPrime(num)) color = "orange"; //prime
-		return color;
-	};
 
 	return (
 		<>
@@ -434,12 +388,15 @@ function CashAccount({ closeModal }) {
 							</div>
 							<div className="EditDone-Line"></div>
 							{mappeddata?.map((newdata, index) => {
-						
 								return (
 									<div className="md:mx-20 justify-center ">
 										<div className=" md:mx-0 mx-5 md:mb-2 ">
 											<div
-												className={` md:pl-3 mt-10 grid  border-2 rounded-2xl  h-28 ${index===0 ? "bg-[#3AB75D]" : "bg-[#024CA9] opacity-75"} 
+												className={` md:pl-3 mt-10 grid  border-2 rounded-2xl  h-28 ${
+													index === 0
+														? "bg-[#3AB75D]"
+														: "bg-[#024CA9] opacity-75"
+												} 
     `}
 												// style={{ backgroundColor: getBackGroundColor(newdata) }}
 											>
@@ -489,7 +446,7 @@ function CashAccount({ closeModal }) {
 					</div>
 				</div>
 			)}
-            {stageThree && (
+			{stageThree && (
 				<div
 					className={
 						closed2 ? "EditDone active" : Edit2 ? "EditDone" : "EditDone active"
@@ -504,7 +461,7 @@ function CashAccount({ closeModal }) {
 					<div class="fixed flex justify-start inset-0 z-10 sm:w-5/6 md:w-2/4 EditDone-card">
 						<div className="sm:w-5/6 md:w-full">
 							<div className=" mx-10 flex border-b-2 justify-between  text-[#232164] font-semibold text-lg mb-20 mt-20">
-                            <div className="">Add Cash Account</div>
+								<div className="">Add Cash Account</div>
 								<div className="ml-10">
 									<h1 onClick={() => closeModal(false)}>Close X </h1>
 								</div>
@@ -521,9 +478,7 @@ function CashAccount({ closeModal }) {
 								<div className=" my-10 text-slate-500 text-center overflow-hidden">
 									You just added {accountNumber} ,{bankSelected}
 									<br /> as a new cashout account
-									<div className="number1">
-										
-									</div>
+									<div className="number1"></div>
 								</div>
 
 								<div className="successEditLong-otp"></div>

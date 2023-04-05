@@ -1,7 +1,7 @@
 /** @format */
 
-import React, { useState } from "react";
-import { Button, Modal } from "antd";
+import React, { } from "react";
+
 function EdithBusinessName({closeModal}) {
 	const user = JSON.parse(localStorage?.getItem("dataKey"));
 	console.log(user, "user datas");

@@ -80,9 +80,10 @@ function EditAdress({ closeModal }) {
 				text: "Location updated successfully",
 			});
 		} catch (error) {
+            console.log(error.response?.status, "error");
 			swal({
 				icon: "error",
-				text: "Failed to set location sucessfully",
+				text:   error.response?.status === 422? "input field is required" : "check your neetwork",
 			});
 			// setFailed(error?.response?.data?.status);
 		}

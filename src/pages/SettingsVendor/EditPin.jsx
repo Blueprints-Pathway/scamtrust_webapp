@@ -59,8 +59,6 @@ function EditPin({ closeModal }) {
 			};
 
 			const data = await axios.post(API_URL, payload, config);
-
-			console.log(data?.data?.data, "user data");
 			handleEdit2();
 			swal({
 				icon: "success",
