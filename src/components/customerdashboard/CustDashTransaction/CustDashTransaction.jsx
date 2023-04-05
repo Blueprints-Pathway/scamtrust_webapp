@@ -7,10 +7,112 @@ import OngoingHistory from './outgoing/ongoing/OngoingHistory';
 import AwaitingHistory from './awaiting/AwaitingHistory';
 import CompletedHistory from './completed/CompletedHistory';
 import CancelledHistory from './cancelled/CancelledHistory';
+import { useSelector } from 'react-redux';
 
 const { TabPane } = Tabs;
 
 const CustDashTransaction = () => {
+
+   const transactions = useSelector(state => state.customerTransaction);
+   let allTransactionsContent =  <div className={classes['empty-con']}>
+   <Empty />
+</div>;
+
+  
+   if(transactions.allTransactions.length != 0){
+ 
+    allTransactionsContent = transactions.allTransactions.map((transaction) => {
+ 
+     if (transaction.status == 'PENDING VENDOR ACCEPTANCE') {
+      return <AwaitingHistory 
+       id = {transaction.id}
+       productName={transaction.product_name} 
+       vendorName={transaction.vendor.name}
+       totalAmount={transaction.total_amount} 
+       dueDate={transaction.due_date} />
+     }
+     if (transaction.status == 'ACCEPTED BY VENDOR') {
+      return <OngoingHistory 
+       id = {transaction.id}
+       productName={transaction.product_name} 
+       vendorName={transaction.vendor.name}
+       totalAmount={transaction.total_amount} 
+       dueDate={transaction.due_date} />
+     }
+
+   })}
+
+   let outgoingTransactionContent =  <div className={classes['empty-con']}>
+   <Empty />
+</div>;
+
+   
+   if(transactions.allTransactions.length != 0){
+ 
+    outgoingTransactionContent = transactions.allTransactions.map((transaction) => {
+ 
+     if (transaction.status == 'PENDING VENDOR ACCEPTANCE') {
+      return <AwaitingHistory 
+       id = {transaction.id}
+       productName={transaction.product_name} 
+       vendorName={transaction.vendor.name}
+       totalAmount={transaction.total_amount} 
+       dueDate={transaction.due_date} />
+     }
+     if (transaction.status == 'ACCEPTED BY VENDOR') {
+      return <OngoingHistory 
+       id = {transaction.id}
+       productName={transaction.product_name} 
+       vendorName={transaction.vendor.name}
+       totalAmount={transaction.total_amount} 
+       dueDate={transaction.due_date} />
+     }
+
+   })}
+
+   let allCancelledTransactionsContent =  <div className={classes['empty-con']}>
+   <Empty />
+</div>;
+
+  
+   if(transactions.cancelledTransactions.length != 0){
+ 
+     
+      allCancelledTransactionsContent = transactions.cancelledTransactions.map((transaction) => {
+ 
+     if (transaction.status == 'CANCELLED TRANSACTIONS') {
+      return <CancelledHistory 
+       id = {transaction.id}
+       productName={transaction.product_name} 
+       vendorName={transaction.vendor.name}
+       totalAmount={transaction.total_amount} 
+       dueDate={transaction.due_date} />
+     }
+   
+   })}
+
+
+   let allCompletedTransactionContent =  <div className={classes['empty-con']}>
+   <Empty />
+</div>;
+
+  
+   if(transactions.completedTransactions.length != 0){
+ 
+     
+      allCompletedTransactionContent = transactions.completedTransactions.map((transaction) => {
+ 
+     if (transaction.status == 'COMPLETED TRANSACTIONS') {
+      return <CompletedHistory 
+       id = {transaction.id}
+       productName={transaction.product_name} 
+       vendorName={transaction.vendor.name}
+       totalAmount={transaction.total_amount} 
+       dueDate={transaction.due_date} />
+     }
+   
+   })}
+   
   return (
     <div className={classes['wrapper']}>
         <div>
@@ -30,10 +132,7 @@ const CustDashTransaction = () => {
                   <Empty />
                </div> */}
                <div className={classes['history-content']}>
-                  <AwaitingHistory />
-                  <CompletedHistory />
-                  <OngoingHistory />
-                  <CancelledHistory />
+                  {allTransactionsContent}
                </div>
             </TabPane>
             <TabPane tab={<p className={classes['tab-middle']}>Outgoing</p>} key="2">
@@ -42,8 +141,7 @@ const CustDashTransaction = () => {
                   <Empty />
                </div> */}
                <div className={classes['history-content']}>
-                  <AwaitingHistory />
-                  <OngoingHistory />
+                 {outgoingTransactionContent}
                </div>
             </TabPane>
             <TabPane tab={<p className={classes['tab-middle']}>Cancelled </p>} key="3">
@@ -52,7 +150,7 @@ const CustDashTransaction = () => {
                   <Empty />
                </div> */}
                <div className={classes['history-content']}>
-                  <CancelledHistory />
+                  {allCancelledTransactionsContent}
                </div>
             </TabPane>
             <TabPane tab={<p className={classes['right-tab']}>Completed</p>} key="4">
@@ -61,7 +159,8 @@ const CustDashTransaction = () => {
                   <Empty />
                </div> */}
                <div className={classes['history-content']}>
-                  <CompletedHistory />
+                  {allCompletedTransactionContent}
+                 
                </div>
             </TabPane>
           </Tabs>

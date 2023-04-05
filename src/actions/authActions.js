@@ -319,11 +319,13 @@ export const login = (data) => async (dispatch) => {
                 response.data.message
             ));
         }
-
+        dispatch(authActions.loginFailure( 
+            'LOGIN UNSUCCESSFUL TRY AGAIN!'
+        ));
       
         }catch(error){
         dispatch(authActions.loginFailure(
-            error.response.data.message || 'Login Unsuccessful'
+            'Login Unsuccessful'
         ));
     }
 }
