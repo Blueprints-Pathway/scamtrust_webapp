@@ -1,6 +1,7 @@
 .wrapper{
+    
 }
-.notifocatiion-con{
+.notificatiion-con{
     margin-top: 22px;
 }
 .header-icon{
@@ -47,11 +48,14 @@
     border-radius: 100%;
     padding: 3px 10px;
 }
+.not-container{
+    background-color: red;
+}
 
 @media screen and (max-width: 1024px) {
     .wrapper{
     }
-    .notifocatiion-con{
+    .notificatiion-con{
         margin-top: 22px;
     }
     .header-icon{
@@ -104,7 +108,7 @@
 @media screen and (max-width: 768px) {
     .wrapper{
     }
-    .notifocatiion-con{
+    .notificatiion-con{
         margin-top: 22px;
     }
     .header-icon{
@@ -157,7 +161,7 @@
 @media screen and (max-width: 480px) {
     .wrapper{
     }
-    .notifocatiion-con{
+    .notificatiion-con{
         margin-top: 22px;
     }
     .header-icon{

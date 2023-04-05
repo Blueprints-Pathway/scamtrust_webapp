@@ -3,11 +3,12 @@ import classes from './Cancelled.module.css'
 import { TbRefreshAlert } from 'react-icons/tb'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import Empty from '../../customerdashboard/CustDashTransaction/empty/Empty'
 
 const Cancelled = () => {
 
   const navigate = useNavigate();  
-  let content = <p>YOU HAVE NO CANCELLED TRANSACTIONS!</p>;
+  let content = <div className={classes['con']}><Empty /></div>;
   const transactions = useSelector(state => state.customerTransaction);
   if (transactions.cancelledTransactions.length != 0){
    

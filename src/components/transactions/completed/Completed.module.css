@@ -8,6 +8,9 @@
     width: 67vw;
     margin: 15px 0px;
 }
+.con{
+    margin-top: 125px;
+}
 .first{
     display: flex;
     align-items: center;
@@ -94,6 +97,9 @@
         border-radius: 15px;
         width: 61vw;
         margin: 15px 0px;
+    }
+    .con{
+        margin-top: 125px;
     }
     .first{
         display: flex;
@@ -184,6 +190,9 @@
         width: 75vw;
         margin: 15px 0px;
     }
+    .con{
+        margin-top: 125px;
+    }
     .first{
         display: flex;
         align-items: center;
@@ -269,9 +278,12 @@
         border: 1px solid #D9D8D8;
         padding: 7px 5px;
         border-radius: 7px;
-        width: 85vw;
+        width: 79vw;
         margin: 12px 0px;
-        margin-right: 18px;
+        margin-right: 0px;
+    }
+    .con{
+        margin-top: 100px;
     }
     .first{
         display: flex;

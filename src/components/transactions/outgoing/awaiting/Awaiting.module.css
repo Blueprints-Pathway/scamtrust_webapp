@@ -269,9 +269,9 @@
         border: 1px solid #D9D8D8;
         padding: 7px 5px;
         border-radius: 7px;
-        width: 85vw;
+        width: 79vw;
         margin: 12px 0px;
-        margin-right: 18px;
+        margin-right: 0px;
     }
     .first{
         display: flex;

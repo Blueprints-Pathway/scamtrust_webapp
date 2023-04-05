@@ -1,14 +1,17 @@
 import React from 'react'
+import classes from './AllTransaction.module.css'
 import { useSelector } from 'react-redux'
+import empty from '../../../assets/images/empty.png'
 import Cancelled from '../cancelled/Cancelled'
 import Completed from '../completed/Completed'
 import Awaiting from '../outgoing/awaiting/Awaiting'
 import Ongoing from '../outgoing/ongoing/Ongoing'
+import Empty from '../../customerdashboard/CustDashTransaction/empty/Empty'
 
 const AllTransaction = () => {
   const transactions = useSelector(state => state.customerTransaction);
 
-  let content = <p>YOU HAVE NO CANCELLED TRANSACTIONS!</p>;
+  let content = (<div className={classes['con']}><Empty /></div>);
 
   console.log(transactions.allTransactions)
   if(transactions.allTransactions.length != 0){
@@ -27,7 +30,6 @@ const AllTransaction = () => {
 }
   return (
     <div>
-
       {content}
       {/* <Awaiting />
       <Completed />

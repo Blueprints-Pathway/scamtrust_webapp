@@ -56,7 +56,7 @@ const Transactions = () => {
 
   return (
     <AppLayout>
-        <div className={classes['wrapper']}>
+        <div className={['wrapper']}>
               <Card
                 centered
                >

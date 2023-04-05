@@ -72,11 +72,13 @@
 .modal2-btn{
     color: #232164;
     background-color: #2321644F;
-    font-size: 18px;
-    padding: 10px 20px;
+    font-size: 16px;
+    padding: 0px 20px;
+    height: 45px;
     border-radius: 5px;
     border: none;
     outline: none;
+    text-align: center;
 }
 
 @media screen and (max-width: 1024px) {
@@ -154,8 +156,9 @@
     .modal2-btn{
         color: #232164;
         background-color: #2321644F;
-        font-size: 18px;
-        padding: 10px 20px;
+        font-size: 16px;
+        padding: 0px 20px;
+        height: 45px;
         border-radius: 5px;
         border: none;
         outline: none;
@@ -244,7 +247,8 @@
         color: #232164;
         background-color: #2321644F;
         font-size: 13px;
-        padding: 5px 15px;
+        padding: 0px 20px;
+        height: 45px;
         border-radius: 5px;
         border: none;
         outline: none;
@@ -331,9 +335,10 @@
     .modal2-btn{
         color: #232164;
         background-color: #2321644F;
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 500;
-        padding: 7px 20px;
+        padding: 0px 20px;
+        height: 40px;
         border-radius: 5px;
         border: none;
         outline: none;

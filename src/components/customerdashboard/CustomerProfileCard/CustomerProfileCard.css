@@ -35,7 +35,6 @@
 .profile-card-icon{
     margin-top: 10px;
     font-size: 27px;
-    color: red;
 }
 .profile-card-amount{
     display: flex;
@@ -114,7 +113,6 @@
     .profile-card-icon{
         margin-top: 10px;
         font-size: 24px;
-        color: red;
     }
     .profile-card-amount{
         display: flex;
@@ -196,7 +194,6 @@
     .profile-card-icon{
         margin-top: 10px;
         font-size: 24px;
-        color: red;
     }
     .profile-card-amount{
         display: flex;
@@ -284,7 +281,6 @@
     .profile-card-icon{
         margin-top: 10px;
         font-size: 24px;
-        color: red;
     }
     .profile-card-amount{
         display: flex;
