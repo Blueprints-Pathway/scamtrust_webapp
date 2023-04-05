@@ -14,7 +14,7 @@ import { getLoggedInUserDetails } from '../../actions/userActions';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { getCustomerCancelledTransactions, getCustomerCompletedTransactions, getCustomerOngoingTransactions, getCustomerTransactions } from '../../actions/customerTransactionActions';
 import { listNotifications } from '../../actions/notificationActions';
 import { vendorSearch } from '../../actions/miscActions';
@@ -25,7 +25,7 @@ const { Header, Content, Sider } = Layout;
 
 
 
-const AppLayout = () => {
+const AppLayout = ({children}) => {
 
   const {loading, error, data} = useSelector(state => state.user);
   const notification = useSelector(state => state.notification);
@@ -33,7 +33,7 @@ const AppLayout = () => {
   const auth = useSelector(state => state.auth)
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log('get user details' + loading + data + error)
+  console.log('get user detailss' + loading + data + error)
   useEffect(()=>{
     // if(!auth.isAuthenticated){
     //   navigate('/')
@@ -50,7 +50,6 @@ const AppLayout = () => {
   // const {
   //   token: { colorBgContainer },
   // } = theme.useToken();
-  console.log(data);
   const nameOf = loading ? 'hi' : data?.data.name || data?.data.username;
 	const first = nameOf?.at(0);
 	const last = nameOf?.match(/\b(\w)/g).at(1);
@@ -98,21 +97,23 @@ const AppLayout = () => {
           </div>
 
           <div className='side-tab-wrapper'>
-               <div className='side-tab-con'>
-                <VscHome style={{color: '#ffff'}} /><span className='side-tabs'>DASHBOARD</span>
-               </div>
+               <Link to={"/layout"} className='side-tab-con'>
+                <VscHome style={{color: '#ffff'}} /><span onClick={()=>navigate('/customer-dashboard')}
+                className='side-tabs'>DASHBOARD</span>
+               </Link>
      
                <div className='side-tab-con'>
-                <VscArrowSwap style={{color: '#ffff'}} /><span className='side-tabs'>TRANSACTIONS</span>
+                <VscArrowSwap style={{color: '#ffff'}} /><span onClick={()=>navigate('/transactions')}
+                className='side-tabs'>TRANSACTIONS</span>
                </div>
 
                <div className='side-tab-con'>
                <CiWallet style={{color: '#ffff'}} /><span className='side-tabs'>WALLET</span>
                </div>
 
-               <div className='side-tab-con'>
+               <Link to={"/settings"} className='side-tab-con'>
                 <SlSettings style={{color: '#ffff'}} /><span className='side-tabs'>SETTINGS</span>
-               </div>
+               </Link>
           </div>
 
           <div className='side-bottom-tab'>
@@ -156,7 +157,7 @@ const AppLayout = () => {
 
                      {/* INNER CONTENT */}
         <Content className='layout-content' style={{margin: '0px 16px', color: 'black'}}>
-             <CustomerDashboard />
+              {children}
         </Content>
 
         

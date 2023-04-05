@@ -128,7 +128,7 @@ function SettingsVendor() {
 
 					<div className={checked ? "CenterBottom active" : "CenterBottom"}>
 						<div className="vendorNameSettings">
-							<h1>{details?.name}</h1>
+							<h1>john</h1>
 						</div>
 
 						<div className="CenterImg1">
@@ -137,7 +137,7 @@ function SettingsVendor() {
 									<div className="col-md-3">
 										<label htmlFor="upload-button">
 											<img
-												src={preview}
+												src={shielgg}
 												className="CenterImage1"
 												alt="https://www.pexels.com/search/beautiful/"
 											/>

@@ -53,10 +53,10 @@ const Sidebar = () => {
           <div className='side-tab-wrapper'>
             <Link to='/vendordashboard'>
             
-              <div className='side-tab-con'>
-                <VscHome style={{ color: "#ffff" }} />
-                <span className='side-tabs'>DASHBOARD</span>
-              </div>
+            <Link to={"/layout"} className="side-tab-con" >
+									<VscHome style={{ color: "#ffff" }} />
+									<span className="side-tabs">DASHBOARD</span>
+								</Link>
             </Link>
 
             <div className='side-tab-con'>

@@ -12,6 +12,7 @@ import Signin from './pages/sign-in/Signin'
 import VendorSetPassword from './pages/sign-up/set-password/SetPassword'
 import VendorRegistration from './pages/sign-up/vendor-sign-up/vendor-registration/VendorRegistration'
 // import Vendorsignup from './pages/sign-up/vendor-sign-up/Vendorsignup'
+import "./App.css"
 import VendorBvn from './pages/sign-up/Bvn-verification/VerifyBvn'
 import VendorTransactionPin from './pages/sign-up/transaction-pin/TransactionPin'
 import VendorSecurity from './pages/sign-up/security-question/SecurityQuestion'
@@ -20,7 +21,7 @@ import PasswordRecovery from './pages/password-recovery/PasswordRecovery'
 import SignupModal from './components/sign-up-modal/SignupModal'
 import CustomerRegistration from './pages/sign-up/customer-sign-up/customer-registration/CustomerRegistration'
 import CustomerActivate from './pages/sign-up/customer-sign-up/customer-activate-account/CustomerActivate'
-
+import SettingsVendor from "./pages/SettingsVendor/SettingsVendor"
 const App = () => {
   return (
 			
@@ -38,6 +39,7 @@ const App = () => {
 		<Route path='/sign-in' element={<Signin />} />
 		<Route path='/sign-up-modal' element={<SignupModal  />} />
 		<Route path='vendor-registration' element={<VendorRegistration  />} />
+		<Route path='/settings' element={<SettingsVendor/>} />
 		<Route path='vendor-dashboard' element={<VendorDashboard  />} />
 		<Route path='/vendor-activate-account' element={<VendorActivate />} />
 		<Route path='/verify-bvn' element={<VendorBvn />} />
@@ -46,6 +48,7 @@ const App = () => {
 		<Route path='/security-question' element={<VendorSecurity />} />
 		<Route path='/customer-registration' element={<CustomerRegistration />} />
 		<Route path='/customer-activate-account' element={<CustomerActivate />} />
+		
 	</Routes>
   )
 }
