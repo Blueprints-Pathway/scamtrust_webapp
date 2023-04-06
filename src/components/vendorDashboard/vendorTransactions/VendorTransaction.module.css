@@ -1,0 +1,321 @@
+.wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45vw;
+    height: 35rem;
+    overflow-y: scroll;
+    background-color: #ffff;
+    border-radius: 15px;
+    margin-top: 10px;
+    padding-top: 30px;
+}
+.transaction-btn{
+    position: absolute;
+    top: 17%;
+    right: 75px;
+}
+.categories-con{
+    position: absolute;
+    top: 18%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40vw;
+}
+.categories{
+    font-size: 13px;
+    font-weight: 400;
+    color: #A6A6A6;
+}
+.left-tab{
+    color: #A6A6A6;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0px 26px;
+}
+.right-tab{
+    color: #A6A6A6;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0px 26px;
+}
+.tab-middle{
+    color: #A6A6A6;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0px 26px;
+}
+.tab-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.empty-con{
+    margin-top: 300px;
+}
+.history-content{
+    margin-top: 100px;
+}
+
+@media screen and (max-width: 1200px) {
+    .wrapper{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 45vw;
+        height: 35rem;
+        overflow-y: scroll;
+        background-color: #ffff;
+        border-radius: 15px;
+        margin-top: 10px;
+        padding-top: 30px;
+    }
+    .transaction-btn{
+        position: absolute;
+        top: 17%;
+        right: 75px;
+    }
+    .categories-con{
+        position: absolute;
+        top: 18%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 32vw;
+    }
+    .categories{
+        font-size: 13px;
+        font-weight: 400;
+        color: #A6A6A6;
+    }
+    .left-tab{
+        color: #A6A6A6;
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0px 12px;
+    }
+    .right-tab{
+        color: #A6A6A6;
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0px 12px;
+    }
+    .tab-middle{
+        color: #A6A6A6;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 0px 12px;
+    }
+    .tab-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .empty-con{
+        margin-top: 300px;
+    }
+    .history-content{
+        margin-top: 100px;
+    }
+
+}
+@media screen and (max-width: 1024px) {
+    .wrapper{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 40vw;
+        height: 33rem;
+        overflow-y: scroll;
+        background-color: #ffff;
+        border-radius: 15px;
+        margin-top: 0px;
+        padding-top: 30px;
+    }
+    .transaction-btn{
+        position: absolute;
+        top: 17%;
+        right: 20px;
+    }
+    .categories-con{
+        position: absolute;
+        top: 19%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 33vw;
+    }
+    .categories{
+        font-size: 11px;
+        font-weight: 400;
+        color: #A6A6A6;
+    }
+    .left-tab{
+        color: #A6A6A6;
+        font-size: 11px;
+        font-weight: 500;
+        margin: 0px 12px;
+    }
+    .right-tab{
+        color: #A6A6A6;
+        font-size: 11px;
+        font-weight: 500;
+        margin: 0px 12px;
+    }
+    .tab-middle{
+        color: #A6A6A6;
+        font-size: 11px;
+        font-weight: 500;
+        padding: 0px 12px;
+    }
+    .tab-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .empty-con{
+        margin-top: 275px;
+    }
+    .history-content{
+        margin-top: 90px;
+    }
+
+}
+@media screen and (max-width: 768px) {
+    .wrapper{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 50vw;
+        height: 28rem;
+        overflow-y: scroll;
+        background-color: #ffff;
+        border-radius: 15px;
+        margin-top: 0px;
+        padding-top: 30px;
+    }
+    .transaction-btn{
+        position: absolute;
+        top: 17%;
+        right: 20px;
+    }
+    .categories-con{
+        position: absolute;
+        top: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 37vw;
+        margin: 0px 10px;
+    }
+    .categories{
+        font-size: 11px;
+        font-weight: 400;
+        color: #A6A6A6;
+    }
+    .left-tab{
+        color: #A6A6A6;
+        font-size: 11px;
+        font-weight: 500;
+        margin: 0px 5px;
+    }
+    .right-tab{
+        color: #A6A6A6;
+        font-size: 11px;
+        font-weight: 500;
+        margin: 0px 5px;
+    }
+    .tab-middle{
+        color: #A6A6A6;
+        font-size: 11px;
+        font-weight: 500;
+        padding: 0px 5px;
+    }
+    .tab-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .empty-con{
+        margin-top: 220px;
+    }
+    .history-content{
+        margin-top: 80px;
+    }
+
+}
+@media screen and (max-width: 540px) {
+    .wrapper{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 90vw;
+        height: 30rem;
+        overflow-y: scroll;
+        background-color: #ffff;
+        border-radius: 15px;
+        margin-top: 0px;
+        margin-bottom: 15px;
+        padding-top: 25px;
+    }
+    .transaction-btn{
+        position: absolute;
+        top: 17%;
+        right: 20px;
+    }
+    .left-tab{
+        color: #A6A6A6;
+        font-size: 11px;
+        font-weight: 500;
+        margin: 0px 0px;
+    }
+    .right-tab{
+        color: #A6A6A6;
+        font-size: 11px;
+        font-weight: 500;
+        margin: 0px 0px;
+    }
+    .tab-middle{
+        color: #A6A6A6;
+        font-size: 11px;
+        font-weight: 500;
+        padding: 0px 0px;
+    }
+    .tab-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .categories-con{
+        position: absolute;
+        top: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 70vw;
+        margin: 0px 0px;
+    }
+    .categories{
+        font-size: 10px;
+        font-weight: 400;
+        color: #A6A6A6;
+    }
+    .empty-con{
+        margin-top: 220px;
+    }
+    .history-content{
+        margin-top: 75px;
+    }
+
+}
