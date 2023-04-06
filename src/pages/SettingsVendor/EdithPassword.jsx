@@ -288,9 +288,7 @@ function EdithPassword({ closeModal }) {
 			</div>
 			{stageOne && (
 				<div
-					className={
-						closed2 ? "EditDone active" : Edit2 ? "EditDone" : "EditDone active"
-					}
+					
 					// class="relative z-10"
 					aria-labelledby="modal-title"
 					role="dialog"
