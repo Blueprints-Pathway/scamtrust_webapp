@@ -10,7 +10,7 @@ import ErrorInfo from "../../assets/images/error-info.svg";
 import encrypted from "../../assets/images/encrypted.png";
 function EdithPassword({ closeModal }) {
 	const [closed2, setClosed2] = useState(false);
-	const [Edit2, setEdit2] = useState(false);
+	
 	const [loading, setLoading] = useState(false);
 	const handleClosed2 = () => {
 		setClosed2(!closed2);
@@ -161,15 +161,8 @@ function EdithPassword({ closeModal }) {
 	const togglePasswordVisibility2 = () => {
 		setPasswordVisibility2((prevState) => !prevState);
 	};
-	const handleCheck3 = () => {
-		setChecked3(!checked3);
-	};
-	const [checked3, setChecked3] = useState(false);
-	const handleEdit14 = () => {
-		setEdit14(!Edit14);
-		// setClosed15(false);
-	};
-	const [Edit14, setEdit14] = useState(false);
+
+	
 	console.log(input?.previousPassword, "previous");
 	const handleChange = (event) => {
 		const { name, value } = event.target;
@@ -179,9 +172,7 @@ function EdithPassword({ closeModal }) {
 	return (
 		<>
 			<div
-				className={
-					closed2 ? "EditDone active" : Edit2 ? "EditDone" : "EditDone active"
-				}
+				
 				// class="relative z-10"
 				aria-labelledby="modal-title"
 				role="dialog"
