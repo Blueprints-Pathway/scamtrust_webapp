@@ -8,6 +8,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import swal from "sweetalert";
 import { Button } from "antd";
 import { authActions } from "../../reducers/authReducer";
+import classes from "./PasswordRecoveryEmail.module.css";
 function UpdatedPassword() {
   const [isUpdated, setIsUpdated] = React.useState(true)
   const passwordRef = useRef();
@@ -29,13 +30,13 @@ function UpdatedPassword() {
   }
 
 
-  if(auth.isVerifyEmailTokenSuccessful){
+  if(auth.isResetPasswordSuccessful){
     console.log(auth.data)
     swal({
       icon:'success',
       text: auth.data,
     })
-    dispatch(authActions.resetEmailToken())
+    dispatch(authActions.resetPasswordData())
 
    navigate('/sign-in')
   }
@@ -44,9 +45,10 @@ function UpdatedPassword() {
     console.log(auth.error.response.data.message)
     swal({
       icon:'error',
-      text: auth.error.response.data.message.token[0] || auth.error.response.data.message.password[0] ||  auth.error.response.data.message || 'Unsuccessful',
+      text:  auth?.error?.response?.data?.message?.token[0] || auth?.error?.response?.data?.message?.password[0]  || 'Unsuccessful' 
     })
-    dispatch(authActions.resetEmailToken())
+    dispatch(authActions.resetPasswordData())
+    navigate('/sign-in')
 
   }
   return (
@@ -54,53 +56,54 @@ function UpdatedPassword() {
       {isUpdated ? (
         <div>
           <div>
-            <div className=' h-[100vh] px-4 overflow-y-hidden  '>
-              <div className='px-6 mt-5 mb-20 md:mb-3 md:mt-10'>
-                <img className='md:w-[164px] w-[100px]' src={logo} alt='' />
+            <div className={classes["container"]}>
+              <div className={classes["img-container"]}>
+                <img src={logo} alt="" />
               </div>
-              <div className='flex items-center justify-center '>
-                <div className='sm:w-[480px] w-[100%] sm:h-[460px] box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
-                  <h2 className='text-primary pt-10 sm:pt-0 font-semibold  text-[22px] mb-2'>
+              <div className={classes["recovery-container"]}>
+                <div className={classes["recovery"]}>
+                  <h2 className={classes["recovery-header"]}>
                     Password Recovery
                   </h2>
-                  <p className='font-normal text-[12px] text-black font-poppins mb-5 text-center px-3 sm:px-0'>
+                  <p className={classes["recovery-text"]}>
                     Please enter new password differnt from the one previously
                     used
                   </p>
                   <div>
-                    <div className='flex flex-col gap-5'>
+                    <div className={classes["recovery-gap"]}>
                       <div>
-                        <h5 className='text-black text-[12px] font-poppins mb-1'>
-                          Password
-                        </h5>
-
-                        <div className='w-[300px] h-[36px] border-[1px] p-1 border-[#D5D8DA] rounded-[5px]'>
+                        <h5 className={classes["recovery-label"]}>Password</h5>
+​
+                        <div className={classes["recovery-input"]}>
                           <input
-                            className='w-[100%] h-[100%] border-0 outline-none pl-3  text-[#D5D8DA]'
-                            type='text'
+                            className="w-[100%] h-[100%] border-0 outline-none pl-3  text-[#D5D8DA]"
+                            type="text"
+                            ref={passwordRef}
                           />
                         </div>
                       </div>
                       <div>
-                        <h5 className='text-black text-[12px] font-poppins mb-1'>
+                        <h5 className={classes["recovery-label"]}>
                           Confirm password
                         </h5>
-                        <div className='w-[300px] h-[36px] border-[1px] p-1 border-[#D5D8DA] rounded-[5px]'>
+                        <div className={classes["recovery-input"]}>
                           <input
-                            className='w-[100%] h-[100%] border-0 outline-none pl-3  text-[#D5D8DA]'
-                            type='text'
+                            className="w-[100%] h-[100%] border-0 outline-none pl-3  text-[#D5D8DA]"
+                            type="text"
+                            ref={confirmPasswordRef}
                           />
                         </div>
                       </div>
                     </div>
-
-                    <div className='mt-7'>
-                      <button
-                        onClick={() => setIsUpdated(false)}
-                        className='w-[300px] h-[38px] bg-primary rounded-[5px] text-[12px] mb-[6px] flex justify-center items-center'
+​
+                    <div className="mt-7">
+                      <Button
+                        onClick={updatePassword}
+                        className={classes["recovery-continue-button"]}
+                        loading = {auth.loading}
                       >
                         Update password
-                      </button>
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -111,51 +114,55 @@ function UpdatedPassword() {
       ) : (
         <div>
           <div>
-            <div className=' h-[100vh] px-4 overflow-y-hidden  '>
-              <div className='px-6 mt-5 mb-20 md:mb-3 md:mt-10'>
-                <img className='md:w-[164px] w-[100px]' src={logo} alt='' />
+            <div className={classes["container"]}>
+              <div className={classes["img-container"]}>
+                <img src={logo} alt="" />
               </div>
-              <div className='flex items-center justify-center '>
-                <div className='sm:w-[480px] w-[100%] sm:h-[460px] box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
-                  <h2 className='text-primary pt-10 sm:pt-0 font-semibold  text-[22px] mb-2'>
+              <div className={classes["recovery-container"]}>
+                <div className={classes["recovery"]}>
+                  <h2 className={classes["recovery-header"]}>
                     Password Recovery
                   </h2>
-                  <p className='font-normal text-[12px] text-black font-poppins mb-5 text-center px-3 sm:px-0'>
+                  <p className={classes["recovery-text"]}>
                     Please enter new password differnt from the one previously
                     used
                   </p>
                   <div>
-                    <div className='flex flex-col gap-5'>
+                    <div className={classes["recovery-gap"]}>
                       <div>
-                        <h5 className='text-black text-[12px] font-poppins mb-1'>
-                          Password
-                        </h5>
-
-                        <div className='w-[300px] h-[36px] border-[1px] p-1 border-[#D5D8DA] rounded-[5px]'>
+                        <h5 className={classes["recovery-label"]}>Password</h5>
+​
+                        <div className={classes["recovery-input"]}>
                           <input
-                            className='w-[100%] h-[100%] border-0 outline-none pl-3  text-[#D5D8DA]'
-                            type='text'
+                            className="w-[100%] h-[100%] border-0 outline-none pl-3  text-[#D5D8DA]"
+                            type="text"
                             ref={passwordRef}
                           />
                         </div>
                       </div>
                       <div>
-                        <h5 className='text-black text-[12px] font-poppins mb-1'>
+                        <h5 className={classes["recovery-label"]}>
                           Confirm password
                         </h5>
-                        <div className='w-[300px] h-[36px] border-[1px] p-1 border-[#D5D8DA] rounded-[5px]'>
+                        <div className={classes["recovery-input"]}>
                           <input
-                            className='w-[100%] h-[100%] border-0 outline-none pl-3  text-[#D5D8DA]'
-                            type='text'
+                            className="w-[100%] h-[100%] border-0 outline-none pl-3  text-[#D5D8DA]"
+                            type="text"
                             ref={confirmPasswordRef}
                           />
                         </div>
+                      
+                   
                       </div>
+                     
                     </div>
-                    <h6 className='text-[#FC0D1B] text-[10px] mt-1 flex items-center gap-2'>
-                    </h6>
-                    <div className='mt-4'>
-                      <Button loading = {auth.loading} onClick={updatePassword} className='w-[300px] h-[38px] bg-primary rounded-[5px] text-[12px] mb-[6px] flex justify-center items-center'>
+​
+                    <div className="mt-7">
+                      <Button
+                        onClick={updatePassword}
+                        className={classes["recovery-continue-button"]}
+                        loading = {auth.loading}
+                      >
                         Update password
                       </Button>
                     </div>
@@ -167,7 +174,6 @@ function UpdatedPassword() {
         </div>
       )}
     </div>
-  )
+  );
 }
-
 export default UpdatedPassword

@@ -7,37 +7,58 @@ import { useDispatch, useSelector } from "react-redux"
 import { sendResetPasswordLink, verifyEmailToken } from "../../actions/authActions"
 import { EmailRounded } from "@mui/icons-material"
 import { Button } from "antd"
+import classes from "./PasswordRecoveryEmail.module.css";
 import swal from "sweetalert"
 import { authActions } from "../../reducers/authReducer"
+
 
 function PasswordRecoveryEmail() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const auth = useSelector(state => state.auth)
-  const handleClick = () => {
-    navigate("/passwordrecoveryphone")
-  }
-  const [isLogin, setIsLogin] = useState(true)
+  // const handleClick = () => {
+    //   navigate("/passwordrecoveryphone")
+    // }
+    // const [isLogin, setIsLogin] = useState(true)
+    const [otp, setOtp] = useState(new Array(6).fill(""));
   const [email, setEmail] = useState('')
   const emailRef = useRef();
-  const [otp, setOtp] = useState({
-    digitOne: "",
-    digitTwo: "",
-    digitThree: "",
-    digitFour: "",
-    digitFive: "",
-    digitSix: "",
-  })
-  let code = otp.digitOne + otp.digitTwo + otp.digitThree + otp.digitFour + otp.digitFive + otp.digitSix;
+  // const [otp, setOtp] = useState({
+  //   digitOne: "",
+  //   digitTwo: "",
+  //   digitThree: "",
+  //   digitFour: "",
+  //   digitFive: "",
+  //   digitSix: "",
+  // })
+  let code = otp[0] + otp[1] + otp[2] + otp[3] + otp[4] + otp[5];
 
-  const handleChange = (event) => {
-    const { name, value } = event.target
-    setOtp((prev) => ({
-      ...prev,
-      [name]: value,
-    }))
-  }
+  // const handleChange = (event) => {
+  //   const { name, value } = event.target
+  //   setOtp((prev) => ({
+  //     ...prev,
+  //     [name]: value,
+  //   }))
+  // }
+  console.log(code)
   console.log(otp)
+
+
+  const handleClick = () => {
+    navigate("/passwordrecoveryphone");
+  };
+  const [isLogin, setIsLogin] = useState(true);
+
+  const handleChange = (element, index) => {
+     if (isNaN(+element.value)) return false;
+
+    setOtp([...otp.map((d, idx) => (idx === index ? element.value : d))]);
+
+      //Focus next input
+      if (element.nextSibling) {
+          element.nextSibling.focus();
+      }
+  };
 
   const continueHandler = (e) => {
     e.preventDefault();
@@ -48,7 +69,7 @@ function PasswordRecoveryEmail() {
   }
 
   const verifyEmailOtp = () => {
-    dispatch(verifyEmailToken(code))
+    navigate(`/update-password/${+code}`)
   }
   const renderInput = (keys) => {
     return (
@@ -94,7 +115,7 @@ console.log(auth.error)
     })
     dispatch(authActions.resetEmailToken())
 
-   navigate(`/updatedpassword/${code}`)
+   navigate(`/update-password/${code}`)
   }
 console.log(auth.error)
   if(auth.error){
@@ -107,38 +128,30 @@ console.log(auth.error)
 
   }
   return (
-    <div className=''>
+    <div className="">
       {isLogin ? (
         <div>
-          <div className=' h-[100vh] px-4 overflow-y-hidden  '>
-            <div className='px-6 mt-5 mb-20 md:mb-3 md:mt-10'>
-              <img className='md:w-[164px] w-[100px]' src={logo} alt='' />
+          <div className={classes["container"]}>
+            <div className={classes["img-container"]}>
+              <img src={logo} alt="" />
             </div>
-            <div className='flex items-center justify-center '>
-              <form onSubmit={continueHandler}>
-              <div className='sm:w-[480px] w-[100%] sm:h-[460px] box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
-                <h2 className='text-primary pt-10 sm:pt-0 font-semibold  text-[22px] mb-2'>
+            <div className={classes["recovery-container"]}>
+              <div className={classes["recovery"]}>
+                <h2 className={classes["recovery-header"]}>
                   Password Recovery
                 </h2>
-                <p className='font-normal text-[12px] text-black font-poppins mb-5 text-center px-3 sm:px-0'>
+                <p className={classes["recovery-text"]}>
                   Please enter your Email Address to receive verification code
                 </p>
                 <div>
-                  <h5 className='text-black text-[12px] font-poppins mb-1'>
-                    Email Address{" "}
-                  </h5>
-                  <div className='w-[300px] h-[36px] border-[1px] p-1 border-[#D5D8DA] rounded-[5px]'>
-                    <input
-                      ref={emailRef}
-                      className='w-[100%] h-[100%] border-0 outline-none pl-3  text-[#D5D8DA]'
-                      type='text'
-                    />
+                  <h5 className={classes["recovery-label"]}>Email Address</h5>
+                  <div className={classes["recovery-input"]}>
+                    <input className="" type="text" ref={emailRef} />
                   </div>
-
+​
                   <div>
                     <button
-                      onClick={handleClick}
-                      className='mb-3'
+                      className={classes["recovery-phone-number"]}
                       style={{
                         border: "none",
                         textDecoration: "underline",
@@ -146,82 +159,87 @@ console.log(auth.error)
                         fontFamily: "Poppins",
                         fontSize: "10px",
                       }}
+                      onClick={handleClick }
                     >
-                      Use Phone number
+                      Use phone number
                     </button>
                   </div>
-
-                  <div className=''>
+​
+                  <div>
                     <Button
-                    
-                   htmlType="submit"
-                   loading = {auth.loading}
-                      // className='w-[300px] h-[38px] bg-primary rounded-[5px] text-[12px] mb-[6px] flex justify-center items-center'
+                      onClick={continueHandler}
+                      className={classes["recovery-continue-button"]}
+                      loading = {auth.loading}
                     >
                       Continue
                     </Button>
-                    <div className='flex justify-center items-center'>
-                      <h6 className='text-[12px] font-poppins text-[#8E8E8E] text-center pb-10 sm:pb-0'>
-                        Remember your password ?
-                      </h6>
-                      <button className='text-primary text-xs'>Log in</button>
+                    <div className={classes["recovery-remember"]}>
+                      <h6 className="">Remember your password ?</h6>
+                      <button> Log in</button>
                     </div>
                   </div>
                 </div>
               </div>
-              </form>
             </div>
           </div>
         </div>
       ) : (
         <div>
-       <div className="h-[100vh] overflow-y-hidden px-4">
-       <div className="px-6 mt-5 mb-20 md:mb-3 md:mt-10">
-          <img className='md:w-[164px] w-[100px]' src={logo} alt='' />
-          </div>
-          <div className='flex justify-center items-center  '>
-            <div className='sm:w-[480px] w-[100%] sm:h-[460px] box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
-              <h2 className='text-primary font-semibold  text-[22px] mb-2 pt-10 sm:pt-0 '>
-                Password Recovery
-              </h2>
-              <div>
-                <img className='sm:w-[100px] w-[50px]' src={mail} alt='' />
-              </div>
-              <p className='font-semibold text-[12px] text-black font-poppins mb-2  text-center'>
-                Please enter the 6 digit code sent to {email}
-              </p>
-              <div>
-                <h5 className='text-black text-[12px] font-poppins mb-1'>
-                  Enter code
-                </h5>
-                <form>
-                  <div className='flex justify-between w-[220px] mb-2'>
-                    {Object.keys(otp).map((keys, index) => {
-                      return renderInput(keys)
-                    })}
+          <div className={classes["container"]}>
+            <div className={classes["img-container"]}>
+              <img src={logo} alt="" />
+            </div>
+            <div className={classes["recovery-container"]}>
+              <div className={classes["recovery"]}>
+                <h2 className={classes["recovery-header"]}>
+                  Password Recovery
+                </h2>
+                <div className={classes["recover-code"]}>
+                  <img src={mail} alt="" />
+                </div>
+                <p className={classes["recovery-code-text"]}>
+                  Please enter the 6 d9igit code sent to folaade@gmail
+                </p>
+                <div>
+                  <h5 className={classes["recovery-label"]}>Enter code</h5>
+                  <form className={classes['recovery-form']}>
+                  {otp.map((data, index) => {
+                     return(
+                   
+                      <input
+                        className={classes['otp-input']}
+                        type="text"
+                        name="otp"
+                        maxLength="1"
+                        key={index}
+                        value={data}
+                        onChange={e => handleChange(e.target, index)}
+                        onFocus={e => e.target.select()}
+                      />
+               
+                     )
+                      })}
+                   
+                  </form>
+
+                  <Button
+                    onClick={verifyEmailOtp}
+                    className={classes["recovery-button"]}
+                  >
+                    Continue
+                  </Button>
+                  <div className={classes["recovery-secured"]}>
+                    <h6>Secured byy </h6>
+                    <img src={footer} alt="" />
                   </div>
-                </form>
-
-                <Button
-                  loading = {auth.loading}
-                  onClick={verifyEmailOtp}
-                  className='w-[220px] h-[38px] bg-primary rounded-[5px] text-[12px] mb-[6px] flex justify-center items-center'
-                >
-                  Continue
-                </Button>
-
-                <div className='flex justify-center items-center w-[220px] mt-4 gap-1 pb-6 sm:pb-0'>
-                  <h6 className='text-primary text-[12px]'>Secured byy </h6>
-                  <img className='w-[60px]' src={footer} alt='' />
                 </div>
               </div>
             </div>
           </div>
-       </div>
         </div>
       )}
     </div>
-  )
+  );
 }
 
 export default PasswordRecoveryEmail

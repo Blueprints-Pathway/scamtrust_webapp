@@ -34,7 +34,7 @@ const CustomerProfileCard = () => {
           </div>
           <div className='profile-card-bottom'>
             <Withdrawbutton />
-            <Fundbutton />
+            <Fundbutton accountNumber = {data.virtualAccount.account_number}/>
           </div>
     </div>
     </div>

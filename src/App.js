@@ -66,6 +66,10 @@ const App = () => {
         path='/passwordrecoveryphone'
         element={<PasswordRecoveryPhone />}
       />
+	  <Route
+        path='/update-password/:token'
+        element={<UpdatedPassword />}
+      />
 
 		                {/* TRANSACTIONS */}
 		<Route path='/transactions' element={<Transaction />} />

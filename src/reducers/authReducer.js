@@ -168,11 +168,13 @@ const authReducer = createSlice({
     loginRequest(state) {
       state.loading = true;
       console.log('login request')
+      state.error = false;
     },
     loginSuccess(state, action) {
       state.loading = false;
       state.error = false;
       state.data = action.payload;
+      state.error = false;
       state.isAuthenticated = true;
       console.log('login success')
     },
@@ -189,6 +191,7 @@ const authReducer = createSlice({
       state.isPhoneValid = false;
       localStorage.removeItem('USER_TOKEN');
       console.log('logout')
+      state.error = false;
       localStorage.removeItem('LOGGED_IN')
 
     },
