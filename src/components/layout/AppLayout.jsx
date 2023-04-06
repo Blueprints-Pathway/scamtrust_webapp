@@ -18,6 +18,7 @@ import { getCustomerCancelledTransactions, getCustomerCompletedTransactions, get
 import { listNotifications } from '../../actions/notificationActions';
 import { vendorSearch } from '../../actions/miscActions';
 import Notification from './notification/Notification';
+import { Link } from 'react-router-dom';
 import { getWalletTransactionsDetails } from '../../actions/walletActions';
 const { Header, Content, Sider } = Layout;
 
@@ -115,10 +116,9 @@ const AppLayout = ({children}) => {
                >WALLET</span>
                </div>
 
-            <div className='side-tab-con'>
-              <SlSettings style={{ color: "#ffff" }} />
-              <span className='side-tabs'>SETTINGS</span>
-            </div>
+               <Link to={"/settings"} className='side-tab-con'>
+                <SlSettings style={{color: '#ffff'}} /><span className='side-tabs'>SETTINGS</span>
+               </Link>
           </div>
 
           <div className='side-bottom-tab'>

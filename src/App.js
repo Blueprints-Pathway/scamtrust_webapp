@@ -29,9 +29,9 @@ import PasswordRecovery from "./pages/passwordrecoverey/PasswordRecovery"
 import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmail"
 import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone"
 import UpdatedPassword from "./pages/passwordrecovery/UpdatedPassword"
-import Settings from "./pages/settings/Settings"
-import VendorDashboard from "./pages/dashboards/vendorDashboard/VendorDashboard"
-
+import SettingsVendor from "../src/pages/SettingsVendor/SettingsVendor"
+// import VendorDashboard from "./pages/dashboards/vendorDashboard/VendorDashboard"
+import VendorDashboard from "./pages/dashboards/VendorDashboard/VendorDashboard.jsx"
 const App = () => {
   return (
 			
@@ -62,6 +62,8 @@ const App = () => {
         path='/passwordrecoveryemail'
         element={<PasswordRecoveryEmail />}
       />
+	  <Route  path='/settings'
+        element={<SettingsVendor/>}/>
       <Route
         path='/passwordrecoveryphone'
         element={<PasswordRecoveryPhone />}

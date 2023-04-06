@@ -1,11 +1,14 @@
+/** @format */
+
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import swal from "sweetalert";
 import "./token.css";
-function TokenPhone(onComplete, length) {
+import { useSelector } from "react-redux";
+function TokenPhone({ onComplete, length, closeModal }) {
 	const [loading, setLoading] = useState(false);
-	const [value, setValue] = useState();
+
 	// const navigate = useNavigate();
 	const inputs = useRef([]);
 	// const location = useLocation();
@@ -16,17 +19,17 @@ function TokenPhone(onComplete, length) {
 	const withoutCommas = newToken?.replace(/,/g, "");
 	// console.log(withoutCommas, "hello");
 	///token start//
-
-	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
+	const auth = useSelector((state) => state?.auth?.data?.access_token);
 	const changeToken = async (e) => {
-		e.preventDefault();
+		// e.preventDefault();
+		setLoading(true);
 		try {
 			const API_URL = `${process.env.REACT_APP_BASE_URL}/settings/verify/change/phone/token
 			`;
 			const config = {
 				headers: {
 					"Content-Type": "application/json",
-					Authorization: `Bearer ${user_details?.data?.access_token}`,
+					Authorization: `Bearer ${auth}`,
 				},
 			};
 			const payload = {
@@ -34,11 +37,14 @@ function TokenPhone(onComplete, length) {
 			};
 			swal({
 				icon: "success",
-				text: "Email changed successfully",
+				text: "Phone Number changed successfully",
 			});
 			const data = await axios.post(API_URL, payload, config);
+			console.log(data);
+			closeModal(false);
 			// setEmail(data?.data?.data);
 		} catch (error) {
+			
 			swal({
 				icon: "error",
 				text: "Invalid token provided",
@@ -68,23 +74,19 @@ function TokenPhone(onComplete, length) {
 		}
 	};
 
-	const updateToken = (e) => {
-		e.preventDefault();
-		// navigate("/confirmpassword", { state: code });
-	};
 	return (
-		<div className="container-fluid ">
-			<div className="mx-auto box-border  sm:w-full lg:w-full md:6/12 mt-5   top-10 left-50 right-10 relative">
-				<div className=" ">
+		<div className=" ">
+			<div className="mx-auto box-border sm:w-full lg:w-full md:6/12    top-10 left-50 right-10 relative">
+				<div className="flex">
 					<div className="col-start-2 col-span-4">
-						<div className="mt-3 grid justify-items-center ">
-							<span className="text-xl">
+						<div className="flex -mt-12   text-center">
+							<span className="md:text-xl text-sm text-center flex">
 								Enter OTP sent to your new phone number
 							</span>
 						</div>
-						<div className="grid  p-3  justify-items-center">
-							<div className="code-input grid  p-3  container-fluid">
-								<div className="code-inputs mt-5">
+						<div className="grid md:p-3 p-1  justify-items-center">
+							<div className="code-input grid md:p-3 p-1  container-fluid">
+								<div className="code-inputs mt-3">
 									{code.map((num, idx) => {
 										return (
 											<input
@@ -104,15 +106,20 @@ function TokenPhone(onComplete, length) {
 								</div>
 							</div>
 						</div>
-						<span className="text-small  ">
-							Didn’t receive OTP? <Link to="">Resend OTP</Link>
-						</span>
-						<div className="grid justify-items-center mt-4	">
+						<div className="flex">
+							<span className="text-small text-center  ">
+								Didn’t receive OTP? <Link to="">Resend OTP</Link>
+							</span>
+						</div>
+
+						<div className="grid justify-items-center mb-2 mt-4	">
 							<button
 								type="submit"
-								onClick={changeToken}
+								onClick={() => {
+									changeToken();
+								}}
 								style={{ backgroundColor: " #232164" }}
-								className=" w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+								className=" w-full hover:bg-blue-700 text-white font-bold py-2  px-4 rounded"
 							>
 								Confirm
 							</button>
