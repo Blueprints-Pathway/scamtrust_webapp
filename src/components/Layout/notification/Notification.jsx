@@ -1,13 +1,13 @@
 import React from 'react'
 import classes from './Notification.module.css'
 import { MdNotificationsNone } from 'react-icons/md'
-import { Badge } from 'antd';
+import { Badge, Menu } from 'antd';
 import { Dropdown } from 'antd';
 import { GoPrimitiveDot } from 'react-icons/go'
 import { IoCheckmarkCircleSharp } from 'react-icons/io5'
 import { CiMail, CiLock } from 'react-icons/ci'
 import { useSelector } from 'react-redux';
-import { Margin } from '@mui/icons-material';
+// import './override.scss'
 
 const Notification = () => {
   const notification = useSelector(state => state.notification);
@@ -96,10 +96,11 @@ const Notification = () => {
     <div className={classes['wrapper']}>
         <Dropdown
           menu={{
-           items
-          }}
+            items
+        }}
           placement="topRight"
           trigger={['click']}
+          openClassName={{height: '10rem'}}
         >
         <div onClick={(e) => e.preventDefault()}
         className={classes['notificatiion-con']}>

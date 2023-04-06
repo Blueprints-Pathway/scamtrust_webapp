@@ -2,7 +2,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    margin: 20px 0px 0px 0px;
+    margin: 20px 0px 20px 0px;
 }
 .left{
     margin: 0px 10px 0px 0px;
@@ -18,7 +18,7 @@
         display: flex;
         align-items: flex-start;
         justify-content: center;
-        margin: 20px 5px 0px 5px;
+        margin: 20px 5px 20px 5px;
     }
     .left{
         margin: 0px 10px 0px 0px;
@@ -35,7 +35,7 @@
         display: flex;
         align-items: flex-start;
         justify-content: center;
-        margin: 20px 5px 0px 5px;
+        margin: 20px 5px 20px 5px;
     }
     .left{
         margin: 0px 10px 0px 10px;
@@ -47,12 +47,12 @@
         display: none;
     }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
     .wrapper{
         display: flex;
         align-items: flex-start;
         justify-content: center;
-        margin: 20px 35px 0px 0px;
+        margin: 20px 0px 20px 0px;
     }
     .left{
         margin: 0px 10px 0px 0px;
@@ -71,14 +71,18 @@
     .wrapper-2{
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
         margin: 20px 0px 0px 0px;
     }
     .left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         margin: 0px 0px 0px 0px;
     }
     .right{
-        margin: 0px 0px 0px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px 5px 0px 0px;
     }
 }
