@@ -1,12 +1,13 @@
 import React from 'react'
 import classes from './Notification.module.css'
 import { MdNotificationsNone } from 'react-icons/md'
-import { Badge } from 'antd';
+import { Badge, Menu } from 'antd';
 import { Dropdown } from 'antd';
 import { GoPrimitiveDot } from 'react-icons/go'
 import { IoCheckmarkCircleSharp } from 'react-icons/io5'
 import { CiMail, CiLock } from 'react-icons/ci'
 import { useSelector } from 'react-redux';
+// import './override.scss'
 
 const Notification = () => {
   const notification = useSelector(state => state.notification);
@@ -22,7 +23,6 @@ const Notification = () => {
             </div>
             <CiMail className={classes['drop-icon2']} />
           </div>
-          // <a href="">kik</a>
           ),
         
       })});
@@ -84,7 +84,8 @@ const Notification = () => {
                   <p className={classes['message-bottom']}>May 30,2021 at 09:10AM</p>
               </div>
               <CiLock className={classes['drop-icon2']} />
-            </div>),
+            </div>
+            ),
           key: '3',
         },
       ];
@@ -94,16 +95,15 @@ const Notification = () => {
   return (
     <div className={classes['wrapper']}>
         <Dropdown
-        
           menu={{
-
-           items
-          }}
+            items
+        }}
           placement="topRight"
           trigger={['click']}
+          openClassName={{height: '10rem'}}
         >
         <div onClick={(e) => e.preventDefault()}
-        className={classes['notifocatiion-con']}>
+        className={classes['notificatiion-con']}>
            <Badge count={notification.unreadNotifications.length} overflowCount={99}>
              <div>
                 <MdNotificationsNone className={classes['header-icon']} style={{ fill: '#232164' }} />

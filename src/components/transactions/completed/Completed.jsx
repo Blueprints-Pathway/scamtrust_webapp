@@ -3,12 +3,13 @@ import classes from './Completed.module.css'
 import { BsArrowDownRightCircle } from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import Empty from '../../customerdashboard/CustDashTransaction/empty/Empty'
 
 
 const Completed = () => {
 
   const navigate = useNavigate();
-  let content = <p>YOU HAVE NO COMPLETED TRANSACTIONS!</p>;
+  let content = <div className={classes['con']}><Empty /></div>;
   const transactions = useSelector(state => state.customerTransaction);
   if (transactions.completedTransactions.length != 0){
    

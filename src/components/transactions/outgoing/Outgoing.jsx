@@ -2,9 +2,10 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import Awaiting from './awaiting/Awaiting'
 import Ongoing from './ongoing/Ongoing'
+import Empty from '../../customerdashboard/CustDashTransaction/empty/Empty'
 
 const Outgoing = () => {
-  let content = <p>YOU HAVE NO ON-GOING TRANSACTIONS!</p>;
+  let content = <div style={{marginTop: '120px'}}><Empty /></div> ;
    
   
 const transactions = useSelector(state => state.customerTransaction)

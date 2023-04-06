@@ -1,0 +1,23 @@
+.con{
+    margin-top: 125px;
+}
+@media screen and (max-width: 1200px) {
+    .con{
+        margin-top: 125px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .con{
+        margin-top: 125px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .con{
+        margin-top: 125px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .con{
+        margin-top: 100px;
+    }
+}

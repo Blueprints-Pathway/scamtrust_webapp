@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom"
 import About from "./pages/home/src/components/About/About"
 import Faq from "./pages/home/src/components/Faq/Faq"
 import KnowMore from "./pages/home/src/components/knowMore/KnowMore"
-import VendorDashboard from "./pages/dashboards/VendorDashboard/VendorDashboard"
 import HomePage from './pages/home/src/HomePage'
 import Signin from './pages/sign-in/Signin'
 import VendorSetPassword from './pages/sign-up/set-password/SetPassword'
@@ -31,6 +30,7 @@ import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmai
 import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone"
 import UpdatedPassword from "./pages/passwordrecovery/UpdatedPassword"
 import Settings from "./pages/settings/Settings"
+import VendorDashboard from "./pages/dashboards/vendorDashboard/VendorDashboard"
 
 const App = () => {
   return (
@@ -46,10 +46,10 @@ const App = () => {
 		{/* SCAMTRUST WEBAPP */}
 		
 		<Route path='/customer-dashboard' element={<CustomerDashboard />} />
+		<Route path='/vendor-dashboard' element={<VendorDashboard />} />
 		<Route path='/sign-in' element={<Signin />} />
 		<Route path='/sign-up-modal' element={<SignupModal  />} />
 		<Route path='vendor-registration' element={<VendorRegistration  />} />
-		<Route path='vendor-dashboard' element={<VendorDashboard  />} />
 		<Route path='/vendor-activate-account' element={<VendorActivate />} />
 		<Route path='/verify-bvn' element={<VendorBvn />} />
 		<Route path='/set-password' element={<VendorSetPassword />} />

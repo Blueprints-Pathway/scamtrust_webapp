@@ -208,16 +208,15 @@ console.log(wallet.error)
               <p style={{color: 'red'}}>{error}</p>
               </Form.Item>
               <div>
+              <div className={classes['withdraw-footer']}>
+            <div className={classes['footer-logo']}>
+              <FooterLogo />
+            </div>
               <button
               onClick={onFinishAmountInput}
               className={classes['modal-1-btn']}>
                  Continue
               </button>
-              <div className={classes['withdraw-footer']}>
-            <div className={classes['footer-logo']}>
-              <FooterLogo />
-            </div>
-        
           </div>
               
             </div>
