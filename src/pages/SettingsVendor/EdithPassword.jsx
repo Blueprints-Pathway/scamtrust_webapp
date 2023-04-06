@@ -10,7 +10,7 @@ import ErrorInfo from "../../assets/images/error-info.svg";
 import encrypted from "../../assets/images/encrypted.png";
 function EdithPassword({ closeModal }) {
 	const [closed2, setClosed2] = useState(false);
-	
+
 	const [loading, setLoading] = useState(false);
 	const handleClosed2 = () => {
 		setClosed2(!closed2);
@@ -142,13 +142,11 @@ function EdithPassword({ closeModal }) {
 			});
 		} catch (error) {
 			// setFailed(error?.response?.data?.status);
-			setErrorMessage(error.response?.data?.message?.current_password[0]
-                );
+			setErrorMessage(error.response?.data?.message?.current_password[0]);
 			console.log(errorMessage, "errors");
 			swal({
 				icon: "error",
-				text:
-                errorMessage || "check input fields"
+				text: errorMessage || "check input fields",
 			});
 		}
 	};
@@ -162,7 +160,6 @@ function EdithPassword({ closeModal }) {
 		setPasswordVisibility2((prevState) => !prevState);
 	};
 
-	
 	console.log(input?.previousPassword, "previous");
 	const handleChange = (event) => {
 		const { name, value } = event.target;
@@ -172,7 +169,6 @@ function EdithPassword({ closeModal }) {
 	return (
 		<>
 			<div
-				
 				// class="relative z-10"
 				aria-labelledby="modal-title"
 				role="dialog"
@@ -194,26 +190,23 @@ function EdithPassword({ closeModal }) {
 							<div className="EditDone-card-title2  grid ml-10 mx-10">
 								<h5>Enter Old Password</h5>
 							</div>
-							<div  className="flex-row ml-10 mx-10">
-								
-									
-									<input
-										onChange={handleChange}
-										onClick={handleInput}
-										value={input.previousPassword}
-										className=" grow inputBox-EditSettings"
-										name="previousPassword"
-										placeholder=""
-										type={!passwordVisibility1 ? "password" : "text"}
-										id="myInput"
-										autoComplete="off"
-									/>
-                                    <span
-										onClick={togglePasswordVisibility1}
-										class="fa fa-fw fa-eye field-icon toggle-password"
-									></span>
-								</div>
-							
+							<div className="flex-row ml-10 mx-10">
+								<input
+									onChange={handleChange}
+									onClick={handleInput}
+									value={input.previousPassword}
+									className=" grow inputBox-EditSettings"
+									name="previousPassword"
+									placeholder=""
+									type={!passwordVisibility1 ? "password" : "text"}
+									id="myInput"
+									autoComplete="off"
+								/>
+								<span
+									onClick={togglePasswordVisibility1}
+									class="fa fa-fw fa-eye field-icon toggle-password"
+								></span>
+							</div>
 
 							<div className="my-3 grid ml-10 mx-10">
 								<h5>Enter New Password</h5>
@@ -230,10 +223,10 @@ function EdithPassword({ closeModal }) {
 									type="password"
 									autoComplete="off"
 								/>
-                                 <span
-										onClick={togglePasswordVisibility1}
-										class="fa fa-fw fa-eye field-icon toggle-password"
-									></span>
+								<span
+									onClick={togglePasswordVisibility1}
+									class="fa fa-fw fa-eye field-icon toggle-password"
+								></span>
 								{error.password && (
 									<span className="flex items-center mt-2">
 										<img src={ErrorInfo} className="mr-2" alt="error_info" />
@@ -256,10 +249,10 @@ function EdithPassword({ closeModal }) {
 									placeholder="Enter Old Password"
 									autoComplete="off"
 								/>
-                                 <span
-										onClick={togglePasswordVisibility1}
-										class="fa fa-fw fa-eye field-icon toggle-password"
-									></span>
+								<span
+									onClick={togglePasswordVisibility1}
+									class="fa fa-fw fa-eye field-icon toggle-password"
+								></span>
 								{error.confirmPassword && (
 									<span className="flex items-center mt-2">
 										<img src={ErrorInfo} className="mr-2" alt="error_info" />
@@ -279,7 +272,7 @@ function EdithPassword({ closeModal }) {
 									onClick={PasswordChange}
 									className="px-10 py-2 mx-10  bg-[#232164] text-[#ffffff] rounded-lg"
 								>
-															{loading ? "Loading" : "Next"}
+									{loading ? "Loading" : "Next"}
 								</button>
 							</div>
 						</form>
@@ -288,7 +281,6 @@ function EdithPassword({ closeModal }) {
 			</div>
 			{stageOne && (
 				<div
-					
 					// class="relative z-10"
 					aria-labelledby="modal-title"
 					role="dialog"
@@ -327,7 +319,7 @@ function EdithPassword({ closeModal }) {
 									onClick={PasswordChange}
 									className="px-10 py-2 mx-10  bg-[#232164] text-[#ffffff] rounded-lg"
 								>
-														{loading ? "Loading" : "Next"}
+									{loading ? "Loading" : "Next"}
 								</button>
 							</div>
 						</div>
