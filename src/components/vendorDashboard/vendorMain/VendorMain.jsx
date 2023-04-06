@@ -5,8 +5,10 @@ import pin from '../../../assets/images/pin.png'
 import trophy from '../../../assets/images/trophy.png'
 import { Progress } from 'antd'
 import { CgNotes } from 'react-icons/cg'
+import { useSelector } from 'react-redux'
 
-const VendorMain = () => {
+const VendorMain = (props) => {
+    const {loading, error, data} = useSelector(state => state.user);
   return (
     <div className={classes['wrapper']}>
             <div className={classes['con']}>
@@ -14,7 +16,7 @@ const VendorMain = () => {
                     <img className={classes['top-img']} src={star} alt="" />
                 </div>
                 <div className={classes['title-con']}>
-                    <p className={classes['title-1']}>Hello Ridic Ventures</p>
+                    <p className={classes['title-1']}>Hello {data.data.name}</p>
                     <p className={classes['title-2']}>Here is what is going on with your business</p>
                 </div>
 

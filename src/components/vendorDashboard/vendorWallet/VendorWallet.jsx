@@ -5,11 +5,12 @@ import { RxEyeClosed } from 'react-icons/rx'
 import { FaEye } from 'react-icons/fa'
 import FooterLogo from '../../FooterLogo/FooterLogo'
 import Withdrawbtn from '../../buttons/withdrawbutton/Withdrawbtn'
+import { useSelector } from 'react-redux'
 
 const VendorWallet = () => {
 
     const [eye, setEye] = useState(false);
-
+    const {loading, error, data} = useSelector(state => state.user);
     const handleClick = () => {
         setEye((prevState) => !prevState)
     }
@@ -21,8 +22,8 @@ const VendorWallet = () => {
             <div className={classes['top']}>
                 <p className={classes['top-left']}>Wallet</p>
                 <div className={classes['top-right']}>
-                    <p className={classes['top-right-1']}>Ridic Business Ventures</p>
-                    <p className={classes['top-right-2']}>ID - 6057702</p>
+                    <p className={classes['top-right-1']}>{data.data.name}</p>
+                    <p className={classes['top-right-2']}>ID - {data.data.id}</p>
                 </div>
             </div>
 
@@ -41,7 +42,7 @@ const VendorWallet = () => {
                 <div className={classes['total-con']}>
                     <p className={classes['balance-1']}>Total Balance</p>
                     { eye ? 
-                    <p className={classes['amount']}><sup className={classes['sup']}>₦</sup>500,000.00</p>
+                    <p className={classes['amount']}><sup className={classes['sup']}>₦</sup>{data.walletBalance}</p>
                           :
                     <p className={classes['amount']}><sup className={classes['sup']}>₦</sup>*******</p>
                     }
@@ -49,7 +50,7 @@ const VendorWallet = () => {
                 <div className={classes['total-con']}>
                     <p className={classes['balance-1']}>Total Balance</p>
                     { eye ? 
-                    <p className={classes['amount-2']}><sup className={classes['sup']}>₦</sup>500,000.00</p>
+                    <p className={classes['amount-2']}><sup className={classes['sup']}>₦</sup>{data.incomingWalletBalance}</p>
                           :
                     <p className={classes['amount-2']}><sup className={classes['sup']}>₦</sup>*******</p>
                     }

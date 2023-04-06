@@ -24,7 +24,7 @@ import Declined from "./pages/transactions/declined/Declined"
 import CancelReason from "./pages/transactions/cancel-reason/CancelReason"
 import Wallet from "./pages/Wallet/Wallet"
 
-import PasswordRecovery from "./pages/passwordrecoverey/PasswordRecovery"
+// import PasswordRecovery from "./pages/passwordrecoverey/PasswordRecovery"
 // import Transaction from "./pages/dashboards/transactions/Transaction"
 import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmail"
 import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone"
@@ -55,7 +55,7 @@ const App = () => {
 		<Route path='/set-password' element={<VendorSetPassword />} />
 		<Route path='/transaction-pin' element={<VendorTransactionPin />} />
 		<Route path='/security-question' element={<VendorSecurity />} />
-		<Route path='/password-recovery' element={<PasswordRecovery />} />
+	
 		<Route path='/customer-registration' element={<CustomerRegistration />} />
 		<Route path='/customer-activate-account' element={<CustomerActivate />} />
 		<Route
