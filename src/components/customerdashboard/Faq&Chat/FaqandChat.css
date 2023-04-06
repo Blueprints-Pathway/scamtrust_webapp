@@ -70,54 +70,6 @@
     font-size: 12px;
     margin-top: 3px;
 }
-.fc-modal-wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 40px;
-}
-.fc-modal-con{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    border-radius: 10px;
-    width: 18rem;
-    padding: 12px 0px 12px 30px;
-    margin-bottom: 20px;
-    border: 1px solid rgb(168, 167, 167);
-}
-.fc-modal-con:focus{
-    border: 2px solid #444284;
-}
-.fc-1{
-    display: flex;
-    align-items: center;
-    font-size: 13px;
-    font-weight: 400;
-    color: #232164;
-}
-.fc-call-icon{
-    font-size: 18px;
-    margin-right: 7px;
-}
-.fc-whatsapp-icon{
-    font-size: 18px;
-    margin-right: 7px;
-    color: #3AB75D;
-}
-.fc-mail-icon{
-    font-size: 18px;
-    margin-right: 7px;
-    color: rgb(74, 74, 250);
-}
-.fc-2{
-    font-size: 13px;
-    font-weight: 400;
-    color: #232164;
-}
-
 @media screen and (max-width: 1200px) {
     .fc-wrapper{
         color: black;
@@ -189,54 +141,6 @@
         font-size: 9px;
         margin-top: 3px;
     }
-    .fc-modal-wrapper{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding-top: 40px;
-    }
-    .fc-modal-con{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        border-radius: 10px;
-        width: 18rem;
-        padding: 12px 0px 12px 30px;
-        margin-bottom: 20px;
-        border: 1px solid rgb(168, 167, 167);
-    }
-    .fc-modal-con:focus{
-        border: 2px solid #444284;
-    }
-    .fc-1{
-        display: flex;
-        align-items: center;
-        font-size: 13px;
-        font-weight: 400;
-        color: #232164;
-    }
-    .fc-call-icon{
-        font-size: 18px;
-        margin-right: 7px;
-    }
-    .fc-whatsapp-icon{
-        font-size: 18px;
-        margin-right: 7px;
-        color: #3AB75D;
-    }
-    .fc-mail-icon{
-        font-size: 18px;
-        margin-right: 7px;
-        color: rgb(74, 74, 250);
-    }
-    .fc-2{
-        font-size: 13px;
-        font-weight: 400;
-        color: #232164;
-    }
-
 }
 @media screen and (max-width: 768px) {
     .fc-wrapper{
@@ -308,53 +212,6 @@
         color: #1B1B1B;
         font-size: 9px;
         margin-top: 3px;
-    }
-    .fc-modal-wrapper{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding-top: 40px;
-    }
-    .fc-modal-con{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        border-radius: 10px;
-        width: 16rem;
-        padding: 12px 0px 12px 30px;
-        margin-bottom: 20px;
-        border: 1px solid rgb(168, 167, 167);
-    }
-    .fc-modal-con:focus{
-        border: 2px solid #444284;
-    }
-    .fc-1{
-        display: flex;
-        align-items: center;
-        font-size: 13px;
-        font-weight: 400;
-        color: #232164;
-    }
-    .fc-call-icon{
-        font-size: 18px;
-        margin-right: 7px;
-    }
-    .fc-whatsapp-icon{
-        font-size: 18px;
-        margin-right: 7px;
-        color: #3AB75D;
-    }
-    .fc-mail-icon{
-        font-size: 18px;
-        margin-right: 7px;
-        color: rgb(74, 74, 250);
-    }
-    .fc-2{
-        font-size: 13px;
-        font-weight: 400;
-        color: #232164;
     }
 
 }
@@ -435,53 +292,6 @@
         color: #1B1B1B;
         font-size: 9px;
         margin-top: 3px;
-    }
-    .fc-modal-wrapper{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding-top: 40px;
-    }
-    .fc-modal-con{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        border-radius: 10px;
-        width: 15rem;
-        padding: 12px 0px 12px 30px;
-        margin-bottom: 20px;
-        border: 1px solid rgb(168, 167, 167);
-    }
-    .fc-modal-con:focus{
-        border: 2px solid #444284;
-    }
-    .fc-1{
-        display: flex;
-        align-items: center;
-        font-size: 12px;
-        font-weight: 400;
-        color: #232164;
-    }
-    .fc-call-icon{
-        font-size: 18px;
-        margin-right: 7px;
-    }
-    .fc-whatsapp-icon{
-        font-size: 18px;
-        margin-right: 7px;
-        color: #3AB75D;
-    }
-    .fc-mail-icon{
-        font-size: 18px;
-        margin-right: 7px;
-        color: rgb(74, 74, 250);
-    }
-    .fc-2{
-        font-size: 12px;
-        font-weight: 400;
-        color: #232164;
     }
 
 }

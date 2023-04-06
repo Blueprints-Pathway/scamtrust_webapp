@@ -5,8 +5,10 @@ import VendorMain from '../../../components/vendorDashboard/vendorMain/VendorMai
 import VendorWallet from '../../../components/vendorDashboard/vendorWallet/VendorWallet'
 import VendorRatings from '../../../components/vendorDashboard/vendorRatings/VendorRatings'
 import VendorTransaction from '../../../components/vendorDashboard/vendorTransactions/VendorTransaction'
+import VendorPopUp from '../../../components/vendorDashboard/vendorPopUp/VendorPopUp'
 
 const VendorDashboard = () => {
+
   return (
     <AppLayout>
         <div className={classes['wrapper']}>
@@ -29,6 +31,11 @@ const VendorDashboard = () => {
               <VendorRatings />
             </div>
         </div>
+
+        <div>
+         <VendorPopUp />
+        </div>
+        
     </AppLayout>
   )
 }
