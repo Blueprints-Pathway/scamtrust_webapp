@@ -1,12 +1,13 @@
-/** @format */
+import React from 'react'
+import AppLayout from '../../../components/layout/AppLayout'
+import classes from './Awaiting.module.css'
+import { Card } from 'antd';
+import { Steps } from 'antd';
+import { HiArrowNarrowLeft } from 'react-icons/hi'
+import FooterLogo from '../../../components/FooterLogo/FooterLogo';
+import {  useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
-import React from "react";
-import AppLayout from "../../../components/layout/AppLayout";
-import classes from "./Awaiting.module.css";
-import { Card } from "antd";
-import { Steps } from "antd";
-import { HiArrowNarrowLeft } from "react-icons/hi";
-import FooterLogo from "../../../components/FooterLogo/FooterLogo";
 import { useNavigate } from "react-router-dom";
 
 const items = [
@@ -22,8 +23,21 @@ const items = [
 ];
 
 const Awaiting = () => {
-	const navigate = useNavigate();
+    let detail = localStorage.getItem('USER_DETAILS')
+    let usertype =JSON.parse(detail).data.usertype;
+    
+    const transactions = useSelector(state => state.customerTransaction);
+    const vendorTransactions = useSelector(state => state.vendorTransaction)
+    let transaction = transactions.ongoingTransactions.find(transaction => transaction.id == param.id);
+    const param =  useParams();
+    const dispatch = useDispatch();
+    if(usertype === 'VENDOR'){
+        transaction = vendorTransactions.allTransactions.find(transaction => transaction.id == param.id);
 
+    }
+   
+    console.log(transaction)
+const navigate=useNavigate()
 	return (
 		<AppLayout>
 			<div className={classes["wrapper"]}>
@@ -106,3 +120,5 @@ const Awaiting = () => {
 };
 
 export default Awaiting;
+
+

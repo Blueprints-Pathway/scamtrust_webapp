@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { initiateTransactionActions } from '../../../reducers/initiateTransactionReducer';
 
-const Modal1 = ({confirm}) => {
+const Modal1 = ({confirm, showTrans}) => {
 const dispatch =  useDispatch();
 
     // const layout = {

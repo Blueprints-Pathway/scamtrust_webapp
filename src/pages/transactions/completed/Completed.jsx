@@ -1,13 +1,13 @@
-/** @format */
+import React from 'react'
+import classes from './Completed.module.css'
+import { Card } from 'antd';
+import { Steps } from 'antd';
+import { HiArrowNarrowLeft } from 'react-icons/hi'
+import FooterLogo from '../../../components/FooterLogo/FooterLogo';
+import { useNavigate, useParams } from 'react-router-dom';
+import AppLayout from '../../../components/layout/AppLayout';
+import { useDispatch, useSelector } from 'react-redux';
 
-import React from "react";
-import classes from "./Completed.module.css";
-import { Card } from "antd";
-import { Steps } from "antd";
-import { HiArrowNarrowLeft } from "react-icons/hi";
-import FooterLogo from "../../../components/FooterLogo/FooterLogo";
-import { useNavigate } from "react-router-dom";
-import AppLayout from "../../../components/layout/AppLayout";
 
 const items = [
 	{
@@ -22,8 +22,20 @@ const items = [
 ];
 
 const Completed = () => {
-	const navigate = useNavigate();
+    let detail = localStorage.getItem('USER_DETAILS')
+    let usertype =JSON.parse(detail).data.usertype;
+    const transactions = useSelector(state => state.customerTransaction);
+    const vendorTransactions = useSelector(state => state.vendorTransaction)
+    const param =  useParams();
+    const dispatch = useDispatch();
+   
+    let transaction = transactions.allTransactions.find(transaction => transaction.id == param.id);
+    if(usertype === 'VENDOR'){
+        transaction = vendorTransactions.allTransactions.find(transaction => transaction.id === param.id);
 
+    }
+    console.log(transaction)
+const navigate=useNavigate()
 	return (
 		<AppLayout>
 			<div className={classes["wrapper"]}>
@@ -60,6 +72,7 @@ const Completed = () => {
 							<br />
 						</div>
 					</div>
+
 
 					{/* BOTTOM */}
 					<div className={classes["bottom"]}>
@@ -104,3 +117,4 @@ const Completed = () => {
 };
 
 export default Completed;
+  

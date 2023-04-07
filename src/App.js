@@ -24,7 +24,7 @@ import Declined from "./pages/transactions/declined/Declined"
 import CancelReason from "./pages/transactions/cancel-reason/CancelReason"
 import Wallet from "./pages/Wallet/Wallet"
 
-import PasswordRecovery from "./pages/passwordrecoverey/PasswordRecovery"
+// import PasswordRecovery from "./pages/passwordrecoverey/PasswordRecovery"
 // import Transaction from "./pages/dashboards/transactions/Transaction"
 import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmail"
 import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone"
@@ -55,7 +55,7 @@ const App = () => {
 		<Route path='/set-password' element={<VendorSetPassword />} />
 		<Route path='/transaction-pin' element={<VendorTransactionPin />} />
 		<Route path='/security-question' element={<VendorSecurity />} />
-		<Route path='/password-recovery' element={<PasswordRecovery />} />
+	
 		<Route path='/customer-registration' element={<CustomerRegistration />} />
 		<Route path='/customer-activate-account' element={<CustomerActivate />} />
 		<Route
@@ -75,12 +75,12 @@ const App = () => {
 
 		                {/* TRANSACTIONS */}
 		<Route path='/transactions' element={<Transaction />} />
-		<Route path='/awaiting-approval' element={<Awaiting />} />
+		<Route path='/awaiting-approval/:id' element={<Awaiting />} />
 		<Route path='/ongoing-transaction/:id' element={<Ongoing />} />
 		<Route path='/completed-transaction/:id' element={<Completed />} />
 		<Route path='/cancelled-transaction/:id' element={<Cancelled />} />
 		<Route path='/declined-transaction' element={<Declined />} />
-		<Route path='/cancel-reason' element={<CancelReason />} />
+		<Route path='/cancel-reason/:id' element={<CancelReason />} />
 {/* 
                               WALLET */}
 		<Route path='/wallet' element={<Wallet />} />

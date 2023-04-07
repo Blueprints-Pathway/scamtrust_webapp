@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   loading: false,
   isAuthenticated: localStorage.getItem('LOGGED_IN'),
-  data: null,
+  data: localStorage.getItem('USER_DETAILS'),
   error: false,
   isPinSet: false,
   isSecurityQuestionSet: false,
@@ -190,6 +190,7 @@ const authReducer = createSlice({
       state.isEmailValid = false;
       state.isPhoneValid = false;
       localStorage.removeItem('USER_TOKEN');
+      localStorage.removeItem('USER_DETAILS');
       console.log('logout')
       state.error = false;
       localStorage.removeItem('LOGGED_IN')

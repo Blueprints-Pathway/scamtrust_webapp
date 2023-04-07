@@ -1,5 +1,6 @@
 import axios from "axios";
 import { authActions } from "../reducers/authReducer";
+import { userActions } from "../reducers/userReducer";
 
 const baseUrl = "https://scamtrust.herokuapp.com/api/v1";
 
@@ -314,14 +315,15 @@ export const login = (data) => async (dispatch) => {
             console.log(response.data);
            localStorage.setItem('USER_TOKEN', response.data.data.access_token);
            localStorage.setItem('LOGGED_IN', 'LOGGED IN SUCCESSFULLY');
+           localStorage.setItem('USER_DETAILS', JSON.stringify(response.data));
         }else{
             dispatch(authActions.loginFailure( 
                 response.data.message
             ));
         }
-        dispatch(authActions.loginFailure( 
-            'LOGIN UNSUCCESSFUL TRY AGAIN!'
-        ));
+        // dispatch(authActions.loginFailure( 
+        //     'LOGIN UNSUCCESSFUL TRY AGAIN!'
+        // ));
       
         }catch(error){
         dispatch(authActions.loginFailure(
@@ -331,11 +333,13 @@ export const login = (data) => async (dispatch) => {
 }
 
 export const  logoutUser = ()  =>  (dispatch) =>  {
+    dispatch(userActions.resetUserData())
 dispatch(authActions.logoutUser())
 }
 
 export const  logoutUserTimer = ()  =>  (dispatch) =>  {
     setTimeout(() =>{
+        dispatch(userActions.resetUserData())
         dispatch(authActions.logoutUser())
       },216000)
 

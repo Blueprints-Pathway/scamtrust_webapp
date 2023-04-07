@@ -39,6 +39,14 @@ const CustDashTransaction = () => {
        totalAmount={transaction.total_amount} 
        dueDate={transaction.due_date} />
      }
+     if (transaction.status == 'CANCELLED BY VENDOR') {
+      return <CancelledHistory 
+      id = {transaction.id}
+      productName={transaction.product_name} 
+      vendorName={transaction.vendor.name}
+      totalAmount={transaction.total_amount} 
+      dueDate={transaction.due_date} />
+     }
 
    })}
 
@@ -80,14 +88,14 @@ const CustDashTransaction = () => {
      
       allCancelledTransactionsContent = transactions.cancelledTransactions.map((transaction) => {
  
-     if (transaction.status === 'CANCELLED TRANSACTIONS') {
+    
       return <CancelledHistory 
        id = {transaction.id}
        productName={transaction.product_name} 
        vendorName={transaction.vendor.name}
        totalAmount={transaction.total_amount} 
        dueDate={transaction.due_date} />
-     }
+     
    
    })}
 
@@ -102,14 +110,14 @@ const CustDashTransaction = () => {
      
       allCompletedTransactionContent = transactions.completedTransactions.map((transaction) => {
  
-     if (transaction.status === 'COMPLETED TRANSACTIONS') {
+     
       return <CompletedHistory 
        id = {transaction.id}
        productName={transaction.product_name} 
        vendorName={transaction.vendor.name}
        totalAmount={transaction.total_amount} 
        dueDate={transaction.due_date} />
-     }
+     
    
    })}
    

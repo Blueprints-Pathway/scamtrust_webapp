@@ -1,13 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  loading: false,
+  loading: true,
   error: null,
   completedTransactions: [],
   ongoingTransactions: [],
   cancelledTransactions: [],
   allTransactions: [], 
-   data: {}
+  transactionDetail: {},
+  isCancelTransactionSuccessful: false,
+  isAcceptTransactionSuccessful: false,
+  data: {}
 };
 
 const vendorTransactionReducer = createSlice({
@@ -17,79 +20,94 @@ const vendorTransactionReducer = createSlice({
     vendorApproveTransactionRequest(state) {
       state.loading = true;
     },
-    vendorApproveTransactionSuccess(state, payload) {
+    vendorApproveTransactionSuccess(state, action) {
       state.loading = false;
-      state.data = payload;
+      state.data = action.payload;
     },
-    vendorApproveTransactionFailure(state, payload) {
+    vendorApproveTransactionFailure(state, action) {
       state.loading = false;
-      state.error = payload;
+     state.error= action.payload;
     },
     vendorCancelTransactionRequest(state) {
         state.loading = true;
       },
-      vendorCancelTransactionSuccess(state, payload) {
+      vendorCancelTransactionSuccess(state, action) {
         state.loading = false;
-        state.data = payload;
+        state.data = action.payload;
+        state.isCancelTransactionSuccessful = true;
       },
-      vendorCancelTransactionFailure(state, payload) {
+      vendorCancelTransactionFailure(state, action) {
         state.loading = false;
-        state.error = payload;
+       state.error= action.payload;
+       state.isCancelTransactionSuccessful = false;
+      },
+      resetCancelTransactionStatus(state){
+        state.loading = false;
+        state.isCancelTransactionSuccessful = false;
+        state.error = null;
       },
       vendorTransactionsRequest(state) {
         state.loading = true;
       },
-      vendorTransactionsSuccess(state, payload) {
+      vendorTransactionsSuccess(state, action) {
         state.loading = false;
-        state.allTransactions = payload;
+        state.allTransactions = action.payload;
       },
-      vendorTransactionsFailure(state, payload) {
+      vendorTransactionsFailure(state, action) {
         state.loading = false;
-        state.error = payload;
+       state.error= action.payload;
       },
       vendorOngoingTransactionsRequest(state) {
         state.loading = true;
       },
-      vendorOngoingTransactionsSuccess(state, payload) {
+      vendorOngoingTransactionsSuccess(state, action) {
         state.loading = false;
-        state.ongoingTransactions = payload;
+        state.ongoingTransactions = action.payload;
       },
-      vendorOngoingTransactionsFailure(state, payload) {
+      vendorOngoingTransactionsFailure(state, action) {
         state.loading = false;
-        state.error = payload;
+       state.error= action.payload;
       },
       vendorCompletedTransactionsRequest(state) {
         state.loading = true;
       },
-      vendorCompletedTransactionsSuccess(state, payload) {
+      vendorCompletedTransactionsSuccess(state, action) {
         state.loading = false;
-        state.completedTransactions = payload;
+        state.completedTransactions = action.payload;
       },
-      vendorCompletedTransactionsFailure(state, payload) {
+      vendorCompletedTransactionsFailure(state, action) {
         state.loading = false;
-        state.error = payload;
+       state.error= action.payload;
       },
       vendorCancelledTransactionRequest(state) {
         state.loading = true;
       },
-      vendorCancelledTransactionSuccess(state, payload) {
+      vendorCancelledTransactionSuccess(state, action) {
         state.loading = false;
-        state.cancelledTransactions = payload;
+        state.cancelledTransactions = action.payload;
       },
-      vendorCancelledTransactionFailure(state, payload) {
+      vendorCancelledTransactionFailure(state, action) {
         state.loading = false;
-        state.error = payload;
+       state.error= action.payload;
       },
-      customerAcceptTransactionRequest(state) {
+      vendorAcceptTransactionRequest(state) {
         state.loading = true;
+        state.isAcceptTransactionSuccessful = false;
       },
-      customerAcceptTransactionSuccess(state, payload) {
+      vendorAcceptTransactionSuccess(state, action) {
         state.loading = false;
-        state.data = payload;
+        state.isAcceptTransactionSuccessful = true;
+        state.data = action.payload;
       },
-      customerAcceptTransactionFailure(state, payload) {
+      vendorAcceptTransactionFailure(state, action) {
         state.loading = false;
-        state.error = payload;
+        state.isAcceptTransactionSuccessful = false;
+        state.error = action.payload;
+      },
+      resetAcceptTransactionStatus(state){
+        state.loading = false;
+        state.isAcceptTransactionSuccessful = false;
+        state.error = null;
       },
   },
 });
