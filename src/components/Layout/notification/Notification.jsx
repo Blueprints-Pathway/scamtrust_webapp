@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from './Notification.module.css'
 import { MdNotificationsNone } from 'react-icons/md'
-import { Badge, Menu } from 'antd';
+import { Badge, Menu, Space } from 'antd';
 import { Dropdown } from 'antd';
 import { GoPrimitiveDot } from 'react-icons/go'
 import { IoCheckmarkCircleSharp } from 'react-icons/io5'
@@ -94,10 +94,9 @@ const Notification = () => {
       console.log(items3)
   return (
     <div className={classes['wrapper']}>
+      <Space style={{height: '30rem'}}>
         <Dropdown
-          menu={{
-            items
-        }}
+          menu={{ items }}
           placement="topRight"
           trigger={['click']}
           openClassName={{height: '10rem'}}
@@ -111,6 +110,7 @@ const Notification = () => {
            </Badge>
         </div>
         </Dropdown>
+      </Space>
     </div>
   )
 }
