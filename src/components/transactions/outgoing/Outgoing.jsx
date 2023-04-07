@@ -8,8 +8,8 @@ import Empty from '../../customerdashboard/CustDashTransaction/empty/Empty'
 const Outgoing = () => {
   let detail = localStorage.getItem('USER_DETAILS')
   let usertype =JSON.parse(detail).data.usertype;
-  // let content = <div style={{marginTop: '120px'}}><Empty /></div> ;
-  let content = <div></div>
+  let content = <div style={{marginTop: '120px'}}><Empty /></div> ;
+  
    
   
 const transactions = useSelector(state => state.customerTransaction)

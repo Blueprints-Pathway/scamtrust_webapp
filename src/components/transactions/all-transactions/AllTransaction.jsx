@@ -37,7 +37,7 @@ const AllTransaction = () => {
          dueDate={transaction.due_date} />
        }
        if (transaction.status == 'CANCELLED BY VENDOR') {
-        return <CancelledItem product_name = {transaction.product_name} name = {transaction.customer.username} total_amount = {transaction.total_amount} due_date = {transaction.due_date} />
+        return <CancelledItem  id = {transaction.id} product_name = {transaction.product_name} name = {transaction.customer.username} total_amount = {transaction.total_amount} due_date = {transaction.due_date} />
        }
        if (transaction.status == 'ACCEPTED BY VENDOR') {
         return <Ongoing 
@@ -46,6 +46,10 @@ const AllTransaction = () => {
        vendorName={transaction.customer.username}
        totalAmount={transaction.total_amount} 
        dueDate={transaction.due_date} />
+     }
+     if (transaction.status == 'ACCEPTED BY CUSTOMER') {
+      return  <CompletedItem id = {transaction.id} product_name =  {transaction.product_name} name = {transaction.customer.username} total_amount = {transaction.total_amount} due_date = {transaction.due_date} />
+
      }
      })
   }}else{
@@ -70,12 +74,12 @@ const AllTransaction = () => {
        dueDate={transaction.due_date} />
      }
     if (transaction.status == 'CANCELLED BY VENDOR') {
-      return <Cancelled 
-       id = {transaction.id}
-       productName={transaction.product_name} 
-       vendorName={transaction.vendor.name}
-       totalAmount={transaction.total_amount} 
-       dueDate={transaction.due_date} />
+      return  <CancelledItem id = {transaction.id} product_name =  {transaction.product_name} name = {transaction.vendor.name} total_amount = {transaction.total_amount} due_date = {transaction.due_date} />
+
+     }
+     if (transaction.status == 'ACCEPTED BY CUSTOMER') {
+      return  <CompletedItem id = {transaction.id} product_name =  {transaction.product_name} name = {transaction.vendor.name} total_amount = {transaction.total_amount} due_date = {transaction.due_date} />
+
      }
   })
 }}

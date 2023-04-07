@@ -8,7 +8,7 @@ const initialState = {
   cancelledTransactions: [],
   allTransactions: [], 
   transactionDetail: {},
- 
+  isCancelTransactionSuccessful: false,
   isAcceptTransactionSuccessful: false,
   data: {}
 };
@@ -34,10 +34,17 @@ const vendorTransactionReducer = createSlice({
       vendorCancelTransactionSuccess(state, action) {
         state.loading = false;
         state.data = action.payload;
+        state.isCancelTransactionSuccessful = true;
       },
       vendorCancelTransactionFailure(state, action) {
         state.loading = false;
        state.error= action.payload;
+       state.isCancelTransactionSuccessful = false;
+      },
+      resetCancelTransactionStatus(state){
+        state.loading = false;
+        state.isCancelTransactionSuccessful = false;
+        state.error = null;
       },
       vendorTransactionsRequest(state) {
         state.loading = true;

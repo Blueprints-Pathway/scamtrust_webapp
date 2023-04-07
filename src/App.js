@@ -31,7 +31,7 @@ import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhon
 import UpdatedPassword from "./pages/passwordrecovery/UpdatedPassword"
 import SettingsVendor from "../src/pages/SettingsVendor/SettingsVendor"
 // import VendorDashboard from "./pages/dashboards/vendorDashboard/VendorDashboard"
-import VendorDashboard from "./pages/dashboards/VendorDashboard/VendorDashboard.jsx"
+import VendorDashboard from "./pages/dashboards/vendorDashboard/VendorDashboard.jsx"
 const App = () => {
   return (
 			
@@ -75,12 +75,12 @@ const App = () => {
 
 		                {/* TRANSACTIONS */}
 		<Route path='/transactions' element={<Transaction />} />
-		<Route path='/awaiting-approval' element={<Awaiting />} />
+		<Route path='/awaiting-approval/:id' element={<Awaiting />} />
 		<Route path='/ongoing-transaction/:id' element={<Ongoing />} />
 		<Route path='/completed-transaction/:id' element={<Completed />} />
 		<Route path='/cancelled-transaction/:id' element={<Cancelled />} />
 		<Route path='/declined-transaction' element={<Declined />} />
-		<Route path='/cancel-reason' element={<CancelReason />} />
+		<Route path='/cancel-reason/:id' element={<CancelReason />} />
 {/* 
                               WALLET */}
 		<Route path='/wallet' element={<Wallet />} />

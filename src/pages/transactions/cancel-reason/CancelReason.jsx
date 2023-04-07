@@ -3,17 +3,33 @@ import React, { useState } from 'react'
 import AppLayout from '../../../components/Layout/AppLayout'
 import classes from './CancelReason.module.css'
 import { HiArrowNarrowLeft } from 'react-icons/hi'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { vendorTransactionActions } from '../../../reducers/vendorTransactionReducer'
+import swal from 'sweetalert'
+import { vendorCancelTransaction } from '../../../actions/vendorTransactionActions'
 
 
 const CancelReason = () => {
+  let detail = localStorage.getItem('USER_DETAILS')
+  let usertype =JSON.parse(detail).data.usertype;
+
+  const vendorTransactions = useSelector(state => state.vendorTransaction)
+  const {loading, error, data} = useSelector(state => state.user);
+
+  const dispatch = useDispatch();
 
     const onFinish = (values) => {
         console.log('Received values of form: ', values);
       };
 
       const navigate = useNavigate();
+      const param = useParams();
+      let transaction; 
+    //   if(usertype === 'VENDOR'){
+    //     transaction = vendorTransactions.allTransactions.find(transaction => transaction.id == param.id);
 
+    // }
       const [isModalOpen1, setIsModalOpen1] = useState(false);
       const [isModalOpen2, setIsModalOpen2] = useState(false);
 
@@ -22,8 +38,8 @@ const CancelReason = () => {
       };
 
       const showModal2 = () => {
-        setIsModalOpen2(true);
-        setIsModalOpen1(false);
+        dispatch(vendorCancelTransaction(param.id))
+       
       };
 
       const handleCancel1 = () => {
@@ -32,7 +48,45 @@ const CancelReason = () => {
 
       const handleCancel2 = () => {
         setIsModalOpen2(false);
+        navigate('/transactions')
       };
+    
+
+   
+
+
+ 
+
+
+  if(vendorTransactions.isCancelTransactionSuccessful){
+    console.log();
+swal({
+    icon: 'success',
+    text: vendorTransactions.data,
+
+    
+})
+dispatch(vendorTransactionActions.resetCancelTransactionStatus())
+setIsModalOpen2(true);
+setIsModalOpen1(false);
+// navigate('/transactions')
+
+}
+      
+  if(vendorTransactions.error){
+      console.log();
+  swal({
+      icon: 'error',
+      text: vendorTransactions.error,
+
+      
+  })
+  dispatch(vendorTransactionActions.resetCancelTransactionStatus())
+
+}
+  
+
+
 
 
   return (
@@ -106,8 +160,8 @@ const CancelReason = () => {
                           Are you sure you want to cancel this transaction?
                        </p> 
                        <div className={classes['modal-btn-con']}>
-                        <button onClick={showModal2}
-                        className={classes['confirm-btn1']}>Yes</button>
+                        <Button onClick={showModal2} loading = {vendorTransactions.loading}
+                        className={classes['confirm-btn1']}>Yes</Button>
                         <button onClick={handleCancel1}
                         className={classes['confirm-btn2']}>No</button>
                        </div>
@@ -127,9 +181,9 @@ const CancelReason = () => {
                   }}
                   >
                     <div className={classes['modal-2-con']}>
-                      <p className={classes['modal-2-name']}>Hello Ilerioluwa👋🏽</p>
+                      <p className={classes['modal-2-name']}>Hello {data.data.name}👋🏽</p>
                       <p className={classes['modal-2-message']}>
-                        <span className={classes['trans-id']}>TR - 7752403</span> was cancelled. Reason being, product misrepresentation
+                        <span className={classes['trans-id']}>TR - {data.data.id}</span> was cancelled. Reason being, product misrepresentation
                       </p>
                       <button onClick={handleCancel2 }
                       className={classes['modal-2-btn']}>Continue</button>
