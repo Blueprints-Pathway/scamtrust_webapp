@@ -40,7 +40,13 @@ const AppLayout = ({children}) => {
       navigate('/sign-in')
       return;
     }
-   
+    dispatch(getLoggedInUserDetails());
+    dispatch(getCustomerTransactions());
+    dispatch(getCustomerOngoingTransactions());
+    dispatch(getWalletTransactionsDetails())
+    dispatch(getCustomerCancelledTransactions());
+    dispatch(getCustomerCompletedTransactions());
+    dispatch(listNotifications());
     
   },[dispatch, auth.isAuthenticated])
   // const {
