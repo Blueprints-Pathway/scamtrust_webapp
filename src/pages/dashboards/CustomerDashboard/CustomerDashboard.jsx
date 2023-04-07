@@ -6,6 +6,7 @@ import FeeCalculator from '../../../components/customerdashboard/FeeCalculator/F
 import FooterLogo from '../../../components/FooterLogo/FooterLogo'
 import AppLayout from '../../../components/Layout/AppLayout'
 import './CustomerDashboard.css'
+import CustomerPopUp from '../../../components/customerdashboard/customerPopUp/CustomerPopUp'
 
 const CustomerDashboard = () => {
   return (
@@ -29,7 +30,9 @@ const CustomerDashboard = () => {
             </div>
           </div>
          
-
+        </div>
+        <div>
+          <CustomerPopUp />
         </div>
      </AppLayout>
   )

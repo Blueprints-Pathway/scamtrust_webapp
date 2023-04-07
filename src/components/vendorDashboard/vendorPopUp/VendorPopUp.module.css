@@ -1,0 +1,419 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-con{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 50px 0px 50px;
+}
+.modal-title{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.title-1{
+    font-size: 30px;
+    font-weight: 800;
+    color: #262466;
+}
+.title-2{
+    font-family: karla;
+    font-size: 17px;
+    font-weight: 400;
+    color: #707070;
+}
+.modal-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.content-top{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.card-1-title{
+    font-size: 17px;
+    font-weight: 800;
+    color: #262466;
+}
+.card-1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(124, 124, 124, 0.2), 0 6px 20px 0 rgba(124, 124, 124, 0.2);
+    height: 100px;
+    width: 230px;
+    margin-top: 10px;
+    border-radius: 6px;
+}
+.card-1-icon{
+    width: 32px;
+    margin: 0px 6px;
+}
+.card-1-words{
+    font-size: 13px;
+    font-weight: 600;
+    color: #262466;
+    margin: 0px 7px;
+}
+.content-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 530px;
+    margin-top: 40px;
+}
+.card-down{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 4px 8px 0 rgba(124, 124, 124, 0.2), 0 6px 20px 0 rgba(124, 124, 124, 0.2);
+    height: 100px;
+    width: 230px;
+    margin-top: 10px;
+    border-radius: 6px;
+    padding: 0px 0px 0px 15px;
+}
+.modal-close{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 55px;
+}
+.modal-btn{
+    font-family: karla;
+    font-size: 18px;
+    font-weight: 800;
+    color: #232164;
+    border: none;
+    outline: none;
+    background-color: #ffff;
+    color: #E9303B;
+}
+
+@media screen and (max-width: 1024px) {
+    .wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .modal-con{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 50px 50px 0px 50px;
+    }
+    .modal-title{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .title-1{
+        font-size: 30px;
+        font-weight: 800;
+        color: #262466;
+    }
+    .title-2{
+        font-family: karla;
+        font-size: 17px;
+        font-weight: 400;
+        color: #707070;
+    }
+    .modal-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .content-top{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .card-1-title{
+        font-size: 17px;
+        font-weight: 800;
+        color: #262466;
+    }
+    .card-1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 8px 0 rgba(124, 124, 124, 0.2), 0 6px 20px 0 rgba(124, 124, 124, 0.2);
+        height: 100px;
+        width: 230px;
+        margin-top: 10px;
+        border-radius: 6px;
+    }
+    .card-1-icon{
+        width: 32px;
+        margin: 0px 6px;
+    }
+    .card-1-words{
+        font-size: 13px;
+        font-weight: 600;
+        color: #262466;
+        margin: 0px 7px;
+    }
+    .content-bottom{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 530px;
+        margin-top: 40px;
+    }
+    .card-down{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        box-shadow: 0 4px 8px 0 rgba(124, 124, 124, 0.2), 0 6px 20px 0 rgba(124, 124, 124, 0.2);
+        height: 100px;
+        width: 230px;
+        margin-top: 10px;
+        border-radius: 6px;
+        padding: 0px 0px 0px 15px;
+    }
+    .modal-close{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 55px;
+    }
+    .modal-btn{
+        font-family: karla;
+        font-size: 18px;
+        font-weight: 800;
+        color: #232164;
+        border: none;
+        outline: none;
+        background-color: #ffff;
+        color: #E9303B;
+    }
+
+}
+@media screen and (max-width: 768px) {
+    .wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .modal-con{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px 20px 0px 20px;
+    }
+    .modal-title{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .title-1{
+        font-size: 20px;
+        font-weight: 800;
+        color: #262466;
+    }
+    .title-2{
+        font-family: karla;
+        font-size: 13px;
+        font-weight: 400;
+        color: #707070;
+    }
+    .modal-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+    }
+    .content-top{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .card-1-title{
+        font-size: 14px;
+        font-weight: 700;
+        color: #262466;
+    }
+    .card-1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 8px 0 rgba(124, 124, 124, 0.2), 0 6px 20px 0 rgba(124, 124, 124, 0.2);
+        height: 80px;
+        width: 200px;
+        margin-top: 10px;
+        border-radius: 6px;
+    }
+    .card-1-icon{
+        width: 30px;
+        margin: 0px 5px;
+    }
+    .card-1-words{
+        font-size: 11px;
+        font-weight: 600;
+        color: #262466;
+        margin: 0px 5px;
+    }
+    .content-bottom{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 475px;
+        margin-top: 30px;
+    }
+    .card-down{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        box-shadow: 0 4px 8px 0 rgba(124, 124, 124, 0.2), 0 6px 20px 0 rgba(124, 124, 124, 0.2);
+        height: 80px;
+        width: 200px;
+        margin-top: 10px;
+        border-radius: 6px;
+        padding: 0px 0px 0px 15px;
+    }
+    .modal-close{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 55px;
+    }
+    .modal-btn{
+        font-family: karla;
+        font-size: 14px;
+        font-weight: 800;
+        color: #232164;
+        border: none;
+        outline: none;
+        background-color: #ffff;
+        color: #E9303B;
+    }
+
+}
+@media screen and (max-width: 540px) {
+    .wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .modal-con{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px 0px 0px 0px;
+    }
+    .modal-title{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .title-1{
+        font-size: 18px;
+        font-weight: 800;
+        color: #262466;
+        text-align: center;
+    }
+    .title-2{
+        font-family: karla;
+        font-size: 12px;
+        font-weight: 400;
+        color: #707070;
+        text-align: center;
+    }
+    .modal-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 25px;
+    }
+    .content-top{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .card-1-title{
+        font-size: 12px;
+        font-weight: 600;
+        color: #262466;
+        line-height: 10px;
+    }
+    .card-1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 8px 0 rgba(124, 124, 124, 0.2), 0 6px 20px 0 rgba(124, 124, 124, 0.2);
+        height: 65px;
+        width: 180px;
+        margin-top: 10px;
+        border-radius: 6px;
+    }
+    .card-1-icon{
+        width: 25px;
+        margin: 0px 3px;
+    }
+    .card-1-words{
+        font-size: 10px;
+        font-weight: 600;
+        color: #262466;
+        margin: 0px 3px;
+    }
+    .content-bottom{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 0px;
+        margin-top: 0px;
+    }
+    .bottom-left{
+        margin-top: 25px;
+    }
+    .bottom-right{
+        margin-top: 25px;
+    }
+    .card-down{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        box-shadow: 0 4px 8px 0 rgba(124, 124, 124, 0.2), 0 6px 20px 0 rgba(124, 124, 124, 0.2);
+        height: 65px;
+        width: 160px;
+        margin-top: 10px;
+        padding: 0px 0px 0px 20px;
+    }
+    .modal-close{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 30px;
+    }
+    .modal-btn{
+        font-family: karla;
+        font-size: 13px;
+        font-weight: 800;
+        color: #232164;
+        border: none;
+        outline: none;
+        background-color: #ffff;
+        color: #E9303B;
+    }
+
+}

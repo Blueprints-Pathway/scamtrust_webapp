@@ -6,9 +6,12 @@ import VendorWallet from '../../../components/vendorDashboard/vendorWallet/Vendo
 import VendorRatings from '../../../components/vendorDashboard/vendorRatings/VendorRatings'
 import VendorTransaction from '../../../components/vendorDashboard/vendorTransactions/VendorTransaction'
 import { useSelector } from 'react-redux'
+import VendorPopUp from '../../../components/vendorDashboard/vendorPopUp/VendorPopUp'
 
 const VendorDashboard = () => {
   
+
+const VendorDashboard = () => {
 
   return (
     <AppLayout>
@@ -32,8 +35,13 @@ const VendorDashboard = () => {
               <VendorRatings />
             </div>
         </div>
+
+        <div>
+         <VendorPopUp />
+        </div>
+        
     </AppLayout>
   )
-}
+}}
 
 export default VendorDashboard
