@@ -39,7 +39,7 @@ function Sidebar() {
         </ul>
         </div>
       </div>
-        <img className="w-[80%]" src={trust} alt="" />
+        <img className="w-[70%] mt-5" src={trust} alt="" />
         
        
       </div>

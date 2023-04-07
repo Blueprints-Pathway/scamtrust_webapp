@@ -1,63 +1,61 @@
-import React from "react"
-import logo from "../../assets/images/logo.png"
-import { BiErrorCircle} from "react-icons/bi";
-import {useNavigate } from "react-router-dom"
-
+import React from "react";
+import logo from "../../assets/images/logo.png";
+import { BiErrorCircle } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
+import classes from "./PasswordRecoveryemail.module.css";
 function UpdatedPassword() {
-  const [isUpdated, setIsUpdated] = React.useState(true)
-  const navigate = useNavigate()
+  const [isUpdated, setIsUpdated] = React.useState(true);
+  const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/passwordchanged")
-  }
+    navigate("/passwordchanged");
+  };
   return (
     <div>
       {isUpdated ? (
         <div>
           <div>
-            <div className=' h-[100vh] px-4 overflow-y-hidden  '>
-              <div className='px-6 mt-5 mb-20 md:mb-3 md:mt-10'>
-                <img className='lg:w-[164px] md:w-[140px] w-[100px]' src={logo} alt='' />
+            <div className={classes["container"]}>
+              <div className={classes["img-container"]}>
+                <img src={logo} alt="" />
               </div>
-              <div className='flex items-center justify-center '>
-                <div className='lg:w-[480px] sm:w-[460px] w-[100%] lg:h-[460px] sm:h-[420px] h-[320px]  box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
-                  <h2 className='text-primary pt-10 sm:pt-0 font-semibold  text-[22px] mb-2'>
+              <div className={classes["recovery-container"]}>
+                <div className={classes["recovery"]}>
+                  <h2 className={classes["recovery-header"]}>
                     Password Recovery
                   </h2>
-                  <p className='font-normal text-[12px] text-black font-poppins mb-5 text-center px-3 sm:px-0'>
+                  <p className={classes["recovery-text"]}>
                     Please enter new password differnt from the one previously
                     used
                   </p>
                   <div>
-                    <div className='flex flex-col gap-5'>
+                    <div className={classes["recovery-gap"]}>
                       <div>
-                        <h5 className='text-black text-[12px] font-poppins mb-1'>
-                          Password
-                        </h5>
+                        <h5 className={classes["recovery-label"]}>Password</h5>
 
-                        <div className='w-[300px] h-[36px] border-[1px] p-1 border-[#D5D8DA] rounded-[5px]'>
+                        <div className={classes["recovery-input"]}>
                           <input
-                            className='w-[100%] h-[100%] border-0 outline-none pl-3  text-[#D5D8DA]'
-                            type='text'
+                            className="w-[100%] h-[100%] border-0 outline-none pl-3  text-[#D5D8DA]"
+                            type="text"
                           />
                         </div>
                       </div>
                       <div>
-                        <h5 className='text-black text-[12px] font-poppins mb-1'>
+                        <h5 className={classes["recovery-label"]}>
                           Confirm password
                         </h5>
-                        <div className='w-[300px] h-[36px] border-[1px] p-1 border-[#D5D8DA] rounded-[5px]'>
+                        <div className={classes["recovery-input"]}>
                           <input
-                            className='w-[100%] h-[100%] border-0 outline-none pl-3  text-[#D5D8DA]'
-                            type='text'
+                            className="w-[100%] h-[100%] border-0 outline-none pl-3  text-[#D5D8DA]"
+                            type="text"
                           />
                         </div>
                       </div>
                     </div>
 
-                    <div className='mt-7'>
+                    <div className="mt-7">
                       <button
                         onClick={() => setIsUpdated(false)}
-                        className='w-[300px] h-[38px] bg-primary rounded-[5px] text-[12px] mb-[6px] flex justify-center items-center'
+                        className={classes["recovery-continue-button"]}
                       >
                         Update password
                       </button>
@@ -71,51 +69,56 @@ function UpdatedPassword() {
       ) : (
         <div>
           <div>
-            <div className=' h-[100vh] px-4 overflow-y-hidden  '>
-              <div className='px-6 mt-5 mb-20 md:mb-3 md:mt-10'>
-                <img className='lg:w-[164px] md:w-[140px] w-[100px]' src={logo} alt='' />
+            <div className={classes["container"]}>
+              <div className={classes["img-container"]}>
+                <img src={logo} alt="" />
               </div>
-              <div className='flex items-center justify-center '>
-                <div className='lg:w-[480px] sm:w-[460px] w-[100%] lg:h-[460px] sm:h-[420px] h-[320px]  box-shadow rounded-[20px] flex justify-center items-center font-poppins flex-col'>
-                  <h2 className='text-primary pt-10 sm:pt-0 font-semibold  text-[22px] mb-2'>
+              <div className={classes["recovery-container"]}>
+                <div className={classes["recovery"]}>
+                  <h2 className={classes["recovery-header"]}>
                     Password Recovery
                   </h2>
-                  <p className='font-normal text-[12px] text-black font-poppins mb-5 text-center px-3 sm:px-0'>
+                  <p className={classes["recovery-text"]}>
                     Please enter new password differnt from the one previously
                     used
                   </p>
                   <div>
-                    <div className='flex flex-col gap-5'>
+                    <div className={classes["recovery-gap"]}>
                       <div>
-                        <h5 className='text-black text-[12px] font-poppins mb-1'>
-                          Password
-                        </h5>
+                        <h5 className={classes["recovery-label"]}>Password</h5>
 
-                        <div className='w-[300px] h-[36px] border-[1px] p-1 border-[#D5D8DA] rounded-[5px]'>
+                        <div className={classes["recovery-input"]}>
                           <input
-                            className='w-[100%] h-[100%] border-0 outline-none pl-3  text-[#D5D8DA]'
-                            type='text'
+                            className="w-[100%] h-[100%] border-0 outline-none pl-3  text-[#D5D8DA]"
+                            type="text"
                           />
                         </div>
                       </div>
                       <div>
-                        <h5 className='text-black text-[12px] font-poppins mb-1'>
+                        <h5 className={classes["recovery-label"]}>
                           Confirm password
                         </h5>
-                        <div className='w-[300px] h-[36px] border-[1px] p-1 border-[#D5D8DA] rounded-[5px]'>
+                        <div className={classes["recovery-input"]}>
                           <input
-                            className='w-[100%] h-[100%] border-0 outline-none pl-3  text-[#D5D8DA]'
-                            type='text'
+                            className="w-[100%] h-[100%] border-0 outline-none pl-3  text-[#D5D8DA]"
+                            type="text"
                           />
                         </div>
+                        <h6 className={classes["recovery-error"]}>
+                        <span>
+                          <BiErrorCircle />
+                        </span>{" "}
+                        Passwords do not match
+                      </h6>
                       </div>
+                     
                     </div>
-                    <h6 className='text-[#FC0D1B] text-[10px] mt-1 flex items-center gap-2'>
-                     <span><BiErrorCircle/></span> Passwords do not match
-                    </h6>
-                    <div className='mt-4'>
+
+                    <div className="mt-7">
                       <button
-                      onClick={handleClick} className='w-[300px] h-[38px] bg-primary rounded-[5px] text-[12px] mb-[6px] flex justify-center items-center'>
+                        onClick={() => setIsUpdated(false)}
+                        className={classes["recovery-continue-button"]}
+                      >
                         Update password
                       </button>
                     </div>
@@ -127,7 +130,7 @@ function UpdatedPassword() {
         </div>
       )}
     </div>
-  )
+  );
 }
 
-export default UpdatedPassword
+export default UpdatedPassword;

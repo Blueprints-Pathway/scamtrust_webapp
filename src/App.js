@@ -14,6 +14,10 @@ import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhon
 import UpdatedPassword from "./pages/passwordrecovery/UpdatedPassword"
 import Settings from "./pages/settings/Settings"
 import Support from "./pages/Support"
+import VendorProfile from "./pages/vendorprofile/VendorProfile"
+
+
+
 
 const App = () => {
   return (
@@ -26,13 +30,14 @@ const App = () => {
 
       {/* SCAMTRUST WEBAPP */}
       <Route path='/layout' element={<AppLayout />} />
-      <Route
-        path='/passwordrecoveryemail'
-        element={<PasswordRecoveryEmail />}
-      />
+     
       <Route
         path='/passwordrecoveryphone'
         element={<PasswordRecoveryPhone />}
+      />
+      <Route
+        path='/passwordrecoveryemail'
+        element={<PasswordRecoveryEmail />}
       />
       <Route
         path='/vendordashboard'
@@ -44,7 +49,9 @@ const App = () => {
       <Route path="/settings" element={<Settings/>}/>
       <Route path="/updatedpassword" element={<UpdatedPassword/>}/>
       <Route path="/passwordchanged" element={<PasswordChanged/>}/>
-      <Route path ="/support" element={<Support/>}/>
+      <Route path="/support" element={<Support/>}/>
+      <Route path ="/vendorprofile" element={<VendorProfile/>}/>
+     
     </Routes>
   )
 }
