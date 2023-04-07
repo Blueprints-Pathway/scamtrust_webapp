@@ -1,10 +1,10 @@
 import React from 'react'
 import './Createtransaction.css'
 import { MdAddCircle } from 'react-icons/md'
-import { useNavigate } from 'react-router'
-import { Button, Modal } from 'antd';
+
+import { Modal } from 'antd';
 import { useState } from 'react';
-import CustomerProfileCard from '../../customerdashboard/CustomerProfileCard/CustomerProfileCard';
+
 import Modal1 from './Modal1';
 import Modal2 from './Modal2';
 import Modal3 from './Modal3';

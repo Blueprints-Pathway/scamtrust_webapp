@@ -19,11 +19,11 @@ const CustDashTransaction = () => {
 </div>;
 
   
-   if(transactions.allTransactions.length != 0){
+   if(transactions.allTransactions.length !== 0){
  
-    allTransactionsContent = transactions.allTransactions.map((transaction) => {
+    allTransactionsContent = transactions?.allTransactions?.map((transaction) => {
  
-     if (transaction.status == 'PENDING VENDOR ACCEPTANCE') {
+     if (transaction.status === 'PENDING VENDOR ACCEPTANCE') {
       return <AwaitingHistory 
        id = {transaction.id}
        productName={transaction.product_name} 
@@ -31,7 +31,7 @@ const CustDashTransaction = () => {
        totalAmount={transaction.total_amount} 
        dueDate={transaction.due_date} />
      }
-     if (transaction.status == 'ACCEPTED BY VENDOR') {
+     if (transaction.status === 'ACCEPTED BY VENDOR') {
       return <OngoingHistory 
        id = {transaction.id}
        productName={transaction.product_name} 
@@ -47,11 +47,11 @@ const CustDashTransaction = () => {
 </div>;
 
    
-   if(transactions.allTransactions.length != 0){
+   if(transactions.allTransactions.length !== 0){
  
     outgoingTransactionContent = transactions.allTransactions.map((transaction) => {
  
-     if (transaction.status == 'PENDING VENDOR ACCEPTANCE') {
+     if (transaction.status === 'PENDING VENDOR ACCEPTANCE') {
       return <AwaitingHistory 
        id = {transaction.id}
        productName={transaction.product_name} 
@@ -75,12 +75,12 @@ const CustDashTransaction = () => {
 </div>;
 
   
-   if(transactions.cancelledTransactions.length != 0){
+   if(transactions.cancelledTransactions.length !== 0){
  
      
       allCancelledTransactionsContent = transactions.cancelledTransactions.map((transaction) => {
  
-     if (transaction.status == 'CANCELLED TRANSACTIONS') {
+     if (transaction.status === 'CANCELLED TRANSACTIONS') {
       return <CancelledHistory 
        id = {transaction.id}
        productName={transaction.product_name} 
@@ -97,12 +97,12 @@ const CustDashTransaction = () => {
 </div>;
 
   
-   if(transactions.completedTransactions.length != 0){
+   if(transactions.completedTransactions.length !== 0){
  
      
       allCompletedTransactionContent = transactions.completedTransactions.map((transaction) => {
  
-     if (transaction.status == 'COMPLETED TRANSACTIONS') {
+     if (transaction.status === 'COMPLETED TRANSACTIONS') {
       return <CompletedHistory 
        id = {transaction.id}
        productName={transaction.product_name} 

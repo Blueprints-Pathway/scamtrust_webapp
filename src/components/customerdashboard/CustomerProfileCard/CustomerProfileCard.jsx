@@ -8,7 +8,7 @@ import Withdrawbutton from '../../buttons/withdrawbutton/Withdrawbtn'
 import { FaEye } from 'react-icons/fa'
 
 const CustomerProfileCard = () => {
-  const {loading, error, data} = useSelector(state => state.user);
+  const { data} = useSelector(state => state.user);
   console.log(data)
 
   const [eye, setEye] = useState(false);
