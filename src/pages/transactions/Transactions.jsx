@@ -13,17 +13,26 @@ import AppLayout from '../../components/Layout/AppLayout';
 import Layout, { Content } from 'antd/es/layout/layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCustomerCancelledTransactions, getCustomerCompletedTransactions, getCustomerOngoingTransactions, getCustomerTransactions } from '../../actions/customerTransactionActions';
+import { getVendorCancelledTransactions, getVendorCompletedTransactions, getVendorOngoingTransactions, getVendorTransactions } from '../../actions/vendorTransactionActions';
 
 const Transactions = () => {
 
   const dispatch  = useDispatch();
-  
+ const auth = useSelector(state => state.auth)
 
   useEffect(() => {
-    dispatch(getCustomerTransactions());
-    dispatch(getCustomerOngoingTransactions());
-    dispatch(getCustomerCancelledTransactions());
-    dispatch(getCustomerCompletedTransactions());
+    // if (auth.data.usertype === 'VENDOR'){
+      dispatch(getVendorTransactions());
+      dispatch(getVendorOngoingTransactions());
+      dispatch(getVendorCancelledTransactions());
+      dispatch(getVendorCompletedTransactions ());
+    // }else{
+      dispatch(getCustomerTransactions());
+      dispatch(getCustomerOngoingTransactions());
+      dispatch(getCustomerCancelledTransactions());
+      dispatch(getCustomerCompletedTransactions());
+
+    // }
 
   },[dispatch])
 

@@ -314,14 +314,15 @@ export const login = (data) => async (dispatch) => {
             console.log(response.data);
            localStorage.setItem('USER_TOKEN', response.data.data.access_token);
            localStorage.setItem('LOGGED_IN', 'LOGGED IN SUCCESSFULLY');
+           localStorage.setItem('USER_DETAILS', JSON.stringify(response.data));
         }else{
             dispatch(authActions.loginFailure( 
                 response.data.message
             ));
         }
-        dispatch(authActions.loginFailure( 
-            'LOGIN UNSUCCESSFUL TRY AGAIN!'
-        ));
+        // dispatch(authActions.loginFailure( 
+        //     'LOGIN UNSUCCESSFUL TRY AGAIN!'
+        // ));
       
         }catch(error){
         dispatch(authActions.loginFailure(
