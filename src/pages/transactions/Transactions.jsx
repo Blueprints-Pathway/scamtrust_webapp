@@ -14,14 +14,22 @@ import Layout, { Content } from 'antd/es/layout/layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCustomerCancelledTransactions, getCustomerCompletedTransactions, getCustomerOngoingTransactions, getCustomerTransactions } from '../../actions/customerTransactionActions';
 import { getVendorCancelledTransactions, getVendorCompletedTransactions, getVendorOngoingTransactions, getVendorTransactions } from '../../actions/vendorTransactionActions';
+import { useNavigate } from 'react-router';
 
 const Transactions = () => {
 
   const dispatch  = useDispatch();
  const auth = useSelector(state => state.auth)
-console.log((JSON.parse(auth.data).data));
-let usertype = JSON.parse(auth.data).data.usertype;
+ const navigate = useNavigate();
+console.log(auth.data);
+let detail = localStorage.getItem('USER_DETAILS')
+let usertype =JSON.parse(detail).data.usertype;
+console.log(auth.isAuthenticated);
   useEffect(() => {
+    if(!auth.isAuthenticated){
+      navigate('/sign-in')
+      return;
+    }
      if (usertype === 'VENDOR'){
       dispatch(getVendorTransactions());
       dispatch(getVendorOngoingTransactions());
@@ -35,7 +43,7 @@ let usertype = JSON.parse(auth.data).data.usertype;
 
      }
 
-  },[dispatch])
+  },[dispatch, usertype, auth.isAuthenticated])
 
     const onChange = (key) => {
         console.log(key);
@@ -50,7 +58,7 @@ let usertype = JSON.parse(auth.data).data.usertype;
         {
           key: '2',
           label: (<p className={classes['tab-2']}><BsFillArrowUpRightCircleFill className={classes['tab-icon']} />Out-going</p>),
-          children: (<div className={classes['content']}><Outgoing /></div>),
+          // children: (<div className={classes['content']}><Outgoing /></div>),
         },
         {
           key: '3',
