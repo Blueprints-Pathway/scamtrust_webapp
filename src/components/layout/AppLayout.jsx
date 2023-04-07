@@ -20,6 +20,7 @@ import { vendorSearch } from '../../actions/miscActions';
 import Notification from './notification/Notification';
 import { Link } from 'react-router-dom';
 import { getWalletTransactionsDetails } from '../../actions/walletActions';
+import Notifications from './notification/Notifications';
 const { Header, Content, Sider } = Layout;
 
 
@@ -150,7 +151,7 @@ const AppLayout = ({children}) => {
 
                   {/* NOTIFICATION */}
           <div className='header-div-3'>
-             <Notification />
+             <Notifications />
           </div>
 
                      {/* INITIALS */}
