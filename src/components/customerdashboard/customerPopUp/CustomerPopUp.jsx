@@ -8,12 +8,13 @@ import { TbArrowsRightLeft } from 'react-icons/tb'
 import { IoShieldCheckmarkOutline } from 'react-icons/io5'
 import { useNavigate } from 'react-router-dom';
 import ChatBtn from '../../buttons/chatBtn/ChatBtn';
+import Modal1 from '../../buttons/createtransaction-btn/Modal1';
 import Fundbutton from '../../buttons/fundbutton/Fundbutton';
 
 const CustomerPopUp = () => {
     const [modalOpen, setModalOpen] = useState(true);
     const [openChat, setOpenChat] = useState(false);
-    const [openFund, setOpenFund] = useState(false);
+    const [openTrans, setOpenTrans] = useState(false);
 
     const handleCancel = () => {
       setModalOpen(false);
@@ -26,12 +27,13 @@ const CustomerPopUp = () => {
       setOpenChat(false);
   };
 
-  const showFund = () => {
-    setOpenFund(true);
+  const showTrans = () => {
+    setOpenTrans(true);
   };
-  const cancelFund = () => {
-     setOpenFund(false);
+  const cancelTrans = () => {
+    setOpenTrans(false);
   };
+
 
   const navigate = useNavigate();
 
@@ -58,7 +60,8 @@ const CustomerPopUp = () => {
 
                           <div className={classes['content-div']}>
                              <p className={classes['card-title']}>Get Started</p>
-                             <div className={classes['card-down']}>
+                             <div onClick={showTrans}
+                             className={classes['card-down']}>
                                  <TbArrowsRightLeft className={classes['card-react-icon']} />
                                  <p className={classes['card-words']}>Create New Transaction</p>
                              </div>
@@ -66,12 +69,14 @@ const CustomerPopUp = () => {
 
                           <div className={classes['content-div']}>
                              <p className={classes['card-title']}>Fund Wallet</p>
-                             <div onClick={showFund}
-                             className={classes['card-down']}>
+                             <div  className={classes['card-down']}>
                                  <img className={classes['card-icon']} src={fund} alt="" />
                                  <p className={classes['card-words']}>Fund your wallet</p>
                              </div>
                           </div>
+                          {/* <div className={classes['content-div']}>
+                            <Fundbutton />
+                          </div> */}
 
                           <div className={classes['content-div']}>
                              <p className={classes['card-title']}>KYC</p>
@@ -126,10 +131,12 @@ const CustomerPopUp = () => {
             <ChatBtn showModal={showModal}  />
             
          </Modal> 
+               
 
+               {/* CREATE TRANSACTION MODAL */}
          <div>
-         <Modal open={openFund}
-          onCancel={cancelFund}
+         <Modal open={openTrans}
+          onCancel={cancelTrans}
           centered 
           okButtonProps={{ style: { display: 'none' } }}
           cancelButtonProps={{style: { display: 'none' }}}
@@ -140,7 +147,7 @@ const CustomerPopUp = () => {
         }}
           >
 
-            <Fundbutton showFund={showFund}  />
+            <Modal1 showTrans={showTrans}  />
             
          </Modal> 
          </div>
