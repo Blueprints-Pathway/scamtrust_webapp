@@ -1,5 +1,6 @@
 import axios from "axios";
 import { authActions } from "../reducers/authReducer";
+import { userActions } from "../reducers/userReducer";
 
 const baseUrl = "https://scamtrust.herokuapp.com/api/v1";
 
@@ -332,11 +333,13 @@ export const login = (data) => async (dispatch) => {
 }
 
 export const  logoutUser = ()  =>  (dispatch) =>  {
+    dispatch(userActions.resetUserData())
 dispatch(authActions.logoutUser())
 }
 
 export const  logoutUserTimer = ()  =>  (dispatch) =>  {
     setTimeout(() =>{
+        dispatch(userActions.resetUserData())
         dispatch(authActions.logoutUser())
       },216000)
 

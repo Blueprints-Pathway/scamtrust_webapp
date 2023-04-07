@@ -116,9 +116,9 @@ const VendorTransaction = () => {
   return (
     <div className={classes['wrapper']}>
         <div>
-            <div className={classes['transaction-btn']}>
+            {/* <div className={classes['transaction-btn']}>
               <Createtransaction />
-            </div>
+            </div> */}
             {/* <div className={classes['categories-con']}>
               <p className={classes['categories']}>Transactions</p>
               <p className={classes['categories']}>Vendor name</p>

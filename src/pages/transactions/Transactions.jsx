@@ -72,9 +72,9 @@ const Transactions = () => {
                 <div className={classes['card-wrapper']}>
                     <div className={classes['transaction-heading']}>
                         <p className={classes['transactions']}>Transactions</p>
-                        <button className={classes['transaction-btn']}>
+                      { data?.usertype === 'CUSTOMER' && <button className={classes['transaction-btn']}>
                          <Createtransaction />
-                        </button>
+                        </button>}
                     </div>
                     <div className={classes['tabs-container']}>
                     <Tabs
