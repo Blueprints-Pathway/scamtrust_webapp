@@ -13,19 +13,37 @@ import AppLayout from '../../components/Layout/AppLayout';
 import Layout, { Content } from 'antd/es/layout/layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCustomerCancelledTransactions, getCustomerCompletedTransactions, getCustomerOngoingTransactions, getCustomerTransactions } from '../../actions/customerTransactionActions';
+import { getVendorCancelledTransactions, getVendorCompletedTransactions, getVendorOngoingTransactions, getVendorTransactions } from '../../actions/vendorTransactionActions';
+import { useNavigate } from 'react-router';
 
 const Transactions = () => {
 
   const dispatch  = useDispatch();
-  
-
+ const auth = useSelector(state => state.auth)
+ const navigate = useNavigate();
+console.log(auth.data);
+let detail = localStorage.getItem('USER_DETAILS')
+let usertype =JSON.parse(detail).data.usertype;
+console.log(auth.isAuthenticated);
   useEffect(() => {
-    dispatch(getCustomerTransactions());
-    dispatch(getCustomerOngoingTransactions());
-    dispatch(getCustomerCancelledTransactions());
-    dispatch(getCustomerCompletedTransactions());
+    if(!auth.isAuthenticated){
+      navigate('/sign-in')
+      return;
+    }
+     if (usertype === 'VENDOR'){
+      dispatch(getVendorTransactions());
+      dispatch(getVendorOngoingTransactions());
+      dispatch(getVendorCancelledTransactions());
+      dispatch(getVendorCompletedTransactions ());
+     }else{
+      dispatch(getCustomerTransactions());
+      dispatch(getCustomerOngoingTransactions());
+      dispatch(getCustomerCancelledTransactions());
+      dispatch(getCustomerCompletedTransactions());
 
-  },[dispatch])
+     }
+
+  },[dispatch, usertype, auth.isAuthenticated])
 
     const onChange = (key) => {
         console.log(key);
@@ -40,7 +58,7 @@ const Transactions = () => {
         {
           key: '2',
           label: (<p className={classes['tab-2']}><BsFillArrowUpRightCircleFill className={classes['tab-icon']} />Out-going</p>),
-          children: (<div className={classes['content']}><Outgoing /></div>),
+          // children: (<div className={classes['content']}><Outgoing /></div>),
         },
         {
           key: '3',
@@ -63,9 +81,9 @@ const Transactions = () => {
                 <div className={classes['card-wrapper']}>
                     <div className={classes['transaction-heading']}>
                         <p className={classes['transactions']}>Transactions</p>
-                        <button className={classes['transaction-btn']}>
+                      { usertype === 'CUSTOMER' && <button className={classes['transaction-btn']}>
                          <Createtransaction />
-                        </button>
+                        </button>}
                     </div>
                     <div className={classes['tabs-container']}>
                     <Tabs

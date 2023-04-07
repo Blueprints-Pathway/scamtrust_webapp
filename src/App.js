@@ -24,14 +24,14 @@ import Declined from "./pages/transactions/declined/Declined"
 import CancelReason from "./pages/transactions/cancel-reason/CancelReason"
 import Wallet from "./pages/Wallet/Wallet"
 
-import PasswordRecovery from "./pages/passwordrecoverey/PasswordRecovery"
+// import PasswordRecovery from "./pages/passwordrecoverey/PasswordRecovery"
 // import Transaction from "./pages/dashboards/transactions/Transaction"
 import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmail"
 import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone"
 import UpdatedPassword from "./pages/passwordrecovery/UpdatedPassword"
-import Settings from "./pages/settings/Settings"
-import VendorDashboard from "./pages/dashboards/vendorDashboard/VendorDashboard"
-
+import SettingsVendor from "../src/pages/SettingsVendor/SettingsVendor"
+// import VendorDashboard from "./pages/dashboards/vendorDashboard/VendorDashboard"
+import VendorDashboard from "./pages/dashboards/VendorDashboard/VendorDashboard.jsx"
 const App = () => {
   return (
 			
@@ -55,13 +55,15 @@ const App = () => {
 		<Route path='/set-password' element={<VendorSetPassword />} />
 		<Route path='/transaction-pin' element={<VendorTransactionPin />} />
 		<Route path='/security-question' element={<VendorSecurity />} />
-		<Route path='/password-recovery' element={<PasswordRecovery />} />
+	
 		<Route path='/customer-registration' element={<CustomerRegistration />} />
 		<Route path='/customer-activate-account' element={<CustomerActivate />} />
 		<Route
         path='/passwordrecoveryemail'
         element={<PasswordRecoveryEmail />}
       />
+	  <Route  path='/settings'
+        element={<SettingsVendor/>}/>
       <Route
         path='/passwordrecoveryphone'
         element={<PasswordRecoveryPhone />}

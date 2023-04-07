@@ -21,6 +21,10 @@ const userReducer = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+    resetUserData(state){
+      state.error = null;
+      state.data = {};
+    }
   },
 });
 

@@ -18,6 +18,7 @@ import { getCustomerCancelledTransactions, getCustomerCompletedTransactions, get
 import { listNotifications } from '../../actions/notificationActions';
 import { vendorSearch } from '../../actions/miscActions';
 import Notification from './notification/Notification';
+import { Link } from 'react-router-dom';
 import { getWalletTransactionsDetails } from '../../actions/walletActions';
 const { Header, Content, Sider } = Layout;
 
@@ -39,13 +40,7 @@ const AppLayout = ({children}) => {
       navigate('/sign-in')
       return;
     }
-    dispatch(getLoggedInUserDetails());
-    dispatch(getCustomerTransactions());
-    dispatch(getCustomerOngoingTransactions());
-    dispatch(getWalletTransactionsDetails())
-    dispatch(getCustomerCancelledTransactions());
-    dispatch(getCustomerCompletedTransactions());
-    dispatch(listNotifications());
+   
     
   },[dispatch, auth.isAuthenticated])
   // const {
@@ -55,6 +50,8 @@ const AppLayout = ({children}) => {
   const nameOf = loading ? 'hi' : data?.data?.name || data?.data?.username;
 	const first = nameOf?.at(0);
 	const last = nameOf?.match(/\b(\w)/g).at(1);
+  let detail = localStorage.getItem('USER_DETAILS')
+  let usertype =JSON.parse(detail).data.usertype;
 
   const logoutUserHandler = () => {
     dispatch(logoutUser());
@@ -101,7 +98,7 @@ const AppLayout = ({children}) => {
 
           <div className='side-tab-wrapper'>
                <div className='side-tab-con'>
-                <VscHome style={{color: '#ffff'}} /><span onClick={()=>navigate('/customer-dashboard')}
+                <VscHome style={{color: '#ffff'}} /><span onClick={ usertype === 'VENDOR' ? ()=>navigate('/vendor-dashboard' ): ()=>navigate('/customer-dashboard')}
                 className='side-tabs'>DASHBOARD</span>
                </div>
      
@@ -115,10 +112,9 @@ const AppLayout = ({children}) => {
                >WALLET</span>
                </div>
 
-            <div className='side-tab-con'>
-              <SlSettings style={{ color: "#ffff" }} />
-              <span className='side-tabs'>SETTINGS</span>
-            </div>
+               <Link to={"/settings"} className='side-tab-con'>
+                <SlSettings style={{color: '#ffff'}} /><span className='side-tabs'>SETTINGS</span>
+               </Link>
           </div>
 
           <div className='side-bottom-tab'>

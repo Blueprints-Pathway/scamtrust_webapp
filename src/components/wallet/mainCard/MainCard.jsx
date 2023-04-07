@@ -52,7 +52,7 @@ const MainCard = () => {
                 <div className={classes['available-con']}>
                     { eye ? 
                     <p className={classes['pending-digits']}>
-                        <sup className={classes['available-sup']}>₦</sup>{data.outgoingWalletBalance}
+                        <sup className={classes['available-sup']}>₦</sup>{data.outgoingWalletBalance || data.incomingWalletBalance }
                     </p>   :
                     <p className={classes['pending-digits']}>
                         <sup className={classes['available-sup']}>₦</sup>*******
@@ -64,18 +64,18 @@ const MainCard = () => {
                           {/* BUTTONS  */}
             <div className={classes['btn-con']}>
                 <Withdrawbutton />
-                <Fundbutton accountNumber = {data.virtualAccount.account_number} />
+                <Fundbutton accountNumber = {data?.virtualAccount?.account_number || ''} />
             </div>
                         {/* PRIMARY ACCOUNT */}
             <div className={classes['primary-con']}>
                 <p className={classes['primary']}>Primary Account <AiOutlineExclamationCircle className={classes['available-icon']} /></p>
-                <p className={classes['primary-copy']}><MdContentCopy className={classes['primary-copy-icon']} />{data.virtualAccount.account_number}</p>
+                <p className={classes['primary-copy']}><MdContentCopy className={classes['primary-copy-icon']} />{data?.virtualAccount?.account_number || ''}</p>
             </div>
                          {/* ADD ACCOUNT */}
             <div className={classes['add-account-con']}>
                 <div className={classes['add-account-content']}>
                     <p className={classes['add-acc-digits']}><sup className={classes['available-sup']}>₦</sup>{data.withdrawnAmount}
-                      <span className={classes['add-acc-mssg']}>Withdrawn so far by <b>{data.virtualAccount.account_number}</b></span>
+                      <span className={classes['add-acc-mssg']}>Withdrawn so far by <b>{data?.virtualAccount?.account_number || ''}</b></span>
                     </p>
                 </div>
                 <div className={classes['add-acc-btn-con']}>

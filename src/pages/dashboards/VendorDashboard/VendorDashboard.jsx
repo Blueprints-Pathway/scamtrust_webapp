@@ -5,7 +5,11 @@ import VendorMain from '../../../components/vendorDashboard/vendorMain/VendorMai
 import VendorWallet from '../../../components/vendorDashboard/vendorWallet/VendorWallet'
 import VendorRatings from '../../../components/vendorDashboard/vendorRatings/VendorRatings'
 import VendorTransaction from '../../../components/vendorDashboard/vendorTransactions/VendorTransaction'
+import { useSelector } from 'react-redux'
 import VendorPopUp from '../../../components/vendorDashboard/vendorPopUp/VendorPopUp'
+
+
+  
 
 const VendorDashboard = () => {
 
@@ -13,7 +17,7 @@ const VendorDashboard = () => {
     <AppLayout>
         <div className={classes['wrapper']}>
             <div className={classes['left']}>
-                <VendorMain />
+                <VendorMain/>
                   <VendorTransaction />
             </div>
             <div className={classes['right']}>
