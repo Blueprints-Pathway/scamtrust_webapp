@@ -8,7 +8,7 @@ import VendorTransaction from '../../../components/vendorDashboard/vendorTransac
 import { useSelector } from 'react-redux'
 import VendorPopUp from '../../../components/vendorDashboard/vendorPopUp/VendorPopUp'
 
-const VendorDashboard = () => {
+
   
 
 const VendorDashboard = () => {
@@ -42,6 +42,6 @@ const VendorDashboard = () => {
         
     </AppLayout>
   )
-}}
+}
 
 export default VendorDashboard

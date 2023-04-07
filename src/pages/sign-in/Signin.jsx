@@ -8,10 +8,15 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { login, logoutUser, logoutUserTimer } from '../../actions/authActions';
+import { getCustomerCancelledTransactions, getCustomerCompletedTransactions, getCustomerOngoingTransactions, getCustomerTransactions } from '../../actions/customerTransactionActions';
+
 import Modal from 'react-modal';
 import wave from '../../assets/images/wave.png'
 import frame from '../../assets/images/frame.png'
 import { Analytics, LogoutTwoTone } from '@mui/icons-material';
+import { getLoggedInUserDetails } from '../../actions/userActions';
+import { getWalletTransactionsDetails } from '../../actions/walletActions';
+import { listNotifications } from '../../actions/notificationActions';
 
 const customStyles = {
   // overlay: {
@@ -63,6 +68,13 @@ const Signin = () => {
 
   useEffect(() => {
     if(isAuthenticated){
+      dispatch(getLoggedInUserDetails());
+      dispatch(getCustomerTransactions());
+      dispatch(getCustomerOngoingTransactions());
+      dispatch(getWalletTransactionsDetails())
+      dispatch(getCustomerCancelledTransactions());
+      dispatch(getCustomerCompletedTransactions());
+      dispatch(listNotifications());
         console.log(data);
         dispatch(logoutUserTimer())
       if(data?.usertype === 'CUSTOMER'){
@@ -76,7 +88,7 @@ const Signin = () => {
     
 
     }
-  }, [isAuthenticated, data, navigate])
+  }, [isAuthenticated, data, navigate, dispatch])
   let errorText  = error && <p style={{color:'red'}}>{error+ '!'}</p>
  
   return (

@@ -19,20 +19,21 @@ const Transactions = () => {
 
   const dispatch  = useDispatch();
  const auth = useSelector(state => state.auth)
-
+console.log((JSON.parse(auth.data).data));
+let usertype = JSON.parse(auth.data).data.usertype;
   useEffect(() => {
-    // if (auth.data.usertype === 'VENDOR'){
+     if (usertype === 'VENDOR'){
       dispatch(getVendorTransactions());
       dispatch(getVendorOngoingTransactions());
       dispatch(getVendorCancelledTransactions());
       dispatch(getVendorCompletedTransactions ());
-    // }else{
+     }else{
       dispatch(getCustomerTransactions());
       dispatch(getCustomerOngoingTransactions());
       dispatch(getCustomerCancelledTransactions());
       dispatch(getCustomerCompletedTransactions());
 
-    // }
+     }
 
   },[dispatch])
 
@@ -72,7 +73,7 @@ const Transactions = () => {
                 <div className={classes['card-wrapper']}>
                     <div className={classes['transaction-heading']}>
                         <p className={classes['transactions']}>Transactions</p>
-                      { data?.usertype === 'CUSTOMER' && <button className={classes['transaction-btn']}>
+                      { usertype === 'CUSTOMER' && <button className={classes['transaction-btn']}>
                          <Createtransaction />
                         </button>}
                     </div>

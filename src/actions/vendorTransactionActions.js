@@ -117,7 +117,7 @@ export const getVendorCancelledTransactions = () => async (dispatch) => {
             },
           };
         
-        const response = await axios.get(`${BASE_URL}/transaction/lists/customer/cancelled`, config);
+        const response = await axios.get(`${BASE_URL}/transaction/lists/vendor/cancelled`, config);
         if(response.data.status){
             dispatch(vendorTransactionActions.vendorCancelledTransactionSuccess(
                response.data.data,
