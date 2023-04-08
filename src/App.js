@@ -30,8 +30,9 @@ import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmai
 import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone"
 import UpdatedPassword from "./pages/passwordrecovery/UpdatedPassword"
 import SettingsVendor from "../src/pages/SettingsVendor/SettingsVendor"
+import VendorDashboard from "./pages/dashboards/vendorDashboard/VendorDashboard"
 // import VendorDashboard from "./pages/dashboards/vendorDashboard/VendorDashboard"
-import VendorDashboard from "./pages/dashboards/VendorDashboard/VendorDashboard.jsx"
+
 const App = () => {
   return (
 			

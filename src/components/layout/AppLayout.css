@@ -28,28 +28,33 @@
     align-items: center;
     justify-content: space-between;
 }
+.search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
 .header-div-2{
-    position:relative;
+    position: relative;
 }
 .header-input-icon{ 
   padding: 2px;
   position: absolute;
   box-sizing:border-box;
-  top: 65%;
-  left:2px;
+  top: 50%;
+  right: 30px;
   transform: translateY(-50%);
 }
 .input-icon-img{
     width: 27px;
 }
 .header-input{
-    background-color: #F2F2F2;
+  background-color: #F2F2F2;
   height: 50px;
   box-sizing:border-box;
   border-radius: 30px;
   border: none;
   padding: 10px 220px 10px 35px;
-  margin-left: -22rem;
 }
 
 .header-input::placeholder {
@@ -155,6 +160,12 @@
         align-items: center;
         justify-content: space-between;
     }
+    .search{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
     .header-div-2{
         position:relative;
     }
@@ -162,8 +173,8 @@
       padding: 2px;
       position: absolute;
       box-sizing:border-box;
-      top: 60%;
-      left: -45px;
+      top: 50%;
+      right: 30px;
       transform: translateY(-50%);
     }
     .input-icon-img{
@@ -176,7 +187,6 @@
       border-radius: 30px;
       border: none;
       padding: 10px 150px 10px 35px;
-      margin-left: -22rem;
     }
     
     .header-input::placeholder {
@@ -281,6 +291,12 @@
         align-items: center;
         justify-content: space-between;
     }
+    .search{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
     .header-div-2{
         position:relative;
     }
@@ -288,8 +304,8 @@
       padding: 2px;
       position: absolute;
       box-sizing:border-box;
-      top: 60%;
-      left: 85%;
+      top: 50%;
+      right: 30px;
       transform: translateY(-50%);
     }
     .input-icon-img{
@@ -302,7 +318,6 @@
       border-radius: 30px;
       border: none;
       padding: 10px 120px 10px 35px;
-      margin-left: 0rem;
     }
     
     .header-input::placeholder {
@@ -391,7 +406,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow-y: hidden;
     }
     .header::-webkit-scrollbar{
         display: none;
@@ -412,6 +426,12 @@
         align-items: center;
         justify-content: center;
     }
+    .search{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
     .header-div-2{
         position:relative;
     }
@@ -419,8 +439,8 @@
       padding: 2px;
       position: absolute;
       box-sizing:border-box;
-      top: 60%;
-      left: 85%;
+      top: 50%;
+      right: 30px;
       transform: translateY(-50%);
     }
     .input-icon-img{
@@ -433,7 +453,6 @@
       border-radius: 30px;
       border: none;
       padding: 10px 70px 10px 20px;
-      margin: 0rem;
     }
     
     .header-input::placeholder {
