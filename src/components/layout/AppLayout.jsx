@@ -12,8 +12,6 @@ import { IoLogOutOutline } from "react-icons/io5";
 import search from "../../assets/images/search.png";
 import scamTrustLogo from "../../assets/images/scamTrustLogo.png";
 import { getLoggedInUserDetails } from "../../actions/userActions";
-import ReactSearchBox from "react-search-box";
-import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
@@ -30,15 +28,21 @@ import Notification from "./notification/Notification";
 import { Link } from "react-router-dom";
 import { getWalletTransactionsDetails } from "../../actions/walletActions";
 import Notifications from "./notification/Notifications";
+import Search from "./search/Search";
+import classes from "./search/Search.module.css";
+import { AiFillEye } from "react-icons/ai";
+import { IconContext } from "react-icons";
+import axios from "axios";
 const { Header, Content, Sider } = Layout;
 
 const AppLayout = ({ children }) => {
-	const [items, setItems] = useState([]);
-	const [filteredResults, setFilteredResults] = useState([]);
 	const { loading, error, data } = useSelector((state) => state.user);
-	const [datas, setDatas] = useState();
 	const notification = useSelector((state) => state.notification);
 	const [searchInput, setSearchInput] = useState("");
+	const [showMore, setShowMore] = useState(false);
+	const [filtredSearch, setFilteredSearch] = useState();
+	const [items, setItems] = useState([]);
+	const [filteredResults, setFilteredResults] = useState([]);
 	const auth = useSelector((state) => state.auth);
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
@@ -58,9 +62,6 @@ const AppLayout = ({ children }) => {
 		dispatch(getCustomerCompletedTransactions());
 		dispatch(listNotifications());
 	}, [dispatch, auth.isAuthenticated]);
-	// const {
-	//   token: { colorBgContainer },
-	// } = theme.useToken();
 	console.log(data);
 	const nameOf = loading ? "hi" : data?.data?.name || data?.data?.username;
 	const first = nameOf?.at(0);
@@ -75,13 +76,28 @@ const AppLayout = ({ children }) => {
 	};
 	console.log(notification.unreadNotifications);
 
-	const searchInputChangeHandler = (e) => {
-		console.log(e.target.value);
-		dispatch(
-			vendorSearch({
-				search: e.target.value,
-			})
-		);
+	// const searchInputChangeHandler = (e) => {
+	// 	console.log(e.target.value);
+	// 	dispatch(
+	// 		vendorSearch({
+	// 			search: e.target.value,
+	// 		})
+	// 	);
+	// };
+
+	const searchItems = (searchValue) => {
+		setSearchInput(searchValue);
+		if (searchInput !== "") {
+			const filteredData = items.filter((item) => {
+				return Object.values(item)
+					.join("")
+					.toLowerCase()
+					.includes(searchInput.toLowerCase());
+			});
+			setFilteredResults(filteredData);
+		} else {
+			setFilteredResults(items);
+		}
 	};
 	const getSearch = async () => {
 		try {
@@ -98,29 +114,14 @@ const AppLayout = ({ children }) => {
 
 			const data = await axios.post(API_URL, payload, config);
 
+			// setIsLoaded(true);
 			setItems(data?.data?.data);
-			// console.log(values, "values");
-			// return response;
 		} catch (error) {
+			// setIsLoaded(true);
+			// setError(error);
 			console.log(error, "errorss");
 		}
 	};
-	const searchItems = (searchValue) => {
-		setSearchInput(searchValue);
-		if (searchInput !== "") {
-			const filteredData = items.filter((item) => {
-				return Object.values(item)
-					.join("")
-					.toLowerCase()
-					.includes(searchInput.toLowerCase());
-			});
-			setFilteredResults(filteredData);
-		} else {
-			setFilteredResults(items);
-		}
-	};
-	console.log(items, "items");
-
 	return (
 		<Layout className="wrapper">
 			{loading ? (
@@ -206,71 +207,67 @@ const AppLayout = ({ children }) => {
 
 							<div className="header-right-div">
 								{/* SEARCH INPUT  */}
-								<div className="header-div-2">
-									<div className="header-input-icon">
-										{" "}
-										<img
-											className="input-icon-img"
-											src={search}
-											alt="..."
-										/>{" "}
-									</div>
-									<div>
-										
+								<div className="search">
+									<div className="header-div-2">
+										<div className="header-input-icon">
+											{" "}
+											<img
+												className="input-icon-img"
+												src={search}
+												alt="..."
+											/>{" "}
+										</div>
 										<input
-											onChange={(e) => searchItems(e.target.value)}
-											className="header-input"
 											onInput={getSearch}
 											type="text"
 											value={searchInput}
+											onChange={(e) => searchItems(e.target.value)}
+											className="header-input"
 											placeholder="Search vendor’s name"
 										/>
-										
 									</div>
-									<div className="overflow-y-scroll flex-column items-center justify-center h-42">
-						{searchInput.length > 0
-							? items?.map((item, id) => {
-									console.log(item, "new data search");
+									<div>
+										{searchInput.length > 0
+											? items?.map((item, id) => {
+													console.log(item, "new data search");
 
-									return (
-										<div
-											key={item?.id}
-											className="flex items-center justify-center overflow-y-scroll h-32"
-										>
-											<div className="flex items-center justify-center py-2 px-3 max-w-sm ml-auto bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
-												<img
-													class="block mx-auto h-16 rounded-full sm:mx-0 sm:shrink-0"
-													src={item?.user?.image_url}
-													alt="Vendor pic"
-												/>
-												<div class="text-center space-y-2 sm:text-left">
-													<div class="space-y-0.5">
-														<p class="text-base text-black font-semibold">
-															{item?.user?.name}
-														</p>
-														<p class="text-slate-500 text-xs font-medium">
-															{item?.vendor_id}
-														</p>
-													</div>
-													<button
-														onClick={() => {
+													return (
+														<div className={classes["container"]}>
+															<h6 className={classes["search-text"]}>
+																Recently searched
+															</h6>
+															<hr className={classes["hr"]} />
+
+															<div className={classes["vendor-history"]} onClick={() => {
 															navigate(`/vendor/${item?.vendor_id}`, {
 																state: { id: item?.vendor_id },
 															});
-														}}
-														className="px-12 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
-													>
-														Message
-													</button>
-												</div>
-											</div>
-										</div>
-									);
-							  })
-							: null
-						}
-					</div>
-									
+														}} >
+																<div className={classes["vendor-det"]}>
+																	<div className={classes["vendor-icon"]}>
+																	<img src={item?.user?.image_url}/>
+																	</div>
+																	<div className={classes["vendor-details"]}>
+																		<h5>{item?.user?.name ||item?.user?.username }</h5>
+																		<h6>ID - {item?.vendor_id
+}</h6>
+																	</div>
+																</div>
+																<div>
+																	<IconContext.Provider
+																		value={{ color: "#232164", size: "19px" }}
+																	>
+																		<AiFillEye />
+																	</IconContext.Provider>
+																</div>
+															</div>
+														</div>
+													);
+											  })
+											: null}
+
+										{/* <Search /> */}
+									</div>
 								</div>
 
 								{/* NOTIFICATION */}

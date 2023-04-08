@@ -41,7 +41,7 @@ function EdithBusinessName({closeModal}) {
 												<h5>
 													Hello {"details"?.email}, we see that you are trying
 													to change your
-													{"details"?.usertype === "CUSTOMER"
+													{data?.data?.usertype === "CUSTOMER"
 														? " Username"
 														: " Business Name"}
 													. Please reach out to our Admin on 0700-8000-5000 or

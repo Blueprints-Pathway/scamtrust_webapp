@@ -33,7 +33,8 @@ const Fundbutton = (props) => {
 
   return (
     <div>
-         <button onClick={showModal1}
+         <button onClick={showModal1} 
+        //  style={style}
          className={classes['fund-btn']}>FUND</button>
 
                    {/* FIRST MODAL */}
