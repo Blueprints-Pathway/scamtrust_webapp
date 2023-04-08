@@ -326,8 +326,9 @@ export const login = (data) => async (dispatch) => {
         // ));
       
         }catch(error){
+            console.log(error.response.data.message);
         dispatch(authActions.loginFailure(
-            'Login Unsuccessful'
+            error.response.data.message || 'Login Unsuccessful'
         ));
     }
 }
