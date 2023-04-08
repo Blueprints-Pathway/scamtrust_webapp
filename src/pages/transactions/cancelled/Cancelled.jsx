@@ -5,24 +5,25 @@ import { Steps } from 'antd';
 import { HiArrowNarrowLeft } from 'react-icons/hi'
 import FooterLogo from '../../../components/FooterLogo/FooterLogo';
 import { useNavigate, useParams } from 'react-router-dom';
-import AppLayout from '../../../components/Layout/AppLayout';
+import AppLayout from '../../../components/layout/AppLayout';
 import { useDispatch, useSelector } from 'react-redux';
 
 
 const items = [
-  {
-      title: (<p className={classes['steps']}>Awaiting</p>),
-  },
-  {
-    title: (<p className={classes['steps']}>On-going</p>),
-  },
-  {
-    title: (<p className={classes['steps']}>Cancelled</p>),
-    status: "error",
-  },
+	{
+		title: <p className={classes["steps"]}>Awaiting</p>,
+	},
+	{
+		title: <p className={classes["steps"]}>On-going</p>,
+	},
+	{
+		title: <p className={classes["steps"]}>Cancelled</p>,
+		status: "error",
+	},
 ];
 
 const Cancelled = () => {
+	const navigate = useNavigate();
 
     let detail = localStorage.getItem('USER_DETAILS')
     let usertype =JSON.parse(detail).data.usertype;
@@ -40,7 +41,7 @@ const Cancelled = () => {
     }
     console.log(transaction)
 
-    const navigate = useNavigate();
+    
 
   return (
     <AppLayout>

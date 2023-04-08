@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import classes from './Ongoing.module.css'
-import AppLayout from '../../../components/Layout/AppLayout'
+import AppLayout from '../../../components/layout/AppLayout'
 import { Card , Button} from 'antd';
 import { Steps } from 'antd';
 import { HiArrowNarrowLeft } from 'react-icons/hi'
@@ -15,16 +15,16 @@ import { vendorTransactionActions } from '../../../reducers/vendorTransactionRed
 
 
 const items = [
-    {
-        title: (<p className={classes['steps']}>Awaiting</p>),
-    },
-    {
-      title: (<p className={classes['steps']}>On-going</p>),
-    },
-    {
-      title: (<p className={classes['steps']}>Completed</p>),
-    },
-  ];
+	{
+		title: <p className={classes["steps"]}>Awaiting</p>,
+	},
+	{
+		title: <p className={classes["steps"]}>On-going</p>,
+	},
+	{
+		title: <p className={classes["steps"]}>Completed</p>,
+	},
+];
 
 const Ongoing = () => {
     let detail = localStorage.getItem('USER_DETAILS')

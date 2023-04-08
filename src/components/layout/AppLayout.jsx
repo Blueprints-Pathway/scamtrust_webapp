@@ -20,9 +20,6 @@ import { vendorSearch } from '../../actions/miscActions';
 import Notification from './notification/Notification';
 import { Link } from 'react-router-dom';
 import { getWalletTransactionsDetails } from '../../actions/walletActions';
-import Notifications from './notification/Notifications';
-import Search from './search/Search';
-
 const { Header, Content, Sider } = Layout;
 
 
@@ -52,12 +49,13 @@ const AppLayout = ({children}) => {
     dispatch(listNotifications());
     
   },[dispatch, auth.isAuthenticated])
+  // const {
+  //   token: { colorBgContainer },
+  // } = theme.useToken();
   console.log(data);
   const nameOf = loading ? 'hi' : data?.data?.name || data?.data?.username;
 	const first = nameOf?.at(0);
 	const last = nameOf?.match(/\b(\w)/g).at(1);
-  let detail = localStorage.getItem('USER_DETAILS')
-  let usertype =JSON.parse(detail).data.usertype;
 
   const logoutUserHandler = () => {
     dispatch(logoutUser());
@@ -104,7 +102,7 @@ const AppLayout = ({children}) => {
 
           <div className='side-tab-wrapper'>
                <div className='side-tab-con'>
-                <VscHome style={{color: '#ffff'}} /><span onClick={ usertype === 'VENDOR' ? ()=>navigate('/vendor-dashboard' ): ()=>navigate('/customer-dashboard')}
+                <VscHome style={{color: '#ffff'}} /><span onClick={()=>navigate('/customer-dashboard')}
                 className='side-tabs'>DASHBOARD</span>
                </div>
      
@@ -143,19 +141,14 @@ const AppLayout = ({children}) => {
 
         <div className='header-right-div'>
               {/* SEARCH INPUT  */}
-          <div className='search'>  
-             <div className='header-div-2'>
-               <div className='header-input-icon'> <img className='input-icon-img' src={search} alt="..." /> </div>
-               <input onChange={searchInputChangeHandler} className='header-input' type="text" placeholder='Search vendor’s name' />
-             </div>
-             <div>
-               <Search />
-             </div>
+          <div className='header-div-2'>
+            <div className='header-input-icon'> <img className='input-icon-img' src={search} alt="..." /> </div>
+            <input onChange={searchInputChangeHandler} className='header-input' type="text" placeholder='Search vendor’s name' />
           </div>
 
                   {/* NOTIFICATION */}
           <div className='header-div-3'>
-             <Notifications />
+             <Notification />
           </div>
 
                      {/* INITIALS */}

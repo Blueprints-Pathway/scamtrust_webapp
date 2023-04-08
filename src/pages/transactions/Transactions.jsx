@@ -9,7 +9,7 @@ import Outgoing from '../../components/transactions/outgoing/Outgoing';
 import Completed from '../../components/transactions/completed/Completed';
 import Cancelled from '../../components/transactions/cancelled/Cancelled';
 import AllTransaction from '../../components/transactions/all-transactions/AllTransaction';
-import AppLayout from '../../components/Layout/AppLayout';
+import AppLayout from '../../components/layout/AppLayout';
 import Layout, { Content } from 'antd/es/layout/layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCustomerCancelledTransactions, getCustomerCompletedTransactions, getCustomerOngoingTransactions, getCustomerTransactions } from '../../actions/customerTransactionActions';
@@ -50,32 +50,59 @@ console.log(auth.isAuthenticated);
 
   },[dispatch, usertype, auth.isAuthenticated])
 
-    const onChange = (key) => {
-        console.log(key);
-      };
+	const onChange = (key) => {
+		console.log(key);
+	};
 
-      const items = [
-        {
-          key: '1',
-          label:(<p className={classes['tab-1']}>All Transactions</p>),
-          children:(<AllTransaction />),
-        },
-        {
-          key: '2',
-          label: (<p className={classes['tab-2']}><BsFillArrowUpRightCircleFill className={classes['tab-icon']} />Out-going</p>),
-          children: (<div className={classes['content']}><Outgoing /></div>),
-        },
-        {
-          key: '3',
-          label: (<p className={classes['tab-2']}><AiFillCheckCircle className={classes['tab-icon2']} />Completed</p>),
-          children: (<div className={classes['content']}><Completed /></div>),
-        },
-        {
-          key: '4',
-          label: (<p className={classes['tab-4']}><MdCancel className={classes['tab-icon2']} />Cancelled</p>),
-          children: (<div className={classes['content']}><Cancelled /></div>),
-        },
-      ];
+	const items = [
+		{
+			key: "1",
+			label: <p className={classes["tab-1"]}>All Transactions</p>,
+			children: <AllTransaction />,
+		},
+		{
+			key: "2",
+			label: (
+				<p className={classes["tab-2"]}>
+					<BsFillArrowUpRightCircleFill className={classes["tab-icon"]} />
+					Out-going
+				</p>
+			),
+			children: (
+				<div className={classes["content"]}>
+					<Outgoing />
+				</div>
+			),
+		},
+		{
+			key: "3",
+			label: (
+				<p className={classes["tab-2"]}>
+					<AiFillCheckCircle className={classes["tab-icon2"]} />
+					Completed
+				</p>
+			),
+			children: (
+				<div className={classes["content"]}>
+					<Completed />
+				</div>
+			),
+		},
+		{
+			key: "4",
+			label: (
+				<p className={classes["tab-4"]}>
+					<MdCancel className={classes["tab-icon2"]} />
+					Cancelled
+				</p>
+			),
+			children: (
+				<div className={classes["content"]}>
+					<Cancelled />
+				</div>
+			),
+		},
+	];
 
   return (
     <AppLayout>
@@ -109,4 +136,4 @@ console.log(auth.isAuthenticated);
   )
 }
 
-export default Transactions
+export default Transactions;

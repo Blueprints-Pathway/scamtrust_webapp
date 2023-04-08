@@ -365,7 +365,7 @@ export const vendorSearch = (data) => async (dispatch) => {
             }));
 
          console.log(response.data.data)
-         console.log(response)
+         console.log(response, "hello search")
         }else{
             dispatch(miscActions.vendorSearchFailure( 
                 response.data.message

@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './VendorDashboard.module.css'
-import AppLayout from '../../../components/Layout/AppLayout'
+import AppLayout from '../../../components/layout/AppLayout'
 import VendorMain from '../../../components/vendorDashboard/vendorMain/VendorMain'
 import VendorWallet from '../../../components/vendorDashboard/vendorWallet/VendorWallet'
 import VendorRatings from '../../../components/vendorDashboard/vendorRatings/VendorRatings'
@@ -44,4 +44,4 @@ const VendorDashboard = () => {
   )
 }
 
-export default VendorDashboard
+export default VendorDashboard;

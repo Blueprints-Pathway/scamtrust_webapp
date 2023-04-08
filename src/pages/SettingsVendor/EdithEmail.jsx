@@ -13,8 +13,7 @@ import { useSelector } from "react-redux";
 import ErrorInfo from "../../assets/images/error-info.svg";
 import TokenEmail from "./TokenEmail";
 function EdithEmail({ closeModal }) {
-	const [closed2, setClosed2] = useState(false);
-	const [Edit2, setEdit2] = useState(false);
+	
 	const [loading, setLoading] = useState(false);
 	const [emailMessage, setEmailMessage] = useState();
 	const [errorEmailMessage, setErrorEmailMessage] = useState("");
@@ -198,9 +197,7 @@ function EdithEmail({ closeModal }) {
 			</div>
 			{stageOne && (
 				<div
-					className={
-						closed2 ? "EditDone active" : Edit2 ? "EditDone" : "EditDone active"
-					}
+				
 					// class="relative z-10"
 					aria-labelledby="modal-title"
 					role="dialog"
@@ -272,9 +269,7 @@ function EdithEmail({ closeModal }) {
 			)}
 			{stageTwo && (
 				<div
-					className={
-						closed2 ? "EditDone active" : Edit2 ? "EditDone" : "EditDone active"
-					}
+				
 					// class="relative z-10"
 					aria-labelledby="modal-title"
 					role="dialog"
@@ -311,9 +306,7 @@ function EdithEmail({ closeModal }) {
 			)}
 			{stageThree && (
 				<div
-					className={
-						closed2 ? "EditDone active" : Edit2 ? "EditDone" : "EditDone active"
-					}
+					
 					// class="relative z-10"
 					aria-labelledby="modal-title"
 					role="dialog"
