@@ -16,6 +16,7 @@ const CustomerPopUp = () => {
     const [openChat, setOpenChat] = useState(false);
     const [openTrans, setOpenTrans] = useState(false);
 
+
     const handleCancel = () => {
       setModalOpen(false);
   }
@@ -33,6 +34,12 @@ const CustomerPopUp = () => {
   const cancelTrans = () => {
     setOpenTrans(false);
   };
+
+
+  // const fundStyle = {
+  //   backgroundColor: 'red',
+  //   color: 'blue',
+  // }
 
 
   const navigate = useNavigate();
@@ -69,14 +76,11 @@ const CustomerPopUp = () => {
 
                           <div className={classes['content-div']}>
                              <p className={classes['card-title']}>Fund Wallet</p>
-                             <div  className={classes['card-down']}>
+                             <div className={classes['card-down']}>
                                  <img className={classes['card-icon']} src={fund} alt="" />
                                  <p className={classes['card-words']}>Fund your wallet</p>
                              </div>
                           </div>
-                          {/* <div className={classes['content-div']}>
-                            <Fundbutton />
-                          </div> */}
 
                           <div className={classes['content-div']}>
                              <p className={classes['card-title']}>KYC</p>
