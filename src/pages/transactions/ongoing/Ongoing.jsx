@@ -10,6 +10,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { customerAcceptTransaction } from '../../../actions/customerTransactionActions';
 import { customerTransactionActions } from '../../../reducers/customerTransactionsReducer';
 import swal from 'sweetalert';
+import { vendorAcceptTransaction } from '../../../actions/vendorTransactionActions';
+import { vendorTransactionActions } from '../../../reducers/vendorTransactionReducer';
 
 
 const items = [
@@ -25,11 +27,20 @@ const items = [
   ];
 
 const Ongoing = () => {
+    let detail = localStorage.getItem('USER_DETAILS')
+    let usertype =JSON.parse(detail).data.usertype;
+
     const transactions = useSelector(state => state.customerTransaction);
+    const vendorTransactions = useSelector(state => state.vendorTransaction)
     const param =  useParams();
     const dispatch = useDispatch();
    
-    const transaction = transactions.ongoingTransactions.find(transaction => transaction.id == param.id);
+    let transaction = transactions.ongoingTransactions.find(transaction => transaction.id == param.id);
+
+    if(usertype === 'VENDOR'){
+        transaction = vendorTransactions.allTransactions.find(transaction => transaction.id == param.id);
+
+    }
     console.log(transaction)
     const navigate = useNavigate(); 
 
@@ -39,11 +50,21 @@ const Ongoing = () => {
             navigate(`/completed-transaction/${param.id}`);
 
         }
+        if(vendorTransactions.isAcceptTransactionSuccessful){
+            dispatch(vendorTransactionActions.resetAcceptTransactionStatus())
+            navigate(`/completed-transaction/${param.id}`);
+
+        }
 
 
-    },[transactions.isAcceptTransactionSuccessful, dispatch])
+    },[transactions.isAcceptTransactionSuccessful,vendorTransactions.isAcceptTransactionSuccessful, dispatch])
 
     const completeTransaction = () =>{
+        if(usertype == 'VENDOR'){
+            dispatch(vendorAcceptTransaction(transaction.transaction_id));
+            return;
+        }
+
         dispatch(customerAcceptTransaction(transaction.transaction_id))
     }
 
@@ -58,6 +79,17 @@ const Ongoing = () => {
         dispatch(customerTransactionActions.resetAcceptTransactionStatus())
 
     }
+    if(vendorTransactions.error){
+        console.log();
+    swal({
+        icon: 'error',
+        text: vendorTransactions.error,
+
+        
+    })
+    dispatch(vendorTransactionActions.resetAcceptTransactionStatus())
+
+}
     
 
   return (
@@ -76,7 +108,7 @@ const Ongoing = () => {
              <div className={classes['top-left']}>
                  <div className={classes['left-1']}>
                     <p className={classes['top-left-id']}>ID - {transaction.transaction_id}</p>
-                    <p className={classes['top-left-vendor']}>{transaction.vendor.name} </p>
+                    <p className={classes['top-left-vendor']}>{transaction?.vendor?.name || transaction?.customer?.username} </p>
                  </div>
                               {/* TOP MIDDLE */}
                  <div className={classes['top-middle']}>
@@ -134,9 +166,9 @@ const Ongoing = () => {
 
                       {/* BUTTONS */}
                <div className={classes['btn-con']}>
-                <Button onClick={()=>navigate('/cancel-reason')}
+                <Button onClick={()=>navigate(`/cancel-reason/${transaction.transaction_id}`)}
                 className={classes['bottom-btn1']}>Cancel</Button>
-                <Button loading = {transactions.loading} onClick={completeTransaction}
+                <Button loading = { usertype === 'VENDOR' ? vendorTransactions.loading : transactions.loading} onClick={completeTransaction}
                 className={classes['bottom-btn2']}> Complete</Button>
                </div>
 

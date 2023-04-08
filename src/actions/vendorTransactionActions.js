@@ -150,11 +150,11 @@ export const vendorCancelTransaction = (data) => async (dispatch) => {
             },
           };
         
-        const response = await axios.post(`${BASE_URL}/transaction/create`, data, config);
+        const response = await axios.get(`${BASE_URL}/transaction/vendor/cancel/${data}`, config);
         console.log(response)
         if(response.data.status){
             dispatch(vendorTransactionActions.vendorCancelTransactionSuccess(
-               response.data.data,
+               response.data.message,
             ));
             console.log(response.data);
             

@@ -6,7 +6,7 @@ import { TbRefreshAlert } from 'react-icons/tb';
 const CancelledItem = (props) => {
     const navigate = useNavigate();
     return (
-        <div onClick={()=>navigate('/cancelled-transaction')}
+        <div onClick={()=>navigate(`/cancelled-transaction/${props.id}`)}
         className={classes['con']}>
           <div className={classes['wrapper']}>
            <div className={classes['first']}>

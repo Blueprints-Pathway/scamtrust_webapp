@@ -15,21 +15,26 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCustomerCancelledTransactions, getCustomerCompletedTransactions, getCustomerOngoingTransactions, getCustomerTransactions } from '../../actions/customerTransactionActions';
 import { getVendorCancelledTransactions, getVendorCompletedTransactions, getVendorOngoingTransactions, getVendorTransactions } from '../../actions/vendorTransactionActions';
 import { useNavigate } from 'react-router';
+import { logoutUser } from '../../actions/authActions';
 
 const Transactions = () => {
+  
 
   const dispatch  = useDispatch();
  const auth = useSelector(state => state.auth)
  const navigate = useNavigate();
 console.log(auth.data);
+
 let detail = localStorage.getItem('USER_DETAILS')
 let usertype =JSON.parse(detail).data.usertype;
 console.log(auth.isAuthenticated);
   useEffect(() => {
     if(!auth.isAuthenticated){
+      dispatch(logoutUser())
       navigate('/sign-in')
       return;
     }
+    console.log(auth.isAuthenticated);
      if (usertype === 'VENDOR'){
       dispatch(getVendorTransactions());
       dispatch(getVendorOngoingTransactions());
@@ -58,7 +63,7 @@ console.log(auth.isAuthenticated);
         {
           key: '2',
           label: (<p className={classes['tab-2']}><BsFillArrowUpRightCircleFill className={classes['tab-icon']} />Out-going</p>),
-          // children: (<div className={classes['content']}><Outgoing /></div>),
+          children: (<div className={classes['content']}><Outgoing /></div>),
         },
         {
           key: '3',

@@ -5,14 +5,14 @@ import { useNavigate } from 'react-router-dom'
 const CompletedItem = (props) => {
     const navigate = useNavigate();
     return (
-         <div onClick={()=> navigate('/completed-transaction')}
+         <div onClick={()=> navigate(`/completed-transaction/${props.id}`)}
         className={classes['con']}>
           <div className={classes['wrapper']}>
            <div className={classes['first']}>
            <BsArrowDownRightCircle className={classes['icon']} />
             <div className={classes['item-con']}>
               <p className={classes['item']}>{props.product_name}</p>
-              <p className={classes['status']}>Cancelled</p>
+              <p className={classes['status']}>Completed</p>
             </div>
           </div>
           <div className={classes['second']}>

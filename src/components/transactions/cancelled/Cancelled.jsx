@@ -22,7 +22,7 @@ const Cancelled = () => {
       content = vendorTransactions.cancelledTransactions.map((transaction) => {
    
        return (
-       <CancelledItem product_name = {transaction.product_name} name = {transaction.customer.username} total_amount = {transaction.total_amount} due_date = {transaction.due_date} />
+       <CancelledItem id = {transaction.id} product_name =  {transaction.product_name} name = {transaction.customer.username} total_amount = {transaction.total_amount} due_date = {transaction.due_date} />
        )
         
        
@@ -36,7 +36,7 @@ const Cancelled = () => {
    content = transactions.cancelledTransactions.map((transaction) => {
 
     return (
-    <CancelledItem product_name = {transaction.product_name} name = {transaction.vendor.name} total_amount = {transaction.total_amount} due_date = {transaction.due_date} />
+    <CancelledItem id = {transaction.id} product_name = {transaction.product_name} name = {transaction.vendor.name} total_amount = {transaction.total_amount} due_date = {transaction.due_date} />
     )
      
     

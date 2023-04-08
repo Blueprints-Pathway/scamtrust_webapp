@@ -5,7 +5,8 @@ import { Card } from 'antd';
 import { Steps } from 'antd';
 import { HiArrowNarrowLeft } from 'react-icons/hi'
 import FooterLogo from '../../../components/FooterLogo/FooterLogo';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 const items = [
@@ -21,6 +22,20 @@ const items = [
 ];
 
 const Awaiting = () => {
+    let detail = localStorage.getItem('USER_DETAILS')
+    let usertype =JSON.parse(detail).data.usertype;
+    
+    const transactions = useSelector(state => state.customerTransaction);
+    const vendorTransactions = useSelector(state => state.vendorTransaction)
+    let transaction = transactions.ongoingTransactions.find(transaction => transaction.id == param.id);
+    const param =  useParams();
+    const dispatch = useDispatch();
+    if(usertype === 'VENDOR'){
+        transaction = vendorTransactions.allTransactions.find(transaction => transaction.id == param.id);
+
+    }
+   
+    console.log(transaction)
 
     const navigate = useNavigate();
 
@@ -39,16 +54,16 @@ const Awaiting = () => {
                         {/* TOP LEFT */}
                 <div className={classes['top-left']}>
                     <div className={classes['left-1']}>
-                       <p className={classes['top-left-id']}>ID - 6057702</p>
-                       <p className={classes['top-left-vendor']}>Ridic  Ventures </p>
+                       <p className={classes['top-left-id']}>ID - {transaction.transaction_id}</p>
+                       <p className={classes['top-left-vendor']}>{transaction?.vendor?.name || transaction?.customer?.username} </p>
                     </div>
                                  {/* TOP MIDDLE */}
                     <div className={classes['top-middle']}>
                         <p className={classes['top-middle-status']}>
                             <b>Status:</b> 
-                            <span className={classes['top-middle-span']}>Awaiting Approval</span>
+                            <span className={classes['top-middle-span']}>{transaction.status}</span>
                         </p>
-                        <p className={classes['top-middle-date']}>Today, 8:48 AM</p>
+                        <p className={classes['top-middle-date']}>{transaction.due_date}</p>
                     </div>
                 </div>
                               {/* TOP RIGHT */}
@@ -70,24 +85,24 @@ const Awaiting = () => {
                     <div className={classes['content-con']}>
                         <div className={classes['content']}>
                             <p className={classes['content-left']}>Product name</p>
-                            <i className={classes['content-right']}>iPhone</i>
+                            <i className={classes['content-right']}>{transaction.product_name}</i>
                         </div>
                         <div className={classes['content']}>
                             <p className={classes['content-left']}>Product amount</p>
-                            <i className={classes['content-right']}>₦15.00</i>
+                            <i className={classes['content-right']}>₦{transaction.amount}</i>
                         </div>
                         <div className={classes['content']}>
                             <p className={classes['content-left']}>Quantity</p>
-                            <i className={classes['content-right']}>2</i>
+                            <i className={classes['content-right']}>{transaction.quantity}</i>
                         </div>
                         <div className={classes['content']}>
                             <p className={classes['content-left']}>Due date</p>
-                            <i className={classes['content-right']}>25 - 5 -2022</i>
+                            <i className={classes['content-right']}>{transaction.due_date}</i>
                         </div>
                         <div className={classes['content']}>
                             <p className={classes['content-left']}>Description</p>
                             <i className={classes['content-right']}>
-                            One pair of black female corporate heel shoes and one pair of white unbranded sneakers
+                            {transaction.description}
                             </i>
                         </div>
                     </div>

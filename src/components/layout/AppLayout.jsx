@@ -22,6 +22,7 @@ import { Link } from 'react-router-dom';
 import { getWalletTransactionsDetails } from '../../actions/walletActions';
 import Notifications from './notification/Notifications';
 import Search from './search/Search';
+
 const { Header, Content, Sider } = Layout;
 
 
@@ -42,7 +43,13 @@ const AppLayout = ({children}) => {
       navigate('/sign-in')
       return;
     }
-   
+    dispatch(getLoggedInUserDetails());
+    dispatch(getCustomerTransactions());
+    dispatch(getCustomerOngoingTransactions());
+    dispatch(getWalletTransactionsDetails())
+    dispatch(getCustomerCancelledTransactions());
+    dispatch(getCustomerCompletedTransactions());
+    dispatch(listNotifications());
     
   },[dispatch, auth.isAuthenticated])
   console.log(data);
