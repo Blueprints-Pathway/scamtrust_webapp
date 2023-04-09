@@ -82,8 +82,9 @@ console.log(auth.isAuthenticated);
         <div className={['wrapper']}>
               <Card
                 centered
+                className={classes['card-wrapper']}
                >
-                <div className={classes['card-wrapper']}>
+                <div className={classes['transactions-con']}>
                     <div className={classes['transaction-heading']}>
                         <p className={classes['transactions']}>Transactions</p>
                       { usertype === 'CUSTOMER' && <button className={classes['transaction-btn']}>

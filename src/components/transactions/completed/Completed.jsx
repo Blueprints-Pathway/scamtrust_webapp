@@ -10,7 +10,7 @@ const Completed = () => {
   let usertype =JSON.parse(detail).data.usertype;
 
   const navigate = useNavigate();
-  let content = <div className={classes['con']}><Empty /></div>;
+  let content = <div className={classes['empty-con']}><Empty /></div>;
   const transactions = useSelector(state => state.customerTransaction);
   const vendorTransactions = useSelector(state => state.vendorTransaction)
 

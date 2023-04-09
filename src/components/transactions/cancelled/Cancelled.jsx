@@ -13,7 +13,7 @@ const Cancelled = () => {
 
   const navigate = useNavigate();  
   const vendorTransactions = useSelector(state => state.vendorTransaction)
-  let content = <div className={classes['con']}><Empty /></div>;
+  let content = <div className={classes['empty-con']}><Empty /></div>;
   const transactions = useSelector(state => state.customerTransaction);
   if(usertype === 'VENDOR'){
     if (vendorTransactions.cancelledTransactions.length != 0){

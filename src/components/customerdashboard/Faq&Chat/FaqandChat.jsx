@@ -23,7 +23,7 @@ const FaqandChat = () => {
     <div className='fc-con'>
     <div className='fc-wrapper'>
 
-        <div onClick={()=>navigate('/faq')}
+        <div onClick={()=>navigate('/faq-page')}
         className='fc-faq-div1'>
             <div className='fc-faq-icon-div'>
                 <AiOutlineExclamationCircle className='fc-faq-icon1' />

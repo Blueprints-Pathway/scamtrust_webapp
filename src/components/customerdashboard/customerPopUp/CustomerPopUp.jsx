@@ -9,12 +9,13 @@ import { IoShieldCheckmarkOutline } from 'react-icons/io5'
 import { useNavigate } from 'react-router-dom';
 import ChatBtn from '../../buttons/chatBtn/ChatBtn';
 import Modal1 from '../../buttons/createtransaction-btn/Modal1';
-import Fundbutton from '../../buttons/fundbutton/Fundbutton';
+import CustFundPopUp from './custFundPopup/CustFundPopUp';
+import CustCreatePopup from './custCreateTrans/CustCreatePopup';
 
 const CustomerPopUp = () => {
     const [modalOpen, setModalOpen] = useState(true);
     const [openChat, setOpenChat] = useState(false);
-    const [openTrans, setOpenTrans] = useState(false);
+    // const [openTrans, setOpenTrans] = useState(false);
 
 
     const handleCancel = () => {
@@ -28,18 +29,13 @@ const CustomerPopUp = () => {
       setOpenChat(false);
   };
 
-  const showTrans = () => {
-    setOpenTrans(true);
-  };
-  const cancelTrans = () => {
-    setOpenTrans(false);
-  };
+  // const showTrans = () => {
+  //   setOpenTrans(true);
+  // };
+  // const cancelTrans = () => {
+  //   setOpenTrans(false);
+  // };
 
-
-  // const fundStyle = {
-  //   backgroundColor: 'red',
-  //   color: 'blue',
-  // }
 
 
   const navigate = useNavigate();
@@ -67,18 +63,20 @@ const CustomerPopUp = () => {
 
                           <div className={classes['content-div']}>
                              <p className={classes['card-title']}>Get Started</p>
-                             <div onClick={showTrans}
+                             <div>
+                               <CustCreatePopup />
+                             </div>
+                          </div>
+                             {/* <div onClick={showTrans}
                              className={classes['card-down']}>
                                  <TbArrowsRightLeft className={classes['card-react-icon']} />
                                  <p className={classes['card-words']}>Create New Transaction</p>
-                             </div>
-                          </div>
+                             </div> */}
 
                           <div className={classes['content-div']}>
                              <p className={classes['card-title']}>Fund Wallet</p>
-                             <div className={classes['card-down']}>
-                                 <img className={classes['card-icon']} src={fund} alt="" />
-                                 <p className={classes['card-words']}>Fund your wallet</p>
+                             <div>
+                                <CustFundPopUp />
                              </div>
                           </div>
 
@@ -138,7 +136,7 @@ const CustomerPopUp = () => {
                
 
                {/* CREATE TRANSACTION MODAL */}
-         <div>
+         {/* <div>
          <Modal open={openTrans}
           onCancel={cancelTrans}
           centered 
@@ -154,7 +152,7 @@ const CustomerPopUp = () => {
             <Modal1 showTrans={showTrans}  />
             
          </Modal> 
-         </div>
+         </div> */}
 
     </div>
   )

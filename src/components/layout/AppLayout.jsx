@@ -148,9 +148,9 @@ const AppLayout = ({children}) => {
                <div className='header-input-icon'> <img className='input-icon-img' src={search} alt="..." /> </div>
                <input onChange={searchInputChangeHandler} className='header-input' type="text" placeholder='Search vendor’s name' />
              </div>
-             <div>
+             {/* <div>
                <Search />
-             </div>
+             </div> */}
           </div>
 
                   {/* NOTIFICATION */}
