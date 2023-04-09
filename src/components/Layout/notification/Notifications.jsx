@@ -14,7 +14,8 @@ const Notifications = () => {
  let menuItem =  notification.unreadNotifications.map((notificationItem, index) => {
 
       
-    return <div> <div className={classes['drop1-con']}>
+    return <div> 
+      <div className={classes['drop1-con']}>
     <GoPrimitiveDot className={classes['drop-dot']} />
     <div className={classes['drop-message']}>
         <p className={classes['message-top']}>{notificationItem.content}</p>
@@ -25,11 +26,7 @@ const Notifications = () => {
   <hr className={classes['hr']} />
   </div>
   })
-    const notifications = [
-        { id: 1, title: 'New message from John', timestamp: '2 hours ago' },
-        { id: 2, title: 'New order received', timestamp: '5 hours ago' },
-        { id: 3, title: 'Server maintenance scheduled', timestamp: '1 day ago' },
-      ];
+  
 
       const menuStyle = {
         display: 'flex',

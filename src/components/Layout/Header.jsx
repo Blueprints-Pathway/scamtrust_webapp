@@ -9,7 +9,7 @@ import Search from "../../assets/images/svg/search.svg";
 import RidicVentures from "../../assets/images/svg/ridic.svg";
 import APlus from "../../assets/images/svg/a-plus.svg";
 import { fetchUser } from "../../services/auth";
-
+import ReactSearchBox from "react-search-box";
 import moment from "moment";
 import axios from "axios";
 

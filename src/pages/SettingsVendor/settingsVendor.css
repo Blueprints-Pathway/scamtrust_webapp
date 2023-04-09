@@ -9,6 +9,15 @@
 
 	background-color:rgba(201, 207, 214, 0.33)
 }
+.centerprofile {
+	position: absolute;
+	width: 80vw;
+	
+	left: 15vw;
+	
+	border-radius: 25px 25px 0px 0px;
+}
+
 .center {
 	position: absolute;
 	width: 80vw;

@@ -4,8 +4,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 
-import SecuredBy from "../../assets/images/svg/secured-by.svg";
-import { createTransaction } from "../../services/transactions";
+// import SecuredBy from "../../assets/images/svg/secured-by.svg";
+// import { createTransaction } from "../../services/transactions";
 import axios from "axios";
 import swal from 'sweetalert';
 const TransactionPreview = (props) => {
@@ -35,7 +35,7 @@ const TransactionPreview = (props) => {
 		);
 		try {
 			setSendingTransaction(true);
-			const result = await createTransaction(
+			const result = await "createTransaction"(
 				JSON.stringify(transactionData),
 				token
 			);
@@ -211,7 +211,7 @@ console.log(transactionDetails,"trsns");
 								{sendingTransaction ? "Loading..." : "Confirm"}
 							</button>
 							<img
-								src={SecuredBy}
+								src={"SecuredBy"}
 								alt="secured_by"
 								className="w-[169] mx-auto"
 							/>
