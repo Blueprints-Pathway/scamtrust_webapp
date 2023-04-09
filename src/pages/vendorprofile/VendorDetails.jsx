@@ -15,7 +15,6 @@ import { useLocation } from "react-router-dom";
 import { Rate } from "antd";
 import { useSelector } from "react-redux";
 import Modal from "react-modal";
-
 import AppLayout from "../../components/layout/AppLayout";
 const VendorDetails = () => {
 	const [details, setDetails] = useState();

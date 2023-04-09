@@ -57,24 +57,17 @@ const CustDashTransaction = () => {
    
    if(transactions.allTransactions.length !== 0){
  
-    outgoingTransactionContent = transactions.allTransactions.map((transaction) => {
+    outgoingTransactionContent = transactions.ongoingTransactions.map((transaction) => {
  
-     if (transaction.status === 'PENDING VENDOR ACCEPTANCE') {
-      return <AwaitingHistory 
-       id = {transaction.id}
-       productName={transaction.product_name} 
-       vendorName={transaction.vendor.name}
-       totalAmount={transaction.total_amount} 
-       dueDate={transaction.due_date} />
-     }
-     if (transaction.status == 'ACCEPTED BY VENDOR') {
+   
+    
       return <OngoingHistory 
        id = {transaction.id}
        productName={transaction.product_name} 
        vendorName={transaction.vendor.name}
        totalAmount={transaction.total_amount} 
        dueDate={transaction.due_date} />
-     }
+     
 
    })}
 

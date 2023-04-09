@@ -9,10 +9,15 @@ import { MdContentCopy } from 'react-icons/md'
 import { useState } from 'react'
 import Withdrawbutton from '../../buttons/withdrawbutton/Withdrawbtn'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const MainCard = () => {
 
+    let detail = localStorage.getItem('USER_DETAILS')
+    let usertype =JSON.parse(detail).data.usertype;
+
     const {loading, error, data} = useSelector(state => state.user)
+    const navigate = useNavigate();
 
     const [eye, setEye] = useState(false)
 
@@ -52,7 +57,7 @@ const MainCard = () => {
                 <div className={classes['available-con']}>
                     { eye ? 
                     <p className={classes['pending-digits']}>
-                        <sup className={classes['available-sup']}>₦</sup>{data.outgoingWalletBalance || data.incomingWalletBalance }
+                        <sup className={classes['available-sup']}>₦</sup>{ usertype === 'VENDOR' ? data?.incomingWalletBalance : data?.outgoingWalletBalance}
                     </p>   :
                     <p className={classes['pending-digits']}>
                         <sup className={classes['available-sup']}>₦</sup>*******
@@ -79,7 +84,7 @@ const MainCard = () => {
                     </p>
                 </div>
                 <div className={classes['add-acc-btn-con']}>
-                  <button className={classes['add-acc-btn']}>Add Account</button>
+                  <button className={classes['add-acc-btn']} onClick = {() => navigate('/settings')}>Add Account</button>
                 </div>
             </div>
         </Card> 
