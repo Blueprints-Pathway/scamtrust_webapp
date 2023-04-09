@@ -13,21 +13,23 @@ const { TabPane } = Tabs;
 
 const VendorTransaction = () => {
 
-    const transactions = useSelector(state => state.customerTransaction);
+   
+    const vendorTransactions = useSelector(state => state.vendorTransaction)
     let allTransactionsContent =  <div className={classes['empty-con']}>
     <Empty/>
  </div>;
+
  
    
-    if(transactions.allTransactions.length != 0){
+    if(vendorTransactions.allTransactions.length != 0){
   
-     allTransactionsContent = transactions.allTransactions.map((transaction) => {
+     allTransactionsContent = vendorTransactions.allTransactions.map((transaction) => {
   
       if (transaction.status == 'PENDING VENDOR ACCEPTANCE') {
        return <AwaitingHistory 
         id = {transaction.id}
         productName={transaction.product_name} 
-        vendorName={transaction.vendor.name}
+        vendorName={transaction.customer.username}
         totalAmount={transaction.total_amount} 
         dueDate={transaction.due_date} />
       }
@@ -35,38 +37,54 @@ const VendorTransaction = () => {
        return <OngoingHistory
         id = {transaction.id}
         productName={transaction.product_name} 
-        vendorName={transaction.vendor.name}
+        vendorName={transaction.customer.username}
         totalAmount={transaction.total_amount} 
         dueDate={transaction.due_date} />
       }
+      if (transaction.status == 'CANCELLED BY VENDOR') {
+         return <CancelledHistory 
+          id = {transaction.id}
+          productName={transaction.product_name} 
+          vendorName={transaction.customer.username}
+          totalAmount={transaction.total_amount} 
+          dueDate={transaction.due_date} />
+        }
+
+        if (transaction.status == 'ACCEPTED BY CUSTOMER') {
+         return <CompletedHistory
+         id = {transaction.id}
+         productName={transaction.product_name} 
+         vendorName={transaction.customer.username}
+         totalAmount={transaction.total_amount} 
+         dueDate={transaction.due_date} />
  
-    })}
+     } })}
  
     let outgoingTransactionContent =  <div className={classes['empty-con']}>
     <Empty />
  </div>;
  
     
-    if(transactions.allTransactions.length != 0){
+    if(vendorTransactions.allTransactions.length != 0){
   
-     outgoingTransactionContent = transactions.allTransactions.map((transaction) => {
+     outgoingTransactionContent = vendorTransactions.ongoingTransactions.map((transaction) => {
   
-      if (transaction.status == 'PENDING VENDOR ACCEPTANCE') {
-       return <AwaitingHistory 
-        id = {transaction.id}
-        productName={transaction.product_name} 
-        vendorName={transaction.vendor.name}
-        totalAmount={transaction.total_amount} 
-        dueDate={transaction.due_date} />
-      }
-      if (transaction.status == 'ACCEPTED BY VENDOR') {
+      // if (transaction.status == 'PENDING VENDOR ACCEPTANCE') {
+      //  return <AwaitingHistory 
+      //   id = {transaction.id}
+      //   productName={transaction.product_name} 
+      //   vendorName={transaction.customer.username}
+      //   totalAmount={transaction.total_amount} 
+      //   dueDate={transaction.due_date} />
+      // }
+      // if (transaction.status == 'ACCEPTED BY VENDOR') {
        return <OngoingHistory 
         id = {transaction.id}
         productName={transaction.product_name} 
-        vendorName={transaction.vendor.name}
+        vendorName={transaction.customer.username}
         totalAmount={transaction.total_amount} 
         dueDate={transaction.due_date} />
-      }
+      // }
  
     })}
  
@@ -75,19 +93,19 @@ const VendorTransaction = () => {
  </div>;
  
    
-    if(transactions.cancelledTransactions.length != 0){
+    if(vendorTransactions.cancelledTransactions.length != 0){
   
       
-       allCancelledTransactionsContent = transactions.cancelledTransactions.map((transaction) => {
+       allCancelledTransactionsContent = vendorTransactions.cancelledTransactions.map((transaction) => {
   
-      if (transaction.status == 'CANCELLED TRANSACTIONS') {
+     
        return <CancelledHistory 
         id = {transaction.id}
         productName={transaction.product_name} 
-        vendorName={transaction.vendor.name}
+        vendorName={transaction.customer.username}
         totalAmount={transaction.total_amount} 
         dueDate={transaction.due_date} />
-      }
+      
     
     })}
  
@@ -97,19 +115,19 @@ const VendorTransaction = () => {
  </div>;
  
    
-    if(transactions.completedTransactions.length != 0){
+    if(vendorTransactions.completedTransactions.length != 0){
   
       
-       allCompletedTransactionContent = transactions.completedTransactions.map((transaction) => {
+       allCompletedTransactionContent = vendorTransactions.completedTransactions.map((transaction) => {
   
-      if (transaction.status == 'COMPLETED TRANSACTIONS') {
+      
        return <CompletedHistory
         id = {transaction.id}
         productName={transaction.product_name} 
-        vendorName={transaction.vendor.name}
+        vendorName={transaction.customer.username}
         totalAmount={transaction.total_amount} 
         dueDate={transaction.due_date} />
-      }
+      
     
     })}
 
@@ -144,7 +162,7 @@ const VendorTransaction = () => {
                  {outgoingTransactionContent}
                </div>
             </TabPane>
-            <TabPane tab={<p className={classes['tab-middle']}>Cancelled </p>} key="3">
+            <TabPane tab={<p className={classes['tab-middle']}>Cancelled</p>} key="3">
                          {/* EMPTY IMAGE */}
                {/* <div className={classes['empty-con']}>
                   <Empty />

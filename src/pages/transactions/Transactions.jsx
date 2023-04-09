@@ -30,8 +30,8 @@ let usertype =JSON.parse(detail).data.usertype;
 console.log(auth.isAuthenticated);
   useEffect(() => {
     if(!auth.isAuthenticated){
+		navigate('/sign-in')
       dispatch(logoutUser())
-      navigate('/sign-in')
       return;
     }
     console.log(auth.isAuthenticated);

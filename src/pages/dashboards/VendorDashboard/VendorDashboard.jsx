@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import classes from './VendorDashboard.module.css'
 import AppLayout from '../../../components/layout/AppLayout'
 import VendorMain from '../../../components/vendorDashboard/vendorMain/VendorMain'
@@ -12,6 +12,15 @@ import VendorPopUp from '../../../components/vendorDashboard/vendorPopUp/VendorP
   
 
 const VendorDashboard = () => {
+  let   shouldPopUp = localStorage.getItem('SHOW_MODAL')
+  
+  useEffect(() => {
+  
+
+    return () => {
+      localStorage.removeItem('SHOW_MODAL')
+    };
+  }, [])
 
   return (
     <AppLayout>
@@ -35,10 +44,11 @@ const VendorDashboard = () => {
               <VendorRatings />
             </div>
         </div>
-
+{
+  shouldPopUp &&
         <div>
          <VendorPopUp />
-        </div>
+        </div>}
         
     </AppLayout>
   )

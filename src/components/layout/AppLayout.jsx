@@ -15,21 +15,20 @@ import { useSelector } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import { useNavigate } from 'react-router-dom';
 import { getCustomerCancelledTransactions, getCustomerCompletedTransactions, getCustomerOngoingTransactions, getCustomerTransactions } from '../../actions/customerTransactionActions';
+import Notifications from './notification/Notifications';
 import { listNotifications } from '../../actions/notificationActions';
 import { vendorSearch } from '../../actions/miscActions';
-import Notification from './notification/Notification';
 import { Link } from 'react-router-dom';
 import { getWalletTransactionsDetails } from '../../actions/walletActions';
 const { Header, Content, Sider } = Layout;
-
-
-
 
 
 const AppLayout = ({children}) => {
 
   const {loading, error, data} = useSelector(state => state.user);
   const notification = useSelector(state => state.notification);
+  let detail = localStorage.getItem('USER_DETAILS')
+  let usertype =JSON.parse(detail).data.usertype;
 
   const auth = useSelector(state => state.auth)
   const dispatch = useDispatch();
@@ -102,7 +101,7 @@ const AppLayout = ({children}) => {
 
           <div className='side-tab-wrapper'>
                <div className='side-tab-con'>
-                <VscHome style={{color: '#ffff'}} /><span onClick={()=>navigate('/customer-dashboard')}
+                <VscHome style={{color: '#ffff'}} /><span onClick={usertype === 'VENDOR'? () => navigate('/vendor-dashboard') : ()=>navigate('/customer-dashboard')}
                 className='side-tabs'>DASHBOARD</span>
                </div>
      
@@ -148,7 +147,7 @@ const AppLayout = ({children}) => {
 
                   {/* NOTIFICATION */}
           <div className='header-div-3'>
-             <Notification />
+             <Notifications />
           </div>
 
                      {/* INITIALS */}
