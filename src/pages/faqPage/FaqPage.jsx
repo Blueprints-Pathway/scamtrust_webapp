@@ -1,9 +1,9 @@
 import React from 'react'
 import classes from './FaqPage.module.css'
-import AppLayout from '../../components/Layout/AppLayout'
 import { Tabs } from 'antd';
 import VendorFaq from './vendorfaq/VendorFaq';
 import BuyerFaq from './buyerfaq/BuyerFaq';
+import AppLayout from '../../components/layout/AppLayout';
 
 const FaqPage = () => {
 

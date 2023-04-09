@@ -16,9 +16,8 @@ import CashAccount from "./CashAccount";
 import EditAdress from "./EditAdress";
 // import logo from "../../assets/images/loader-img.png";
 function GeneralSettings() {
-	const [details, setDetails] = useState({});
 
-	const [show, setShow] = useState(false);
+
 
 	const [values, setValues] = useState({
 		businessName: "",
@@ -196,10 +195,7 @@ function GeneralSettings() {
 	};
 	const [Edit, setEdit] = useState(false);
 
-	const handleClosed1 = () => {
-		setClosed1(!closed1);
-	};
-	const [closed1, setClosed1] = useState(false);
+
 
 	const handleClosed2 = () => {
 		setClosed2(!closed2);
@@ -295,7 +291,7 @@ function GeneralSettings() {
 
 	const handleEdit1 = () => {
 		setEdit1(!Edit1);
-		setClosed1(false);
+		
 	};
 	const [Edit1, setEdit1] = useState(false);
 	const handleEdit7 = () => {
@@ -428,7 +424,7 @@ function GeneralSettings() {
 
 				<div className="w-full  inputBox-GeneralSettings flex">
 					<label className="flex form-text-GeneralSettings">
-						{details.usertype === "CUSTOMER" ? "UserName" : "Business names"}
+						{data?.data?.usertype === "CUSTOMER"? "UserName" : "Business names"}
 					</label>
 
 					<input
@@ -500,7 +496,7 @@ function GeneralSettings() {
 					)}
 				</div>
 
-				{details.usertype === "CUSTOMER" ? (
+				{data?.data?.usertype === "CUSTOMER" ? (
 					""
 				) : (
 					<div className="flex w-full inputBox-GeneralSettings">

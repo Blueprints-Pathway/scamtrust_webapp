@@ -22,6 +22,7 @@ import Completed from "./pages/transactions/completed/Completed"
 import Cancelled from "./pages/transactions/cancelled/Cancelled"
 import Declined from "./pages/transactions/declined/Declined"
 import CancelReason from "./pages/transactions/cancel-reason/CancelReason"
+import VendorDetails from "./pages/vendorprofile/VendorDetails"
 import Wallet from "./pages/Wallet/Wallet"
 import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmail"
 import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone"
@@ -59,6 +60,7 @@ const App = () => {
 	
 		<Route path='/customer-registration' element={<CustomerRegistration />} />
 		<Route path='/customer-activate-account' element={<CustomerActivate />} />
+		<Route path="/vendor/:slug" element={<VendorDetails/>} />
 		<Route
         path='/passwordrecoveryemail'
         element={<PasswordRecoveryEmail />}

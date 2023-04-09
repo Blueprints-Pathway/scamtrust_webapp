@@ -26,10 +26,15 @@ const Activate = () => {
                Congrats! We have sent a confirmation link to 
             <span style={{color: '#3AB75D', textDecoration: 'underline'}}> {userInfo.email}</span>. Kindly click to activate Your ScamTrust account
             </p>
-            <Button onClick={() => {
-                dispatch(logoutUser())
-                navigate('/sign-in')}} className='activate-content-btn'>Check Mail</Button>
+            <Button   onClick={() => {
+                dispatch(logoutUser());
+                navigate('/sign-in');
+                window.location.href = 'https://mail.google.com/';
+
+               }} className='activate-content-btn'> Check Mail
+                </Button>
         </div>
+      
     </div>
     </div>
   )

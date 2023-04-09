@@ -9,7 +9,7 @@ import Search from "../../assets/images/svg/search.svg";
 import RidicVentures from "../../assets/images/svg/ridic.svg";
 import APlus from "../../assets/images/svg/a-plus.svg";
 import { fetchUser } from "../../services/auth";
-
+import ReactSearchBox from "react-search-box";
 import moment from "moment";
 import axios from "axios";
 
@@ -90,10 +90,9 @@ const Header = (props) => {
 
 				const data = await axios.get(API_URL, config);
 
-				// console.log(data?.data.data, "user data");
+				
 				setDetails(data?.data?.data);
-				// console.log(values, "values");
-				// return response;
+				
 			} catch (error) {
 				console.log(error, "error");
 			}
@@ -225,7 +224,7 @@ const Header = (props) => {
 		setToggle(false);
 		console.log('close clicked')
 	};
-
+console.log(user_details,"details")
 	return (
 		<div
 			className={`${headerItemClassName} flex justify-center lg:justify-between items-center w-full h-full shadow-md z-50`}
@@ -242,7 +241,7 @@ const Header = (props) => {
 							type="text"
 							value={searchInput}
 							onChange={(e) => searchItems(e.target.value)}
-							placeholder="Search vendor's name"
+							placeholder="Searchs vendor's name"
 							className="bg-[#C0C0C021] w-full h-full rounded-[50px] focus:outline-none pl-5 pr-5 md:pr-[60px]"
 						/>
 					) : null}
@@ -254,13 +253,13 @@ const Header = (props) => {
 						/>
 					) : null}
 					<div className="overflow-y-scroll flex-column items-center justify-center h-42">
-						{searchInput.length > 0
+						{searchInput?.length > 0
 							? items?.map((item, id) => {
-									console.log(item, "new data");
+									console.log(item, "new data search");
 
 									return (
 										<div
-											key={item?.id}
+											key={id}
 											className="flex items-center justify-center overflow-y-scroll h-32"
 										>
 											<div className="flex items-center justify-center py-2 px-3 max-w-sm ml-auto bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">

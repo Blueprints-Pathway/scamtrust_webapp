@@ -316,6 +316,8 @@ export const login = (data) => async (dispatch) => {
            localStorage.setItem('USER_TOKEN', response.data.data.access_token);
            localStorage.setItem('LOGGED_IN', 'LOGGED IN SUCCESSFULLY');
            localStorage.setItem('USER_DETAILS', JSON.stringify(response.data));
+           localStorage.setItem('SHOW_MODAL', 'SHOWMODAL');
+
         }else{
             dispatch(authActions.loginFailure( 
                 response.data.message
@@ -326,8 +328,9 @@ export const login = (data) => async (dispatch) => {
         // ));
       
         }catch(error){
+            console.log(error.response.data.message);
         dispatch(authActions.loginFailure(
-            'Login Unsuccessful'
+            error.response.data.message || 'Login Unsuccessful'
         ));
     }
 }
@@ -338,10 +341,12 @@ dispatch(authActions.logoutUser())
 }
 
 export const  logoutUserTimer = ()  =>  (dispatch) =>  {
+    let detail = localStorage.getItem('USER_DETAILS')
+    let tokenExpirationTime =JSON.parse(detail).data.expires_in;
     setTimeout(() =>{
         dispatch(userActions.resetUserData())
         dispatch(authActions.logoutUser())
-      },216000)
+      },tokenExpirationTime * 1000)
 
       console.log('logout timer');
   

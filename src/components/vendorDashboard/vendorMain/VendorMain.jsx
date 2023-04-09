@@ -7,8 +7,10 @@ import { Progress } from 'antd'
 import { CgNotes } from 'react-icons/cg'
 import { useSelector } from 'react-redux'
 
+
 const VendorMain = (props) => {
     const {loading, error, data} = useSelector(state => state.user);
+    const vendorTransactions = useSelector(state => state.vendorTransaction)
   return (
     <div className={classes['wrapper']}>
             <div className={classes['con']}>
@@ -30,7 +32,7 @@ const VendorMain = (props) => {
                     <div className={classes['content-middle']}>
                         <div className={classes['content-middle-top']}>
                             <p className={classes['content-middle-top-left']}>Progress</p>
-                            <p className={classes['content-middle-top-right']}>200 transactions</p>
+                            <p className={classes['content-middle-top-right']}>{vendorTransactions.allTransactions.length} transactions</p>
                         </div>
                         <div className={classes['content-progress-con']}>
                           <Progress className={classes['content-progress']} percent={50} showInfo={false} />
@@ -38,7 +40,7 @@ const VendorMain = (props) => {
                         <div className={classes['content-middle-bottom']}>
                            <div className={classes['content-middle-bottom-con']}>
                               <CgNotes className={classes['content-middle-bottom-icon']} />
-                              <p className={classes['content-middle-bottom-text']}>10 done</p>
+                              <p className={classes['content-middle-bottom-text']}>{vendorTransactions.completedTransactions.length} done</p>
                            </div>
                         </div>
                     </div>

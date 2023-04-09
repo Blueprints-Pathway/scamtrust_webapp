@@ -1,6 +1,6 @@
 import { Button, Card, Form, Modal, Radio } from 'antd'
 import React, { useState } from 'react'
-import AppLayout from '../../../components/Layout/AppLayout'
+import AppLayout from '../../../components/layout/AppLayout'
 import classes from './CancelReason.module.css'
 import { HiArrowNarrowLeft } from 'react-icons/hi'
 import { useNavigate, useParams } from 'react-router-dom'

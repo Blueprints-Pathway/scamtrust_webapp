@@ -1,13 +1,13 @@
 /** @format */
 
 import React, { useState, useEffect } from "react";
-import "../../components/Layout/AppLayout.css";
+import "../../components/layout/AppLayout.css";
 import swal from "sweetalert";
 import shielgg from "../../assets/images/shielgg 3.svg";
 
 import GeneralSettings from "./GeneralSettings";
 
-import AppLayout from "../../components/Layout/AppLayout";
+import AppLayout from "../../components/layout/AppLayout";
 import PrivacySettings from "./PrivacySettings";
 import SecuritySettings from "./SecuritySettings";
 import { useSelector } from "react-redux";

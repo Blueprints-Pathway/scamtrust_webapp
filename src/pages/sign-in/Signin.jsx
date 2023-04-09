@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import scamtrust from '../../assets/images/logo.png'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, } from 'react-router-dom';
 import { login, logoutUser, logoutUserTimer } from '../../actions/authActions';
 import { getCustomerCancelledTransactions, getCustomerCompletedTransactions, getCustomerOngoingTransactions, getCustomerTransactions } from '../../actions/customerTransactionActions';
 
@@ -17,6 +17,7 @@ import { Analytics, LogoutTwoTone } from '@mui/icons-material';
 import { getLoggedInUserDetails } from '../../actions/userActions';
 import { getWalletTransactionsDetails } from '../../actions/walletActions';
 import { listNotifications } from '../../actions/notificationActions';
+import { getVendorCancelledTransactions, getVendorCompletedTransactions, getVendorOngoingTransactions, getVendorTransactions } from '../../actions/vendorTransactionActions';
 
 const customStyles = {
   // overlay: {
@@ -58,6 +59,9 @@ const Signin = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+
+
+
   const loginHandler = (e)  =>  {
     dispatch(login(JSON.stringify(e)));
   
@@ -68,12 +72,22 @@ const Signin = () => {
 
   useEffect(() => {
     if(isAuthenticated){
+
+      if (data?.usertype === 'VENDOR'){
+        dispatch(getVendorTransactions());
+        dispatch(getVendorOngoingTransactions());
+        dispatch(getVendorCancelledTransactions());
+        dispatch(getVendorCompletedTransactions());
+       }else{
+        dispatch(getCustomerTransactions());
+        dispatch(getCustomerOngoingTransactions());
+        dispatch(getCustomerCancelledTransactions());
+        dispatch(getCustomerCompletedTransactions());
+  
+       }
       dispatch(getLoggedInUserDetails());
-      dispatch(getCustomerTransactions());
-      dispatch(getCustomerOngoingTransactions());
       dispatch(getWalletTransactionsDetails())
-      dispatch(getCustomerCancelledTransactions());
-      dispatch(getCustomerCompletedTransactions());
+  
       dispatch(listNotifications());
         console.log(data);
         dispatch(logoutUserTimer())
@@ -169,10 +183,13 @@ const Signin = () => {
          <Button loading = {loading} className='sign-in-btn' htmlType="submit">
               Continue
          </Button>
+
+        
          </div>
         {errorText}
         
         </Form>
+   
                    {/* CREATE ACCOUNT */}
         <div className='sign-create-account'>
           <i>Don’t have an account? 

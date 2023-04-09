@@ -1,6 +1,6 @@
 .container {
     width: 400px;
-    height: 20rem;
+    min-height: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -242,7 +242,7 @@
       .container {
           z-index: 50;
           width: 260px;
-          height: 20rem;
+          height: 10rem;
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
