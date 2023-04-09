@@ -187,10 +187,10 @@ const AppLayout = ({ children }) => {
 							</div>
 
 							<div className="side-bottom-tab">
-								<div className="side-tab-con">
-									<BiSupport style={{ color: "#ffff" }} />
+							<Link to={"/support"} className="side-tab-con">
+									<SlSettings style={{ color: "#ffff" }} />
 									<span className="side-tabs">SUPPORT</span>
-								</div>
+								</Link>
 								<div className="side-tab-con" onClick={logoutUserHandler}>
 									<IoLogOutOutline style={{ color: "#ffff" }} />
 									<span className="side-tabs">LOGOUT</span>

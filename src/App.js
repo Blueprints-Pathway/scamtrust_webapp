@@ -32,6 +32,7 @@ import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhon
 import UpdatedPassword from "./pages/passwordrecovery/UpdatedPassword"
 import SettingsVendor from "../src/pages/SettingsVendor/SettingsVendor"
 import VendorDashboard from "./pages/dashboards/VendorDashboard/VendorDashboard.jsx"
+import Support from "./pages/support/Support"
 // import VendorDashboard from "./pages/dashboards/vendorDashboard/VendorDashboard"
 
 const App = () => {
@@ -57,6 +58,7 @@ const App = () => {
 		<Route path='/set-password' element={<VendorSetPassword />} />
 		<Route path='/transaction-pin' element={<VendorTransactionPin />} />
 		<Route path='/security-question' element={<VendorSecurity />} />
+		<Route path='/support' element={<Support />} />
 	
 		<Route path='/customer-registration' element={<CustomerRegistration />} />
 		<Route path='/customer-activate-account' element={<CustomerActivate />} />
