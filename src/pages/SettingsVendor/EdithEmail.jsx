@@ -71,7 +71,7 @@ function EdithEmail({ closeModal }) {
 	const handleChange = (event) => {
 		const { name, value } = event.target;
 		setValues({ ...values, [name]: value });
-		setSubmit(true);
+		
 	};
 	const [stageOne, setStageOne] = useState(false);
 	const [stageTwo, setStageTwo] = useState(false);

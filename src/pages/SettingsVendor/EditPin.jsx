@@ -11,8 +11,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 
 function EditPin({ closeModal }) {
-	const [closed2, setClosed2] = useState(false);
-	const [Edit2, setEdit2] = useState(false);
+
 	const [loading, setLoading] = useState(false);
 	const handleInput = () => {
 		setInput(!Input);
@@ -77,9 +76,7 @@ function EditPin({ closeModal }) {
 	return (
 		<>
 			<div
-				className={
-					closed2 ? "EditDone active" : Edit2 ? "EditDone" : "EditDone active"
-				}
+				
 				// class="relative z-10"
 				aria-labelledby="modal-title"
 				role="dialog"
@@ -132,9 +129,8 @@ function EditPin({ closeModal }) {
 			</div>
 			{stageOne && (
 				<div
-					className={
-						closed2 ? "EditDone active" : Edit2 ? "EditDone" : "EditDone active"
-					}
+				
+					
 					// class="relative z-10"
 					aria-labelledby="modal-title"
 					role="dialog"
@@ -186,9 +182,7 @@ function EditPin({ closeModal }) {
 
 			{stageTwo && (
 				<div
-					className={
-						closed2 ? "EditDone active" : Edit2 ? "EditDone" : "EditDone active"
-					}
+					
 					// class="relative z-10"
 					aria-labelledby="modal-title"
 					role="dialog"
