@@ -15,7 +15,7 @@ import { useLocation } from "react-router-dom";
 import { Rate } from "antd";
 import { useSelector } from "react-redux";
 import Modal from "react-modal";
-import "./VendorProfile.module.css";
+
 import AppLayout from "../../components/layout/AppLayout";
 const VendorDetails = () => {
 	const [details, setDetails] = useState();
@@ -92,8 +92,8 @@ const VendorDetails = () => {
 	console.log(details, "hello details");
 	return (
 		<AppLayout>
-			<div className="centerprofile md:mt-10 -mt-5 rounded-[25px] h-full overflow-hidden ">
-				<div className="mt-12 ">
+			<div className="w-full h-full rounded-3xl md:mt-10 -mt-5  h-5/6 overflow-hidden  ">
+				<div className="mt-12 md:mx-10">
 					<div className=" h-[120px] z-0 md:h-[150px] 2xl:h-[15vh] bg-[#232164] rounded-t-3xl ">
 						<div className="flex flex-row justify-end items-center">
 							<img
@@ -134,7 +134,7 @@ const VendorDetails = () => {
 					</div>
 				</div>
 
-				<div className="pt-28 md:pt-36 px-4 md:px-2 lg:px-20 bg-white mb-9 pb-9 rounded-b-[25px]">
+				<div className="pt-28 md:pt-36 md:mx-10 px-4 md:px-2 lg:px-20 bg-white mb-9 pb-9 rounded-b-[25px]">
 					<div className="">
 						<div className="px-5 mb-4 md:mb-9 flex justify-between items-center border-b-2 border-b-[#EAEAEA]">
 							<div className="flex mb-2">
