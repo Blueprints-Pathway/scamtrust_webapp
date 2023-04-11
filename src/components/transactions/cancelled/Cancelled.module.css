@@ -9,6 +9,9 @@
     margin: 15px 0px;
 }
 .con{
+    margin-top: 0px;
+}
+.empty-con{
     margin-top: 125px;
 }
 .first{
@@ -99,7 +102,10 @@
         margin: 15px 0px;
     }
     .con{
-        margin-top: 125px;
+        margin-top: 0px;
+    }
+    .empty-con{
+        margin-top: 120px;
     }
     .first{
         display: flex;
@@ -191,7 +197,10 @@
         margin: 15px 0px;
     }
     .con{
-        margin-top: 125px;
+        margin-top: 0px;
+    }
+    .empty-con{
+        margin-top: 100px;
     }
     .first{
         display: flex;
@@ -283,6 +292,9 @@
         margin-right: 0px;
     }
     .con{
+        margin-top: 0px;
+    }
+    .empty-con{
         margin-top: 100px;
     }
     .first{

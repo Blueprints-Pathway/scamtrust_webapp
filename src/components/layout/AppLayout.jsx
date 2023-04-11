@@ -186,6 +186,17 @@ const AppLayout = ({ children }) => {
 								</Link>
 							</div>
 
+        {/* <div className='header-right-div'> */}
+              {/* SEARCH INPUT  */}
+          {/* <div className='search'>  
+             <div className='header-div-2'>
+               <div className='header-input-icon'> <img className='input-icon-img' src={search} alt="..." /> </div>
+               <input onChange={searchInputChangeHandler} className='header-input' type="text" placeholder='Search vendor’s name' />
+             </div> */}
+             {/* <div>
+               <Search />
+             </div> */}
+          {/* </div> */}
 							<div className="side-bottom-tab">
 							<Link to={"/support"} className="side-tab-con">
 									<SlSettings style={{ color: "#ffff" }} />

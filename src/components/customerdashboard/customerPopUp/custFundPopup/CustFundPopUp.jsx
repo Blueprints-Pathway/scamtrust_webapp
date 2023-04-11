@@ -1,43 +1,47 @@
 import React from 'react'
-import { Button, Modal } from 'antd';
+import classes from './CustFundPopup.module.css'
+import { Modal } from 'antd';
 import { useState } from 'react';
-import classes from './Fundbutton.module.css'
 import { MdContentCopy } from 'react-icons/md'
-import { Navigate, useNavigate } from 'react-router-dom';
+import fund from '../../../../assets/images/withdrawal.png'
 
 
-const Fundbutton = (props) => {
-  const [isModalOpen1, setIsModalOpen1] = useState(false);
-  const [isModalOpen2, setIsModalOpen2] = useState(false);
-  const [copied, setCopied] = useState(false)
-
-  const showModal1 = () => {
-    setIsModalOpen1(true);
-  };
-  const handleCancel1 = () => {
-    setIsModalOpen1(false);
-  };
+const CustFundPopUp = (props) => {
+    const [isModalOpen1, setIsModalOpen1] = useState(false);
+    const [isModalOpen2, setIsModalOpen2] = useState(false);
+    const [copied, setCopied] = useState(false)
   
-
-  const showModal2 = () => {
-    setIsModalOpen2(true);
-    setIsModalOpen1(false);
-  };
-  const handleCancel2 = () => {
-    setIsModalOpen2(false);
-  };
-
-  const handleCopy = () => {
-    setCopied(true)
-    navigator.clipboard.writeText(props.accountNumber)
-  }
-
+    const showModal1 = () => {
+      setIsModalOpen1(true);
+    };
+    const handleCancel1 = () => {
+      setIsModalOpen1(false);
+    };
+    
+  
+    const showModal2 = () => {
+      setIsModalOpen2(true);
+      setIsModalOpen1(false);
+    };
+    const handleCancel2 = () => {
+      setIsModalOpen2(false);
+    };
+  
+    const handleCopy = () => {
+      setCopied(true)
+      navigator.clipboard.writeText(props.accountNumber)
+    }
 
   return (
     <div>
-         <button onClick={showModal1} 
-        //  style={style}
-         className={classes['fund-btn']}>FUND</button>
+           {/* <button onClick={showModal1} 
+         className={classes['fund-btn']}>FUND</button> */}
+
+       <div onClick={showModal1} 
+        className={classes['card-down']}>
+           <img className={classes['card-icon']} src={fund} alt="" />
+           <p className={classes['card-words']}>Fund your wallet</p>
+        </div>
 
                    {/* FIRST MODAL */}
          <Modal open={isModalOpen1}
@@ -102,4 +106,4 @@ const Fundbutton = (props) => {
   )
 }
 
-export default Fundbutton
+export default CustFundPopUp

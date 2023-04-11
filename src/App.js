@@ -24,16 +24,16 @@ import Declined from "./pages/transactions/declined/Declined"
 import CancelReason from "./pages/transactions/cancel-reason/CancelReason"
 import VendorDetails from "./pages/vendorprofile/VendorDetails"
 import Wallet from "./pages/Wallet/Wallet"
-
-// import PasswordRecovery from "./pages/passwordrecoverey/PasswordRecovery"
-// import Transaction from "./pages/dashboards/transactions/Transaction"
 import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmail"
 import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone"
 import UpdatedPassword from "./pages/passwordrecovery/UpdatedPassword"
 import SettingsVendor from "../src/pages/SettingsVendor/SettingsVendor"
-import VendorDashboard from "./pages/dashboards/VendorDashboard/VendorDashboard.jsx"
+import VendorDashboard from "./pages/dashboards/vendorDashboard/VendorDashboard.jsx"
 import Support from "./pages/support/Support"
-// import VendorDashboard from "./pages/dashboards/vendorDashboard/VendorDashboard"
+import Fundbutton from "./components/buttons/fundbutton/Fundbutton"
+import FaqPage from "./pages/faqPage/FaqPage"
+
+
 
 const App = () => {
   return (
@@ -45,9 +45,9 @@ const App = () => {
 		<Route path='/faq' element={<Faq />} />
 		<Route path='/about' element={<About />} />
 		<Route path='/know-more' element={<KnowMore />} />
-  
+
+
 		{/* SCAMTRUST WEBAPP */}
-		
 		<Route path='/customer-dashboard' element={<CustomerDashboard />} />
 		<Route path='/vendor-dashboard' element={<VendorDashboard />} />
 		<Route path='/sign-in' element={<Signin />} />
@@ -57,7 +57,8 @@ const App = () => {
 		<Route path='/verify-bvn' element={<VendorBvn />} />
 		<Route path='/set-password' element={<VendorSetPassword />} />
 		<Route path='/transaction-pin' element={<VendorTransactionPin />} />
-		<Route path='/security-question' element={<VendorSecurity />} />
+		<Route path='/security-question' element={<VendorSecurity />} /> 
+		<Route path='/faq-page' element={<FaqPage />} /> 
 		<Route path='/support' element={<Support />} />
 	
 		<Route path='/customer-registration' element={<CustomerRegistration />} />
@@ -89,6 +90,7 @@ const App = () => {
 {/* 
                               WALLET */}
 		<Route path='/wallet' element={<Wallet />} />
+		<Route path='/fund-wallet' element={<Fundbutton />} />
 
 	</Routes>
   )
