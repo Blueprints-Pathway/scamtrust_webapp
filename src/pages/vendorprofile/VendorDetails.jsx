@@ -16,6 +16,8 @@ import { Rate } from "antd";
 import { useSelector } from "react-redux";
 import Modal from "react-modal";
 import AppLayout from "../../components/layout/AppLayout";
+import Createtransaction from "../../components/buttons/createtransaction-btn/Createtransaction";
+import classes from "../../pages/transactions/Transactions.module.css";
 const VendorDetails = () => {
 	const [details, setDetails] = useState();
 	// const [rating, setRating] = useState(0);
@@ -27,7 +29,8 @@ const VendorDetails = () => {
 	const [initiate, setInitiate] = useState(false);
 	const id = location?.state?.id;
 	const [modalIsOpen, setModalIsOpen] = useState(false);
-
+	let detail = localStorage.getItem("USER_DETAILS");
+	let usertype = JSON.parse(detail).data.usertype;
 	const auth = useSelector((state) => state.auth);
 	// const handleRating = (rate: number) => {
 	// 	setRating(rate);
@@ -119,15 +122,12 @@ const VendorDetails = () => {
 									<p className=" text-sm md:text-2xl">{details?.vendor_id}</p>
 								</div>
 							</div>
-							<div className="flex justify-between mt-8 md:mt-10">
-								<button
-									onClick={"onCreateTransactionClicked"}
-									className="bg-[#232164]  text-xs lg:text-base flex text-white items-center rounded-md px-2 py-1 lg:py-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-700"
-								>
-									<span>Create transaction</span>
-
-									<img src={Add} alt="add" className="mb-[-6px]" />
-								</button>
+							<div className={classes["transaction-heading"]}>
+								{usertype === "CUSTOMER" && (
+									<button className={classes["transaction-btn"]}>
+										<Createtransaction vendor_id={details?.vendor_id} />
+									</button>
+								)}
 							</div>
 						</div>
 					</div>
@@ -177,31 +177,47 @@ const VendorDetails = () => {
 						<div className="bg-[rgba(237,237,237,0.4)] py-4 px-2 md:px-11 mb-5 md:mb-0 md:w-[375px] lg:w-[600px] rounded-2xl grid">
 							<div className="flex justify-between">
 								<p className=" md:text-lg text-sm">Delivery</p>
-								<Rate style={{ 
-									height:"10px",
-									marginTop:"-2px"
-								 }} allowHalf defaultValue={2.5} />
+								<Rate
+									style={{
+										height: "10px",
+										marginTop: "-2px",
+									}}
+									allowHalf
+									defaultValue={2.5}
+								/>
 							</div>
 							<div className="flex justify-between">
 								<p className=" md:text-lg text-sm">Price</p>
-								<Rate style={{ 
-									height:"10px",
-									marginTop:"-2px"
-								 }} allowHalf defaultValue={2.5} />
+								<Rate
+									style={{
+										height: "10px",
+										marginTop: "-2px",
+									}}
+									allowHalf
+									defaultValue={2.5}
+								/>
 							</div>
 							<div className="flex justify-between">
 								<p className=" md:text-lg text-sm">Service</p>
-								<Rate style={{ 
-									height:"10px",
-									marginTop:"-2px"
-								 }}allowHalf defaultValue={2.5} />
+								<Rate
+									style={{
+										height: "10px",
+										marginTop: "-2px",
+									}}
+									allowHalf
+									defaultValue={2.5}
+								/>
 							</div>
 							<div className="flex justify-between">
 								<p className=" md:text-lg text-sm">Quality</p>
-								<Rate style={{ 
-									height:"10px",
-									marginTop:"-2px"
-								 }} allowHalf defaultValue={2.5} />
+								<Rate
+									style={{
+										height: "10px",
+										marginTop: "-2px",
+									}}
+									allowHalf
+									defaultValue={2.5}
+								/>
 							</div>
 						</div>
 						<div>
@@ -254,11 +270,5 @@ const VendorDetails = () => {
 	);
 };
 
-const RATING = [
-	{ service: "Delivery", rating: 3 },
-	{ service: "Price", rating: 3 },
-	{ service: "Service", rating: 3 },
-	{ service: "Quality", rating: 3 },
-];
 
 export default VendorDetails;
