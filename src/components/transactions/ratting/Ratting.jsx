@@ -1,12 +1,12 @@
-/** @format */
 
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import AppLayout from "../../../components/layout/AppLayout";
+import AppLayout from "../../layout/AppLayout";
 
 import { Button, Rate } from "antd";
+
 const Ratting = () => {
 	const navigate = useNavigate();
 	const [serviceValue, setServiceValue] = useState(0);
