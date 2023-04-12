@@ -45,13 +45,13 @@ const Ongoing = () => {
 			(transaction) => transaction.id == param.id
 		);
 	}
-	console.log(transaction);
+	console.log(param,"hello param");
 	const navigate = useNavigate();
 
 	useEffect(() => {
 		if (transactions.isAcceptTransactionSuccessful) {
 			dispatch(customerTransactionActions.resetAcceptTransactionStatus());
-			navigate(`/completed-transaction/${param.id}`);
+			navigate(`/ongoing-transaction/${param.id}/ratting`);
 		}
 		if (vendorTransactions.isAcceptTransactionSuccessful) {
 			dispatch(vendorTransactionActions.resetAcceptTransactionStatus());
@@ -190,7 +190,7 @@ const Ongoing = () => {
 							onClick={completeTransaction}
 							className={classes["bottom-btn2"]}
 						>
-							{" "}
+							
 							Complete
 						</Button>}
 					</div>
