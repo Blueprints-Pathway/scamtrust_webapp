@@ -32,6 +32,8 @@ import VendorDashboard from "./pages/dashboards/vendorDashboard/VendorDashboard.
 import Support from "./pages/support/Support"
 import Fundbutton from "./components/buttons/fundbutton/Fundbutton"
 import FaqPage from "./pages/faqPage/FaqPage"
+import Ratting from "./components/transactions/ratting/Ratting";
+
 
 
 
@@ -79,15 +81,16 @@ const App = () => {
         element={<UpdatedPassword />}
       />
 
-		                {/* TRANSACTIONS */}
-		<Route path='/transactions' element={<Transaction />} />
-		<Route path='/awaiting-approval/:id' element={<Awaiting />} />
-		<Route path='/ongoing-transaction/:id' element={<Ongoing />} />
-		<Route path='/completed-transaction/:id' element={<Completed />} />
-		<Route path='/cancelled-transaction/:id' element={<Cancelled />} />
-		<Route path='/declined-transaction' element={<Declined />} />
-		<Route path='/cancel-reason/:id' element={<CancelReason />} />
-{/* 
+			{/* TRANSACTIONS */}
+			<Route path="/transactions" element={<Transaction />} />
+			<Route path="/awaiting-approval/:id" element={<Awaiting />} />
+			<Route path="/ongoing-transaction/:id" element={<Ongoing />} />
+			<Route path="/ongoing-transaction/:id/ratting" element={<Ratting />} />
+			<Route path="/completed-transaction/:id" element={<Completed />} />
+			<Route path="/cancelled-transaction/:id" element={<Cancelled />} />
+			<Route path="/declined-transaction" element={<Declined />} />
+			<Route path="/cancel-reason/:id" element={<CancelReason />} />
+			{/* 
                               WALLET */}
 		<Route path='/wallet' element={<Wallet />} />
 		<Route path='/fund-wallet' element={<Fundbutton />} />
@@ -96,4 +99,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;

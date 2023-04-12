@@ -9,7 +9,7 @@ import Modal1 from './Modal1';
 import Modal2 from './Modal2';
 import Modal3 from './Modal3';
 
-const Createtransaction = () => {
+const Createtransaction = ({vendor_id}) => {
 
   const [modal1Open, setModal1Open] = useState(false);
   const [modal2Open, setModal2Open] = useState(false);
@@ -55,7 +55,7 @@ const Createtransaction = () => {
         cancelButtonProps={{ style: { display: 'none' } }}
       >
 
-        <Modal1 confirm={confirm} />
+        <Modal1 confirm={confirm} vendor_id={vendor_id}/>
 
       </Modal>
 

@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { initiateTransactionActions } from '../../../reducers/initiateTransactionReducer';
 
-const Modal1 = ({confirm, showTrans}) => {
+const Modal1 = ({confirm, showTrans,vendor_id}) => {
 const dispatch =  useDispatch();
 
     // const layout = {
@@ -35,7 +35,7 @@ const dispatch =  useDispatch();
         console.log('Failed:', errorInfo);
       };
  
-
+      console.log(vendor_id,"id")
   return (
     <div className={classes['wrapper']}>
         <Form className={classes['form-con']} layout="vertical"
@@ -47,6 +47,7 @@ const dispatch =  useDispatch();
             <div className={classes['row-con']}>
                 <Form.Item 
                 name="vendorID" 
+                
                 rules={[
                     {
                       required: true,

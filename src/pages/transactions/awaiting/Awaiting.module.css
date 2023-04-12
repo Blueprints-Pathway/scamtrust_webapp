@@ -120,6 +120,35 @@
     width: 240px;
     line-height: 20px;
 }
+.btn-con{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.bottom-btn1{
+    background-color: #EDEDED;
+    font-size: 13px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    padding: 13px 0px;
+    width: 200px;
+    border-radius: 4px;
+    margin: 0px 85px;
+}
+.bottom-btn2{
+    background-color: #3AB75D;
+    color: #ffff;
+    font-size: 13px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    padding: 13px 0px;
+    width: 200px;
+    border-radius: 4px;
+    margin: 0px 85px;
+}
 .footer{
     display: flex;
     align-items: flex-start;

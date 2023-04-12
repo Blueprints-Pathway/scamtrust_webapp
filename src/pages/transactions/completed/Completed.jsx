@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './Completed.module.css'
-import { Card } from 'antd';
+import { Button, Card } from 'antd';
 import { Steps } from 'antd';
 import { HiArrowNarrowLeft } from 'react-icons/hi'
 import FooterLogo from '../../../components/FooterLogo/FooterLogo';
@@ -31,7 +31,8 @@ const Completed = () => {
    
     let transaction = transactions.allTransactions.find(transaction => transaction.id == param.id);
     if(usertype === 'VENDOR'){
-        transaction = vendorTransactions.allTransactions.find(transaction => transaction.id === param.id);
+		console.log(vendorTransactions.allTransactions);
+        transaction = vendorTransactions.completedTransactions.find(transaction => transaction.id == param.id);
 
     }
     console.log(transaction)
@@ -48,16 +49,16 @@ const navigate=useNavigate()
 						{/* TOP LEFT */}
 						<div className={classes["top-left"]}>
 							<div className={classes["left-1"]}>
-								<p className={classes["top-left-id"]}>ID - 6057702</p>
-								<p className={classes["top-left-vendor"]}>Ridic Ventures </p>
+								<p className={classes["top-left-id"]}>ID - {transaction.transaction_id}</p>
+								<p className={classes["top-left-vendor"]}>{transaction?.vendor?.name || transaction?.customer?.username} </p>
 							</div>
 							{/* TOP MIDDLE */}
 							<div className={classes["top-middle"]}>
 								<p className={classes["top-middle-status"]}>
 									<b>Status:</b>
-									<span className={classes["top-middle-span"]}>Completed</span>
+									<span className={classes["top-middle-span"]}>{transaction.status}</span>
 								</p>
-								<p className={classes["top-middle-date"]}>Today, 8:48 AM</p>
+								<p className={classes["top-middle-date"]}>{transaction.due_date}</p>
 							</div>
 						</div>
 						{/* TOP RIGHT */}
@@ -82,31 +83,39 @@ const navigate=useNavigate()
 							</div>
 							<div className={classes["content-con"]}>
 								<div className={classes["content"]}>
-									<p className={classes["content-left"]}>Product name</p>
+									<p className={classes["content-left"]}>{transaction.product_name}</p>
 									<i className={classes["content-right"]}>iPhone</i>
 								</div>
 								<div className={classes["content"]}>
 									<p className={classes["content-left"]}>Product amount</p>
-									<i className={classes["content-right"]}>₦15.00</i>
+									<i className={classes["content-right"]}>₦{transaction.amount}</i>
 								</div>
 								<div className={classes["content"]}>
 									<p className={classes["content-left"]}>Quantity</p>
-									<i className={classes["content-right"]}>2</i>
+									<i className={classes["content-right"]}>{transaction.quantity}</i>
 								</div>
 								<div className={classes["content"]}>
 									<p className={classes["content-left"]}>Due date</p>
-									<i className={classes["content-right"]}>25 - 5 -2022</i>
+									<i className={classes["content-right"]}>{transaction.due_date}</i>
 								</div>
 								<div className={classes["content"]}>
 									<p className={classes["content-left"]}>Description</p>
 									<i className={classes["content-right"]}>
-										One pair of black female corporate heel shoes and one pair
-										of white unbranded sneakers
+									{transaction.description}
 									</i>
 								</div>
 							</div>
 						</div>
 					</div>
+
+					{ usertype === "VENDOR" &&	<Button
+						
+							// onClick={completeTransaction}
+							className={classes["bottom-btn2"]}
+						>
+							{" "}
+							View Rating
+						</Button>}
 					<div className={classes["footer"]}>
 						<FooterLogo />
 					</div>
