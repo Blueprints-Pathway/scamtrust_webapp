@@ -36,6 +36,7 @@ import Ratting from "./components/transactions/ratting/Ratting";
 import Fundbutton from "./components/buttons/fundbutton/Fundbutton"
 import FaqPage from "./pages/faqPage/FaqPage"
 import RateTransactions from "./pages/transactions/RateTransaction/RateTransactions";
+import ViewRattings from "./pages/transactions/viewRattings/ViewRattings";
 
 
 
@@ -87,7 +88,9 @@ const App = () => {
 			<Route path="/declined-transaction" element={<Declined />} />
 			<Route path="/cancel-reason/:id" element={<CancelReason />} />
 			<Route path="/rate-vendor" element={<RateTransactions />} />
+			<Route path="/view-rattings" element={<ViewRattings />} />
 			{/* 
+			
                               WALLET */}
 		<Route path='/wallet' element={<Wallet />} />
 		<Route path='/fund-wallet' element={<Fundbutton />} />

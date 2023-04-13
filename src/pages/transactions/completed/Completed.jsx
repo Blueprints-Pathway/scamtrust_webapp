@@ -108,21 +108,24 @@ const navigate=useNavigate()
 						</div>
 					</div>
 
-					<div className={classes["down-button-con"]}>
-						<button onClick={()=>navigate('/rate-vendor')} 
-						className={classes["down-button"]}>Rate Vendor</button>
-					</div>
 
 
-					{/* { usertype === "VENDOR" &&	<Button
+					{ usertype === "VENDOR" ?	<Button
 						
 							// onClick={completeTransaction}
 							className={classes["bottom-btn2"]}
 						>
-							{" "}
 							View Rating
-						</Button>} */}
-						
+						</Button> 
+						:
+
+						<div className={classes["down-button-con"]}>
+						<button onClick={()=>navigate('/rate-vendor')} 
+						className={classes["down-button"]}>Rate Vendor</button>
+					</div>
+					
+						}
+
 					<div className={classes["footer"]}>
 						<FooterLogo />
 					</div>
