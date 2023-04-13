@@ -1,0 +1,380 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+.con{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px;
+    width: 55vw;
+    height: 36rem;
+    padding: 0px 15px;
+}
+.titleCon{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 13px;
+}
+.title{
+    font-size: 23px;
+    font-weight: 600;
+    color: #232164;
+}
+.hr{
+    border: 1px solid #7070703D;
+    margin: 2px 0px;
+}
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 0px 0px 0px;
+}
+.rateCon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 55px;
+}
+.rateTitle{
+    font-size: 18px;
+    font-weight: 500;
+    color: #242323;
+    margin-bottom: -15px;
+}
+.rate{
+    font-size: 47px;
+    margin: 0px 10px;
+}
+.rateHr{
+    margin: 0px 20px;
+}
+.buttonCon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    margin-bottom: 15px;
+}
+.button{
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffff;
+    background-color: #232164;
+    width: 380px;
+    padding: 14px 0px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 100px;
+    }
+    .con{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 15px;
+        width: 55vw;
+        height: 34rem;
+        padding: 0px 15px;
+    }
+    .titleCon{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-bottom: 13px;
+    }
+    .title{
+        font-size: 23px;
+        font-weight: 600;
+        color: #232164;
+    }
+    .hr{
+        border: 1px solid #7070703D;
+        margin: 2px 0px;
+    }
+    .content{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0px 0px 0px 0px;
+    }
+    .rateCon{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 55px;
+    }
+    .rateTitle{
+        font-size: 18px;
+        font-weight: 500;
+        color: #242323;
+        margin-bottom: -15px;
+    }
+    .rate{
+        font-size: 37px;
+        margin: 0px 10px;
+    }
+    .rateHr{
+        margin: 0px 20px;
+    }
+    .buttonCon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 80px;
+        margin-bottom: 15px;
+    }
+    .button{
+        font-size: 14px;
+        font-weight: 400;
+        color: #ffff;
+        background-color: #232164;
+        width: 360px;
+        padding: 14px 0px;
+        border-radius: 3px;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    .con{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 15px;
+        width: 55vw;
+        height: 27rem;
+        padding: 0px 15px;
+    }
+    .titleCon{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-bottom: 0px;
+    }
+    .title{
+        font-size: 18px;
+        font-weight: 600;
+        color: #232164;
+    }
+    .hr{
+        border: 1px solid #7070703D;
+        margin: 1px 0px;
+    }
+    .content{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0px 10px 0px 10px;
+    }
+    .rateCon{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 55px;
+    }
+    .rateTitle{
+        font-size: 12px;
+        font-weight: 500;
+        color: #242323;
+        margin-bottom: -8px;
+    }
+    .rate{
+        font-size: 27px;
+        margin: 0px 10px;
+    }
+    .rateHr{
+        margin: 0px 20px;
+    }
+    .buttonCon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 70px;
+        margin-bottom: 5px;
+    }
+    .button{
+        font-size: 11px;
+        font-weight: 400;
+        color: #ffff;
+        background-color: #232164;
+        width: 280px;
+        padding: 9px 0px;
+        border-radius: 3px;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 768px) {
+    .wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
+    .con{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 15px;
+        width: 70vw;
+        height: 27rem;
+        padding: 0px 15px;
+    }
+    .titleCon{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-bottom: 0px;
+    }
+    .title{
+        font-size: 18px;
+        font-weight: 600;
+        color: #232164;
+    }
+    .hr{
+        border: 1px solid #7070703D;
+        margin: 1px 0px;
+    }
+    .content{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0px 10px 0px 10px;
+    }
+    .rateCon{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 55px;
+    }
+    .rateTitle{
+        font-size: 12px;
+        font-weight: 500;
+        color: #242323;
+        margin-bottom: -8px;
+    }
+    .rate{
+        font-size: 27px;
+        margin: 0px 10px;
+    }
+    .rateHr{
+        margin: 0px 20px;
+    }
+    .buttonCon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 70px;
+        margin-bottom: 5px;
+    }
+    .button{
+        font-size: 11px;
+        font-weight: 400;
+        color: #ffff;
+        background-color: #232164;
+        width: 280px;
+        padding: 9px 0px;
+        border-radius: 3px;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 540px) {
+    .wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
+    .con{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        width: 90vw;
+        height: 25rem;
+        padding: 0px 0px;
+    }
+    .titleCon{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-bottom: 0px;
+    }
+    .title{
+        font-size: 15px;
+        font-weight: 600;
+        color: #232164;
+    }
+    .hr{
+        border: 1px solid #7070703D;
+        margin: 1px 0px;
+    }
+    .content{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0px 0px 0px 0px;
+    }
+    .rateCon{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 55px;
+    }
+    .rateTitle{
+        font-size: 10px;
+        font-weight: 500;
+        color: #242323;
+        margin-bottom: -5px;
+    }
+    .rate{
+        font-size: 21px;
+        margin: 0px 0px;
+    }
+    .rateHr{
+        margin: 0px 20px;
+    }
+    .buttonCon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 60px;
+        margin-bottom: 0px;
+    }
+    .button{
+        font-size: 10px;
+        font-weight: 400;
+        color: #ffff;
+        background-color: #232164;
+        width: 270px;
+        padding: 10px 0px;
+        border-radius: 3px;
+        text-align: center;
+    }
+}

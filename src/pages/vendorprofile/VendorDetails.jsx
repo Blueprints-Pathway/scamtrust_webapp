@@ -15,8 +15,9 @@ import { useLocation } from "react-router-dom";
 import { Rate } from "antd";
 import { useSelector } from "react-redux";
 import Modal from "react-modal";
-import "./VendorProfile.module.css";
 import AppLayout from "../../components/layout/AppLayout";
+import Createtransaction from "../../components/buttons/createtransaction-btn/Createtransaction";
+import classes from "../../pages/transactions/Transactions.module.css";
 const VendorDetails = () => {
 	const [details, setDetails] = useState();
 	// const [rating, setRating] = useState(0);
@@ -28,7 +29,8 @@ const VendorDetails = () => {
 	const [initiate, setInitiate] = useState(false);
 	const id = location?.state?.id;
 	const [modalIsOpen, setModalIsOpen] = useState(false);
-
+	let detail = localStorage.getItem("USER_DETAILS");
+	let usertype = JSON.parse(detail).data.usertype;
 	const auth = useSelector((state) => state.auth);
 	// const handleRating = (rate: number) => {
 	// 	setRating(rate);
@@ -92,8 +94,8 @@ const VendorDetails = () => {
 	console.log(details, "hello details");
 	return (
 		<AppLayout>
-			<div className="centerprofile md:mt-10 -mt-5 rounded-[25px] h-full overflow-hidden ">
-				<div className="mt-12 ">
+			<div className="w-full h-full rounded-3xl md:mt-10 -mt-5  h-5/6 overflow-hidden  ">
+				<div className="mt-12 md:mx-10">
 					<div className=" h-[120px] z-0 md:h-[150px] 2xl:h-[15vh] bg-[#232164] rounded-t-3xl ">
 						<div className="flex flex-row justify-end items-center">
 							<img
@@ -120,21 +122,18 @@ const VendorDetails = () => {
 									<p className=" text-sm md:text-2xl">{details?.vendor_id}</p>
 								</div>
 							</div>
-							<div className="flex justify-between mt-8 md:mt-10">
-								<button
-									onClick={"onCreateTransactionClicked"}
-									className="bg-[#232164]  text-xs lg:text-base flex text-white items-center rounded-md px-2 py-1 lg:py-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-700"
-								>
-									<span>Create transaction</span>
-
-									<img src={Add} alt="add" className="mb-[-6px]" />
-								</button>
+							<div className={classes["transaction-heading"]}>
+								{usertype === "CUSTOMER" && (
+									<button className={classes["transaction-btn"]}>
+										<Createtransaction vendor_id={details?.vendor_id} />
+									</button>
+								)}
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<div className="pt-28 md:pt-36 px-4 md:px-2 lg:px-20 bg-white mb-9 pb-9 rounded-b-[25px]">
+				<div className="pt-28 md:pt-36 md:mx-10 px-4 md:px-2 lg:px-20 bg-white mb-9 pb-9 rounded-b-[25px]">
 					<div className="">
 						<div className="px-5 mb-4 md:mb-9 flex justify-between items-center border-b-2 border-b-[#EAEAEA]">
 							<div className="flex mb-2">
@@ -178,31 +177,47 @@ const VendorDetails = () => {
 						<div className="bg-[rgba(237,237,237,0.4)] py-4 px-2 md:px-11 mb-5 md:mb-0 md:w-[375px] lg:w-[600px] rounded-2xl grid">
 							<div className="flex justify-between">
 								<p className=" md:text-lg text-sm">Delivery</p>
-								<Rate style={{ 
-									height:"10px",
-									marginTop:"-2px"
-								 }} allowHalf defaultValue={2.5} />
+								<Rate
+									style={{
+										height: "10px",
+										marginTop: "-2px",
+									}}
+									allowHalf
+									defaultValue={2.5}
+								/>
 							</div>
 							<div className="flex justify-between">
 								<p className=" md:text-lg text-sm">Price</p>
-								<Rate style={{ 
-									height:"10px",
-									marginTop:"-2px"
-								 }} allowHalf defaultValue={2.5} />
+								<Rate
+									style={{
+										height: "10px",
+										marginTop: "-2px",
+									}}
+									allowHalf
+									defaultValue={2.5}
+								/>
 							</div>
 							<div className="flex justify-between">
 								<p className=" md:text-lg text-sm">Service</p>
-								<Rate style={{ 
-									height:"10px",
-									marginTop:"-2px"
-								 }}allowHalf defaultValue={2.5} />
+								<Rate
+									style={{
+										height: "10px",
+										marginTop: "-2px",
+									}}
+									allowHalf
+									defaultValue={2.5}
+								/>
 							</div>
 							<div className="flex justify-between">
 								<p className=" md:text-lg text-sm">Quality</p>
-								<Rate style={{ 
-									height:"10px",
-									marginTop:"-2px"
-								 }} allowHalf defaultValue={2.5} />
+								<Rate
+									style={{
+										height: "10px",
+										marginTop: "-2px",
+									}}
+									allowHalf
+									defaultValue={2.5}
+								/>
 							</div>
 						</div>
 						<div>
@@ -255,11 +270,5 @@ const VendorDetails = () => {
 	);
 };
 
-const RATING = [
-	{ service: "Delivery", rating: 3 },
-	{ service: "Price", rating: 3 },
-	{ service: "Service", rating: 3 },
-	{ service: "Quality", rating: 3 },
-];
 
 export default VendorDetails;

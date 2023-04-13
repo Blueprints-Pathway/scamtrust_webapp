@@ -24,6 +24,7 @@ import {
 } from "../../actions/customerTransactionActions";
 import { listNotifications } from "../../actions/notificationActions";
 import { vendorSearch } from "../../actions/miscActions";
+// import Notification from "./notification/Notification";
 import { Link } from "react-router-dom";
 import { getWalletTransactionsDetails } from "../../actions/walletActions";
 import Notifications from "./notification/Notifications";
@@ -197,10 +198,10 @@ const AppLayout = ({ children }) => {
              </div> */}
           {/* </div> */}
 							<div className="side-bottom-tab">
-								<div className="side-tab-con">
-									<BiSupport style={{ color: "#ffff" }} />
+							<Link to={"/support"} className="side-tab-con">
+									<SlSettings style={{ color: "#ffff" }} />
 									<span className="side-tabs">SUPPORT</span>
-								</div>
+								</Link>
 								<div className="side-tab-con" onClick={logoutUserHandler}>
 									<IoLogOutOutline style={{ color: "#ffff" }} />
 									<span className="side-tabs">LOGOUT</span>

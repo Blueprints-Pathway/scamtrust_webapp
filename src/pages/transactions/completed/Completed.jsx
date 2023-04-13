@@ -107,6 +107,12 @@ const navigate=useNavigate()
 							</div>
 						</div>
 					</div>
+
+					<div className={classes["down-button-con"]}>
+						<button onClick={()=>navigate('/rate-vendor')} 
+						className={classes["down-button"]}>Rate Vendor</button>
+					</div>
+
 					<div className={classes["footer"]}>
 						<FooterLogo />
 					</div>
