@@ -55,7 +55,7 @@ const CustDashTransaction = () => {
 </div>;
 
    
-   if(transactions.allTransactions.length !== 0){
+   if(transactions.ongoingTransactions.length !== 0){
  
     outgoingTransactionContent = transactions.ongoingTransactions.map((transaction) => {
  

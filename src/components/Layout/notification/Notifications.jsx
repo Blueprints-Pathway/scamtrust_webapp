@@ -1,10 +1,10 @@
 import React from 'react'
 import classes from './Notification.module.css'
 import { Dropdown, Badge, Menu } from 'antd';
-import { BellOutlined } from '@ant-design/icons';
+
 import { GoPrimitiveDot } from 'react-icons/go';
-import { CiLock, CiMail } from 'react-icons/ci';
-import { IoCheckmarkCircleSharp } from 'react-icons/io5';
+import { CiMail } from 'react-icons/ci';
+
 import { MdNotificationsNone } from 'react-icons/md';
 import { useSelector } from 'react-redux';
 

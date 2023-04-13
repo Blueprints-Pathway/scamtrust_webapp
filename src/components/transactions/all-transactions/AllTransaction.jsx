@@ -48,6 +48,14 @@ const AllTransaction = () => {
        dueDate={transaction.due_date} />
      }
      if (transaction.status == 'ACCEPTED BY CUSTOMER') {
+      return <Ongoing 
+     id = {transaction.id}
+     productName={transaction.product_name} 
+     vendorName={transaction.customer.username}
+     totalAmount={transaction.total_amount} 
+     dueDate={transaction.due_date} />
+   }
+     if (transaction.status == 'COMPLETED') {
       return  <CompletedItem id = {transaction.id} product_name =  {transaction.product_name} name = {transaction.customer.username} total_amount = {transaction.total_amount} due_date = {transaction.due_date} />
 
      }
@@ -78,9 +86,19 @@ const AllTransaction = () => {
 
      }
      if (transaction.status == 'ACCEPTED BY CUSTOMER') {
+      return <Ongoing 
+      id = {transaction.id}
+      productName={transaction.product_name} 
+      vendorName={transaction.vendor.name}
+      totalAmount={transaction.total_amount} 
+      dueDate={transaction.due_date} />
+     }
+     if (transaction.status == 'COMPLETED') {
       return  <CompletedItem id = {transaction.id} product_name =  {transaction.product_name} name = {transaction.vendor.name} total_amount = {transaction.total_amount} due_date = {transaction.due_date} />
 
      }
+     
+
   })
 }}
   return (

@@ -16,13 +16,13 @@ const Completed = () => {
 
   if(usertype === 'VENDOR'){
 
-    if (transactions.completedTransactions.length != 0){
+    if (vendorTransactions.completedTransactions.length != 0){
     
    
   
       content = vendorTransactions.completedTransactions.map((transaction) => {
    
-        return <div onClick={()=> navigate('/completed-transaction')}
+        return <div onClick={()=> navigate(`/completed-transaction/${transaction.id}`)}
         className={classes['con']}>
         <div className={classes['wrapper']}>
            <div className={classes['first']}>
@@ -33,7 +33,7 @@ const Completed = () => {
             </div>
           </div>
           <div className={classes['second']}>
-            <p className={classes['vendor']}>{transaction.vendor.name}</p>
+            <p className={classes['vendor']}>{transaction.customer.username}</p>
           </div>
           <div className={classes['third']}>
             <p className={classes['amount']}>₦{transaction.total_amount}</p>

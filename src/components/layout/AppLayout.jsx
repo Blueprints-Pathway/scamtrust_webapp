@@ -198,7 +198,7 @@ const AppLayout = ({ children }) => {
              </div> */}
           {/* </div> */}
 							<div className="side-bottom-tab">
-							<Link to={"/support"} className="side-tab-con">
+								<Link to={"/support"} className="side-tab-con">
 									<SlSettings style={{ color: "#ffff" }} />
 									<span className="side-tabs">SUPPORT</span>
 								</Link>
@@ -249,19 +249,23 @@ const AppLayout = ({ children }) => {
 															</h6>
 															<hr className={classes["hr"]} />
 
-															<div className={classes["vendor-history"]} onClick={() => {
-															navigate(`/vendor/${item?.vendor_id}`, {
-																state: { id: item?.vendor_id },
-															});
-														}} >
+															<div
+																className={classes["vendor-history"]}
+																onClick={() => {
+																	navigate(`/vendor/${item?.vendor_id}`, {
+																		state: { id: item?.vendor_id },
+																	});
+																}}
+															>
 																<div className={classes["vendor-det"]}>
 																	<div className={classes["vendor-icon"]}>
-																	<img src={item?.user?.image_url}/>
+																		<img src={item?.user?.image_url} />
 																	</div>
 																	<div className={classes["vendor-details"]}>
-																		<h5>{item?.user?.name ||item?.user?.username }</h5>
-																		<h6>ID - {item?.vendor_id
-}</h6>
+																		<h5>
+																			{item?.user?.name || item?.user?.username}
+																		</h5>
+																		<h6>ID - {item?.vendor_id}</h6>
 																	</div>
 																</div>
 																<div>

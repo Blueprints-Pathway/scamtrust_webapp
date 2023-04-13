@@ -55,7 +55,7 @@ const VendorPopUp = () => {
                     <div className={classes['content-bottom']}>
                         <div className={classes['bottom-left']}>
                            <p className={classes['card-1-title']}>Need help?</p>
-                           <div onClick={()=>navigate('/faq')}
+                           <div onClick={()=>navigate('/faq-page')}
                            className={classes['card-down']}>
                                <img className={classes['card-1-icon']} src={faq} alt="" />
                                <p className={classes['card-1-words']}>FAQs</p>

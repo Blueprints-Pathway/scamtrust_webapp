@@ -51,14 +51,25 @@ const VendorTransaction = () => {
         }
 
         if (transaction.status == 'ACCEPTED BY CUSTOMER') {
-         return <CompletedHistory
+         return <OngoingHistory
          id = {transaction.id}
          productName={transaction.product_name} 
          vendorName={transaction.customer.username}
          totalAmount={transaction.total_amount} 
          dueDate={transaction.due_date} />
  
-     } })}
+     }
+     if (transaction.status == 'COMPLETED') {
+      return <CompletedHistory
+      id = {transaction.id}
+      productName={transaction.product_name} 
+      vendorName={transaction.customer.username}
+      totalAmount={transaction.total_amount} 
+      dueDate={transaction.due_date} />
+
+  } 
+   
+   })}
  
     let outgoingTransactionContent =  <div className={classes['empty-con']}>
     <Empty />
