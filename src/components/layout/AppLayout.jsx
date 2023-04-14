@@ -146,39 +146,35 @@ const AppLayout = ({ children }) => {
 							</div>
 
 							<div className="side-tab-wrapper">
-								<div className="side-tab-con">
+								<Link to={usertype === "VENDOR" ?"/vendor-dashboard": "/customer-dashboard" } className="side-tab-con">
 									<VscHome style={{ color: "#ffff" }} />
 									<span
-										onClick={
-											usertype === "VENDOR"
-												? () => navigate("/vendor-dashboard")
-												: () => navigate("/customer-dashboard")
-										}
+										
 										className="side-tabs"
 									>
 										DASHBOARD
 									</span>
-								</div>
+								</Link>
 
-								<div className="side-tab-con">
+								<Link to={"/transactions"} className="side-tab-con">
 									<VscArrowSwap style={{ color: "#ffff" }} />
 									<span
-										onClick={() => navigate("/transactions")}
+										
 										className="side-tabs"
 									>
 										TRANSACTIONS
 									</span>
-								</div>
+								</Link>
 
-								<div className="side-tab-con">
+								<Link to={"/wallet"} className="side-tab-con">
 									<CiWallet style={{ color: "#ffff" }} />
 									<span
 										className="side-tabs"
-										onClick={() => navigate("/wallet")}
+										
 									>
 										WALLET
 									</span>
-								</div>
+								</Link>
 
 								<Link to={"/settings"} className="side-tab-con">
 									<SlSettings style={{ color: "#ffff" }} />
@@ -198,14 +194,14 @@ const AppLayout = ({ children }) => {
              </div> */}
           {/* </div> */}
 							<div className="side-bottom-tab">
-								<Link to={"/support"} className="side-tab-con">
+								<Link to={"/support"}  className="side-tab-con">
 									<SlSettings style={{ color: "#ffff" }} />
 									<span className="side-tabs">SUPPORT</span>
 								</Link>
-								<div className="side-tab-con" onClick={logoutUserHandler}>
+								<Link to={"/sign-in"} className="side-tab-con" onClick={logoutUserHandler}>
 									<IoLogOutOutline style={{ color: "#ffff" }} />
 									<span className="side-tabs">LOGOUT</span>
-								</div>
+								</Link>
 							</div>
 						</Menu>
 					</Sider>
@@ -218,7 +214,7 @@ const AppLayout = ({ children }) => {
 
 							<div className="header-right-div">
 								{/* SEARCH INPUT  */}
-								<div className="search">
+								{ usertype == 'CUSTOMER' && <div className="search">
 									<div className="header-div-2">
 										<div className="header-input-icon">
 											{" "}
@@ -237,7 +233,7 @@ const AppLayout = ({ children }) => {
 											placeholder="Search vendor’s name"
 										/>
 									</div>
-									<div>
+									 <div>
 										{searchInput.length > 0
 											? items?.map((item, id) => {
 													console.log(item, "new data search");
@@ -283,7 +279,7 @@ const AppLayout = ({ children }) => {
 
 										{/* <Search /> */}
 									</div>
-								</div>
+								</div>}
 
 								{/* NOTIFICATION */}
 								<div className="header-div-3">

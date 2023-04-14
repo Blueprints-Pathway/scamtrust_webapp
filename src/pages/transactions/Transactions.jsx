@@ -58,7 +58,7 @@ console.log(auth.isAuthenticated);
 		{
 			key: "1",
 			label: <p className={classes["tab-1"]}>All Transactions</p>,
-			children: <AllTransaction />,
+			children: <div className={classes["tab-div"]}><AllTransaction /></div>,
 		},
 		{
 			key: "2",
@@ -69,7 +69,7 @@ console.log(auth.isAuthenticated);
 				</p>
 			),
 			children: (
-				<div className={classes["content"]}>
+				<div className={classes["tab-div"]}>
 					<Outgoing />
 				</div>
 			),
@@ -83,7 +83,7 @@ console.log(auth.isAuthenticated);
 				</p>
 			),
 			children: (
-				<div className={classes["content"]}>
+				<div className={classes["tab-div"]}>
 					<Completed />
 				</div>
 			),
@@ -97,7 +97,7 @@ console.log(auth.isAuthenticated);
 				</p>
 			),
 			children: (
-				<div className={classes["content"]}>
+				<div className={classes["tab-div"]}>
 					<Cancelled />
 				</div>
 			),
