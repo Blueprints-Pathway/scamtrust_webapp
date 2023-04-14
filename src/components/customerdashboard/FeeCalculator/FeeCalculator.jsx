@@ -21,7 +21,7 @@ const NEW_AMOUNT=Math.round(TOTAL_AMOUNT)
 						<p className="fee-calc-first-label">Enter Transaction amount:</p>
 						<input
 							className="fee-calc-first-input"
-							type="text"
+							type="number"
 							placeholder="Enter amount"
 							value={transactionAmount}
 							onChange={(e) => setTransactionAmount(e.target.value)}
@@ -31,7 +31,7 @@ const NEW_AMOUNT=Math.round(TOTAL_AMOUNT)
 						<p className="fee-calc-first-label">Transaction fee:</p>
 						<input
 							className="fee-calc-first-input2"
-							type="text"
+							type="number"
 							value={NEW_FEE === 0 ? "" : NEW_FEE}
 							disabled
 							placeholder="₦"
@@ -43,7 +43,7 @@ const NEW_AMOUNT=Math.round(TOTAL_AMOUNT)
 						"../../assets/images/svg/awaiting-approval.svg"; */}
 						<input
 							className="fee-calc-first-input2"
-							type="text"
+							type="number"
 							placeholder="₦"
 							disabled
 							value={NEW_AMOUNT === 0 ? "" : NEW_AMOUNT}
