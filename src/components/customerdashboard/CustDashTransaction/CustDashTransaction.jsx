@@ -39,6 +39,14 @@ const CustDashTransaction = () => {
        totalAmount={transaction.total_amount} 
        dueDate={transaction.due_date} />
      }
+     if (transaction.status === 'ACCEPTED BY CUSTOMER') {
+      return <OngoingHistory 
+       id = {transaction.id}
+       productName={transaction.product_name} 
+       vendorName={transaction.vendor.name}
+       totalAmount={transaction.total_amount} 
+       dueDate={transaction.due_date} />
+     }
      if (transaction.status == 'CANCELLED BY VENDOR') {
       return <CancelledHistory 
       id = {transaction.id}
@@ -46,6 +54,14 @@ const CustDashTransaction = () => {
       vendorName={transaction.vendor.name}
       totalAmount={transaction.total_amount} 
       dueDate={transaction.due_date} />
+     }
+     if (transaction.status === 'COMPLETED') {
+      return <CompletedHistory 
+       id = {transaction.id}
+       productName={transaction.product_name} 
+       vendorName={transaction.vendor.name}
+       totalAmount={transaction.total_amount} 
+       dueDate={transaction.due_date} />
      }
 
    })}

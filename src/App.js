@@ -33,6 +33,8 @@ import Support from "./pages/support/Support"
 import Fundbutton from "./components/buttons/fundbutton/Fundbutton"
 import FaqPage from "./pages/faqPage/FaqPage"
 import Ratting from "./components/transactions/ratting/Ratting";
+import AdminDashboard from "./pages/admin/dashboard/AdminDashboard"
+import UsersListPage from "./pages/admin/UsersListPage"
 
 
 
@@ -51,7 +53,9 @@ const App = () => {
 
 		{/* SCAMTRUST WEBAPP */}
 		<Route path='/customer-dashboard' element={<CustomerDashboard />} />
+		<Route path='/admin-dashboard' element={<AdminDashboard />} />
 		<Route path='/vendor-dashboard' element={<VendorDashboard />} />
+		<Route path='/users-list' element={<UsersListPage />} />
 		<Route path='/sign-in' element={<Signin />} />
 		<Route path='/sign-up-modal' element={<SignupModal  />} />
 		<Route path='vendor-registration' element={<VendorRegistration  />} />

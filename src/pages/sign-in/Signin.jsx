@@ -78,12 +78,14 @@ const Signin = () => {
         dispatch(getVendorOngoingTransactions());
         dispatch(getVendorCancelledTransactions());
         dispatch(getVendorCompletedTransactions());
-       }else{
+       }else if(data?.usertype === 'CUSTOMER'){
         dispatch(getCustomerTransactions());
         dispatch(getCustomerOngoingTransactions());
         dispatch(getCustomerCancelledTransactions());
         dispatch(getCustomerCompletedTransactions());
   
+       }else{
+        //admin
        }
       dispatch(getLoggedInUserDetails());
       dispatch(getWalletTransactionsDetails())
@@ -97,6 +99,10 @@ const Signin = () => {
       }
       if(data?.usertype === 'VENDOR'){
         navigate('/vendor-dashboard');
+
+      }
+      if(data?.usertype === 'ADMIN'){
+        navigate('/admin-dashboard');
 
       }
     
