@@ -4,21 +4,23 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { FidgetSpinner } from "react-loader-spinner";
-import { logoutUser, reset } from "../../features/auth/authSlice";
-import { useDispatch } from "react-redux";
+
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import swal from "sweetalert";
-import classes from "../admin/UsersListPage.module.css";
+import classes from "../UsersListPage.module.css";
+import { logoutUser } from "../../../actions/authActions";
 
 const AdminDashboard = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
-	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
+	const user_details = JSON.parse(localStorage?.getItem("USER_DETAILS"));
 	const [withdrawals, setWithdrawals] = useState([]);
 	const [isLaoding, setIsLoading] = useState(true);
 	const [currentPageNumber, setCurrentPageNumber] = useState(1);
 	const [lastPageNumber, setLastPageNumber] = useState();
+	const auth = useSelector((state) => state.auth);
 
 	const previousBtnHandler = () => {
 		if (+currentPageNumber <= 1) {
@@ -35,6 +37,10 @@ const AdminDashboard = () => {
 		console.log("next", currentPageNumber, lastPageNumber);
 	};
 	useEffect(() => {
+		if (!auth.isAuthenticated) {
+			navigate("/sign-in");
+			return;
+		}
 		(async () => {
 			try {
 				const API_URL = `${process.env.REACT_APP_BASE_URL}/admin/withdrawals?page=${currentPageNumber}`;
@@ -61,7 +67,7 @@ const AdminDashboard = () => {
 
 		setIsLoading(false);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [currentPageNumber]);
+	}, [currentPageNumber, auth.isAuthenticated]);
 
 	const approveWithdrawal = async (walletId) => {
 		setIsLoading(true);

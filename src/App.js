@@ -37,6 +37,8 @@ import Fundbutton from "./components/buttons/fundbutton/Fundbutton"
 import FaqPage from "./pages/faqPage/FaqPage"
 import RateTransactions from "./pages/transactions/RateTransaction/RateTransactions";
 import ViewRattings from "./pages/transactions/viewRattings/ViewRattings";
+import AdminDashboard from "./pages/admin/dashboard/AdminDashboard"
+import UsersListPage from "./pages/admin/UsersListPage"
 
 
 
@@ -49,34 +51,39 @@ const App = () => {
 			<Route path="/about" element={<About />} />
 			<Route path="/know-more" element={<KnowMore />} />
 
-			{/* SCAMTRUST WEBAPP */}
-
-			<Route path="/customer-dashboard" element={<CustomerDashboard />} />
-			<Route path="/vendor-dashboard" element={<VendorDashboard />} />
-			<Route path="/sign-in" element={<Signin />} />
-			<Route path="/sign-up-modal" element={<SignupModal />} />
-			<Route path="vendor-registration" element={<VendorRegistration />} />
-			<Route path="/vendor-activate-account" element={<VendorActivate />} />
-			<Route path="/verify-bvn" element={<VendorBvn />} />
-			<Route path="/set-password" element={<VendorSetPassword />} />
-			<Route path="/transaction-pin" element={<VendorTransactionPin />} />
-			<Route path="/security-question" element={<VendorSecurity />} />
-			<Route path="/support" element={<Support />} />
-			<Route path='/faq-page' element={<FaqPage />} /> 
-
-			<Route path="/customer-registration" element={<CustomerRegistration />} />
-			<Route path="/customer-activate-account" element={<CustomerActivate />} />
-			<Route path="/vendor/:slug" element={<VendorDetails />} />
-			<Route
-				path="/passwordrecoveryemail"
-				element={<PasswordRecoveryEmail />}
-			/>
-			<Route path="/settings" element={<SettingsVendor />} />
-			<Route
-				path="/passwordrecoveryphone"
-				element={<PasswordRecoveryPhone />}
-			/>
-			<Route path="/update-password/:token" element={<UpdatedPassword />} />
+		{/* SCAMTRUST WEBAPP */}
+		<Route path='/customer-dashboard' element={<CustomerDashboard />} />
+		<Route path='/admin-dashboard' element={<AdminDashboard />} />
+		<Route path='/vendor-dashboard' element={<VendorDashboard />} />
+		<Route path='/users-list' element={<UsersListPage />} />
+		<Route path='/sign-in' element={<Signin />} />
+		<Route path='/sign-up-modal' element={<SignupModal  />} />
+		<Route path='vendor-registration' element={<VendorRegistration  />} />
+		<Route path='/vendor-activate-account' element={<VendorActivate />} />
+		<Route path='/verify-bvn' element={<VendorBvn />} />
+		<Route path='/set-password' element={<VendorSetPassword />} />
+		<Route path='/transaction-pin' element={<VendorTransactionPin />} />
+		<Route path='/security-question' element={<VendorSecurity />} /> 
+		<Route path='/faq-page' element={<FaqPage />} /> 
+		<Route path='/support' element={<Support />} />
+	
+		<Route path='/customer-registration' element={<CustomerRegistration />} />
+		<Route path='/customer-activate-account' element={<CustomerActivate />} />
+		<Route path="/vendor/:slug" element={<VendorDetails/>} />
+		<Route
+        path='/passwordrecoveryemail'
+        element={<PasswordRecoveryEmail />}
+      />
+	  <Route  path='/settings'
+        element={<SettingsVendor/>}/>
+      <Route
+        path='/passwordrecoveryphone'
+        element={<PasswordRecoveryPhone />}
+      />
+	  <Route
+        path='/update-password/:token'
+        element={<UpdatedPassword />}
+      />
 
 			{/* TRANSACTIONS */}
 			<Route path="/transactions" element={<Transaction />} />
@@ -87,6 +94,8 @@ const App = () => {
 			<Route path="/cancelled-transaction/:id" element={<Cancelled />} />
 			<Route path="/declined-transaction" element={<Declined />} />
 			<Route path="/cancel-reason/:id" element={<CancelReason />} />
+			<Route path="/rate-vendor" element={<RateTransactions />} />
+			<Route path="/view-rattings" element={<ViewRattings />} />
 			<Route path="/rate-vendor" element={<RateTransactions />} />
 			<Route path="/view-rattings" element={<ViewRattings />} />
 			{/* 

@@ -2,21 +2,23 @@ import React from 'react';
 import swal from 'sweetalert';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { logoutUser } from '../../features/auth/authSlice';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { useNavigate } from 'react-router';
 import { FidgetSpinner } from 'react-loader-spinner';
 import classes from './UsersListPage.module.css';
 import { useCallback } from 'react';
 import { useReducer } from 'react';
+import { logoutUser } from '../../actions/authActions';
 const UsersListPage = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
+	  const user_details = JSON.parse(localStorage?.getItem("USER_DETAILS"));
     const[usersList, setUsersList] = useState();
     const[isLaoding, setIsLoading] = useState(true);
     const[reducerValue, forcedUpdate] = useReducer(x => x+1, 0);
+    const auth = useSelector((state) => state.auth);
 
 
 
@@ -53,6 +55,10 @@ const UsersListPage = () => {
       
     };
   useEffect(() => {
+    if (!auth.isAuthenticated) {
+			navigate("/sign-in");
+			return;
+		}
    
 		(async () => {
 			try {
@@ -84,7 +90,7 @@ const UsersListPage = () => {
       
       setIsLoading(false);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [reducerValue]);
+	}, [reducerValue, auth.isAuthenticated]);
 
 
 

@@ -56,7 +56,7 @@ const Completed = () => {
   
    content = transactions.completedTransactions.map((transaction) => {
 
-     return <div onClick={()=> navigate('/completed-transaction')}
+     return <div onClick={()=> navigate(`/completed-transaction/${transaction.id}`)}
      className={classes['con']}>
      <div className={classes['wrapper']}>
         <div className={classes['first']}>

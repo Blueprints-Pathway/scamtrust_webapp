@@ -8,10 +8,12 @@ import shielgg from "../../assets/images/shielgg 3.svg";
 import GeneralSettings from "./GeneralSettings";
 
 import AppLayout from "../../components/layout/AppLayout";
+
 import PrivacySettings from "./PrivacySettings";
 import SecuritySettings from "./SecuritySettings";
 import { useSelector } from "react-redux";
 import axios from "axios";
+
 function SettingsVendor() {
 	const [select, setSelect] = useState();
 	const [image, setImage] = useState();

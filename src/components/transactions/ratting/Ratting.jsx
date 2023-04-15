@@ -1,4 +1,3 @@
-/** @format */
 
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
@@ -7,6 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import AppLayout from "../../../components/layout/AppLayout";
 
 import { Button, Rate } from "antd";
+
 const Ratting = () => {
 	const navigate = useNavigate();
 	const param = useParams();
