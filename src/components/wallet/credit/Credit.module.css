@@ -20,6 +20,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    width: 150px;
 }
 .name{
     font-size: 14px;
@@ -30,11 +31,26 @@
     font-size: 13px;
     font-weight: 400;
     color: #707070;
+    width: 170px;
+    text-indent: 0%;
+    white-space: nowrap;
+    overflow: scroll;
 }
+.id::-webkit-scrollbar {
+    display: none;
+  }
+  .id {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
 .amount{
     font-size: 14px;
     font-weight: 500;
     color: #232164;
+    width: 53px;
+    text-indent: 0%;
+    white-space: nowrap;
+    overflow: scroll;
 }
 .status{
     border: 1px solid #ffff;
@@ -81,6 +97,7 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
+        width: 160px;
     }
     .name{
         font-size: 13px;
@@ -91,11 +108,19 @@
         font-size: 12px;
         font-weight: 400;
         color: #707070;
+        width: 150px;
+        text-indent: 0%;
+        white-space: nowrap;
+        overflow: scroll;
     }
     .amount{
         font-size: 13px;
         font-weight: 500;
         color: #232164;
+        width: 47px;
+        text-indent: 0%;
+        white-space: nowrap;
+        overflow: scroll;
     }
     .status{
         background-color: #ffff;
@@ -143,6 +168,7 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
+        width: 140px;
     }
     .name{
         font-size: 11px;
@@ -153,11 +179,19 @@
         font-size: 10px;
         font-weight: 400;
         color: #707070;
+        width: 120px;
+        text-indent: 0%;
+        white-space: nowrap;
+        overflow: scroll;
     }
     .amount{
         font-size: 11px;
         font-weight: 500;
         color: #232164;
+        width: 43px;
+        text-indent: 0%;
+        white-space: nowrap;
+        overflow: scroll;
     }
     .status{
         background-color: #ffff;
@@ -204,6 +238,7 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
+        width: 110px;
     }
     .name{
         font-size: 10px;
@@ -214,11 +249,19 @@
         font-size: 9px;
         font-weight: 400;
         color: #707070;
+        width: 120px;
+        text-indent: 0%;
+        white-space: nowrap;
+        overflow: scroll;
     }
     .amount{
         font-size: 10px;
         font-weight: 500;
         color: #232164;
+        width: 40px;
+        text-indent: 0%;
+        white-space: nowrap;
+        overflow: scroll;
     }
     .status{
         background-color: #ffff;
@@ -265,6 +308,7 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
+        width: 90px;
     }
     .name{
         font-size: 9px;
@@ -275,11 +319,19 @@
         font-size: 8px;
         font-weight: 400;
         color: #707070;
+        width: 100px;
+        text-indent: 0%;
+        white-space: nowrap;
+        overflow: scroll;
     }
     .amount{
         font-size: 9px;
         font-weight: 500;
         color: #232164;
+        width: 40px;
+        text-indent: 0%;
+        white-space: nowrap;
+        overflow: scroll;
     }
     .status{
         background-color: #ffff;

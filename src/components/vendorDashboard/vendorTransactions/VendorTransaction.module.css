@@ -54,7 +54,7 @@
     justify-content: space-between;
 }
 .empty-con{
-    margin-top: 300px;
+    margin-top: 150px;
 }
 .history-content{
     margin-top: 100px;
@@ -181,7 +181,7 @@
         justify-content: space-between;
     }
     .empty-con{
-        margin-top: 275px;
+        margin-top: 150px;
     }
     .history-content{
         margin-top: 90px;
@@ -246,7 +246,7 @@
         justify-content: space-between;
     }
     .empty-con{
-        margin-top: 220px;
+        margin-top: 120px;
     }
     .history-content{
         margin-top: 80px;
@@ -312,7 +312,7 @@
         color: #A6A6A6;
     }
     .empty-con{
-        margin-top: 220px;
+        margin-top: 130px;
     }
     .history-content{
         margin-top: 75px;
