@@ -90,11 +90,11 @@ const VendorTransaction = () => {
       // }
       // if (transaction.status == 'ACCEPTED BY VENDOR') {
        return <OngoingHistory 
-        id = {transaction.id}
-        productName={transaction.product_name} 
-        vendorName={transaction.customer.username}
-        totalAmount={transaction.total_amount} 
-        dueDate={transaction.due_date} />
+           id = {transaction.id}
+           productName={transaction.product_name} 
+           vendorName={transaction.customer.username}
+           totalAmount={transaction.total_amount} 
+           dueDate={transaction.due_date} />
       // }
  
     })}

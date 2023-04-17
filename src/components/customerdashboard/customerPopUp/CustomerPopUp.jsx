@@ -29,14 +29,6 @@ const CustomerPopUp = () => {
       setOpenChat(false);
   };
 
-  // const showTrans = () => {
-  //   setOpenTrans(true);
-  // };
-  // const cancelTrans = () => {
-  //   setOpenTrans(false);
-  // };
-
-
 
   const navigate = useNavigate();
 
@@ -67,11 +59,6 @@ const CustomerPopUp = () => {
                                <CustCreatePopup />
                              </div>
                           </div>
-                             {/* <div onClick={showTrans}
-                             className={classes['card-down']}>
-                                 <TbArrowsRightLeft className={classes['card-react-icon']} />
-                                 <p className={classes['card-words']}>Create New Transaction</p>
-                             </div> */}
 
                           <div className={classes['content-div']}>
                              <p className={classes['card-title']}>Fund Wallet</p>
@@ -134,26 +121,6 @@ const CustomerPopUp = () => {
             
          </Modal> 
                
-
-               {/* CREATE TRANSACTION MODAL */}
-         {/* <div>
-         <Modal open={openTrans}
-          onCancel={cancelTrans}
-          centered 
-          okButtonProps={{ style: { display: 'none' } }}
-          cancelButtonProps={{style: { display: 'none' }}}
-          onCancelprops={{style:{display: 'none'}}}
-          width={400}
-          bodyStyle={{
-            borderRadius: '20px',
-        }}
-          >
-
-            <Modal1 showTrans={showTrans}  />
-            
-         </Modal> 
-         </div> */}
-
     </div>
   )
 }

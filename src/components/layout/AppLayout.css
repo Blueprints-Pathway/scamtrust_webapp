@@ -406,17 +406,17 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
     }
     .header::-webkit-scrollbar{
         display: none;
     }
     .header-div1{
-        display: none;
+        display: flex;
         align-items: center;
         justify-content: center;
     }
     .header-dash{
-        display: none;
         color: #232164;
         font-size: 18px;
         font-weight: 600;

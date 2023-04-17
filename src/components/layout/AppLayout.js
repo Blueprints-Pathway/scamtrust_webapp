@@ -213,7 +213,7 @@ const AppLayout = ({ children }) => {
 							</div>
 
 							<div className="header-right-div">
-								{/* SEARCH INPUT  */}
+								       {/* SEARCH INPUT  */}
 								{ usertype == 'CUSTOMER' && <div className="search">
 									<div className="header-div-2">
 										<div className="header-input-icon">
@@ -277,7 +277,6 @@ const AppLayout = ({ children }) => {
 											  })
 											: null}
 
-										{/* <Search /> */}
 									</div>
 								</div>}
 
