@@ -110,7 +110,7 @@ const dispatch =  useDispatch();
                     },
                   ]}
                 >
-                  <Input className={classes['modal-input']} placeholder='Product amount' />
+                  <Input type='number' className={classes['modal-input']} placeholder='Product amount' />
                 </Form.Item>
                 <Form.Item 
                 name="quantity" 
@@ -122,7 +122,7 @@ const dispatch =  useDispatch();
                     },
                   ]}
                 >
-                  <InputNumber className={classes['modal-input']} placeholder='Quantity' />
+                  <Input type='number' className={classes['modal-input']} placeholder='Quantity' />
                 </Form.Item>
             </div>
 

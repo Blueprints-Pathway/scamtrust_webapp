@@ -15,6 +15,7 @@ import swal from "sweetalert";
 import { vendorAcceptTransaction } from "../../../actions/vendorTransactionActions";
 import { vendorTransactionActions } from "../../../reducers/vendorTransactionReducer";
 
+
 const items = [
 	{
 		title: <p className={classes["steps"]}>Awaiting</p>,
@@ -185,7 +186,7 @@ const Ongoing = () => {
 						>
 							Cancel
 						</Button>
-					{ usertype === "CUSTOMER" &&	<Button
+					      { usertype === "CUSTOMER" &&	<Button
 							loading={transactions.loading}
 							onClick={completeTransaction}
 							className={classes["bottom-btn2"]}

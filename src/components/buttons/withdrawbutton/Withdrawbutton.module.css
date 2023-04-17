@@ -52,15 +52,16 @@
     justify-content: center;
     margin-left: -175px;
     margin-bottom: -35px;
-
 }
 .modal-1-btn{
-    color: #ffff;
-    background-color: #232164;
+    color: #ffff !important;
+    background-color: #232164 !important;
     font-size: 14px;
     font-weight: 500;
-    padding: 10px 30px;
+    padding: 0px 30px;
+    height: 40px;
     border-radius: 5px;
+    text-align: center !important;
 }
 .add-btn{
     color: #ffff;

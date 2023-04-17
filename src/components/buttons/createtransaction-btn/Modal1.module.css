@@ -43,8 +43,8 @@
     font-size: 12px;
     padding: 7px 30px;
     border-radius: 5px;
-    color: #ffff;
-    background-color: #232164;
+    color: #ffff !important;
+    background-color: #232164 !important;
     text-align: center;
     border: none;
     outline: none;

@@ -5,9 +5,11 @@
     background-color: #F2F2F2;
     border-radius: 15px;
     width: 41vw;
-    height: 97vh;
+    height: 80vh;
+    margin-left: -30px;
+}
+.history-con{
     overflow-y: scroll;
-    margin-left: -35px;
 }
 .top{
     margin: 40px 0px 50px 0px; 
@@ -42,7 +44,7 @@
         background-color: #F2F2F2;
         border-radius: 15px;
         width: 41vw;
-        height: 87.5vh;
+        height: 85vh;
         margin-left: -35px;
     }
     .top{

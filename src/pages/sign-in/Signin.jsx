@@ -205,6 +205,8 @@ const Signin = () => {
         </div>
       </div>
       </div>
+
+
                    {/* SIGN UP MODAL */}
       <div>
       <Modal
@@ -220,7 +222,8 @@ const Signin = () => {
           <p className='modal-title'>Welcome to ScamTrust
           <span><img className='modal-wave' src={wave} alt="" /></span></p>
           <div className='modal-frame-con'>
-             <div className='modal-div-1'>
+             <div onClick={()=>{navigate('/vendor-registration')}}
+             className='modal-div-1'>
                <img onClick={()=>{navigate('/vendor-registration')}}
                className='modal-img-1' src={frame} alt="" />
                <div className='modal-words-con-1'>
@@ -228,8 +231,9 @@ const Signin = () => {
                  <p className='modal-word-2'>Get a risk-free payment for almost any product or service.</p>
                </div>
              </div>
-             <div className='modal-div-2'>
-               <img  onClick={()=>{navigate('/customer-registration')}}
+             <div onClick={()=>{navigate('/customer-registration')}}
+             className='modal-div-2'>
+               <img 
                className='modal-img-2' src={frame} alt="" />
                <div className='modal-words-con-2'>
                  <p className='modal-word-1'>Customer</p>

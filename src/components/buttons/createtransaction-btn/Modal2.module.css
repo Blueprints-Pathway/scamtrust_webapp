@@ -70,8 +70,8 @@
     margin: 0px 7px;
 }
 .modal2-btn{
-    color: #232164;
-    background-color: #2321644F;
+    color: #232164 !important;
+    background-color: #2321644F !important;
     font-size: 16px;
     padding: 0px 20px;
     height: 45px;
