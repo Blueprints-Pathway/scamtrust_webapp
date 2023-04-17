@@ -1,7 +1,8 @@
 /** @format */
 
-import React from "react";
+import React, { useEffect } from "react";
 import CustDashTransaction from "../../../components/customerdashboard/CustDashTransaction/CustDashTransaction";
+import CustomerPopUp from "../../../components/customerdashboard/customerPopUp/CustomerPopUp";
 import CustomerProfileCard from "../../../components/customerdashboard/CustomerProfileCard/CustomerProfileCard";
 import FaqandChat from "../../../components/customerdashboard/Faq&Chat/FaqandChat";
 import FeeCalculator from "../../../components/customerdashboard/FeeCalculator/FeeCalculator";
@@ -10,6 +11,16 @@ import AppLayout from "../../../components/layout/AppLayout";
 import "./CustomerDashboard.css";
 
 const CustomerDashboard = () => {
+	let   shouldPopUp = localStorage.getItem('SHOW_MODAL')
+	
+	
+	useEffect(() => {
+	
+  
+	  return () => {
+		localStorage.removeItem('SHOW_MODAL')
+	  };
+	}, [])
 	return (
 		<AppLayout>
 			<div className="cust-dash-wrapper">
@@ -30,6 +41,11 @@ const CustomerDashboard = () => {
 					</div>
 				</div>
 			</div>
+			{
+  shouldPopUp &&
+        <div>
+         <CustomerPopUp />
+        </div>}
 		</AppLayout>
 	);
 };
