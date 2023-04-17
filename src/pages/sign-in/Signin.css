@@ -63,8 +63,8 @@
     height: 45px;
     width: 25vw;
     text-align: center;
-    background-color: #232164;
-    color: #ffff;
+    background-color: #232164 !important;
+    color: #ffff !important;
     border-radius: 3px;
 }
 .sign-create-account{

@@ -40,8 +40,8 @@
     display: none;
   }
   .id {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
   }
 .amount{
     font-size: 14px;

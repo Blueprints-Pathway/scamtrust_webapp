@@ -73,8 +73,8 @@
     margin-top: 20px;
 }
 .btn{
-    color: #ffff;
-    background-color: #232164;
+    color: #ffff !important;
+    background-color: #232164 !important;
     font-size: 13px;
     padding: 7px 30px;
     border-radius: 5px;

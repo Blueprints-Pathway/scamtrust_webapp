@@ -13,7 +13,7 @@
     padding: 0px 45px 25px 45px;
 }
 .card-btn{
-    color: #232164;
+    color: #232164 !important;
     border: none;
     outline: none;
     font-size: 14px;
@@ -134,25 +134,27 @@
     margin-top: 50px;
 }
 .bottom-btn1{
-    background-color: #EDEDED;
+    background-color: #EDEDED !important;
     font-size: 13px;
     font-weight: 400;
     border: none;
     outline: none;
-    padding: 13px 0px;
+    padding: 0px 0px;
     width: 200px;
+    height: 45px;
     border-radius: 4px;
     margin: 0px 85px;
 }
 .bottom-btn2{
-    background-color: #3AB75D;
-    color: #ffff;
+    background-color: #3AB75D !important;
+    color: #ffff !important;
     font-size: 13px;
     font-weight: 400;
     border: none;
     outline: none;
-    padding: 13px 0px;
+    padding: 0px 0px;
     width: 200px;
+    height: 45px;
     border-radius: 4px;
     margin: 0px 85px;
 }
@@ -291,6 +293,31 @@
         display: flex;
         align-items: flex-start;
         justify-content: center;
+    }
+    .bottom-btn1{
+        background-color: #EDEDED !important;
+        font-size: 13px;
+        font-weight: 400;
+        border: none;
+        outline: none;
+        padding: 0px 0px;
+        width: 200px;
+        height: 45px;
+        border-radius: 4px;
+        margin: 0px 85px;
+    }
+    .bottom-btn2{
+        background-color: #3AB75D !important;
+        color: #ffff !important;
+        font-size: 13px;
+        font-weight: 400;
+        border: none;
+        outline: none;
+        padding: 0px 0px;
+        width: 200px;
+        height: 45px;
+        border-radius: 4px;
+        margin: 0px 85px;
     }
     
 }
@@ -437,7 +464,8 @@
         font-weight: 400;
         border: none;
         outline: none;
-        padding: 13px 0px;
+        padding: 0px 0px;
+        height: 35px;
         width: 170px;
         border-radius: 4px;
         margin: 0px 85px;
@@ -449,7 +477,8 @@
         font-weight: 400;
         border: none;
         outline: none;
-        padding: 13px 0px;
+        padding: 0px 0px;
+        height: 35px;
         width: 170px;
         border-radius: 4px;
         margin: 0px 85px;
@@ -606,7 +635,8 @@
         font-weight: 400;
         border: none;
         outline: none;
-        padding: 10px 0px;
+        padding: 0px 0px;
+        height: 30px;
         width: 130px;
         border-radius: 4px;
         margin: 0px 50px;
@@ -618,7 +648,8 @@
         font-weight: 400;
         border: none;
         outline: none;
-        padding: 10px 0px;
+        padding: 0px 0px;
+        height: 30px;
         width: 130px;
         border-radius: 4px;
         margin: 0px 50px;
@@ -789,7 +820,8 @@
         font-weight: 400;
         border: none;
         outline: none;
-        padding: 10px 35px;
+        padding: 0px 35px;
+        height: 30px;
         width: 250px;
         border-radius: 4px;
         margin: 0px 30px;
@@ -801,7 +833,8 @@
         font-weight: 400;
         border: none;
         outline: none;
-        padding: 10px 26px;
+        padding: 0px 26px;
+        height: 30px;
         width: 250px;
         border-radius: 4px;
         margin: 0px 30px;
