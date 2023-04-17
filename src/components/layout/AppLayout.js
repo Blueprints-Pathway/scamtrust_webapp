@@ -33,6 +33,7 @@ import classes from "./search/Search.module.css";
 import { AiFillEye } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import axios from "axios";
+import { listRatings } from "../../actions/ratingActions";
 const { Header, Content, Sider } = Layout;
 
 const AppLayout = ({ children }) => {
@@ -61,6 +62,7 @@ const AppLayout = ({ children }) => {
 		dispatch(getCustomerCancelledTransactions());
 		dispatch(getCustomerCompletedTransactions());
 		dispatch(listNotifications());
+		dispatch(listRatings());
 	}, [dispatch, auth.isAuthenticated]);
 	console.log(data);
 	const nameOf = loading ? "hi" : data?.data?.name || data?.data?.username;

@@ -112,7 +112,7 @@ const navigate=useNavigate()
 
 					{ usertype === "VENDOR" ?	<Button
 						
-							// onClick={completeTransaction}
+							 onClick={() => navigate('/view-rattings')}
 							className={classes["bottom-btn2"]}
 						>
 							View Rating

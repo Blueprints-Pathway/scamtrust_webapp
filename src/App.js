@@ -97,7 +97,7 @@ const App = () => {
 			<Route path="/rate-vendor" element={<RateTransactions />} />
 			<Route path="/view-rattings" element={<ViewRattings />} />
 			<Route path="/rate-vendor" element={<RateTransactions />} />
-			<Route path="/view-rattings" element={<ViewRattings />} />
+			
 			{/* 
 			
                               WALLET */}

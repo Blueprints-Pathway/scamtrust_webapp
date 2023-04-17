@@ -11,6 +11,8 @@ import { useSelector } from 'react-redux'
 const VendorMain = (props) => {
     const {loading, error, data} = useSelector(state => state.user);
     const vendorTransactions = useSelector(state => state.vendorTransaction)
+
+    let progress = (vendorTransactions.completedTransactions.length/vendorTransactions.allTransactions.length) * 100
   return (
     <div className={classes['wrapper']}>
             <div className={classes['con']}>
@@ -35,7 +37,7 @@ const VendorMain = (props) => {
                             <p className={classes['content-middle-top-right']}>{vendorTransactions.allTransactions.length} transactions</p>
                         </div>
                         <div className={classes['content-progress-con']}>
-                          <Progress className={classes['content-progress']} percent={50} showInfo={false} />
+                          <Progress className={classes['content-progress']} percent={progress} showInfo={false} />
                         </div>
                         <div className={classes['content-middle-bottom']}>
                            <div className={classes['content-middle-bottom-con']}>

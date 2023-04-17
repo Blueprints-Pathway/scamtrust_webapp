@@ -22,7 +22,7 @@ const ratingReducer = createSlice({
       state.loading = false;
       state.error = payload;
     },
-   listRatingRequest(state) {
+      listRatingRequest(state) {
         state.loading = true;
       },
      listRatingSuccess(state, payload) {
