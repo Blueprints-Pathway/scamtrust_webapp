@@ -128,11 +128,12 @@
     margin-top: 40px;
 }
 .down-button{
-    color: #ffff;
-    background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
+    color: #ffff !important;
+    background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%) !important;
     width: 225px;
     font-size: 15px;
-    padding: 12px 0px;
+    padding: 0px 0px;
+    height: 50px;
     border-radius: 3px;
     text-align: center;
 }
@@ -280,7 +281,8 @@
         background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
         width: 225px;
         font-size: 15px;
-        padding: 12px 0px;
+        padding: 0px 0px;
+        height: 50px;
         border-radius: 3px;
         text-align: center;
     }
@@ -435,7 +437,8 @@
         background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
         width: 225px;
         font-size: 11px;
-        padding: 12px 0px;
+        padding: 0px 0px;
+        height: 45px;
         border-radius: 3px;
         text-align: center;
     }
@@ -592,7 +595,8 @@
         background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
         width: 225px;
         font-size: 12px;
-        padding: 10px 0px;
+        padding: 0px 0px;
+        height: 40px;
         border-radius: 3px;
         text-align: center;
     }
@@ -767,7 +771,8 @@
         background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
         width: 225px;
         font-size: 11px;
-        padding: 10px 0px;
+        padding: 0px 0px;
+        height: 35px;
         border-radius: 3px;
         text-align: center;
     }
