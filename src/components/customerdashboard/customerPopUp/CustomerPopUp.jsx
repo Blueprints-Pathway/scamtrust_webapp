@@ -77,7 +77,7 @@ const CustomerPopUp = () => {
 
                           <div className={classes['content-div']}>
                              <p className={classes['card-title']}>Have a Question</p>
-                             <div onClick={()=>navigate('/faq')}
+                             <div onClick={()=>navigate('/faq-page')}
                              className={classes['card-down']}>
                                  <img className={classes['card-icon']} src={faq} alt="" />
                                  <p className={classes['card-words']}>FAQs</p>

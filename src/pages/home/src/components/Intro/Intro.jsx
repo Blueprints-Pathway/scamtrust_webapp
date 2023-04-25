@@ -15,6 +15,7 @@ const Intro = () => {
             </div>
             
             <div className="point-div">
+
                 <div className='point'>
                     <p className='figure'>1</p>
                     <div>
@@ -27,7 +28,7 @@ const Intro = () => {
                         <Link className='point-link' to="/know-more">Learn more</Link>
                     </div>
                 </div>
-
+                
                 <div className='point point2'>
                     <p className='figure'>2</p>
                     <div>

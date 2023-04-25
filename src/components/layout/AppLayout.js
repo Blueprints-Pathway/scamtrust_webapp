@@ -209,10 +209,18 @@ const AppLayout = ({ children }) => {
 					</Sider>
 
 					<Layout className="content-con">
+
 						<Header className="header">
+
 							<div className="header-div1">
 								<p className="header-dash">Dashboard</p>
 							</div>
+
+							{ usertype === 'VENDOR' && 
+							   <div className="second-header-1">
+							      <p className="header-dash-2">Dashboard</p>
+							   </div>
+							}
 
 							<div className="header-right-div">
 								       {/* SEARCH INPUT  */}
@@ -277,10 +285,11 @@ const AppLayout = ({ children }) => {
 														</div>
 													);
 											  })
-											: null}
+											   : null}
 
 									</div>
-								</div>}
+								</div>
+								}
 
 								{/* NOTIFICATION */}
 								<div className="header-div-3">

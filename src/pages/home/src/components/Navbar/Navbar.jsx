@@ -16,7 +16,7 @@ const Navbar = () => {
            <button className='log-btn ab-btn'><Link className='btn log-btn' to="/about">About Us</Link></button>
            
            <button onClick={()=>{navigate('/sign-in')}}
-           className='btn reg-btn log-btn-1'>
+           className='reg-btn btn log-btn-1'>
               Login
             </button>
             

@@ -27,6 +27,7 @@ const Ending = () => {
             </div>
 
       <hr />
+      
         <div className="end-cta">
             <p className='cta-title'>ScamTrust</p>
             <div className='cta-action'>

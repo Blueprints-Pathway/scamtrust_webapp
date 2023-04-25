@@ -32,7 +32,8 @@
     background-color: transparent;
     border: 1px solid #ffff;
     outline-color: #5597fa;
-    padding: 12px 75px 12px 25px;
+    padding: 0px 75px 0px 25px;
+    height: 52px;
     font-size: 18px;
     text-align: left;
     color: #fff;
@@ -46,9 +47,15 @@
     color: #fff;
 }
 .news-btn{
-    font-size: 37.6px;
-    padding: 0px 17px 0px 17px;
     border: none;
+    background-color: #ffff !important;
+    height: 52px;
+    width: 65px;
+}
+.foo-news-ico{
+    color: black;
+    font-size: 32px;
+    margin-left: 15px;
 }
 .foo-radio{
     display: flex;
@@ -61,8 +68,10 @@
     padding-right: 70px;
 }
 .news-btn:hover{
-    background-color: #5597fa;
-    color: #fff;
+    background-color: #5597fa !important;
+}
+.foo-news-ico:hover{
+    color: #ffff;
 }
 .foo-links{
     display: flex;
@@ -115,6 +124,11 @@
     align-items: center;
     justify-content: space-between;
 }
+/* .foo-btm-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
 .foo-socials{
     display: flex;
     align-items: center;
@@ -135,6 +149,9 @@
 .foo-btm-words{
     color: #a8aaa8;
     font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .foo-blue{
     color: #fff;
@@ -144,76 +161,81 @@
 .line-icon{
     color: #aeadab;
     font-size: 37px;
-    margin: 0px 0px -12px -7px;
+    margin: 0px 0px 0px -7px;
 }
 
-@media (max-width: 768px) {
-
+@media (max-width: 1024px) {
     .foo-wrapper{
-        margin: 0px 50px 80px 50px;
+        margin: 0px 80px 0px 80px;
     }
     .foo-con{
         color: #fff;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin: 0px 0px 50px 0px;
+        margin: 0px 0px 10px 0px;
     }
     .foo-news{
+        margin-top: -40px;
+    }
+    .news-title{
+        font-size: 22px;
+        font-weight: 600;
+        width: 20vw;
+        line-height: 25px;
+        margin-bottom: 10px;
+    }
+    .input-div{
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
-        margin-top: -30px;
+    }
+    .news-input{
+        background-color: transparent;
+        border: 1px solid #ffff;
+        outline-color: #5597fa;
+        padding: 0px 50px 0px 25px;
+        height: 45px;
+        font-size: 15px;
+        text-align: left;
+        color: #fff;
+    }
+    .foo-form-top{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-left: -20px;
+    }
+    ::placeholder{
+        color: #fff;
+    }
+    .news-btn{
+        border: none;
+        background-color: #ffff !important;
+        height: 45px;
+        width: 50px;
+    }
+    .foo-news-ico{
+        color: black;
+        font-size: 25px;
+        margin-left: 12px;
     }
     .foo-radio{
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-top: 30px;
-        font-size: 17px;
+        font-size: 18px;
     }
     .foo-radio-item{
-        padding-right: 50px;
-    }
-    .news-title{
-        font-size: 30px;
-        font-weight: 600;
-        width: 20vw;
-        line-height: 25px;
-        margin-bottom: 30px;
-    }
-    .input-div{
-        display: flex;
-        align-content: center;
-        justify-content: center;
-    }
-    .foo-form-top{
-        display: flex;
-        align-items: center;
-    }
-    
-    .news-input{
-        background-color: transparent;
-        border: 1px solid #fff;
-        outline: none;
-        padding: 12px 10px 12px 10px;
-        font-size: 16px;
-        text-align: left;
-    }
-    ::placeholder{
-        color: #fff;
-    }
-    .news-btn{
-        display: flex;
-        align-items: center;
-        font-size: 43px;
-        padding: 0px 14px 0px 14px;
-        border: none;
+        padding-right: 70px;
     }
     .news-btn:hover{
-        background-color: #5597fa;
-        color: #fff;
+        background-color: #5597fa !important;
+    }
+    .foo-news-ico:hover{
+        color: #ffff;
     }
     .foo-links{
         display: flex;
@@ -222,13 +244,13 @@
         justify-content: center;
     }
     .links-title{
-        font-size: 18px;
+        font-size: 21px;
         font-weight: 600;
     }
     .links-li{
         text-decoration: none;
         color: #fff;
-        font-size: 16px;
+        font-size: 15px;
         padding: 7px 0px;
     }
     .links-li:hover{
@@ -242,11 +264,166 @@
         margin-bottom: 80px;
     }
     .contact-title{
-        font-size: 18px;
+        font-size: 21px;
         font-weight: 600;
     }
     .contact-words{
+        font-size: 15px;
+        padding: 8px 0px;
+    }
+    .contact-words:hover{
+        color: #5597fa;
+    }
+    
+           /* B O T T O M */
+    
+    .foo-bottom{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10px 0px 20px 0px;
+    }       
+    .foo-btm-left{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .foo-socials{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #fff;
+        border: 1px solid #fff;
         font-size: 16px;
+        text-align: center;
+        height: 40px;
+        width: 40px;
+        margin: 15px;
+    }
+    .foo-socials:hover{
+        background-color: #5597fa;
+        color: #fff;
+    }
+    .foo-btm-words{
+        color: #a8aaa8;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .foo-blue{
+        color: #fff;
+        font-weight: 600;
+        padding: 0px 10px;
+    }
+    .line-icon{
+        color: #aeadab;
+        font-size: 20px;
+        margin: 0px 0px 0px -10px;
+    }
+}
+@media (max-width: 768px) {
+    .foo-wrapper{
+        margin: 0px 20px 0px 20px;
+        padding: 0px 0px;
+    }
+    .foo-con{
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0px 20px 20px 20px;
+    }
+    .foo-news{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: -30px;
+    }
+    .foo-radio{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 30px;
+        font-size: 17px;
+    }
+    .foo-radio-item{
+        padding-right: 50px;
+    }
+    .news-title{
+        font-size: 17px;
+        font-weight: 500;
+        width: 25vw;
+        line-height: 25px;
+        margin-bottom: 5px;
+    }
+    .input-div{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    .foo-form-top{
+        display: flex;
+        align-items: center;
+    }
+    .news-input{
+        background-color: transparent;
+        border: 1px solid #ffff;
+        outline-color: #5597fa;
+        padding: 0px 30px 0px 10px;
+        height: 45px;
+        font-size: 15px;
+        text-align: left;
+        color: #fff;
+    }
+    ::placeholder{
+        color: #fff;
+    }
+    .news-btn{
+        border: none;
+        background-color: #ffff !important;
+        height: 45px;
+        width: 45px;
+        margin-left: -10px;
+    }
+    .news-btn:hover{
+        background-color: #5597fa !important;
+        color: #fff;
+    }
+    .foo-links{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .links-title{
+        font-size: 17px;
+        font-weight: 500;
+    }
+    .links-li{
+        text-decoration: none;
+        color: #fff;
+        font-size: 14px;
+        padding: 7px 0px;
+    }
+    .links-li:hover{
+        color: #5597fa;
+    }
+    .foo-contact{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 70px;
+    }
+    .contact-title{
+        font-size: 17px;
+        font-weight: 500;
+    }
+    .contact-words{
+        font-size: 14px;
         padding: 8px 0px;
     }
     .contact-words:hover{
@@ -258,7 +435,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 30px 0px 50px 0px;
+    margin: 10px 20px 10px 20px;
 }       
 .foo-btm-left{
     display: flex;
@@ -272,7 +449,7 @@
     text-decoration: none;
     color: #fff;
     border: 1px solid #fff;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     height: 30px;
     width: 30px;
@@ -280,7 +457,7 @@
 }
 .foo-btm-words{
     color: #a8aaa8;
-    font-size: 16px;
+    font-size: 12px;
 }
 .foo-blue{
     color: #fff;
@@ -290,8 +467,7 @@
 .line-icon{
     color: #aeadab;
     font-size: 23px;
-    margin: 0px 0px -5px -5px
-
+    margin: 0px 0px 0px -7px
 }
 
 }
@@ -300,7 +476,7 @@
 @media (max-width: 480px) {
 
     .foo-wrapper{
-        margin: 0px 20px 50px 20px;
+        margin: 0px 20px 0px 20px;
     }
     .foo-con{
         color: #fff;
@@ -308,17 +484,17 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        margin: 0px 0px 20px 0px;
+        margin: 0px 20px 15px 20px;
     }
     .foo-news{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        margin-top: 50px;
+        margin-top: 30px;
     }
     .news-title{
-        font-size: 18px;
+        font-size: 17px;
         font-weight: 500;
         width: 50vw;
         line-height: 25px;
@@ -328,6 +504,7 @@
         display: flex;
         align-content: center;
         justify-content: center;
+        margin: 0px 15px;
     }
 
     .foo-radio{
@@ -335,31 +512,30 @@
         align-items: center;
         justify-content: space-between;
         margin-top: 30px;
-        font-size: 17px;
+        font-size: 15px;
     }
     .foo-radio-item{
         padding-right: 30px;
     }
     .news-input{
         background-color: transparent;
-        border: 1px solid #fff;
-        outline: none;
-        padding: 12px 10px 12px 10px;
-        font-size: 16px;
+        border: 1px solid #ffff;
+        outline-color: #5597fa;
+        padding: 0px 50px 0px 10px;
+        height: 40px;
+        font-size: 12px;
         text-align: left;
-        margin-top: 20px;
+        color: #fff;
     }
     ::placeholder{
         color: #fff;
     }
     .news-btn{
-        display: flex;
-        align-items: center;
-        font-size: 43px;
-        padding: 0px 14px 0px 14px;
-        height: 44px;
-        margin-top: 19px;
         border: none;
+        background-color: #ffff !important;
+        height: 40px;
+        width: 45px;
+        margin-left: 0px;
     }
     .news-btn:hover{
         background-color: #5597fa;
@@ -370,16 +546,16 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        margin: 40px 0px;
+        margin: 40px 0px 30px 0px;
     }
     .links-title{
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 500;
     }
     .links-li{
         text-decoration: none;
         color: #fff;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 300;
         padding: 7px 0px;
     }
@@ -389,16 +565,16 @@
     .foo-contact{
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 0px 65px 0px 65px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin: 0px 0px 0px 0px;
     }
     .contact-title{
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 500;
     }
     .contact-words{
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 300;
         padding: 8px 0px 0px 0px;
     }
@@ -412,7 +588,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 30px 0px 50px 0px;
+    margin: 5px 0px 0px 0px;
 }       
 .foo-btm-left{
     display: flex;
@@ -428,16 +604,16 @@
     border: 1px solid #fff;
     font-size: 16px;
     text-align: center;
-    height: 30px;
-    width: 30px;
-    margin: 10px;
+    height: 27px;
+    width: 27px;
+    margin: 15px 20px 0px 20px;
 }
 .foo-btm-right{
     margin: 20px 0px;
 }
 .foo-btm-words{
     color: #a8aaa8;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
 }
 .foo-blue{
@@ -447,8 +623,8 @@
 }
 .line-icon{
     color: #aeadab;
-    font-size: 23px;
-    margin: 0px 0px -5px -5px
+    font-size: 14px;
+    margin: 0px 0px 0px -9px
 
 }
 

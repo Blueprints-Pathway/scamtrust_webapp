@@ -30,13 +30,14 @@ const LandingPage = () => {
             </div>
         </div>
     </div>
+
                    {/* DOWNLOAD */}
         <div className='btm-div'>        
                  {/* DOWNLOAD BUTTON */}
            <div className='dwn-div'>
             <a className='download-link' href="https://play.google.com/store/apps/details?id=com.scamtrust.angular" target='_blank' rel="noreferrer">
               <button className='g-btn download-btn'>
-              <img src={Google} alt='...' />
+              <img className='download-icons' src={Google} alt='...' />
               <span>
                 <p className='btn-word'>Get on</p>
                 <h1 className='btn-words'>Google Play</h1>
@@ -46,7 +47,7 @@ const LandingPage = () => {
 
               <a className='download-link' href="#">
               <button className='app-btn download-btn'>
-                <img src={Apple} alt='...' />
+                <img className='download-icons' src={Apple} alt='...' />
                 <span>
                 <p className='btn-word'>Download on</p>
                 <h1 className='btn-words'>App Store</h1>

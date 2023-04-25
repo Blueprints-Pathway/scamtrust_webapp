@@ -64,9 +64,6 @@ const Signin = () => {
 
   const loginHandler = (e)  =>  {
     dispatch(login(JSON.stringify(e)));
-  
-
-
   }
 
 
@@ -128,6 +125,7 @@ const Signin = () => {
         <div className='sign-title-con'>
           <p>Welcome Back </p>
         </div>
+
         <Form 
         onFinish={loginHandler}
              name="basic"
@@ -203,6 +201,7 @@ const Signin = () => {
             className='sign-in-link'> Create</i>
             </i>
         </div>
+
       </div>
       </div>
 

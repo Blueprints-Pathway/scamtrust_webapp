@@ -111,24 +111,126 @@
     background: #0357BF;
 }
 
-@media (max-width: 768px) {
-
+@media (max-width: 1024px) {
     .end-con{
         color: #fff;
-        /* padding: 100px 80px 50px 80px;
-        margin: 0px 0px 0px 0px; */
+        padding: 100px 80px 50px 80px;
+        margin: 0px 0px 0px 0px;
         background-image: url("../../Assets/back-2.png");
         background-repeat: no-repeat;
         background-position: 0px 0px;
-        background-size: cover;
+        background-size: 1250px;
         background-blend-mode: lighten;
         background-color: #353935;
+    }
+    .end title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .title-1{
+        text-align: center;
+        font-size: 23px;
+        font-weight: 700;
+        line-height: 40px;
+    }
+    .title-2{
+        font-size: 45px;
+        font-weight: 800;
+        color: #5597fa;
+    }
+    .item-wrapper{
+        margin-bottom: 170px;
+    }
+    .end-items{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 90px 0px -80px 0px;
+    }
+    .item-img-div{
+        position: relative;
+    }
+    .item-verified{
+        position: absolute;
+        left: 50px;
+        font-size: 25px;
+        color: #49adf4;
+    }
+    .item-img{
+        height: 77px;
+        width: 74px;
+        border: 1.5px solid #142d62;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 60px;
+    }
+    .item-texts{
+        padding: 0px 10px 50px 25px;
+        width: 25vw;
+    }
+    .item-title{    
+        font-size: 25px;
+        font-weight: 600;
+        padding: 5px 0px;
+    }
+    .item-words{
+        font-size: 16px;
+    }
+    .item-link{
+        font-size: 19px;
+        font-weight: 700;
+        color: #5597fa;
+        text-decoration: underline;
+        padding-top: 17px;
+    }
+    .end-cta{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px 0px 50px 0px;
+    }
+    .cta-title{
+        font-size: 37px;
+        font-weight: 800;
         color: #fff;
-        padding: 20px 60px;
-        margin: 60px 0px;
-        /* background-image: url("../../Assets/back-2.png");
+    }
+    .cta-action{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .cta-word{
+        font-size: 20px;
+        font-weight: 500;
+        padding: 0px 40px;
+    }
+    .cta-btn{
+        color: #ffff;
+        padding: 20px 50px;
+        border-radius: 5px;
+        border: none;
+        margin: 0px 5px;
+        background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .cta-btn:hover{
+        border-radius: 15px;
+        background: #0357BF;
+    }
+}
+@media (max-width: 768px) {
+    .end-con{
+        color: #fff;
+        padding: 100px 20px 50px 20px;
+        margin: 0px 0px 0px 0px;
+        background-image: url("../../Assets/back-2.png");
         background-repeat: no-repeat;
-        background-position: center; */
+        background-position: 0px 0px;
+        background-size: 1300px;
+        background-blend-mode: lighten;
+        background-color: #353935;
     }
     .end title{
         display: flex;
@@ -147,7 +249,7 @@
         color: #5597fa;
     }
     .item-wrapper{
-        margin: -20px 0px 120px 0px;
+        margin: -20px 0px 80px 30px;
     }
     .end-items{
         display: flex;
@@ -176,6 +278,7 @@
     .item-texts{
         padding: 0px 15px;
         width: 35vw;
+        margin-top: -30px;
     }
     .item-title{
         font-size: 20px;
@@ -198,7 +301,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 40px 0px;
+        padding: 40px 30px;
     }
     .cta-title{
         font-size: 30px;
@@ -212,8 +315,9 @@
     }
     .cta-word{
         font-size: 16px;
-        font-weight: 600;
+        font-weight: 500;
         padding: 0px 10px;
+        margin: 0px 40px 0px 0px;
     }
     .cta-btn{
         color: #ffff;
@@ -236,11 +340,14 @@
 
     .end-con{
         color: #fff;
-        padding: 0px 15px;
-        margin: 0px 0px;
-        /* background-image: url("../../Assets/back-2.png");
+        padding: 0px 20px 0px 20px;
+        margin: 0px 0px 0px 0px;
+        background-image: url("../../Assets/back-2.png");
         background-repeat: no-repeat;
-        background-position: center; */
+        background-position: 0px 0px;
+        background-size: 1300px;
+        background-blend-mode: lighten;
+        background-color: #353935;
     }
     .end title{
         display: flex;
@@ -252,7 +359,7 @@
         font-size: 20px;
         font-weight: 600;
         line-height: 40px;
-        margin: 30px 0px -20px 0px;
+        margin: 50px 0px 0px 0px;
     }
     .title-2{
         font-size: 30px;
@@ -260,13 +367,13 @@
         color: #5597fa;
     }
     .item-wrapper{
-        margin: -30px 0px 120px 0px;
+        margin: -40px 0px 70px 0px;
     }
     .end-items{
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        margin: 90px 0px -35px 0px;
+        margin: 90px 0px -40px 0px;
     }
     .item-img-div{
         position: relative;
@@ -275,12 +382,12 @@
         position: absolute;
         top: 25px;
         left: 55px;
-        font-size: 25px;
+        font-size: 22px;
         color: #49adf4;
     }
     .item-img{
-        height: 77px;
-        width: 74px;
+        height: 75px;
+        width: 95px;
         border: 1.5px solid #142d62;
         border-radius: 50%;
         object-fit: cover;
@@ -311,7 +418,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 20px 0px;
+        padding: 10px 0px;
     }
     .cta-title{
         font-size: 30px;
@@ -325,18 +432,19 @@
         justify-content: center;
     }
     .cta-word{
-        font-size: 18px;
-        font-weight: 500;
-        padding: 15px 40px;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 0px 0px;
+        margin: 0px 20px 0px 20px;
     }
     .cta-btn{
         color: #ffff;
-        padding: 20px 35px;
+        padding: 12px 50px;
         border-radius: 5px;
         border: none;
         margin: 10px 15px;
         background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 500;
     }
     .cta-btn:hover{

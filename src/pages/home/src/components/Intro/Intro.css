@@ -4,13 +4,13 @@
 }
 
 .intro-con{
-    padding: 125px 80px 0px 80px;
+    padding: 50px 80px 0px 80px;
     color: #fff;
 }
 
 .intro-title{
     color: #fff;
-    font-size: 45px;
+    font-size: 47px;
     font-weight: 800;
     width: 20vw;
     line-height: 50px;
@@ -126,18 +126,144 @@
     width: 10vw;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .intro-con{
-        padding: 80px 20px 0px 20px;
+        padding: 0px 60px 0px 60px;
         color: #fff;
     }
     
     .intro-title{
         color: #fff;
         font-size: 40px;
-        font-weight: 700;
-        width: 20vw;
+        font-weight: 800;
+        width: 30vw;
         line-height: 50px;
+        padding-left: 70px;
+    }
+    
+    .img-div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .spiral-img{
+        margin: -180px 0px 0px 0px;
+    }
+    
+    .point-div{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 40px;
+    }
+    
+    .point{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30vw;
+        margin: -30px 15px 0px 15px;
+    }
+    
+    .point2{
+        margin-top: -80px;
+    }
+    
+    .point3{
+        margin-top: -250px;
+        width: 35vw;
+    }
+    
+    .figure{
+        font-size: 80px;
+        font-weight: 700;
+        margin: 0px 5px 110px 0px;
+    }
+    
+    .point-title{
+        font-size: 23px;
+        font-weight: 600;
+    }
+    
+    .point-words{
+        font-size: 17px;
+        font-weight: 300;
+        padding-bottom: 7px;
+    }
+    
+    .point-link{
+        font-size: 17px;
+        font-weight: 700;
+        color: #5597fa;
+        text-decoration: underline;
+    }
+    
+             /* BOTTOM */
+    .intro-bottom{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 90px 0px 80px 0px;
+    }
+    .left{
+        width: 50vw;
+        padding-right: 30px;
+    }
+    
+    .btm-title{
+        font-size: 45px;
+        font-weight: 800;
+        line-height: 55px;
+        
+    }
+    .btm-words{
+        font-weight: 600;
+        padding: 15px 0px;
+    }         
+    .right{
+        margin: 0px 0px 0px 30px;
+        position: relative;
+    }
+    .img-action{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 32px;
+        left: 28px;
+    }
+    .play-icon{
+        font-size: 47px;
+        margin: 0px 9px 7px 0px;
+    }
+    .play-icon:hover{
+        color: #353935;
+    }
+    .play{
+        font-weight: 600;
+    }
+    .play:hover{
+        color: #142d62;
+    }
+    .play-words{
+        font-weight: 300;
+        font-size: 11px;
+        width: 10vw;
+    }
+
+}
+@media (max-width: 768px) {
+    .intro-con{
+        padding: 0px 20px 0px 20px;
+        color: #fff;
+    }
+    
+    .intro-title{
+        color: #fff;
+        font-size: 37px;
+        font-weight: 700;
+        width: 30vw;
+        line-height: 40px;
         padding-left: 70px;
     }
     
@@ -163,7 +289,7 @@
         align-items: center;
         justify-content: center;
         width: 30vw;
-        margin: 0px 5px;
+        margin: 0px 5px 0px 5px;
     }
     
     .point2{
@@ -172,12 +298,13 @@
     
     .point3{
         margin-top: -230px;
+        width: 35vw;
     }
     
     .figure{
         font-size: 70px;
         font-weight: 600;
-        margin: 0px 10px 170px 0px;
+        margin: 0px 10px 100px 0px;
     }
     
     .point-title{
@@ -186,13 +313,13 @@
     }
     
     .point-words{
-        font-size: 17px;
+        font-size: 16px;
         font-weight: 300;
-        padding-bottom: 15px;
+        padding-bottom: 10px;
     }
     
     .point-link{
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 600;
         color: #5597fa;
         text-decoration: underline;
@@ -260,17 +387,17 @@
 @media (max-width: 480px) {
     .intro-con{
         padding: 0px 20px 50px 20px;
-        margin: -80px 0px 0px 0px;
+        margin-top: -170px;
         color: #fff;
     }
     
     .intro-title{
         color: #fff;
-        font-size: 35px;
+        font-size: 27px;
         font-weight: 600;
         width: 100%;
         line-height: 0px;
-        padding: 50px 0px;
+        padding: 50px 0px 40px 0px;
         text-align: center;
         text-decoration: underline;
     }
@@ -309,9 +436,9 @@
     }
     
     .figure{
-        font-size: 60px;
+        font-size: 55px;
         font-weight: 600;
-        margin: 0px 10px 85px 0px;
+        margin: 0px 10px 40px 0px;
     }
     
     .point-title{
@@ -320,13 +447,13 @@
     }
     
     .point-words{
-        font-size: 17px;
+        font-size: 15px;
         font-weight: 300;
-        padding-bottom: 15px;
+        padding-bottom: 5px;
     }
     
     .point-link{
-        font-size: 18px;
+        font-size: 15px;
         font-weight: 500;
         color: #5597fa;
         text-decoration: underline;
@@ -365,7 +492,7 @@
     }
     .video-img{
         height: 350px;
-        width: 350px;
+        width: 400px;
     }
     .img-action{
         display: flex;

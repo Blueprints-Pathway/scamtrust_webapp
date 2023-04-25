@@ -2,8 +2,6 @@
     margin: 0px;
     padding: 0px;
 }
-
-
 .land-con{
     background-image: url("../../Assets/about-spiral.png");
     background-repeat: no-repeat;
@@ -19,18 +17,15 @@
     color: #ffff;
     padding: 0px 80px 0px 80px;
 }    
-
 .land-left{
     width: 40vw;
 }
-
 .land-title {
     font-weight: 800;
-    font-size: 30px;
+    font-size: 53px;
     line-height: 75px;
     margin-top: 60px;
 }
-
 .mid-h1{
     color: #448feb;
 }
@@ -38,29 +33,32 @@
     margin-top: 20px;
     line-height: 35px;
     font-weight: 400;
-    font-size: 19px;
+    font-size: 22px;
 }
 
 .land-right{
-    width: 60vw;
+   width: 60vw;
    margin: 20px 0px 0px 0px;
+   position: relative;
 }
 
 .circle{
     border: 2px solid white;
     border-radius: 50%;
-    height: 437px;
-    width: 437px;
+    height: 475px;
+    width: 475px;
     float: left;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 25px 0px 0px 130px;
+    margin: 25px 0px 0px 200px;
 }
 
 .land-img{
-   align-items: center;
-   margin-top: 50px;
+    position: absolute;
+    align-items: center;
+    margin-top: 50px;
+    width: 50rem;
 }
 
 .btm-div{
@@ -77,6 +75,7 @@
     margin: 110px 0px 0px 0px;
 }
 .download-btn{
+    background-color: #ffff;
     width: 210px;
     height: 80px;
     border-radius: 20px;
@@ -87,13 +86,15 @@
     margin: 0px 20px;
 }
 .btn-word{
+    color: black;
     font-weight: 700;
     font-size: 16px;
     text-align: left;
 }
 .btn-words{
+    color: black;
     font-weight: 700;
-    font-size: 23px;
+    font-size: 20px;
 }
 
 .scan{
@@ -129,13 +130,146 @@
     background-color: #fff;
     padding: 12px 10px 10px 10px;
     border-radius: 10px;
-    margin-bottom: 0px;
-    height: 85px;
-    width: 85px;
+    height: 110px;
+    width: 110px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    .land-con{
+        background-image: url("../../Assets/about-spiral.png");
+        background-repeat: no-repeat;
+        background-position: 0px -70px;
+        background-size: cover;
+        padding: 0px 0px 200px 0px;
+    }           
+      
+    .land{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #ffff;
+        padding: 0px 45px 0px 45px;
+    }    
+    .land-left{
+        width: 45vw;
+    }
+    .land-title {
+        font-weight: 800;
+        font-size: 40px;
+        line-height: 55px;
+        margin-top: 75px;
+    }
+    
+    .mid-h1{
+        color: #448feb;
+    }
+    .land-words{
+        margin-top: 20px;
+        line-height: 35px;
+        font-weight: 400;
+        font-size: 18px;
+    }
+    
+    .land-right{
+        position: relative;
+        width: 50vw;
+        margin: 20px 0px 0px 0px;
+    }
+    
+    .circle{
+        border: 2px solid white;
+        border-radius: 50%;
+        height: 340px;
+        width: 340px;
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0px 0px 0px 75px;
+    }
+    
+    .land-img{
+        position: absolute;
+       align-items: center;
+       margin-top: 50px;
+       width: 55rem;
+    }
+    
+    .btm-div{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin: 0px 25px;
+    }
+    
+    .dwn-div{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 70px 0px 0px 0px;
+    }
+    .download-btn{
+        background-color: #ffff;
+        width: 200px;
+        height: 65px;
+        border-radius: 15px;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 20px;
+    }
+    .btn-word{
+        color: black;
+        font-weight: 700;
+        font-size: 14px;
+        text-align: left;
+    }
+    .btn-words{
+        color: black;
+        font-weight: 700;
+        font-size: 18px;
+    }
+    
+    .scan{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 40px 20px 0px 0px;
+        padding: 4px;
+        border: 2px solid #fff;
+        border-radius: 15px;
+        width: 270px;
+        background: none;
+    }
+    .scan:hover{
+        background: #fff;
+    }
+    
+    .scan-words{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: 600;
+        width: 200px;
+        padding: 0px 20px;
+        color: #f6d645;
+    }
+    .arrow-ico{
+        color: #fff;
+        font-size: 45px;
+    }
+    .scan-img{
+        background-color: #fff;
+        padding: 12px 10px 10px 10px;
+        border-radius: 10px;
+        height: 100px;
+        width: 100px;
+    }
 
+}
+@media (max-width: 768px) {
 .land-con{
     background-image: url("../../Assets/spiral.png");
     background-repeat: no-repeat;
@@ -147,51 +281,53 @@
     align-items: center;
     justify-content: space-between;
     color: #ffff;
-    padding: 50px 35px 0px 35px;
+    padding: 10px 35px 0px 35px;
 }    
 
 .land-left{
-    width: 60vw;
+    width: 45vw;
 }
 
 .land-title {
-    font-weight: 600;
-    font-size: 17px;
+    font-weight: 800;
+    font-size: 35px;
     line-height: 45px;
     margin-top: 60px;
 }
-
 .mid-h1{
     color: #448feb;
 }
 .land-words{
-    margin-top: 20px;
+    margin-top: 21px;
     line-height: 35px;
     font-weight: 400;
+    font-size: 16px;
 }
 
 .land-right{
-    width: 40vw;
+    position: relative;
+    width: 45vw;
     margin: 20px 0px 0px 0px;
 }
 
 .circle{
     border: 2px solid white;
     border-radius: 50%;
-    height: 275px;
-    width: 275px;
+    height: 260px;
+    width: 260px;
     float: left;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 25px 0px 0px 0px;
+    margin: 25px 0px 0px 20px;
 }
 
 .land-img{
-   align-items: center;
-   margin: 50px 0px 0px 0px;
-   height: 375px;
-   width: 375px;
+    position: absolute;
+    align-items: center;
+    margin: 0px 0px 0px 0px;
+    width: 600px;
+    height: 400px;
 }
 
 .btm-div{
@@ -205,37 +341,40 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 110px 0px 0px 0px;
+    margin: 40px 0px 0px 0px;
 }
 .download-btn{
-    width: 175px;
-    height: 60px;
-    border-radius: 20px;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
     border: none;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0px 10px;
 }
+.download-icons{
+    width: 40px;
+}
 .btn-word{
     font-weight: 600;
-    font-size: 14px;
+    font-size: 11px;
     text-align: left;
 }
 .btn-words{
-    font-weight: 600;
-    font-size: 18px;
+    font-weight: 700;
+    font-size: 13px;
 }
 
 .scan{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 70px 50px 0px 0px;
+    margin: 30px 27px 0px 0px;
     padding: 5px;
     border-radius: 10px;
-    border: 2px solid #fff;
-    width: 225px;
+    border: 1px solid #fff;
+    width: 190px;
     background: none;
 }
 .scan:hover{
@@ -243,7 +382,7 @@
 }
 
 .scan-words{
-    font-size: 17px;
+    font-size: 13px;
     font-weight: 600;
     color: #f6d645;
     width: 100px;
@@ -258,20 +397,20 @@
     padding: 8px 6px 6px 6px;
     border-radius: 10px;
     margin-bottom: 0px;
-    height: 75px;
-    width: 75px;
+    height: 70px;
+    width: 70px;
 }
 
 }
 
 
 @media (max-width: 480px) {
-
 .land-con{
   background-image: url("../../Assets/spiral.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 1500px;
+  background-size: 1360px;
+  background-position: 0px -45px;
 }           
 
 .land{
@@ -280,7 +419,7 @@
   align-items: center;
   justify-content: center;
   color: #ffff;
-  padding: 50px 25px 0px 25px;
+  padding: 40px 25px 0px 25px;
 }    
 
 .land-left{
@@ -288,49 +427,55 @@
 }
 
 .land-title {
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 40px;
-  margin-top: 60px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 35px;
+  margin-top: 55px;
 }
 
 .mid-h1{
   color: #448feb;
 }
 .land-words{
-  margin-top: 20px;
+  margin-top: 5px;
   line-height: 30px;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .land-right{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 100vw;
     margin: 20px 10px 0px 10px;
 }
+
+/* .land-right{
+    width: 100%;
+    margin: 20px 0px 0px 0px;
+    position: relative;
+ } */
+
 
 .circle{
   border: 2px solid white;
   border-radius: 50%;
-  height: 300px;
-  width: 300px;
-  float: left;
+  height: 290px;
+  width: 290px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 25px 0px 0px 0px;
 }
 
+
 .land-img{
- align-items: center;
- margin: 50px 0px 0px 0px;
- padding: 0px 50px;
- height: 375px;
- width: 450px;
- width: auto;
+    position: absolute;
+    align-items: center;
+    margin-top: 30px;
+    width: 60rem;
 }
 
 .btm-div{
@@ -348,24 +493,27 @@
   margin: 0px 0px 0px 0px;
 }
 .download-btn{
-  width: 160px;
-  height: 50px;
-  border-radius: 15px;
+  width: 140px;
+  height: 45px;
+  border-radius: 10px;
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0px 10px;
+  margin: 0px 20px;
   padding-right: 5px;
 }
+.download-icons{
+    width: 35px;
+}
 .btn-word{
-  font-weight: 400;
-  font-size: 12px;
+  font-weight: 500;
+  font-size: 11px;
   text-align: left;
 }
 .btn-words{
   font-weight: 600;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .scan{
@@ -374,6 +522,7 @@
   justify-content: center;
   margin: 50px 0px 0px 0px;
   padding: 5px 10px;
+  width: 220px;
   background: none;
 }
 .scan:hover{
@@ -381,12 +530,12 @@
 }
 
 .scan-words{
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: #f6d645;
-  width: 150px;
+  width: 160px;
   margin-left: 5px;
-  text-align: left;
+  text-align: center;
 }
 .arrow-ico{
   color: #fff;
@@ -394,9 +543,9 @@
 }
 .scan-img{
   background-color: #fff;
-  padding: 8px 8px 6px 8px;
+  padding: 6px 6px 4px 6px;
   border-radius: 10px;
-  margin: 0px 21px 0px 0px;
+  margin: 0px 0px 0px 0px;
 }
     
 }

@@ -51,7 +51,9 @@ const radioChange = (event) => {
              value={email} 
              placeholder='Email Address' 
              />
-             <button type="submit" className='news-btn'><HiArrowRight className='foo-news-ico' /></button>
+             <button type="submit" className='news-btn'>
+                <HiArrowRight className='foo-news-ico' />
+             </button>
           </div>
 
             {/* R A D I O */}
@@ -59,6 +61,7 @@ const radioChange = (event) => {
             <div className='foo-radio-item'>
             <div onClick={() => {setOption("Vendor")}}>
             <input
+            className='foo-radio-item'
              type="radio"
              name='option'
             //  value="vendor"
@@ -105,11 +108,13 @@ const radioChange = (event) => {
         <a className='foo-socials' href='#' target='_blank' rel="noreferrer"><ImLinkedin2 /></a>
         <a className='foo-socials' href='https://www.instagram.com/scamtrust' target='_blank' rel="noreferrer"><FaInstagram /></a>
       </div>
+
       <div className="foo-btm-right">
         <p className='foo-btm-words'>{year}<span className='foo-blue'>
           Blueprints Pathway</span>
           <TbMinusVertical className='line-icon'/>All Rights Reserved</p>
       </div>
+
     </div>
    </div> 
   )
