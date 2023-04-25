@@ -16,7 +16,7 @@ import VendorActivate from "./pages/sign-up/vendor-sign-up/vendor-activate-accou
 import SignupModal from "./components/sign-up-modal/SignupModal";
 import CustomerRegistration from "./pages/sign-up/customer-sign-up/customer-registration/CustomerRegistration";
 import CustomerActivate from "./pages/sign-up/customer-sign-up/customer-activate-account/CustomerActivate";
-import CustomerDashboard from "./pages/dashboards/CustomerDashboard/CustomerDashboard";
+import CustomerDashboard from "./pages/dashboards/customerDashboard/CustomerDashboard";
 import Transaction from "./pages/transactions/Transactions";
 import Awaiting from "./pages/transactions/awaiting/Awaiting";
 import Ongoing from "./pages/transactions/ongoing/Ongoing";
