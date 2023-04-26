@@ -16,7 +16,7 @@ import VendorActivate from "./pages/sign-up/vendor-sign-up/vendor-activate-accou
 import SignupModal from "./components/sign-up-modal/SignupModal";
 import CustomerRegistration from "./pages/sign-up/customer-sign-up/customer-registration/CustomerRegistration";
 import CustomerActivate from "./pages/sign-up/customer-sign-up/customer-activate-account/CustomerActivate";
-import CustomerDashboard from "./pages/dashboards/customerDashboard/CustomerDashboard";
+import CustomerDashboard from "./pages/dashboards/CustomerDashboard/CustomerDashboard";
 import Transaction from "./pages/transactions/Transactions";
 import Awaiting from "./pages/transactions/awaiting/Awaiting";
 import Ongoing from "./pages/transactions/ongoing/Ongoing";
@@ -30,7 +30,7 @@ import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmai
 import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone";
 import UpdatedPassword from "./pages/passwordrecovery/UpdatedPassword";
 import SettingsVendor from "../src/pages/SettingsVendor/SettingsVendor";
-import VendorDashboard from "./pages/dashboards/vendorDashboard/VendorDashboard";
+import VendorDashboard from "./pages/dashboards/VendorDashboard/VendorDashboard";
 import Support from "./pages/support/Support";
 import Ratting from "./components/transactions/ratting/Ratting";
 import Fundbutton from "./components/buttons/fundbutton/Fundbutton"
