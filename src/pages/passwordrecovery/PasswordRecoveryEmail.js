@@ -198,7 +198,7 @@ console.log(auth.error)
                   <img src={mail} alt="" />
                 </div>
                 <p className={classes["recovery-code-text"]}>
-                  Please enter the 6 d9igit code sent to folaade@gmail
+                  Please enter the 6 digit code sent to {email}
                 </p>
                 <div>
                   <h5 className={classes["recovery-label"]}>Enter code</h5>
