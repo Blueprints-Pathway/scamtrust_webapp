@@ -145,7 +145,7 @@ function EdithEmail({ closeModal }) {
 			>
 				<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
-				<div class="fixed flex justify-start inset-0 z-10 sm:w-5/6 md:w-2/4 EditDone-card">
+				<div class="fixed flex justify-start  z-10 sm:w-5/6 md:w-2/4 EditDone-card">
 					<div className="sm:w-5/6 md:w-full">
 						<div className=" mx-10 flex border-b-2 justify-between  text-[#232164] font-semibold text-lg mb-20 mt-20">
 							<div className="">Edit Email Adresss</div>
@@ -205,7 +205,7 @@ function EdithEmail({ closeModal }) {
 				>
 					<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
-					<div class="fixed flex justify-start inset-0 z-10 sm:w-5/6 md:w-2/4 EditDone-card">
+					<div class="fixed flex justify-start  z-10 sm:w-5/6 md:w-2/4 EditDone-card">
 						<div className="sm:w-5/6 md:w-full">
 							<div className=" mx-10 flex border-b-2 justify-between  text-[#232164] font-semibold text-lg mb-20 mt-20">
 								<div className="">Edit Email Adress</div>
@@ -277,7 +277,7 @@ function EdithEmail({ closeModal }) {
 				>
 					<div class=" inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
-					<div class="fixed flex justify-start inset-0 z-10 sm:w-5/6 md:w-2/4 EditDone-card">
+					<div class="fixed flex justify-start z-10 sm:w-5/6 md:w-2/4 EditDone-card">
 						<div className="sm:w-5/6 md:w-full ">
 							<div className="mx-5 flex border-b-2 justify-between  text-[#232164] font-semibold text-lg mb-20 mt-20">
 								<div className="">Edit Email Adresss</div>
@@ -314,7 +314,7 @@ function EdithEmail({ closeModal }) {
 				>
 					<div class=" inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
-					<div class="fixed flex justify-start inset-0 z-10 sm:w-5/6 md:w-2/4 EditDone-card">
+					<div class="fixed flex justify-start  z-10 sm:w-5/6 md:w-2/4 EditDone-card">
 						<div className="sm:w-5/6 md:w-full">
 							<div className=" mx-10 flex border-b-2 justify-between  text-[#232164] font-semibold text-lg mb-20 mt-20">
 								<div className="">Edit Phone Numberss</div>
