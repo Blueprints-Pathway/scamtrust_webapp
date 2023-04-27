@@ -20,7 +20,10 @@ const AdminDashboard = () => {
 	const [isLaoding, setIsLoading] = useState(true);
 	const [currentPageNumber, setCurrentPageNumber] = useState(1);
 	const [lastPageNumber, setLastPageNumber] = useState();
+	const [totalMoneyWithrawn, setTotalMoneyWithrawn] = useState('Chill A Bit!');
 	const auth = useSelector((state) => state.auth);
+
+	let totalAmountWithdrawn = 0;
 
 	const previousBtnHandler = () => {
 		if (+currentPageNumber <= 1) {
@@ -36,6 +39,40 @@ const AdminDashboard = () => {
 		setCurrentPageNumber((currentNumber) => currentNumber + 1);
 		console.log("next", currentPageNumber, lastPageNumber);
 	};
+	useEffect(() => {
+		(async () => {
+			try {
+				for (let i = 1; i <= lastPageNumber; i++) {
+				
+					
+				
+				const API_URL = `${process.env.REACT_APP_BASE_URL}/admin/withdrawals?page=${i}`;
+				const config = {
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${user_details?.data?.access_token}`,
+					},
+				};
+
+				const data = await axios.get(API_URL, config);
+				for (let j = 0; j < data?.data.data.data.length; j++) {
+					totalAmountWithdrawn += data?.data.data.data[j].amount;
+					
+				}
+
+				console.log(totalAmountWithdrawn, 'total monies')
+
+			}
+
+			setTotalMoneyWithrawn(totalAmountWithdrawn)
+			
+			} catch (error) {
+				console.log(error, "error");
+				// setIsLoading(false);
+			} 
+		})();
+	},)
+
 	useEffect(() => {
 		if (!auth.isAuthenticated) {
 			navigate("/sign-in");
@@ -53,6 +90,8 @@ const AdminDashboard = () => {
 
 				const data = await axios.get(API_URL, config);
 
+				
+
 				console.log(data?.data?.data.data, "user data customer dashboard");
 				setWithdrawals(data?.data.data.data);
 				setLastPageNumber(data?.data.data.last_page);
@@ -68,6 +107,8 @@ const AdminDashboard = () => {
 		setIsLoading(false);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [currentPageNumber, auth.isAuthenticated]);
+
+
 
 	const approveWithdrawal = async (walletId) => {
 		setIsLoading(true);
@@ -190,6 +231,7 @@ const AdminDashboard = () => {
 			<button className={classes.button} onClick={nextBtnHandler}>
 				NEXT
 			</button>
+			<h1>Total Amount Withdrawn: {totalMoneyWithrawn}</h1>
 		</section>
 	);
 };
