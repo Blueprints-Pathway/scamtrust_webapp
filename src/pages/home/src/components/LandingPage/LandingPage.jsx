@@ -35,6 +35,7 @@ const LandingPage = () => {
         <div className='btm-div'>        
                  {/* DOWNLOAD BUTTON */}
            <div className='dwn-div'>
+            
             <a className='download-link' href="https://play.google.com/store/apps/details?id=com.scamtrust.angular" target='_blank' rel="noreferrer">
               <button className='g-btn download-btn'>
               <img className='download-icons' src={Google} alt='...' />

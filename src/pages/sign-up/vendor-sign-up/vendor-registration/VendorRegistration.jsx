@@ -129,7 +129,7 @@ let error = <p></p>;
                           len :11,
                           message: 'Please input a valid phone number'
                          } ]}>
-                        <Input className='ven-signup-input'  />
+                        <Input type='number' className='ven-signup-input'  />
                       </Form.Item>
                       <Form.Item name="BusinessAddress" label="Business Address"   rules={[
                          {

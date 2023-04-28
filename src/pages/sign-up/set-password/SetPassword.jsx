@@ -45,7 +45,6 @@ const VendorSetPassword = () => {
     dispatch(registerActions.setPassword(values.password));
     dispatch(registerActions.setPasswordConfirmation(values.confirm_password));
    
-      
           dispatch(registerUser({
             ...userInfo,
             name: userInfo.username,
@@ -53,11 +52,8 @@ const VendorSetPassword = () => {
             password_confirmation: values.confirm_password,
           }))
 
-    
-   
-    
-
   };
+
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };
@@ -124,7 +120,6 @@ const VendorSetPassword = () => {
               </Form.Item>
               <p>{errorText}</p>
               <Button
-             
               className='ven-set-pass-btn' loading = {loading} htmlType="submit">Proceed to set a transaction pin
                <CaretRightOutlined className='ven-set-pass-btn-icon' />
                </Button>

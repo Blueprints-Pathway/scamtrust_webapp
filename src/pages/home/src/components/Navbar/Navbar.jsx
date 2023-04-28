@@ -5,8 +5,13 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 
-const Navbar = () => {
+const Navbar = (props) => {
   const navigate = useNavigate();
+
+  const handleSignUp = () => {
+    navigate('/sign-in')
+  }
+
   return(
     <div className='nav-con'>
        <div className='nav-left'>
@@ -20,7 +25,7 @@ const Navbar = () => {
               Login
             </button>
             
-           <button onClick={()=>{navigate('/sign-in')}}
+           <button onClick={handleSignUp}
            className='sign-btn'>
             Sign up
            </button>

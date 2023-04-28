@@ -18,6 +18,7 @@ import { getLoggedInUserDetails } from '../../actions/userActions';
 import { getWalletTransactionsDetails } from '../../actions/walletActions';
 import { listNotifications } from '../../actions/notificationActions';
 import { getVendorCancelledTransactions, getVendorCompletedTransactions, getVendorOngoingTransactions, getVendorTransactions } from '../../actions/vendorTransactionActions';
+import Navbar from '../home/src/components/Navbar/Navbar';
 
 const customStyles = {
   // overlay: {
@@ -204,7 +205,6 @@ const Signin = () => {
 
       </div>
       </div>
-
 
                    {/* SIGN UP MODAL */}
       <div>

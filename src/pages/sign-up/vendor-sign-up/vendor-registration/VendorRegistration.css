@@ -64,7 +64,7 @@ input[type=number] {
     font-size: 12px;
 }
 .ven-signup-btn{
-    background-color: #232164;
+    background-color: #232164 !important;
     color: #ffff;
     text-align: center;
     padding: 5px 150px;

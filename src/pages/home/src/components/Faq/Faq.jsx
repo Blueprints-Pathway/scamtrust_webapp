@@ -78,7 +78,7 @@ const Faq = () => {
             <button className='tail-btn'>Register</button>
             <div className='download'>
 
-              <a className='download-link' href={AndroidApk}>
+            <a className='download-link' href='#'>
             <button className='g-btn down-btn'>
               <img src={Google} alt='...' />
               <span>

@@ -54,7 +54,7 @@ input[type=number] {
 }
 .form-btn{
     height: 55px;
-    background-color: #262466;
+    background-color: #262466 !important;
     color: #ffff;
     width: 35vw;
 }

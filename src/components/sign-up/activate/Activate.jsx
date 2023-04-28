@@ -31,7 +31,8 @@ const Activate = () => {
                 navigate('/sign-in');
                 window.location.href = 'https://mail.google.com/';
 
-               }} className='activate-content-btn'> Check Mail
+               }} 
+               className='activate-content-btn'> Check Mail
                 </Button>
         </div>
       
