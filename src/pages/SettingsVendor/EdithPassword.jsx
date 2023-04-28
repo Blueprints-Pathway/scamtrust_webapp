@@ -176,7 +176,7 @@ function EdithPassword({ closeModal }) {
 			>
 				<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
-				<div class="fixed flex justify-start inset-0 z-10 sm:w-5/6 md:w-2/4 EditDone-card">
+				<div class="fixed flex justify-start  z-10 sm:w-5/6 md:w-2/4 EditDone-card">
 					<div className="sm:w-5/6 md:w-full">
 						<div className=" mx-10 flex border-b-2 justify-between  text-[#232164] font-semibold text-lg mb-5 mt-10">
 							<div className="">Edit Password</div>
@@ -198,12 +198,12 @@ function EdithPassword({ closeModal }) {
 									className=" grow inputBox-EditSettings"
 									name="previousPassword"
 									placeholder=""
-									type={!passwordVisibility1 ? "password" : "text"}
+									type={!passwordVisibility ? "password" : "text"}
 									id="myInput"
 									autoComplete="off"
 								/>
 								<span
-									onClick={togglePasswordVisibility1}
+									onClick={togglePasswordVisibility}
 									class="fa fa-fw fa-eye field-icon toggle-password"
 								></span>
 							</div>
@@ -220,7 +220,7 @@ function EdithPassword({ closeModal }) {
 									className="inputBox-EditSettings"
 									name="password"
 									placeholder="Enter Old Password"
-									type="password"
+									type={!passwordVisibility1 ? "password" : "text"}
 									autoComplete="off"
 								/>
 								<span
@@ -244,13 +244,13 @@ function EdithPassword({ closeModal }) {
 									onBlur={validateInput}
 									value={input.confirmPassword}
 									className="inputBox-EditSettings"
-									type="password"
+									type={!passwordVisibility2 ? "password" : "text"}
 									name="confirmPassword"
 									placeholder="Enter Old Password"
 									autoComplete="off"
 								/>
 								<span
-									onClick={togglePasswordVisibility1}
+									onClick={togglePasswordVisibility2}
 									class="fa fa-fw fa-eye field-icon toggle-password"
 								></span>
 								{error.confirmPassword && (
@@ -288,7 +288,7 @@ function EdithPassword({ closeModal }) {
 				>
 					<div class=" inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
-					<div class="fixed flex justify-start inset-0 z-10 sm:w-5/6 md:w-2/4 EditDone-card">
+					<div class="fixed flex justify-start  z-10 sm:w-5/6 md:w-2/4 EditDone-card">
 						<div className="sm:w-5/6 md:w-full">
 							<div className=" mx-10 flex border-b-2 justify-between  text-[#232164] font-semibold text-lg mb-20 mt-20">
 								<div className="">Edit Phone Numberss</div>

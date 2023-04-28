@@ -100,7 +100,7 @@ function EditAdress({ closeModal }) {
 				role="dialog"
 				aria-modal="true"
 			>
-				<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+				<div class="fixed  bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
 				<div class="fixed flex justify-start inset-0 z-10 sm:w-5/6 md:w-2/4 EditDone-card">
 					<div className="sm:w-5/6 md:w-full">
