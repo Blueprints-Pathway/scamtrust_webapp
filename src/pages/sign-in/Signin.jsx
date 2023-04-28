@@ -69,6 +69,10 @@ const Signin = () => {
 
 
   useEffect(() => {
+    if(localStorage.getItem('sign-up')){
+      openModal();
+      localStorage.removeItem('sign-up')
+    }
     if(isAuthenticated){
 
       if (data?.usertype === 'VENDOR'){

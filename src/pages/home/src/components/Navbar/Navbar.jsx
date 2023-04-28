@@ -25,7 +25,9 @@ const Navbar = (props) => {
               Login
             </button>
             
-           <button onClick={handleSignUp}
+           <button onClick={()=>{
+            localStorage.setItem('sign-up','sign-up')
+            navigate('/sign-in')}}
            className='sign-btn'>
             Sign up
            </button>
