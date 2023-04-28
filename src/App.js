@@ -39,6 +39,7 @@ import RateTransactions from "./pages/transactions/RateTransaction/RateTransacti
 import ViewRattings from "./pages/transactions/viewRattings/ViewRattings";
 import AdminDashboard from "./pages/admin/dashboard/AdminDashboard"
 import UsersListPage from "./pages/admin/UsersListPage"
+import AccountDeletionRequestPage from "./pages/account-deletion/AccountDeletionRequestPage";
 
 
 
@@ -53,6 +54,7 @@ const App = () => {
 
 		{/* SCAMTRUST WEBAPP */}
 		<Route path='/customer-dashboard' element={<CustomerDashboard />} />
+		<Route path='/customer-dashboard/request-account-deletion' element={<AccountDeletionRequestPage />} />
 		<Route path='/admin-dashboard' element={<AdminDashboard />} />
 		<Route path='/vendor-dashboard' element={<VendorDashboard />} />
 		<Route path='/users-list' element={<UsersListPage />} />
