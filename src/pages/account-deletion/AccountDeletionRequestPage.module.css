@@ -1,0 +1,12 @@
+.form-container{
+    display: flex;
+    height: calc(100vh - 100px);
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+.title{
+    color: #232164;
+    font-size: 23px;
+    font-weight: 600;
+}

@@ -69,7 +69,7 @@ const AppLayout = ({ children }) => {
 	const first = nameOf?.at(0);
 	const last = nameOf?.match(/\b(\w)/g).at(1);
 	let detail = localStorage.getItem("USER_DETAILS");
-	let usertype = JSON.parse(detail).data.usertype;
+	let usertype = JSON.parse(detail)?.data?.usertype;
 
 	const logoutUserHandler = () => {
 		dispatch(logoutUser());
