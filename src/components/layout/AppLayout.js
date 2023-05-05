@@ -184,17 +184,7 @@ const AppLayout = ({ children }) => {
 								</Link>
 							</div>
 
-        {/* <div className='header-right-div'> */}
-              {/* SEARCH INPUT  */}
-          {/* <div className='search'>  
-             <div className='header-div-2'>
-               <div className='header-input-icon'> <img className='input-icon-img' src={search} alt="..." /> </div>
-               <input onChange={searchInputChangeHandler} className='header-input' type="text" placeholder='Search vendor’s name' />
-             </div> */}
-             {/* <div>
-               <Search />
-             </div> */}
-          {/* </div> */}
+
 							<div className="side-bottom-tab">
 								<Link to={"/support"}  className="side-tab-con">
 									<SlSettings style={{ color: "#ffff" }} />
@@ -227,12 +217,11 @@ const AppLayout = ({ children }) => {
 								{ usertype == 'CUSTOMER' && <div className="search">
 									<div className="header-div-2">
 										<div className="header-input-icon">
-											{" "}
-											<img
-												className="input-icon-img"
-												src={search}
-												alt="..."
-											/>{" "}
+										<img
+											className="input-icon-img"
+											src={search}
+											alt="..."
+										/>{" "}
 										</div>
 										<input
 											onInput={getSearch}
@@ -297,13 +286,14 @@ const AppLayout = ({ children }) => {
 								</div>
 
 								{/* INITIALS */}
-								<div>
+								<div className="header-div-4">
 									<Avatar className="header-avatar">
 										<p className="header-initials">
 											{first} {last}
 										</p>
 									</Avatar>
 								</div>
+
 							</div>
 						</Header>
 
