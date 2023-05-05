@@ -7,7 +7,7 @@ import { VscArrowSwap } from "react-icons/vsc";
 import { SlSettings } from "react-icons/sl";
 import { CiWallet } from "react-icons/ci";
 import { VscHome } from "react-icons/vsc";
-import { BiSupport } from "react-icons/bi";
+import { BiSearchAlt2 } from "react-icons/bi";
 import { IoLogOutOutline } from "react-icons/io5";
 import search from "../../assets/images/search.png";
 import scamTrustLogo from "../../assets/images/scamTrustLogo.png";
@@ -216,13 +216,6 @@ const AppLayout = ({ children }) => {
 								       {/* SEARCH INPUT  */}
 								{ usertype == 'CUSTOMER' && <div className="search">
 									<div className="header-div-2">
-										<div className="header-input-icon">
-										<img
-											className="input-icon-img"
-											src={search}
-											alt="..."
-										/>{" "}
-										</div>
 										<input
 											onInput={getSearch}
 											type="text"
@@ -231,6 +224,7 @@ const AppLayout = ({ children }) => {
 											className="header-input"
 											placeholder="Search vendor’s name"
 										/>
+										<BiSearchAlt2 className="input-icon-img" />
 									</div>
 									 <div>
 										{searchInput.length > 0
