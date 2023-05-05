@@ -29,7 +29,7 @@ import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmai
 import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone";
 import UpdatedPassword from "./pages/passwordrecovery/UpdatedPassword";
 import SettingsVendor from "../src/pages/SettingsVendor/SettingsVendor";
-import VendorDashboard from "./pages/dashboards/vendorDashboard/VendorDashboard";
+import VendorDashboard from "./pages/dashboards/VendorDashboard/VendorDashboard";
 import Support from "./pages/support/Support";
 import Ratting from "./components/transactions/ratting/Ratting";
 import Fundbutton from "./components/buttons/fundbutton/Fundbutton"
