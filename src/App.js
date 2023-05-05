@@ -39,6 +39,7 @@ import RateTransactions from "./pages/transactions/RateTransaction/RateTransacti
 import ViewRattings from "./pages/transactions/viewRattings/ViewRattings";
 import AdminDashboard from "./pages/admin/dashboard/AdminDashboard"
 import UsersListPage from "./pages/admin/UsersListPage"
+import Mailchimp from "./pages/home/src/components/Mailchimp";
 
 
 
@@ -103,6 +104,9 @@ const App = () => {
                               WALLET */}
 		<Route path='/wallet' element={<Wallet />} />
 		<Route path='/fund-wallet' element={<Fundbutton />} />
+
+		<Route path='/mailchimp' element={<Mailchimp />} />
+
 
 	</Routes>
   )
