@@ -41,17 +41,15 @@
 }
 .header-div-2{
     position: relative;
-}
-.header-input-icon{ 
-  padding: 2px;
-  position: absolute;
-  box-sizing:border-box;
-  top: 50%;
-  right: 30px;
-  transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .input-icon-img{
-    width: 27px;
+    font-size: 28px;
+    position: relative;
+    right: 55px;
+    color: #232164;
 }
 .header-input{
   background-color: #F2F2F2;
@@ -172,18 +170,16 @@
         justify-content: flex-start;
     }
     .header-div-2{
-        position:relative;
-    }
-    .header-input-icon{ 
-      padding: 2px;
-      position: absolute;
-      box-sizing:border-box;
-      top: 50%;
-      right: 30px;
-      transform: translateY(-50%);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .input-icon-img{
-        width: 22px;
+        font-size: 23px;
+        position: relative;
+        right: 50px;
+        color: #232164;
     }
     .header-input{
       background-color: #F2F2F2;
@@ -303,18 +299,16 @@
         justify-content: flex-start;
     }
     .header-div-2{
-        position:relative;
-    }
-    .header-input-icon{ 
-      padding: 2px;
-      position: absolute;
-      box-sizing:border-box;
-      top: 50%;
-      right: 30px;
-      transform: translateY(-50%);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .input-icon-img{
-        width: 20px;
+        font-size: 20px;
+        position: relative;
+        right: 45px;
+        color: #232164;
     }
     .header-input{
       background-color: #F2F2F2;
@@ -403,9 +397,12 @@
         height: 100vh;
     }
     .content-con{
-        /* display: flex;
+        display: flex;
         align-items: center;
-        justify-content: space-between; */
+        justify-content: space-between;
+        width: 90vw;
+        margin: 0px 0px;
+        padding: 0px 100px;
         background-color: #ebebeb;
     }
     .header{
@@ -414,8 +411,6 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin: 0px -25px;
-
     }
     .header::-webkit-scrollbar{
         display: none;
@@ -445,6 +440,7 @@
         align-items: center;
         justify-content: space-between;
         width: 100vw;
+        padding: 0px 18px;
     }
     .search{
         display: flex;
@@ -453,32 +449,39 @@
         justify-content: center;
     }
     .header-div-2{
-        position:relative;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .second-header-1{
         position:relative;
     }
     .header-div-2{
-        position:relative;
-    }
-    .header-input-icon{ 
-      padding: 2px;
-      position: absolute;
-      box-sizing:border-box;
-      top: 50%;
-      right: 15px;
-      transform: translateY(-50%);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60vw;
     }
     .input-icon-img{
-        width: 17px;
+        font-size: 20px;
+        position: absolute;
+        right: 15px;
+        color: #232164;
     }
     .header-input{
+      position: relative;
       background-color: #F2F2F2;
       height: 35px;
       box-sizing:border-box;
       border-radius: 30px;
       border: none;
-      padding: 10px 30px 10px 20px;
+      padding: 10px 0px 10px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60vw;
     }
 
     .header-input::placeholder {
@@ -490,10 +493,13 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin: 0px 0px;
+        margin: 0px 10px;
       }
       .header-notification-icon{
         font-size: 27px;
+      }
+      .header-div-4{
+        /* width: 15vw; */
       }
       .header-avatar{
         background-color: #E36969;
