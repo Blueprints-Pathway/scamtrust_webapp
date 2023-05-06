@@ -25,10 +25,12 @@ import Declined from "./pages/transactions/declined/Declined";
 import CancelReason from "./pages/transactions/cancel-reason/CancelReason";
 import VendorDetails from "./pages/vendorprofile/VendorDetails";
 import Wallet from "./pages/Wallet/Wallet";
-import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmail";
-import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone";
-import UpdatedPassword from "./pages/passwordrecovery/UpdatedPassword";
-import SettingsVendor from "../src/pages/SettingsVendor/SettingsVendor";
+import PasswordEmail from "./pages/passwordRecovery/PasswordEmail";
+import PasswordPhoneNumber from "./pages/passwordRecovery/passwordPhoneNumber";
+import TokenPhone from "./pages/passwordRecovery/TokenPhone";
+import TokenEmail from "./pages/passwordRecovery/TokenEmail";
+import Confirms from "./pages/passwordRecovery/Confirms";
+import Sucess from "./pages/passwordRecovery/Sucess";
 import VendorDashboard from "./pages/dashboards/VendorDashboard/VendorDashboard";
 import Support from "./pages/support/Support";
 import Ratting from "./components/transactions/ratting/Ratting";
@@ -71,20 +73,12 @@ const App = () => {
 		<Route path='/customer-registration' element={<CustomerRegistration />} />
 		<Route path='/customer-activate-account' element={<CustomerActivate />} />
 		<Route path="/vendor/:slug" element={<VendorDetails/>} />
-		<Route
-        path='/passwordrecoveryemail'
-        element={<PasswordRecoveryEmail />}
-      />
-	  <Route  path='/settings'
-        element={<SettingsVendor/>}/>
-      <Route
-        path='/passwordrecoveryphone'
-        element={<PasswordRecoveryPhone />}
-      />
-	  <Route
-        path='/update-password/:token'
-        element={<UpdatedPassword />}
-      />
+		<Route path="/password-recovery" element={<PasswordEmail />} />
+			<Route path="/phoneNumber" element={<PasswordPhoneNumber />} />
+			<Route path="/tokenEmail" element={<TokenEmail />} />
+			<Route path="/tokenPhone" element={<TokenPhone />} />
+			<Route path="/password-sucess" element={<Sucess />} />
+			<Route path="/confirmPassword" element={<Confirms/>} />
 
 			{/* TRANSACTIONS */}
 			<Route path="/transactions" element={<Transaction />} />
