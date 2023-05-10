@@ -39,39 +39,39 @@ const AdminDashboard = () => {
 		setCurrentPageNumber((currentNumber) => currentNumber + 1);
 		console.log("next", currentPageNumber, lastPageNumber);
 	};
-	useEffect(() => {
-		(async () => {
-			try {
-				for (let i = 1; i <= lastPageNumber; i++) {
+	// useEffect(() => {
+	// 	(async () => {
+	// 		try {
+	// 			for (let i = 1; i <= lastPageNumber; i++) {
 				
 					
 				
-				const API_URL = `${process.env.REACT_APP_BASE_URL}/admin/withdrawals?page=${i}`;
-				const config = {
-					headers: {
-						"Content-Type": "application/json",
-						Authorization: `Bearer ${user_details?.data?.access_token}`,
-					},
-				};
+	// 			const API_URL = `${process.env.REACT_APP_BASE_URL}/admin/withdrawals?page=${i}`;
+	// 			const config = {
+	// 				headers: {
+	// 					"Content-Type": "application/json",
+	// 					Authorization: `Bearer ${user_details?.data?.access_token}`,
+	// 				},
+	// 			};
 
-				const data = await axios.get(API_URL, config);
-				for (let j = 0; j < data?.data.data.data.length; j++) {
-					totalAmountWithdrawn += data?.data.data.data[j].amount;
+	// 			const data = await axios.get(API_URL, config);
+	// 			for (let j = 0; j < data?.data.data.data.length; j++) {
+	// 				totalAmountWithdrawn += data?.data.data.data[j].amount;
 					
-				}
+	// 			}
 
-				console.log(totalAmountWithdrawn, 'total monies')
+	// 			console.log(totalAmountWithdrawn, 'total monies')
 
-			}
+	// 		}
 
-			setTotalMoneyWithrawn(totalAmountWithdrawn)
+	// 		setTotalMoneyWithrawn(totalAmountWithdrawn)
 			
-			} catch (error) {
-				console.log(error, "error");
-				// setIsLoading(false);
-			} 
-		})();
-	},)
+	// 		} catch (error) {
+	// 			console.log(error, "error");
+	// 			// setIsLoading(false);
+	// 		} 
+	// 	})();
+	// },)
 
 	useEffect(() => {
 		if (!auth.isAuthenticated) {
@@ -231,7 +231,7 @@ const AdminDashboard = () => {
 			<button className={classes.button} onClick={nextBtnHandler}>
 				NEXT
 			</button>
-			<h1>Total Amount Withdrawn: {totalMoneyWithrawn}</h1>
+			{/* <h1>Total Amount Withdrawn: {totalMoneyWithrawn}</h1> */}
 		</section>
 	);
 };
