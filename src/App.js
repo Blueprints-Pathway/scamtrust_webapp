@@ -41,6 +41,8 @@ import ViewRattings from "./pages/transactions/viewRattings/ViewRattings";
 import AdminDashboard from "./pages/admin/dashboard/AdminDashboard"
 import UsersListPage from "./pages/admin/UsersListPage"
 import AccountDeletionRequestPage from "./pages/account-deletion/AccountDeletionRequestPage";
+import Settings from "./pages/settings/Settings";
+import SettingsVendor from "./pages/SettingsVendor/SettingsVendor";
 
 
 
@@ -69,6 +71,9 @@ const App = () => {
 		<Route path='/security-question' element={<VendorSecurity />} /> 
 		<Route path='/faq-page' element={<FaqPage />} /> 
 		<Route path='/support' element={<Support />} />
+		<Route  path='/settings'
+        element={<SettingsVendor/>}/>
+      
 	
 		<Route path='/customer-registration' element={<CustomerRegistration />} />
 		<Route path='/customer-activate-account' element={<CustomerActivate />} />

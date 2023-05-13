@@ -2,7 +2,7 @@ import React from "react"
 import { sidebarData } from "../data/data"
 import { sidebarData2 } from "../data/data"
 import logo from "../assets/images/scamTrustLogo.png"
-import trust from "../assets/images/Trust.png"
+import trust from "../assets/images/trust.png"
 function Sidebar() {
   return (
     <div className=' bg  w-[250px]  hidden md:flex justify-between items-center flex-col  '>
