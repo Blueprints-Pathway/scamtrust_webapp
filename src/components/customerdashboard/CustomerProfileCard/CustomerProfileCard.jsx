@@ -34,7 +34,7 @@ const CustomerProfileCard = () => {
                 <div className='profile-card-total-con'>
                     <small className='profile-card-total'>Total Balance</small>
                     { eye ?
-                       <p className='profile-card-balance-1'><sup className='profile-card-sign'>₦</sup>{data.walletBalance}</p>
+                       <p className='profile-card-balance-1'><sup className='profile-card-sign'>₦</sup>{data.walletBalance.toFixed(2)}</p>
                           : 
                       <p className='profile-card-balance-1'><sup className='profile-card-sign'>₦</sup>*******</p>
                     }
