@@ -183,7 +183,7 @@ const Signin = () => {
             setCheck(e.target.checked);
             
            }}  className='sign-check-words'>Remember me</Checkbox>
-           <p onClick={()=>{navigate('/passwordrecoveryemail')}}
+           <p onClick={()=>{navigate('/password-recovery')}}
             className='sign-check-words'>Forgot Password? </p>
          </div>
 
