@@ -23,7 +23,7 @@ function Support() {
             <p className={classes["support-p"]}>
               Need support? Find out how we can serve you better
             </p>
-            <div className={classes["support-menuu"]}>
+            <div>
               <div className={classes["support-menu"]}>
                 <a
                   href="https://wa.me/2348169199932"
