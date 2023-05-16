@@ -39,6 +39,8 @@ import RateTransactions from "./pages/transactions/RateTransaction/RateTransacti
 import ViewRattings from "./pages/transactions/viewRattings/ViewRattings";
 import AdminDashboard from "./pages/admin/dashboard/AdminDashboard"
 import UsersListPage from "./pages/admin/UsersListPage"
+import NewAdminDashboard from "./pages/newAdmin/NewAdminDashboard";
+import AdminLayout from "./pages/newAdmin/AdminLayout";
 
 
 
@@ -50,6 +52,11 @@ const App = () => {
 			<Route path="/faq" element={<Faq />} />
 			<Route path="/about" element={<About />} />
 			<Route path="/know-more" element={<KnowMore />} />
+
+              
+			        {/* SCAMTRUST  ADMIN */}
+			<Route path="/new-admin-dashboard" element={<NewAdminDashboard />} />
+
 
 		{/* SCAMTRUST WEBAPP */}
 		<Route path='/customer-dashboard' element={<CustomerDashboard />} />

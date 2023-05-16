@@ -36,6 +36,8 @@ import axios from "axios";
 import { listRatings } from "../../actions/ratingActions";
 const { Header, Content, Sider } = Layout;
 
+
+
 const AppLayout = ({ children }) => {
 	const { loading, error, data } = useSelector((state) => state.user);
 	const notification = useSelector((state) => state.notification);
