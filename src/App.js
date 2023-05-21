@@ -1,5 +1,4 @@
 /** @format */
-
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import About from "./pages/home/src/components/About/About";
@@ -26,10 +25,12 @@ import Declined from "./pages/transactions/declined/Declined";
 import CancelReason from "./pages/transactions/cancel-reason/CancelReason";
 import VendorDetails from "./pages/vendorprofile/VendorDetails";
 import Wallet from "./pages/Wallet/Wallet";
-import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmail";
-import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone";
-import UpdatedPassword from "./pages/passwordrecovery/UpdatedPassword";
-import SettingsVendor from "../src/pages/SettingsVendor/SettingsVendor";
+import PasswordEmail from "./pages/passwordRecovery/PasswordEmail";
+import PasswordPhoneNumber from "./pages/passwordRecovery/passwordPhoneNumber";
+import TokenPhone from "./pages/passwordRecovery/TokenPhone";
+import TokenEmail from "./pages/passwordRecovery/TokenEmail";
+import Confirms from "./pages/passwordRecovery/Confirms";
+import Sucess from "./pages/passwordRecovery/Sucess";
 import VendorDashboard from "./pages/dashboards/vendorDashboard/VendorDashboard";
 import Support from "./pages/support/Support";
 import Ratting from "./components/transactions/ratting/Ratting";
@@ -40,7 +41,10 @@ import ViewRattings from "./pages/transactions/viewRattings/ViewRattings";
 import AdminDashboard from "./pages/admin/dashboard/AdminDashboard"
 import UsersListPage from "./pages/admin/UsersListPage"
 import NewAdminDashboard from "./pages/newAdmin/NewAdminDashboard";
-import AdminLayout from "./pages/newAdmin/AdminLayout";
+import AccountDeletionRequestPage from "./pages/account-deletion/AccountDeletionRequestPage";
+import Settings from "./pages/settings/Settings";
+import SettingsVendor from "./pages/SettingsVendor/SettingsVendor";
+import AdminTransaction from "./pages/newAdmin/admin-transaction/AdminTransaction";
 
 
 
@@ -56,10 +60,12 @@ const App = () => {
               
 			        {/* SCAMTRUST  ADMIN */}
 			<Route path="/new-admin-dashboard" element={<NewAdminDashboard />} />
+			<Route path="/admin-transaction" element={<AdminTransaction />} />
 
 
 		{/* SCAMTRUST WEBAPP */}
 		<Route path='/customer-dashboard' element={<CustomerDashboard />} />
+		<Route path='/customer-dashboard/request-account-deletion' element={<AccountDeletionRequestPage />} />
 		<Route path='/admin-dashboard' element={<AdminDashboard />} />
 		<Route path='/vendor-dashboard' element={<VendorDashboard />} />
 		<Route path='/users-list' element={<UsersListPage />} />
@@ -73,24 +79,19 @@ const App = () => {
 		<Route path='/security-question' element={<VendorSecurity />} /> 
 		<Route path='/faq-page' element={<FaqPage />} /> 
 		<Route path='/support' element={<Support />} />
+		<Route  path='/settings'
+        element={<SettingsVendor/>}/>
+      
 	
 		<Route path='/customer-registration' element={<CustomerRegistration />} />
 		<Route path='/customer-activate-account' element={<CustomerActivate />} />
 		<Route path="/vendor/:slug" element={<VendorDetails/>} />
-		<Route
-        path='/passwordrecoveryemail'
-        element={<PasswordRecoveryEmail />}
-      />
-	  <Route  path='/settings'
-        element={<SettingsVendor/>}/>
-      <Route
-        path='/passwordrecoveryphone'
-        element={<PasswordRecoveryPhone />}
-      />
-	  <Route
-        path='/update-password/:token'
-        element={<UpdatedPassword />}
-      />
+		<Route path="/password-recovery" element={<PasswordEmail />} />
+			<Route path="/phoneNumber" element={<PasswordPhoneNumber />} />
+			<Route path="/tokenEmail" element={<TokenEmail />} />
+			<Route path="/tokenPhone" element={<TokenPhone />} />
+			<Route path="/password-sucess" element={<Sucess />} />
+			<Route path="/confirmPassword" element={<Confirms/>} />
 
 			{/* TRANSACTIONS */}
 			<Route path="/transactions" element={<Transaction />} />
@@ -110,6 +111,7 @@ const App = () => {
                               WALLET */}
 		<Route path='/wallet' element={<Wallet />} />
 		<Route path='/fund-wallet' element={<Fundbutton />} />
+
 
 	</Routes>
   )

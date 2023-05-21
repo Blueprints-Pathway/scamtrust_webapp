@@ -43,7 +43,7 @@
     width: 30vw;
     height: 55px;
     color: #ffff;
-    background-color: #232164;
+    background-color: #232164 !important;
     font-size: 15px;
     margin-top: 30px;
 }

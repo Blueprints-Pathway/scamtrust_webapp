@@ -104,10 +104,6 @@ const AllTransaction = () => {
   return (
     <div>
       {content}
-      {/* <Awaiting />
-      <Completed />
-      <Cancelled />
-      <Ongoing /> */}
     </div>
   )
 }

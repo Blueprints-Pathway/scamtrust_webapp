@@ -18,6 +18,7 @@ import { getLoggedInUserDetails } from '../../actions/userActions';
 import { getWalletTransactionsDetails } from '../../actions/walletActions';
 import { listNotifications } from '../../actions/notificationActions';
 import { getVendorCancelledTransactions, getVendorCompletedTransactions, getVendorOngoingTransactions, getVendorTransactions } from '../../actions/vendorTransactionActions';
+import Navbar from '../home/src/components/Navbar/Navbar';
 
 const customStyles = {
   // overlay: {
@@ -68,6 +69,10 @@ const Signin = () => {
 
 
   useEffect(() => {
+    if(localStorage.getItem('sign-up')){
+      openModal();
+      localStorage.removeItem('sign-up')
+    }
     if(isAuthenticated){
 
       if (data?.usertype === 'VENDOR'){
@@ -88,7 +93,7 @@ const Signin = () => {
       dispatch(getWalletTransactionsDetails())
   
       dispatch(listNotifications());
-        console.log(data);
+        // console.log(data);
         dispatch(logoutUserTimer())
       if(data?.usertype === 'CUSTOMER'){
         navigate('/customer-dashboard');
@@ -204,7 +209,6 @@ const Signin = () => {
 
       </div>
       </div>
-
 
                    {/* SIGN UP MODAL */}
       <div>

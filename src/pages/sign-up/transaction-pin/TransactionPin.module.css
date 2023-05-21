@@ -53,7 +53,7 @@
     width: 25vw;
     height: 45px;
     color: #ffff;
-    background-color: #232164;
+    background-color: #232164 !important;
     font-size: 15px;
     margin-top: 45px;
 }

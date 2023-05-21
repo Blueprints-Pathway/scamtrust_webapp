@@ -61,7 +61,7 @@ input[type=number] {
     width: 30vw;
     height: 45px;
     color: #ffff;
-    background-color: #232164;
+    background-color: #232164 !important;
     font-size: 15px;
 }
 

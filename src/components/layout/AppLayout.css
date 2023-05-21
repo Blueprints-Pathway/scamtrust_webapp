@@ -41,17 +41,15 @@
 }
 .header-div-2{
     position: relative;
-}
-.header-input-icon{ 
-  padding: 2px;
-  position: absolute;
-  box-sizing:border-box;
-  top: 50%;
-  right: 30px;
-  transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .input-icon-img{
-    width: 27px;
+    font-size: 28px;
+    position: relative;
+    right: 55px;
+    color: #232164;
 }
 .header-input{
   background-color: #F2F2F2;
@@ -66,6 +64,17 @@
     color: #d7d1d1;
     font-size: 12px;
     font-weight: 300;
+  }
+  .admin-info-con{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    line-height: 25px;
+    margin: 0px 60px;
+  }
+  .admin-info-id, .admin-info-role{
+    font-size: 13px;
   }
 .header-div-3{
     display: flex;
@@ -109,6 +118,9 @@
     color: #ffff;
     margin: 0px 5px;
 }
+.admin-side-tab{
+    margin-top: 80px;
+}
 .side-tab-wrapper{
     margin-top: 120px;
 }
@@ -116,7 +128,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin: 40px 0px 40px 45px;
+    margin: 40px 0px 40px 40px;
 }
 .side-tabs{
     font-size: 12px;
@@ -172,18 +184,16 @@
         justify-content: flex-start;
     }
     .header-div-2{
-        position:relative;
-    }
-    .header-input-icon{ 
-      padding: 2px;
-      position: absolute;
-      box-sizing:border-box;
-      top: 50%;
-      right: 30px;
-      transform: translateY(-50%);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .input-icon-img{
-        width: 22px;
+        font-size: 23px;
+        position: relative;
+        right: 50px;
+        color: #232164;
     }
     .header-input{
       background-color: #F2F2F2;
@@ -198,6 +208,17 @@
         color: #d7d1d1;
         font-size: 12px;
         font-weight: 300;
+      }
+      .admin-info-con{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        line-height: 20px;
+        margin: 0px 15px;
+      }
+      .admin-info-id, .admin-info-role{
+        font-size: 10px;
       }
     .header-div-3{
         display: flex;
@@ -241,6 +262,9 @@
         color: #ffff;
         margin: 0px 5px;
     }
+    .admin-side-tab{
+        margin-top: 70px;
+    }
     .side-tab-wrapper{
         margin-top: 90px;
     }
@@ -248,7 +272,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        margin: 40px 0px 40px 55px;
+        margin: 40px 0px 40px 50px;
     }
     .side-tabs{
         font-size: 10px;
@@ -303,18 +327,16 @@
         justify-content: flex-start;
     }
     .header-div-2{
-        position:relative;
-    }
-    .header-input-icon{ 
-      padding: 2px;
-      position: absolute;
-      box-sizing:border-box;
-      top: 50%;
-      right: 30px;
-      transform: translateY(-50%);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .input-icon-img{
-        width: 20px;
+        font-size: 20px;
+        position: relative;
+        right: 45px;
+        color: #232164;
     }
     .header-input{
       background-color: #F2F2F2;
@@ -329,6 +351,17 @@
         color: #d7d1d1;
         font-size: 11px;
         font-weight: 300;
+      }
+      .admin-info-con{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        line-height: 20px;
+        margin: 0px 10px;
+      }
+      .admin-info-id, .admin-info-role{
+        font-size: 10px;
       }
     .header-div-3{
         display: flex;
@@ -372,6 +405,9 @@
         color: #ffff;
         margin: 0px 5px;
     }
+    .admin-side-tab{
+        margin-top: 60px;
+    }
     .side-tab-wrapper{
         margin-top: 90px;
     }
@@ -379,7 +415,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        margin: 40px 0px 40px 55px;
+        margin: 40px 0px 40px 50px;
     }
     .side-tabs{
         font-size: 10px;
@@ -403,6 +439,12 @@
         height: 100vh;
     }
     .content-con{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100vw;
+        margin: 0px 0px;
+        padding: 0px 0px;
         background-color: #ebebeb;
     }
     .header{
@@ -410,9 +452,9 @@
         height: 80px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        margin: 0px -25px;
-
+        justify-content: center;
+        width: 100vw;
+        margin: 0px 0px;
     }
     .header::-webkit-scrollbar{
         display: none;
@@ -425,7 +467,9 @@
     .second-header-1{
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
+        width: 50vw;
+        margin-left: -25px;
     }
     .header-dash{
         color: #232164;
@@ -434,70 +478,93 @@
     }
     .header-dash-2{
         color: #232164;
-        font-size: 18px;
+        font-size: 13px;
         font-weight: 600;
     }
     .header-right-div{
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
+        width: 100vw;
+        padding: 0px 0px;
+        margin-right: -25px;
     }
     .search{
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
     }
     .header-div-2{
-        position:relative;
-    }
-    .second-header-1{
-        position:relative;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .header-div-2{
-        position:relative;
-    }
-    .header-input-icon{ 
-      padding: 2px;
-      position: absolute;
-      box-sizing:border-box;
-      top: 50%;
-      right: 30px;
-      transform: translateY(-50%);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60vw;
     }
     .input-icon-img{
-        width: 17px;
+        font-size: 20px;
+        position: absolute;
+        right: 15px;
+        color: #232164;
     }
     .header-input{
+      position: relative;
       background-color: #F2F2F2;
       height: 35px;
       box-sizing:border-box;
       border-radius: 30px;
       border: none;
-      padding: 10px 70px 10px 20px;
+      padding: 10px 0px 10px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60vw;
+      margin-left: -25px;
     }
-    
+
     .header-input::placeholder {
         color: #d7d1d1;
         font-size: 11px;
         font-weight: 300;
       }
+      .admin-info-con{
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        line-height: 20px;
+        margin: 0px 10px;
+      }
+      .admin-info-id, .admin-info-role{
+        font-size: 10px;
+      }
     .header-div-3{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin: 0px 20px;
+        margin: 0px 15px;
       }
       .header-notification-icon{
         font-size: 27px;
       }
+      .header-div-4{
+        margin: 0px 10px;
+      }
       .header-avatar{
         background-color: #E36969;
-        width: 38px;
-        height: 38px;
+        width: 36px;
+        height: 36px;
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 0px 0px;
       }
       .header-initials{
         text-align: center;
@@ -524,6 +591,9 @@
         color: #ffff;
         margin: 0px 5px;
     }
+    .admin-side-tab{
+        margin-top: 60px;
+    }
     .side-tab-wrapper{
         margin-top: 90px;
     }
@@ -531,7 +601,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        margin: 40px 0px 40px 55px;
+        margin: 40px 0px 40px 50px;
     }
     .side-tabs{
         font-size: 10px;
