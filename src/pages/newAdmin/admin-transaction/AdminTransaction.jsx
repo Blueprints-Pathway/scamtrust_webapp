@@ -28,45 +28,6 @@ const items = [
   },
 ];
 
-// const transaction = [
-//   {
-//     id: 1,
-//     name: "Fadekemi Folalu",
-//     transId: "ID-110753",
-//     amount: "235,000.00",
-//     type: "Customer",
-//     date: "5-07-2022, 12:25pm",
-//     status: <td className='pl-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] text-[#FFAA00]'>Pending</td>,
-//   },
-//   {
-//     id: 2,
-//     name: "Chukwudi Osinachi",
-//     transId: "ID-110752",
-//     amount: "500,000.00",
-//     type: "Customer",
-//     date: "5-07-2022,  2:12pm",
-//     status: <td className='pl-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] text-[#3AB75D]'>Successful</td>,
-//   },
-//   {
-//     id: 3,
-//     name: "Fadekemi Folalu",
-//     transId: "ID-110753",
-//     amount: "235,000.00",
-//     type: "Customer",
-//     date: "5-07-2022, 12:25pm",
-//     status: <td className='pl-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] text-[#FC0D1B]'>Failed</td>,
-//   },
-//   {
-//     id: 4,
-//     name: "Chukwudi Osinachi",
-//     transId: "ID-110752",
-//     amount: "500,000.00",
-//     type: "Customer",
-//     date: "5-07-2022,  2:12pm",
-//     status: <td className='pl-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] text-[#3AB75D]'>Successful</td>,
-//   },
-// ]
-
 
 const AdminTransaction = () => {
   return (

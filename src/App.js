@@ -15,7 +15,7 @@ import VendorActivate from "./pages/sign-up/vendor-sign-up/vendor-activate-accou
 import SignupModal from "./components/sign-up-modal/SignupModal";
 import CustomerRegistration from "./pages/sign-up/customer-sign-up/customer-registration/CustomerRegistration";
 import CustomerActivate from "./pages/sign-up/customer-sign-up/customer-activate-account/CustomerActivate";
-import CustomerDashboard from "./pages/dashboards/CustomerDashboard/CustomerDashboard";
+import CustomerDashboard from "./pages/dashboards/customerDashboard/CustomerDashboard";
 import Transaction from "./pages/transactions/Transactions";
 import Awaiting from "./pages/transactions/awaiting/Awaiting";
 import Ongoing from "./pages/transactions/ongoing/Ongoing";
@@ -25,9 +25,9 @@ import Declined from "./pages/transactions/declined/Declined";
 import CancelReason from "./pages/transactions/cancel-reason/CancelReason";
 import VendorDetails from "./pages/vendorprofile/VendorDetails";
 import Wallet from "./pages/Wallet/Wallet";
-import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmail";
-import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone";
-import UpdatedPassword from "./pages/passwordrecovery/UpdatedPassword";
+// import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmail";
+// import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone";
+// import UpdatedPassword from "./pages/passwordrecovery/UpdatedPassword";
 import SettingsVendor from "../src/pages/SettingsVendor/SettingsVendor";
 import VendorDashboard from "./pages/dashboards/vendorDashboard/VendorDashboard";
 import Support from "./pages/support/Support";
@@ -38,6 +38,15 @@ import RateTransactions from "./pages/transactions/RateTransaction/RateTransacti
 import ViewRattings from "./pages/transactions/viewRattings/ViewRattings";
 import AdminDashboard from "./pages/admin/dashboard/AdminDashboard"
 import UsersListPage from "./pages/admin/UsersListPage"
+import AdminTransaction from "./pages/newAdmin/admin-transaction/AdminTransaction";
+import NewAdminDashboard from "./pages/newAdmin/NewAdminDashboard";
+import TokenEmail from "./pages/SettingsVendor/TokenEmail";
+import TokenPhone from "./pages/SettingsVendor/TokenPhone";
+import PasswordEmail from "./pages/passwordRecovery/PasswordEmail";
+import PasswordPhoneNumber from "./pages/passwordRecovery/passwordPhoneNumber";
+import Sucess from "./pages/passwordRecovery/Sucess";
+import Confirms from "./pages/passwordRecovery/Confirms";
+import AccountDeletionRequestPage from "./pages/account-deletion/AccountDeletionRequestPage";
 
 
 
@@ -58,7 +67,7 @@ const App = () => {
 
 		{/* SCAMTRUST WEBAPP */}
 		<Route path='/customer-dashboard' element={<CustomerDashboard />} />
-		<Route path='/customer-dashboard/request-account-deletion' element={<AccountDeletionRequestPage />} />
+		<Route path="customer-dashboard/request-account-deletion" element={<AccountDeletionRequestPage /> } />
 		<Route path='/admin-dashboard' element={<AdminDashboard />} />
 		<Route path='/vendor-dashboard' element={<VendorDashboard />} />
 		<Route path='/users-list' element={<UsersListPage />} />
@@ -84,7 +93,7 @@ const App = () => {
 			<Route path="/tokenEmail" element={<TokenEmail />} />
 			<Route path="/tokenPhone" element={<TokenPhone />} />
 			<Route path="/password-sucess" element={<Sucess />} />
-			<Route path="/confirmPassword" element={<Confirms/>} />
+			<Route path='confirmPassword' element={<Confirms /> } />
 
 			{/* TRANSACTIONS */}
 			<Route path="/transactions" element={<Transaction />} />

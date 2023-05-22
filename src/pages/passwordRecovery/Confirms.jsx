@@ -6,6 +6,8 @@ import Logo from "../../assets/images/ScanTrust logo.svg";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Formik } from "formik";
 import axios from "axios";
+
+
 function Confirms({ route }) {
   const [passwords, setPasswords] = useState();
   const [confirmPassword, setConfirmPassword] = useState();

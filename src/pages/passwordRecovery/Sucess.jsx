@@ -3,6 +3,7 @@ import classes from "../passwordRecovery/Password.module.css";
 import Logo from "../../assets/images/ScanTrust logo.svg";
 import { useNavigate } from "react-router-dom";
 import sucess from "../../assets/images/sucess.svg";
+
 function Sucess() {
   const navigate = useNavigate();
 
