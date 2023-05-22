@@ -496,10 +496,10 @@
         justify-content: center;
     }
     .header-div-2{
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        position:relative;
+    }
+    .second-header-1{
+        position:relative;
     }
     .header-div-2{
         position: relative;
@@ -553,6 +553,9 @@
       }
       .header-notification-icon{
         font-size: 27px;
+      }
+      .header-div-4{
+        /* width: 15vw; */
       }
       .header-div-4{
         margin: 0px 10px;

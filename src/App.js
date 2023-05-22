@@ -15,7 +15,7 @@ import VendorActivate from "./pages/sign-up/vendor-sign-up/vendor-activate-accou
 import SignupModal from "./components/sign-up-modal/SignupModal";
 import CustomerRegistration from "./pages/sign-up/customer-sign-up/customer-registration/CustomerRegistration";
 import CustomerActivate from "./pages/sign-up/customer-sign-up/customer-activate-account/CustomerActivate";
-import CustomerDashboard from "./pages/dashboards/customerDashboard/CustomerDashboard";
+import CustomerDashboard from "./pages/dashboards/CustomerDashboard/CustomerDashboard";
 import Transaction from "./pages/transactions/Transactions";
 import Awaiting from "./pages/transactions/awaiting/Awaiting";
 import Ongoing from "./pages/transactions/ongoing/Ongoing";
@@ -25,12 +25,10 @@ import Declined from "./pages/transactions/declined/Declined";
 import CancelReason from "./pages/transactions/cancel-reason/CancelReason";
 import VendorDetails from "./pages/vendorprofile/VendorDetails";
 import Wallet from "./pages/Wallet/Wallet";
-import PasswordEmail from "./pages/passwordRecovery/PasswordEmail";
-import PasswordPhoneNumber from "./pages/passwordRecovery/passwordPhoneNumber";
-import TokenPhone from "./pages/passwordRecovery/TokenPhone";
-import TokenEmail from "./pages/passwordRecovery/TokenEmail";
-import Confirms from "./pages/passwordRecovery/Confirms";
-import Sucess from "./pages/passwordRecovery/Sucess";
+import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmail";
+import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone";
+import UpdatedPassword from "./pages/passwordrecovery/UpdatedPassword";
+import SettingsVendor from "../src/pages/SettingsVendor/SettingsVendor";
 import VendorDashboard from "./pages/dashboards/vendorDashboard/VendorDashboard";
 import Support from "./pages/support/Support";
 import Ratting from "./components/transactions/ratting/Ratting";
@@ -40,11 +38,6 @@ import RateTransactions from "./pages/transactions/RateTransaction/RateTransacti
 import ViewRattings from "./pages/transactions/viewRattings/ViewRattings";
 import AdminDashboard from "./pages/admin/dashboard/AdminDashboard"
 import UsersListPage from "./pages/admin/UsersListPage"
-import NewAdminDashboard from "./pages/newAdmin/NewAdminDashboard";
-import AccountDeletionRequestPage from "./pages/account-deletion/AccountDeletionRequestPage";
-import Settings from "./pages/settings/Settings";
-import SettingsVendor from "./pages/SettingsVendor/SettingsVendor";
-import AdminTransaction from "./pages/newAdmin/admin-transaction/AdminTransaction";
 
 
 
