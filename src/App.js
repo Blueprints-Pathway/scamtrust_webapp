@@ -25,9 +25,6 @@ import Declined from "./pages/transactions/declined/Declined";
 import CancelReason from "./pages/transactions/cancel-reason/CancelReason";
 import VendorDetails from "./pages/vendorprofile/VendorDetails";
 import Wallet from "./pages/Wallet/Wallet";
-// import PasswordRecoveryEmail from "./pages/passwordrecovery/PasswordRecoveryEmail";
-// import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone";
-// import UpdatedPassword from "./pages/passwordrecovery/UpdatedPassword";
 import SettingsVendor from "../src/pages/SettingsVendor/SettingsVendor";
 import VendorDashboard from "./pages/dashboards/VendorDashboard/VendorDashboard";
 import Support from "./pages/support/Support";
@@ -39,7 +36,7 @@ import ViewRattings from "./pages/transactions/viewRattings/ViewRattings";
 import AdminDashboard from "./pages/admin/dashboard/AdminDashboard"
 import UsersListPage from "./pages/admin/UsersListPage"
 import AdminTransaction from "./pages/newAdmin/admin-transaction/AdminTransaction";
-import NewAdminDashboard from "./pages/newAdmin/NewAdminDashboard";
+import NewAdminDashboard from "./pages/newAdmin/adminDashboard/NewAdminDashboard";
 import TokenEmail from "./pages/SettingsVendor/TokenEmail";
 import TokenPhone from "./pages/SettingsVendor/TokenPhone";
 import PasswordEmail from "./pages/passwordRecovery/PasswordEmail";
