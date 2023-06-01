@@ -143,9 +143,7 @@ const TransactionCard = () => {
                     })}
          </div>  
         </div>
-
-
-         
+    
     </div>
   )
 }

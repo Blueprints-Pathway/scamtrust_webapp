@@ -161,7 +161,7 @@ const AppLayout = ({ children }) => {
 										Dashboard
 									</span>
 								</Link>
-								<Link to="" className="side-tab-con hover:bg-[#3AB75D] hover:rounded hover:p-1 hover:w-[150px] xl:hover:w-[165px]">
+								<Link to="/admin-user-management" className="side-tab-con hover:bg-[#3AB75D] hover:rounded hover:p-1 hover:w-[150px] xl:hover:w-[165px]">
 									<FaUserCog className="text-white text-xl" />
 									<span
 										

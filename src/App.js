@@ -44,6 +44,7 @@ import PasswordPhoneNumber from "./pages/passwordRecovery/passwordPhoneNumber";
 import Sucess from "./pages/passwordRecovery/Sucess";
 import Confirms from "./pages/passwordRecovery/Confirms";
 import AccountDeletionRequestPage from "./pages/account-deletion/AccountDeletionRequestPage";
+import UserManagement from "./pages/newAdmin/user-management/UserManagement";
 
 
 
@@ -60,6 +61,7 @@ const App = () => {
 			        {/* SCAMTRUST  ADMIN */}
 			<Route path="/new-admin-dashboard" element={<NewAdminDashboard />} />
 			<Route path="/admin-transaction" element={<AdminTransaction />} />
+			<Route path="/admin-user-management" element={<UserManagement />} />
 
 
 		{/* SCAMTRUST WEBAPP */}
