@@ -22,7 +22,7 @@ const Mailchimp = () => {
             {
               headers: {
                 // Authorization: "apikey YOUR_API_KEY",
-                Authorization: "703da46acc1eedaf042109268c341ce9-us21",
+                Authorization: "703da46acc1eedaf042109268c341ce9-us20",
                 "Content-Type": "application/json",
               },
             }
