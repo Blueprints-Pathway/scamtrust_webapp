@@ -31,11 +31,11 @@ const Completed = () => {
    
     let transaction = transactions.allTransactions.find(transaction => transaction.id == param.id);
     if(usertype === 'VENDOR'){
-		console.log(vendorTransactions.allTransactions);
+		//console.log(vendorTransactions.allTransactions);
         transaction = vendorTransactions.completedTransactions.find(transaction => transaction.id == param.id);
 
     }
-    console.log(transaction)
+    //console.log(transaction)
 const navigate=useNavigate()
 	return (
 		<AppLayout>

@@ -72,7 +72,7 @@ function EditPin({ closeModal }) {
 			// setFailed(error?.response?.data?.status);
 		}
 	};
-	console.log(pins, "pin");
+	//console.log(pins, "pin");
 	return (
 		<>
 			<div

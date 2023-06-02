@@ -106,7 +106,7 @@ function EdithEmail({ closeModal }) {
 			});
 			handleEdit2();
 		} catch (error) {
-			console.log(error.response?.status, "error");
+			//console.log(error.response?.status, "error");
 			swal({
 				icon: "error",
 				text:
@@ -127,11 +127,11 @@ function EdithEmail({ closeModal }) {
 
 			setEmailMessage(data?.data?.status);
 		} catch (error) {
-			console.log(
-				error,
+			// console.log(
+			// 	error,
 
-				"errrors"
-			);
+			// 	"errrors"
+			// );
 		}
 	};
 	const { data } = useSelector((state) => state.user);

@@ -36,8 +36,8 @@ let error = <p></p>;
     }
   }, [auth.isEmailValid, auth.isPhoneValid])
   if (!misc.businessIndustriesLoading && !misc.businessTypesLoading) {
-    console.log(misc.businessTypes.data); 
-    console.log(misc.businessIndustries.data)
+    //console.log(misc.businessTypes.data); 
+    //console.log(misc.businessIndustries.data)
     businessTypes = misc.businessTypes.data;
     businessIndustries = misc.businessIndustries.data;
   //  questions = data.data.data; 
@@ -48,7 +48,7 @@ let error = <p></p>;
     const { Option } = Select;
 
     const submitFormHandler = (e) => {
-      console.log(e.BusinessName, e.EmailAddress, e.PhoneNumber, e.BusinessIndustry, e.BusinessAddress, e.BusinessType  + 'hi');
+      //console.log(e.BusinessName, e.EmailAddress, e.PhoneNumber, e.BusinessIndustry, e.BusinessAddress, e.BusinessType  + 'hi');
 
       dispatch(verifyEmailExist({email: e.EmailAddress}));
       dispatch(verifyPhoneExist({phone: e.PhoneNumber}));
@@ -64,10 +64,10 @@ let error = <p></p>;
       //  navigate('/vendor-verify-bvn')
     }
     const onFinishFailed = (errorInfo) => {
-      console.log(errorInfo);
+      //console.log(errorInfo);
     }
     if(!misc.phoneExistData && !misc.emailExistData){
-    console.log(auth.emailExistData, auth.phoneExistData)
+    //console.log(auth.emailExistData, auth.phoneExistData)
      errorText =  auth.emailExistData.message || auth.phoneExistData.message
     
     error = errorText && <p style={{color:'red'}}>{errorText}!</p>

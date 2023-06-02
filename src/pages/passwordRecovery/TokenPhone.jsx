@@ -11,7 +11,7 @@ function TokenPhone({ num }) {
   const [loading, setLoading] = useState(false);
   const [code, setCode] = useState([...Array(6)].map(() => ""));
   const navigate = useNavigate();
-  // console.log(num,"number");
+  // //console.log(num,"number");
   const location = useLocation();
   const phone = location?.state;
 

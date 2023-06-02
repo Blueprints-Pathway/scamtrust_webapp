@@ -134,7 +134,7 @@ function EdithPassword({ closeModal }) {
 			const data = await axios.post(API_URL, payload, config);
 
 			handleEdit();
-			console.log(data?.data.data, "user data");
+			//console.log(data?.data.data, "user data");
 
 			swal({
 				icon: "success",
@@ -143,7 +143,7 @@ function EdithPassword({ closeModal }) {
 		} catch (error) {
 			// setFailed(error?.response?.data?.status);
 			setErrorMessage(error.response?.data?.message?.current_password[0]);
-			console.log(errorMessage, "errors");
+			//console.log(errorMessage, "errors");
 			swal({
 				icon: "error",
 				text: errorMessage || "check input fields",
@@ -160,7 +160,7 @@ function EdithPassword({ closeModal }) {
 		setPasswordVisibility2((prevState) => !prevState);
 	};
 
-	console.log(input?.previousPassword, "previous");
+	//console.log(input?.previousPassword, "previous");
 	const handleChange = (event) => {
 		const { name, value } = event.target;
 		setInput({ ...input, [name]: value });

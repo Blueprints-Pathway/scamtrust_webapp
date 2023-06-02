@@ -20,12 +20,12 @@ export const getLoggedInUserDetails = () => async (dispatch) => {
           };
         
         const response = await axios.get(`${baseUrl}/user/getdetails`,config);
-        console.log(response);
+        //console.log(response);
         if(response.data.status){   
             dispatch(userActions.getDetailsSuccess(
                response.data,
             ));
-            console.log(response.data);
+            //console.log(response.data);
             // localStorage.setItem('USER_TOKEN', response.data.data.access_token);
         }else{
             dispatch(userActions.getDetailsFailure( 

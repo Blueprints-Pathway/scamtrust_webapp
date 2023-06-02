@@ -57,7 +57,7 @@ const VendorSignup = () => {
 	const VendorSignupHandler = async (data) => {
 		const type = "vendor";
 		localStorage.setItem("vendor-signup", JSON.stringify({ ...data, type }));
-		console.log(data, "email data");
+		//console.log(data, "email data");
 		localStorage.setItem("user-email", data.email.toString());
 		navigate("/vendor-signup-rc");
 	};
@@ -70,10 +70,10 @@ const VendorSignup = () => {
 			};
 			const data = await axios.post(API_URL, payload);
 			setErrorMessage(data?.data?.message);
-			console.log(data, "data");
+			//console.log(data, "data");
 			setEmailsMessage(data?.data?.status);
 		} catch (error) {
-			console.log(
+			//console.log(
 				error,
 
 				"errrors"
@@ -88,17 +88,17 @@ const VendorSignup = () => {
 			};
 			const data = await axios.post(API_URL, payload);
 			setErrorPhoneMessage(data?.data?.message);
-			console.log(data, "data phone");
+			//console.log(data, "data phone");
 			setPhonesMessage(data?.data?.status);
 		} catch (error) {
-			console.log(
+			//console.log(
 				error,
 
 				"errrors"
 			);
 		}
 	};
-console.log(phonesMessage)
+//console.log(phonesMessage)
 	return (
 		<div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen font-secondary">
 			{/* Left Grid Content */}

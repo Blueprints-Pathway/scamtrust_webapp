@@ -16,7 +16,7 @@ function Confirms({ route }) {
   const token = location?.state;
 
   const newToken = JSON.stringify(token);
-  console.log(newToken, "get");
+  //console.log(newToken, "get");
   const password = () => {
     var x = document.getElementById("myInput");
     if (x.type === "password") {
@@ -44,12 +44,12 @@ function Confirms({ route }) {
 
       const data = await axios.post(API_URL, payload, config);
       navigate("/password-sucess");
-      console.log(data?.data?.data, "user data");
+      //console.log(data?.data?.data, "user data");
 
-      // console.log(values, "values");
+      // //console.log(values, "values");
       // return response;
     } catch (error) {
-      console.log(error, "errorss");
+      //console.log(error, "errorss");
     }
   };
   return (

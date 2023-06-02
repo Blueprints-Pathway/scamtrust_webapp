@@ -73,14 +73,14 @@ function EditAdress({ closeModal }) {
 
 			const data = await axios.post(API_URL, payload, config);
 
-			// console.log(data?.data, "user datasssss");
+			// //console.log(data?.data, "user datasssss");
 			handleEdit2();
 			swal({
 				icon: "success",
 				text: "Location updated successfully",
 			});
 		} catch (error) {
-            console.log(error.response?.status, "error");
+            //console.log(error.response?.status, "error");
 			swal({
 				icon: "error",
 				text:   error.response?.status === 422? "input field is required" : "check your neetwork",

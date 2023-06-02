@@ -8,7 +8,7 @@ import AppLayout from '../../components/layout/AppLayout';
 const FaqPage = () => {
 
     const onChange = (key) => {
-        console.log(key);
+        //console.log(key);
       };
 
     const items = [

@@ -104,7 +104,7 @@ function EditPhone({ closeModal }) {
 				text: "An OTP has been sent to your phone number. Check your sms to continue.",
 			});
 		} catch (error) {
-			console.log(error.data?.message?.phone[0], "error");
+			//console.log(error.data?.message?.phone[0], "error");
 			swal({
 				icon: "error",
 				text:
@@ -125,11 +125,11 @@ function EditPhone({ closeModal }) {
 
 			setPhonesMessage(data?.data?.status);
 		} catch (error) {
-			console.log(
-				error,
+			// console.log(
+			// 	error,
 
-				"errrors"
-			);
+			// 	"errrors"
+			// );
 		}
 	};
 	const { data } = useSelector((state) => state.user);

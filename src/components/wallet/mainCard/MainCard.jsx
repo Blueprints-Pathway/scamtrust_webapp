@@ -45,7 +45,7 @@ const MainCard = () => {
                 <div className={classes['available-con']}>
                     { eye ? 
                     <p className={classes['available-digits']}>
-                        <sup className={classes['available-sup']}>₦</sup>{data.walletBalance}
+                        <sup className={classes['available-sup']}>₦</sup>{data.walletBalance.toFixed(2)}
                     </p>   :  
                     <p className={classes['available-digits']}>
                         <sup className={classes['available-sup']}>₦</sup>*******
@@ -57,7 +57,7 @@ const MainCard = () => {
                 <div className={classes['available-con']}>
                     { eye ? 
                     <p className={classes['pending-digits']}>
-                        <sup className={classes['available-sup']}>₦</sup>{ usertype === 'VENDOR' ? data?.incomingWalletBalance : data?.outgoingWalletBalance}
+                        <sup className={classes['available-sup']}>₦</sup>{ usertype === 'VENDOR' ? data?.incomingWalletBalance.toFixed(2) : data?.outgoingWalletBalance.toFixed(2)}
                     </p>   :
                     <p className={classes['pending-digits']}>
                         <sup className={classes['available-sup']}>₦</sup>*******

@@ -17,7 +17,7 @@ function TokenPhone({ onComplete, length, closeModal }) {
 
 	const newToken = code.toString();
 	const withoutCommas = newToken?.replace(/,/g, "");
-	// console.log(withoutCommas, "hello");
+	// //console.log(withoutCommas, "hello");
 	///token start//
 	const auth = useSelector((state) => state?.auth?.data?.access_token);
 	const changeToken = async (e) => {
@@ -40,7 +40,7 @@ function TokenPhone({ onComplete, length, closeModal }) {
 				text: "Phone Number changed successfully",
 			});
 			const data = await axios.post(API_URL, payload, config);
-			console.log(data);
+			//console.log(data);
 			closeModal(false);
 			// setEmail(data?.data?.data);
 		} catch (error) {

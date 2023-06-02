@@ -94,18 +94,18 @@ const Header = (props) => {
 				setDetails(data?.data?.data);
 				
 			} catch (error) {
-				console.log(error, "error");
+				//console.log(error, "error");
 			}
 		})();
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-	// console.log("details", details);
+	// //console.log("details", details);
 
 	notification?.data?.map((newLngth)=>{
 	const get=newLngth?.status===
 	"UNREAD"
-	console.log(get,"get");
+	//console.log(get,"get");
 		return(
 			<div></div>
 		)
@@ -125,15 +125,15 @@ const Header = (props) => {
 
 			const data = await axios.post(API_URL, payload, config);
 
-			console.log(data?.data?.data, "user data");
+			//console.log(data?.data?.data, "user data");
 			setIsLoaded(true);
 			setItems(data?.data?.data);
-			// console.log(values, "values");
+			// //console.log(values, "values");
 			// return response;
 		} catch (error) {
 			setIsLoaded(true);
 			setError(error);
-			console.log(error, "errorss");
+			//console.log(error, "errorss");
 		}
 	};
 
@@ -152,15 +152,15 @@ const Header = (props) => {
 
 			const data = await axios.post(API_URL, payload, config);
 
-			// console.log(data, "notif");
+			// //console.log(data, "notif");
 			setIsLoaded(true);
 
-			// console.log(values, "values");
+			// //console.log(values, "values");
 			// return response;
 		} catch (error) {
 			setIsLoaded(true);
 			setError(error);
-			console.log(error, "errorss");
+			//console.log(error, "errorss");
 		}
 	};
 	///notifications start///
@@ -177,16 +177,16 @@ const Header = (props) => {
 
 				const data = await axios.get(API_URL, config);
 
-				// console.log(data?.data.data, "user data");
+				// //console.log(data?.data.data, "user data");
 				setNotification(data?.data?.data?.data);
 				const mappeddata = data?.data?.data?.data?.map((data) => data);
 				const datas = mappeddata?.filter(
 					(filtered) => filtered?.status === "UNREAD"
 				);
-			// console.log(datas,"filterd")
+			// //console.log(datas,"filterd")
 			setFilteredSearch(datas)
 			} catch (error) {
-				console.log(error, "error");
+				//console.log(error, "error");
 			}
 		})();
 
@@ -222,9 +222,9 @@ const Header = (props) => {
 	};
 	const close = () => {
 		setToggle(false);
-		console.log('close clicked')
+		//console.log('close clicked')
 	};
-console.log(user_details,"details")
+//console.log(user_details,"details")
 	return (
 		<div
 			className={`${headerItemClassName} flex justify-center lg:justify-between items-center w-full h-full shadow-md z-50`}
@@ -255,7 +255,7 @@ console.log(user_details,"details")
 					<div className="overflow-y-scroll flex-column items-center justify-center h-42">
 						{searchInput?.length > 0
 							? items?.map((item, id) => {
-									console.log(item, "new data search");
+									//console.log(item, "new data search");
 
 									return (
 										<div

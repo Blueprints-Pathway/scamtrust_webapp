@@ -27,7 +27,7 @@ export const listNotifications = () => async (dispatch) => {
                 notifications: response.data.data.data,
                 unreadNotifications: unreadNotification,
             }));
-            // console.log(unreadNotification);
+            // //console.log(unreadNotification);
         }else{
             dispatch(notificationActions.listNotificationFailure( 
                 response.message

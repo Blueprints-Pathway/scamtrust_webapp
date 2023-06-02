@@ -8,7 +8,7 @@ const Star = ({ selected = false, onClick = (f) => f }) => (
 
 const Qualities = ({totalStars,qualitySelected,qualityStar}) => {
 	
-	// console.log(qualitySelected, "hello quality");
+	// //console.log(qualitySelected, "hello quality");
 	return (
 		<div className="star-rating">
 			{[...Array(totalStars)].map((n, i) => (

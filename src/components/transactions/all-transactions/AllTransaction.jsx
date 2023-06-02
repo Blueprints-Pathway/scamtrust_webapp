@@ -25,7 +25,7 @@ const AllTransaction = () => {
   if(usertype === 'VENDOR'){
     if(vendorTransactions.allTransactions.length != 0){
       
-      console.log(vendorTransactions.allTransactions);
+      //console.log(vendorTransactions.allTransactions);
       content = vendorTransactions.allTransactions.map((transaction) => {
    
        if (transaction.status === 'PENDING VENDOR ACCEPTANCE') {

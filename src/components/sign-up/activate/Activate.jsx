@@ -11,7 +11,7 @@ const Activate = () => {
     const dispatch = useDispatch();
     const userInfo = useSelector(state => state.register)
     const navigate = useNavigate();
-    console.log(userInfo)
+    //console.log(userInfo)
   return (
     <div className='activate-con'>
         <div className='activate-header'>

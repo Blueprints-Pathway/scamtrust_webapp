@@ -16,10 +16,10 @@ const VendorTransactionPin = () => {
    const [errorText, setErrorText] = useState();
   
    // const onFinish = (values) => {
-   //    console.log('Success:', values);
+   //    //console.log('Success:', values);
    //  };
    //  const onFinishFailed = (errorInfo) => {
-   //    console.log('Failed:', errorInfo);
+   //    //console.log('Failed:', errorInfo);
    //  };
 
    const navigate = useNavigate();
@@ -28,17 +28,17 @@ const VendorTransactionPin = () => {
 
    useEffect(() => {
       if(isPinSet){
-        console.log(data);
+        //console.log(data);
         
         navigate('/security-question')
       }
     }, [isPinSet])
     
    const finish = (e) => {
-      console.log(values1);
+      //console.log(values1);
       let pin1 = values1.join('')
       let pin2 = values2.join('')
-      console.log(pin1)
+      //console.log(pin1)
       if(pin1 !== pin2){
          setErrorText('Pins do not match!');
          return;
@@ -52,7 +52,7 @@ const VendorTransactionPin = () => {
       }
       // navigate('/security-question')
    }
-   console.log(loading, isAuthenticated, data, error)
+   //console.log(loading, isAuthenticated, data, error)
    const inputStyle = {
       border: '1px solid #999b9d',
       borderRadius: '10px',
