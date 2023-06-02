@@ -4,7 +4,7 @@ import React, { } from "react";
 import { useSelector } from "react-redux";
 function EdithBusinessName({closeModal}) {
 	const user = JSON.parse(localStorage?.getItem("dataKey"));
-	console.log(user, "user datas");
+	//console.log(user, "user datas");
 	const { data } = useSelector((state) => state.user);
 	return (
 		<div

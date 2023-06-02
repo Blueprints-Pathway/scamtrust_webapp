@@ -15,8 +15,8 @@ const CustomForm = () => {
         if (email) {
             fetch(`/api/memberAdd?email=${email}`)
             .then(res => res.json())
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
+            .then(res => //console.log(res))
+            .catch(err => //console.log(err))
         }
       
     }

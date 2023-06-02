@@ -20,7 +20,7 @@ const CancelReason = () => {
   const dispatch = useDispatch();
 
     const onFinish = (values) => {
-        console.log('Received values of form: ', values);
+        //console.log('Received values of form: ', values);
       };
 
       const navigate = useNavigate();
@@ -59,7 +59,7 @@ const CancelReason = () => {
 
 
   if(vendorTransactions.isCancelTransactionSuccessful){
-    console.log();
+    //console.log();
 swal({
     icon: 'success',
     text: vendorTransactions.data,
@@ -74,7 +74,7 @@ setIsModalOpen1(false);
 }
       
   if(vendorTransactions.error){
-      console.log();
+      //console.log();
   swal({
       icon: 'error',
       text: vendorTransactions.error,

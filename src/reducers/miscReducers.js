@@ -98,7 +98,7 @@ const miscReducer = createSlice({
           listBusinessTypeSuccess(state, action) {
             state.businessTypesLoading = false;
             state.businessTypes = action.payload;
-            console.log(state.businessTypes.data);
+            //console.log(state.businessTypes.data);
           },
           listBusinessTypeFailure(state, action) {
             state.businessTypesLoading = false;
@@ -106,7 +106,7 @@ const miscReducer = createSlice({
           },
           getBanksRequest(state) {
             state.loading = true;
-            console.log(state.loading);
+            //console.log(state.loading);
           },
           getBanksSuccess(state, action) {
             state.loading = false;

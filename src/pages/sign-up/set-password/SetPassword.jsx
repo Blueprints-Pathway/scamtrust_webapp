@@ -19,13 +19,13 @@ const VendorSetPassword = () => {
   let errorT = '';
   useEffect(() => {
     if(isAuthenticated){
-      console.log(data);
+      //console.log(data);
       
       navigate('/transaction-pin')
     }
   }, [isAuthenticated])
   
-  console.log(loading, isAuthenticated, data, error)
+  //console.log(loading, isAuthenticated, data, error)
   if(error){
     if(userInfo.type === 'VENDOR'){
 
@@ -41,7 +41,7 @@ const VendorSetPassword = () => {
   let errorText  = error && <p style={{color:'red'}}>{errorT+ '!'}</p>
 
   const onFinish = (values) => {
-    console.log('Success:', values);
+    //console.log('Success:', values);
     dispatch(registerActions.setPassword(values.password));
     dispatch(registerActions.setPasswordConfirmation(values.confirm_password));
    
@@ -55,7 +55,7 @@ const VendorSetPassword = () => {
   };
 
   const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
+    //console.log('Failed:', errorInfo);
   };
 
   

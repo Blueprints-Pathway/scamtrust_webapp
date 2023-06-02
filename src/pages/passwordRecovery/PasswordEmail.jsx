@@ -28,12 +28,12 @@ function PasswordEmail() {
 
       const data = await axios.post(API_URL, payload, config);
       navigate("/tokenEmail", { state: email });
-      console.log(data?.data?.data, "user data");
+      //console.log(data?.data?.data, "user data");
 
-      // console.log(values, "values");
+      // //console.log(values, "values");
       // return response;
     } catch (error) {
-      console.log(error, "errorss");
+      //console.log(error, "errorss");
     }
   };
   return (

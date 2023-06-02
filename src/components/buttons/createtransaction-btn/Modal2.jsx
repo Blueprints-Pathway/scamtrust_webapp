@@ -35,7 +35,7 @@ const onClickHandler = () => {
           }
         ));
 }
-console.log(transaction.error);
+//console.log(transaction.error);
 let errorText = transaction.error && <p style={{color:'red'}}>{`${transaction.error}!`}</p>
 return (
     <div className={classes['wrapper']}>

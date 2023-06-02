@@ -56,7 +56,7 @@ const VendorDetails = () => {
 				setData(data?.data?.data)
 				
 			} catch (error) {
-				console.log(error, "error");
+				//console.log(error, "error");
 			}
 		})();
 
@@ -65,7 +65,7 @@ const VendorDetails = () => {
 	useEffect(() => {
 		localStorage.setItem('dataKey', JSON.stringify(data));
 	  }, [data]);
-	console.log(data, "locations");
+	//console.log(data, "locations");
 	
 	const onCreateTransactionClicked = () => {
 		setShowInitiateTransaction((prevState) => !prevState);

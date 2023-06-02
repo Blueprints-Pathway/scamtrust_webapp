@@ -28,10 +28,10 @@ const Mailchimp = () => {
             }
           )
           .then((res) => {
-            console.log(res);
+            //console.log(res);
           })
           .catch((error) => {
-            console.log(error);
+            //console.log(error);
           });
       }
   return (

@@ -11,7 +11,7 @@ const Star = ({ selected = false, onClick = (f) => f }) => (
 
 const Prices = ({ totalStars,priceSelected,priceStar }) => {
 	
-    console.log(priceSelected,"hello price")
+    //console.log(priceSelected,"hello price")
 	return (
 		<div className="star-rating">
 			{[...Array(totalStars)].map((n, i) => (

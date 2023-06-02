@@ -23,8 +23,8 @@ const VendorManagement = () => {
             <VendorCards />
         </div>
 
-        <div className='flex flex-col items-center justify-center mt-3 md:flex-row md:w-[100vw] md:ml-[100px] md:mt-2 lg:w-[77vw] 
-        lg:ml-[40px] xl:w-[83.7vw] xl:ml-[-65px] xl:mt-3'>
+        <div className='flex flex-col items-center justify-center mt-3 md:flex-row md:w-[100vw] md:ml-[100px] md:mt-2 lg:w-[80vw] 
+        lg:ml-[0px] xl:w-[83.7vw] xl:ml-[-65px] xl:mt-3'>
           <UserStatistics />
           <VendorCharts />
         </div>

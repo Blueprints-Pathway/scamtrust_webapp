@@ -364,8 +364,8 @@ export const vendorSearch = (data) => async (dispatch) => {
                data: response.data.data,
             }));
 
-         console.log(response.data.data)
-         console.log(response, "hello search")
+         //console.log(response.data.data)
+         //console.log(response, "hello search")
         }else{
             dispatch(miscActions.vendorSearchFailure( 
                 response.data.message
@@ -454,8 +454,8 @@ export const getVendor = (id) => async (dispatch) => {
                data: response.data.data,
             }));
 
-         console.log(response.data.data)
-         console.log(response)
+         //console.log(response.data.data)
+         //console.log(response)
         }else{
             dispatch(miscActions.getVendorFailure( 
                 response.data.message

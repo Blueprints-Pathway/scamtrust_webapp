@@ -46,15 +46,15 @@ function SettingsVendor() {
 				picture: image,
 			};
 			const data = await axios.post(API_URL, payload, config);
-			console.log(data, "data");
+			//console.log(data, "data");
 			swal({
 				icon: "success",
 				text: "Image uploaded successfully",
 				confirmButtonColor: "#0000",
 			});
-			console.log(data, "data");
+			//console.log(data, "data");
 		} catch (error) {
-			console.log(error, "errror");
+			//console.log(error, "errror");
 			swal({
 				icon: "error",
 				text: error,
@@ -65,7 +65,7 @@ function SettingsVendor() {
 		upload();
 	}, [preview]);
 	const user = JSON.parse(localStorage?.getItem("dataKey"));
-	console.log(user, "user datas");
+	//console.log(user, "user datas");
 	useEffect(() => {
 		setPreview(data?.data?.image_url);
 	}, []);

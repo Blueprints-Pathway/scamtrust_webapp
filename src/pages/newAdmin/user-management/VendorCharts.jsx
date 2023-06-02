@@ -80,7 +80,7 @@ const VendorCharts = () => {
   return (
     <div>
         <div className='flex flex-col items-start justify-start bg-[#f7f5f5] shadow-md h-[175px] w-[86vw] rounded-sm my-2 
-            md:w-[54vw] md:h-[175px] md:justify-start md:items-start md:pt-2 md:mx-2 lg:w-[48vw] lg:mx-[5px] xl:w-[49vw] xl:h-[175px] xl:mx-5'>
+            md:w-[54vw] md:h-[175px] md:justify-start md:items-start md:pt-2 md:mx-2 lg:w-[43vw] lg:mx-[5px] xl:w-[49vw] xl:h-[175px] xl:mx-5'>
 
           <div className='flex flex-row items-start justify-end w-full mt-3 px-3 lg:w-[43vw] xl:w-[49vw] md:mt-1'>
               <select className='border-none bg-[#f7f5f5] text-[8px] h-5 w-[5.4rem] pl-1 lg:h-5 xl:h-[1.7rem] 
@@ -100,7 +100,7 @@ const VendorCharts = () => {
                <option value="1 year">dec</option>
               </select>
            </div>
-           <div className='flex flex-row items-start mt-5 justify-start overflow-x-scroll w-[80vw] md:w-[52vw] md:mt-3 lg:w-[49vw] 
+           <div className='flex flex-row items-start mt-5 justify-start overflow-x-scroll w-[80vw] md:w-[52vw] md:mt-3 lg:w-[42.5vw] 
               xl:w-[49vw]'>
                <LineChart
                   width={670}

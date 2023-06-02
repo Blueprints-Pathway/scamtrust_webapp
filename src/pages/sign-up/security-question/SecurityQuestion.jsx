@@ -23,12 +23,12 @@ const VendorSecurity = () => {
       dispatch(listSecurityQuestion());
     },[dispatch])
     if (!loading) {
-      console.log(data.data.data); 
+      //console.log(data.data.data); 
      questions = data.data.data; 
     }
 
     const finish = (e) => {
-      console.log(e);
+      //console.log(e);
     //  let i =  questions.findIndex(element => element.question == e.question);
      
     //   dispatch(setSecurityQuestion({

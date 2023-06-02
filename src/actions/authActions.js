@@ -14,7 +14,7 @@ export const registerUser = (data) => async (dispatch) => {
           };
         
         const response = await axios.post(`${baseUrl}/auth/register`, data, config);
-        console.log(response)
+        //console.log(response)
         if(response.status){
             dispatch(authActions.userRegistrationSuccess(
                 response.data.data
@@ -100,15 +100,15 @@ export const verifyEmailExist = (data) => async (dispatch) => {
           };
         
         const response = await axios.post(`${baseUrl}/auth/verify/email`, data, config);
-        console.log(response);
-        console.log(response.data.status);
+        //console.log(response);
+        //console.log(response.data.status);
         if(response.data.status){
             dispatch(authActions.verifyEmailExistSuccess(response.data));
         }else{
             dispatch(authActions.verifyEmailExistFailure( 
                 response.data
             ));
-            console.log(response.data);
+            //console.log(response.data);
         }
 
       
@@ -155,15 +155,15 @@ export const sendResetPasswordLink = (email) => async (dispatch) => {
           };
         
         const response = await axios.post(`${baseUrl}/auth/send/resetlink`, email, config);
-        console.log(response);
+        //console.log(response);
         if(response.data.status){
             dispatch(authActions.resetPasswordLinkSuccess(
                  response.data.message,
               
             ));
-            console.log('sucessss');
+            //console.log('sucessss');
         }else{
-            console.log(response.data);
+            //console.log(response.data);
             dispatch(authActions.resetPasswordLinkFailure( 
                 response.data.message
             ));
@@ -218,7 +218,7 @@ export const setPin = (data) => async (dispatch) => {
           };
         
         const response = await axios.post(`${baseUrl}/auth/set-pin`, data, config);
-        console.log(response)
+        //console.log(response)
         if(response.status){
             dispatch(authActions.setPinSuccess(response.data.message));
         }else{
@@ -312,7 +312,7 @@ export const login = (data) => async (dispatch) => {
             dispatch(authActions.loginSuccess(
                response.data.data,
             ));
-            console.log(response.data);
+            //console.log(response.data);
            localStorage.setItem('USER_TOKEN', response.data.data.access_token);
            localStorage.setItem('LOGGED_IN', 'LOGGED IN SUCCESSFULLY');
            localStorage.setItem('USER_DETAILS', JSON.stringify(response.data));
@@ -328,7 +328,7 @@ export const login = (data) => async (dispatch) => {
         // ));
       
         }catch(error){
-            console.log(error.response.data.message);
+            //console.log(error.response.data.message);
         dispatch(authActions.loginFailure(
             error.response.data.message || 'Login Unsuccessful'
         ));
@@ -348,6 +348,6 @@ export const  logoutUserTimer = ()  =>  (dispatch) =>  {
         dispatch(authActions.logoutUser())
       },tokenExpirationTime * 1000)
 
-      console.log('logout timer');
+      //console.log('logout timer');
   
 }       

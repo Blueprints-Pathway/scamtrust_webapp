@@ -21,7 +21,7 @@ export const getCustomerTransactions = () => async (dispatch) => {
             dispatch(customerTransactionActions.customerTransactionsSuccess(
                response.data.data,
             ));
-            console.log(response.data);
+            //console.log(response.data);
             
         }else{
             dispatch(customerTransactionActions.customerTransactionsFailure( 
@@ -54,7 +54,7 @@ export const getCustomerOngoingTransactions = () => async (dispatch) => {
             dispatch(customerTransactionActions.customerOngoingTransactionsSuccess(
                response.data.data,
             ));
-            console.log(response.data);
+            //console.log(response.data);
             
         }else{
             dispatch(customerTransactionActions.customerOngoingTransactionsFailure( 
@@ -88,7 +88,7 @@ export const getCustomerCompletedTransactions = () => async (dispatch) => {
             dispatch(customerTransactionActions.customerCompletedTransactionsSuccess(
                response.data.data,
             ));
-            console.log(response.data);
+            //console.log(response.data);
             
         }else{
             dispatch(customerTransactionActions.customerCompletedTransactionsFailure( 
@@ -121,7 +121,7 @@ export const getCustomerCancelledTransactions = () => async (dispatch) => {
             dispatch(customerTransactionActions.customerCancelledTransactionSuccess(
                response.data.data,
             ));
-            console.log(response.data);
+            //console.log(response.data);
             
         }else{
             dispatch(customerTransactionActions.customerCancelledTransactionFailure( 
@@ -150,12 +150,12 @@ export const createTransaction = (data) => async (dispatch) => {
           };
         
         const response = await axios.post(`${BASE_URL}/transaction/create`, data, config);
-        console.log(response)
+        //console.log(response)
         if(response.data.status){
             dispatch(customerTransactionActions.createTransactionSuccess(
                response.data.data,
             ));
-            console.log(response.data);
+            //console.log(response.data);
             
         }else{
             dispatch(customerTransactionActions.createTransactionFailure( 
@@ -184,13 +184,13 @@ export const customerAcceptTransaction = (id) => async (dispatch) => {
         };
         
         const response = await axios.get(`${BASE_URL}/transaction/customer/approve/${id}`, config);
-        console.log(response)
-        console.log('ACCEPT TRANSACTION', response);
+        //console.log(response)
+        //console.log('ACCEPT TRANSACTION', response);
         if(response.data.status){
             dispatch(customerTransactionActions.customerAcceptTransactionSuccess(
                response.data.data,
             ));
-            console.log(response.data);
+            //console.log(response.data);
             
         }else{
             dispatch(customerTransactionActions.customerAcceptTransactionFailure( 

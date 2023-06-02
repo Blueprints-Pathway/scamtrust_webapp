@@ -33,7 +33,7 @@ const notificationReducer = createSlice({
         state.unreadNotifications = action.payload.unreadNotifications;
         state.data = action.payload.data;
         state.notifications = action.payload.data;
-       console.log(action.payload.notifications + 'suces')
+       //console.log(action.payload.notifications + 'suces')
       },
       listNotificationFailure(state, action) {
         state.loading = false;

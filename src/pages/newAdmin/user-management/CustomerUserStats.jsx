@@ -1,6 +1,54 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const CustomerUserStats = () => {
+
+  const navigate = useNavigate()
+
+  const items = [
+    {
+      id: 0,
+      name: 'Chukwudi Osinachi',
+      userID: 'ID-110753',
+      balance: '235,000.00',
+      phone: '09027599804',
+      lastActive: '5-07-2022, 12:25pm',
+      withdrawalStatus: 'Tier 2',
+      status: <td className='pl-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] text-[#CB3EF9] border-b-[1px] border-[#adabab]'>New</td>,
+      hr: <hr className='border-[2px] text-black w-full' />
+    },
+    {
+      id: 1,
+      name: 'Fadekemi Folalu',
+      userID: 'ID-110753',
+      balance: '500,000.00',
+      phone: '09027599804',
+      lastActive: '5-07-2022, 12:05pm',
+      withdrawalStatus: 'Tier 1',
+      status: <td className='pl-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] text-[#32A452] border-b-[1px] border-[#adabab]'>Active</td>
+    },
+    {
+      id: 2,
+      name: 'Chukwudi Osinachi',
+      userID: 'ID-110753',
+      balance: '750,000.00',
+      phone: '09027599804',
+      lastActive: '5-07-2022, 2:10pm',
+      withdrawalStatus: 'Tier 4',
+      status: <td className='pl-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] text-[#707070] border-b-[1px] border-[#adabab]'>Dormant</td>
+    },
+    {
+      id: 3,
+      name: 'Fadekemi Folalu',
+      userID: 'ID-110753',
+      balance: '210,000.00',
+      phone: '09027599804',
+      lastActive: '5-07-2022, 7:32pm',
+      withdrawalStatus: 'Tier 3',
+      status: <td className='pl-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] text-[#FC0D1B] border-b-[1px] border-[#adabab]'>Inactive</td>
+    },
+  ]
+
   return (
     <div className='flex flex-col items-center justify-center bg-white w-[95vw] pt-3 rounded-sm shadow-xl md:ml-[100px] lg:w-[75vw]
     lg:ml-[0px] xl:w-[81vw] xl:ml-[-65px]'>
@@ -18,7 +66,7 @@ const CustomerUserStats = () => {
                  </select>
             </div>
         </div>
-        <hr className='border-[#7D8287] w-[92vw] mb-2 xl:w-[81vw]' />
+        <hr className='border-[#7D8287] w-[92vw] mb-2 lg:w-[72vw] xl:w-[80vw]' />
 
     <div className='flex flex-col items-center justify-start overflow-x-scroll overflow-y-scroll h-[20rem] w-[100vw] xl:h-[22rem]'>
     <table className='mb-5 w-[93vw] overflow-x-scroll overflow-y-scroll md:w-[88vw] lg:w-[70vw] lg:mb-7 xl:w-[80vw]'>
@@ -37,46 +85,19 @@ const CustomerUserStats = () => {
 
                  {/* TABLE BODY */}
       <tbody className='mt-7'>
-
-        <tr className='bg-[#EBEBEB] mt-8 h-20 lg:h-16'>
-          <th className='pr-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]' scope='row'>Chukwudi Osinachi</th>
-          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]'>ID-110753</td>
-          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]'>235,000.00</td>
-          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]'>09027599804</td>
-          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]'>5-07-2022, 12:25pm</td>
-          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]'>Tier 1</td>
-          <td className='pl-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] text-[#CB3EF9]'>New</td>
+         
+         {items.map((item) => 
+        <tr onClick={()=>navigate('/admin-user-profile')}
+        className='bg-[#EBEBEB] mt-8 h-20 lg:h-16'>
+          <td className='pr-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] border-b-[1px] border-[#adabab]'>{item.name}</td>
+          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] border-b-[1px] border-[#adabab]'>{item.userID}</td>
+          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] border-b-[1px] border-[#adabab]'>{item.balance}</td>
+          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] border-b-[1px] border-[#adabab]'>{item.phone}</td>
+          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] border-b-[1px] border-[#adabab]'>{item.lastActive}</td>
+          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] border-b-[1px] border-[#adabab]'>{item.withdrawalStatus}</td>
+             {item.status}
         </tr>
-
-        <tr className='bg-[#ffff] mt-8 h-20 lg:h-16'>
-          <th className='pr-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]' scope='row'>Chukwudi Osinachi</th>
-          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]'>ID-110752</td>
-          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]'>500,000.00</td>
-          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]'>08044769924</td>
-          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]'>5-07-2022,  2:12pm</td>
-          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]'>Tier 3</td>
-          <td className='pl-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] text-[#32A452]'>Active</td>
-        </tr>
-
-        <tr className='bg-[#EBEBEB] mt-8 h-20 lg:h-16'>
-          <th className='pr-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]' scope='row'>Fadekemi Folalu</th>
-          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]'>ID-110753</td>
-          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]'>235,000.00</td>
-          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]'>07054472301</td>
-          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]'>5-07-2022, 12:25pm</td>
-          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]'>Tier 2</td>
-          <td className='pl-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] text-[#707070]'>Dormant</td>
-        </tr>
-
-        <tr className='bg-[#ffff] mt-8 h-20 lg:h-16'>
-          <th className='pr-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]' scope='row'>Chukwudi Osinachi</th>
-          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]'>ID-110752</td>
-          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]'>500,000.00</td>
-          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]'>09098045230</td>
-          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]'>5-07-2022,  2:12pm</td>
-          <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px]'>Tier 3</td>
-          <td className='pl-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] text-[#FC0D1B]'>Inactive</td>
-        </tr>
+        )}
 
       </tbody>
       

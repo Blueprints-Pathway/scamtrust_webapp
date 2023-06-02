@@ -44,19 +44,19 @@ const CustomerRegistration = () => {
 
      
 
-        console.log('Success:', values);
+        //console.log('Success:', values);
       };
       const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
+        //console.log('Failed:', errorInfo);
       };
 
       if(!misc.phoneExistData && !misc.emailExistData){
-        console.log(auth.emailExistData, auth.phoneExistData)
+        //console.log(auth.emailExistData, auth.phoneExistData)
          errorText =  auth.emailExistData.message || auth.phoneExistData.message
         
         error = errorText && <p style={{color:'red'}}>{errorText}!</p>
         }
-console.log(auth.emailExistDataLoading || auth.phoneExistingDataLoading);
+//console.log(auth.emailExistDataLoading || auth.phoneExistingDataLoading);
   return (
     <div className={classes['wrapper']}>
         <div className={classes['left']}>

@@ -9,15 +9,15 @@ const NewAdminDashboard = () => {
 
   return (
     <AppLayout>
-      <div className='flex flex-col justify-center items-center w-[100vw] md:w-[100vw] overflow-x-hidden md:overflow-x-hidden lg:w-[75vw] xl:w-[83.7vw]'>
+      <div className='flex flex-col justify-center items-center w-[100vw] md:w-[100vw] overflow-x-hidden md:overflow-x-hidden lg:w-[80vw] xl:w-[83vw] xl:pl-[4.9rem]'>
 
-        <div className='mt-6 w-[100vw] lg:w-[75vw] xl:w-[83.7vw]'>
-         <h1 className='text-[#232164] font-semibold text-lg ml-8 lg:ml-2'>
+        <div className='mt-6 w-[100vw] lg:w-[75vw] xl:w-[75vw] xl:ml-[-45px]'>
+         <h1 className='text-[#232164] font-semibold text-lg ml-8 lg:ml-2 xl:text-[22px] xl:ml-0'>
           Dashboard
          </h1>
-         <hr className='border-1 border-[#7D8287] mx-2 lg:w-[75vw] xl:w-[83.7vw]' />
+         <hr className='border-1 border-[#7D8287] mx-2 lg:w-[75vw] xl:w-full xl:mx-0' />
                {/* DROPDOWN */}
-         <div className='flex flex-row items-center justify-end mt-2 mr-2 md:mr-10 lg:mr-1 xl:mr-10'>
+         <div className='flex flex-row items-center justify-end mt-2 mr-2 md:mr-10 lg:mr-1 xl:mr-0'>
             <select className='border-[1px] border-[#888888] bg-[#dfdede] rounded text-[8px] h-5 w-[5.5rem] pl-1 lg:h-5 xl:h-[1.7rem] xl:w-[7.5rem] xl:text-[10px]'
              name="date" id="date">
               <option className='text-[9px]' value="filter">Filter by date</option>

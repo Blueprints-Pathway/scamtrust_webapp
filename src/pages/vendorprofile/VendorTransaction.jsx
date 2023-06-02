@@ -82,9 +82,9 @@ const VendorTransaction = (props) => {
 	useEffect(() => {
 		(async () => {
 			try {
-				console.log(await fetchTransactions());
+				//console.log(await fetchTransactions());
 			} catch (error) {
-				console.log(error);
+				//console.log(error);
 			}
 		})();
 	}, []);
@@ -139,7 +139,7 @@ const VendorTransaction = (props) => {
 				const data = await axios.get(API_URL, config).finally(() => {
 					setIsLoading(false);
 				});;
-				console.log(data?.data?.data, "datas");
+				//console.log(data?.data?.data, "datas");
 				const mappeddata = data?.data?.data?.map((data) => data);
 				const datas = mappeddata?.filter(
 					(filtered) => filtered?.status === "PENDING VENDOR ACCEPTANCE"
@@ -158,7 +158,7 @@ const VendorTransaction = (props) => {
 				setCancels(datacancelled);
 				setAccepted(dataaccepted);
 			} catch (error) {
-				console.log(error, "error");
+				//console.log(error, "error");
 			}
 		})();
 
@@ -177,10 +177,10 @@ const VendorTransaction = (props) => {
 
 				const data = await axios.get(API_URL, config);
 
-				console.log(data?.data.data, "out");
+				//console.log(data?.data.data, "out");
 				setOutGoing(data?.data?.data);
 			} catch (error) {
-				console.log(error, "error");
+				//console.log(error, "error");
 			}
 		})();
 
@@ -200,10 +200,10 @@ const VendorTransaction = (props) => {
 
 				const data = await axios.get(API_URL, config);
 
-				console.log(data?.data.data, "completed");
+				//console.log(data?.data.data, "completed");
 				setCancelData(data?.data?.data);
 			} catch (error) {
-				console.log(error, "error");
+				//console.log(error, "error");
 			}
 		})();
 
@@ -223,10 +223,10 @@ const VendorTransaction = (props) => {
 
 				const data = await axios.get(API_URL, config);
 
-				console.log(data?.data.data, "completed");
+				//console.log(data?.data.data, "completed");
 				setCompleteData(data?.data?.data);
 			} catch (error) {
-				console.log(error, "error");
+				//console.log(error, "error");
 			}
 		})();
 
@@ -247,12 +247,12 @@ const VendorTransaction = (props) => {
 
 			const data = await axios.get(API_URL, config);
 
-			console.log(data, "view on customer");
+			//console.log(data, "view on customer");
 
-			// console.log(values, "values");
+			// //console.log(values, "values");
 			// return response;
 		} catch (error) {
-			console.log(error, "errorss");
+			//console.log(error, "errorss");
 		}
 	};
 	const showCompletedHandler = () => {
@@ -326,7 +326,7 @@ const VendorTransaction = (props) => {
 								<span
 									onClick={() => {
 										setActive("ongoing");
-										console.log(active, "active");
+										//console.log(active, "active");
 									}}
 									className="lg:mx-5 xl:mx-7 xl:text-xl 2xl:text-3xl cursor-pointer hover:opacity-70 hover:border-b-[3px] hover:border-b-colorSecondary transition-all duration-300 "
 								>
@@ -335,7 +335,7 @@ const VendorTransaction = (props) => {
 								<span
 									onClick={() => {
 										setActive("cancelled");
-										console.log(active, "active");
+										//console.log(active, "active");
 									}}
 									className="lg:mx-5 xl:mx-7 xl:text-xl 2xl:text-3xl cursor-pointer hover:opacity-70 hover:border-b-[3px] hover:border-b-colorSecondary transition-all duration-300"
 								>
@@ -344,7 +344,7 @@ const VendorTransaction = (props) => {
 								<span
 									onClick={() => {
 										setActive("completed");
-										console.log(active, "active");
+										//console.log(active, "active");
 									}}
 									className="lg:mx-5 xl:mx-7 xl:text-xl 2xl:text-3xl cursor-pointer hover:opacity-70 hover:border-b-[3px] hover:border-b-colorSecondary transition-all duration-300"
 								>

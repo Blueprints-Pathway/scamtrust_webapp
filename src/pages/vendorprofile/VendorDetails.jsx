@@ -55,7 +55,7 @@ const VendorDetails = () => {
 				setDetails(data?.data?.data);
 				// setData(data?.data?.data);
 			} catch (error) {
-				console.log(error, "error");
+				//console.log(error, "error");
 			}
 		})();
 
@@ -64,7 +64,7 @@ const VendorDetails = () => {
 	// useEffect(() => {
 	// 	localStorage.setItem("dataKey", JSON.stringify(data));
 	// }, [data]);
-	// console.log(data, "locations");
+	// //console.log(data, "locations");
 
 	// const onCreateTransactionClicked = () => {
 	// 	setShowInitiateTransaction((prevState) => !prevState);
@@ -91,7 +91,7 @@ const VendorDetails = () => {
 	const setModalIsOpenToFalse = () => {
 		setModalIsOpen(modalIsOpen);
 	};
-	console.log(details, "hello details");
+	//console.log(details, "hello details");
 	return (
 		<AppLayout>
 			<div className="w-full h-full rounded-3xl md:mt-10 -mt-5  h-5/6 overflow-hidden  ">

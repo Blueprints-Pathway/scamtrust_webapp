@@ -34,7 +34,7 @@ const VendorCards = () => {
         },
     ]
   return (
-    <div className='flex flex-row items-start justify-center flex-wrap md:w-[100vw] md:mr-[-100px] lg:mr-[0px] xl:w-[82vw] xl:mr-20 xl:justify-start xl:mt-2'>
+    <div className='flex flex-row items-start justify-center flex-wrap md:w-[100vw] md:mr-[-100px] lg:mr-[20px] xl:w-[82vw] xl:mr-20 xl:justify-start xl:mt-2'>
         {items.map((item)=> {
             return(
          <div className='flex flex-col items-start justify-center bg-[rgb(247,245,245)] shadow-md h-[70px] w-[41vw] px-1 rounded-sm my-2 mx-2 

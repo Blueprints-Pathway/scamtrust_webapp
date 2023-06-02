@@ -46,11 +46,11 @@ const Ratting = () => {
 			navigate(`/completed-transaction/${param.id}`);
 			// setRatting(data?.data?.data);
 			// const response = data?.data
-			console.log(data, "response data");
+			//console.log(data, "response data");
 
 			// return response;
 		} catch (error) {
-			// console.log(error, "error");
+			// //console.log(error, "error");
 		}
 	};
 

@@ -39,7 +39,7 @@ const Cancelled = () => {
         transaction = vendorTransactions.allTransactions.find(transaction => transaction.id == param.id);
 
     }
-    console.log(transaction)
+    //console.log(transaction)
 
     
 

@@ -60,10 +60,10 @@ const CustomerSignup = () => {
 			};
 			const data = await axios.post(API_URL, payload);
 			setErrorMessage(data?.data?.message);
-			console.log(data, "data emails");
+			//console.log(data, "data emails");
 			setEmailsMessage(data?.data?.status);
 		} catch (error) {
-			console.log(
+			//console.log(
 				error,
 
 				"errrors"
@@ -81,7 +81,7 @@ const CustomerSignup = () => {
 
 			setPhonesMessage(data?.data?.status);
 		} catch (error) {
-			console.log(
+			//console.log(
 				error,
 
 				"errrors"

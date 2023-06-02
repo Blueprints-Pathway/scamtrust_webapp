@@ -22,7 +22,7 @@ const UserManagement = () => {
       ];
   return (
     <AppLayout>
-        <div className='flex flex-col items-center justify-start w-[100vw] lg:w-[75vw] lg:justify-center overflow-x-hidden lg:mx-3 xl:w-[82vw] xl:mx-4'>
+        <div className='flex flex-col items-center justify-start w-[100vw] md:w-[100vw] md:ml-3 lg:w-[80vw] lg:justify-center overflow-x-hidden lg:mx-3 lg:ml-0 xl:w-[84.2vw] xl:mx-4'>
             <div className='relative flex flex-col items-center justify-start mt-6 md:flex-row md:w-[100vw] md:mt-3 lg:w-[75vw] xl:w-[82vw]'>
                 <p className='text-[#232164] font-semibold text-[15px] md:hidden'>
                    User management
