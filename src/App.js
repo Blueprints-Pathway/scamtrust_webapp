@@ -15,7 +15,7 @@ import VendorActivate from "./pages/sign-up/vendor-sign-up/vendor-activate-accou
 import SignupModal from "./components/sign-up-modal/SignupModal";
 import CustomerRegistration from "./pages/sign-up/customer-sign-up/customer-registration/CustomerRegistration";
 import CustomerActivate from "./pages/sign-up/customer-sign-up/customer-activate-account/CustomerActivate";
-import CustomerDashboard from "./pages/dashboards/customerDashboard/CustomerDashboard";
+import CustomerDashboard from "./pages/dashboards/CustomerDashboard/CustomerDashboard";
 import Transaction from "./pages/transactions/Transactions";
 import Awaiting from "./pages/transactions/awaiting/Awaiting";
 import Ongoing from "./pages/transactions/ongoing/Ongoing";
@@ -29,7 +29,7 @@ import Wallet from "./pages/Wallet/Wallet";
 // import PasswordRecoveryPhone from "./pages/passwordrecovery/PasswordRecoveryPhone";
 // import UpdatedPassword from "./pages/passwordrecovery/UpdatedPassword";
 import SettingsVendor from "../src/pages/SettingsVendor/SettingsVendor";
-import VendorDashboard from "./pages/dashboards/vendorDashboard/VendorDashboard";
+import VendorDashboard from "./pages/dashboards/VendorDashboard/VendorDashboard";
 import Support from "./pages/support/Support";
 import Ratting from "./components/transactions/ratting/Ratting";
 import Fundbutton from "./components/buttons/fundbutton/Fundbutton"
@@ -47,6 +47,7 @@ import PasswordPhoneNumber from "./pages/passwordRecovery/passwordPhoneNumber";
 import Sucess from "./pages/passwordRecovery/Sucess";
 import Confirms from "./pages/passwordRecovery/Confirms";
 import AccountDeletionRequestPage from "./pages/account-deletion/AccountDeletionRequestPage";
+import AdminWithdrawals from "./pages/newAdmin/AdminWithdrawals";
 
 
 
@@ -63,6 +64,7 @@ const App = () => {
 			        {/* SCAMTRUST  ADMIN */}
 			<Route path="/new-admin-dashboard" element={<NewAdminDashboard />} />
 			<Route path="/admin-transaction" element={<AdminTransaction />} />
+			<Route path="/admin-withdrawals" element={<AdminWithdrawals />} />
 
 
 		{/* SCAMTRUST WEBAPP */}
