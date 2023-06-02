@@ -25,7 +25,7 @@
 .input-div{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: center;
 }
 .news-input{
@@ -60,8 +60,9 @@
 .foo-radio{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-top: 30px;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 30px;
     font-size: 20px;
 }
 .foo-radio-item{
@@ -188,7 +189,7 @@
     .input-div{
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: start;
         justify-content: center;
     }
     .news-input{
@@ -224,8 +225,9 @@
     .foo-radio{
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        margin-top: 30px;
+        justify-content: center;
+        margin-top: 20px;
+        margin-left: 0px;
         font-size: 18px;
     }
     .foo-radio-item{
@@ -345,8 +347,9 @@
     .foo-radio{
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        margin-top: 30px;
+        justify-content: center;
+        margin-top: 20px;
+        margin-left: 0px;
         font-size: 17px;
     }
     .foo-radio-item{
@@ -361,7 +364,7 @@
     }
     .input-div{
         display: flex;
-        align-content: center;
+        align-content: start;
         justify-content: center;
     }
     .foo-form-top{
@@ -502,7 +505,7 @@
     }
     .input-div{
         display: flex;
-        align-content: center;
+        align-content: start;
         justify-content: center;
         margin: 0px 15px;
     }
@@ -510,8 +513,9 @@
     .foo-radio{
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        margin-top: 30px;
+        justify-content: center;
+        margin-top: 20px;
+        margin-left: 0px;
         font-size: 15px;
     }
     .foo-radio-item{
