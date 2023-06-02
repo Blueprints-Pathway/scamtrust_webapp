@@ -14,7 +14,7 @@ const UserStatistics = () => {
   return (
     <div>
        <div className='flex flex-col items-start justify-start bg-[#f7f5f5] shadow-md h-[175px] w-[86vw] rounded-sm my-2 
-              md:w-[34vw] md:h-[175px] md:justify-start md:items-start md:pt-2 md:mx-2 lg:w-[30vw] lg:mx-[5px] xl:w-[29vw] xl:h-[180px] xl:mx-5'>
+              md:w-[34vw] md:h-[175px] md:justify-start md:items-start md:pt-2 md:mx-2 lg:w-[30vw] lg:mr-[14px] lg:ml-1 xl:w-[29vw] xl:h-[180px] xl:mx-5'>
                 <h6 className='text-[#707070] text-[11px] px-4 pt-3 xl:text-[12px]'>
                   User Statistics  
                 </h6>

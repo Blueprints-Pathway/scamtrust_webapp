@@ -11,14 +11,14 @@ const AdminUserProfile = () =>{
         <AppLayout>
             <div className="bg-white h-full w-full px-5 pt-2">
             <div className="flex items-center justify-start py-12">
-                <button className={classes['top-button']}> <img src = {Transaction} style={{height: '20px'}} /> Customer's Transactions </button>
-                <button  className={classes['top-button']}>Update Customer's Account <img src = {Dropdown} /> </button>
+                <button className={classes['top-button']}> <img src = {Transaction} alt="..." style={{height: '20px'}} /> Customer's Transactions </button>
+                <button  className={classes['top-button']}>Update Customer's Account <img src = {Dropdown} alt="..." /> </button>
             </div>
             <div className={classes.container}>
                 <div className={classes['container-column']}>
                     <div className={classes['profile-container']}>
                         <div className={classes['circle-avatar']}>
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D" alt="" srcset="" />
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D" alt="user img" srcset="" />
                         </div>
                         <div className = {classes['wallet-div']}>
                         <h3>Wallet Balance</h3>
