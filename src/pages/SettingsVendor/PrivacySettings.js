@@ -9,7 +9,7 @@ import Toggle from "./toggle";
 function PrivacySettings() {
 	const [details, setDetails] = useState();
 	const user = JSON.parse(localStorage?.getItem("dataKey"));
-	console.log(user, "user datas");
+	//console.log(user, "user datas");
 	// useEffect(() => {
 	// 	(async () => {
 	// 		try {
@@ -23,12 +23,12 @@ function PrivacySettings() {
 
 	// 			const data = await axios.get(API_URL, config);
 
-	// 			console.log(data?.data.data, "user data");
+	// 			//console.log(data?.data.data, "user data");
 	// 			setDetails(data?.data?.data);
-	// 			// console.log(values, "values");
+	// 			// //console.log(values, "values");
 	// 			// return response;
 	// 		} catch (error) {
-	// 			console.log(error, "error");
+	// 			//console.log(error, "error");
 	// 		}
 	// 	})();
 

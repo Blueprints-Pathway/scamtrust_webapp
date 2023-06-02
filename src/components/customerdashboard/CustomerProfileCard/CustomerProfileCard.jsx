@@ -9,7 +9,7 @@ import { FaEye } from 'react-icons/fa'
 
 const CustomerProfileCard = () => {
   const { data} = useSelector(state => state.user);
-  console.log(data)
+  //console.log(data)
 
   const [eye, setEye] = useState(false);
 
@@ -42,7 +42,7 @@ const CustomerProfileCard = () => {
                 <div className='profile-card-total-con'>
                     <small className='profile-card-total'>Pending Balance</small>
                     { eye ?
-                      <p className='profile-card-balance-2'><sup className='profile-card-sign'>₦</sup>{data.outgoingWalletBalance}</p>
+                      <p className='profile-card-balance-2'><sup className='profile-card-sign'>₦</sup>{data.outgoingWalletBalance.toFixed(2)}</p>
                           :
                       <p className='profile-card-balance-2'><sup className='profile-card-sign'>₦</sup>*******</p>
                     }

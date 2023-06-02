@@ -8,7 +8,7 @@ const Star = ({ selected = false, onClick = (f) => f }) => (
 
 const Serviceses = ({ totalStars,servicesSelected, serviceStar }) => {
 
-	// console.log(servicesSelected, "hello service");
+	// //console.log(servicesSelected, "hello service");
 	return (
 		<div className="star-rating">
 			{[...Array(totalStars)].map((n, i) => (

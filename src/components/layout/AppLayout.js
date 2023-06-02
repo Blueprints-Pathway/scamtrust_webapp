@@ -53,9 +53,9 @@ const AppLayout = ({ children }) => {
 	const auth = useSelector((state) => state.auth);
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
-	console.log(
-		"get user details" + loading + data + error + auth.isAuthenticated
-	);
+	//console.log(
+		// "get user details" + loading + data + error + auth.isAuthenticated
+	// );
 	useEffect(() => {
 		if (!auth.isAuthenticated) {
 			navigate("/sign-in");
@@ -70,7 +70,7 @@ const AppLayout = ({ children }) => {
 		dispatch(listNotifications());
 		dispatch(listRatings());
 	}, [dispatch, auth.isAuthenticated]);
-	console.log(data);
+	//console.log(data);
 	const nameOf = loading ? "hi" : data?.data?.name || data?.data?.username;
 	const first = nameOf?.at(0);
 	const last = nameOf?.match(/\b(\w)/g).at(1);
@@ -79,10 +79,10 @@ const AppLayout = ({ children }) => {
 
 	const logoutUserHandler = () => {
 		dispatch(logoutUser());
-		console.log("logout from app layout");
+		//console.log("logout from app layout");
 		navigate("/sign-in");
 	};
-	console.log(notification.unreadNotifications);
+	//console.log(notification.unreadNotifications);
 
 
 	const searchItems = (searchValue) => {
@@ -119,7 +119,7 @@ const AppLayout = ({ children }) => {
 		} catch (error) {
 			// setIsLoaded(true);
 			// setError(error);
-			console.log(error, "errorss");
+			//console.log(error, "errorss");
 		}
 	};
 	return (
@@ -133,10 +133,10 @@ const AppLayout = ({ children }) => {
 						breakpoint="lg"
 						collapsedWidth="0"
 						onBreakpoint={(broken) => {
-							console.log(broken);
+							//console.log(broken);
 						}}
 						onCollapse={(collapsed, type) => {
-							console.log(collapsed, type);
+							//console.log(collapsed, type);
 						}}
 					>
 						<div className="logo" />
@@ -313,7 +313,7 @@ const AppLayout = ({ children }) => {
 									 <div>
 										{searchInput.length > 0
 											? items?.map((item, id) => {
-													console.log(item, "new data search");
+													//console.log(item, "new data search");
 
 													return (
 														<div className={classes["container"]}>
@@ -388,7 +388,7 @@ const AppLayout = ({ children }) => {
 						{/* INNER CONTENT */}
 						<Content
 							className="layout-content"
-							style={{ margin: "0px 16px", color: "black" }}
+							// style={{ margin: "0px 16px", color: "black" }}
 						>
 							{children}
 						</Content>

@@ -93,7 +93,7 @@ const Signin = () => {
       dispatch(getWalletTransactionsDetails())
   
       dispatch(listNotifications());
-        // console.log(data);
+        // //console.log(data);
         dispatch(logoutUserTimer())
       if(data?.usertype === 'CUSTOMER'){
         navigate('/customer-dashboard');

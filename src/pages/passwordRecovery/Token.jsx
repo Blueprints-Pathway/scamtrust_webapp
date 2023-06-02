@@ -33,7 +33,7 @@ const Token = ({ length, label, loading, onComplete ,code,setCode}) => {
     <div className={classes['code-input']} >
       <div className={classes['code-inputs']}>
         {code.map((num, idx) => {
-            console.log(num,"value");
+            //console.log(num,"value");
           return (
             <input
               key={idx}

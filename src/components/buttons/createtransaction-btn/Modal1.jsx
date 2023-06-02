@@ -19,7 +19,7 @@ const dispatch =  useDispatch();
     //   };
 
       const onFinish = (values) => {
-        console.log('Success:', values);
+        //console.log('Success:', values);
         let date = new Date(values.datePicker['$d']).toLocaleDateString('zh-Hans-CN').replace(/\//g,'-');
         dispatch(initiateTransactionActions.setVendorId(values.vendorID));
         dispatch(initiateTransactionActions.setProductName(values.productName));
@@ -32,10 +32,10 @@ const dispatch =  useDispatch();
       confirm()
       };
       const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
+        //console.log('Failed:', errorInfo);
       };
  
-      console.log(vendor_id,"id")
+      //console.log(vendor_id,"id")
   return (
     <div className={classes['wrapper']}>
         <Form className={classes['form-con']} layout="vertical"

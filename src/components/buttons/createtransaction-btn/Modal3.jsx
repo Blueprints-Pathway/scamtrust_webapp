@@ -16,9 +16,9 @@ useEffect(() => {
  dispatch(getVendor(vendorId));
   
 }, [dispatch, getVendor])
-console.log(vendorData.getVendorLoading)
+//console.log(vendorData.getVendorLoading)
 if(!vendorData.getVendorLoading){
-  console.log(vendorData.data.data.user)
+  //console.log(vendorData.data.data.user)
    date = (new Date(vendorData.data.data.created_at).toLocaleDateString('pt-PT'))
    time = (new Date(vendorData.data.data.created_at).toLocaleTimeString('en-US').replace(":+seconds",' '))
   

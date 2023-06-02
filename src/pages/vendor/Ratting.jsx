@@ -19,9 +19,9 @@ const Ratting = React.memo(({ totalStars }) => {
 	const [deliverySelected, deliveryStar] = useState(0);
 	const [qualitySelected, qualityStar] = useState(0);
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
-	console.log("user details", user_details?.data?.access_token);
+	//console.log("user details", user_details?.data?.access_token);
 	const onGoing = localStorage?.getItem("idOngoing");
-	console.log("helo boss");
+	//console.log("helo boss");
 
 	const newQuality = qualitySelected;
 	const newPrice = priceSelected;
@@ -48,15 +48,15 @@ const Ratting = React.memo(({ totalStars }) => {
 			navigate("/");
 			// setRatting(data?.data?.data);
 			// const response = data?.data
-			// console.log(data, "response data");
+			// //console.log(data, "response data");
 
 			// return response;
 		} catch (error) {
-			// console.log(error, "error");
+			// //console.log(error, "error");
 		}
 	};
 
-	console.log(servicesSelected, "service");
+	//console.log(servicesSelected, "service");
 
 	return (
 		<Layout>

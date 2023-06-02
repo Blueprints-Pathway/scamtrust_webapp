@@ -22,7 +22,7 @@ export const getVendorTransactions = () => async (dispatch) => {
             dispatch(vendorTransactionActions.vendorTransactionsSuccess(
                response.data.data,
             ));
-            console.log(response.data);
+            //console.log(response.data);
             
         }else{
             dispatch(vendorTransactionActions.vendorTransactionsFailure( 
@@ -55,7 +55,7 @@ export const getVendorOngoingTransactions = () => async (dispatch) => {
             dispatch(vendorTransactionActions.vendorOngoingTransactionsSuccess(
                response.data.data,
             ));
-            console.log(response.data);
+            //console.log(response.data);
             
         }else{
             dispatch(vendorTransactionActions.vendorOngoingTransactionsFailure( 
@@ -89,7 +89,7 @@ export const getVendorCompletedTransactions = () => async (dispatch) => {
             dispatch(vendorTransactionActions.vendorCompletedTransactionsSuccess(
                response.data.data,
             ));
-            console.log(response.data);
+            //console.log(response.data);
             
         }else{
             dispatch(vendorTransactionActions.vendorCompletedTransactionsFailure( 
@@ -122,7 +122,7 @@ export const getVendorCancelledTransactions = () => async (dispatch) => {
             dispatch(vendorTransactionActions.vendorCancelledTransactionSuccess(
                response.data.data,
             ));
-            console.log(response.data);
+            //console.log(response.data);
             
         }else{
             dispatch(vendorTransactionActions.vendorCancelledTransactionFailure( 
@@ -151,12 +151,12 @@ export const vendorCancelTransaction = (data) => async (dispatch) => {
           };
         
         const response = await axios.get(`${BASE_URL}/transaction/vendor/cancel/${data}`, config);
-        console.log(response)
+        //console.log(response)
         if(response.data.status){
             dispatch(vendorTransactionActions.vendorCancelTransactionSuccess(
                response.data.message,
             ));
-            console.log(response.data);
+            //console.log(response.data);
             
         }else{
             dispatch(vendorTransactionActions.vendorCancelTransactionFailure( 
@@ -185,13 +185,13 @@ export const vendorAcceptTransaction = (id) => async (dispatch) => {
         };
         
         const response = await axios.get(`${BASE_URL}/transaction/vendor/approve/${id}`, config);
-        console.log(response)
-        console.log('ACCEPT TRANSACTION', response);
+        //console.log(response)
+        //console.log('ACCEPT TRANSACTION', response);
         if(response.data.status){
             dispatch(vendorTransactionActions.vendorAcceptTransactionSuccess(
                response.data.data,
             ));
-            console.log(response.data);
+            //console.log(response.data);
             
         }else{
             dispatch(vendorTransactionActions.vendorAcceptTransactionFailure( 

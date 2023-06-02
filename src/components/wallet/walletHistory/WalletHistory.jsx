@@ -8,7 +8,7 @@ import Empty from '../../customerdashboard/CustDashTransaction/empty/Empty'
 
 const WalletHistory = () => {
     const walletTransactions = useSelector(state => state.wallet)
-    console.log(walletTransactions.data);
+    //console.log(walletTransactions.data);
     let content = walletTransactions?.data?.length === 0 ? <div><Empty /></div> : walletTransactions?.data?.map((transaction) => {
         if(transaction.type === "CREDIT"){
             return <Credit date = {transaction.date}  refNo = {transaction.tracking_reference} purpose = {transaction.purpose} amount = {transaction.amount}  />
