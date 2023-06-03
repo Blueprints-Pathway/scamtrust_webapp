@@ -24,7 +24,7 @@ const authReducer = createSlice({
   reducers: {
     userRegistrationRequest(state) {
       state.loading = true;
-      console.log('register request')
+      //console.log('register request')
       state.error = false;
     },
     userRegistrationSuccess(state, action) {
@@ -102,7 +102,7 @@ const authReducer = createSlice({
       state.loading = false;
       state.data = action.payload;
       state.resetPasswordLinkSuccessful = true;
-      console.log(action.payload);
+      //console.log(action.payload);
     },
     resetPasswordLinkFailure(state, action) {
       state.loading = false;
@@ -167,7 +167,7 @@ const authReducer = createSlice({
     },
     loginRequest(state) {
       state.loading = true;
-      console.log('login request')
+      //console.log('login request')
       state.error = false;
     },
     loginSuccess(state, action) {
@@ -176,13 +176,13 @@ const authReducer = createSlice({
       state.data = action.payload;
       state.error = false;
       state.isAuthenticated = true;
-      console.log('login success')
+      //console.log('login success')
     },
     loginFailure(state, action) {
       state.loading = false;
       state.error = action.payload;
-      console.log(state.error);
-      console.log('login failed')
+      //console.log(state.error);
+      //console.log('login failed')
 
     },
     logoutUser(state){
@@ -191,7 +191,7 @@ const authReducer = createSlice({
       state.isPhoneValid = false;
       localStorage.removeItem('USER_TOKEN');
       localStorage.removeItem('USER_DETAILS');
-      console.log('logout')
+      //console.log('logout')
       state.error = false;
       localStorage.removeItem('LOGGED_IN')
 

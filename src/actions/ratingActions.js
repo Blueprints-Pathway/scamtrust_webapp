@@ -22,7 +22,7 @@ export const listRatings = () => async (dispatch) => {
                response.data.data
              
             ));
-            console.log(response);
+            //console.log(response);
         }else{
             dispatch(ratingActions.listRatingFailure( 
                 response.message

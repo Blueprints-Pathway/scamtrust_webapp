@@ -9,6 +9,7 @@ import { getWalletTransactionsDetails, withdraw } from '../../../actions/walletA
 import { walletActions } from '../../../reducers/walletReducer';
 import swal from 'sweetalert';
 import { getLoggedInUserDetails } from '../../../actions/userActions';
+import { useNavigate } from 'react-router';
 
 const Withdrawbtn = () =>{
 
@@ -24,6 +25,7 @@ const [accountNo, setAccountNo] = useState('');
 const [bankId, setBankId] = useState('');
 const [error, setError] = useState('');
 const [beneficiaryError, setBeneficiaryError] = useState('');
+const navigate = useNavigate();
 
         //  MODAL 1
   const showModal1 = () => {
@@ -74,9 +76,9 @@ const [beneficiaryError, setBeneficiaryError] = useState('');
 
 
   const [form] = Form.useForm();
-  console.log(amount < user.data.walletBalance);
+  //console.log(amount < user.data.walletBalance);
   const onFinishAmountInput = () => {
-    console.log(amount);
+    //console.log(amount);
     if(amount === ''|| amount === null){
       setError('Input a Valid Amount!');
       return;
@@ -102,7 +104,7 @@ const [beneficiaryError, setBeneficiaryError] = useState('');
   }
 
   const transactionPinFinish = (e) => {
-    console.log(e);
+    //console.log(e);
     dispatch(withdraw({
       amount: +amount,
       bank_account_id: +bankId,
@@ -114,7 +116,7 @@ const [beneficiaryError, setBeneficiaryError] = useState('');
 
   
   if(wallet.isWithdrawalSuccessful){
-    console.log(wallet.data)
+    //console.log(wallet.data)
     swal({
       icon:'success',
       text: wallet.data,
@@ -124,7 +126,7 @@ const [beneficiaryError, setBeneficiaryError] = useState('');
 
     
   }
-console.log(wallet.error)
+//console.log(wallet.error)
   if(wallet.error){
     
     swal({
@@ -138,7 +140,7 @@ console.log(wallet.error)
 
 
 
-  console.log(user)
+  //console.log(user)
 
   const accounts = user?.data.bankAccounts?.length === 0 ? <p>GO TO SETTINGS AND ADD A BENEFICIARY!</p> : user?.data.bankAccounts?.map((account) => {
     return <div className={classes['beneficiary-con']} tabIndex="0" onClick={()=>{
@@ -254,7 +256,7 @@ console.log(wallet.error)
           </div>
           <div className={classes['beneficiary-footer']}>
               {/* <FooterLogo /> */}
-              <button className={classes['add-btn']}>
+              <button onClick = {() => {navigate('/settings')}} className={classes['add-btn']}>
                 Add Beneficiary
               </button>
               <button onClick={addBeneficiaryHandler}

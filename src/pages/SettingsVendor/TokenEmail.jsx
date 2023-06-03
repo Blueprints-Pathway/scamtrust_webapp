@@ -36,7 +36,7 @@ function TokenEmail({onComplete, length,closeModal}) {
 				text: "Email changed successfully",
 			});
 			const data = await axios.post(API_URL, payload, config);	
-			console.log(data,"email data");
+			//console.log(data,"email data");
 			closeModal(false);
 
 		} catch (error) {

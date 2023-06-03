@@ -16,12 +16,12 @@ export const withdraw = (data) => async (dispatch) => {
           };
         
         const response = await axios.post(`${baseUrl}/wallet/withdrawal`, data, config);
-        console.log(response);
+        //console.log(response);
         if(response.data.status){
             dispatch(walletActions.withdrawalSuccess(
                response.data.message,
             ));
-            console.log(response.data);
+            //console.log(response.data);
         
         }else{
             dispatch(walletActions.withdrawalFailure( 
@@ -55,7 +55,7 @@ export const getWalletTransactionsDetails = () => async (dispatch) => {
             dispatch(walletActions.getWalletDetailsSuccess(
                response.data.data,
             ));
-            console.log(response.data);
+            //console.log(response.data);
             
         }else{
             dispatch(walletActions.getWalletDetailsFailure( 

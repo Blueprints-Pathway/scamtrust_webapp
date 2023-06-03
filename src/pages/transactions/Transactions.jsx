@@ -23,18 +23,18 @@ const Transactions = () => {
   const dispatch  = useDispatch();
  const auth = useSelector(state => state.auth)
  const navigate = useNavigate();
-console.log(auth.data);
+//console.log(auth.data);
 
 let detail = localStorage.getItem('USER_DETAILS')
 let usertype =JSON.parse(detail).data.usertype;
-console.log(auth.isAuthenticated);
+//console.log(auth.isAuthenticated);
   useEffect(() => {
     if(!auth.isAuthenticated){
 		navigate('/sign-in')
       dispatch(logoutUser())
       return;
     }
-    console.log(auth.isAuthenticated);
+    //console.log(auth.isAuthenticated);
      if (usertype === 'VENDOR'){
       dispatch(getVendorTransactions());
       dispatch(getVendorOngoingTransactions());
@@ -51,7 +51,7 @@ console.log(auth.isAuthenticated);
   },[dispatch, usertype, auth.isAuthenticated])
 
 	const onChange = (key) => {
-		console.log(key);
+		//console.log(key);
 	};
 
 	const items = [

@@ -46,7 +46,7 @@ const Ongoing = () => {
 			(transaction) => transaction.id == param.id
 		);
 	}
-	console.log(param,"hello param");
+	//console.log(param,"hello param");
 	const navigate = useNavigate();
 
 	useEffect(() => {
@@ -74,7 +74,7 @@ const Ongoing = () => {
 	};
 
 	if (transactions.error) {
-		console.log();
+		//console.log();
 		swal({
 			icon: "error",
 			text: transactions.error,
@@ -82,7 +82,7 @@ const Ongoing = () => {
 		dispatch(customerTransactionActions.resetAcceptTransactionStatus());
 	}
 	if (vendorTransactions.error) {
-		console.log();
+		//console.log();
 		swal({
 			icon: "error",
 			text: vendorTransactions.error,

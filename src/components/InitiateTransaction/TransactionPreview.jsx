@@ -49,14 +49,14 @@ const TransactionPreview = (props) => {
 			setShowTransactionSuccess(true);
 		} catch (error) {
 			setSendingTransaction(false);
-			console.log(error.message);
+			//console.log(error.message);
 		}
 	};
 
 	const transactionDetails = JSON.parse(
 		localStorage.getItem("scam-trust-txnInitiation")
 	);
-console.log(transactionDetails,"trsns");
+//console.log(transactionDetails,"trsns");
 	const user_details = JSON.parse(localStorage?.getItem("scam-trust-user"));
 	const initiateTransaction = async (e) => {
 		e.preventDefault();
@@ -83,12 +83,12 @@ console.log(transactionDetails,"trsns");
 			// navigate("/password-sucess");
       setShowTransactionSuccess(true);
       setShowTransactionPreview(false);
-			console.log(data, "user data");
+			//console.log(data, "user data");
 
-			// console.log(values, "values");
+			// //console.log(values, "values");
 			// return response;
 		} catch (error) {
-			console.log(error?.response?.data?.message, "errorss");
+			//console.log(error?.response?.data?.message, "errorss");
       swal("Oops!", error?.response?.data?.message, );
 		}
 	};

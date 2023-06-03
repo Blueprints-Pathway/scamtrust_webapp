@@ -23,7 +23,7 @@ function CashAccount({ closeModal }) {
 	const [accountNumber, setAccountNumber] = useState("");
 	const handleEdit = () => {
 		setStageOne(!stageOne);
-		console.log("add");
+		//console.log("add");
 	};
 	const handleEdit2 = () => {
 		setStageTwo(!stageTwo);
@@ -41,11 +41,11 @@ function CashAccount({ closeModal }) {
 
 	const { data } = useSelector((state) => state.user);
 
-	console.log(data, "hellos");
+	//console.log(data, "hellos");
 
 	const mappeddata = data?.bankAccounts?.map((datas) => datas);
 
-	console.log(mappeddata.length, "maps data");
+	//console.log(mappeddata.length, "maps data");
 
 	const auth = useSelector((state) => state?.auth?.data?.access_token);
 	useEffect(() => {
@@ -58,12 +58,12 @@ function CashAccount({ closeModal }) {
 					},
 				};
 				const data = await axios.get(API_URL, config);
-				console.log(data, "bank data");
+				//console.log(data, "bank data");
 				setBank(data?.data?.data);
 				setBankList(data?.data?.data);
 			} catch (error) {
 				// Alert.alert("failed login details");
-				console.log(error, "errors");
+				//console.log(error, "errors");
 			}
 		};
 		details();
@@ -101,7 +101,7 @@ function CashAccount({ closeModal }) {
 				bank: bankSelectedId,
 			};
 			const data = await axios.post(API_URL, payload, config);
-			console.log(data.data, "data"); // status message
+			//console.log(data.data, "data"); // status message
 			setIsLoading(false);
 			handleEdit2();
 
@@ -113,7 +113,7 @@ function CashAccount({ closeModal }) {
 		} catch (error) {
 			//data.status
 
-			console.log(error, "error");
+			//console.log(error, "error");
 			setIsLoading(false);
 
 			swal({
@@ -144,8 +144,8 @@ function CashAccount({ closeModal }) {
 					onClick={(e) => {
 						setSelectedBank(e.currentTarget.innerText);
 						setSelectedBankId(e.target.id);
-						console.log(e.target.id, "id");
-						console.log(bankSelected, "bank selcted");
+						//console.log(e.target.id, "id");
+						//console.log(bankSelected, "bank selcted");
 					}}
 					aria-current="true"
 					class="block w-full my-2 cursor-pointer border-2  bg-primary-100 p-4 text-primary-600  focus:outline-none border border-colorPrimary rounded-md w-full px-3 py-1.5 text-gray-700 active:bg-blue-600"

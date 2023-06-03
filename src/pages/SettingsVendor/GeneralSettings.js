@@ -403,12 +403,12 @@ function GeneralSettings() {
 		setError(validate(values));
 	};
 	const user = JSON.parse(localStorage?.getItem("dataKey"));
-	console.log(user, "user datas");
+	//console.log(user, "user datas");
 
 	const { data } = useSelector((state) => state.user);
 	
 	const auth = useSelector((state) => state.auth);
-	console.log(auth, "hello");
+	//console.log(auth, "hello");
 	return (
 		<div>
 			<form onSubmit={handleSubmit}>

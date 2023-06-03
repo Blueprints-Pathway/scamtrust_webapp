@@ -7,31 +7,63 @@ import {ImTwitter} from 'react-icons/im'
 import {ImLinkedin2} from 'react-icons/im'
 import {FaInstagram} from 'react-icons/fa'
 import {TbMinusVertical} from 'react-icons/tb'
+import DemoContainer from './DemoContainer'
 
 
 const Footer = () => {
-  const [email, setEmail] = useState("")
-  const [option, setOption] = useState("")
-  const [radio, setRadio] = useState("")
+  // const [email, setEmail] = useState("")
+  // const [option, setOption] = useState("")
 
-  const handleChange = (e) => {
-    setEmail(e.target.value);
-}
 
-const handleSubmit = (e) => {
-    e.preventDefault();
-    if (email) {
-        fetch(`/api/memberAdd?email=${email}`)
-        .then(res => res.json())
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
-    }
+  // const [radio, setRadio] = useState("")
+
+//   const handleChange = (e) => {
+//     setEmail(e.target.value);
+// }
+
+// const handleSubmit = (e) => {
+//     e.preventDefault();
+//     if (email) {
+//         fetch(`/api/memberAdd?email=${email}`)
+//         .then(res => res.json())
+//         .then(res => console.log(res))
+//         .catch(err => console.log(err))
+//     }
   
-}
+// }
 
-const radioChange = (event) => {
-  setRadio(event.currentTarget);
-}
+// const radioChange = (event) => {
+//   setRadio(event.currentTarget);
+// }
+
+
+
+// const onOptionChange = e => {
+//   setOption(e.target.value)
+// }
+
+// useEffect(() => {
+//   if(status === "success") clearFields();
+// }, [status])
+
+// const clearFields = () => {
+//   // setFirstName('');
+//   setOption('');
+//   setEmail('');
+// }
+
+// const handleSubmit = (e) => {
+//   e.preventDefault();
+//   email &&
+//   // firstName &&
+//   // lastName &&
+//   email.indexOf("@") > -1 &&
+//   onValidated({
+//       EMAIL: email,
+//       MERGE1: option,
+//       // MERGE2: lastName,
+//   });
+// }
 
   const year = new Date().getFullYear()
 
@@ -41,51 +73,7 @@ const radioChange = (event) => {
 
         <div className="foo-news">
           <p className='news-title'>Subsribe to our newsletter</p>
-          <form onSubmit={handleSubmit} className="input-div">
-          <div className="foo-form-top">
-             <input 
-             className='news-input' 
-             onChange={handleChange}
-             type="email" 
-             name='email'
-             value={email} 
-             placeholder='Email Address' 
-             />
-             <button type="submit" className='news-btn'>
-                <HiArrowRight className='foo-news-ico' />
-             </button>
-          </div>
-
-            {/* R A D I O */}
-          <div className='foo-radio'>
-            <div className='foo-radio-item'>
-            <div onClick={() => {setOption("Vendor")}}>
-            <input
-            className='foo-radio-item'
-             type="radio"
-             name='option'
-            //  value="vendor"
-             value={radio}
-             onChange={radioChange}
-             checked={option === "Vendor"}
-              /> Vendor
-           </div>
-           </div>
-
-             <div className='foo-radio-item'>
-            <div onClick={() => {setOption("Customer")}}>
-             <input
-               className='foo-radio-item'
-              type="radio"
-              name='option'
-              value={radio}
-              onChange={radioChange}
-              checked={option === "Customer"}
-               /> Customer
-            </div>
-            </div>
-          </div>
-          </form>
+          <DemoContainer />
         </div>
 
 

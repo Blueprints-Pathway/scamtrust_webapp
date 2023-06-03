@@ -65,7 +65,7 @@ const Awaiting = () => {
 	};
 
 	if (transactions.error) {
-		console.log();
+		//console.log();
 		swal({
 			icon: "error",
 			text: transactions.error,
@@ -73,7 +73,7 @@ const Awaiting = () => {
 		dispatch(customerTransactionActions.resetAcceptTransactionStatus());
 	}
 	if (vendorTransactions.error) {
-		console.log();
+		//console.log();
 		swal({
 			icon: "error",
 			text: vendorTransactions.error,
@@ -82,7 +82,7 @@ const Awaiting = () => {
 	}
 
    
-    console.log(transaction)
+    //console.log(transaction)
 const navigate=useNavigate()
 	return (
 		<AppLayout>

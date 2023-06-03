@@ -47,7 +47,7 @@ const CustDashTransaction = () => {
        totalAmount={transaction.total_amount} 
        dueDate={transaction.due_date} />
      }
-     if (transaction.status == 'CANCELLED BY VENDOR') {
+     if (transaction.status === 'CANCELLED BY VENDOR') {
       return <CancelledHistory 
       id = {transaction.id}
       productName={transaction.product_name} 

@@ -41,11 +41,11 @@ const VendorSecurityQuestion = (props) => {
 				answer: choice,
 			};
 			const data = await axios.post(API_URL, payload, config);
-			console.log(data, "data");
+			//console.log(data, "data");
 			navigate("/activate-account");
-			console.log(data, "data");
+			//console.log(data, "data");
 		} catch (error) {
-			console.log(
+			//console.log(
 				error,
 
 				"errrors"
@@ -99,7 +99,7 @@ const VendorSecurityQuestion = (props) => {
 			//     : error.message;
 		}
 	};
-	console.log(id, choice, "id");
+	//console.log(id, choice, "id");
 	return (
 		<SignupWrapper headingText={headingText}>
 			<div className="px-[27px] lg:mx-[55px]">

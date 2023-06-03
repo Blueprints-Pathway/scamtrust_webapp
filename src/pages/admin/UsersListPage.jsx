@@ -37,7 +37,7 @@ const UsersListPage = () => {
                     
               const data = await axios.delete(API_URL,config);
 
-              console.log(data)
+              //console.log(data)
                     swal({
                         icon: "success",
                         text: data.data.message,
@@ -48,7 +48,7 @@ const UsersListPage = () => {
                         icon: "error",
                         text: error.response.data.message,
                     });
-              console.log(error)
+              //console.log(error)
                 }
             setIsLoading(false);
             
@@ -74,13 +74,13 @@ const UsersListPage = () => {
         
         
         
-				console.log(data?.data?.data, "user data customer dashboard");
+				//console.log(data?.data?.data, "user data customer dashboard");
 				setUsersList(data?.data.data);
         // setIsLoading(false);
-				console.log(usersList, "values");
+				//console.log(usersList, "values");
 				// return response;
 			} catch (error) {
-        console.log(error, "error");
+        //console.log(error, "error");
         // setIsLoading(false);
 	
         
