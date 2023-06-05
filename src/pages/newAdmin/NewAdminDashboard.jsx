@@ -1,9 +1,9 @@
 import React from 'react'
-import AppLayout from '../../../components/layout/AppLayout'
-import UsersCard from './UsersCard';
-import TransactionCard from './TransactionCard';
-import TransactionChart from './TransactionChart';
-import UsersChart from './UsersChart';
+import AppLayout from '../../components/layout/AppLayout'
+import UsersCard from '../../components/admin/admin-dashboard/UsersCard'
+import TransactionCard from '../../components/admin/admin-dashboard/TransactionCard'
+import TransactionChart from '../../components/admin/admin-dashboard/TransactionChart'
+import UsersChart from '../../components/admin/admin-dashboard/UsersChart'
 
 const NewAdminDashboard = () => {
 

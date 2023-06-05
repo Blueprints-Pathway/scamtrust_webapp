@@ -1,10 +1,10 @@
 import React from 'react'
-import AppLayout from '../../../components/layout/AppLayout'
+import AppLayout from '../../components/layout/AppLayout'
 import { Tabs } from 'antd';
-import Customer from './Customer';
+import Customer from '../../components/admin/admin-transaction/Customer';
 import { AiOutlineSearch } from 'react-icons/ai'
-import Vendor from './Vendor';
-import All from './All';
+import Vendor from '../../components/admin/admin-transaction/Vendor';
+import All from '../../components/admin/admin-transaction/All';
 
 
 const onChange = (key) => {

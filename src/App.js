@@ -35,8 +35,6 @@ import RateTransactions from "./pages/transactions/RateTransaction/RateTransacti
 import ViewRattings from "./pages/transactions/viewRattings/ViewRattings";
 import AdminDashboard from "./pages/admin/dashboard/AdminDashboard"
 import UsersListPage from "./pages/admin/UsersListPage"
-import AdminTransaction from "./pages/newAdmin/admin-transaction/AdminTransaction";
-import NewAdminDashboard from "./pages/newAdmin/adminDashboard/NewAdminDashboard";
 import TokenEmail from "./pages/SettingsVendor/TokenEmail";
 import TokenPhone from "./pages/SettingsVendor/TokenPhone";
 import PasswordEmail from "./pages/passwordRecovery/PasswordEmail";
@@ -44,8 +42,11 @@ import PasswordPhoneNumber from "./pages/passwordRecovery/passwordPhoneNumber";
 import Sucess from "./pages/passwordRecovery/Sucess";
 import Confirms from "./pages/passwordRecovery/Confirms";
 import AccountDeletionRequestPage from "./pages/account-deletion/AccountDeletionRequestPage";
-import AdminUserProfile from "./pages/newAdmin/user-profile/AdminUserProfile";
-import UserManagement from "./pages/newAdmin/user-management/UserManagement";
+import NewAdminDashboard from "./pages/newAdmin/NewAdminDashboard";
+import AdminTransaction from "./pages/newAdmin/AdminTransactionPage";
+import UserManagement from "./pages/newAdmin/user-management/UserManagementPage";
+import AdminUserProfile from "./pages/newAdmin/user-management/AdminUserProfile";
+import UserRegistrationPage from "./pages/newAdmin/user-management/UserRegistrationPage";
 
 
 
@@ -64,6 +65,7 @@ const App = () => {
 			<Route path="/admin-transaction" element={<AdminTransaction />} />
 			<Route path="/admin-user-management" element={<UserManagement />} />
 			<Route path="/admin-user-profile" element={<AdminUserProfile />} />
+			<Route path="/user-registration" element={<UserRegistrationPage />} />
 
 
 		{/* SCAMTRUST WEBAPP */}

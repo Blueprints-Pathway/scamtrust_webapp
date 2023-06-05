@@ -10,7 +10,7 @@ const CustomerManagement = () => {
   return (
     <div className='flex flex-col items-center justify-start w-[100vw] ml-[-55px] md:w-[50vw] md:ml-[-65px] xl:ml-0'
     >
-        <div className='flex flex-row items-start justify-end mt-[-8px] w-[90vw] lg:w-[74vw] xl:w-[75vw] xl:mt-0'>
+        <div className='flex flex-row items-start justify-end mt-[-8px] w-[90vw] md:w-[100vw] md:ml-7 lg:ml-0 lg:w-[74vw] xl:w-[75vw] xl:mt-0'>
           <select className='border-[1px] border-[#888888] bg-[#dfdede] rounded text-[8px] h-5 w-20 pl-1 lg:h-5 xl:h-[1.7rem] 
           xl:w-[7.5rem] xl:text-[12px]' name="date" id="date">
             <option className='' value="filter">Filter by date</option>
