@@ -207,7 +207,7 @@ const AppLayout = ({ children }) => {
 										Issue Resolution
 									</span>
 								</Link>
-								<Link to="" className="side-tab-con hover:bg-[#3AB75D] hover:rounded hover:p-1 hover:w-36">
+								<Link to="/admin-reconcillation" className="side-tab-con hover:bg-[#3AB75D] hover:rounded hover:p-1 hover:w-36">
 									<FaHandshake className="text-white text-xl" />
 									<span
 										

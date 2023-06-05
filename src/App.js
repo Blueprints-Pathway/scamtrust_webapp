@@ -47,6 +47,7 @@ import AccountDeletionRequestPage from "./pages/account-deletion/AccountDeletion
 import AdminUserProfile from "./pages/newAdmin/user-profile/AdminUserProfile";
 import UserManagement from "./pages/newAdmin/user-management/UserManagement";
 import AdminWithdrawals from "./pages/newAdmin/AdminWithdrawals";
+import AdminReconcillation from "./pages/newAdmin/admin-reconcillation/adminReconcillation";
 
 
 
@@ -66,6 +67,7 @@ const App = () => {
 			<Route path="/admin-user-management" element={<UserManagement />} />
 			<Route path="/admin-user-profile" element={<AdminUserProfile />} />
 			<Route path="/admin-withdrawals" element={<AdminWithdrawals />} />
+			<Route path="/admin-reconcillation" element={<AdminReconcillation />} />
 
 
 		{/* SCAMTRUST WEBAPP */}
