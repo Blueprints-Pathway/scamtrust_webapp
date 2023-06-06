@@ -15,6 +15,7 @@ import { BsFillBarChartFill } from "react-icons/bs";
 import { FaHandshake, FaUserCog } from "react-icons/fa";
 import scamTrustLogo from "../../assets/images/scamTrustLogo.png";
 import adminLogo from "../../assets/images/adminLogo.png"
+import withdrawIcon from '../../assets/images/withdrawal.svg'
 import { getLoggedInUserDetails } from "../../actions/userActions";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
@@ -206,13 +207,22 @@ const AppLayout = ({ children }) => {
 										Issue Resolution
 									</span>
 								</Link>
-								<Link to="" className="side-tab-con hover:bg-[#3AB75D] hover:rounded hover:p-1 hover:w-36">
+								<Link to="/admin-reconcillation" className="side-tab-con hover:bg-[#3AB75D] hover:rounded hover:p-1 hover:w-36">
 									<FaHandshake className="text-white text-xl" />
 									<span
 										
 										className="side-tabs"
 									>
 										Reconcilation
+									</span>
+								</Link>
+								<Link to="/admin-withdrawals" className="side-tab-con hover:bg-[#3AB75D] hover:rounded hover:p-1 hover:w-36">
+									<img src={withdrawIcon} style={{height: '15px'}}/>
+									<span
+										
+										className="side-tabs"
+									>
+										Withdrawals
 									</span>
 								</Link>
 							</div>

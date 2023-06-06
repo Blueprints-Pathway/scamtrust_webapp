@@ -48,6 +48,8 @@ import UserManagement from "./pages/newAdmin/user-management/UserManagementPage"
 import AdminUserProfile from "./pages/newAdmin/user-management/AdminUserProfile";
 import UserRegistrationPage from "./pages/newAdmin/user-management/UserRegistrationPage";
 import RolesPermission from "./pages/newAdmin/user-management/RolesPermission";
+import AdminWithdrawals from "./pages/newAdmin/AdminWithdrawals";
+import AdminReconcillation from "./pages/newAdmin/admin-reconcillation/adminReconcillation";
 
 
 
@@ -66,6 +68,8 @@ const App = () => {
 			<Route path="/admin-transaction" element={<AdminTransaction />} />
 			<Route path="/admin-user-management" element={<UserManagement />} />
 			<Route path="/admin-user-profile" element={<AdminUserProfile />} />
+			<Route path="/admin-withdrawals" element={<AdminWithdrawals />} />
+			<Route path="/admin-reconcillation" element={<AdminReconcillation />} />
 			<Route path="/user-registration" element={<UserRegistrationPage />} />
 			<Route path="/roles-permission" element={<RolesPermission />} />
 

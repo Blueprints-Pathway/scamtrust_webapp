@@ -7,6 +7,8 @@ import CustomerUserStats from './CustomerUserStats'
 
 
 const CustomerManagement = () => {
+
+  
   return (
     <div className='flex flex-col items-center justify-start w-[100vw] ml-[-55px] md:w-[50vw] md:ml-[-65px] xl:ml-0'
     >

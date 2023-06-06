@@ -30,14 +30,14 @@ const AdminDashboard = () => {
 			return;
 		}
 		setCurrentPageNumber((currentNumber) => currentNumber - 1);
-		//console.log("previous", currentPageNumber, lastPageNumber);
+		console.log("previous", currentPageNumber, lastPageNumber);
 	};
 	const nextBtnHandler = () => {
 		if (+currentPageNumber >= lastPageNumber) {
 			return;
 		}
 		setCurrentPageNumber((currentNumber) => currentNumber + 1);
-		//console.log("next", currentPageNumber, lastPageNumber);
+		console.log("next", currentPageNumber, lastPageNumber);
 	};
 	// useEffect(() => {
 	// 	(async () => {
@@ -60,14 +60,14 @@ const AdminDashboard = () => {
 					
 	// 			}
 
-	// 			//console.log(totalAmountWithdrawn, 'total monies')
+	// 			console.log(totalAmountWithdrawn, 'total monies')
 
 	// 		}
 
 	// 		setTotalMoneyWithrawn(totalAmountWithdrawn)
 			
 	// 		} catch (error) {
-	// 			//console.log(error, "error");
+	// 			console.log(error, "error");
 	// 			// setIsLoading(false);
 	// 		} 
 	// 	})();
@@ -92,14 +92,14 @@ const AdminDashboard = () => {
 
 				
 
-				//console.log(data?.data?.data.data, "user data customer dashboard");
+				console.log(data?.data?.data.data, "user data customer dashboard");
 				setWithdrawals(data?.data.data.data);
 				setLastPageNumber(data?.data.data.last_page);
 				// setIsLoading(false);
-				//console.log(withdrawals, "values");
+				console.log(withdrawals, "values");
 				// return response;
 			} catch (error) {
-				//console.log(error, "error");
+				console.log(error, "error");
 				// setIsLoading(false);
 			}
 		})();
@@ -125,7 +125,7 @@ const AdminDashboard = () => {
 				wallet_transaction_id: walletId,
 			};
 			const data = await axios.post(API_URL, payload, config);
-			//console.log(data);
+			console.log(data);
 			swal({
 				icon: "success",
 				text: "Transaction Approved",
@@ -135,7 +135,7 @@ const AdminDashboard = () => {
 				icon: "error",
 				text: error.response.data.message,
 			});
-			//console.log(error);
+			console.log(error);
 		}
 		setIsLoading(false);
 	};
@@ -168,7 +168,7 @@ const AdminDashboard = () => {
 					<td>
 						<button onClick={() => approveWithdrawal(data.id)}>APPROVE</button>
 					</td>
-					{/* <td><button onClick={() => //console.log('delete')}>
+					{/* <td><button onClick={() => console.log('delete')}>
         DELETE</button></td> */}
 				</tr>
 			);
