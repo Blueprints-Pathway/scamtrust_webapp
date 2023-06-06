@@ -47,6 +47,7 @@ import AdminTransaction from "./pages/newAdmin/AdminTransactionPage";
 import UserManagement from "./pages/newAdmin/user-management/UserManagementPage";
 import AdminUserProfile from "./pages/newAdmin/user-management/AdminUserProfile";
 import UserRegistrationPage from "./pages/newAdmin/user-management/UserRegistrationPage";
+import RolesPermission from "./pages/newAdmin/user-management/RolesPermission";
 
 
 
@@ -66,6 +67,7 @@ const App = () => {
 			<Route path="/admin-user-management" element={<UserManagement />} />
 			<Route path="/admin-user-profile" element={<AdminUserProfile />} />
 			<Route path="/user-registration" element={<UserRegistrationPage />} />
+			<Route path="/roles-permission" element={<RolesPermission />} />
 
 
 		{/* SCAMTRUST WEBAPP */}
