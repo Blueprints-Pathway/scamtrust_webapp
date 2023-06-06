@@ -1,5 +1,41 @@
 .management-div{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+   flex-wrap: wrap;
+    
+}
+.wrapper{
+    padding: 30px;
+}
+
+.upload-div{
+width: 100%;
+display: flex;
+justify-content: space-between;
+flex-direction: row;
+border-bottom: 1px solid black;
+}
+
+h1{
+font-weight: 600;
+font-size: 20px;
+color: #333333;
+}
+.button{
+width: 84px;
+height: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+background: #0A439A;
+border-radius: 10px;
+color: white;
+}
+
+.bottom-container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
