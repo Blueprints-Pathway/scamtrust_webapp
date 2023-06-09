@@ -45,7 +45,6 @@ const AdminUserProfile = () =>{
                    <InputContainer title = 'Last Active' content = '4-07-2022, 9:30pm'/>
                 </div>
                
-
             </div>
              <button className={classes['deactivate-btn']}>Deactivate Account</button>
             </div>

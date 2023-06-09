@@ -50,6 +50,7 @@ import UserRegistrationPage from "./pages/newAdmin/user-management/UserRegistrat
 import RolesPermission from "./pages/newAdmin/user-management/RolesPermission";
 import AdminWithdrawals from "./pages/newAdmin/AdminWithdrawals";
 import AdminReconcillation from "./pages/newAdmin/admin-reconcillation/adminReconcillation";
+import EditRoles from "./pages/newAdmin/user-management/EditRoles";
 
 
 
@@ -72,6 +73,7 @@ const App = () => {
 			<Route path="/admin-reconcillation" element={<AdminReconcillation />} />
 			<Route path="/user-registration" element={<UserRegistrationPage />} />
 			<Route path="/roles-permission" element={<RolesPermission />} />
+			<Route path="/edit-roles" element={<EditRoles />} />
 
 
 		{/* SCAMTRUST WEBAPP */}

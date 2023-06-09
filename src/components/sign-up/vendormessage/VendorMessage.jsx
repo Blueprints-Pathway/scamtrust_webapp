@@ -1,6 +1,6 @@
 import React from 'react'
 import './VendorMessage.css'
-import fade  from '../../../assets/images/Fade.jpg'
+import vendor  from '../../../assets/images/vendor.jpeg'
 import { GoQuote } from 'react-icons/go'
 
 const Vendormessage = () => {
@@ -14,7 +14,7 @@ const Vendormessage = () => {
         </div>
         <div className='ven-message-bottom'>
             <div className='ven-message-img-con'>
-                <img className='ven-message-img' src={fade} alt="" />
+                <img className='ven-message-img' src={vendor} alt="" />
             </div>
             <div className='ven-message-details'>
                 <p className='ven-message-name'>Fadekemi Folalu</p>

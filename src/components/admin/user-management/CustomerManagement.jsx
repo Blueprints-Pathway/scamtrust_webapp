@@ -33,7 +33,7 @@ const CustomerManagement = () => {
           <UserCharts />
         </div>
 
-        <div className='flex items-center justify-center mt-4 w-[95vw] md:w-[100vw] mb-5 lg:w-[70vw] xl:w-[83.7vw]'>
+        <div className='flex items-center justify-center mt-4 w-[95%] md:w-[100vw] mb-5 lg:w-[70vw] xl:w-[83.7vw]'>
           <CustomerUserStats />
         </div>
         
