@@ -1,6 +1,6 @@
 import React from 'react'
 import './VendorMessage.css'
-import vendor  from '../../../assets/images/vendor.jpeg'
+import vendor  from '../../../assets/images/vendor.avif'
 import { GoQuote } from 'react-icons/go'
 
 const Vendormessage = () => {

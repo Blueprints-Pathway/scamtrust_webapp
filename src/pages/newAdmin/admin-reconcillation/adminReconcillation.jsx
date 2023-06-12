@@ -3,6 +3,8 @@ import ManagementContainer from "../../../components/admin/admin-reconcillation/
 import AppLayout from "../../../components/layout/AppLayout";
 import classes from './adminReconcillation.module.css'
 import AdminTable from "../../../components/admin/general/AdminTable";
+import UploadBtn from "../../../components/admin/admin-reconcillation/UploadBtn";
+import ReconcileBtn from "../../../components/admin/admin-reconcillation/ReconcileBtn";
 
 const AdminReconcillation = () => {
     const items = [
@@ -16,22 +18,28 @@ const AdminReconcillation = () => {
        <AppLayout>
         <div className={classes.wrapper}>
 
-        <h1>Partnership Management</h1>
+        <h1 className={classes.title}>
+            Partnership Management
+        </h1>
         <div className={classes['management-div']}>
-            <ManagementContainer title = {'Monefy'} amount = {100000} color =  '#008000' />
-            <ManagementContainer title = {'Termii'} amount = {100000} color = 'linear-gradient(180deg, #0357BF 0%, rgba(43, 127, 232, 0.5) 100%)' />
-            <ManagementContainer title = {'Freshdesk'} amount = {100000} color = '#FF0000'/>
+            <ManagementContainer title = {'Monefy'} amount = {'500,000'} color =  '#008000' />
+            <ManagementContainer title = {'Termii'} amount = {'500,000'} color = '#347AD3' />
+            <ManagementContainer title = {'Freshdesk'} amount = {'500,000'} color = '#FF0000'/>
         </div>
+
         <div className={classes['upload-div']}>
-            <h1>Reconcilation</h1>
-            <button className={classes.button}>Upload</button>
+            <h1 className={classes.heading}>Reconcilation</h1>
+            <UploadBtn />
+            {/* <button className={classes.button}>Upload</button> */}
         </div>
+
+        <hr className={classes.line} />
         
         
         <AdminTable items = {items} headings = {headings} />
         <div className={classes['bottom-container']}>
-        <button className={classes.button}>Reconcile</button>
-
+            <ReconcileBtn />
+        {/* <button className={classes.button}>Reconcile</button> */}
         </div>
         </div>
 
