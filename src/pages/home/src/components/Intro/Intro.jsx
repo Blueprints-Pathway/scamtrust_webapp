@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Intro.css'
 import spiralDot from '../../Assets/spiral-dot.png'
-import videoImg from '../../Assets/video.png'
-import { VscPlayCircle } from "react-icons/vsc";
+import scamtrustVideo from '../../Assets/scamtrustVideo.mp4'
+import { FaRegPlayCircle } from 'react-icons/fa'
+import videoImg from '../../Assets/video.jpg'
+import cover from '../../Assets/img-2.jpeg'
 import { Link } from 'react-router-dom';
 
 const Intro = () => {
+
+    const [play, setPlay] = useState(true);
+
+    const handlePlay = () => {
+        setPlay(false);
+    }
+
   return (
     <div className='intro-con'>
         <div className='intro-top'>
@@ -71,14 +80,27 @@ const Intro = () => {
                 <Link className='point-link' to="/know-more">Learn more</Link>
             </div>
             <div className="right">
-                <img  className='video-img' src={videoImg} alt="..." />
+                {
+                    play ?
                 <div className='img-action'>
-                <VscPlayCircle className="play-icon" />
-                <div>
-                    <p className='play'>Play this video</p>
-                    <p className='play-words'>to see why you need ScamTrust</p>
+                <img  className='video-img' src={videoImg} alt="..." />
+                <div className='play-con'>
+                  <FaRegPlayCircle  onClick={handlePlay}
+                  className="play-icon" />
+                  <p className='play-words'>Play This video</p>
                 </div>
-                </div>
+                </div> :
+                <video 
+                className='video-img'
+                // poster={cover}
+                loop 
+                controls 
+                autoPlay={true} 
+                 >
+                  <source src={scamtrustVideo} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                } 
             </div>
         </div>
         <hr />
