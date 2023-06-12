@@ -14,7 +14,7 @@ const Vendormessage = () => {
         </div>
         <div className='ven-message-bottom'>
             <div className='ven-message-img-con'>
-                <img className='ven-message-img' src={vendor} alt="" />
+                <img className='ven-message-img' src={vendor} alt="vendor" />
             </div>
             <div className='ven-message-details'>
                 <p className='ven-message-name'>Fadekemi Folalu</p>
