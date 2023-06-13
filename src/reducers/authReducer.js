@@ -51,7 +51,7 @@ const authReducer = createSlice({
     vendorRegistrationFailure(state, action) {
       state.loading = false;
       state.isAuthenticated = false;
-       state.error = action.payload;
+      state.error = action.payload;
     },
     verifyEmailTokenRequest(state) {
       state.loading = true;

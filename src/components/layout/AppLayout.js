@@ -180,7 +180,7 @@ const AppLayout = ({ children }) => {
 										Transactions
 									</span>
 								</Link>
-								<Link to="" className="side-tab-con hover:bg-[#3AB75D] hover:rounded hover:p-1 hover:w-36">
+								<Link to="/admin-messaging" className="side-tab-con hover:bg-[#3AB75D] hover:rounded hover:p-1 hover:w-36">
 									<IoMail className="text-white text-xl" />
 									<span
 										

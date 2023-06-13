@@ -5,7 +5,7 @@ const AdminTable = (props) => {
   const navigate = useNavigate();
   
     return (
-        <table className=' w-[100vw] overflow-x-scroll overflow-y-scroll md:w-[88vw] lg:w-[70vw] lg:mb-7 xl:w-[80vw]'>
+        <table className=' w-[93%] overflow-x-scroll overflow-y-scroll md:w-[88%] lg:w-[70%] lg:mb-7 xl:w-[80%]'>
         {/* TABLE HEAD */}
     <thead>
       <tr>
@@ -27,7 +27,7 @@ const AdminTable = (props) => {
          content.push(<td className='pr-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] border-t-[1px] border-[#adabab]'>{item[index]}</td>)
         }
         return(
-      <tr onClick={()=>navigate('/admin-user-profile')}
+      <tr onClick={props.onClick}
       className= {shouldColor ?  'bg-[#EBEBEB] mt-8 h-20 lg:h-16' : 'bg-white mt-8 h-20 lg:h-16'} >
        {content}
         {/* <td className='pr-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] border-b-[1px] border-[#adabab]'>{item[index]}</td> */}

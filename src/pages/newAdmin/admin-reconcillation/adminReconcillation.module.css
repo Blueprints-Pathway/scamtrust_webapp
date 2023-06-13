@@ -8,17 +8,21 @@
 }
 .wrapper{
     padding: 30px;
+    max-width: 1440px;
+    width: 80vw;
 }
 
 .upload-div{
 width: 100%;
 display: flex;
 justify-content: space-between;
+align-items: center;
 flex-direction: row;
 border-bottom: 1px solid black;
+margin-bottom: 4px;
 }
 
-h1{
+.h1{
 font-weight: 600;
 font-size: 20px;
 color: #333333;

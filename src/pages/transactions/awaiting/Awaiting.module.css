@@ -127,27 +127,31 @@
     margin-top: 50px;
 }
 .bottom-btn1{
-    background-color: #EDEDED;
+    background-color: #EDEDED !important;
     font-size: 13px;
     font-weight: 400;
     border: none;
     outline: none;
-    padding: 13px 0px;
+    padding: 0px 0px;
     width: 200px;
+    height: 45px;
     border-radius: 4px;
     margin: 0px 85px;
+
 }
 .bottom-btn2{
-    background-color: #3AB75D;
+    background-color: #3AB75D !important;
     color: #ffff;
     font-size: 13px;
     font-weight: 400;
     border: none;
     outline: none;
-    padding: 13px 0px;
+    padding: 0px 0px;
     width: 200px;
+    height: 45px;
     border-radius: 4px;
     margin: 0px 85px;
+
 }
 .footer{
     display: flex;

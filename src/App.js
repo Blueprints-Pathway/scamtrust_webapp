@@ -49,6 +49,8 @@ import AdminUserProfile from "./pages/newAdmin/user-management/AdminUserProfile"
 import UserRegistrationPage from "./pages/newAdmin/user-management/UserRegistrationPage";
 import AdminWithdrawals from "./pages/newAdmin/AdminWithdrawals";
 import AdminReconcillation from "./pages/newAdmin/admin-reconcillation/adminReconcillation";
+import AdminMessagingPage from "./pages/newAdmin/admin-messaging/AdminMessagingPage";
+import SendMessagePage from "./pages/newAdmin/admin-messaging/SendMessagePage";
 
 
 
@@ -65,8 +67,10 @@ const App = () => {
 			        {/* SCAMTRUST  ADMIN */}
 			<Route path="/new-admin-dashboard" element={<NewAdminDashboard />} />
 			<Route path="/admin-transaction" element={<AdminTransaction />} />
+			<Route path="/admin-messaging" element={<AdminMessagingPage />} />
 			<Route path="/admin-user-management" element={<UserManagement />} />
 			<Route path="/admin-user-profile" element={<AdminUserProfile />} />
+			<Route path="/admin-send-message" element={<SendMessagePage />} />
 			<Route path="/admin-withdrawals" element={<AdminWithdrawals />} />
 			<Route path="/admin-reconcillation" element={<AdminReconcillation />} />
 			<Route path="/user-registration" element={<UserRegistrationPage />} />

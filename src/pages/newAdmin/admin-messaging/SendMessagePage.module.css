@@ -1,0 +1,32 @@
+.button{
+    width: 84px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0A439A;
+    border-radius: 10px;
+    color: white;
+    float: right;
+    }
+    .wrapper{
+        width: 100%;
+        padding: 30px 150px 30px 150px;
+    }
+
+    .radio{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .heading{
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 20px;
+        color: black;
+        margin-left: 20px;
+        margin-top: 30px;
+    }

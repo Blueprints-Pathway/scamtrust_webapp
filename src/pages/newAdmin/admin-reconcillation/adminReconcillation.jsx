@@ -16,14 +16,14 @@ const AdminReconcillation = () => {
        <AppLayout>
         <div className={classes.wrapper}>
 
-        <h1>Partnership Management</h1>
+        <h1 className={classes.heading}>Partnership Management</h1>
         <div className={classes['management-div']}>
             <ManagementContainer title = {'Monefy'} amount = {100000} color =  '#008000' />
             <ManagementContainer title = {'Termii'} amount = {100000} color = 'linear-gradient(180deg, #0357BF 0%, rgba(43, 127, 232, 0.5) 100%)' />
             <ManagementContainer title = {'Freshdesk'} amount = {100000} color = '#FF0000'/>
         </div>
         <div className={classes['upload-div']}>
-            <h1>Reconcilation</h1>
+            <h1 className={classes.heading}>Reconcilation</h1>
             <button className={classes.button}>Upload</button>
         </div>
         
