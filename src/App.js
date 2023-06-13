@@ -47,6 +47,7 @@ import AdminTransaction from "./pages/newAdmin/AdminTransactionPage";
 import UserManagement from "./pages/newAdmin/user-management/UserManagementPage";
 import AdminUserProfile from "./pages/newAdmin/user-management/AdminUserProfile";
 import UserRegistrationPage from "./pages/newAdmin/user-management/UserRegistrationPage";
+import RolesPermission from "./pages/newAdmin/user-management/RolesPermission";
 import AdminWithdrawals from "./pages/newAdmin/AdminWithdrawals";
 import AdminReconcillation from "./pages/newAdmin/admin-reconcillation/adminReconcillation";
 import AdminMessagingPage from "./pages/newAdmin/admin-messaging/AdminMessagingPage";
@@ -74,6 +75,7 @@ const App = () => {
 			<Route path="/admin-withdrawals" element={<AdminWithdrawals />} />
 			<Route path="/admin-reconcillation" element={<AdminReconcillation />} />
 			<Route path="/user-registration" element={<UserRegistrationPage />} />
+			<Route path="/roles-permission" element={<RolesPermission />} />
 
 
 		{/* SCAMTRUST WEBAPP */}
