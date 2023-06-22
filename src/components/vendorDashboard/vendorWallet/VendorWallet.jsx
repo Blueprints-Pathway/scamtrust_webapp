@@ -40,7 +40,7 @@ const VendorWallet = () => {
 
             <div className={classes['balance-con']}>
                 <div className={classes['total-con']}>
-                    <p className={classes['balance-1']}>Total Balance</p>
+                    <p className={classes['balance-1']}>Available Balance</p>
                     { eye ? 
                     <p className={classes['amount']}><sup className={classes['sup']}>₦</sup>{data.walletBalance.toFixed(2)}</p>
                           :
@@ -48,7 +48,7 @@ const VendorWallet = () => {
                     }
                 </div>
                 <div className={classes['total-con']}>
-                    <p className={classes['balance-1']}>Total Balance</p>
+                    <p className={classes['balance-1']}>Outgoing Balance</p>
                     { eye ? 
                     <p className={classes['amount-2']}><sup className={classes['sup']}>₦</sup>{data.incomingWalletBalance.toFixed(2)}</p>
                           :

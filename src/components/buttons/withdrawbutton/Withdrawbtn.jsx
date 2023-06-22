@@ -26,6 +26,10 @@ const [bankId, setBankId] = useState('');
 const [error, setError] = useState('');
 const [beneficiaryError, setBeneficiaryError] = useState('');
 const navigate = useNavigate();
+let detail = localStorage.getItem('USER_DETAILS')
+let usertype =JSON.parse(detail).data.usertype;
+
+// console.log(user)
 
         //  MODAL 1
   const showModal1 = () => {
@@ -350,14 +354,14 @@ const navigate = useNavigate();
             <hr   className={classes['withdraw-hr']}/>
           </div>
           <p className={classes['hello']}>
-             Hello {user.data?.username || user.data?.name} 👋🏽
+             Hello  { usertype === 'CUSTOMER' ?  user.data?.data?.username : user.data?.data?.name} 👋🏽
           </p>
           <div className={classes['success-con']}>
             <p className={classes['success-1']}>
                  Withdrawal Successful
             </p>
             <img src={success} className={classes['success-2']} alt="" />
-            <p className={classes['success-3']}>₦{amount}</p>
+            <p className={classes['success-3']}>₦{ usertype === 'CUSTOMER' ? amount : user?.data?.withdrawnAmount}</p>
             <p className={classes['success-4']}>
                 has been successfuly sent to your Bank account
             </p>

@@ -39,6 +39,7 @@ import { AiFillEye } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import axios from "axios";
 import { listRatings } from "../../actions/ratingActions";
+import { getAllUsers } from "../../actions/adminActions";
 const { Header, Content, Sider } = Layout;
 
 
@@ -68,6 +69,7 @@ const AppLayout = ({ children }) => {
 		dispatch(getWalletTransactionsDetails());
 		dispatch(getCustomerCancelledTransactions());
 		dispatch(getCustomerCompletedTransactions());
+		dispatch(getAllUsers())
 		dispatch(listNotifications());
 		dispatch(listRatings());
 	}, [dispatch, auth.isAuthenticated]);

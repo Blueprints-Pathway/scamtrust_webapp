@@ -19,6 +19,7 @@ import { getWalletTransactionsDetails } from '../../actions/walletActions';
 import { listNotifications } from '../../actions/notificationActions';
 import { getVendorCancelledTransactions, getVendorCompletedTransactions, getVendorOngoingTransactions, getVendorTransactions } from '../../actions/vendorTransactionActions';
 import Navbar from '../home/src/components/Navbar/Navbar';
+import { getAllUsers } from '../../actions/adminActions';
 
 const customStyles = {
   // overlay: {
@@ -88,6 +89,7 @@ const Signin = () => {
   
        }else{
         //admin
+        dispatch(getAllUsers())
        }
       dispatch(getLoggedInUserDetails());
       dispatch(getWalletTransactionsDetails())

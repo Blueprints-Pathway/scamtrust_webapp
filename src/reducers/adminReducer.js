@@ -4,7 +4,8 @@ const initialState = {
   loading: false,
   error: null,
   data: {},
-  withdrawals: []
+  withdrawals: [],
+  users: [],
 };
 
 const adminReducer = createSlice({
@@ -14,25 +15,40 @@ const adminReducer = createSlice({
     approveWithdrawalRequest(state) {
       state.loading = true;
     },
-   approveWithdrawalSuccess(state, payload) {
+   approveWithdrawalSuccess(state, action) {
       state.loading = false;
-      state.data = payload;
+      state.data = action.payload;
     },
-    approveWithdrawalFailure(state, payload) {
+    approveWithdrawalFailure(state, action) {
       state.loading = false;
-      state.error = payload;
+      state.error = action.payload;
     },
    getWithdrawalsRequest(state) {
         state.loading = true;
       },
-     getWithdrawalsSuccess(state, payload) {
+     getWithdrawalsSuccess(state, action) {
         state.loading = false;
-        state.withdrawals = payload;
+        state.withdrawals = action.payload;
       },
-      getWithdrawalsFailure(state, payload) {
+      getWithdrawalsFailure(state, action) {
         state.loading = false;
-        state.error = payload;
+        state.error = action.payload;
       },
+      getAllUsersRequest(state, action){
+        state.loading = true;
+        
+      },
+      getAllUsersSuccess(state,action){
+        state.users = action.payload;
+        state.loading = false;
+      
+
+      },
+      getAllUsersFailure(state,action){
+        state.loading = false;
+        state.error = action;
+      }
+
   },
 });
 
