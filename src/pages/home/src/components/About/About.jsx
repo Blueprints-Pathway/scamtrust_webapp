@@ -1,14 +1,15 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import './About.css'
-import img1 from '../../Assets/img-1.png' 
-import img2 from '../../Assets/img-2.png' 
-import img3 from '../../Assets/img-3.png' 
-import img4 from '../../Assets/img-4.png' 
-import img5 from '../../Assets/img-5.png'
-import img6 from '../../Assets/img-6.png'
-import img7 from '../../Assets/img-7.png'
-import midImg from '../../Assets/faq-img.png'
+import img1 from '../../Assets/img-1.jpeg' 
+import img2 from '../../Assets/img-2.jpeg' 
+import img3 from '../../Assets/img-3.jpeg' 
+import img4 from '../../Assets/img-4.jpeg' 
+import img5 from '../../Assets/img-5.jpeg'
+import img6 from '../../Assets/img-6.jpeg'
+import img7 from '../../Assets/img-7.jpeg'
+// import midImg from '../../Assets/faq-img.png'
+import midImg from '../../Assets/scamtrust.png'
 import aboutItems from '../../aboutItems'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
@@ -36,6 +37,7 @@ const About = () => {
             At ScamTrust, we aim to solve the problem of customers doubting the credibility of businesses due to their past experiences with fraudulent or dubious vendors by offering a safe platform, assisting businesses in establishing credibility, and fostering transparent transactions between customers and authentic vendors.
             </p>
           </div>          
+          
           <div className="ab-top-right">
             <div className="img-col-1">
               <img className='ab-tall-img ab-img-1' src={img1} alt="..." />

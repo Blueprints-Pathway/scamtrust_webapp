@@ -15,9 +15,9 @@ const LandingPage = () => {
     <div className='land'>
         <div className='land-left'>
             <div className='land-title'>
-                <h1>Secure all </h1>
+                <h1 className='land-welcome-message'>Secure all </h1>
                 <h1 className='mid-h1'>Transactions</h1>
-                <h1>with us today</h1>
+                <h1 className='land-welcome-message'>with us today</h1>
             </div>
             <p className='land-words'>
             Protect yourself today from payment fraud and scams on online transactions. Enjoy secure, fraud-free transactions today.

@@ -1,8 +1,28 @@
 import React from 'react'
 import AppLayout from '../../../components/layout/AppLayout'
 import { CiSearch } from 'react-icons/ci'
+import AdminTable from '../../../components/admin/general/AdminTable'
 
 const RolesPermission = () => {
+  const items = [
+    ['Ilerioluwa Brown', 'Product Manager', 'Sub Admin', 'Ilerioluwabrown@gmail.com', '11-2-2022', <p className='text-[#008000]'>Active</p>, 'Edit'],
+    ['Ilerioluwa Brown', 'Product Manager', 'Sub Admin', 'Ilerioluwabrown@gmail.com', '11-2-2022', <p className='text-yellow-600'>Pending</p> , 'Edit'],
+    ['Ilerioluwa Brown', 'Product Manager', 'Sub Admin', 'Ilerioluwabrown@gmail.com', '11-2-2022', <p className='text-yellow-600'>Pending</p>, 'Edit'],
+    ['Loveth Grant', 'Product Designer', 'Admin', 'Lovethgrant@gmail.com', '11-2-2022', <p className='text-red-600'>Deactivated</p>, 'Edit'],
+    ['Ilerioluwa Brown', 'Product Manager', 'Sub Admin', 'Ilerioluwabrown@gmail.com', '11-2-2022', <p className='text-[#008000]'>Active</p>, 'Edit'],
+    ['Ilerioluwa Brown', 'Product Manager', 'Sub Admin', 'Ilerioluwabrown@gmail.com', '11-2-2022', <p className='text-[#008000]'>Active</p>, 'Edit'],
+    ['Ilerioluwa Brown', 'Product Manager', 'Sub Admin', 'Ilerioluwabrown@gmail.com', '11-2-2022', <p className='text-red-600'>Deactivated</p>, 'Edit'],
+  ]
+  const headings = [
+                    <p className='text-black font-medium'>Name</p>,
+                    <p className='text-black font-medium'>Department</p>, 
+                    <p className='text-black font-medium'>Role type</p>, 
+                    <p className='text-black font-medium'>Email</p>, 
+                    <p className='text-black font-medium'>Date created</p>, 
+                    <p className='text-black font-medium'>Status</p>, 
+                    <p className='text-black font-medium'>Action</p>, 
+                   ];
+
   return (
     <AppLayout>
       <div className='flex flex-col justify-start mt-5 w-[90vw] md:w-[100vw] md:px-7 md:mt-7 lg:w-[100%] xl:px-14'>
@@ -37,6 +57,11 @@ const RolesPermission = () => {
             <option value="3 months">3 months</option>
             <option value="1 year">1 year</option>
           </select>
+        </div>
+
+        <hr className='border-[0.1%] border-black mt-8' />
+        <div>
+          <AdminTable  items = {items} headings = {headings} /> 
         </div>
 
       </div>

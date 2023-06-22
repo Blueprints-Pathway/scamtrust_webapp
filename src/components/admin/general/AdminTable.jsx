@@ -5,7 +5,7 @@ const AdminTable = (props) => {
   const navigate = useNavigate();
   
     return (
-        <table className=' w-[93%] overflow-x-scroll overflow-y-scroll md:w-[88%] lg:w-[70%] lg:mb-7 xl:w-[80%]'>
+        <table className=' w-[100%] overflow-x-scroll overflow-y-scroll mb-5 md:w-[100%] lg:w-[100%] lg:mb-7 xl:w-[100%]'>
         {/* TABLE HEAD */}
     <thead>
       <tr>
@@ -19,17 +19,16 @@ const AdminTable = (props) => {
 
                {/* TABLE BODY */}
     <tbody className='mt-7'>
-       
        {props.items.map((item, index) => { 
         let shouldColor = (index % 2 ) === 0;
         let content = [];
       for (let index = 0; index < item.length; index++) {
-         content.push(<td className='pr-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] border-t-[1px] border-[#adabab]'>{item[index]}</td>)
+         content.push(<td className='w-16 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] border-t-[1px] border-[#adabab]'>{item[index]}</td>)
         }
         return(
       <tr onClick={props.onClick}
-      className= {shouldColor ?  'bg-[#EBEBEB] mt-8 h-20 lg:h-16' : 'bg-white mt-8 h-20 lg:h-16'} >
-       {content}
+      className= {shouldColor ?  'bg-[#EBEBEB] mt-8 w-20 h-20 lg:h-16' : 'bg-white w-20 mt-8 h-20 lg:h-16'} >
+           {content}
         {/* <td className='pr-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] border-b-[1px] border-[#adabab]'>{item[index]}</td> */}
         {/* <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] border-b-[1px] border-[#adabab]'>{item.userID}</td>
         <td className='px-2 py-2 text-[8px] text-center font-normal md:text-[9px] xl:text-[12px] border-b-[1px] border-[#adabab]'>{item.balance}</td>

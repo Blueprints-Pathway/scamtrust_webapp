@@ -4,8 +4,12 @@ import classes from './ManagementContainer.module.css'
 const ManagementContainer = (props) => {
     return (
         <div className={classes.container} >
-               <h1 style={{color:`${props.color}`,}}> {props.title} </h1>
-               <h2>N{props.amount}</h2>
+               <p className={classes.title} style={{color:`${props.color}`,}}> {props.title} </p>
+
+               <h2 className={classes.amount}>
+                 <sup> ₦</sup>
+                 {props.amount}
+              </h2>
             </div>
     );
 };

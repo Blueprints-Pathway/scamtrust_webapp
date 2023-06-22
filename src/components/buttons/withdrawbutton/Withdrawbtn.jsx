@@ -108,7 +108,7 @@ let usertype =JSON.parse(detail).data.usertype;
   }
 
   const transactionPinFinish = (e) => {
-    //console.log(e);
+    // console.log(e);
     dispatch(withdraw({
       amount: +amount,
       bank_account_id: +bankId,
@@ -120,7 +120,7 @@ let usertype =JSON.parse(detail).data.usertype;
 
   
   if(wallet.isWithdrawalSuccessful){
-    //console.log(wallet.data)
+    // console.log(wallet.data)
     swal({
       icon:'success',
       text: wallet.data,
@@ -130,7 +130,7 @@ let usertype =JSON.parse(detail).data.usertype;
 
     
   }
-//console.log(wallet.error)
+// console.log(wallet.error)
   if(wallet.error){
     
     swal({
@@ -361,7 +361,7 @@ let usertype =JSON.parse(detail).data.usertype;
                  Withdrawal Successful
             </p>
             <img src={success} className={classes['success-2']} alt="" />
-            <p className={classes['success-3']}>₦{ usertype === 'CUSTOMER' ? amount : user?.data?.withdrawnAmount}</p>
+            <p className={classes['success-3']}>₦{  amount}</p>
             <p className={classes['success-4']}>
                 has been successfuly sent to your Bank account
             </p>

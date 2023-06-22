@@ -27,7 +27,7 @@ const AdminMessagingPage = () => {
         <div className={classes.wrapper}>
            
 
-        <AdminTable items = {items} headings = {headings}  />
+        <AdminTable items = {items} headings = {headings} onClick = {null} />
         <button className={classes.button} onClick={() => navigate("/admin-send-message")}>Next</button>
            
 
