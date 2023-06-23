@@ -85,7 +85,11 @@ const Footer = () => {
         </div>
         <div className="foo-contact">
           <p className='contact-title'>Contact Us</p>
-          <p className='contact-words'>thescamtrust@gmail.com</p>
+          <a 
+          href='mailto:thescamtrust@gmail.com?subject="subject text"'
+          className='contact-words'>
+            thescamtrust@gmail.com
+          </a>
         </div>
     </div>
     <hr />

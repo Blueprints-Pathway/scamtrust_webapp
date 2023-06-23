@@ -15,7 +15,7 @@ const Awaiting = (props) => {
         <BsArrowUpLeftCircle className={classes['icon']} />
         <div className={classes['item-con']}>
           <p className={classes['item']}>{props.productName}</p>
-          <p className={classes['status']}>Awaiting approval </p>
+          <p className={classes['status']}>Awaiting approval</p>
         </div>
       </div>
       <div className={classes['second']}>

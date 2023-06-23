@@ -43,7 +43,6 @@ import Sucess from "./pages/passwordRecovery/Sucess";
 import Confirms from "./pages/passwordRecovery/Confirms";
 import AccountDeletionRequestPage from "./pages/account-deletion/AccountDeletionRequestPage";
 import NewAdminDashboard from "./pages/newAdmin/NewAdminDashboard";
-import AdminTransaction from "./pages/newAdmin/AdminTransactionPage";
 import UserManagement from "./pages/newAdmin/user-management/UserManagementPage";
 import AdminUserProfile from "./pages/newAdmin/user-management/AdminUserProfile";
 import UserRegistrationPage from "./pages/newAdmin/user-management/UserRegistrationPage";
@@ -51,6 +50,15 @@ import RolesPermission from "./pages/newAdmin/user-management/RolesPermission";
 import AdminWithdrawals from "./pages/newAdmin/AdminWithdrawals";
 import AdminReconcillation from "./pages/newAdmin/admin-reconcillation/adminReconcillation";
 import EditRoles from "./pages/newAdmin/user-management/EditRoles";
+import AdminTransactionPage from "./pages/newAdmin/admin-transaction/AdminTransactionPage";
+import WaitlistPage from "./pages/home/src/components/WaitlistPage";
+import Viewall from "./pages/newAdmin/admin-transaction/Viewall";
+import CustomerTransactionPage from "./pages/newAdmin/admin-transaction/CustomerTransactionPage";
+import VendorTransactionPage from "./pages/newAdmin/admin-transaction/VendorTransactionPage";
+import WalletDepositPage from "./pages/newAdmin/admin-transaction/WalletDepositPage";
+import WalletWithdrawalPage from "./pages/newAdmin/admin-transaction/WalletWithdrawalPage";
+import CustomerPaymentPage from "./pages/newAdmin/admin-transaction/CustomerPaymentPage";
+import TransactionRefundPage from "./pages/newAdmin/admin-transaction/TransactionRefundPage";
 
 
 
@@ -61,12 +69,20 @@ const App = () => {
 			<Route path="/" element={<HomePage />} />
 			<Route path="/faq" element={<Faq />} />
 			<Route path="/about" element={<About />} />
-			<Route path="/know-more" element={<KnowMore />} />
+			<Route path="/know-more" element={<KnowMore />}  />
+			<Route path="/waitlist" element={<WaitlistPage />} /> 
 
               
 			        {/* SCAMTRUST  ADMIN */}
 			<Route path="/new-admin-dashboard" element={<NewAdminDashboard />} />
-			<Route path="/admin-transaction" element={<AdminTransaction />} />
+			<Route path="/admin-transaction" element={<AdminTransactionPage />} />
+			<Route path="/customer-transaction" element={<CustomerTransactionPage />} />
+			<Route path="/vendor-transaction" element={<VendorTransactionPage />} />
+			<Route path="/wallet-deposit" element={<WalletDepositPage />} />
+			<Route path="/wallet-withdrawal" element={<WalletWithdrawalPage />} />
+			<Route path="/customer-payment" element={<CustomerPaymentPage />} />
+			<Route path="/transaction-refund" element={<TransactionRefundPage />} />
+			<Route path="/transaction-view-all" element={<Viewall />} />
 			<Route path="/admin-user-management" element={<UserManagement />} />
 			<Route path="/admin-user-profile" element={<AdminUserProfile />} />
 			<Route path="/admin-withdrawals" element={<AdminWithdrawals />} />
@@ -76,7 +92,7 @@ const App = () => {
 			<Route path="/edit-roles" element={<EditRoles />} />
 
 
-		{/* SCAMTRUST WEBAPP */}
+		             {/* SCAMTRUST WEBAPP */}
 		<Route path='/customer-dashboard' element={<CustomerDashboard />} />
 		<Route path="customer-dashboard/request-account-deletion" element={<AccountDeletionRequestPage /> } />
 		<Route path='/admin-dashboard' element={<AdminDashboard />} />

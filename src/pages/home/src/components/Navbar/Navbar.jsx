@@ -25,9 +25,12 @@ const Navbar = (props) => {
               Login
             </button>
             
-           <button onClick={()=>{
-            localStorage.setItem('sign-up','sign-up')
-            navigate('/sign-in')}}
+           <button 
+           onClick={()=>{
+            navigate('/waitlist')}}
+          //  onClick={()=>{
+          //   localStorage.setItem('sign-up','sign-up')
+          //   navigate('/sign-in')}}
            className='sign-btn'>
             Sign up
            </button>
