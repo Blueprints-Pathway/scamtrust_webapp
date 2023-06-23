@@ -2,8 +2,12 @@ import React from 'react'
 import { BsCloudArrowDown } from 'react-icons/bs'
 import AdminTable from '../../../components/admin/general/AdminTable';
 import AppLayout from '../../../components/layout/AppLayout';
+import { useNavigate } from 'react-router-dom';
 
 const CustomerTransactionPage = () => {
+
+  const navigate = useNavigate();
+
   const items = [
     ['10th-July-22','07:02:30 ','REF10000015','20,000','Wallet deposits',<p className='text-[#3AB75D]'>Credit</p>],
     ['10th-July-22','07:02:30 ','REF10000015','20,000','Wallet deposits',<p className='text-[#FF6A62]'>Debit</p>],
@@ -67,7 +71,7 @@ const CustomerTransactionPage = () => {
 
       <hr className='border-[1%] border-[#d0d1d2] w-[90vw] lg:w-full xl:w-[82vw]' />
       <div className='w-[89vw] lg:w-[74vw] xl:w-[81vw]'>
-        <AdminTable  items = {items} headings = {headings} />
+        <AdminTable onClick={()=>navigate('/wallet-deposit')}  items = {items} headings = {headings} />
       </div>
       </div>
 

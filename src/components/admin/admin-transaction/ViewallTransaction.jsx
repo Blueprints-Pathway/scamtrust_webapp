@@ -1,10 +1,20 @@
 import React from 'react'
 import { BsCloudArrowDown } from 'react-icons/bs'
 import AdminTable from '../general/AdminTable';
+import { useNavigate } from 'react-router-dom';
 
-const ViewallTransaction = () => {
+const ViewallTransaction = (props) => {
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+      items.status === 'vendor' ?
+      navigate('/vendor-transaction')
+      :navigate('/customer-transaction')
+  }
+
   const items = [
-    ['Fadekemi Folalu','ID-110753','235,000.00','Customer','5-07-2022, 12:25pm',<p className='text-[#FFAA00]'>Pending</p>],
+    ['Fadekemi Folalu','ID-110753','235,000.00', 'Customer','5-07-2022, 12:25pm',<p className='text-[#FFAA00]'>Pending</p>],
     ['Chukwudi Osinachi','ID-110753','235,000.00','Vendor','5-07-2022, 12:25pm',<p className='text-[#3AB75D]'>Successful</p>],
     ['Fadekemi Folalu','ID-110753','235,000.00','Customer','5-07-2022, 12:25pm',<p className='text-[#FC0D1B]'>Failed</p>],
     ['Chukwudi Osinachi','ID-110753','235,000.00','Vendor','5-07-2022, 12:25pm',<p className='text-[#3AB75D]'>Successful</p>]
@@ -43,7 +53,7 @@ const ViewallTransaction = () => {
 
       <hr className='border-[1%] border-[#d0d1d2] w-[90vw] lg:w-[75vw] xl:w-[82vw]' />
       <div className='w-[89vw] lg:w-[74vw] xl:w-[81vw]'>
-        <AdminTable  items = {items} headings = {headings} />
+        <AdminTable onClick={handleClick}  items = {items} headings = {headings} />
       </div>
     </div>
   )

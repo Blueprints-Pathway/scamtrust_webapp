@@ -5,8 +5,12 @@ import classes from './adminReconcillation.module.css'
 import AdminTable from "../../../components/admin/general/AdminTable";
 import UploadBtn from "../../../components/admin/admin-reconcillation/UploadBtn";
 import ReconcileBtn from "../../../components/admin/admin-reconcillation/ReconcileBtn";
+import { useNavigate } from "react-router-dom";
 
 const AdminReconcillation = () => {
+
+    const navigate = useNavigate();
+
     const items = [
         ['500,000', '11-2-2022', '11-2-2022', '794A-6664-22', 'Monefy', 'Monefy'],
         ['500,000', '11-2-2022', '11-2-2022', '794A-6664-22', 'Monefy', 'Monefy'],

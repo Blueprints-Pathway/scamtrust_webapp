@@ -108,8 +108,7 @@ const App = () => {
 		<Route path='/security-question' element={<VendorSecurity />} /> 
 		<Route path='/faq-page' element={<FaqPage />} /> 
 		<Route path='/support' element={<Support />} />
-		<Route  path='/settings'
-        element={<SettingsVendor/>}/>
+		<Route  path='/settings' element={<SettingsVendor/>}/>
       
 	
 		<Route path='/customer-registration' element={<CustomerRegistration />} />

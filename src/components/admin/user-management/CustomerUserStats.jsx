@@ -4,7 +4,12 @@ import AdminTable from '../general/AdminTable'
 
 const CustomerUserStats = (props) => {
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/admin-user-profile')
+  }
+
   const items = [
     ['Chukwudi Osinachi','ID-110753','235,000.00','09027599804','5-07-2022, 12:25pm','Tier 2',<p className='text-[#CB3EF9]'>New</p>],
     ['Chukwudi Osinachi','ID-110753','235,000.00','09027599804','5-07-2022, 12:25pm','Tier 2',<p className='text-[#32A452]'>Active</p>],
@@ -37,7 +42,7 @@ const CustomerUserStats = (props) => {
         <hr className='border-[#7D8287] w-[92vw] mb-2 lg:w-[72vw] xl:w-[80vw]' />
 
     <div className='flex flex-col items-center justify-start overflow-x-scroll overflow-y-scroll h-[20rem] w-[100%] lg:w-[75vw] xl:w-[100%] xl:h-[22rem]'>
-    <AdminTable  items = {items} headings = {headings} />
+    <AdminTable onClick={handleClick}  items = {items} headings = {headings} />
     </div>
     </div>
   )
