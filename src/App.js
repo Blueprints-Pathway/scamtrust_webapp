@@ -35,8 +35,8 @@ import RateTransactions from "./pages/transactions/RateTransaction/RateTransacti
 import ViewRattings from "./pages/transactions/viewRattings/ViewRattings";
 import AdminDashboard from "./pages/admin/dashboard/AdminDashboard"
 import UsersListPage from "./pages/admin/UsersListPage"
-import TokenEmail from "./pages/passwordRecovery/TokenEmail";
-import TokenPhone from "./pages/passwordRecovery/TokenPhone";
+import TokenEmail from "./pages/SettingsVendor/TokenEmail";
+import TokenPhone from "./pages/SettingsVendor/TokenPhone";
 import PasswordEmail from "./pages/passwordRecovery/PasswordEmail";
 import PasswordPhoneNumber from "./pages/passwordRecovery/passwordPhoneNumber";
 import Sucess from "./pages/passwordRecovery/Sucess";
@@ -107,7 +107,6 @@ const App = () => {
 			<Route path="/phoneNumber" element={<PasswordPhoneNumber />} />
 			<Route path="/tokenEmail" element={<TokenEmail />} />
 			<Route path="/tokenPhone" element={<TokenPhone />} />
-		
 			<Route path="/password-sucess" element={<Sucess />} />
 			<Route path='confirmPassword' element={<Confirms /> } />
 
