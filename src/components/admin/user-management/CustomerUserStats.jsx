@@ -37,7 +37,8 @@ const CustomerUserStats = (props) => {
         <hr className='border-[#7D8287] w-[92vw] mb-2 lg:w-[72vw] xl:w-[80vw]' />
 
     <div className='flex flex-col items-center justify-start overflow-x-scroll overflow-y-scroll h-[20rem] w-[100%] lg:w-[75vw] xl:w-[100%] xl:h-[22rem]'>
-    <AdminTable  items = {items} headings = {headings} />
+   
+    <AdminTable  items = {items} headings = {headings} onClick = {() => navigate('/admin-user-profile') } />
     </div>
     </div>
   )

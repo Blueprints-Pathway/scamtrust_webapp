@@ -13,6 +13,12 @@
    flex-wrap: wrap;
     
 }
+.wrapper{
+    padding: 30px;
+    max-width: 1440px;
+    width: 80vw;
+}
+
 .upload-div{
 width: 100%;
 display: flex;

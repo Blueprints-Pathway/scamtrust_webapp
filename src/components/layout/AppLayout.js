@@ -39,6 +39,7 @@ import { AiFillEye } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import axios from "axios";
 import { listRatings } from "../../actions/ratingActions";
+import { getAllUsers } from "../../actions/adminActions";
 const { Header, Content, Sider } = Layout;
 
 
@@ -68,6 +69,7 @@ const AppLayout = ({ children }) => {
 		dispatch(getWalletTransactionsDetails());
 		dispatch(getCustomerCancelledTransactions());
 		dispatch(getCustomerCompletedTransactions());
+		dispatch(getAllUsers())
 		dispatch(listNotifications());
 		dispatch(listRatings());
 	}, [dispatch, auth.isAuthenticated]);
@@ -180,7 +182,7 @@ const AppLayout = ({ children }) => {
 										Transactions
 									</span>
 								</Link>
-								<Link to="" className="side-tab-con hover:bg-[#3AB75D] hover:rounded hover:p-1 hover:w-36">
+								<Link to="/admin-messaging" className="side-tab-con hover:bg-[#3AB75D] hover:rounded hover:p-1 hover:w-36">
 									<IoMail className="text-white text-xl" />
 									<span
 										
