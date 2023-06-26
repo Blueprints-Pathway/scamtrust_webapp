@@ -35,8 +35,8 @@ import RateTransactions from "./pages/transactions/RateTransaction/RateTransacti
 import ViewRattings from "./pages/transactions/viewRattings/ViewRattings";
 import AdminDashboard from "./pages/admin/dashboard/AdminDashboard"
 import UsersListPage from "./pages/admin/UsersListPage"
-import TokenEmail from "./pages/SettingsVendor/TokenEmail";
-import TokenPhone from "./pages/SettingsVendor/TokenPhone";
+import TokenEmail from "./pages/passwordRecovery/TokenEmail";
+import TokenPhone from "./pages/passwordRecovery/TokenPhone";
 import PasswordEmail from "./pages/passwordRecovery/PasswordEmail";
 import PasswordPhoneNumber from "./pages/passwordRecovery/passwordPhoneNumber";
 import Sucess from "./pages/passwordRecovery/Sucess";
@@ -50,15 +50,10 @@ import RolesPermission from "./pages/newAdmin/user-management/RolesPermission";
 import AdminWithdrawals from "./pages/newAdmin/AdminWithdrawals";
 import AdminReconcillation from "./pages/newAdmin/admin-reconcillation/adminReconcillation";
 import EditRoles from "./pages/newAdmin/user-management/EditRoles";
-import AdminTransactionPage from "./pages/newAdmin/admin-transaction/AdminTransactionPage";
+import AdminMessagingPage from "./pages/newAdmin/admin-messaging/AdminMessagingPage";
+import SendMessagePage from "./pages/newAdmin/admin-messaging/SendMessagePage";
 import WaitlistPage from "./pages/home/src/components/WaitlistPage";
-import Viewall from "./pages/newAdmin/admin-transaction/Viewall";
-import CustomerTransactionPage from "./pages/newAdmin/admin-transaction/CustomerTransactionPage";
-import VendorTransactionPage from "./pages/newAdmin/admin-transaction/VendorTransactionPage";
-import WalletDepositPage from "./pages/newAdmin/admin-transaction/WalletDepositPage";
-import WalletWithdrawalPage from "./pages/newAdmin/admin-transaction/WalletWithdrawalPage";
-import CustomerPaymentPage from "./pages/newAdmin/admin-transaction/CustomerPaymentPage";
-import TransactionRefundPage from "./pages/newAdmin/admin-transaction/TransactionRefundPage";
+import AdminTransactionPage from "./pages/newAdmin/admin-transaction/AdminTransactionPage";
 
 
 
@@ -76,15 +71,10 @@ const App = () => {
 			        {/* SCAMTRUST  ADMIN */}
 			<Route path="/new-admin-dashboard" element={<NewAdminDashboard />} />
 			<Route path="/admin-transaction" element={<AdminTransactionPage />} />
-			<Route path="/customer-transaction" element={<CustomerTransactionPage />} />
-			<Route path="/vendor-transaction" element={<VendorTransactionPage />} />
-			<Route path="/wallet-deposit" element={<WalletDepositPage />} />
-			<Route path="/wallet-withdrawal" element={<WalletWithdrawalPage />} />
-			<Route path="/customer-payment" element={<CustomerPaymentPage />} />
-			<Route path="/transaction-refund" element={<TransactionRefundPage />} />
-			<Route path="/transaction-view-all" element={<Viewall />} />
+			<Route path="/admin-messaging" element={<AdminMessagingPage />} />
 			<Route path="/admin-user-management" element={<UserManagement />} />
 			<Route path="/admin-user-profile" element={<AdminUserProfile />} />
+			<Route path="/admin-send-message" element={<SendMessagePage />} />
 			<Route path="/admin-withdrawals" element={<AdminWithdrawals />} />
 			<Route path="/admin-reconcillation" element={<AdminReconcillation />} />
 			<Route path="/user-registration" element={<UserRegistrationPage />} />
@@ -118,6 +108,7 @@ const App = () => {
 			<Route path="/phoneNumber" element={<PasswordPhoneNumber />} />
 			<Route path="/tokenEmail" element={<TokenEmail />} />
 			<Route path="/tokenPhone" element={<TokenPhone />} />
+		
 			<Route path="/password-sucess" element={<Sucess />} />
 			<Route path='confirmPassword' element={<Confirms /> } />
 

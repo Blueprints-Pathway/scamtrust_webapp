@@ -52,7 +52,7 @@
     justify-content: center;
 }
 .submit-btn{
-    background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%);
+    background: linear-gradient(97.83deg, #01306B 10.93%, #0357BF 101.58%) !important;
     color: #ffff;
     border: none;
     outline: none;
@@ -89,7 +89,10 @@
     border: 1px solid #ffff;
     color: #ffff;
     background-color: #002257;
-    padding: 10px 70px;
+    padding: 23px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 5px;
 }
 .confirm-btn2{

@@ -2,20 +2,23 @@ import React, { useState } from 'react'
 import { GoPrimitiveDot } from 'react-icons/go'
 import { PieChart, Pie, Sector, Cell } from "recharts";
 
-const UsersCard = () => {
+const UsersCard = (props) => {
+
+  const customers = props.users.filter((user) => user.usertype === 'CUSTOMER').length;
+  const vendors = props.users.filter((user) => user.usertype === 'VENDOR').length;
 
     const data = [
-        { name: "Group A", value: 65.23 },
-        { name: "Group B", value: 34.77 }
+        { name: "Group A", value: customers },
+        { name: "Group B", value: vendors }
       ];
       const COLORS = ["#3AB75D", "#3A56B7"];
 
       const users = [
         {
             title: "Total ScamTrust Users",
-            total: "2,300",
-            customerNum: "1,500",
-            vendorsNum: "800",
+            total: props.users.length,
+            customerNum: customers,
+            vendorsNum: vendors,
         },
         {
             title: "New Users",

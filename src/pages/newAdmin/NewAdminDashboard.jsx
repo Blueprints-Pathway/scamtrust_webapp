@@ -4,8 +4,13 @@ import UsersCard from '../../components/admin/admin-dashboard/UsersCard'
 import TransactionCard from '../../components/admin/admin-dashboard/TransactionCard'
 import TransactionChart from '../../components/admin/admin-dashboard/TransactionChart'
 import UsersChart from '../../components/admin/admin-dashboard/UsersChart'
+import { useDispatch, useSelector } from 'react-redux'
+import { getAllUsers } from '../../actions/adminActions'
 
 const NewAdminDashboard = () => {
+  const dispatch = useDispatch();
+  const admin = useSelector(state => state.admin)
+  console.log(admin);
 
   return (
     <AppLayout>
@@ -31,7 +36,7 @@ const NewAdminDashboard = () => {
 
               {/* TOP CARDs */}
         <div className='flex flex-wrap flex-row items-center justify-center mt-2 w-[100vw] lg:w-[75vw] lg:ml-5 xl:w-[83.7vw]'>
-            <UsersCard />
+            <UsersCard users = {admin.users} />
         </div>
 
              {/* MIDDLE CARDS */}

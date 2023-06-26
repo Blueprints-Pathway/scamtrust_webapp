@@ -150,12 +150,12 @@ export const createTransaction = (data) => async (dispatch) => {
           };
         
         const response = await axios.post(`${BASE_URL}/transaction/create`, data, config);
-        //console.log(response)
+        console.log(response)
         if(response.data.status){
             dispatch(customerTransactionActions.createTransactionSuccess(
                response.data.data,
             ));
-            //console.log(response.data);
+            console.log(response.data);
             
         }else{
             dispatch(customerTransactionActions.createTransactionFailure( 
