@@ -43,7 +43,6 @@ import Sucess from "./pages/passwordRecovery/Sucess";
 import Confirms from "./pages/passwordRecovery/Confirms";
 import AccountDeletionRequestPage from "./pages/account-deletion/AccountDeletionRequestPage";
 import NewAdminDashboard from "./pages/newAdmin/NewAdminDashboard";
-import AdminTransaction from "./pages/newAdmin/AdminTransactionPage";
 import UserManagement from "./pages/newAdmin/user-management/UserManagementPage";
 import AdminUserProfile from "./pages/newAdmin/user-management/AdminUserProfile";
 import UserRegistrationPage from "./pages/newAdmin/user-management/UserRegistrationPage";
@@ -53,6 +52,8 @@ import AdminReconcillation from "./pages/newAdmin/admin-reconcillation/adminReco
 import EditRoles from "./pages/newAdmin/user-management/EditRoles";
 import AdminMessagingPage from "./pages/newAdmin/admin-messaging/AdminMessagingPage";
 import SendMessagePage from "./pages/newAdmin/admin-messaging/SendMessagePage";
+import WaitlistPage from "./pages/home/src/components/WaitlistPage";
+import AdminTransactionPage from "./pages/newAdmin/admin-transaction/AdminTransactionPage";
 
 
 
@@ -63,12 +64,13 @@ const App = () => {
 			<Route path="/" element={<HomePage />} />
 			<Route path="/faq" element={<Faq />} />
 			<Route path="/about" element={<About />} />
-			<Route path="/know-more" element={<KnowMore />} />
+			<Route path="/know-more" element={<KnowMore />}  />
+			<Route path="/waitlist" element={<WaitlistPage />} /> 
 
               
 			        {/* SCAMTRUST  ADMIN */}
 			<Route path="/new-admin-dashboard" element={<NewAdminDashboard />} />
-			<Route path="/admin-transaction" element={<AdminTransaction />} />
+			<Route path="/admin-transaction" element={<AdminTransactionPage />} />
 			<Route path="/admin-messaging" element={<AdminMessagingPage />} />
 			<Route path="/admin-user-management" element={<UserManagement />} />
 			<Route path="/admin-user-profile" element={<AdminUserProfile />} />
@@ -80,7 +82,7 @@ const App = () => {
 			<Route path="/edit-roles" element={<EditRoles />} />
 
 
-		{/* SCAMTRUST WEBAPP */}
+		             {/* SCAMTRUST WEBAPP */}
 		<Route path='/customer-dashboard' element={<CustomerDashboard />} />
 		<Route path="customer-dashboard/request-account-deletion" element={<AccountDeletionRequestPage /> } />
 		<Route path='/admin-dashboard' element={<AdminDashboard />} />
@@ -96,8 +98,7 @@ const App = () => {
 		<Route path='/security-question' element={<VendorSecurity />} /> 
 		<Route path='/faq-page' element={<FaqPage />} /> 
 		<Route path='/support' element={<Support />} />
-		<Route  path='/settings'
-        element={<SettingsVendor/>}/>
+		<Route  path='/settings' element={<SettingsVendor/>}/>
       
 	
 		<Route path='/customer-registration' element={<CustomerRegistration />} />

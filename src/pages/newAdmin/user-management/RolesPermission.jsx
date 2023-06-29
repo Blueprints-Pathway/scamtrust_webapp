@@ -2,8 +2,12 @@ import React from 'react'
 import AppLayout from '../../../components/layout/AppLayout'
 import { CiSearch } from 'react-icons/ci'
 import AdminTable from '../../../components/admin/general/AdminTable'
+import { useNavigate } from 'react-router-dom'
 
 const RolesPermission = () => {
+
+  const navigate = useNavigate();
+
   const items = [
     ['Ilerioluwa Brown', 'Product Manager', 'Sub Admin', 'Ilerioluwabrown@gmail.com', '11-2-2022', <p className='text-[#008000]'>Active</p>, 'Edit'],
     ['Ilerioluwa Brown', 'Product Manager', 'Sub Admin', 'Ilerioluwabrown@gmail.com', '11-2-2022', <p className='text-yellow-600'>Pending</p> , 'Edit'],
@@ -13,6 +17,7 @@ const RolesPermission = () => {
     ['Ilerioluwa Brown', 'Product Manager', 'Sub Admin', 'Ilerioluwabrown@gmail.com', '11-2-2022', <p className='text-[#008000]'>Active</p>, 'Edit'],
     ['Ilerioluwa Brown', 'Product Manager', 'Sub Admin', 'Ilerioluwabrown@gmail.com', '11-2-2022', <p className='text-red-600'>Deactivated</p>, 'Edit'],
   ]
+  
   const headings = [
                     <p className='text-black font-medium'>Name</p>,
                     <p className='text-black font-medium'>Department</p>, 
@@ -61,7 +66,7 @@ const RolesPermission = () => {
 
         <hr className='border-[0.1%] border-black mt-8' />
         <div>
-          <AdminTable  items = {items} headings = {headings} /> 
+          <AdminTable onClick={()=>navigate('/edit-roles')}  items = {items} headings = {headings} /> 
         </div>
 
       </div>

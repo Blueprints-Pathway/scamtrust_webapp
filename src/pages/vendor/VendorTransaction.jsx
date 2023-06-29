@@ -22,6 +22,8 @@ import Cancelleds from "../../components/Pages/vendorTransact/VendorCancelled";
 import Accepteds from "../../components/Pages/vendorTransact/VendorAwaitingApproval";
 import moment from "moment";
 import logo from '../../assets/loader-img.png'
+
+
 const VendorTransaction = (props) => {
 	const { data } = props;
 	const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -234,6 +236,7 @@ const VendorTransaction = (props) => {
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
+
 	const handleWithdraw = () => {
 		setIsWithdrawing((prevState) => !prevState);
 	};
@@ -272,6 +275,7 @@ const VendorTransaction = (props) => {
 	const setModalIsOpenToFalse = () => {
 		setModalIsOpen(false);
 	};
+
 	return (
 		<Layout heading="Transaction">
 				{isLoading ? (

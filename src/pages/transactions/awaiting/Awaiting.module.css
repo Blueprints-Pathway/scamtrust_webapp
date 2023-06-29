@@ -2,7 +2,7 @@
     margin: 30px 20px 0px 25px;
 }
 .card-wrapper{
-    height: 40rem;
+    height: 46rem;
     border-radius: 20px;
     padding: 5px 0px 0px 0px;
 }
@@ -142,7 +142,7 @@
 .bottom-btn2{
     background-color: #3AB75D !important;
     color: #ffff;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     border: none;
     outline: none;
@@ -164,7 +164,7 @@
         margin: 30px 20px 0px 25px;
     }
     .card-wrapper{
-        height: 40rem;
+        height: 45rem;
         border-radius: 20px;
         padding: 5px 0px 0px 0px;
     }
@@ -289,6 +289,30 @@
         align-items: flex-start;
         justify-content: center;
     }
+    .bottom-btn1{
+        background-color: #EDEDED !important;
+        color: black;
+        font-size: 12px;
+        font-weight: 400;
+        border: none;
+        outline: none;
+        width: 170px;
+        height: 40px;
+        border-radius: 4px;
+        margin: 0px 85px;
+    }
+    .bottom-btn2{
+        background-color: #3AB75D !important;
+        color: #ffff;
+        font-size: 12px;
+        font-weight: 400;
+        border: none;
+        outline: none;
+        width: 170px;
+        height: 40px;
+        border-radius: 4px;
+        margin: 0px 85px;
+    }
     
 }
 @media screen and (max-width: 1024px) {
@@ -296,7 +320,7 @@
         margin: 30px 20px 0px 25px;
     }
     .card-wrapper{
-        height: 40rem;
+        height: 43rem;
         border-radius: 20px;
         padding: 5px 0px 0px 0px;
     }
@@ -434,7 +458,7 @@
         margin: 30px 20px 0px 25px;
     }
     .card-wrapper{
-        height: 37rem;
+        height: 47rem;
         border-radius: 20px;
         padding: 5px 0px 0px 0px;
     }
@@ -574,7 +598,7 @@
         margin: 30px 0px 0px 0px;
     }
     .card-wrapper{
-        height: 41rem;
+        height: 47.5rem;
         border-radius: 20px;
         padding: 5px 0px 0px 0px;
     }
@@ -715,6 +739,36 @@
         text-align: right;
         width: 140px;
         line-height: 20px;
+    }
+    .btn-con{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
+    .bottom-btn1{
+        background-color: #EDEDED !important;
+        color: black;
+        font-size: 11px;
+        font-weight: 400;
+        border: none;
+        outline: none;
+        width: 145px;
+        height: 35px;
+        border-radius: 4px;
+        margin: 0px 22px;
+    }
+    .bottom-btn2{
+        background-color: #3AB75D !important;
+        color: #ffff;
+        font-size: 11px;
+        font-weight: 400;
+        border: none;
+        outline: none;
+        width: 145px;
+        height: 35px;
+        border-radius: 4px;
+        margin: 0px 22px;
     }
     .footer{
         display: flex;

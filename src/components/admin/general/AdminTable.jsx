@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const AdminTable = (props) => {
-  const navigate = useNavigate();
   
     return (
         <table className=' w-[100%] overflow-x-scroll overflow-y-scroll mb-5 md:w-[100%] lg:w-[100%] lg:mb-7 xl:w-[100%]'>

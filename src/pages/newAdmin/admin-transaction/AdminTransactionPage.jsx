@@ -1,10 +1,11 @@
 import React from 'react'
-import AppLayout from '../../components/layout/AppLayout'
+import AppLayout from '../../../components/layout/AppLayout'
 import { Tabs } from 'antd';
-import Customer from '../../components/admin/admin-transaction/Customer';
+import Customer from '../../../components/admin/admin-transaction/Customer';
 import { AiOutlineSearch } from 'react-icons/ai'
-import Vendor from '../../components/admin/admin-transaction/Vendor';
-import All from '../../components/admin/admin-transaction/All';
+import Vendor from '../../../components/admin/admin-transaction/Vendor';
+import All from '../../../components/admin/admin-transaction/All';
+import { useNavigate } from 'react-router-dom';
 
 
 const onChange = (key) => {
@@ -29,7 +30,10 @@ const items = [
 ];
 
 
-const AdminTransaction = () => {
+const AdminTransactionPage = () => {
+
+  const navigate = useNavigate();
+  
   return (
     <AppLayout>
       <div className='flex flex-col justify-center items-center mx-2 overflow-x-hidden'>
@@ -78,7 +82,8 @@ const AdminTransaction = () => {
               Transactions
             </p>
             <div className='flex items-center justify-center'>
-              <p className='text-[10px] text-[#232164] font-medium mr-4 md:mr-10 xl:text-[11px]'>
+              <p onClick={() => navigate('/transaction-view-all')}
+              className='text-[10px] text-[#232164] font-medium mr-4 md:mr-10 xl:text-[11px]'>
                 View All
               </p>
               <div className='relative'>
@@ -155,4 +160,4 @@ const AdminTransaction = () => {
   )
 }
 
-export default AdminTransaction
+export default AdminTransactionPage

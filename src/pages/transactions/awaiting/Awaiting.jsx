@@ -157,7 +157,8 @@ const navigate=useNavigate()
 					</div>
 
 						{/* BUTTONS */}
-				{ usertype === 'VENDOR' &&	<div className={classes["btn-con"]}>
+				     { usertype === 'VENDOR' &&	
+				    <div className={classes["btn-con"]}>
 						<Button
 							onClick={() =>
 								navigate(`/cancel-reason/${transaction.transaction_id}`)
