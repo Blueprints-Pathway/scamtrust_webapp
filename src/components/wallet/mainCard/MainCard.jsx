@@ -69,7 +69,7 @@ const MainCard = () => {
                           {/* BUTTONS  */}
             <div className={classes['btn-con']}>
                 <Withdrawbutton />
-                <Fundbutton accountNumber = {data?.virtualAccount?.account_number || ''} />
+                <Fundbutton accountNumber = {data?.virtualAccount?.account_number || 'null'} />
             </div>
                         {/* PRIMARY ACCOUNT */}
             <div className={classes['primary-con']}>

@@ -317,6 +317,7 @@ export const login = (data) => async (dispatch) => {
            localStorage.setItem('LOGGED_IN', 'LOGGED IN SUCCESSFULLY');
            localStorage.setItem('USER_DETAILS', JSON.stringify(response.data));
            localStorage.setItem('SHOW_MODAL', 'SHOWMODAL');
+           console.log(response.data);
 
         }else{
             dispatch(authActions.loginFailure( 

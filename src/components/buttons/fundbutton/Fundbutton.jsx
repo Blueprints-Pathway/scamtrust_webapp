@@ -24,7 +24,7 @@ const Fundbutton = (props) => {
     setIsModalOpen1(false);
   };
   const handleCancel2 = () => {
-    setIsModalOpen2(copied);
+    setIsModalOpen2(false);
   };
 
   const handleCopy = () => {
@@ -90,8 +90,11 @@ const Fundbutton = (props) => {
             <div className={classes['modal2-div-2']}>
               <button onClick={handleCopy}
               className={classes['modal2-btn']}>
-                <MdContentCopy className={classes['modal2-icon']} />
-                   { copied ? 'Copied' : props.accountNumber }
+                  <MdContentCopy className={classes['modal2-icon']} />
+                   { copied && props.accountNumber === 'null' ? 'Nothing to copy' 
+                    : copied && props.accountNumber !== 'null' ? 'Copied' 
+                    : props.accountNumber
+                   }
                 </button>
             </div>
             <div className={classes['modal2-div-3']}>
