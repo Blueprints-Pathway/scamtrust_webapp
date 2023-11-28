@@ -21,7 +21,8 @@ const Navbar = (props) => {
            <button className='log-btn ab-btn'><Link className='btn log-btn' to="/about">About Us</Link></button>
            
            <button onClick={()=>{navigate('/sign-in')}}
-           className='reg-btn btn log-btn-1'>
+           className='reg-btn btn log-btn-1'
+           >
               Login
             </button>
             

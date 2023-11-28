@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Button, Modal } from 'antd';
 import { useState } from 'react';
 import classes from './Fundbutton.module.css'
@@ -24,13 +24,16 @@ const Fundbutton = (props) => {
     setIsModalOpen1(false);
   };
   const handleCancel2 = () => {
-    setIsModalOpen2(false);
+    setIsModalOpen2(copied);
   };
 
   const handleCopy = () => {
     setCopied(true)
     navigator.clipboard.writeText(props.accountNumber)
+    console.log(props.accountNumber);
+    console.log('account number');
   }
+
 
 
   return (
@@ -88,7 +91,7 @@ const Fundbutton = (props) => {
               <button onClick={handleCopy}
               className={classes['modal2-btn']}>
                 <MdContentCopy className={classes['modal2-icon']} />
-                   { copied ? 'Copied' : '7820857716' }
+                   { copied ? 'Copied' : props.accountNumber }
                 </button>
             </div>
             <div className={classes['modal2-div-3']}>
